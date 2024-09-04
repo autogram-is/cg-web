@@ -1,0 +1,17 @@
+# OS Cruft
+**/.DS_Store
+
+# Never ever check 'em in.
+**/*.env
+
+# Wordpress default plugins and preinstalled indexes
+wp-content/index.php
+
+wp-content/plugins/akismet
+wp-content/plugins/index.php
+wp-content/plugins/hello.php
+
+wp-content/themes/index.php
+wp-content/themes/twentytwentytwo
+wp-content/themes/twentytwentythree
+wp-content/themes/twentytwentyfour
