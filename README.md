@@ -22,13 +22,30 @@ Changes that rely on custom pieces of content or other non-code data will requir
 
 This list is in progress -- it's subject to change as the initial configuration plan is tested and validated against the site requirements.
 
-- New plugins
-  - [Timber](https://upstatement.com/timber/)
-  - [Advanced Custom Fields](https://www.advancedcustomfields.com/) (may transition to [Pods Framework](https://pods.io), pending performance tests)
-- Existing plugins
+- Existing site plugins
   - [BuzzSprout Podcasting](https://wordpress.org/plugins/buzzsprout-podcasting/)
   - [Gravity Forms](https://www.gravityforms.com)
-  - https://postmansmtp.com
-  - https://wordpress.org/plugins/performance-lab/
-  - https://wordpress.org/plugins/hsts-ready/
-  - https://wordpress.org/plugins/relevanssi/
+  - [PostSMTP](https://postmansmtp.com)
+  - [HSTS-Ready](https://wordpress.org/plugins/hsts-ready/)
+  - [Relevanssi](https://wordpress.org/plugins/relevanssi/)
+  - [WP Rocket](https://wp-rocket.me)
+  - [Redirection](https://wordpress.org/plugins/redirection/)
+  - [Regenerate Thumbnails](https://wordpress.org/plugins/regenerate-thumbnails/)
+  - [WP Force HTTPS](https://wordpress.org/plugins/wp-force-https/)
+- Candidates for removal
+  - [Avada Core/Builder](https://avada.website) - looking to avoid in-CMS page building; alternative being researched
+  - [If-So](https://wordpress.org/plugins/if-so/) - Avoid if possible, punishing impact on performance
+  - [Category AJAX Filter](https://trustyplugins.com) - FacetWP may offer better performance with less front end code
+  - [WPCode](https://wordpress.org/plugins/insert-headers-and-footers/) - should be handled by the custom theme
+  - [The Events Calendar](https://theeventscalendar.com/products/wordpress-events-calendar) - use a simpler listing page rather than a calendar view; event venues and managers aren't needed
+  - [HREFLang Tags](https://wordpress.org/plugins/hreflang-tags-by-dcgws/) - deprecated and unsupported
+- New plugins
+  - [Timber](https://upstatement.com/timber/)
+  - [Advanced Custom Fields](https://www.advancedcustomfields.com/)
+- Under consideration
+  - [Pods Framework](https://pods.io) to replace ACF for table-based storage of field data
+    - [Pods Address/Map Field](https://github.com/JoryHogeveen/pods-address-maps)
+  - [FacetWP](https://facetwp.com) for faceted search, if deemed necessary
+  - [Advanced Views Framework](https://wordpress.org/plugins/acf-views/) - longshot, but may allow quick definition of rule based related content queries
+
+If any of the current site plugins are removed, we'll add notes explaining why, and what's replaced them if applicable.
