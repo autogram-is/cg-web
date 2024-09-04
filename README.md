@@ -33,7 +33,7 @@ This list is in progress -- it's subject to change as the initial configuration 
   - [Regenerate Thumbnails](https://wordpress.org/plugins/regenerate-thumbnails/)
   - [WP Force HTTPS](https://wordpress.org/plugins/wp-force-https/)
 - Candidates for removal
-  - [Avada Core/Builder](https://avada.website) - looking to avoid in-CMS page building; alternative being researched
+  - [Avada Core/Builder](https://avada.com) - looking to avoid in-CMS page building; alternative being researched
   - [If-So](https://wordpress.org/plugins/if-so/) - Avoid if possible, punishing impact on performance
   - [Category AJAX Filter](https://trustyplugins.com) - FacetWP may offer better performance with less front end code
   - [WPCode](https://wordpress.org/plugins/insert-headers-and-footers/) - should be handled by the custom theme
