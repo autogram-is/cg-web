@@ -36,7 +36,7 @@ services:
   composer:
     image: composer
     container_name: composer
-    working_dir: /var/www/html
+    working_dir: /var/www/html/wp-content/themes/cumminggroup
     volumes:
       - ${PWD}/wordpress:/var/www/html
     networks:

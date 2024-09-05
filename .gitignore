@@ -4,15 +4,18 @@
 # Never ever check 'em in.
 **/*.env
 
-# Exclude the entire Wordpress directory from git
-wordpress/*
+# Wordpress files OTHER than our plugins and theme.
+wordpress/*.*
+wordpress/wp-includes
+wordpress/wp-admin
 
-# …Except for 
-!wordpress/composer.*
-!wordpress/wp-content/plugins/*
-!wordpress/wp-content/themes/cg-*
-
-# …But also
 wordpress/wp-content/plugins/akismet
 wordpress/wp-content/plugins/index.php
 wordpress/wp-content/plugins/hello.php
+
+wordpress/wp-content/themes/index.php
+wordpress/wp-content/themes/twenty*
+
+# Don't include the vendor directory for now, let composer handle it.
+# We might push this later.
+wordpress/wp-content/themes/cumminggroup/vendor
