@@ -8,6 +8,8 @@ This git repo holds the custom code and theme assets for the [Cumming Group](htt
 - Optionally import a custom database snapshot
 - To start things up, run `docker compose up -d`
 - Visit `http://localhost`
+- To run WP-CLI commands, use `docker compose exec wpcli <command>`
+- To install/manage PHP composer dependencies, use `docker compose exec composer <command>`
 - To shut things down, run `docker compose stop`
 
 We'll be updating the `docker-compose.yml` file to add [WP-CLI](https://wp-cli.org) shortly. In addition, we'll have some default Visual Studio config to get things running quickly, though debugging inside the docker container will probably take a bit of experimenting.

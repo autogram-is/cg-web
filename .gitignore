@@ -4,14 +4,15 @@
 # Never ever check 'em in.
 **/*.env
 
-# Wordpress default plugins and preinstalled indexes
-wp-content/index.php
+# Exclude the entire Wordpress directory from git
+wordpress/*
 
-wp-content/plugins/akismet
-wp-content/plugins/index.php
-wp-content/plugins/hello.php
+# …Except for 
+!wordpress/composer.*
+!wordpress/wp-content/plugins/*
+!wordpress/wp-content/themes/cg-*
 
-wp-content/themes/index.php
-wp-content/themes/twentytwentytwo
-wp-content/themes/twentytwentythree
-wp-content/themes/twentytwentyfour
+# …But also
+wordpress/wp-content/plugins/akismet
+wordpress/wp-content/plugins/index.php
+wordpress/wp-content/plugins/hello.php
