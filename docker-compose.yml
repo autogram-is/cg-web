@@ -1,3 +1,5 @@
+name: cumming-group
+
 services:
   db:
     image: mysql
@@ -28,7 +30,6 @@ services:
       WORDPRESS_DB_NAME: wordpress
     volumes:
       - ${PWD}/wordpress:/var/www/html
-      - ${PWD}/wp-cli:/var/www/wp-cli
     networks:
       - wp_network
 
@@ -42,12 +43,11 @@ services:
       - wp_network
     command: install
 
-  wp-cli:
+  cli:
     image: wordpress:cli
-    container_name: wpcli
+    container_name: cli
     volumes:
       - ${PWD}/wordpress:/var/www/html
-      - ${PWD}/wp-cli:/var/www/wp-cli
     networks:
       - wp_network
     entrypoint: wp
