@@ -8,8 +8,8 @@ This git repo holds the custom code and theme assets for the [Cumming Group](htt
 - Optionally import a custom database snapshot
 - To start things up, run `docker compose up -d`
 - Visit `http://localhost`
-- To run WP-CLI commands, use `docker compose run --rm cli <command>`
-- To install/manage PHP composer dependencies, use `docker compose run --rm composer <command>`
+- To log into the docker container and noodle around on the command line, use `docker compose exec wordpress bash`
+- To *out* of the docker container's command line, use `exit`
 - To shut things down, run `docker compose down`
 
 ## Deploying to staging

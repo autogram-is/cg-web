@@ -1,60 +1,29 @@
 name: cumming-group
 
 services:
-  db:
-    image: mysql
-    container_name: wordpress_db
-    volumes:
-      - db_data:/var/lib/mysql
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpressuser
-      MYSQL_PASSWORD: wordpresspassword
-    networks:
-      - wp_network
-
   wordpress:
-    image: wordpress:latest
-    container_name: wordpress_app
-    depends_on:
-      - db
+    build: .
     ports:
       - "80:80"
-    restart: always
     environment:
-      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_HOST: wp_db:3306
       WORDPRESS_DB_USER: wordpressuser
       WORDPRESS_DB_PASSWORD: wordpresspassword
       WORDPRESS_DB_NAME: wordpress
     volumes:
       - ${PWD}/wordpress:/var/www/html
-    networks:
-      - wp_network
+    depends_on:
+      - wp_db
 
-  composer:
-    image: composer
-    container_name: composer
-    working_dir: /var/www/html/wp-content/themes/cumminggroup
+  wp_db:
+    image: mysql
     volumes:
-      - ${PWD}/wordpress:/var/www/html
-    networks:
-      - wp_network
-    command: install
-
-  cli:
-    image: wordpress:cli
-    container_name: cli
-    volumes:
-      - ${PWD}/wordpress:/var/www/html
-    networks:
-      - wp_network
-    entrypoint: wp
-    command: "--info"
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpressuser
+      MYSQL_PASSWORD: wordpresspassword
 
 volumes:
   db_data:
-
-networks:
-  wp_network:
