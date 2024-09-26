@@ -2,7 +2,7 @@
 
 This git repo holds the custom code and theme assets for the [Cumming Group](https://cumming-group.com) web site. It's designed to support easy testing and development of new features on a developer's local machine using Docker Compose and the official [Wordpress](https://hub.docker.com/_/wordpress)/[MySQL](https://hub.docker.com/_/mysql/) images, with git handling the deployment of new code to a staging or production server.
 
-## Setting up local development!
+## Setting up local development
 
 - Install docker
 - Optionally import a custom database snapshot
