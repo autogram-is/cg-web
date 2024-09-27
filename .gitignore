@@ -4,18 +4,20 @@
 # Never ever check 'em in.
 **/*.env
 
-# Wordpress files OTHER than our plugins and theme.
-wordpress/*.*
-wordpress/wp-includes
-wordpress/wp-admin
+# public_html files OTHER than our plugins and theme.
+public_html/*.*
+public_html/wp-includes
+public_html/wp-admin
+public_html/wp-content/uprgade
+public_html/wp-content/uploads
 
-wordpress/wp-content/plugins/akismet
-wordpress/wp-content/plugins/index.php
-wordpress/wp-content/plugins/hello.php
+public_html/wp-content/plugins/akismet
+public_html/wp-content/plugins/index.php
+public_html/wp-content/plugins/hello.php
 
-wordpress/wp-content/themes/index.php
-wordpress/wp-content/themes/twenty*
+public_html/wp-content/themes/index.php
+public_html/wp-content/themes/twenty*
 
 # Don't include the vendor directory for now, let composer handle it.
 # We might push this later.
-wordpress/wp-content/themes/cumminggroup/vendor
+public_html/wp-content/themes/cumminggroup/vendor

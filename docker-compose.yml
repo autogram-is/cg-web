@@ -11,7 +11,7 @@ services:
       WORDPRESS_DB_PASSWORD: wordpresspassword
       WORDPRESS_DB_NAME: wordpress
     volumes:
-      - ${PWD}/wordpress:/var/www/html
+      - ${PWD}/public_html:/var/www/html
     depends_on:
       - wp_db
 
