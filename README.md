@@ -33,6 +33,8 @@ This list is in progress -- it's subject to change as the initial configuration 
   - [Regenerate Thumbnails](https://wordpress.org/plugins/regenerate-thumbnails/)
   - [WP Force HTTPS](https://wordpress.org/plugins/wp-force-https/)
   - [If-So](https://wordpress.org/plugins/if-so/) - Useful geolocation plugins and related tools, but we want to keep as much of this as possible out regular page-loading.
+  - [Yoast SEO](https://developer.yoast.com) - API-accessible SEO tag and social sharing metadata generation.
+  - [Object Cache Pro](https://objectcache.pro) - Redis cache integration, license included with Cloudways hosting
 - Candidates for removal
   - [Avada Core/Builder](https://avada.com) - looking to avoid in-CMS page building; alternative being researched
   - [Category AJAX Filter](https://trustyplugins.com) - FacetWP may offer better performance with less front end code
