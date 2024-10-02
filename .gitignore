@@ -4,6 +4,9 @@
 # Never ever check 'em in.
 **/*.env
 
+# XML import files
+import/*.xml
+
 # public_html files OTHER than our plugins and theme.
 public_html/*.*
 public_html/wp-includes
