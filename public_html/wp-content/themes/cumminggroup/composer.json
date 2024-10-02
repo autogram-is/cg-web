@@ -1,12 +1,12 @@
 {
-  "name": "upstatement/timber-starter-theme",
-  "description": "Starter theme to build a Timber theme",
+  "name": "autogram/cumminggroup",
+  "description": "Custom theme for the Cumming Group web site",
   "type":"wordpress-theme",
   "license": "MIT",
   "authors": [
     {
-      "email": "jared@upstatement.com",
-      "name": "jarednova"
+      "email": "team@autogram.is",
+      "name": "autogram"
     }
   ],
   "repositories": [
