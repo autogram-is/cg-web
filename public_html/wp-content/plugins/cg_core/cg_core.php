@@ -7,11 +7,12 @@
 /*
 Plugin Name: CG Core
 Plugin URI: http://github.com/autogram-is/cg-web
-Description: Defines custom post types and core site settings.
+Description: Defines custom post types, core site settings, and reusable logic.
 Author: Autogram
 Version: 1.0.0
 Author URI: http://autogram.is/
 */
 
-// Custom post type definitions
-require_once __DIR__ .'/post_types.php';
+require_once __DIR__ .'/admin-init.php';
+require_once __DIR__ .'/init.php';
+require_once __DIR__ .'/acf.php';
