@@ -12,6 +12,8 @@ services:
       WORDPRESS_DB_NAME: wordpress
     volumes:
       - ${PWD}/public_html:/var/www/html
+      - ${PWD}/config/docker-php.ini:/usr/local/etc/php/conf.d/docker.ini
+
     depends_on:
       - wp_db
 
@@ -19,6 +21,8 @@ services:
     image: mysql
     volumes:
       - db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: wordpress
