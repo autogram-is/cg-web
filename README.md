@@ -12,6 +12,8 @@ This git repo holds the custom code and theme assets for the [Cumming Group](htt
 - To *out* of the docker container's command line, use `exit`
 - To shut things down, run `docker compose down`
 
+A copy of the `upload` directory's contents, to ensure old contents' image and media links still work, [is on Dropbox](https://www.dropbox.com/s/cjtdaulpldwx7b4/wp-uploads.zip?dl=0). The `.gitignore` file for this project will ensure it's not committed if you copy its contents to `public_html/wp-content/uploads`.
+
 ## Deploying to staging
 
 This section will be updated with details based on the Cloudways configuration and deployment details. The most important detail is ensuring that any necessary migration code (for example, creating a storage table for field data if Pods is set to use dedicated tables) are run on the staging server (and eventually the production server).
