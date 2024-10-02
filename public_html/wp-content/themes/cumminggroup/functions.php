@@ -1,7 +1,9 @@
 <?php
 /**
- * Timber starter-theme
- * https://github.com/timber/starter-theme
+ * Cumming Group custom theme
+ * 
+ * This file is primarily responsible for pulling in other includes that
+ * do the heavy lifting of defining content types, etc.
  */
 
 // Load Composer dependencies.
