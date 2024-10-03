@@ -32,12 +32,12 @@ This list is in progress -- it's subject to change as the initial configuration 
   - [Relevanssi](https://wordpress.org/plugins/relevanssi/)
   - [WP Rocket](https://wp-rocket.me)
   - [Redirection](https://wordpress.org/plugins/redirection/)
-  - [Regenerate Thumbnails](https://wordpress.org/plugins/regenerate-thumbnails/)
   - [WP Force HTTPS](https://wordpress.org/plugins/wp-force-https/)
   - [If-So](https://wordpress.org/plugins/if-so/) - Useful geolocation plugins and related tools, but we want to keep as much of this as possible out regular page-loading.
   - [Yoast SEO](https://developer.yoast.com) - API-accessible SEO tag and social sharing metadata generation.
   - [Object Cache Pro](https://objectcache.pro) - Redis cache integration, license included with Cloudways hosting
 - Candidates for removal
+  - [Regenerate Thumbnails](https://wordpress.org/plugins/regenerate-thumbnails/) - duplicated by WP-CLI
   - [Avada Core/Builder](https://avada.com) - looking to avoid in-CMS page building; alternative being researched
   - [Category AJAX Filter](https://trustyplugins.com) - FacetWP may offer better performance with less front end code
   - [WPCode](https://wordpress.org/plugins/insert-headers-and-footers/) - should be handled by the custom theme
