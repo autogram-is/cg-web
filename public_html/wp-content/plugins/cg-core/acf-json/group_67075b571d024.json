@@ -1,9 +1,9 @@
 {
-    "key": "group_66fdd1ac2cb6a",
-    "title": "Case Study post properties",
+    "key": "group_67075b571d024",
+    "title": "Company component properties",
     "fields": [
         {
-            "key": "field_67080a229745c",
+            "key": "field_67075b577c264",
             "label": "Project",
             "name": "project",
             "aria-label": "",
@@ -27,17 +27,17 @@
             "return_format": "object",
             "min": "",
             "max": "",
-            "allow_in_bindings": 0,
+            "allow_in_bindings": 1,
             "elements": "",
             "bidirectional": 0,
             "bidirectional_target": []
         },
         {
-            "key": "field_66fdd3b710d3a",
-            "label": "Downloadable PDF",
-            "name": "pdf",
+            "key": "field_67080a74a59f9",
+            "label": "Sector",
+            "name": "sector",
             "aria-label": "",
-            "type": "file",
+            "type": "relationship",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -46,12 +46,21 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "library": "uploadedTo",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": "",
-            "allow_in_bindings": 0
+            "post_type": [
+                "cg_sector"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "return_format": "object",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "elements": "",
+            "bidirectional": 0,
+            "bidirectional_target": []
         }
     ],
     "location": [
@@ -59,18 +68,18 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "cg_case_study"
+                "value": "cg_company"
             }
         ]
     ],
     "menu_order": 0,
     "position": "normal",
-    "style": "seamless",
+    "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Custom properties specific to Case Study pages",
+    "description": "Custom properties for Company components",
     "show_in_rest": 0,
-    "modified": 1728580162
+    "modified": 1728580260
 }

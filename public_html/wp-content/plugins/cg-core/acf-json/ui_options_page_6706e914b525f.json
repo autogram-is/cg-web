@@ -1,0 +1,26 @@
+{
+    "key": "ui_options_page_6706e914b525f",
+    "title": "Portfolio",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Portfolio",
+    "menu_slug": "portfolio",
+    "parent_slug": "none",
+    "advanced_configuration": 1,
+    "icon_url": "",
+    "menu_title": "Portfolio",
+    "position": 4,
+    "redirect": 0,
+    "description": "",
+    "menu_icon": {
+        "type": "dashicons",
+        "value": "dashicons-open-folder"
+    },
+    "update_button": "Update",
+    "updated_message": "Options Updated",
+    "capability": "edit_posts",
+    "data_storage": "options",
+    "post_id": "",
+    "autoload": 0,
+    "modified": 1728508797
+}

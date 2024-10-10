@@ -1,0 +1,57 @@
+{
+    "key": "group_6707516388da1",
+    "title": "Locale",
+    "fields": [
+        {
+            "key": "field_67080e2f868f3",
+            "label": "Locale",
+            "name": "locale",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "all": "All Locales",
+                "us": "United States",
+                "eu": "Europe"
+            },
+            "default_value": "all",
+            "return_format": "value",
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "layout": "horizontal"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "cg_sector"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "cg_service"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "EU, USA, or Both",
+    "show_in_rest": 0,
+    "modified": 1728581483
+}

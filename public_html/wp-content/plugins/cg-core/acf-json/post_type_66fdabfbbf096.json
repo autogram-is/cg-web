@@ -11,7 +11,7 @@
         "name": "Events",
         "singular_name": "Event",
         "menu_name": "Events",
-        "all_items": "All Events",
+        "all_items": "Events",
         "edit_item": "Edit Event",
         "view_item": "View Event",
         "view_items": "View Events",
@@ -49,7 +49,7 @@
     "publicly_queryable": true,
     "show_ui": true,
     "show_in_menu": true,
-    "admin_menu_parent": "",
+    "admin_menu_parent": "news",
     "show_in_admin_bar": true,
     "show_in_nav_menus": true,
     "show_in_rest": true,
@@ -57,10 +57,7 @@
     "rest_namespace": "wp\/v2",
     "rest_controller_class": "WP_REST_Posts_Controller",
     "menu_position": "",
-    "menu_icon": {
-        "type": "dashicons",
-        "value": "dashicons-calendar-alt"
-    },
+    "menu_icon": "",
     "rename_capabilities": false,
     "singular_capability_name": "post",
     "plural_capability_name": "posts",
@@ -85,5 +82,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1727901202
+    "modified": 1728508959
 }

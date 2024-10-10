@@ -11,7 +11,7 @@
         "name": "Services",
         "singular_name": "Service",
         "menu_name": "Services",
-        "all_items": "All Services",
+        "all_items": "Services",
         "edit_item": "Edit Service",
         "view_item": "View Service",
         "view_items": "View Services",
@@ -49,7 +49,7 @@
     "publicly_queryable": true,
     "show_ui": true,
     "show_in_menu": true,
-    "admin_menu_parent": "",
+    "admin_menu_parent": "portfolio",
     "show_in_admin_bar": true,
     "show_in_nav_menus": true,
     "show_in_rest": true,
@@ -57,16 +57,15 @@
     "rest_namespace": "wp\/v2",
     "rest_controller_class": "WP_REST_Posts_Controller",
     "menu_position": "",
-    "menu_icon": {
-        "type": "dashicons",
-        "value": "dashicons-admin-post"
-    },
+    "menu_icon": "",
     "rename_capabilities": false,
     "singular_capability_name": "post",
     "plural_capability_name": "posts",
     "supports": [
         "title",
         "editor",
+        "excerpt",
+        "page-attributes",
         "thumbnail",
         "custom-fields"
     ],
@@ -85,5 +84,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1727905787
+    "modified": 1728581909
 }
