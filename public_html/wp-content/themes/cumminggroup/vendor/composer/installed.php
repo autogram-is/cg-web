@@ -115,6 +115,15 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'palmiak/timber-acf-wp-blocks' => array(
+            'pretty_version' => '1.15',
+            'version' => '1.15.0.0',
+            'reference' => '4d3ecfc31ba5c90964a4f0e7e10b97cb3a2ceb7e',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../palmiak/timber-acf-wp-blocks',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'phar-io/manifest' => array(
             'pretty_version' => '2.0.4',
             'version' => '2.0.4.0',

@@ -21,6 +21,7 @@ class ComposerStaticInit45d539327a396619f1041b04bd0610d3
         'ffecb95d45175fd40f75be8a23b34f90' => __DIR__ . '/..' . '/twig/twig/src/Resources/debug.php',
         'c7baa00073ee9c61edf148c51917cfb4' => __DIR__ . '/..' . '/twig/twig/src/Resources/escaper.php',
         'f844ccf1d25df8663951193c3fc307c8' => __DIR__ . '/..' . '/twig/twig/src/Resources/string_loader.php',
+        '32a4c26a4fcb93d787a6a7cafb8c7c9d' => __DIR__ . '/..' . '/palmiak/timber-acf-wp-blocks/timber-acf-wp-blocks.php',
     );
 
     public static $prefixLengthsPsr4 = array (
