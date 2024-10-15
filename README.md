@@ -47,10 +47,8 @@ This list is in progress -- it's subject to change as the initial configuration 
   - [Timber](https://upstatement.com/timber/)
   - [Advanced Custom Fields](https://www.advancedcustomfields.com/)
   - [ACF Gravity Forms](acf-gravityforms-add-on)
+  - [Timber ACF Blocks](https://github.com/palmiak/timber-acf-wp-blocks/), used to integrate theme components with block editor
 - Under consideration
-  - [Pods Framework](https://pods.io) to replace ACF for table-based storage of field data
-    - [Pods Address/Map Field](https://github.com/JoryHogeveen/pods-address-maps)
   - [FacetWP](https://facetwp.com) for faceted search, if deemed necessary
-  - [Advanced Views Framework](https://wordpress.org/plugins/acf-views/) - longshot, but may allow quick definition of rule based related content queries
 
 If any of the current site plugins are removed, we'll add notes explaining why, and what's replaced them if applicable.
