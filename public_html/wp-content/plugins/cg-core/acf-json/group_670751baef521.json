@@ -1,29 +1,7 @@
 {
     "key": "group_670751baef521",
     "title": "Service properties",
-    "fields": [
-        {
-            "key": "field_670751baf2869",
-            "label": "Downloadable PDF",
-            "name": "pdf",
-            "aria-label": "",
-            "type": "file",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "uploadedTo",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": "",
-            "allow_in_bindings": 0
-        }
-    ],
+    "fields": [],
     "location": [
         [
             {
@@ -42,5 +20,5 @@
     "active": true,
     "description": "Custom properties specific to Service pages",
     "show_in_rest": 0,
-    "modified": 1729106649
+    "modified": 1729116333
 }

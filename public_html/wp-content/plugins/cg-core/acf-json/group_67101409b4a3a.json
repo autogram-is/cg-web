@@ -31,10 +31,10 @@
             "elements": "",
             "bidirectional": 1,
             "bidirectional_target": [
-                "field_67080b44ded70",
-                "field_67075c695c7fd",
-                "field_67080ade872df",
-                "field_67080b100cbe6"
+                "field_6710305d566e6",
+                "field_6710305d56eb6",
+                "field_6710305d5729d",
+                "field_6710305d56acc"
             ]
         }
     ],
@@ -77,5 +77,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729107554
+    "modified": 1729116311
 }
