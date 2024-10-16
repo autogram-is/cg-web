@@ -1,6 +1,6 @@
 {
     "key": "group_6706f23e55680",
-    "title": "Office post properties",
+    "title": "Office properties",
     "fields": [
         {
             "key": "field_67081204f5596",
@@ -172,5 +172,5 @@
     "active": true,
     "description": "Custom properties specific to Office pages",
     "show_in_rest": 0,
-    "modified": 1728582261
+    "modified": 1729105604
 }

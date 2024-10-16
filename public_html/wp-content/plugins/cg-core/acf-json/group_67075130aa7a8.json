@@ -1,29 +1,7 @@
 {
     "key": "group_67075130aa7a8",
-    "title": "Region post properties",
-    "fields": [
-        {
-            "key": "field_67075130ad46b",
-            "label": "Downloadable PDF",
-            "name": "pdf",
-            "aria-label": "",
-            "type": "file",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "uploadedTo",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": "",
-            "allow_in_bindings": 0
-        }
-    ],
+    "title": "Region properties",
+    "fields": [],
     "location": [
         [
             {
@@ -42,5 +20,5 @@
     "active": true,
     "description": "Custom properties specific to Region pages",
     "show_in_rest": 0,
-    "modified": 1728535348
+    "modified": 1729106210
 }

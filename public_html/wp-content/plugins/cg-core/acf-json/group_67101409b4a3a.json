@@ -1,9 +1,9 @@
 {
-    "key": "group_67080f0e35038",
-    "title": "Sector properties",
+    "key": "group_67101409b4a3a",
+    "title": "Related Projects",
     "fields": [
         {
-            "key": "field_67100c2c2ed72",
+            "key": "field_671014095b23a",
             "label": "Projects",
             "name": "projects",
             "aria-label": "",
@@ -29,8 +29,13 @@
             "max": "",
             "allow_in_bindings": 0,
             "elements": "",
-            "bidirectional": 0,
-            "bidirectional_target": []
+            "bidirectional": 1,
+            "bidirectional_target": [
+                "field_67080b44ded70",
+                "field_67075c695c7fd",
+                "field_67080ade872df",
+                "field_67080b100cbe6"
+            ]
         }
     ],
     "location": [
@@ -40,16 +45,37 @@
                 "operator": "==",
                 "value": "cg_sector"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "cg_service"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "cg_office"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "cg_region"
+            }
         ]
     ],
     "menu_order": 0,
     "position": "normal",
-    "style": "seamless",
+    "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Custom properties specific to Case Study pages",
+    "description": "",
     "show_in_rest": 0,
-    "modified": 1729106036
+    "modified": 1729107554
 }

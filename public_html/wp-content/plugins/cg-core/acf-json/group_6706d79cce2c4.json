@@ -1,6 +1,6 @@
 {
     "key": "group_6706d79cce2c4",
-    "title": "Project post properties",
+    "title": "Project properties",
     "fields": [
         {
             "key": "field_6706d79cd3cc4",
@@ -197,5 +197,5 @@
     "active": true,
     "description": "Custom properties for Project pages",
     "show_in_rest": 0,
-    "modified": 1728580651
+    "modified": 1729106091
 }

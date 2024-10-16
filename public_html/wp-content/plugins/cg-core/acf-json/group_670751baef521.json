@@ -1,6 +1,6 @@
 {
     "key": "group_670751baef521",
-    "title": "Service post properties",
+    "title": "Service properties",
     "fields": [
         {
             "key": "field_670751baf2869",
@@ -42,5 +42,5 @@
     "active": true,
     "description": "Custom properties specific to Service pages",
     "show_in_rest": 0,
-    "modified": 1728535364
+    "modified": 1729106649
 }
