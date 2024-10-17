@@ -37,6 +37,9 @@
                 "class": "",
                 "id": ""
             },
+            "admin_column_enabled": 1,
+            "admin_column_position": "",
+            "admin_column_width": "",
             "return_format": "array",
             "library": "uploadedTo",
             "min_size": "",
@@ -63,5 +66,5 @@
     "active": true,
     "description": "Case Study details for project pages",
     "show_in_rest": 0,
-    "modified": 1729114165
+    "modified": 1729189084
 }
