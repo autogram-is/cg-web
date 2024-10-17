@@ -1,0 +1,11 @@
+<li>
+	<article class="listing-{{post.type}} frame inset" data-component="Resource Listing" aria-labelledby="hed-{{post.id}}">
+		{% block content %}
+			<h2 class="h2" id="hed-{{post.id}}"><a href="{{post.link}}">{{post.title}}</a></h2>
+			<p>{{ post.excerpt }}</p>
+			{% if post.thumbnail %}
+				<img src="{{post.thumbnail.src}}" />
+			{% endif %}
+		{% endblock %}
+	</article>
+</li>
