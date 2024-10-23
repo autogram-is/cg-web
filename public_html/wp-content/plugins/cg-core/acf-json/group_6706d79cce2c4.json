@@ -75,7 +75,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "row",
+            "layout": "table",
             "pagination": 0,
             "min": 0,
             "max": 0,
@@ -148,5 +148,5 @@
     "active": true,
     "description": "Custom properties for Project pages",
     "show_in_rest": 0,
-    "modified": 1729114262
+    "modified": 1729663798
 }
