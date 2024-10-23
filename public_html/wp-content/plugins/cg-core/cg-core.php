@@ -13,6 +13,6 @@ Version: 1.0.0
 Author URI: http://autogram.is/
 */
 
-require_once __DIR__ .'/admin-init.php';
-require_once __DIR__ .'/init.php';
-require_once __DIR__ .'/acf.php';
+require_once __DIR__ .'/hooks/admin.php';
+require_once __DIR__ .'/hooks/init.php';
+require_once __DIR__ .'/hooks/acf.php';

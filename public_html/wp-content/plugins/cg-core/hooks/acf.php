@@ -10,7 +10,7 @@
 
 // Store ACF post type and field group definitions in this directory.
 function cg_core_acf_json_save_point( $path ) {
-    return __DIR__ . '/acf-json';
+    return plugin_dir_path( __DIR__ ) . 'acf-json';
 }
 add_filter( 'acf/settings/save_json', 'cg_core_acf_json_save_point' );
 
@@ -20,7 +20,7 @@ function cg_core_acf_json_load_point( $paths ) {
   unset($paths[0]);
 
   // Append the new path and return it.
-  $paths[] = __DIR__ . '/acf-json';
+  $paths[] = plugin_dir_path( __DIR__ ) . 'acf-json';
 
   return $paths;    
 }
