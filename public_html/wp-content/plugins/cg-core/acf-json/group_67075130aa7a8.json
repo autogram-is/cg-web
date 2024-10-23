@@ -1,7 +1,38 @@
 {
     "key": "group_67075130aa7a8",
     "title": "Region properties",
-    "fields": [],
+    "fields": [
+        {
+            "key": "field_671181f9cb890",
+            "label": "Contacts",
+            "name": "contacts",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "post_type": [
+                "cg_person"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 1,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "bidirectional": 1,
+            "bidirectional_target": [
+                "field_671178bc96294"
+            ],
+            "ui": 1
+        }
+    ],
     "location": [
         [
             {
@@ -20,5 +51,5 @@
     "active": true,
     "description": "Custom properties specific to Region pages",
     "show_in_rest": 0,
-    "modified": 1729106210
+    "modified": 1729200688
 }
