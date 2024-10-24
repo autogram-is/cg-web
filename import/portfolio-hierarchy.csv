@@ -1,0 +1,100 @@
+id,type,title,slug,locale,region
+,cg_region,US,us,,
+,cg_region,Northeast,us-northeast,,US
+,cg_region,Southeast,us-southeast,,US
+,cg_region,North Central,us-northcentral,,US
+,cg_region,South Central,us-southcentral,,US
+,cg_region,Northwest,us-northwest,,US
+,cg_region,Southwest,us-southwest,,US
+,cg_region,Europe,europe,,
+,cg_region,UK,uk,,Europe
+,cg_office,"Belfast, UK/NI",belfast,,UK
+,cg_office,"Cardiff, UK",cardiff,,UK
+,cg_office,"Edinburgh, UK",edinburgh,,UK
+,cg_office,"Exeter, UK",exeter,,UK
+,cg_office,"London, UK",london,,UK
+,cg_office,"Manchester, UK",manchester,,UK
+,cg_office,"Stoke-On-Trent, UK",stoke-on-trent,,UK
+,cg_service,Building Consultancy,building-consultancy,eu,
+,cg_service,Capital Allowances,capital-allowances,eu,
+,cg_service,Cost & Commercial Management,cost-commercial-management,both,
+,cg_service,Dispute Resolution & Avoidance,dispute-resolution-avoidance,us,
+,cg_service,Energy & Sustainability Solutions,energy-sustainability,both,
+,cg_service,Planning & Scheduling,planning-scheduling,us,
+,cg_service,Program & Project Management,program-project-management,us,
+,cg_service,Programme & Project Management,programme-project-management,eu,
+,cg_service,Project Controls,project-controls,both,
+,cg_service,Project Monitoring,project-monitoring,both,
+,cg_service,Scheduling,scheduling,eu,
+,cg_service,Technical Due Diligence,technical-due-dilligence,eu,
+,cg_sector,Arts & Culture,arts-culture,us,
+,cg_sector,Aviation & Transportation,aviation-transportation,us,
+,cg_sector,Civic,civic,us,
+,cg_sector,Data Centers,data-centers,both,
+,cg_sector,Education,education,eu,
+,cg_sector,Healthcare,healthcare,us,
+,cg_sector,Higher Education,higher-ed,us,
+,cg_sector,Hospitality,hospitality,eu,
+,cg_sector,Hospitality & Gaming,hospitality-gaming,us,
+,cg_sector,Industrial & Logistics,industrial-logistics,eu,
+,cg_sector,Infrastructure,infrastructure,both,
+,cg_sector,K-12 Education,k12-education,us,
+,cg_sector,Luxury Residential,luxury-residential,us,
+,cg_sector,Public,public,eu,
+,cg_sector,Religious Facilities,religious-facilities,us,
+,cg_sector,Research & Manufacturing,research-manufacturing,both,
+,cg_sector,Residential,residential,eu,
+,cg_sector,Retail,retail,both,
+,cg_sector,Sports & Venues,sports-venues,both,
+,cg_sector,Themed Entertainment,themed-entertainment,us,
+,cg_sector,Workplace,workplace,both,
+,cg_office,"Boston, MA",boston,,Northeast
+,cg_office,"Cranford, NJ",cranford,,Northeast
+,cg_office,"New York, NY",new-york,,Northeast
+,cg_office,"Westport, CT",westport,,Northeast
+,cg_office,"Atlanta, GA",atlanta,,Southeast
+,cg_office,"Boca Raton, FL",boca-raton,,Southeast
+,cg_office,"Charleston, SC",charleson,,Southeast
+,cg_office,"Columbia, SC",columbia,,Southeast
+,cg_office,"Miami, FL",miami,,Southeast
+,cg_office,"Orlando, FL",orlando,,Southeast
+,cg_office,"Raleigh, NC",raleigh,,Southeast
+,cg_office,"Washington, DC",washington,,Southeast
+,cg_office,"West Palm Beach, FL",west-palm-beach,,Southeast
+,cg_office,"Chicago, IL",chicago,,North Central
+,cg_office,"Denver, CO",denver,,North Central
+,cg_office,"Vail, CO",vail,,North Central
+,cg_office,"Fort Worth, TX",fort-worth,,South Central
+,cg_office,"Houston, TX",houston,,South Central
+,cg_office,"Nashville, TN",nashville,,South Central
+,cg_office,"Richardson, TX",richardson,,South Central
+,cg_office,"Waco, TX",waco,,South Central
+,cg_office,"Bend, OR",bend,,Northwest
+,cg_office,"Concord, CA",concord,,Southwest
+,cg_office,"Mountain View, CA",mountain-view,,Southwest
+,cg_office,"Oakland, CA",oakland,,Southwest
+,cg_office,"Portland, OR",portland,,Southwest
+,cg_office,"Reno, NV",reno,,Southwest
+,cg_office,"Sacremento, CA",sacremento,,Southwest
+,cg_office,"San Francisco, CA",san-francisco,,Southwest
+,cg_office,"Santa Rosa, CA",santa-rosa,,Southwest
+,cg_office,"Seattle, WA",seattle,,Southwest
+,cg_office,"Sillicon Valley, CA",silicon-valley,,Southwest
+,cg_office,"Vancouver, BC",vancouver,,Southwest
+,cg_office,"Aliso Viejo, CA",aliso-viejo,,Southwest
+,cg_office,"Honolulu, HI",honolulu,,Southwest
+,cg_office,"Las Vegas, NV",las-vegas,,Southwest
+,cg_office,"Los Angeles, CA",los-angeles,,Southwest
+,cg_office,"Murrieta, CA",murrieta,,Southwest
+,cg_office,"San Diego, CA",san-diego,,Southwest
+,cg_office,"Scottsdale, AZ",scottsdale,,Southwest
+,cg_office,"Paris, France",paris,,Europe
+,cg_office,"Munich, Germany",munich,,Europe
+,cg_office,"Berlin, Germany",berlin,,Europe
+,cg_office,"Dusseldorf, Germany",dusseldorf,,Europe
+,cg_office,"Cork, Ireland",cork,,Europe
+,cg_office,"Dublin, Ireland",dublin,,Europe
+,cg_office,"Milan, Italy",milan,,Europe
+,cg_office,"Oslo, Norway",oslo,,Europe
+,cg_office,"Zurich, Switzerland",zurich,,Europe
+,cg_office,"Hilversum, The Netherlands",hilversum,,Europe
