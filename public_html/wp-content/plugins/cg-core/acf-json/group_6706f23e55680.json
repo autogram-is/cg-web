@@ -67,6 +67,9 @@
                 "class": "",
                 "id": ""
             },
+            "admin_column_enabled": 1,
+            "admin_column_position": "",
+            "admin_column_width": "",
             "default_value": "",
             "allow_in_bindings": 0,
             "placeholder": "",
@@ -175,5 +178,5 @@
     "active": true,
     "description": "Custom properties specific to Office pages",
     "show_in_rest": 0,
-    "modified": 1729663677
+    "modified": 1729795296
 }
