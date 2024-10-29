@@ -21,6 +21,9 @@ function cgih_preprocess_post_raw($post) {
   $post_type = isset($post['post_type']) ? $post['post_type'] : 'post';
   $post['post_type'] = _cgih_map_post_type($post_type);
 
+  // First we convert the fusion bracket-markup into XML-parsable tags
+  $post = _cgih_clean_fusion_markup($post);
+
   $func = 'cgih_preprocess_raw_' . $post['post_type'];
   if (function_exists($func)) {
     $post = $func($post);
@@ -34,7 +37,11 @@ add_filter('wp_import_post_data_raw', 'cgih_preprocess_post_raw', 10, 2);
 function _cgih_map_post_type($type) {
   $map = array(
     'avada_portfolio' => 'cg_project',
-    'tribe_events' => 'cg_event'
+    'tribe_events' => 'cg_event',
+    'tribe_venue' => 'SKIP',
+    'tribe_organizer' => 'SKIP',
+    'slide' => 'SKIP',
+    'fusion _element' => 'SKIP',
   );
 
   foreach ($map as $old => $new) {

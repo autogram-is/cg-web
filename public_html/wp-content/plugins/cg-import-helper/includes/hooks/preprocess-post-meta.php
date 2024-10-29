@@ -18,7 +18,7 @@
  * @param mixed $post_id Post ID, if one has been assigned.
  * @param mixed $post Raw post object before insertion.
  */
-function cgih_preprocess_post_meta($postmeta, $post_id, $post) {
+function cgih_preprocess_post_meta($postmeta, $post_id, $post = null) {
   /** For example…
   foreach($postmeta as $i => $meta) {
 		if($meta['key'] == 'some_key') {

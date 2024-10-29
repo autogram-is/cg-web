@@ -1,10 +1,4 @@
 <?php
-/**
- * Plugin Name: CG Import Helper
- * Description: Cleans and tidies incoming imports 
- * Version: 1.0
- * Author: Autogram
- */
 
  if ( !defined('WP_LOAD_IMPORTERS') ) {
 	return;
@@ -80,6 +74,7 @@ if ( class_exists( 'WP_Importer' ) ) {
 					'post_type'     => $row['type'],
 					'post_title'    => sanitize_text_field($row['title']),
 					'post_name'     => sanitize_text_field($row['slug']),
+					'post_parent'   => $row['parent'], // If this is a title, we search for parent ID
 					'region'        => $row['region'], // This becomes a post_meta or the post_parent
 					'post_status'   => 'publish',
 					'post_author'   => get_current_user_id(),
@@ -121,15 +116,12 @@ if ( class_exists( 'WP_Importer' ) ) {
 	
 				extract($post);
 
-				// We assume regions are created first; if not, parents won't
-				// be assigned correctly.
 				if ($region) {
-					$region_id = post_exists($region, '', '', 'cg_region');
-					if ($post['post_type'] === 'cg_region') {
-						$post['post_parent'] = $region_id;
-					} else {
-						$post['meta_input']['region'] = $region_id;
-					}
+					$post['meta_input']['region'] = post_exists($region, '', '', 'cg_region');
+				}
+
+				if ($parent) {
+					$post['post_parent'] = post_exists($parent, '', '', $post_type);
 				}
 
 				if ($post_id = post_exists($post_title, '', '', $post_type)) {
