@@ -1,4 +1,17 @@
 id,type,title,slug,locale,region,parent
+,page,About Us,about-us,both,,
+,page,Affiliates,affiliates,both,,About Us
+,page,Clients,clients,both,,About Us
+,page,"Diversity, Equity, and Inclusion",diversity-equity-inclusion,both,,About Us
+,page,Social Responsibility,social-responsibility,both,,About Us
+,page,International Project Management and Cost Consulting Experts,team,both,,About Us
+,page,Our History,history,both,,About Us
+,page,Careers,careers,both,,
+,page,Benefits and Recognition,benefits,both,,Careers
+,page,Hiring Process,hiring-process,both,,Careers
+,page,Life at Cumming,life-at-cumming,both,,Careers
+,page,Internship Program,internship,both,,Careers
+,page,Privacy Policy,privacy-policy,both,,
 ,cg_region,US,us,,,
 ,cg_region,Northeast,us-northeast,,,US
 ,cg_region,Southeast,us-southeast,,,US
