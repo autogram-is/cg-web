@@ -8,7 +8,7 @@
  */
 
 if (!defined('ABSPATH')) {
-    exit;
+  exit;
 }
 
 /**
@@ -36,12 +36,12 @@ add_filter('wp_import_post_data_raw', 'cgih_preprocess_post_raw', 10, 2);
 
 function _cgih_map_post_type($type) {
   $map = array(
-    'avada_portfolio' => 'cg_project',
-    'tribe_events' => 'cg_event',
-    'tribe_venue' => 'SKIP',
-    'tribe_organizer' => 'SKIP',
-    'slide' => 'SKIP',
-    'fusion _element' => 'SKIP',
+    'avada_portfolio' => 'cg_project', // Convert to new project format
+    'slide' => 'SKIP',                 // Convert to project gallery images
+    'tribe_events' => 'cg_event',      // Merge these into the events when they appear
+    'tribe_venue' => 'SKIP',           // Merge these into the events when they appear
+    'tribe_organizer' => 'SKIP',       // Merge these into the events when they appear
+    'fusion _element' => 'SKIP',       // Edge cases; dragons.
   );
 
   foreach ($map as $old => $new) {

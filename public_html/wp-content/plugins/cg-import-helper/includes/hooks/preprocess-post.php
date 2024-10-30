@@ -18,7 +18,9 @@
  * @param string $post The resulting post, not yet saved.
  */
 function cgih_preprocess_post($postdata, $post) {
-  // Most of what we care about will be done in the raw stage.
+  // Most of what we care about will be done in the raw stage;
+  // This gives us one more chance to modify things before
+  // saving, though.
   $func = 'cgih_preprocess_' . $postdata['post_type'];
   if (function_exists($func)) {
     $postdata = $func($postdata, $post);
