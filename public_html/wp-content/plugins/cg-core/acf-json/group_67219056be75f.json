@@ -27,9 +27,9 @@
         {
             "key": "field_672191b278011",
             "label": "Venue Link",
-            "name": "venue_link",
+            "name": "venue_url",
             "aria-label": "",
-            "type": "link",
+            "type": "url",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -39,8 +39,9 @@
                 "id": ""
             },
             "admin_column_enabled": 0,
-            "return_format": "array",
-            "allow_in_bindings": 0
+            "default_value": "",
+            "allow_in_bindings": 1,
+            "placeholder": ""
         },
         {
             "key": "field_6721905768c21",
@@ -171,5 +172,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1730253817
+    "modified": 1730254812
 }

@@ -49,7 +49,7 @@
             "label": "Event Link",
             "name": "link",
             "aria-label": "",
-            "type": "link",
+            "type": "url",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -59,8 +59,30 @@
                 "id": ""
             },
             "admin_column_enabled": 0,
-            "return_format": "array",
-            "allow_in_bindings": 1
+            "default_value": "",
+            "allow_in_bindings": 1,
+            "placeholder": ""
+        },
+        {
+            "key": "field_67219d2d9f42e",
+            "label": "Meeting Email",
+            "name": "meeting_email",
+            "aria-label": "",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -81,5 +103,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1730253740
+    "modified": 1730256246
 }
