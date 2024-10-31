@@ -41,7 +41,7 @@ function _cgih_map_post_type($type) {
     'tribe_events' => 'cg_event',      // Merge these into the events when they appear
     'tribe_venue' => 'SKIP',           // Merge these into the events when they appear
     'tribe_organizer' => 'SKIP',       // Merge these into the events when they appear
-    'fusion _element' => 'SKIP',       // Edge cases; dragons.
+    'fusion_element' => 'SKIP',       // Edge cases; dragons.
   );
 
   foreach ($map as $old => $new) {

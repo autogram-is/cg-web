@@ -49,8 +49,6 @@ function cgih_preprocess_raw_cg_project($postdata) {
   $postdata['terms'] = [];
   $postdata['post_content'] = $new_body;
 
-  var_dump($postdata);
-
   return $postdata;
 };
 

@@ -120,8 +120,8 @@ if ( class_exists( 'WP_Importer' ) ) {
 					$post['meta_input']['region'] = post_exists($region, '', '', 'cg_region');
 				}
 
-				if ($parent) {
-					$post['post_parent'] = post_exists($parent, '', '', $post_type);
+				if ($post_parent) {
+					$post['post_parent'] = post_exists($post_parent, '', '', $post_type);
 				}
 
 				if ($post_id = post_exists($post_title, '', '', $post_type)) {
