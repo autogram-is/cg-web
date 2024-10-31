@@ -68,10 +68,11 @@
         "custom-fields"
     ],
     "taxonomies": "",
-    "has_archive": false,
-    "has_archive_slug": "",
+    "has_archive": true,
+    "has_archive_slug": "events",
     "rewrite": {
-        "permalink_rewrite": "post_type_key",
+        "permalink_rewrite": "custom_permalink",
+        "slug": "events",
         "with_front": "1",
         "feeds": "0",
         "pages": "1"
@@ -82,5 +83,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1728508959
+    "modified": 1730395236
 }

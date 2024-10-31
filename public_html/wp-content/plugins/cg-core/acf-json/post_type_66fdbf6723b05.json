@@ -70,10 +70,11 @@
         "custom-fields"
     ],
     "taxonomies": "",
-    "has_archive": false,
-    "has_archive_slug": "",
+    "has_archive": true,
+    "has_archive_slug": "services",
     "rewrite": {
-        "permalink_rewrite": "post_type_key",
+        "permalink_rewrite": "custom_permalink",
+        "slug": "services",
         "with_front": "1",
         "feeds": "0",
         "pages": "1"
@@ -84,5 +85,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1729787273
+    "modified": 1730395177
 }
