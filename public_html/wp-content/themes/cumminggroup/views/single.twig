@@ -1,19 +1,25 @@
 {% extends "base.twig" %}
 
 {% block content %}
+	<div class="hero">
+		<div class="hero-img">
+			<img src="{{ post.thumbnail.src|resize(2400, 800) }}">
+		</div>
+		<div class="hero-header sidebar">
+			<div class="hed-banner wrapper">
+				<h1 class="type-hed bg-regal-purple">{{ post.title }}</h1>
+			</div>
+		</div>
+	</div>
 	<div class="content-wrapper">
 		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-			<img src="{{ post.thumbnail.src|resize(1200, 300) }}">
 			<section class="article-content">
-				<div class="apart">
-					<h1 class="article-h1">{{ post.title }}</h1>
-				</div>
 				{#
 				<p class="blog-author">
 					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> <time datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time>
 				</p>
 				#}
-				<div class="article-body frame" data-component="Prose">
+				<div class="region wrapper prose">
 					{{post.content}}
 				</div>
 			</section>
