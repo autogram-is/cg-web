@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "docker compose up -d",
-    "stop": "docker compose down"
+    "wordpress:start": "docker compose up -d",
+    "wordpress:stop": "docker compose down"
   }
 }
