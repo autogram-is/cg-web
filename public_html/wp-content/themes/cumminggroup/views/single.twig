@@ -2,9 +2,7 @@
 
 {% block content %}
 	<div class="hero">
-		<div class="hero-img">
-			<img src="{{ post.thumbnail.src|resize(2400, 850) }}" height="850" width="2400">
-		</div>
+		<div class="hero-img">{% if post.thumbnail %}<img src="{{ post.thumbnail.src|resize(2400, 850) }}" height="850" width="2400">{% endif %}</div>
 		<div class="hero-header sidebar">
 			<div class="hed-banner wrapper">
 				<h1 class="hed type-hed">{{ post.title }}</h1>
