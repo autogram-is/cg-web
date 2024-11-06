@@ -1,0 +1,40 @@
+{#
+  Title: Pull Quote
+  Description: Pull quote with attribution
+  Category: cumminggroup
+  Icon: editor-quote
+  Mode: preview
+  SupportsMode: true
+  Align: center
+  PostTypes: 
+  EnqueueStyle: 
+  SupportsAlign: none left right
+  SupportsMultiple: true
+  SupportsInnerBlocks: false
+  SupportsAlignContent: false
+  SupportsAlignText: false
+  Example: { "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit…", "author": "John Doe" }
+#}
+
+<figure class="{{ classes }} quote flow {{ utilities }} {{ type }}" data-{{ block.id }}>
+  <blockquote class="body type-display">
+    {{ fields.quote }}
+  </blockquote>
+  <figcaption class="sidebar">
+    {% if fields.img %}
+    <div class="thumbnail">
+      <img src="{{ fields.img.src }}">
+    </div>
+    {% endif %}
+    {% if fields.author %}
+    <div>
+      <div class="attribution">
+        <p>{{ fields.author }}</p>
+        {% if fields.affiliation %}
+        <p>{{ fields.affiliation }}</p>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+  </figcaption>
+</figure>

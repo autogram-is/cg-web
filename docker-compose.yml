@@ -6,6 +6,7 @@ services:
     ports:
       - "80:80"
     environment:
+      WORDPRESS_DEBUG: true
       WORDPRESS_DB_HOST: wp_db:3306
       WORDPRESS_DB_USER: wordpressuser
       WORDPRESS_DB_PASSWORD: wordpresspassword

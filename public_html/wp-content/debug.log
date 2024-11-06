@@ -1,0 +1,717 @@
+[06-Nov-2024 18:18:08 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 4096 bytes) in /var/www/html/wp-content/plugins/cg-import-helper/includes/hooks/preprocess-post.php on line 24
+[06-Nov-2024 18:19:47 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20480 bytes) in /var/www/html/wp-content/plugins/query-monitor/classes/Backtrace.php on line 469
+[06-Nov-2024 18:21:46 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20480 bytes) in /var/www/html/wp-content/plugins/query-monitor/classes/Backtrace.php on line 536
+[06-Nov-2024 18:21:46 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20480 bytes) in /var/www/html/wp-includes/functions.php on line 4909
+[06-Nov-2024 18:23:42 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20480 bytes) in /var/www/html/wp-content/plugins/query-monitor/classes/Backtrace.php on line 536
+[06-Nov-2024 19:36:42 UTC] PHP Warning:  require_once(/var/www/html/wp-content/plugins/cg-import-helper/hooks/editor.php): Failed to open stream: No such file or directory in /var/www/html/wp-content/plugins/cg-core/hooks/init.php on line 15
+[06-Nov-2024 19:36:42 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/wp-content/plugins/cg-import-helper/hooks/editor.php' (include_path='.:/usr/local/lib/php') in /var/www/html/wp-content/plugins/cg-core/hooks/init.php:15
+Stack trace:
+#0 /var/www/html/wp-content/plugins/cg-core/cg-core.php(17): require_once()
+#1 /var/www/html/wp-settings.php(522): include_once('/var/www/html/w...')
+#2 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#3 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#4 /var/www/html/wp-admin/admin.php(34): require_once('/var/www/html/w...')
+#5 /var/www/html/wp-admin/index.php(10): require_once('/var/www/html/w...')
+#6 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/init.php on line 15
+[06-Nov-2024 19:36:49 UTC] PHP Warning:  require_once(/var/www/html/wp-content/plugins/cg-import-helper/hooks/editor.php): Failed to open stream: No such file or directory in /var/www/html/wp-content/plugins/cg-core/hooks/init.php on line 15
+[06-Nov-2024 19:36:49 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/wp-content/plugins/cg-import-helper/hooks/editor.php' (include_path='.:/usr/local/lib/php') in /var/www/html/wp-content/plugins/cg-core/hooks/init.php:15
+Stack trace:
+#0 /var/www/html/wp-content/plugins/cg-core/cg-core.php(17): require_once()
+#1 /var/www/html/wp-settings.php(522): include_once('/var/www/html/w...')
+#2 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#3 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#4 /var/www/html/wp-admin/admin.php(34): require_once('/var/www/html/w...')
+#5 /var/www/html/wp-admin/index.php(10): require_once('/var/www/html/w...')
+#6 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/init.php on line 15
+[06-Nov-2024 19:42:48 UTC] PHP Notice:  Function WP_Block_Patterns_Registry::unregister was called <strong>incorrectly</strong>. Pattern "core/social-links-shared-background-color" not found. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /var/www/html/wp-includes/functions.php on line 6085
+[06-Nov-2024 19:45:06 UTC] PHP Notice:  Function WP_Block_Patterns_Registry::unregister was called <strong>incorrectly</strong>. Pattern "core/social-links-shared-background-color" not found. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /var/www/html/wp-includes/functions.php on line 6085
+[06-Nov-2024 19:47:04 UTC] PHP Notice:  Function WP_Block_Patterns_Registry::unregister was called <strong>incorrectly</strong>. Pattern "core/social-links-shared-background-color" not found. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /var/www/html/wp-includes/functions.php on line 6085
+[06-Nov-2024 19:54:37 UTC] PHP Notice:  Function WP_Block_Patterns_Registry::unregister was called <strong>incorrectly</strong>. Pattern "core/social-links-shared-background-color" not found. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /var/www/html/wp-includes/functions.php on line 6085
+[06-Nov-2024 20:02:03 UTC] PHP Fatal error:  Uncaught Twig\Error\SyntaxError: Unexpected token "punctuation" of value "|" ("name" expected). in /var/www/html/wp-content/themes/cumminggroup/views/blocks/pullquote.twig:19
+Stack trace:
+#0 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(576): Twig\TokenStream->expect(5)
+#1 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(566): Twig\ExpressionParser->parseFilterExpressionRaw(Object(Twig\Node\Expression\NameExpression))
+#2 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(441): Twig\ExpressionParser->parseFilterExpression(Object(Twig\Node\Expression\NameExpression))
+#3 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(289): Twig\ExpressionParser->parsePostfixExpression(Object(Twig\Node\Expression\NameExpression))
+#4 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(175): Twig\ExpressionParser->parsePrimaryExpression()
+#5 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(70): Twig\ExpressionParser->getPrimary()
+#6 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/TokenParser/IfTokenParser.php(38): Twig\ExpressionParser->parseExpression()
+#7 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Parser.php(174): Twig\TokenParser\IfTokenParser->parse(Object(Twig\Token))
+#8 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Parser.php(83): Twig\Parser->subparse(NULL, false)
+#9 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Environment.php(523): Twig\Parser->parse(Object(Twig\TokenStream))
+#10 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Environment.php(551): Twig\Environment->parse(Object(Twig\TokenStream))
+#11 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Environment.php(381): Twig\Environment->compileSource(Object(Twig\Source))
+#12 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Environment.php(343): Twig\Environment->loadTemplate('__TwigTemplate_...', 'views/blocks/pu...')
+#13 /var/www/html/wp-content/themes/cumminggroup/vendor/timber/timber/src/Loader.php(177): Twig\Environment->load('views/blocks/pu...')
+#14 /var/www/html/wp-content/themes/cumminggroup/vendor/timber/timber/src/Timber.php(1442): Timber\Loader->render('views/blocks/pu...', Array, false, 'default')
+#15 /var/www/html/wp-content/themes/cumminggroup/vendor/timber/timber/src/Timber.php(1577): Timber\Timber::compile(Array, Array, false, 'default', true)
+#16 /var/www/html/wp-content/themes/cumminggroup/vendor/palmiak/timber-acf-wp-blocks/timber-acf-wp-blocks.php(275): Timber\Timber::render(Array, Array)
+#17 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(708): Timber_Acf_Wp_Blocks::timber_blocks_callback(Array, '', false, 68342, Object(WP_Block), Array)
+#18 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', false, 68342, Object(WP_Block), Array)
+#19 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', false, 68342, Object(WP_Block))
+#20 /var/www/html/wp-includes/class-wp-block.php(519): acf_render_block_callback(Array, '', Object(WP_Block))
+#21 /var/www/html/wp-includes/blocks.php(2061): WP_Block->render()
+#22 /var/www/html/wp-includes/blocks.php(2113): render_block(Array)
+#23 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:acf/pul...')
+#24 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:acf/pul...', Array)
+#25 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php(632): apply_filters('the_content', '<!-- wp:acf/pul...')
+#26 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(451): WP_REST_Revisions_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#27 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(253): WP_REST_Autosaves_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#28 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Autosaves_Controller->create_item(Object(WP_REST_Request))
+#29 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/posts/(?...', Array, NULL)
+#30 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(439): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#31 /var/www/html/wp-includes/rest-api.php(420): WP_REST_Server->serve_request('/wp/v2/posts/68...')
+#32 /var/www/html/wp-includes/class-wp-hook.php(324): rest_api_loaded(Object(WP))
+#33 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#34 /var/www/html/wp-includes/plugin.php(565): WP_Hook->do_action(Array)
+#35 /var/www/html/wp-includes/class-wp.php(418): do_action_ref_array('parse_request', Array)
+#36 /var/www/html/wp-includes/class-wp.php(813): WP->parse_request('')
+#37 /var/www/html/wp-includes/functions.php(1336): WP->main('')
+#38 /var/www/html/wp-blog-header.php(16): wp()
+#39 /var/www/html/index.php(17): require('/var/www/html/w...')
+#40 {main}
+  thrown in /var/www/html/wp-content/themes/cumminggroup/views/blocks/pullquote.twig on line 19
+[06-Nov-2024 20:03:22 UTC] PHP Fatal error:  Uncaught Twig\Error\SyntaxError: Unexpected token "punctuation" of value "|" ("name" expected). in /var/www/html/wp-content/themes/cumminggroup/views/blocks/pullquote.twig:19
+Stack trace:
+#0 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(576): Twig\TokenStream->expect(5)
+#1 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(566): Twig\ExpressionParser->parseFilterExpressionRaw(Object(Twig\Node\Expression\NameExpression))
+#2 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(441): Twig\ExpressionParser->parseFilterExpression(Object(Twig\Node\Expression\NameExpression))
+#3 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(289): Twig\ExpressionParser->parsePostfixExpression(Object(Twig\Node\Expression\NameExpression))
+#4 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(175): Twig\ExpressionParser->parsePrimaryExpression()
+#5 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(70): Twig\ExpressionParser->getPrimary()
+#6 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/TokenParser/IfTokenParser.php(38): Twig\ExpressionParser->parseExpression()
+#7 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Parser.php(174): Twig\TokenParser\IfTokenParser->parse(Object(Twig\Token))
+#8 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Parser.php(83): Twig\Parser->subparse(NULL, false)
+#9 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Environment.php(523): Twig\Parser->parse(Object(Twig\TokenStream))
+#10 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Environment.php(551): Twig\Environment->parse(Object(Twig\TokenStream))
+#11 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Environment.php(381): Twig\Environment->compileSource(Object(Twig\Source))
+#12 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Environment.php(343): Twig\Environment->loadTemplate('__TwigTemplate_...', 'views/blocks/pu...')
+#13 /var/www/html/wp-content/themes/cumminggroup/vendor/timber/timber/src/Loader.php(177): Twig\Environment->load('views/blocks/pu...')
+#14 /var/www/html/wp-content/themes/cumminggroup/vendor/timber/timber/src/Timber.php(1442): Timber\Loader->render('views/blocks/pu...', Array, false, 'default')
+#15 /var/www/html/wp-content/themes/cumminggroup/vendor/timber/timber/src/Timber.php(1577): Timber\Timber::compile(Array, Array, false, 'default', true)
+#16 /var/www/html/wp-content/themes/cumminggroup/vendor/palmiak/timber-acf-wp-blocks/timber-acf-wp-blocks.php(275): Timber\Timber::render(Array, Array)
+#17 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(708): Timber_Acf_Wp_Blocks::timber_blocks_callback(Array, '', false, 68344, Object(WP_Block), Array)
+#18 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', false, 68344, Object(WP_Block), Array)
+#19 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', false, 68344, Object(WP_Block))
+#20 /var/www/html/wp-includes/class-wp-block.php(519): acf_render_block_callback(Array, '', Object(WP_Block))
+#21 /var/www/html/wp-includes/blocks.php(2061): WP_Block->render()
+#22 /var/www/html/wp-includes/blocks.php(2113): render_block(Array)
+#23 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:acf/pul...')
+#24 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:acf/pul...', Array)
+#25 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(1871): apply_filters('the_content', '<!-- wp:acf/pul...')
+#26 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(958): WP_REST_Posts_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#27 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Posts_Controller->update_item(Object(WP_REST_Request))
+#28 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/posts/(?...', Array, NULL)
+#29 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(439): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#30 /var/www/html/wp-includes/rest-api.php(420): WP_REST_Server->serve_request('/wp/v2/posts/68...')
+#31 /var/www/html/wp-includes/class-wp-hook.php(324): rest_api_loaded(Object(WP))
+#32 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#33 /var/www/html/wp-includes/plugin.php(565): WP_Hook->do_action(Array)
+#34 /var/www/html/wp-includes/class-wp.php(418): do_action_ref_array('parse_request', Array)
+#35 /var/www/html/wp-includes/class-wp.php(813): WP->parse_request('')
+#36 /var/www/html/wp-includes/functions.php(1336): WP->main('')
+#37 /var/www/html/wp-blog-header.php(16): wp()
+#38 /var/www/html/index.php(17): require('/var/www/html/w...')
+#39 {main}
+  thrown in /var/www/html/wp-content/themes/cumminggroup/views/blocks/pullquote.twig on line 19
+[06-Nov-2024 20:03:33 UTC] PHP Notice:  Function WP_Block_Patterns_Registry::unregister was called <strong>incorrectly</strong>. Pattern "core/social-links-shared-background-color" not found. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /var/www/html/wp-includes/functions.php on line 6085
+[06-Nov-2024 20:03:55 UTC] PHP Fatal error:  Uncaught Twig\Error\SyntaxError: Unexpected token "punctuation" of value "|" ("name" expected). in /var/www/html/wp-content/themes/cumminggroup/views/blocks/pullquote.twig:19
+Stack trace:
+#0 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(576): Twig\TokenStream->expect(5)
+#1 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(566): Twig\ExpressionParser->parseFilterExpressionRaw(Object(Twig\Node\Expression\NameExpression))
+#2 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(441): Twig\ExpressionParser->parseFilterExpression(Object(Twig\Node\Expression\NameExpression))
+#3 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(289): Twig\ExpressionParser->parsePostfixExpression(Object(Twig\Node\Expression\NameExpression))
+#4 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(175): Twig\ExpressionParser->parsePrimaryExpression()
+#5 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(70): Twig\ExpressionParser->getPrimary()
+#6 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/TokenParser/IfTokenParser.php(38): Twig\ExpressionParser->parseExpression()
+#7 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Parser.php(174): Twig\TokenParser\IfTokenParser->parse(Object(Twig\Token))
+#8 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Parser.php(83): Twig\Parser->subparse(NULL, false)
+#9 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Environment.php(523): Twig\Parser->parse(Object(Twig\TokenStream))
+#10 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Environment.php(551): Twig\Environment->parse(Object(Twig\TokenStream))
+#11 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Environment.php(381): Twig\Environment->compileSource(Object(Twig\Source))
+#12 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Environment.php(343): Twig\Environment->loadTemplate('__TwigTemplate_...', 'views/blocks/pu...')
+#13 /var/www/html/wp-content/themes/cumminggroup/vendor/timber/timber/src/Loader.php(177): Twig\Environment->load('views/blocks/pu...')
+#14 /var/www/html/wp-content/themes/cumminggroup/vendor/timber/timber/src/Timber.php(1442): Timber\Loader->render('views/blocks/pu...', Array, false, 'default')
+#15 /var/www/html/wp-content/themes/cumminggroup/vendor/timber/timber/src/Timber.php(1577): Timber\Timber::compile(Array, Array, false, 'default', true)
+#16 /var/www/html/wp-content/themes/cumminggroup/vendor/palmiak/timber-acf-wp-blocks/timber-acf-wp-blocks.php(275): Timber\Timber::render(Array, Array)
+#17 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(708): Timber_Acf_Wp_Blocks::timber_blocks_callback(Array, '', false, 68346, Object(WP_Block), Array)
+#18 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', false, 68346, Object(WP_Block), Array)
+#19 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', false, 68346, Object(WP_Block))
+#20 /var/www/html/wp-includes/class-wp-block.php(519): acf_render_block_callback(Array, '', Object(WP_Block))
+#21 /var/www/html/wp-includes/blocks.php(2061): WP_Block->render()
+#22 /var/www/html/wp-includes/blocks.php(2113): render_block(Array)
+#23 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:acf/pul...')
+#24 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:acf/pul...', Array)
+#25 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php(632): apply_filters('the_content', '<!-- wp:acf/pul...')
+#26 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(451): WP_REST_Revisions_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#27 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(253): WP_REST_Autosaves_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#28 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Autosaves_Controller->create_item(Object(WP_REST_Request))
+#29 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/posts/(?...', Array, NULL)
+#30 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(439): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#31 /var/www/html/wp-includes/rest-api.php(420): WP_REST_Server->serve_request('/wp/v2/posts/68...')
+#32 /var/www/html/wp-includes/class-wp-hook.php(324): rest_api_loaded(Object(WP))
+#33 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#34 /var/www/html/wp-includes/plugin.php(565): WP_Hook->do_action(Array)
+#35 /var/www/html/wp-includes/class-wp.php(418): do_action_ref_array('parse_request', Array)
+#36 /var/www/html/wp-includes/class-wp.php(813): WP->parse_request('')
+#37 /var/www/html/wp-includes/functions.php(1336): WP->main('')
+#38 /var/www/html/wp-blog-header.php(16): wp()
+#39 /var/www/html/index.php(17): require('/var/www/html/w...')
+#40 {main}
+  thrown in /var/www/html/wp-content/themes/cumminggroup/views/blocks/pullquote.twig on line 19
+[06-Nov-2024 20:04:04 UTC] PHP Fatal error:  Uncaught Twig\Error\SyntaxError: Unexpected token "punctuation" of value "|" ("name" expected). in /var/www/html/wp-content/themes/cumminggroup/views/blocks/pullquote.twig:19
+Stack trace:
+#0 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(576): Twig\TokenStream->expect(5)
+#1 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(566): Twig\ExpressionParser->parseFilterExpressionRaw(Object(Twig\Node\Expression\NameExpression))
+#2 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(441): Twig\ExpressionParser->parseFilterExpression(Object(Twig\Node\Expression\NameExpression))
+#3 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(289): Twig\ExpressionParser->parsePostfixExpression(Object(Twig\Node\Expression\NameExpression))
+#4 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(175): Twig\ExpressionParser->parsePrimaryExpression()
+#5 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(70): Twig\ExpressionParser->getPrimary()
+#6 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/TokenParser/IfTokenParser.php(38): Twig\ExpressionParser->parseExpression()
+#7 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Parser.php(174): Twig\TokenParser\IfTokenParser->parse(Object(Twig\Token))
+#8 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Parser.php(83): Twig\Parser->subparse(NULL, false)
+#9 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Environment.php(523): Twig\Parser->parse(Object(Twig\TokenStream))
+#10 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Environment.php(551): Twig\Environment->parse(Object(Twig\TokenStream))
+#11 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Environment.php(381): Twig\Environment->compileSource(Object(Twig\Source))
+#12 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Environment.php(343): Twig\Environment->loadTemplate('__TwigTemplate_...', 'views/blocks/pu...')
+#13 /var/www/html/wp-content/themes/cumminggroup/vendor/timber/timber/src/Loader.php(177): Twig\Environment->load('views/blocks/pu...')
+#14 /var/www/html/wp-content/themes/cumminggroup/vendor/timber/timber/src/Timber.php(1442): Timber\Loader->render('views/blocks/pu...', Array, false, 'default')
+#15 /var/www/html/wp-content/themes/cumminggroup/vendor/timber/timber/src/Timber.php(1577): Timber\Timber::compile(Array, Array, false, 'default', true)
+#16 /var/www/html/wp-content/themes/cumminggroup/vendor/palmiak/timber-acf-wp-blocks/timber-acf-wp-blocks.php(275): Timber\Timber::render(Array, Array)
+#17 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(708): Timber_Acf_Wp_Blocks::timber_blocks_callback(Array, '', false, 68344, Object(WP_Block), Array)
+#18 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', false, 68344, Object(WP_Block), Array)
+#19 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', false, 68344, Object(WP_Block))
+#20 /var/www/html/wp-includes/class-wp-block.php(519): acf_render_block_callback(Array, '', Object(WP_Block))
+#21 /var/www/html/wp-includes/blocks.php(2061): WP_Block->render()
+#22 /var/www/html/wp-includes/blocks.php(2113): render_block(Array)
+#23 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:acf/pul...')
+#24 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:acf/pul...', Array)
+#25 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(1871): apply_filters('the_content', '<!-- wp:acf/pul...')
+#26 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(958): WP_REST_Posts_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#27 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Posts_Controller->update_item(Object(WP_REST_Request))
+#28 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/posts/(?...', Array, NULL)
+#29 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(439): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#30 /var/www/html/wp-includes/rest-api.php(420): WP_REST_Server->serve_request('/wp/v2/posts/68...')
+#31 /var/www/html/wp-includes/class-wp-hook.php(324): rest_api_loaded(Object(WP))
+#32 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#33 /var/www/html/wp-includes/plugin.php(565): WP_Hook->do_action(Array)
+#34 /var/www/html/wp-includes/class-wp.php(418): do_action_ref_array('parse_request', Array)
+#35 /var/www/html/wp-includes/class-wp.php(813): WP->parse_request('')
+#36 /var/www/html/wp-includes/functions.php(1336): WP->main('')
+#37 /var/www/html/wp-blog-header.php(16): wp()
+#38 /var/www/html/index.php(17): require('/var/www/html/w...')
+#39 {main}
+  thrown in /var/www/html/wp-content/themes/cumminggroup/views/blocks/pullquote.twig on line 19
+[06-Nov-2024 20:04:06 UTC] PHP Notice:  Function WP_Block_Patterns_Registry::unregister was called <strong>incorrectly</strong>. Pattern "core/social-links-shared-background-color" not found. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /var/www/html/wp-includes/functions.php on line 6085
+[06-Nov-2024 20:04:15 UTC] PHP Fatal error:  Uncaught Twig\Error\SyntaxError: Unexpected token "punctuation" of value "|" ("name" expected). in /var/www/html/wp-content/themes/cumminggroup/views/blocks/pullquote.twig:19
+Stack trace:
+#0 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(576): Twig\TokenStream->expect(5)
+#1 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(566): Twig\ExpressionParser->parseFilterExpressionRaw(Object(Twig\Node\Expression\NameExpression))
+#2 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(441): Twig\ExpressionParser->parseFilterExpression(Object(Twig\Node\Expression\NameExpression))
+#3 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(289): Twig\ExpressionParser->parsePostfixExpression(Object(Twig\Node\Expression\NameExpression))
+#4 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(175): Twig\ExpressionParser->parsePrimaryExpression()
+#5 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/ExpressionParser.php(70): Twig\ExpressionParser->getPrimary()
+#6 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/TokenParser/IfTokenParser.php(38): Twig\ExpressionParser->parseExpression()
+#7 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Parser.php(174): Twig\TokenParser\IfTokenParser->parse(Object(Twig\Token))
+#8 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Parser.php(83): Twig\Parser->subparse(NULL, false)
+#9 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Environment.php(523): Twig\Parser->parse(Object(Twig\TokenStream))
+#10 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Environment.php(551): Twig\Environment->parse(Object(Twig\TokenStream))
+#11 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Environment.php(381): Twig\Environment->compileSource(Object(Twig\Source))
+#12 /var/www/html/wp-content/themes/cumminggroup/vendor/twig/twig/src/Environment.php(343): Twig\Environment->loadTemplate('__TwigTemplate_...', 'views/blocks/pu...')
+#13 /var/www/html/wp-content/themes/cumminggroup/vendor/timber/timber/src/Loader.php(177): Twig\Environment->load('views/blocks/pu...')
+#14 /var/www/html/wp-content/themes/cumminggroup/vendor/timber/timber/src/Timber.php(1442): Timber\Loader->render('views/blocks/pu...', Array, false, 'default')
+#15 /var/www/html/wp-content/themes/cumminggroup/vendor/timber/timber/src/Timber.php(1577): Timber\Timber::compile(Array, Array, false, 'default', true)
+#16 /var/www/html/wp-content/themes/cumminggroup/vendor/palmiak/timber-acf-wp-blocks/timber-acf-wp-blocks.php(275): Timber\Timber::render(Array, Array)
+#17 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(708): Timber_Acf_Wp_Blocks::timber_blocks_callback(Array, '', false, 68348, Object(WP_Block), Array)
+#18 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', false, 68348, Object(WP_Block), Array)
+#19 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', false, 68348, Object(WP_Block))
+#20 /var/www/html/wp-includes/class-wp-block.php(519): acf_render_block_callback(Array, '', Object(WP_Block))
+#21 /var/www/html/wp-includes/blocks.php(2061): WP_Block->render()
+#22 /var/www/html/wp-includes/blocks.php(2113): render_block(Array)
+#23 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:acf/pul...')
+#24 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:acf/pul...', Array)
+#25 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(1871): apply_filters('the_content', '<!-- wp:acf/pul...')
+#26 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(958): WP_REST_Posts_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#27 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Posts_Controller->update_item(Object(WP_REST_Request))
+#28 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/posts/(?...', Array, NULL)
+#29 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(439): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#30 /var/www/html/wp-includes/rest-api.php(420): WP_REST_Server->serve_request('/wp/v2/posts/68...')
+#31 /var/www/html/wp-includes/class-wp-hook.php(324): rest_api_loaded(Object(WP))
+#32 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#33 /var/www/html/wp-includes/plugin.php(565): WP_Hook->do_action(Array)
+#34 /var/www/html/wp-includes/class-wp.php(418): do_action_ref_array('parse_request', Array)
+#35 /var/www/html/wp-includes/class-wp.php(813): WP->parse_request('')
+#36 /var/www/html/wp-includes/functions.php(1336): WP->main('')
+#37 /var/www/html/wp-blog-header.php(16): wp()
+#38 /var/www/html/index.php(17): require('/var/www/html/w...')
+#39 {main}
+  thrown in /var/www/html/wp-content/themes/cumminggroup/views/blocks/pullquote.twig on line 19
+[06-Nov-2024 20:05:00 UTC] PHP Notice:  Function WP_Block_Patterns_Registry::unregister was called <strong>incorrectly</strong>. Pattern "core/social-links-shared-background-color" not found. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /var/www/html/wp-includes/functions.php on line 6085
+[06-Nov-2024 20:05:00 UTC] PHP Notice:  Function WP_Block_Patterns_Registry::unregister was called <strong>incorrectly</strong>. Pattern "core/social-links-shared-background-color" not found. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /var/www/html/wp-includes/functions.php on line 6085
+[06-Nov-2024 20:05:49 UTC] PHP Notice:  Function WP_Block_Patterns_Registry::unregister was called <strong>incorrectly</strong>. Pattern "core/social-links-shared-background-color" not found. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /var/www/html/wp-includes/functions.php on line 6085
+[06-Nov-2024 20:06:54 UTC] PHP Notice:  Function WP_Block_Patterns_Registry::unregister was called <strong>incorrectly</strong>. Pattern "core/social-links-shared-background-color" not found. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /var/www/html/wp-includes/functions.php on line 6085
+[06-Nov-2024 20:10:17 UTC] PHP Notice:  Function WP_Block_Patterns_Registry::unregister was called <strong>incorrectly</strong>. Pattern "core/social-links-shared-background-color" not found. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /var/www/html/wp-includes/functions.php on line 6085
+[06-Nov-2024 20:13:10 UTC] PHP Notice:  Function WP_Block_Patterns_Registry::unregister was called <strong>incorrectly</strong>. Pattern "core/social-links-shared-background-color" not found. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /var/www/html/wp-includes/functions.php on line 6085
+[06-Nov-2024 20:13:39 UTC] PHP Notice:  Function WP_Block_Patterns_Registry::unregister was called <strong>incorrectly</strong>. Pattern "core/social-links-shared-background-color" not found. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /var/www/html/wp-includes/functions.php on line 6085
+[06-Nov-2024 20:15:35 UTC] PHP Notice:  Function WP_Block_Patterns_Registry::unregister was called <strong>incorrectly</strong>. Pattern "core/social-links-shared-background-color" not found. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /var/www/html/wp-includes/functions.php on line 6085
+[06-Nov-2024 20:19:50 UTC] PHP Notice:  Function WP_Block_Patterns_Registry::unregister was called <strong>incorrectly</strong>. Pattern "core/social-links-shared-background-color" not found. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /var/www/html/wp-includes/functions.php on line 6085
+[06-Nov-2024 20:20:12 UTC] PHP Notice:  Function WP_Block_Patterns_Registry::unregister was called <strong>incorrectly</strong>. Pattern "core/social-links-shared-background-color" not found. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /var/www/html/wp-includes/functions.php on line 6085
+[06-Nov-2024 20:24:06 UTC] PHP Notice:  Function WP_Block_Patterns_Registry::unregister was called <strong>incorrectly</strong>. Pattern "core/social-links-shared-background-color" not found. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /var/www/html/wp-includes/functions.php on line 6085
+[06-Nov-2024 20:43:02 UTC] PHP Notice:  Function WP_Block_Patterns_Registry::unregister was called <strong>incorrectly</strong>. Pattern "core/social-links-shared-background-color" not found. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /var/www/html/wp-includes/functions.php on line 6085
+[06-Nov-2024 20:57:54 UTC] PHP Notice:  Function WP_Block_Patterns_Registry::unregister was called <strong>incorrectly</strong>. Pattern "core/social-links-shared-background-color" not found. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /var/www/html/wp-includes/functions.php on line 6085
+[06-Nov-2024 21:14:30 UTC] PHP Notice:  Function WP_Block_Patterns_Registry::unregister was called <strong>incorrectly</strong>. Pattern "core/social-links-shared-background-color" not found. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /var/www/html/wp-includes/functions.php on line 6085
+[06-Nov-2024 21:47:02 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:64
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#11 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 64
+[06-Nov-2024 21:47:09 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:64
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-blog-header.php(13): require_once('/var/www/html/w...')
+#11 /var/www/html/index.php(17): require('/var/www/html/w...')
+#12 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 64
+[06-Nov-2024 21:47:10 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:64
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-blog-header.php(13): require_once('/var/www/html/w...')
+#11 /var/www/html/index.php(17): require('/var/www/html/w...')
+#12 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 64
+[06-Nov-2024 21:47:25 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:63
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#11 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 63
+[06-Nov-2024 21:47:26 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:63
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#11 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 63
+[06-Nov-2024 21:47:40 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:63
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#11 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 63
+[06-Nov-2024 21:48:02 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:63
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#11 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 63
+[06-Nov-2024 21:48:26 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:63
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#11 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 63
+[06-Nov-2024 21:49:40 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:63
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#11 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 63
+[06-Nov-2024 21:50:03 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:63
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#11 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 63
+[06-Nov-2024 21:50:26 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:63
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#11 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 63
+[06-Nov-2024 21:51:41 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:63
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#11 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 63
+[06-Nov-2024 21:52:03 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:63
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#11 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 63
+[06-Nov-2024 21:52:26 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:63
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#11 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 63
+[06-Nov-2024 21:53:41 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:63
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#11 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 63
+[06-Nov-2024 21:54:03 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:63
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#11 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 63
+[06-Nov-2024 21:54:26 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:63
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#11 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 63
+[06-Nov-2024 21:55:56 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:63
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#11 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 63
+[06-Nov-2024 21:55:57 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:63
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin.php(34): require_once('/var/www/html/w...')
+#11 /var/www/html/wp-admin/post.php(12): require_once('/var/www/html/w...')
+#12 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 63
+[06-Nov-2024 21:57:53 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:60
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin.php(34): require_once('/var/www/html/w...')
+#11 /var/www/html/wp-admin/post.php(12): require_once('/var/www/html/w...')
+#12 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 60
+[06-Nov-2024 21:57:53 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:60
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#11 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 60
+[06-Nov-2024 22:15:20 UTC] PHP Deprecated:  Implicit conversion from float INF to int loses precision in /var/www/html/wp-includes/class-wp-hook.php on line 85
+[06-Nov-2024 22:15:20 UTC] PHP Deprecated:  Implicit conversion from float INF to int loses precision in /var/www/html/wp-includes/class-wp-hook.php on line 87
+[06-Nov-2024 22:15:20 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:60
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#11 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 60
+[06-Nov-2024 22:16:42 UTC] PHP Deprecated:  Implicit conversion from float INF to int loses precision in /var/www/html/wp-includes/class-wp-hook.php on line 85
+[06-Nov-2024 22:16:42 UTC] PHP Deprecated:  Implicit conversion from float INF to int loses precision in /var/www/html/wp-includes/class-wp-hook.php on line 87
+[06-Nov-2024 22:16:42 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:60
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#11 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 60
+[06-Nov-2024 22:16:55 UTC] PHP Deprecated:  Implicit conversion from float INF to int loses precision in /var/www/html/wp-includes/class-wp-hook.php on line 85
+[06-Nov-2024 22:16:55 UTC] PHP Deprecated:  Implicit conversion from float INF to int loses precision in /var/www/html/wp-includes/class-wp-hook.php on line 87
+[06-Nov-2024 22:16:55 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:60
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#11 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 60
+[06-Nov-2024 22:16:55 UTC] PHP Deprecated:  Implicit conversion from float INF to int loses precision in /var/www/html/wp-includes/class-wp-hook.php on line 85
+[06-Nov-2024 22:16:55 UTC] PHP Deprecated:  Implicit conversion from float INF to int loses precision in /var/www/html/wp-includes/class-wp-hook.php on line 87
+[06-Nov-2024 22:16:55 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:60
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-blog-header.php(13): require_once('/var/www/html/w...')
+#11 /var/www/html/index.php(17): require('/var/www/html/w...')
+#12 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 60
+[06-Nov-2024 22:17:41 UTC] PHP Parse error:  syntax error, unexpected token "}" in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 70
+[06-Nov-2024 22:19:42 UTC] PHP Parse error:  syntax error, unexpected token "}" in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 70
+[06-Nov-2024 22:21:42 UTC] PHP Deprecated:  Implicit conversion from float INF to int loses precision in /var/www/html/wp-includes/class-wp-hook.php on line 85
+[06-Nov-2024 22:21:42 UTC] PHP Deprecated:  Implicit conversion from float INF to int loses precision in /var/www/html/wp-includes/class-wp-hook.php on line 87
+[06-Nov-2024 22:21:42 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:60
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#11 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 60
+[06-Nov-2024 22:22:12 UTC] PHP Deprecated:  Implicit conversion from float INF to int loses precision in /var/www/html/wp-includes/class-wp-hook.php on line 85
+[06-Nov-2024 22:22:12 UTC] PHP Deprecated:  Implicit conversion from float INF to int loses precision in /var/www/html/wp-includes/class-wp-hook.php on line 85
+[06-Nov-2024 22:22:12 UTC] PHP Deprecated:  Implicit conversion from float INF to int loses precision in /var/www/html/wp-includes/class-wp-hook.php on line 87
+[06-Nov-2024 22:22:12 UTC] PHP Deprecated:  Implicit conversion from float INF to int loses precision in /var/www/html/wp-includes/class-wp-hook.php on line 87
+[06-Nov-2024 22:22:12 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:60
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin.php(34): require_once('/var/www/html/w...')
+#11 /var/www/html/wp-admin/edit.php(10): require_once('/var/www/html/w...')
+#12 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 60
+[06-Nov-2024 22:22:12 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/html/wp-includes/class-wp-hook.php on line 326 and exactly 2 expected in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:60
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /var/www/html/wp-includes/blocks.php(674): apply_filters('block_type_meta...', Array, Array)
+#3 /var/www/html/wp-includes/blocks/legacy-widget.php(65): register_block_type_from_metadata('/var/www/html/w...', Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): register_block_core_legacy_widget('')
+#5 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-settings.php(700): do_action('init')
+#8 /var/www/html/wp-config.php(137): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#10 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#11 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 60
+[06-Nov-2024 22:27:53 UTC] PHP Fatal error:  Uncaught TypeError: array_push(): Argument #1 ($array) must be of type array, null given in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php:23
+Stack trace:
+#0 /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php(23): array_push(NULL, Array)
+#1 /var/www/html/wp-includes/class-wp-hook.php(326): {closure}(Array)
+#2 /var/www/html/wp-includes/plugin.php(256): WP_Hook->apply_filters(Array, Array)
+#3 /var/www/html/wp-includes/plugin.php(719): apply_filters_ref_array('block_categorie...', Array)
+#4 /var/www/html/wp-includes/block-editor.php(100): apply_filters_deprecated('block_categorie...', Array, '5.8.0', 'block_categorie...')
+#5 /var/www/html/wp-admin/edit-form-blocks.php(84): get_block_categories(Object(WP_Post))
+#6 /var/www/html/wp-admin/post.php(187): require('/var/www/html/w...')
+#7 {main}
+  thrown in /var/www/html/wp-content/plugins/cg-core/hooks/blocks-and-patterns.php on line 23

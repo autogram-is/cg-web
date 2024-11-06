@@ -14,5 +14,6 @@ Author URI: http://autogram.is/
 */
 
 require_once __DIR__ .'/hooks/admin.php';
-require_once __DIR__ .'/hooks/init.php';
-require_once __DIR__ .'/hooks/acf.php';
+require_once __DIR__ .'/hooks/acf-configuration.php';
+require_once __DIR__ .'/hooks/blocks-and-patterns.php';
+
