@@ -5,7 +5,7 @@
 		{% if post.thumbnail %}
 		<a href="{{ post.link }}" class="thumb">
 			<img
-				src="{{post.thumbnail.src}}"
+				src="{{post.thumbnail.src|resize(800, 650) }}"
 				height="{{post.thumbnail.height}}"
 				width="{{post.thumbnail.width}}"
 				alt="{{post.thumbnail.alt}}" />

@@ -3,11 +3,11 @@
 {% block content %}
 	<div class="hero">
 		<div class="hero-img">
-			<img src="{{ post.thumbnail.src|resize(2400, 800) }}">
+			<img src="{{ post.thumbnail.src|resize(2400, 850) }}" height="850" width="2400">
 		</div>
 		<div class="hero-header sidebar">
 			<div class="hed-banner wrapper">
-				<h1 class="type-hed bg-regal-purple">{{ post.title }}</h1>
+				<h1 class="hed type-hed">{{ post.title }}</h1>
 			</div>
 		</div>
 	</div>
@@ -19,7 +19,7 @@
 					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> <time datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time>
 				</p>
 				#}
-				<div class="region wrapper prose">
+				<div class="wrapper prose">
 					{{post.content}}
 				</div>
 			</section>
