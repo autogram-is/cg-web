@@ -1,11 +1,34 @@
-<li>
-	<article class="listing-{{post.type}} frame inset" data-component="Resource Listing" aria-labelledby="hed-{{post.id}}">
-		{% block content %}
-			<h2 class="h2" id="hed-{{post.id}}"><a href="{{post.link}}">{{post.title}}</a></h2>
+
+<article class="wrapper resource-listing" aria-labelledby="hed-{{ post.id }}">
+	{% block content %}
+	<div class="sidebar item">
+		{% if post.thumbnail %}
+		<a href="{{ post.link }}" class="thumb">
+			<img
+				src="{{post.thumbnail.src}}"
+				height="{{post.thumbnail.height}}"
+				width="{{post.thumbnail.width}}"
+				alt="{{post.thumbnail.alt}}" />
+		</a>
+		{% endif %}
+		<div class="body flow">
+			<h3 class="type-hed" id="hed-{{ post.id }}">
+				<a href="{{ post.link }}">{{ post.title }}</a>
+			</h3>
 			<p>{{ post.excerpt }}</p>
-			{% if post.thumbnail %}
-				<img src="{{post.thumbnail.src}}" />
-			{% endif %}
-		{% endblock %}
-	</article>
-</li>
+			<div class="article-meta repel">
+				<time datetime="{{date}}">{{ post.date }}</time>
+				{% if post.tags %}
+				<nav>
+					<ul class="cluster" role="list">
+						{% for tag in post.tags %}
+						<li><a href="{{ tag.link }}">{{ tag.name }}</a></li>
+						{% endfor %}
+					</ul>
+				</nav>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	{% endblock %}
+</article>

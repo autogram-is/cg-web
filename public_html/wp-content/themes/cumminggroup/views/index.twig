@@ -1,12 +1,8 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="hero frame" data-component="Hero">
-	</div>
-	<ol role="list" class="resource-listing frame" data-component="Resource List">
 	{% for post in posts %}
 		{% include ['listing-'~post.post_type~'.twig', 'listing.twig'] %}
 	{% endfor %}
-	</ol>
 	{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
 {% endblock %}
