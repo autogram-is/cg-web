@@ -4,6 +4,9 @@
 // - post_content in ugly fusion markup; we'll use a standard extractor to get it out.
 
 function cgih_preprocess_raw_cg_project($postdata) {
+  $gallery = cgih_fusion_extract_slides($postdata['post_content']);
+  $facts = cgih_fusion_extract_facts($postdata['post_content']);
+
   $body = $postdata['post_content'];
   $dom = new DOMDocument;
 
@@ -21,50 +24,15 @@ function cgih_preprocess_raw_cg_project($postdata) {
   // Iterate over $postdata['terms'] to find the sectors, services, and offices
   // for a given case study.
 
-  // We need a lookup table of old service/sector/office IDs and the new incoming ones.
-  // In addition, if there are multiple tags we need to collapse them into a stringified
-  // array.
-  if ($postdata['terms']) {
-    foreach ($postdata['terms'] as $term) {
-      if ($term['domain'] === 'portfolio_skills') {
-        // Services
-        $service = get_page_by_name($term['slug'], 'cg_service');
-        if ($service) {
-          $_services[] = $service['post_id'];
-        }
-      } elseif ($term['domain'] === 'portfolio_category') {
-        // Sectors
-        $sector = get_page_by_name($term['slug'], 'cg_sector');
-        if ($sector) {
-          $_sectors[] = $sector['post_id'];
-        }
-      } elseif ($term['domain'] === 'portfolio_tags') {
-        // Offices
-        $office = get_page_by_name($term['slug'], 'cg_office');
-        if ($office) {
-          $_offices[] = $office['post_id'];
-        }
-      }
+  // This extracts sector, service, office, and region relationships.
+  $relationships = cgih_extract_project_relationships_from_tags($postdata);
+  foreach($relationships as $key => $val) {
+    if ($val) {
+      $postdata['postmeta'][] = array(
+        'key' => $key,
+        'value' => $val,
+      );
     }
-  }
-
-  if ($_sectors) {
-    $postdata['postmeta'][] = array(
-      'key' => 'sectors',
-      'value' => $_sectors,
-    );
-  }
-  if ($_services) {
-    $postdata['postmeta'][] = array(
-      'key' => 'services',
-      'value' => $_services,
-    );
-  }
-  if ($_offices) {
-    $postdata['postmeta'][] = array(
-      'key' => 'offices',
-      'value' => $_offices,
-    );
   }
 
   $postdata['terms'] = [];
@@ -72,10 +40,6 @@ function cgih_preprocess_raw_cg_project($postdata) {
 
   return $postdata;
 };
-
-function cgih_preprocess_post_import_cg_project($postdata, $post = null) {
-  // After the post itself has been assembled, do this.
-}
 
 function cleanKey($key) {
   $key = str_replace('(s)', '', $key);
@@ -88,4 +52,37 @@ function strToKey($key) {
   $key = strtolower($key);
   $key = str_replace(' ', '_', $key);
   return 'cg_import_project_'.$key;
+}
+
+function cgih_extract_project_relationships_from_tags($postdata) {
+  $rel = [];
+  if (array_key_exists('terms', $postdata)) {
+    foreach ($postdata['terms'] as $term) {
+      if ($term['domain'] === 'portfolio_skills') {
+        // Services
+        $t = tag_to_service($term['slug']);
+
+        if ($t) {
+          $rel['services'][] = $t->ID;
+        }
+      } elseif ($term['domain'] === 'portfolio_category') {
+        // Sectors
+        $t = tag_to_sector($term['slug']);
+        if ($t) {
+          $rel['sectors'][] = $t->ID;
+        }
+      } elseif ($term['domain'] === 'portfolio_tags') {
+        // Offices, also region
+        $t = tag_to_office($term['slug']);
+        if ($t) {
+          $rel['offices'][] = $t->ID;
+          $regions = get_post_meta($t->ID, 'region');
+          if ($regions[0]) {
+            $rel['regions'][] = $regions[0];
+          }
+        }
+      }
+    }
+  }
+  return $rel;
 }

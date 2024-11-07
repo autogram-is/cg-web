@@ -50,6 +50,10 @@ function cgih_preprocess_post_meta_key($key, $post_id, $post = null) {
   // for the time being.
   if (str_starts_with($key, 'pyre_')) return false;
   if (str_starts_with($key, 'sbg_')) return false;
+  if (str_starts_with($key, 'caf_')) return false;
+  if (str_starts_with($key, 'avada_post_views_')) return false;
+  if (str_starts_with($key, 'avada_today_post_views_')) return false;
+  
 
   // _Event meta keys are from Tribal Events; we pull in start and end
   // dates, links, etc. 

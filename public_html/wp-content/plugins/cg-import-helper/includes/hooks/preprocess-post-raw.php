@@ -17,19 +17,17 @@ if (!defined('ABSPATH')) {
  * @param array $post Raw post information.
  */
 function cgih_preprocess_post_raw($post) {
-  // Remap old post types to new ones.
+  // Remap old post types to new ones
   $post_type = isset($post['post_type']) ? $post['post_type'] : 'post';
-  $post['post_type'] = _cgih_map_post_type($post['post_type']);
+  $post['post_type'] = _cgih_map_post_type($post);
 
-  // First we convert the fusion bracket-markup into XML-parsable tags
-  $post = _cgih_clean_fusion_markup($post);
+  // Convert any fusion bracket-markup into XML-parsable tags for downstream processing
+  $post['post_content'] = cgih_fusion_unbracket($post['post_content']);
 
   $func = 'cgih_preprocess_raw_' . $post['post_type'];
   if (function_exists($func)) {
     $post = $func($post);
   }
-
-  // $post['post_content'] = cgih_purify_html($post['post_content']);
 
   // To skip a post entirely, set $postdata['post_status'] to 'auto-draft';
   return $post;
@@ -38,12 +36,12 @@ add_filter('wp_import_post_data_raw', 'cgih_preprocess_post_raw', 10, 2);
 
 function _cgih_map_post_type($post) {
   $map = array(
-    'avada_portfolio' => 'cg_project', // Convert to new project format
-    'slide' => 'SKIP',                 // Convert to project gallery images
-    'tribe_events' => 'cg_event',      // Merge these into the events when they appear
-    'tribe_venue' => 'SKIP',           // Merge these into the events when they appear
-    'tribe_organizer' => 'SKIP',       // Merge these into the events when they appear
-    'fusion_element' => 'SKIP',       // Edge cases; dragons.
+    'avada_portfolio' => 'cg_project',  // Convert to new project format
+    'slide' => 'slide',                 // Convert to attachments
+    'tribe_events' => 'cg_event',       // Merge these into the events when they appear
+    'tribe_venue' => 'tribe_venue',           // Merge these into the events when they appear
+    'tribe_organizer' => 'tribe_organizer',   // Merge these into the events when they appear
+    'fusion_element' => 'fusion_element',     // Edge cases; dragons.
   );
 
   foreach ($map as $old => $new) {
@@ -53,9 +51,4 @@ function _cgih_map_post_type($post) {
   }
   
   return $post['post_type'];
-}
-
-function _cgih_clean_fusion_markup($postdata) {
-  $postdata['post_content'] = cgih_fusion_unbracket($postdata['post_content']);
-  return $postdata;
 }
