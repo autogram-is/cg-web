@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_671014095b23a",
-            "label": "Projects",
+            "label": "Related Projects",
             "name": "projects",
             "aria-label": "",
             "type": "relationship",
@@ -16,6 +16,7 @@
                 "class": "",
                 "id": ""
             },
+            "admin_column_enabled": 0,
             "post_type": [
                 "cg_project"
             ],
@@ -77,5 +78,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729116311
+    "modified": 1731000714
 }

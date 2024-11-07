@@ -128,36 +128,6 @@
             "elements": "",
             "bidirectional": 0,
             "bidirectional_target": []
-        },
-        {
-            "key": "field_6708099504826",
-            "label": "Projects",
-            "name": "projects",
-            "aria-label": "",
-            "type": "relationship",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "cg_project"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "filters": [
-                "search"
-            ],
-            "return_format": "object",
-            "min": "",
-            "max": "",
-            "allow_in_bindings": 0,
-            "elements": "",
-            "bidirectional": 0,
-            "bidirectional_target": []
         }
     ],
     "location": [
@@ -178,5 +148,5 @@
     "active": true,
     "description": "Custom properties specific to Office pages",
     "show_in_rest": 0,
-    "modified": 1729795296
+    "modified": 1731000641
 }

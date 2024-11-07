@@ -69,7 +69,7 @@
             "label": "Location",
             "name": "location",
             "aria-label": "",
-            "type": "text",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -81,14 +81,14 @@
             "admin_column_enabled": 0,
             "default_value": "",
             "maxlength": "",
-            "allow_in_bindings": 0,
+            "allow_in_bindings": 1,
+            "rows": 2,
             "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "new_lines": ""
         },
         {
             "key": "field_67218cfe1c8cf",
-            "label": "Timeline",
+            "label": "Metrics",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -108,26 +108,6 @@
             "key": "field_67218ba958f52",
             "label": "Start Date",
             "name": "start_date",
-            "aria-label": "",
-            "type": "date_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_column_enabled": 0,
-            "display_format": "F j, Y",
-            "return_format": "d\/m\/Y",
-            "first_day": 1,
-            "allow_in_bindings": 0
-        },
-        {
-            "key": "field_67218be958f54",
-            "label": "Target Date",
-            "name": "target_date",
             "aria-label": "",
             "type": "date_picker",
             "instructions": "",
@@ -165,75 +145,9 @@
             "allow_in_bindings": 0
         },
         {
-            "key": "field_67218d291c8d1",
-            "label": "Metrics",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0,
-            "selected": 0
-        },
-        {
             "key": "field_67218c0758f56",
             "label": "Budget",
             "name": "budget",
-            "aria-label": "",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_column_enabled": 0,
-            "default_value": "",
-            "min": "",
-            "max": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_67218c1a58f57",
-            "label": "Final Cost",
-            "name": "cost",
-            "aria-label": "",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_column_enabled": 0,
-            "default_value": "",
-            "min": "",
-            "max": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_67218e0282aa3",
-            "label": "Square Feet",
-            "name": "square_feet",
             "aria-label": "",
             "type": "number",
             "instructions": "",
@@ -345,7 +259,7 @@
             "label": "Vendors",
             "name": "vendors",
             "aria-label": "",
-            "type": "text",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -357,10 +271,10 @@
             "admin_column_enabled": 0,
             "default_value": "",
             "maxlength": "",
-            "allow_in_bindings": 0,
+            "allow_in_bindings": 1,
+            "rows": 2,
             "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "new_lines": ""
         },
         {
             "key": "field_67218ba358f51",
@@ -403,5 +317,5 @@
     "active": true,
     "description": "Custom properties for Project pages",
     "show_in_rest": 0,
-    "modified": 1730252608
+    "modified": 1730999780
 }
