@@ -1,18 +1,30 @@
 <?php
 
-function get_post_by_meta($key, $value = null) {
+function get_post_by_meta($type = 'post', $key, $value = null, $limit = null) {
   $args = array(
-    'meta_key' => $key,
+    'post_type' => $type,
   );
 
   if ($value) {
     $args['meta_query'] = array(
       array(
-          'key' => 'cp_annonceur',
-          'value' => 'professionnel',
-          'compare' => '=',
+        'key' => $key,
+        'value' => $value,
+        'compare' => '=',
+      )
+    );
+  } else {
+    $args['meta_query'] = array(
+      array(
+        'key' => $key,
+        'compare' => 'IS NOT NULL',
       )
     );
   }
-  $query = new WP_Query($args); 
+  if ($limit) {
+    $args['posts_per_page'] = $limit;
+  }
+
+  $query = new WP_Query($args);
+  return $query->get_posts();
 }

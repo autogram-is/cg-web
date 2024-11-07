@@ -54,13 +54,13 @@ function cgih_preprocess_post_meta_key($key, $post_id, $post = null) {
   if (str_starts_with($key, 'avada_post_views_')) return false;
   if (str_starts_with($key, 'avada_today_post_views_')) return false;
   
-
   // _Event meta keys are from Tribal Events; we pull in start and end
   // dates, links, etc. 
   if ($key === '_EventVenueID') { return 'cg_import_venue_id'; }
   if ($key === '_EventStartDate') { return 'start_date'; }
   if ($key === '_EventEndDate') { return 'end_date'; }
-  if ($key === '_EventURL') { return 'link'; }
+  if ($key === '_EventAllDay') { return 'all_day'; }
+  if ($key === '_EventURL') { return 'event_url'; }
   if (str_starts_with($key, '_Event')) { return false; }
   if (str_starts_with($key, '_tribe')) { return false; }
 

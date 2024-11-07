@@ -82,7 +82,7 @@ if ( class_exists( 'WP_Importer' ) ) {
 					'post_status'   => 'publish',
 					'post_author'   => get_current_user_id(),
 					'post_date'     => current_time('mysql'),
-					'meta_input'    => $this->build_meta($row),
+					'meta_input'    => $row['locale'] ? array('locale' => $row['locale']) : [],
 					'post_content'  => $lipsum->paragraphs(1, 'p'),
 				);
 
@@ -100,14 +100,6 @@ if ( class_exists( 'WP_Importer' ) ) {
 					return $post['post_id'] ?? $post['ID'];
 				}
 			}
-		}
-
-		function build_meta($row = []) {
-			$meta = array();
-			if ($row['locale']) {
-				$meta['locale'] = $row['locale'];
-			}
-			return $meta;
 		}
 	
 		function import_posts() {

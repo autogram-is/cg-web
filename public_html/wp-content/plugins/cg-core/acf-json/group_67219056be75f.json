@@ -44,9 +44,9 @@
             "placeholder": ""
         },
         {
-            "key": "field_6721905768c21",
-            "label": "Street Address",
-            "name": "address",
+            "key": "field_6721907868c25",
+            "label": "Phone",
+            "name": "venue_phone",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -66,9 +66,31 @@
             "append": ""
         },
         {
+            "key": "field_6721905768c21",
+            "label": "Street Address",
+            "name": "venue_address",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6721906768c22",
             "label": "City",
-            "name": "city",
+            "name": "venue_city",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -110,9 +132,9 @@
             "append": ""
         },
         {
-            "key": "field_6721907268c24",
-            "label": "State \/ Province",
-            "name": "state",
+            "key": "field_672d0df242b15",
+            "label": "Postal Code",
+            "name": "venue_postcode",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -132,9 +154,9 @@
             "append": ""
         },
         {
-            "key": "field_6721907868c25",
-            "label": "Phone",
-            "name": "venue_phone",
+            "key": "field_6721907268c24",
+            "label": "State \/ Province",
+            "name": "venue_state",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -172,5 +194,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1730254812
+    "modified": 1731005956
 }
