@@ -1,5 +1,7 @@
 <?php
 
+use joshtronic\LoremIpsum;
+
  if ( !defined('WP_LOAD_IMPORTERS') ) {
 	return;
 }
@@ -51,7 +53,8 @@ if ( class_exists( 'WP_Importer' ) ) {
 	
 		function get_posts() {
 			global $wpdb;
-	
+			$lipsum = new LoremIpsum();
+
 			$datalines = file($this->file); // Read the file into an array
 			$header = str_getcsv($datalines[0]);
 
@@ -80,6 +83,7 @@ if ( class_exists( 'WP_Importer' ) ) {
 					'post_author'   => get_current_user_id(),
 					'post_date'     => current_time('mysql'),
 					'meta_input'    => $this->build_meta($row),
+					'post_content'  => $lipsum->paragraphs(1, 'p'),
 				);
 
 				$this->posts[$index] = $post_data;
@@ -99,9 +103,7 @@ if ( class_exists( 'WP_Importer' ) ) {
 		}
 
 		function build_meta($row = []) {
-			$meta = array(
-				'_cg_imported' => current_time('mysql'),
-			);
+			$meta = array();
 			if ($row['locale']) {
 				$meta['locale'] = $row['locale'];
 			}
