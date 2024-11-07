@@ -22,28 +22,49 @@ function cgih_preprocess_raw_cg_project($postdata) {
   // for a given case study.
 
   // We need a lookup table of old service/sector/office IDs and the new incoming ones.
+  // In addition, if there are multiple tags we need to collapse them into a stringified
+  // array.
   if ($postdata['terms']) {
     foreach ($postdata['terms'] as $term) {
       if ($term['domain'] === 'portfolio_skills') {
         // Services
-        $postdata['postmeta'][] = array(
-          'key' => 'cg_import_services',
-          'value' => $term['slug'],
-        );
+        $service = get_page_by_name($term['slug'], 'cg_service');
+        if ($service) {
+          $_services[] = $service['post_id'];
+        }
       } elseif ($term['domain'] === 'portfolio_category') {
         // Sectors
-        $postdata['postmeta'][] = array(
-          'key' => 'cg_import_sectors',
-          'value' => $term['slug'],
-        );
+        $sector = get_page_by_name($term['slug'], 'cg_sector');
+        if ($sector) {
+          $_sectors[] = $sector['post_id'];
+        }
       } elseif ($term['domain'] === 'portfolio_tags') {
         // Offices
-        $postdata['postmeta'][] = array(
-          'key' => 'cg_import_offices',
-          'value' => $term['slug'],
-        );
+        $office = get_page_by_name($term['slug'], 'cg_office');
+        if ($office) {
+          $_offices[] = $office['post_id'];
+        }
       }
     }
+  }
+
+  if ($_sectors) {
+    $postdata['postmeta'][] = array(
+      'key' => 'sectors',
+      'value' => $_sectors,
+    );
+  }
+  if ($_services) {
+    $postdata['postmeta'][] = array(
+      'key' => 'services',
+      'value' => $_services,
+    );
+  }
+  if ($_offices) {
+    $postdata['postmeta'][] = array(
+      'key' => 'offices',
+      'value' => $_offices,
+    );
   }
 
   $postdata['terms'] = [];
@@ -51,6 +72,10 @@ function cgih_preprocess_raw_cg_project($postdata) {
 
   return $postdata;
 };
+
+function cgih_preprocess_post_import_cg_project($postdata, $post = null) {
+  // After the post itself has been assembled, do this.
+}
 
 function cleanKey($key) {
   $key = str_replace('(s)', '', $key);

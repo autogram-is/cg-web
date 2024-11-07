@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 function cgih_preprocess_post_raw($post) {
   // Remap old post types to new ones.
   $post_type = isset($post['post_type']) ? $post['post_type'] : 'post';
-  $post['post_type'] = _cgih_map_post_type($post_type);
+  $post['post_type'] = _cgih_map_post_type($post['post_type']);
 
   // First we convert the fusion bracket-markup into XML-parsable tags
   $post = _cgih_clean_fusion_markup($post);
@@ -29,12 +29,14 @@ function cgih_preprocess_post_raw($post) {
     $post = $func($post);
   }
 
+  // $post['post_content'] = cgih_purify_html($post['post_content']);
+
   // To skip a post entirely, set $postdata['post_status'] to 'auto-draft';
   return $post;
 }
 add_filter('wp_import_post_data_raw', 'cgih_preprocess_post_raw', 10, 2);
 
-function _cgih_map_post_type($type) {
+function _cgih_map_post_type($post) {
   $map = array(
     'avada_portfolio' => 'cg_project', // Convert to new project format
     'slide' => 'SKIP',                 // Convert to project gallery images
@@ -45,11 +47,12 @@ function _cgih_map_post_type($type) {
   );
 
   foreach ($map as $old => $new) {
-    if ($type == $old){
+    if ($post['post_type'] == $old){
       return $new ? $new : 'SKIP';
     }
   }
-  return $type;
+  
+  return $post['post_type'];
 }
 
 function _cgih_clean_fusion_markup($postdata) {
