@@ -1,64 +1,53 @@
+
 {% if posts.pagination.pages is not empty %}
-    <nav class="pagination-block">
-        <ul class="pagination">
+    <nav aria-label="pagination" class="pagination cluster">
+        {# Previous #}
+        {% if posts.pagination.prev %}
+        <a href="{{ posts.pagination.prev.link }}" class="previous button icon mini align-only">
+            <span>Previous page</span>
+            <svg width="800" height="800" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)">
+              <path id="chevron" d="m9 6 6 6-6 6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+        {% else %}
+        <span class="previous button icon mini align-only disabled">
+            <span>Previous page</span>
+            <svg width="800" height="800" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)">
+              <path id="chevron" d="m9 6 6 6-6 6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </span>
+        {% endif %}
 
-            {# First #}
-            {% if posts.pagination.pages|first and posts.pagination.pages|first.current != true %}
-                <li class="first btn">
-                    <a href="{{ posts.pagination.pages|first.link }}">First</a>
-                </li>
-            {% else %}
-                <li class="first btn disabled">
-                    <button disabled>First</button>
-                </li>
-            {% endif %}
-
-            {# Previous #}
-            {% if posts.pagination.prev %}
-                <li class="prev btn">
-                    <a href="{{ posts.pagination.prev.link }}">Previous</a>
-                </li>
-            {% else %}
-                <li class="prev btn disabled">
-                    <button disabled>Previous</button>
-                </li>
-            {% endif %}
-
+        <ul role="list" class="cluster">
             {# Pages #}
+
+
             {% for page in posts.pagination.pages %}
-                {% if page.link %}
-                    <li>
-                        <a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
-                    </li>
+                {% if "dots" in page.class %}
+                <li><span class="type-detail ellipsis">&#8230;</span></li>
                 {% else %}
-                    <li class="current">
-                        <span class="{{ page.class }}">{{ page.title }}</span>
-                    </li>
+                <li>
+                    <a href="{{ page.link }}" class="button mini hollow rounded {{ page.class }}" {% if not page.link %}aria-current="page"{% endif %}><span class="visually-hidden">page</span> {{ page.title }}</a>
+                </li>
                 {% endif %}
             {% endfor %}
+        </ul>
 
-            {# Next #}
             {% if posts.pagination.next %}
-                <li class="next btn">
-                    <a href="{{ posts.pagination.next.link }}">Next</a>
-                </li>
+            <a href="{{ posts.pagination.next.link }}" class="next button icon mini align-only">
+                <span>Next page</span>
+                <svg width="800" height="800" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="chevron" d="m9 6 6 6-6 6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
             {% else %}
-                <li class="next btn disabled">
-                    <button disabled>Next</button>
-                </li>
+            <span class="previous button icon mini align-only disabled">
+                <span>Next page</span>
+                <svg width="800" height="800" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)">
+                  <path id="chevron" d="m9 6 6 6-6 6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
             {% endif %}
-
-            {# Last #}
-            {% if posts.pagination.pages|last and posts.pagination.pages|last.current != true %}
-                <li class="last btn">
-                    <a href="{{ posts.pagination.pages|last.link }}">Last</a>
-                </li>
-            {% else %}
-                <li class="last btn disabled">
-                    <button disabled>Last</button>
-                </li>
-            {% endif %}
-
         </ul>
     </nav>
 {% endif %}
