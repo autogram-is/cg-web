@@ -19,15 +19,15 @@ add_action( 'init', function() {
 });
 
 // Add a custom category
-add_filter( 'block_categories', function($categories) {
-  array_push(
-    $categories,
-    array(
-      'slug'  => 'cumminggroup',
-      'title' => __( 'Cumming Group', 'cumminggroup' ),
-      'icon'  => null,
-    )
+add_filter( 'block_categories_all', function($categories) {
+  $text = array_slice($categories, 0, 1);  // Get the first item
+  $others = array_slice($categories, 1);   // Get the rest of the array
+  $cumminggroup = array(
+    'slug'  => 'cumminggroup',
+    'title' => __( 'Cumming Group', 'cumminggroup' ),
   );
+  // Merge them with the new entry in between
+  $categories = array_merge($text, [$cumminggroup], $others);
   return $categories;
 });
 
