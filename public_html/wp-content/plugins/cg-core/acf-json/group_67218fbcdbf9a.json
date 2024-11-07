@@ -16,7 +16,9 @@
                 "class": "",
                 "id": ""
             },
-            "admin_column_enabled": 0,
+            "admin_column_enabled": 1,
+            "admin_column_position": "",
+            "admin_column_width": "",
             "display_format": "d\/m\/Y g:i a",
             "return_format": "d\/m\/Y g:i a",
             "first_day": 1,
@@ -126,5 +128,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731006693
+    "modified": 1731007419
 }

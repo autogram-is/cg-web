@@ -110,9 +110,9 @@
             "append": ""
         },
         {
-            "key": "field_6721906d68c23",
-            "label": "Country",
-            "name": "country",
+            "key": "field_6721907268c24",
+            "label": "State \/ Province",
+            "name": "venue_state",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -154,9 +154,9 @@
             "append": ""
         },
         {
-            "key": "field_6721907268c24",
-            "label": "State \/ Province",
-            "name": "venue_state",
+            "key": "field_6721906d68c23",
+            "label": "Country",
+            "name": "country",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -194,5 +194,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731005956
+    "modified": 1731008731
 }
