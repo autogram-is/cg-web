@@ -16,7 +16,8 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
+            "admin_column_enabled": 0,
+            "return_format": "id",
             "library": "uploadedTo",
             "min": "",
             "max": "",
@@ -49,5 +50,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729114107
+    "modified": 1731036351
 }

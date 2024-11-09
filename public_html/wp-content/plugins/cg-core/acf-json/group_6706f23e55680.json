@@ -111,6 +111,7 @@
                 "class": "",
                 "id": ""
             },
+            "admin_column_enabled": 0,
             "post_type": [
                 "cg_person"
             ],
@@ -121,7 +122,7 @@
             "filters": [
                 "search"
             ],
-            "return_format": "object",
+            "return_format": "id",
             "min": "",
             "max": "",
             "allow_in_bindings": 0,
@@ -148,5 +149,5 @@
     "active": true,
     "description": "Custom properties specific to Office pages",
     "show_in_rest": 0,
-    "modified": 1731000641
+    "modified": 1731036128
 }

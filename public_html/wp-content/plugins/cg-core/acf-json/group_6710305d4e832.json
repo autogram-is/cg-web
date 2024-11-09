@@ -27,7 +27,7 @@
             "filters": [
                 "search"
             ],
-            "return_format": "object",
+            "return_format": "id",
             "min": "",
             "max": "",
             "allow_in_bindings": 1,
@@ -62,7 +62,7 @@
             "filters": [
                 "search"
             ],
-            "return_format": "object",
+            "return_format": "id",
             "min": "",
             "max": "",
             "allow_in_bindings": 1,
@@ -97,7 +97,7 @@
             "filters": [
                 "search"
             ],
-            "return_format": "object",
+            "return_format": "id",
             "min": "",
             "max": "",
             "allow_in_bindings": 1,
@@ -130,7 +130,7 @@
             "filters": [
                 "search"
             ],
-            "return_format": "object",
+            "return_format": "id",
             "min": "",
             "max": "",
             "allow_in_bindings": 0,
@@ -159,5 +159,5 @@
     "active": true,
     "description": "Custom properties for Project pages",
     "show_in_rest": 0,
-    "modified": 1730948751
+    "modified": 1731036198
 }

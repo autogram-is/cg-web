@@ -37,3 +37,4 @@ function findAllTagInstances($tagName, $html = '') {
 	// Return all matches, which include the full HTML of each tag instance
 	return $matches[1];
 }
+

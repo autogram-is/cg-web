@@ -24,7 +24,7 @@
             ],
             "post_status": "",
             "taxonomy": "",
-            "return_format": "object",
+            "return_format": "id",
             "multiple": 0,
             "allow_null": 0,
             "allow_in_bindings": 0,
@@ -122,5 +122,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1730924543
+    "modified": 1731036139
 }

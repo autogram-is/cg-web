@@ -16,6 +16,7 @@
                 "class": "",
                 "id": ""
             },
+            "admin_column_enabled": 0,
             "post_type": [
                 "cg_office",
                 "cg_sector",
@@ -28,7 +29,7 @@
                 "search",
                 "post_type"
             ],
-            "return_format": "object",
+            "return_format": "id",
             "min": "",
             "max": "",
             "allow_in_bindings": 0,
@@ -57,5 +58,5 @@
     "active": true,
     "description": "Sectors, Services, etc related to a news or thought leadership article.",
     "show_in_rest": 0,
-    "modified": 1730996901
+    "modified": 1731036257
 }

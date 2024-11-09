@@ -5,7 +5,6 @@
 
 function cgih_preprocess_raw_cg_project($postdata) {
   $gallery = cgih_fusion_extract_slides($postdata['post_content']);
-  $facts = cgih_fusion_extract_facts($postdata['post_content']);
 
   $body = $postdata['post_content'];
   $dom = new DOMDocument;
@@ -77,7 +76,7 @@ function cgih_extract_project_relationships_from_tags($postdata) {
         if ($t) {
           $rel['offices'][] = $t->ID;
           $regions = get_post_meta($t->ID, 'region');
-          if ($regions[0]) {
+          if ($regions && $regions[0]) {
             $rel['regions'][] = $regions[0];
           }
         }
