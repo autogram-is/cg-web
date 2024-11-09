@@ -21,12 +21,15 @@ function cgih_preprocess_raw_cg_event($postdata) {
   foreach ($extract['attendees'] as $bio) {
     $bioPost = cgih_create_person_from_event_bio($bio);
     if ($bioPost) {
+      $bioPost = get_post($bioPost);
+    }
+    if ($bioPost) {
       $attendees[] = $bioPost->ID;
     }
   }
   if (count($attendees) > 0) {
-    $postdata['attendees'][] = array(
-      'key' => 'email',
+    $postdata['postmeta'][] = array(
+      'key' => 'attendees',
       'value' => $attendees,
     );  
   }
@@ -73,10 +76,10 @@ function cgih_fusion_extract_event_details($html) {
           @$props = $xpath->query('div/p', $bio);
           @$email = $xpath->query('div//a', $bio)->item(0);
           $attendee = array(
-              'headshot' => $img->attributes['src']->value,
-              'name' => $props->item(0)->textContent,
-              'role' => $props->item(1)->textContent,
-              'email' => $email->attributes['href']->value,
+              'headshot' => @$img->attributes['src']->value,
+              'name' => @$props->item(0)->textContent,
+              'role' => @$props->item(1)->textContent,
+              'email' => @$email->attributes['href']->value,
           );
           if ($attendee['name']) {
               $output['attendees'][] = $attendee;
@@ -95,24 +98,19 @@ function cgih_create_person_from_event_bio($bio) {
   $post = get_post_by_name($slug, 'cg_person');
   $headshot_id = attachment_url_to_postid($bio['headshot']);
 
-  if ($post) {
-    echo("Looked for $slug, did not find\n");
-
-    return $post;
-  } else {
-    echo("Looked for $slug, did not find");
-
+  if (!$post)  {
     $post = wp_insert_post(array(
       'post_title' => $bio['name'],
       'post_type' => 'cg_person',
       'post_status' => 'publish',
       'post_name' => $slug,
       'meta_input' => array(
-        'email' => str_replace('mailto:', '', $bio['email']),
+        'email' => $bio['email'] ? str_replace('mailto:', '', $bio['email']) : null,
         'role' => $bio['role'],
         '_import_featured_image' => $headshot_id || $bio['headshot'],
       ),
     ));  
+    $post = get_post($post);
   }
 
   if ($headshot_id) {

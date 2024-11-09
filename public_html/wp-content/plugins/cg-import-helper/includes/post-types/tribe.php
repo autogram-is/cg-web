@@ -5,7 +5,7 @@ function cgih_preprocess_raw_tribe_venue($postdata) {
   $meta = postmeta_keyed($postdata['postmeta']);
   $events = get_post_by_meta('cg_event', 'cg_import_venue_id', $postdata['post_id']);
 
-  if ($events[0]) {
+  if ($events && $events[0]) {
     $id = $events[0]->ID;
     update_field('venue_name', $postdata['post_title'], $id);
     update_field('venue_url', $meta['_VenueURL'], $id);

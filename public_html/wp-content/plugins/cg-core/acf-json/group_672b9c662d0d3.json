@@ -1,11 +1,11 @@
 {
     "key": "group_672b9c662d0d3",
-    "title": "Team Bios",
+    "title": "Attendees",
     "fields": [
         {
             "key": "field_672b9c667f581",
             "label": "Team members",
-            "name": "people",
+            "name": "attendees",
             "aria-label": "",
             "type": "relationship",
             "instructions": "",
@@ -43,13 +43,6 @@
                 "operator": "==",
                 "value": "cg_event"
             }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "cg_region"
-            }
         ]
     ],
     "menu_order": 0,
@@ -61,5 +54,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731000926
+    "modified": 1731115565
 }
