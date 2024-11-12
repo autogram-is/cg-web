@@ -1,6 +1,6 @@
 {
     "key": "group_672b9c662d0d3",
-    "title": "Attendees",
+    "title": "Event Attendees",
     "fields": [
         {
             "key": "field_672b9c667f581",
@@ -32,8 +32,10 @@
             "max": "",
             "allow_in_bindings": 1,
             "elements": "",
-            "bidirectional": 0,
-            "bidirectional_target": []
+            "bidirectional": 1,
+            "bidirectional_target": [
+                "field_672eba4600079"
+            ]
         }
     ],
     "location": [
@@ -54,5 +56,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731115565
+    "modified": 1731116274
 }
