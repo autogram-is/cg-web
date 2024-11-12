@@ -155,6 +155,15 @@ namespace Brain\Monkey\Functions {
                 'esc_attr_x' => [EscapeHelper::class, 'esc'],
                 'esc_html_e' => [EscapeHelper::class, 'escAndEcho'],
                 'esc_attr_e' => [EscapeHelper::class, 'escAndEcho'],
+                '_n_noop'    => static function ($singular, $plural) {
+                    return compact('singular', 'plural');
+                },
+                '_nx_noop' => static function ($singular, $plural) {
+                    return compact('singular', 'plural');
+                },
+                'translate_nooped_plural' => static function($nooped_plural, $count) {
+                    return ($count === 1) ? $nooped_plural['singular'] : $nooped_plural['plural'];
+                },
             ]
         );
 

@@ -60,30 +60,30 @@ if ( ! function_exists('__return_empty_string')) {
 }
 
 if ( ! function_exists('untrailingslashit')) {
-    function untrailingslashit($string)
+    function untrailingslashit($value)
     {
-        return rtrim($string, '/\\');
+        return rtrim($value, '/\\');
     }
 }
 
 if ( ! function_exists('trailingslashit')) {
-    function trailingslashit($string)
+    function trailingslashit($value)
     {
-        return rtrim($string, '/\\').'/';
+        return rtrim($value, '/\\').'/';
     }
 }
 
 if ( ! function_exists('user_trailingslashit')) {
-    function user_trailingslashit($string)
+    function user_trailingslashit($url)
     {
-        return trailingslashit($string);
+        return trailingslashit($url);
     }
 }
 
 if ( ! function_exists('absint')) {
-    function absint($number)
+    function absint($maybeint)
     {
-        return abs((int)$number);
+        return abs((int)$maybeint);
     }
 }
 
@@ -98,5 +98,22 @@ if ( ! function_exists('is_wp_error')) {
     function is_wp_error($thing)
     {
         return $thing instanceof \WP_Error;
+    }
+}
+
+if ( ! function_exists('wp_validate_boolean')) {
+    function wp_validate_boolean($value)
+    {
+        return (is_string($value) && (strtolower($value) === 'false')) ? false : (bool)$value;
+    }
+}
+
+if ( ! function_exists('wp_slash')) {
+    function wp_slash($value)
+    {
+        if (is_array($value)) {
+            return array_map('wp_slash', $value);
+        }
+        return is_string($value) ? addslashes($value) : $value;
     }
 }

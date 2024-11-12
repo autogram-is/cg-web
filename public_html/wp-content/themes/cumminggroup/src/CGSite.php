@@ -80,35 +80,7 @@ class CGSite extends Site {
 			)
 		);
 
-		/*
-		 * Enable support for Post Formats.
-		 *
-		 * See: https://codex.wordpress.org/Post_Formats
-		 */
-		add_theme_support(
-			'post-formats',
-			array(
-				'aside',
-				'image',
-				'video',
-				'quote',
-				'link',
-				'gallery',
-				'audio',
-			)
-		);
-
 		add_theme_support( 'menus' );
-	}
-
-	/**
-	 * his would return 'foo bar!'.
-	 *
-	 * @param string $text being 'foo', then returned 'foo bar!'.
-	 */
-	public function myfoo( $text ) {
-		$text .= ' bar!';
-		return $text;
 	}
 
 	/**
@@ -122,8 +94,7 @@ class CGSite extends Site {
 		 * @link https://twig.symfony.com/doc/3.x/functions/template_from_string.html
 		 */
 		// $twig->addExtension( new Twig\Extension\StringLoaderExtension() );
-
-		$twig->addFilter( new Twig\TwigFilter( 'myfoo', [ $this, 'myfoo' ] ) );
+		// $twig->addFilter( new Twig\TwigFilter( 'myfoo', [ $this, 'myfoo' ] ) );
 
 		return $twig;
 	}

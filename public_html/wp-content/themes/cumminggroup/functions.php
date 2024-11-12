@@ -8,8 +8,8 @@
 
 // Load Composer dependencies.
 require_once __DIR__ . '/vendor/autoload.php';
-
 require_once __DIR__ . '/src/CGSite.php';
+
 
 Timber\Timber::init();
 
@@ -17,12 +17,6 @@ Timber\Timber::init();
 Timber::$dirname = [ 'templates', 'views' ];
 
 new CGSite();
-
-// See https://palmiak.github.io/timber-acf-wp-blocks/#/filters
-add_filter('timber/acf-gutenberg-blocks-data/custom_block_name', function( $context ){
-    $context['fields']['extra_data'] = 'New extra data';
-    return $context;
-});
 
 // Set the directory Timber-generated blocks are stored in
 add_filter('timber/acf-gutenberg-blocks-templates', function () {

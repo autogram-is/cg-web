@@ -67,7 +67,7 @@ const INSTANTIATOR_CODE = '
     }
 ';
 
-function connect($source, callable $target, Handle $handle = null, $partOfWildcard = false)
+function connect($source, callable $target, ?Handle $handle = null, $partOfWildcard = false)
 {
     $source = translateIfLanguageConstruct($source);
     $handle = $handle ?: new Handle;
@@ -96,9 +96,6 @@ function connect($source, callable $target, Handle $handle = null, $partOfWildca
             }
         } else {
             $handle = queueConnection($source, $target, $handle);
-            if (Utils\runningOnHHVM()) {
-                connectOnHHVM("$class::$method", $handle);
-            }
         }
     }
     attachExistenceAssertion($handle, $source);
@@ -112,7 +109,7 @@ function constitutesWildcard($source)
     return strcspn($source, '*{,}') != strlen($source);
 }
 
-function applyWildcard($wildcard, callable $target, Handle $handle = null)
+function applyWildcard($wildcard, callable $target, ?Handle $handle = null)
 {
     $handle = $handle ?: new Handle;
     list($class, $method, $instance) = Utils\interpretCallable($wildcard);
@@ -166,12 +163,6 @@ function validate($function, $partOfWildcard = false)
     if ($reflection->isInternal() && !in_array($name, Config\getRedefinableInternals())) {
         throw new Exceptions\NotUserDefined($function);
     }
-    if (Utils\runningOnHHVM()) {
-        if ($reflection->isInternal()) {
-            throw new Exceptions\InternalsNotSupportedOnHHVM($function);
-        }
-        return;
-    }
     if (!$reflection->isInternal() && !inPreprocessedFile($function) && !$partOfWildcard) {
         throw new Exceptions\DefinedTooEarly($function);
     }
@@ -179,9 +170,6 @@ function validate($function, $partOfWildcard = false)
 
 function inPreprocessedFile($callable)
 {
-    if (Utils\runningOnHHVM()) {
-        return true;
-    }
     if (Utils\isOwnName(Utils\callableToString($callable))) {
         return false;
     }
@@ -190,19 +178,16 @@ function inPreprocessedFile($callable)
     return $evaluated || !empty(State::$preprocessedFiles[$file]);
 }
 
-function connectFunction($function, callable $target, Handle $handle = null)
+function connectFunction($function, callable $target, ?Handle $handle = null)
 {
     $handle = $handle ?: new Handle;
     $routes = &State::$routes[null][$function];
     $offset = Utils\append($routes, [$target, $handle]);
     $handle->addReference($routes[$offset]);
-    if (Utils\runningOnHHVM()) {
-        connectOnHHVM($function, $handle);
-    }
     return $handle;
 }
 
-function queueConnection($source, callable $target, Handle $handle = null)
+function queueConnection($source, callable $target, ?Handle $handle = null)
 {
     $handle = $handle ?: new Handle;
     $offset = Utils\append(State::$queue, [$source, $target, $handle]);
@@ -225,7 +210,7 @@ function deployQueue()
     }
 }
 
-function connectMethod($function, callable $target, Handle $handle = null)
+function connectMethod($function, callable $target, ?Handle $handle = null)
 {
     $handle = $handle ?: new Handle;
     list($class, $method, $instance) = Utils\interpretCallable($function);
@@ -236,22 +221,17 @@ function connectMethod($function, callable $target, Handle $handle = null)
     $reflection = Utils\reflectCallable($function);
     $declaringClass = $reflection->getDeclaringClass();
     $class = $declaringClass->getName();
-    if (!Utils\runningOnHHVM()) {
-        $aliases = $declaringClass->getTraitAliases();
-        if (isset($aliases[$method])) {
-            list($trait, $method) = explode('::', $aliases[$method]);
-        }
+    $aliases = $declaringClass->getTraitAliases();
+    if (isset($aliases[$method])) {
+        list($trait, $method) = explode('::', $aliases[$method]);
     }
     $routes = &State::$routes[$class][$method];
     $offset = Utils\append($routes, [$target, $handle]);
     $handle->addReference($routes[$offset]);
-    if (Utils\runningOnHHVM()) {
-        connectOnHHVM("$class::$method", $handle);
-    }
     return $handle;
 }
 
-function connectInstantiation($class, callable $target, Handle $handle = null)
+function connectInstantiation($class, callable $target, ?Handle $handle = null)
 {
     if (!Config\isNewKeywordRedefinable()) {
         throw new Exceptions\NewKeywordNotRedefinable;
@@ -285,7 +265,7 @@ function dispatchTo(callable $target)
     return call_user_func_array($target, Stack\top('args'));
 }
 
-function dispatch($class, $calledClass, $method, $frame, &$result, array $args = null)
+function dispatch($class, $calledClass, $method, $frame, &$result, ?array $args = null)
 {
     $trace = debug_backtrace();
     $isInternalStub = strpos($method, INTERNAL_REDEFINITION_NAMESPACE) === 0;
@@ -328,7 +308,7 @@ function dispatch($class, $calledClass, $method, $frame, &$result, array $args =
     return $success;
 }
 
-function relay(array $args = null)
+function relay(?array $args = null)
 {
     list($class, $method, $offset) = end(State::$routeStack);
     $route = &State::$routes[$class][$method][$offset];
@@ -361,6 +341,9 @@ function relay(array $args = null)
     return $result;
 }
 
+/**
+ * @deprecated 2.2.0
+ */
 function connectOnHHVM($function, Handle $handle)
 {
     fb_intercept($function, function($name, $obj, $args, $data, &$done) {
@@ -380,6 +363,9 @@ function connectOnHHVM($function, Handle $handle)
     $handle->addExpirationHandler(getHHVMExpirationHandler($function));
 }
 
+/**
+ * @deprecated 2.2.0
+ */
 function getHHVMExpirationHandler($function)
 {
     return function() use ($function) {

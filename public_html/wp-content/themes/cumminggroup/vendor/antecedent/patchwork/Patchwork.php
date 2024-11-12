@@ -28,7 +28,7 @@ function redefine($subject, callable $content)
     return $handle;
 }
 
-function relay(array $args = null)
+function relay(?array $args = null)
 {
     return CallRerouting\relay($args);
 }
@@ -106,13 +106,6 @@ Utils\alias('Patchwork', [
 configure();
 
 Utils\markMissedCallables();
-
-if (Utils\runningOnHHVM()) {
-    # no preprocessor needed on HHVM;
-    # just let Patchwork become a wrapper for fb_intercept()
-    spl_autoload_register('Patchwork\CallRerouting\deployQueue');
-    return;
-}
 
 CodeManipulation\Stream::discoverOtherWrapper();
 CodeManipulation\Stream::wrap();
