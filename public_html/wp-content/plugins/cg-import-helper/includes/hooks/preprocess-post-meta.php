@@ -28,6 +28,8 @@ function cgih_preprocess_post_meta($postmeta, $post_id, $post = null) {
 	}
   */
 
+  // Nothing yet, but we're ready if it's needed.
+
   return $postmeta;
 }
 add_filter('wp_import_post_meta', 'cgih_preprocess_post_meta', 10, 2);
