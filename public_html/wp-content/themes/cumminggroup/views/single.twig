@@ -1,48 +1,31 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="hero">
-		<div class="hero-img">{% if post.thumbnail %}<img src="{{ post.thumbnail.src|resize(2400, 850) }}" height="850" width="2400">{% endif %}</div>
-		<div class="hero-header sidebar">
-			<div class="hed-banner wrapper">
-				<h1 class="hed type-hed">{{ post.title }}</h1>
+			<div class="lede-header">
+				{# <p class="lede">byline</p> #}
 			</div>
-		</div>
-	</div>
-	<div class="content-wrapper">
-		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-			<section class="article-content">
-				{#
-				<p class="blog-author">
-					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> <time datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time>
-				</p>
-				#}
-				<div class="wrapper prose">
-					{{post.content}}
-				</div>
-			</section>
-
+			<div class="prose prose-primary region flow">
+				{{post.content}}
+			</div>
 {#
 			<!-- comment box -->
 			<section class="comment-box">
 				<!-- comments -->
 				<div class="comments">
-				    {% if post.comments %}
+						{% if post.comments %}
 					<h3> comments </h3>
 					{% for cmt in post.comments %}
-					    {% include "comment.twig" with {comment:cmt} %}
+							{% include "comment.twig" with {comment:cmt} %}
 					{% endfor %}
-				    {% endif %}
+						{% endif %}
 				</div>
 
 				{% if post.comment_status == "closed" %}
 					<p> comments for this post are closed </p>
 				{% else %}
-				    <!-- comment form -->
-				    {% include "comment-form.twig" %}
+						<!-- comment form -->
+						{% include "comment-form.twig" %}
 				{% endif %}
 			</section>
 #}
-		</article>
-	</div><!-- /content-wrapper -->
 {% endblock %}

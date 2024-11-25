@@ -1,5 +1,4 @@
 {% extends "base.twig" %}
-
 {% block content %}
 	{% for post in posts %}
 		{% include ['listing-'~post.post_type~'.twig', 'listing.twig'] %}
