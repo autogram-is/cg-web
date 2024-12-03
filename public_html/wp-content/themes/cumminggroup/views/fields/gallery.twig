@@ -1,3 +1,7 @@
-{% for image in post.meta('gallery') %}
-    <img src="{{ get_image(image) }}" />
-{% endfor %}
+<div class="gallery {{ utilities }}">
+  <div class="wrapper">
+    {% for image in images %}
+    <img src="{{ get_image(image) }}">
+    {% endfor %}
+  </div>
+</div>

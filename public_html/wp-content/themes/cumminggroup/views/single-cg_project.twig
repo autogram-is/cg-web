@@ -7,7 +7,8 @@
   <div>
     {% include "fields/project-facts.twig" %}
   </div>
-  <div>
-    {% include "fields/gallery.twig" %}
-  </div>
+  {% set gallery = post.meta('gallery') %}
+  {% if gallery %}
+    {% include "fields/gallery.twig" with { images: gallery } %}
+  {% endif %}
 {% endblock %}
