@@ -149,7 +149,7 @@
             "label": "Budget",
             "name": "budget",
             "aria-label": "",
-            "type": "number",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -160,20 +160,18 @@
             },
             "admin_column_enabled": 0,
             "default_value": "",
-            "min": "",
-            "max": "",
-            "allow_in_bindings": 0,
+            "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
-            "step": "",
             "prepend": "",
             "append": ""
         },
         {
-            "key": "field_67218e2082aa4",
-            "label": "Occupants",
-            "name": "occupants",
+            "key": "field_674624d0b2ca3",
+            "label": "Capacity",
+            "name": "capacity",
             "aria-label": "",
-            "type": "number",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -184,11 +182,9 @@
             },
             "admin_column_enabled": 0,
             "default_value": "",
-            "min": "",
-            "max": "",
+            "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
-            "step": "",
             "prepend": "",
             "append": ""
         },
@@ -259,7 +255,7 @@
             "label": "Vendors",
             "name": "vendors",
             "aria-label": "",
-            "type": "textarea",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -272,9 +268,9 @@
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 1,
-            "rows": 2,
             "placeholder": "",
-            "new_lines": ""
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_67218ba358f51",
@@ -317,5 +313,5 @@
     "active": true,
     "description": "Custom properties for Project pages",
     "show_in_rest": 0,
-    "modified": 1730999780
+    "modified": 1732650246
 }
