@@ -22,7 +22,7 @@ class CGSite extends Site {
 	 * This is where you can register custom post types.
 	 */
 	public function register_post_types() {
-
+		
 	}
 
 	/**
@@ -38,11 +38,10 @@ class CGSite extends Site {
 	 * @param string $context context['this'] Being the Twig's {{ this }}.
 	 */
 	public function add_to_context( $context ) {
-		// $context['foo']   = 'bar';
-		// $context['stuff'] = 'I am a value set in your functions.php file';
-		// $context['notes'] = 'These values are available everytime you call Timber::context();';
-		$context['menu']  = Timber::get_menu();
-		$context['site']  = $this;
+		$context['menu'] = Timber::get_menu();
+		// $context['menu-eu'] = Timber::get_menu('eu');
+		// $context['footer'] = Timber::get_menu('footer');
+		$context['site'] = $this;
 
 		return $context;
 	}
@@ -81,6 +80,11 @@ class CGSite extends Site {
 		);
 
 		add_theme_support( 'menus' );
+
+		add_theme_support('disable-layout-styles');
+		add_theme_support('disable-custom-colors');
+		add_theme_support('disable-custom-font-sizes');
+		add_theme_support('disable-custom-gradients');
 	}
 
 	/**
@@ -96,6 +100,11 @@ class CGSite extends Site {
 		// $twig->addExtension( new Twig\Extension\StringLoaderExtension() );
 		// $twig->addFilter( new Twig\TwigFilter( 'myfoo', [ $this, 'myfoo' ] ) );
 
+
+		$twig->addFilter(
+			new \Twig\TwigFilter( 'pluralize', 'pluralize' )
+		);
+
 		return $twig;
 	}
 
@@ -110,7 +119,6 @@ class CGSite extends Site {
 	 */
 	function update_twig_environment_options( $options ) {
 	    // $options['autoescape'] = true;
-
 	    return $options;
 	}
 }

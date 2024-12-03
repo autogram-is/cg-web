@@ -13,6 +13,58 @@ $context         = Timber::context();
 $timber_post     = Timber::get_post();
 $context['post'] = $timber_post;
 
+if ($timber_post->post_type === 'cg_project') {
+	$facts = array();
+	// Project relationships
+
+	if ($timber_post->regions) {
+		$facts[] = array(
+			'key' => pluralize($timber_post->regions, 'Region'),
+			'value' => join(', ', array_map('get_post_a_tag', $timber_post->regions)),
+		);
+	}
+	if ($timber_post->sectors) {
+		$facts[] = array(
+			'key' => pluralize($timber_post->sectors, 'Sector'),
+			'value' => join(', ', array_map('get_post_a_tag', $timber_post->sectors)),
+		);
+	}
+	if ($timber_post->services) {
+		$facts[] = array(
+			'key' => pluralize($timber_post->services, 'Service'),
+			'value' => join(', ', array_map('get_post_a_tag', $timber_post->services)),
+		);
+	}
+	if ($timber_post->offices) {
+		$facts[] = array(
+			'key' => pluralize($timber_post->offices, 'Office'),
+			'value' => join(', ', array_map('get_post_a_tag', $timber_post->offices)),
+		);
+	}
+
+	if ($timber_post->facility) {
+		$facts[] = array(
+			'key' => 'facility',
+			'value' => $timber_post->facility,
+		);
+	}
+
+	$fact_fields = ['facility', 'client', 'location', 'start_date', 'completion_date', 'budget', 'capacity', 'owner', 'architect', 'vendors', 'contractors'];
+	foreach ($fact_fields as $fact_field) {
+		if ($timber_post->$fact_field) {
+			$facts[] = array(
+				'key' => snake_to_title_case($fact_field),
+				'value' => $timber_post->$fact_field,
+			);
+		}
+	}
+
+	// Assemble project facts
+	if (count($facts) > 0) {
+		$context['facts'] = $facts;
+	}
+}
+
 if ( post_password_required( $timber_post->ID ) ) {
 	Timber::render( 'single-password.twig', $context );
 } else {
