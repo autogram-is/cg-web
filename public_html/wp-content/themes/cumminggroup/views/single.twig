@@ -1,31 +1,10 @@
 {% extends "base.twig" %}
 
 {% block content %}
-			<div class="lede-header">
-				{# <p class="lede">byline</p> #}
-			</div>
-			<div class="prose prose-primary region flow">
-				{{post.content}}
-			</div>
-{#
-			<!-- comment box -->
-			<section class="comment-box">
-				<!-- comments -->
-				<div class="comments">
-						{% if post.comments %}
-					<h3> comments </h3>
-					{% for cmt in post.comments %}
-							{% include "comment.twig" with {comment:cmt} %}
-					{% endfor %}
-						{% endif %}
-				</div>
-
-				{% if post.comment_status == "closed" %}
-					<p> comments for this post are closed </p>
-				{% else %}
-						<!-- comment form -->
-						{% include "comment-form.twig" %}
-				{% endif %}
-			</section>
-#}
+	<div class="lede-header">
+		{# <p class="lede">byline</p> #}
+	</div>
+	<div class="prose prose-primary region flow">
+		{{post.content}}
+	</div>
 {% endblock %}
