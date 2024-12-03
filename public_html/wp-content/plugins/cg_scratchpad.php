@@ -27,11 +27,23 @@ function cgs_add_tools_menu_page() {
 function cgs_tools_page_content() {
   echo('<div class="wrap"><h1>Code Scratchpad</h1>');
   echo('<pre>');
-
-  $posts = get_post_by_meta('cg_sector', 'locale', null, 1);
-  $meta = get_post_meta($posts[0]->ID, 'locale', true);
-  var_dump($meta);
-
   echo('</pre>');
+
+  $query = new WP_Query(array(
+    'post_type' => 'cg_event',
+    'posts_per_page' => 100
+  ));
+  $posts = $query->get_posts();
+
+  echo(count($posts). ' posts found</br>');
+  echo('<ol>');
+  foreach ($posts as $post) {
+    $data = cgih_fusion_extract_event_details($post->post_content);
+    foreach($data['attendees'] as $bio) {
+        cgih_create_person_from_event_bio($bio);
+    }
+  }
+  echo('</ol>');
   echo('</div>');
 }
+
