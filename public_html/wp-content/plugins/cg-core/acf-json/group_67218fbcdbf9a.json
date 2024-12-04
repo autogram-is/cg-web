@@ -3,6 +3,25 @@
     "title": "Event Properties",
     "fields": [
         {
+            "key": "field_6721900ec8868",
+            "label": "Event URL",
+            "name": "event_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "default_value": "",
+            "allow_in_bindings": 1,
+            "placeholder": ""
+        },
+        {
             "key": "field_67218fbdc8866",
             "label": "Start Date",
             "name": "start_date",
@@ -47,46 +66,6 @@
             "allow_in_bindings": 1
         },
         {
-            "key": "field_6721900ec8868",
-            "label": "Event URL",
-            "name": "event_url",
-            "aria-label": "",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_column_enabled": 0,
-            "default_value": "",
-            "allow_in_bindings": 1,
-            "placeholder": ""
-        },
-        {
-            "key": "field_67219d2d9f42e",
-            "label": "Meeting Email",
-            "name": "event_email",
-            "aria-label": "",
-            "type": "email",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_column_enabled": 0,
-            "default_value": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_672d109698c21",
             "label": "All Day",
             "name": "all_day",
@@ -110,6 +89,27 @@
             "toggle": 0,
             "save_custom": 0,
             "custom_choice_button_text": "Add new choice"
+        },
+        {
+            "key": "field_67219d2d9f42e",
+            "label": "Meeting Email",
+            "name": "event_email",
+            "aria-label": "",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -130,5 +130,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733350674
+    "modified": 1733351571
 }

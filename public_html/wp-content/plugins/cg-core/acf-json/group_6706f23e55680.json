@@ -3,27 +3,6 @@
     "title": "Office properties",
     "fields": [
         {
-            "key": "field_670809e404829",
-            "label": "Address \/ Location",
-            "name": "location",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "rows": 3,
-            "placeholder": "",
-            "new_lines": "wpautop"
-        },
-        {
             "key": "field_670809ad04827",
             "label": "Email",
             "name": "email",
@@ -69,6 +48,27 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_670809e404829",
+            "label": "Address \/ Location",
+            "name": "location",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": "wpautop"
         }
     ],
     "location": [
@@ -89,5 +89,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733350299
+    "modified": 1733351581
 }
