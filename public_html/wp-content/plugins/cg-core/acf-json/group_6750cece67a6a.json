@@ -1,41 +1,9 @@
 {
-    "key": "group_6711785788bf3",
-    "title": "Person properties",
+    "key": "group_6750cece67a6a",
+    "title": "Person Properties",
     "fields": [
         {
-            "key": "field_671178bc96294",
-            "label": "Region",
-            "name": "region",
-            "aria-label": "",
-            "type": "post_object",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_column_enabled": 1,
-            "admin_column_position": "",
-            "admin_column_width": "",
-            "post_type": [
-                "cg_region"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "return_format": "id",
-            "multiple": 0,
-            "allow_null": 0,
-            "allow_in_bindings": 0,
-            "bidirectional": 1,
-            "bidirectional_target": [
-                "field_671181f9cb890"
-            ],
-            "ui": 1
-        },
-        {
-            "key": "field_6711785740227",
+            "key": "field_6750cedfad86d",
             "label": "Role",
             "name": "role",
             "aria-label": "",
@@ -59,7 +27,7 @@
             "append": ""
         },
         {
-            "key": "field_672b9877a92ed",
+            "key": "field_6750cef6ad86e",
             "label": "Email",
             "name": "email",
             "aria-label": "",
@@ -82,7 +50,7 @@
             "append": ""
         },
         {
-            "key": "field_672b98afa92ef",
+            "key": "field_6750cf07a4c08",
             "label": "Phone",
             "name": "phone",
             "aria-label": "",
@@ -102,39 +70,6 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
-        },
-        {
-            "key": "field_672eba4600079",
-            "label": "Events",
-            "name": "events",
-            "aria-label": "",
-            "type": "relationship",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_column_enabled": 0,
-            "post_type": [
-                "cg_event"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "filters": [
-                "search"
-            ],
-            "return_format": "id",
-            "min": "",
-            "max": "",
-            "allow_in_bindings": 0,
-            "elements": "",
-            "bidirectional": 1,
-            "bidirectional_target": [
-                "field_672b9c667f581"
-            ]
         }
     ],
     "location": [
@@ -147,7 +82,7 @@
         ]
     ],
     "menu_order": 0,
-    "position": "acf_after_title",
+    "position": "side",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
@@ -155,5 +90,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731116223
+    "modified": 1733350344
 }

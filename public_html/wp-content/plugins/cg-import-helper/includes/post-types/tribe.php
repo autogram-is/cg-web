@@ -12,8 +12,8 @@ function cgih_preprocess_raw_tribe_venue($postdata) {
     update_field('venue_address', $meta['_VenueAddress'], $id);
     update_field('venue_city', $meta['_VenueCity'], $id);
     update_field('venue_state', $meta['_VenueStateProvince'], $id);
-    update_field('venue_country', $meta['_VenueCountry'], $id);
     update_field('venue_postcode', $meta['_VenueZip'], $id);
+    update_field('venue_country', $meta['_VenueCountry'], $id);
     update_field('venue_phone', $meta['_VenuePhone'], $id);
   }
 

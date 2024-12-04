@@ -1,11 +1,11 @@
 {
-    "key": "group_67101409b4a3a",
-    "title": "Related Projects",
+    "key": "group_6750c9e90956d",
+    "title": "Related Portfolio Items",
     "fields": [
         {
-            "key": "field_671014095b23a",
-            "label": "Related Projects",
-            "name": "projects",
+            "key": "field_6750c9e97cd2e",
+            "label": "Related Portfolio Items",
+            "name": "related",
             "aria-label": "",
             "type": "relationship",
             "instructions": "",
@@ -18,24 +18,26 @@
             },
             "admin_column_enabled": 0,
             "post_type": [
-                "cg_project"
+                "cg_project",
+                "cg_sector",
+                "cg_service",
+                "cg_region",
+                "cg_office"
             ],
             "post_status": "",
             "taxonomy": "",
             "filters": [
-                "search"
+                "search",
+                "post_type"
             ],
-            "return_format": "id",
+            "return_format": "object",
             "min": "",
             "max": "",
             "allow_in_bindings": 0,
             "elements": "",
             "bidirectional": 1,
             "bidirectional_target": [
-                "field_6710305d566e6",
-                "field_6710305d56eb6",
-                "field_6710305d5729d",
-                "field_6710305d56acc"
+                "field_6750caf4230e7"
             ]
         }
     ],
@@ -44,28 +46,21 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "cg_sector"
+                "value": "post"
             }
         ],
         [
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "cg_service"
+                "value": "cg_episode"
             }
         ],
         [
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "cg_office"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "cg_region"
+                "value": "cg_event"
             }
         ]
     ],
@@ -78,5 +73,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731036289
+    "modified": 1733349508
 }

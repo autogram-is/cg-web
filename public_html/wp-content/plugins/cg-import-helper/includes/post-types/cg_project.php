@@ -75,7 +75,7 @@ function cgih_extract_project_relationships_from_tags($postdata) {
         $t = tag_to_office($term['slug']);
         if ($t) {
           $rel['offices'][] = $t->ID;
-          $regions = get_post_meta($t->ID, 'region');
+          $regions = get_post_meta($t->ID, 'regions');
           if ($regions && $regions[0]) {
             $rel['regions'][] = $regions[0];
           }

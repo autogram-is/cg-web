@@ -1,11 +1,11 @@
 {
-    "key": "group_67080c43330e5",
+    "key": "group_6750caf420f36",
     "title": "Related News",
     "fields": [
         {
-            "key": "field_67080c43281c8",
+            "key": "field_6750caf4230e7",
             "label": "Related News",
-            "name": "related_news",
+            "name": "related",
             "aria-label": "",
             "type": "relationship",
             "instructions": "",
@@ -16,26 +16,26 @@
                 "class": "",
                 "id": ""
             },
+            "admin_column_enabled": 0,
             "post_type": [
+                "post",
                 "cg_episode",
-                "cg_event",
-                "post"
+                "cg_event"
             ],
             "post_status": "",
             "taxonomy": "",
             "filters": [
                 "search",
-                "post_type",
-                "taxonomy"
+                "post_type"
             ],
-            "return_format": "object",
+            "return_format": "id",
             "min": "",
             "max": "",
             "allow_in_bindings": 0,
             "elements": "",
             "bidirectional": 1,
             "bidirectional_target": [
-                "field_6708142215936"
+                "field_6750c9e97cd2e"
             ]
         }
     ],
@@ -44,7 +44,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "cg_region"
+                "value": "cg_project"
             }
         ],
         [
@@ -65,7 +65,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "cg_project"
+                "value": "cg_region"
             }
         ],
         [
@@ -74,16 +74,23 @@
                 "operator": "==",
                 "value": "cg_office"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "cg_person"
+            }
         ]
     ],
-    "menu_order": 3,
+    "menu_order": 0,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Topically related news and thought leadership content",
+    "description": "",
     "show_in_rest": 0,
-    "modified": 1729114143
+    "modified": 1733349565
 }

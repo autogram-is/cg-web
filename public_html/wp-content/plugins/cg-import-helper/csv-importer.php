@@ -78,7 +78,7 @@ if ( class_exists( 'WP_Importer' ) ) {
 					'post_title'    => sanitize_text_field($row['title']),
 					'post_name'     => sanitize_text_field($row['slug']),
 					'post_parent'   => $row['parent'], // If this is a title, we search for parent ID
-					'region'        => $row['region'], // This becomes a post_meta or the post_parent
+					'regions'        => empty($row['region']) ? array() : array($row['region']), // This becomes a post_meta or the post_parent
 					'post_status'   => 'publish',
 					'post_author'   => get_current_user_id(),
 					'post_date'     => current_time('mysql'),

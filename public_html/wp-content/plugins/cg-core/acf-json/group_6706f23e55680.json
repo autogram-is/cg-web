@@ -3,36 +3,6 @@
     "title": "Office properties",
     "fields": [
         {
-            "key": "field_67081204f5596",
-            "label": "Region",
-            "name": "region",
-            "aria-label": "",
-            "type": "post_object",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_column_enabled": 1,
-            "admin_column_position": "",
-            "admin_column_width": "",
-            "post_type": [
-                "cg_region"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "return_format": "id",
-            "multiple": 0,
-            "allow_null": 0,
-            "allow_in_bindings": 0,
-            "bidirectional": 0,
-            "ui": 1,
-            "bidirectional_target": []
-        },
-        {
             "key": "field_670809e404829",
             "label": "Address \/ Location",
             "name": "location",
@@ -90,45 +60,15 @@
                 "class": "",
                 "id": ""
             },
+            "admin_column_enabled": 1,
+            "admin_column_position": "",
+            "admin_column_width": "",
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
             "prepend": "",
             "append": ""
-        },
-        {
-            "key": "field_67080927cedbb",
-            "label": "Contacts",
-            "name": "contacts",
-            "aria-label": "",
-            "type": "relationship",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_column_enabled": 0,
-            "post_type": [
-                "cg_person"
-            ],
-            "post_status": [
-                "publish"
-            ],
-            "taxonomy": "",
-            "filters": [
-                "search"
-            ],
-            "return_format": "id",
-            "min": "",
-            "max": "",
-            "allow_in_bindings": 0,
-            "elements": "",
-            "bidirectional": 0,
-            "bidirectional_target": []
         }
     ],
     "location": [
@@ -140,14 +80,14 @@
             }
         ]
     ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "seamless",
+    "menu_order": -1,
+    "position": "side",
+    "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Custom properties specific to Office pages",
+    "description": "",
     "show_in_rest": 0,
-    "modified": 1731036128
+    "modified": 1733350299
 }

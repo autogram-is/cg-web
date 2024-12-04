@@ -1,6 +1,6 @@
 <?php
 
-function get_post_by_meta($type = 'post', $key, $value = null, $limit = null) {
+function get_post_by_meta($type, $key, $value = null, $limit = null) {
   $args = array(
     'post_type' => $type,
   );

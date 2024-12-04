@@ -1,11 +1,11 @@
 {
-    "key": "group_672b9c662d0d3",
-    "title": "Event Attendees",
+    "key": "group_6750c99c50abb",
+    "title": "Related People",
     "fields": [
         {
-            "key": "field_672b9c667f581",
-            "label": "Team members",
-            "name": "attendees",
+            "key": "field_6750c99c34f00",
+            "label": "People",
+            "name": "people",
             "aria-label": "",
             "type": "relationship",
             "instructions": "",
@@ -16,9 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "admin_column_enabled": 1,
-            "admin_column_position": "",
-            "admin_column_width": "",
+            "admin_column_enabled": 0,
             "post_type": [
                 "cg_person"
             ],
@@ -27,18 +25,30 @@
             "filters": [
                 "search"
             ],
-            "return_format": "object",
+            "return_format": "id",
             "min": "",
             "max": "",
-            "allow_in_bindings": 1,
+            "allow_in_bindings": 0,
             "elements": "",
-            "bidirectional": 1,
-            "bidirectional_target": [
-                "field_672eba4600079"
-            ]
+            "bidirectional": 0,
+            "bidirectional_target": []
         }
     ],
     "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "cg_episode"
+            }
+        ],
         [
             {
                 "param": "post_type",
@@ -56,5 +66,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731116274
+    "modified": 1733348279
 }

@@ -1,79 +1,9 @@
 {
-    "key": "group_6710305d4e832",
-    "title": "Project relationships",
+    "key": "group_6750c797a2bae",
+    "title": "Project Connections",
     "fields": [
         {
-            "key": "field_6710305d566e6",
-            "label": "Sectors",
-            "name": "sectors",
-            "aria-label": "",
-            "type": "relationship",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_column_enabled": 1,
-            "admin_column_position": "",
-            "admin_column_width": "",
-            "post_type": [
-                "cg_sector"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "filters": [
-                "search"
-            ],
-            "return_format": "id",
-            "min": "",
-            "max": "",
-            "allow_in_bindings": 1,
-            "elements": "",
-            "bidirectional": 1,
-            "bidirectional_target": [
-                "field_671014095b23a"
-            ]
-        },
-        {
-            "key": "field_6710305d56eb6",
-            "label": "Services",
-            "name": "services",
-            "aria-label": "",
-            "type": "relationship",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_column_enabled": 1,
-            "admin_column_position": "",
-            "admin_column_width": "",
-            "post_type": [
-                "cg_service"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "filters": [
-                "search"
-            ],
-            "return_format": "id",
-            "min": "",
-            "max": "",
-            "allow_in_bindings": 1,
-            "elements": "",
-            "bidirectional": 1,
-            "bidirectional_target": [
-                "field_671014095b23a"
-            ]
-        },
-        {
-            "key": "field_6710305d56acc",
+            "key": "field_6750c797a4b50",
             "label": "Regions",
             "name": "regions",
             "aria-label": "",
@@ -102,13 +32,15 @@
             "max": "",
             "allow_in_bindings": 1,
             "elements": "",
-            "bidirectional": 0,
-            "bidirectional_target": []
+            "bidirectional": 1,
+            "bidirectional_target": [
+                "field_6750c726177a6"
+            ]
         },
         {
-            "key": "field_6710305d5729d",
-            "label": "Offices",
-            "name": "offices",
+            "key": "field_6750c797a53cf",
+            "label": "Sectors",
+            "name": "sectors",
             "aria-label": "",
             "type": "relationship",
             "instructions": "",
@@ -119,11 +51,9 @@
                 "class": "",
                 "id": ""
             },
-            "admin_column_enabled": 1,
-            "admin_column_position": "",
-            "admin_column_width": "",
+            "admin_column_enabled": 0,
             "post_type": [
-                "cg_office"
+                "cg_sector"
             ],
             "post_status": "",
             "taxonomy": "",
@@ -137,7 +67,73 @@
             "elements": "",
             "bidirectional": 1,
             "bidirectional_target": [
-                "field_671014095b23a"
+                "field_6750c6d0c0498"
+            ]
+        },
+        {
+            "key": "field_6750c797a57c2",
+            "label": "Services",
+            "name": "services",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "post_type": [
+                "cg_service"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "return_format": "object",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "elements": "",
+            "bidirectional": 1,
+            "bidirectional_target": [
+                "field_6750c712204d7"
+            ]
+        },
+        {
+            "key": "field_6750c797a5f8f",
+            "label": "People",
+            "name": "people",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "post_type": [
+                "cg_person"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "return_format": "object",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "elements": "",
+            "bidirectional": 1,
+            "bidirectional_target": [
+                "field_6750c888d2251"
             ]
         }
     ],
@@ -151,13 +147,13 @@
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Custom properties for Project pages",
+    "description": "",
     "show_in_rest": 0,
-    "modified": 1731036198
+    "modified": 1733350018
 }

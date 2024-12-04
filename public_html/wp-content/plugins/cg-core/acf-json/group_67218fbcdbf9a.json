@@ -38,7 +38,9 @@
                 "class": "",
                 "id": ""
             },
-            "admin_column_enabled": 0,
+            "admin_column_enabled": 1,
+            "admin_column_position": "",
+            "admin_column_width": "",
             "display_format": "d\/m\/Y g:i a",
             "return_format": "d\/m\/Y g:i a",
             "first_day": 1,
@@ -66,7 +68,7 @@
         {
             "key": "field_67219d2d9f42e",
             "label": "Meeting Email",
-            "name": "meeting_email",
+            "name": "event_email",
             "aria-label": "",
             "type": "email",
             "instructions": "",
@@ -128,5 +130,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731007419
+    "modified": 1733350674
 }
