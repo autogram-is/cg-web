@@ -18,7 +18,7 @@ Timber\Timber::init();
 Timber::$dirname = [ 'templates', 'views' ];
 
 new CGSite();
-use CGPost;
+// use CGPost;
 
 // Set the directory Timber-generated blocks are stored in
 add_filter('timber/acf-gutenberg-blocks-templates', function () {
@@ -35,7 +35,7 @@ add_filter('timber/post/classmap', function ($classmap) {
       'cg_office' => CGPost::class,
       'cg_sector' => CGPost::class,
       'cg_service' => CGPost::class,
-      //'cg_project' => CGPost::class,
+      'cg_project' => CGPost::class,
 
       'cg_event' => CGPost::class,
       'cg_report' => CGPost::class,
