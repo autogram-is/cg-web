@@ -148,7 +148,22 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    * @alias migrate
    */
   public function migrate() {
-    // 
+    //  1. Build out Region, Office, Sector, and Service skeleton
+    //  2. Build out the new page hierarchy
+    //  3. Migrate avada_portfolio posts to projects
+    //    3a. Add non-featured image attachments to project gallery
+    //    3b. Convert portfolio tags to relationships
+    //  4. Migrate tribe_events posts to events
+    //    4a. Fold tribe_venues into events and delete
+    //    4b. Create Person records from event attendees
+    //  5. Handle existing `post` types
+    //    5a. Convert podcast-tagged posts to episodes
+    //    5b. Extract and reformat logo'd and byline'd news
+    //    5c. Convert portfolio/city/etc tags to portfolio relationships
+    //  6. Sanitize remaining fusion builder markup
+    //  7. Delete old posts
+    //  8. Delete old taxonomy terms and categories
+    //  9. Delete supporting legacy posts (fusion element, slides, avado, etc)
   }
 }
 
