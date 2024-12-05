@@ -16,7 +16,9 @@
                 "class": "",
                 "id": ""
             },
-            "admin_column_enabled": 0,
+            "admin_column_enabled": 1,
+            "admin_column_position": "",
+            "admin_column_width": "",
             "post_type": [
                 "cg_person"
             ],
@@ -66,5 +68,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733348279
+    "modified": 1733353768
 }

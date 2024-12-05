@@ -12,74 +12,7 @@ if (!\class_exists('WP_CLI_Command')) {
  */
 class CG_CLI_Import_Commands extends WP_CLI_Command {
   /**
-   * Convert legacy tags to portfolio post references.
-   *
-   * ## OPTIONS
-   *
-   * [--dry-run]
-   * : If set, the command will only simulate the updates without saving them.
-   * 
-   * [--delete-tags]
-   * : If true, tags and categories will be deleted once their references are migrated.
-   * 
-   * ## EXAMPLES
-   *
-   *     wp convert-tags
-   *
-   * @param array $args
-   * @param array $assoc_args
-   * 
-   * @subcommand convert-tags
-   * @alias convert_tags
-   */
-  public function convert_tags($args, $assoc_args) {
-    $dry_run = isset($assoc_args['dry-run']);
-    $delete_tags = isset($assoc_args['delete']);
-
-    $query_args = [
-      'posts_per_page' => 1,
-      'post_status'    => 'any',
-      'fields'         => 'ids',
-    ];
-
-    $posts = get_posts($query_args);
-
-    if (empty($posts)) {
-      WP_CLI::success("No matching posts found");
-      return;
-    }
-
-    WP_CLI::log(sprintf("Found %d matching posts", count($posts)));
-
-    foreach ($posts as $post_id) {
-      // Get the post
-      $post = get_post($post_id);
-
-      // Apply a change (example: append ' - Updated' to the title)
-      $new_title = $post->post_title . ' - Updated';
-
-      if ($dry_run) {
-        WP_CLI::log("Dry run: Post ID $post_id would be updated to: $new_title");
-      } else {
-        wp_update_post([
-          'ID'         => $post_id,
-          'post_title' => $new_title,
-        ]);
-        WP_CLI::log("Updated post ID $post_id to: $new_title");
-        WP_CLI::log(print_r($post, true));
-      }
-    }
-
-    if ($dry_run) {
-      WP_CLI::success("Dry run complete. No posts were updated.");
-    } else {
-      WP_CLI::success("All posts have been updated.");
-    }
-  }
-
-
-  /**
-   * Convert legacy tags to portfolio post references.
+   * Inspect one or more posts from the command line.
    *
    * ## OPTIONS
    * 
@@ -101,8 +34,121 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
     foreach ($args as $post_id) {
       // Get the post
       $post = get_post($post_id);
+      $post->meta = get_post_meta($post_id);
       WP_CLI::log(print_r($post, true));
     }
+  }
+
+  /**
+   * Convert project attachments to gallery photos.
+   *
+   * ## OPTIONS
+   *
+   * [--dry-run]
+   * : If set, the command will only simulate the updates without saving them.
+   * 
+   * [--ignore-thumb]
+   * : If set, the featured image of the post will not be added to its gallery.
+   * 
+   * ## EXAMPLES
+   *
+   *     wp attach-galleries
+   *
+   * @param array $args
+   * @param array $assoc_args
+   * 
+   * @subcommand attach-galleries
+   * @alias attach_galleries
+   */
+  public function attach_galleries($args, $assoc_args) {
+    $dry_run = isset($assoc_args['dry-run']);
+    $ignore_thumb = isset($assoc_args['ignore-thumb']);
+
+    $query_args = [
+      'posts_per_page' => -1,
+      'post_type'      => 'cg_project',
+      'post_status'    => 'any',
+      'fields'         => 'ids',
+    ];
+
+    $posts = get_posts($query_args);
+
+    WP_CLI::log($posts);
+
+    if (empty($posts)) {
+      WP_CLI::success("No projects found");
+      return;
+    }
+
+    WP_CLI::log(sprintf("Found %d projects", count($posts)));
+
+    foreach ($posts as $post_id) {
+      // Get the post
+      $post = get_post($post_id);
+
+      // …And its attachments
+      $args = array(
+        'order' => 'ASC',
+        'post_type' => 'attachment',
+        'post_parent' => $post_id,
+        'post_mime_type' => 'image',
+        'post_status' => null,
+        'fields' => 'ids',
+      );
+      $attachments = get_posts($args);
+      $featured = get_post_thumbnail_id($post_id);
+
+      if ($ignore_thumb) {
+        unset($attachments[array_search($featured, $attachments)]);
+      }
+
+      $count = count($attachments);
+    
+      $affected_projects = 0;
+      $affected_images = 0;
+
+      if ($count > 1) {
+        $affected_projects++;
+        $affected_images += $count;
+        if ($dry_run) {
+          WP_CLI::log("Dry run: Project $post_id ($post->post_title) has $count attached images.");
+        } else {
+          update_field('gallery', $attachments, $post_id);
+          WP_CLI::log("Galleried $count attachments for project $post_id ($post->post_title).");
+        }
+      }
+    }
+
+    if ($dry_run) {
+      WP_CLI::success("Dry run complete. $affected_projects projects with gallery images found, no posts updated.");
+    } else {
+      WP_CLI::success("Images converted to galleries for $affected_projects projects.");
+    }
+  }
+
+    /**
+   * Convert project attachments to gallery photos.
+   *
+   * ## OPTIONS
+   *
+	 * <post_types>...
+	 * : The post types to migrate.
+   *
+   * [--dry-run]
+   * : If set, the command will only simulate the updates without saving them.
+   * 
+   * ## EXAMPLES
+   *
+   *     wp migrate
+   *
+   * @param array $args
+   * @param array $assoc_args
+   * 
+   * @subcommand migrate
+   * @alias migrate
+   */
+  public function migrate() {
+    // 
   }
 }
 
