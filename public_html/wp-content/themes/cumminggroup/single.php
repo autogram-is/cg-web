@@ -29,16 +29,11 @@ if ($timber_post->post_type === 'cg_project') {
 			'value' => join(', ', array_map('get_post_a_tag', $timber_post->sectors)),
 		);
 	}
+
 	if ($timber_post->services) {
 		$facts[] = array(
 			'key' => pluralize($timber_post->services, 'Service'),
 			'value' => join(', ', array_map('get_post_a_tag', $timber_post->services)),
-		);
-	}
-	if ($timber_post->offices) {
-		$facts[] = array(
-			'key' => pluralize($timber_post->offices, 'Office'),
-			'value' => join(', ', array_map('get_post_a_tag', $timber_post->offices)),
 		);
 	}
 
