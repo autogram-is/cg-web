@@ -20,7 +20,7 @@ class CGPost extends Post {
 	 * @return \Timber\PostCollectionInterface
 	 */
 	public function locale() {
-		return null;
+		return '';
 	}
 
 	/**
@@ -64,9 +64,7 @@ class CGPost extends Post {
 	 *
 	 * @return \Timber\PostCollectionInterface
 	 */
-	public function related() {
-		return array();
-	}
+	public function related() { return $this->_related('related'); }
 
 	/**
 	 * Returns the portfolio pages a news item is related to, formatted such that they can be passed
@@ -77,12 +75,17 @@ class CGPost extends Post {
 	}
 
 	private function _related($field_name) {
-		$field_prop = '-'.$field_name;
+		$field_prop = '_'.$field_name;
 		if (isset($this->$field_prop)) {
 			return $this->$field_prop;
 		}
 
-		$this->$field_prop = Timber::get_posts($this->meta($field_name));
-		return $this->$field_prop;
+		$meta = $this->meta($field_name);
+		if (!$meta) {
+			$this->$field_prop = null;
+		} else {
+			$this->$field_prop = Timber::get_posts;
+			return $this->$field_prop;	
+		}
 	}
 }
