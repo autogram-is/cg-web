@@ -40,102 +40,216 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
   }
 
   /**
-   * Convert project attachments to gallery photos.
+   * Import the portfolio organization hierarchy
    *
    * ## OPTIONS
-   *
+   * 
    * [--dry-run]
    * : If set, the command will only simulate the updates without saving them.
    * 
-   * [--ignore-thumb]
-   * : If set, the featured image of the post will not be added to its gallery.
-   * 
+   * [--preserve]
+   * : If set, preserves old business hierarchy pages even if new ones are created.
+   *
+   * [--lipsum]
+   * : If set, populates post bodies with one paragraph of Lorem Ipsum text.
+   *
    * ## EXAMPLES
    *
-   *     wp attach-galleries
+   *     wp cg portfolio
    *
    * @param array $args
    * @param array $assoc_args
    * 
-   * @subcommand attach-galleries
-   * @alias attach_galleries
+   * @subcommand hierarchy
    */
-  public function attach_galleries($args, $assoc_args) {
+  public function hierarchy($args, $assoc_args) {
     $dry_run = isset($assoc_args['dry-run']);
-    $ignore_thumb = isset($assoc_args['ignore-thumb']);
+    $preserve = isset($assoc_args['preserve']);
 
-    $query_args = [
-      'posts_per_page' => -1,
-      'post_type'      => 'cg_project',
-      'post_status'    => 'any',
-      'fields'         => 'ids',
-    ];
-
-    $posts = get_posts($query_args);
-
-    WP_CLI::log($posts);
-
-    if (empty($posts)) {
-      WP_CLI::success("No projects found");
-      return;
-    }
-
-    WP_CLI::log(sprintf("Found %d projects", count($posts)));
-
-    foreach ($posts as $post_id) {
-      // Get the post
-      $post = get_post($post_id);
-
-      // …And its attachments
-      $args = array(
-        'order' => 'ASC',
-        'post_type' => 'attachment',
-        'post_parent' => $post_id,
-        'post_mime_type' => 'image',
-        'post_status' => null,
-        'fields' => 'ids',
-      );
-      $attachments = get_posts($args);
-      $featured = get_post_thumbnail_id($post_id);
-
-      if ($ignore_thumb) {
-        unset($attachments[array_search($featured, $attachments)]);
-      }
-
-      $count = count($attachments);
-    
-      $affected_projects = 0;
-      $affected_images = 0;
-
-      if ($count > 1) {
-        $affected_projects++;
-        $affected_images += $count;
-        if ($dry_run) {
-          WP_CLI::log("Dry run: Project $post_id ($post->post_title) has $count attached images.");
-        } else {
-          update_field('gallery', $attachments, $post_id);
-          WP_CLI::log("Galleried $count attachments for project $post_id ($post->post_title).");
-        }
-      }
-    }
-
-    if ($dry_run) {
-      WP_CLI::success("Dry run complete. $affected_projects projects with gallery images found, no posts updated.");
-    } else {
-      WP_CLI::success("Images converted to galleries for $affected_projects projects.");
-    }
+    cg_cli_build_hierarchy($dry_run, $preserve);
   }
 
-    /**
-   * Convert project attachments to gallery photos.
+  /**
+   * Create stubbed informational pages and navigation menus.
+   *
+   * ## OPTIONS
+   * 
+   * [--dry-run]
+   * : If set, the command will only simulate the updates without saving them.
+   * 
+   * [--preserve]
+   * : If set, preserves old pages even if new ones are created.
+   * 
+   * ## EXAMPLES
+   *
+   *     wp cg navigation
+   *
+   * @param array $args
+   * @param array $assoc_args
+   * 
+   * @subcommand navigation
+   * @alias nav
+   */
+  public function navigation($args, $assoc_args) {
+    $dry_run = isset($assoc_args['dry-run']);
+    $preserve = isset($assoc_args['preserve']);
+
+  }
+
+  /**
+   * Convert porfolio posts to projects.
+   *
+   * ## OPTIONS
+   * 
+   * [--dry-run]
+   * : If set, the command will only simulate the updates without saving them.
+   * 
+   * [--preserve]
+   * : If set, preserves old portfolio pages even if new ones are created.
+   * 
+   * ## EXAMPLES
+   *
+   *     wp cg portfolio
+   *
+   * @param array $args
+   * @param array $assoc_args
+   * 
+   * @subcommand portfolio
+   */
+  public function portfolio($args, $assoc_args) {
+    $dry_run = isset($assoc_args['dry-run']);
+    $preserve = isset($assoc_args['preserve']);
+
+  }
+
+  /**
+   * Convert old events to new, merging venues.
+   *
+   * ## OPTIONS
+   * 
+   * [--dry-run]
+   * : If set, the command will only simulate the updates without saving them.
+   * 
+   * ## EXAMPLES
+   *
+   *     wp cg events
+   *
+   * @param array $args
+   * @param array $assoc_args
+   * 
+   * @subcommand events
+   */
+  public function events($args, $assoc_args) {
+    $dry_run = isset($assoc_args['dry-run']);
+
+  }
+
+  /**
+   * Convert press releases, podcasts, and other posts to new types.
+   *
+   * ## OPTIONS
+   * 
+   * [--dry-run]
+   * : If set, the command will only simulate the updates without saving them.
+   * 
+   * ## EXAMPLES
+   *
+   *     wp cg posts
+   *
+   * @param array $args
+   * @param array $assoc_args
+   * 
+   * @subcommand posts
+   */
+  public function posts($args, $assoc_args) {
+    $dry_run = isset($assoc_args['dry-run']);
+
+  }
+
+  /**
+   * Convert Fusion markup to scrubbed HTML.
+   *
+   * ## OPTIONS
+   * 
+   * [--dry-run]
+   * : If set, the command will only simulate the updates without saving them.
+   * 
+   * [--preserve-meta]
+   * : If set, the fusion meta properties will be preserved.
+   *
+   * ## EXAMPLES
+   *
+   *     wp cg markup
+   *
+   * @param array $args
+   * @param array $assoc_args
+   * 
+   * @subcommand markup
+   */
+  public function markup($args, $assoc_args) {
+    $dry_run = isset($assoc_args['dry-run']);
+
+  }
+
+  /**
+   * Delete uneeded posts, pages, tags and categories.
+   *
+   * ## OPTIONS
+   * 
+   * [--dry-run]
+   * : If set, the command will only simulate the updates without saving them.
+   *
+   * ## EXAMPLES
+   *
+   *     wp cg delete-old
+   *
+   * @param array $args
+   * @param array $assoc_args
+   * 
+   * @subcommand delete-old
+   * @alias delete_old
+   * @alias delete
+   */
+  public function delete_old($args, $assoc_args) {
+    $dry_run = isset($assoc_args['dry-run']);
+
+  }
+
+  /**
+   * Deletes old meta properties for migrated posts.
+   *
+   * ## OPTIONS
+   * 
+   * [--dry-run]
+   * : If set, the command will only simulate the updates without saving them.
+   *
+   * ## EXAMPLES
+   *
+   *     wp cg clean-meta
+   *
+   * @param array $args
+   * @param array $assoc_args
+   * 
+   * @subcommand clean-meta
+   * @alias clean_meta
+   * @alias meta
+   */
+  public function clean_meta($args, $assoc_args) {
+    $dry_run = isset($assoc_args['dry-run']);
+
+  }
+
+
+  /**
+   * Runs all steps of the Cumming Group migration process.
    *
    * ## OPTIONS
    *
-	 * <post_types>...
-	 * : The post types to migrate.
-   *
    * [--dry-run]
    * : If set, the command will only simulate the updates without saving them.
+   * 
+   * [--regnerate-images]
+   * : Regenerate thumbnails for attached images after the migration is complete.
    * 
    * ## EXAMPLES
    *
@@ -148,9 +262,16 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    * @alias migrate
    */
   public function migrate() {
+    $dry_run = isset($assoc_args['dry-run']);
+
     //  1. Build out Region, Office, Sector, and Service skeleton
+    // cg_cli_build_hierarchy($dry_run);
+
     //  2. Build out the new page hierarchy
+
     //  3. Migrate avada_portfolio posts to projects
+    cg_cli_migrate_projects($dry_run);
+
     //    3a. Add non-featured image attachments to project gallery
     //    3b. Convert portfolio tags to relationships
     //  4. Migrate tribe_events posts to events
@@ -164,6 +285,7 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
     //  7. Delete old posts
     //  8. Delete old taxonomy terms and categories
     //  9. Delete supporting legacy posts (fusion element, slides, avado, etc)
+
   }
 }
 
