@@ -13,20 +13,20 @@
  * ]
  */
 
-function cg_get_tag_map() {
+function cg_get_tag_map($rebuild = false) {
   // Load the tag / post map from the CSV file
 
   $map = get_transient('cg_tag_map');
 
-  if ($map === false) {
+  if ($map === false || $rebuild) {
+    WP_CLI::log("Building tag/relationship map");
+
     $map = [];
     $datalines = file(CG_MIGRATION_DATA_DIR . '/tag-map.csv');
     $header = str_getcsv($datalines[0]);
     
     $index = 0;
     foreach ($datalines as $line) {
-      WP_CLI::log("Building tag map");
-
       $data = str_getcsv($line);
         
       // Skip empty lines and header row

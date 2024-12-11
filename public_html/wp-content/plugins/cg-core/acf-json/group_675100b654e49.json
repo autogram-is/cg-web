@@ -79,7 +79,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "post"
+                "value": "cg_episode"
             }
         ]
     ],
@@ -92,5 +92,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733362437
+    "modified": 1733947927
 }

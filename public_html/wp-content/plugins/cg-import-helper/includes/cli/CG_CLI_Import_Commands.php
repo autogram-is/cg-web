@@ -113,14 +113,14 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    * 
    * ## EXAMPLES
    *
-   *     wp cg portfolio
+   *     wp cg projects
    *
    * @param array $args
    * @param array $assoc_args
    * 
-   * @subcommand portfolio
+   * @subcommand projects
    */
-  public function portfolio($args, $assoc_args) {
+  public function projects($args, $assoc_args) {
     $dry_run = isset($assoc_args['dry-run']);
     $post_ids = isset($assoc_args['post-ids']) ? explode(",", $assoc_args['post-ids']) : [];
 
@@ -254,15 +254,19 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    * @param array $args
    * @param array $assoc_args
    * 
-   * @subcommand map-tags
-   * @alias map_tags
-   * @alias tags
+   * @subcommand tags
    */
-  public function map_tags($args, $assoc_args) {
+  public function tags($args, $assoc_args) {
     $dry_run = isset($assoc_args['dry-run']);
     $preserve = isset($assoc_args['preserve']);
-    $post_types = $assoc_args['post-types'] ?? ['post', 'page', 'cg_project', 'cg_event', 'cg_episode'];
     $post_ids = isset($assoc_args['post-ids']) ? explode(",", $assoc_args['post-ids']) : [];
+
+    // While other post types exist, these are the ones that were extensively tagged and need shuffling.
+    $post_types = $assoc_args['post-types'] ?? ['post', 'page', 'cg_project', 'cg_event', 'cg_episode'];
+
+    if ($dry_run) {
+      cg_get_tag_map(true);
+    }
 
     if (count($post_ids) > 0) {
       WP_CLI::log(($dry_run ? "Dry Run: " : "") . "Mapping tags for posts " . join(', ', $post_ids));

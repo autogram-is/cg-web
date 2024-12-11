@@ -32,7 +32,9 @@ function cg_migrate_event($post, $dry_run = false) {
   if (count($extracted['attendees']) > 0) {
     $messages[] = count($extracted['attendees']) . ' attendees';
     if (!$dry_run) {
-      update_field('people', $attendees, $post->ID);
+      // 'people' from the 'related_people' group
+      // for some reason using the 'people' fieldname saves this data in the 'offices' relationship
+      update_field('field_6750c99c34f00', $attendees, $post->ID);
     }
   }
 
@@ -137,8 +139,9 @@ function _fusion_event_details($html) {
 
 function _person_from_event_attendee($bio, $dry_run) {
   $slug = trim(sanitize_title($bio['name']));
-  $post = get_post_by_name($slug, 'cg_person');
   $headshot_id = attachment_url_to_postid($bio['headshot']);
+
+  $post = get_post_by_name($slug, 'cg_person');
 
   if (!$post)  {
     $post_data = array(
@@ -153,10 +156,11 @@ function _person_from_event_attendee($bio, $dry_run) {
     );
 
     if (!$dry_run) { 
-      $post = wp_insert_post($post_data);
+      $post_id = wp_insert_post($post_data);
       if ($headshot_id) {
-        set_post_thumbnail($post, $headshot_id);
+        set_post_thumbnail($post_id, $headshot_id);
       }
+      $post = get_post($post_id);
     }
 
     WP_CLI::log(($dry_run ? "Dry Run: " : "") . "Bio for '{$post_data['post_title']}' ({$post_data['meta_input']['role']})");

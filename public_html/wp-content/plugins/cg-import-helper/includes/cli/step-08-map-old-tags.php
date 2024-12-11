@@ -32,7 +32,7 @@ function cg_map_old_tags($ids = [], $dry_run = false, $preserve = false) {
               // A little ugly; these relational field names are just un-prefixed, pluralized versions of the post types
               $target_field_name = str_replace('cg_', '', $map[$term->term_id]['type']) . 's';
             }
-            $fields[$target_field_name][$map[$term->term_id]['id']] = $map[$term->term_id]['id'];
+            $to_add[$target_field_name][$map[$term->term_id]['id']] = $map[$term->term_id]['id'];
             $to_remove[$term->taxonomy][$term->term_id] = $term->term_id;
           } else if ($record && $record['action'] === 'REMOVE') {
             $to_remove[$term->taxonomy][$term->term_id] = $term->term_id;
@@ -40,8 +40,6 @@ function cg_map_old_tags($ids = [], $dry_run = false, $preserve = false) {
         }
       }
       
-      WP_CLI::log(print_r($fields, true));
-
       $relationships_added = 0;
       $tags_removed = 0;
 
@@ -50,6 +48,8 @@ function cg_map_old_tags($ids = [], $dry_run = false, $preserve = false) {
         $relationships_added += count($ids);
         if (!$dry_run) {
           update_field($field, array_values($ids), $post_id);
+        } else {
+          WP_CLI::log("Dry Run: Add " . join(', ', array_values($ids)) . " to $field on '$post->post_title' ($post->post_type $post->ID)");
         }
       }
 
@@ -58,14 +58,16 @@ function cg_map_old_tags($ids = [], $dry_run = false, $preserve = false) {
           $tags_removed += count($ids);
           if (!$dry_run) {
             wp_remove_object_terms($post_id, array_values($ids), $taxonomy);
+          } else {
+            WP_CLI::log("Dry Run: Remove " . join(', ', array_values($ids)) . " from '$post->post_title' ($post->post_type $post->ID)");
           }
         }    
       }
 
       if ($dry_run) {
-        WP_CLI::log("Dry Run: Added $relationships_added, removed $tags_removed tags from '$post->post_title' ($post->post_type $post->ID)");
+        WP_CLI::log("Dry Run: Added $relationships_added relationships, removed $tags_removed tags from '$post->post_title' ($post->post_type $post->ID)");
       } else {
-        WP_CLI::log("Added $relationships_added, removed $tags_removed tags from '$post->post_title' ($post->post_type $post->ID)");
+        WP_CLI::log("Added $relationships_added relationships, removed $tags_removed tags from '$post->post_title' ($post->post_type $post->ID)");
       }
     }
   }
