@@ -1,7 +1,7 @@
 <div class="gallery {{ utilities }}">
   <div class="wrapper">
-    {% for image in images %}
+    {% for image in images -%}
     <img src="{{ get_image(image) }}">
-    {% endfor %}
+    {%- endfor %}
   </div>
 </div>

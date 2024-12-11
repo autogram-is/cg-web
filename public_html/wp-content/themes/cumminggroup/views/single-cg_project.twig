@@ -1,14 +1,19 @@
 {% extends "single.twig" %}
 
-{% block content %}
-	<div class="prose prose-primary region flow">
-		{{post.content}}
-	</div>
-  <div>
+{% block hero %}
+{% set pagetitle = title ? title : post.title %}
+<h1 class="type-pagehed hed-accent">{{ pagetitle }}</h1>
+{% endblock %}
+
+{% block sidebar %}
+  <div class="hero-sidebar repel region">
+    <div class="flow">
     {% include "fields/project-facts.twig" %}
-  </div>
-  {% set gallery = post.meta('gallery') %}
-  {% if gallery %}
-    {% include "fields/gallery.twig" with { images: gallery } %}
-  {% endif %}
+    </div>
+  </aside>
+{% endblock %}
+
+{% block posthero %}
+{% set gallery = post.meta('gallery') %}
+{% if gallery %}{% include "fields/gallery.twig" with { images: gallery } %}{% endif %}
 {% endblock %}
