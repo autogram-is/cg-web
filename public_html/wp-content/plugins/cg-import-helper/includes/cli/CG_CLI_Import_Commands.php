@@ -34,8 +34,12 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
     foreach ($args as $post_id) {
       // Get the post
       $post = get_post($post_id);
-      $post->meta = get_post_meta($post_id);
-      WP_CLI::log(print_r($post, true));
+      if ($post) {
+        $post->meta = get_post_meta($post_id);
+        WP_CLI::log(print_r($post, true));  
+      } else {
+        WP_CLI::log("Post #$post_id not found");
+      }
     }
   }
 
@@ -65,8 +69,9 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
   public function hierarchy($args, $assoc_args) {
     $dry_run = isset($assoc_args['dry-run']);
     $preserve = isset($assoc_args['preserve']);
+    $lipsum = isset($assoc_args['lipsum']);
 
-    cg_cli_build_hierarchy($dry_run, $preserve);
+    cg_cli_build_hierarchy($dry_run, $preserve, $lipsum);
   }
 
   /**
@@ -93,7 +98,6 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
   public function navigation($args, $assoc_args) {
     $dry_run = isset($assoc_args['dry-run']);
     $preserve = isset($assoc_args['preserve']);
-
   }
 
   /**
@@ -101,11 +105,11 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    *
    * ## OPTIONS
    * 
+   * [--post-ids]
+   * : If set, only the specified posts will be processed.
+   * 
    * [--dry-run]
    * : If set, the command will only simulate the updates without saving them.
-   * 
-   * [--preserve]
-   * : If set, preserves old portfolio pages even if new ones are created.
    * 
    * ## EXAMPLES
    *
@@ -118,14 +122,33 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    */
   public function portfolio($args, $assoc_args) {
     $dry_run = isset($assoc_args['dry-run']);
-    $preserve = isset($assoc_args['preserve']);
+    $post_ids = isset($assoc_args['post-ids']) ? explode(",", $assoc_args['post-ids']) : [];
 
+    if (count($post_ids) === 0) {
+      $args = [
+        'post_type'      => ['avada_portfolio', 'cg_project'],
+        'fields'          => 'ids',
+        'posts_per_page' => -1,
+      ];
+
+      // Execute the query
+      $query = new WP_Query($args);
+      $post_ids = $query->posts;
+    }
+
+    foreach ($post_ids as $post_id) {
+      $post = get_post($post_id);
+      $post = cg_migrate_project($post, $dry_run);
+    }
   }
 
   /**
    * Convert old events to new, merging venues.
    *
    * ## OPTIONS
+   * 
+   * [--dry-run]
+   * : If set, the command will only simulate the updates without saving them.
    * 
    * [--dry-run]
    * : If set, the command will only simulate the updates without saving them.
@@ -141,7 +164,24 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    */
   public function events($args, $assoc_args) {
     $dry_run = isset($assoc_args['dry-run']);
+    $post_ids = isset($assoc_args['post-ids']) ? explode(",", $assoc_args['post-ids']) : [];
 
+    if (count($post_ids) === 0) {
+      $args = [
+        'post_type'      => ['tribe_events', 'cg_events'],
+        'fields'          => 'ids',
+        'posts_per_page' => -1,
+      ];
+
+      // Execute the query
+      $query = new WP_Query($args);
+      $post_ids = $query->posts;
+    }
+
+    foreach ($post_ids as $post_id) {
+      $post = get_post($post_id);
+      $post = cg_migrate_event($post, $dry_run);
+    }
   }
 
   /**
@@ -163,7 +203,6 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    */
   public function posts($args, $assoc_args) {
     $dry_run = isset($assoc_args['dry-run']);
-
   }
 
   /**
@@ -188,7 +227,61 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    */
   public function markup($args, $assoc_args) {
     $dry_run = isset($assoc_args['dry-run']);
+  }
 
+
+  /**
+   * Remap old tags to new relationships.
+   *
+   * ## OPTIONS
+   *
+   * [--post-types]
+   * : If set, only the specified post types will be processed.
+   *
+   * [--post-ids]
+   * : If set, only the specified posts will be processed.
+   * 
+   * [--dry-run]
+   * : If set, the command will only simulate the updates without saving them.
+   *
+   * [--preserve]
+   * : If set, the command will add relationships but not remove old tags.
+   *
+   * ## EXAMPLES
+   *
+   *     wp cg delete-old
+   *
+   * @param array $args
+   * @param array $assoc_args
+   * 
+   * @subcommand map-tags
+   * @alias map_tags
+   * @alias tags
+   */
+  public function map_tags($args, $assoc_args) {
+    $dry_run = isset($assoc_args['dry-run']);
+    $preserve = isset($assoc_args['preserve']);
+    $post_types = $assoc_args['post-types'] ?? ['post', 'page', 'cg_project', 'cg_event', 'cg_episode'];
+    $post_ids = isset($assoc_args['post-ids']) ? explode(",", $assoc_args['post-ids']) : [];
+
+    if (count($post_ids) > 0) {
+      WP_CLI::log(($dry_run ? "Dry Run: " : "") . "Mapping tags for posts " . join(', ', $post_ids));
+      cg_map_old_tags($post_ids, $dry_run, $preserve);
+    } else {
+      // Get the list of post ids
+      $args = [
+        'post_type'      => $post_types,       // Change to specific post type if needed
+        'fields'         => 'ids',        // Return only post IDs
+        'posts_per_page' => -1,          // Get all posts
+      ];
+
+      // Execute the query
+      $query = new WP_Query($args);
+      $post_ids = $query->posts;
+
+      WP_CLI::log(($dry_run ? "Dry Run: " : "") . "Mapping tags for ".count($post_ids)." posts");
+      cg_map_old_tags($post_ids, $dry_run, $preserve);
+    }
   }
 
   /**

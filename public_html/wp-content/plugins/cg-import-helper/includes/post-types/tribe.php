@@ -30,11 +30,3 @@ function cgih_preprocess_raw_tribe_organizer($postdata) {
   $postdata['post_status'] = 'auto-draft';
   return $postdata;
 }
-
-function postmeta_keyed($postmeta) {
-  $output = [];
-  foreach ($postmeta as $entry) {
-    $output[$entry['key']] = $entry['value'];
-  }
-  return $output;
-}

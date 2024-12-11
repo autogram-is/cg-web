@@ -8,13 +8,14 @@ id,type,title,slug,locale,region,parent
 ,cg_region,Southwest,us-southwest,,,US
 ,cg_region,Europe,europe,,,
 ,cg_region,UK,uk,,,Europe
-,cg_office,"Belfast, UK/NI",belfast,,UK,
-,cg_office,"Cardiff, UK",cardiff,,UK,
-,cg_office,"Edinburgh, UK",edinburgh,,UK,
-,cg_office,"Exeter, UK",exeter,,UK,
-,cg_office,"London, UK",london,,UK,
-,cg_office,"Manchester, UK",manchester,,UK,
-,cg_office,"Stoke-On-Trent, UK",stoke-on-trent,,UK,
+,cg_office,"Belfast, UK/NI",belfast,,,UK
+,cg_office,"Cardiff, UK",cardiff,,,UK
+,cg_office,"Edinburgh, UK",edinburgh,,,UK
+,cg_office,"Exeter, UK",exeter,,,UK
+,cg_office,"London, UK",london,,,UK
+,cg_office,"Manchester, UK",manchester,,,UK
+,cg_office,"Stoke-On-Trent, UK",stoke-on-trent,,,UK
+,,,,,,
 ,cg_sector,Civic,civic,us,,
 ,cg_sector,Culture + Non-Profit,culture-non-profit,us,,
 ,cg_sector,Data Centers,data-centers,both,,
@@ -36,6 +37,7 @@ id,type,title,slug,locale,region,parent
 ,cg_sector,Themed Entertainment,themed-entertainment,us,,
 ,cg_sector,Transportation,transportation,us,,
 ,cg_sector,Workplace,workplace,both,,
+,,,,,,
 ,cg_service,Building Consultancy,building-consultancy,eu,,
 ,cg_service,Capital Allowances,capital-allowances,eu,,
 ,cg_service,Cost + Commercial Management,cost-commercial-management,us,,
@@ -48,6 +50,7 @@ id,type,title,slug,locale,region,parent
 ,cg_service,Project Management,project-management,eu,,
 ,cg_service,Project Monitoring,project-monitoring,both,,
 ,cg_service,Scheduling,scheduling,eu,,
+,,,,,,
 ,cg_office,"Boston, MA",boston,,Northeast,
 ,cg_office,"Cranford, NJ",cranford,,Northeast,
 ,cg_office,"New York, NY",new-york,,Northeast,

@@ -8,7 +8,7 @@
  * into XML-parsable content.
  */
 
-function cgih_fusion_unbracket($post_content) {
+function cg_fusion_to_xml($post_content) {
   $output = preg_replace('/\[(\/?fusion.*?)\]/', '<\1>', $post_content);
   return $output;
 }

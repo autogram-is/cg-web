@@ -39,7 +39,7 @@ function cg_cli_build_hierarchy($dry_run = false, $preserve = false, $lipsum = f
       'post_status'   => 'publish',
       'post_author'   => get_current_user_id(),
       'post_date'     => current_time('mysql'),
-      'post_content'  => $lipsum ? NULL : $lorem->paragraphs(1, 'p'),
+      'post_content'  => $lipsum ? $lorem->paragraphs(1, 'p') : NULL,
     );
 
     $posts[$index] = $post_data;
@@ -51,6 +51,11 @@ function cg_cli_build_hierarchy($dry_run = false, $preserve = false, $lipsum = f
       $post['post_parent'] = post_exists($post['post_parent'], '', '', $post['post_type']);
     }
 
+    $region = $post['region'];
+    $locale = $post['locale'];
+    unset($post['region']);
+    unset($post['locale']);
+
     $post_data = sanitize_post($post, 'db');
 
     if ($dry_run) {
@@ -58,19 +63,19 @@ function cg_cli_build_hierarchy($dry_run = false, $preserve = false, $lipsum = f
     } else {
       $post_id = wp_insert_post($post, true);
 
-      WP_CLI::log($post['post_type'] ." '". $post['post_title'] . "' ($post_id) created.");
-
       // If locales or regions were set for the post, update them here.
       // Doing this explicitly ensures ACF keeps keeps track of field associations.
       if ($post_id) {
-        if ($post['region']) {
-          $region = post_exists($post['region'], '', '', 'cg_region');
-          if ($region) {
-            update_field($post_id, 'regions', [$region]);
+        WP_CLI::log($post['post_type'] ." '". $post['post_title'] . "' ($post_id) created.");
+
+        if ($region) {
+          $rid = post_exists($region, '', '', 'cg_region');
+          if ($rid) {
+            update_field('regions', [$rid], $post_id);
           }
         }
-        if ($post['locale']) {
-          update_field($post_id, 'locale', $post['locale']);
+        if ($locale) {
+          update_field('locale', $locale, $post_id);
         }
       }
     }
@@ -89,21 +94,21 @@ function cg_cli_build_hierarchy($dry_run = false, $preserve = false, $lipsum = f
       WP_CLI::log("Dry-Run: ". count($offices) ." legacy Offices found");
 
     } else {
-      foreach ($sectors as $id) {
-        wp_delete_post($id, true);
-        WP_CLI::log("Deleted legacy Sector $id");
+      foreach ($sectors as $post) {
+        wp_delete_post($post->ID, true);
+        WP_CLI::log("Deleted legacy Sector $post->ID");
       }
-      foreach ($eu_sectors as $id) {
-        wp_delete_post($id, true);
-        WP_CLI::log("Deleted legacy Sector $id");
+      foreach ($eu_sectors as $post) {
+        wp_delete_post($post->ID, true);
+        WP_CLI::log("Deleted legacy Sector $post->ID");
       }
-      foreach ($services as $id) {
-        wp_delete_post($id, true);
-        WP_CLI::log("Deleted legacy Service $id");
+      foreach ($services as $post) {
+        wp_delete_post($post->ID, true);
+        WP_CLI::log("Deleted legacy Service $post->ID");
       }
-      foreach ($offices as $id) {
-        wp_delete_post($id, true);
-        WP_CLI::log("Deleted legacy Office $id");
+      foreach ($offices as $post) {
+        wp_delete_post($post->ID, true);
+        WP_CLI::log("Deleted legacy Office $post->ID");
       }
     }
   }

@@ -32,8 +32,10 @@
             "max": "",
             "allow_in_bindings": 0,
             "elements": "",
-            "bidirectional": 0,
-            "bidirectional_target": []
+            "bidirectional": 1,
+            "bidirectional_target": [
+                "field_6750caf4230e7"
+            ]
         }
     ],
     "location": [
@@ -68,5 +70,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733353768
+    "modified": 1733884403
 }
