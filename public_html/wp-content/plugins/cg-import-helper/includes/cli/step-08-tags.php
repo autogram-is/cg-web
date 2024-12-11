@@ -18,6 +18,9 @@ function cg_map_old_tags($ids = [], $dry_run = false, $preserve = false) {
 
       // Retrieve all of the terms on the post for each taxonomy we're remapping
       $post_terms = wp_get_object_terms($post_id, $taxonomies);
+      if (count($post_terms) === 0) {
+        continue;
+      }
 
       // For each term, see if we have a mapped action. If so, queue up the term to
       // be removed or replaced on this particular post.
@@ -64,11 +67,7 @@ function cg_map_old_tags($ids = [], $dry_run = false, $preserve = false) {
         }    
       }
 
-      if ($dry_run) {
-        WP_CLI::log("Dry Run: Added $relationships_added relationships, removed $tags_removed tags from '$post->post_title' ($post->post_type $post->ID)");
-      } else {
-        WP_CLI::log("Added $relationships_added relationships, removed $tags_removed tags from '$post->post_title' ($post->post_type $post->ID)");
-      }
+      WP_CLI::log($dry_run ? "Dry Run: " : '' . "Added $relationships_added relationships, removed $tags_removed of ". count($post_terms) ." tags from '$post->post_title' ($post->post_type $post->ID)");
     }
   }
 }

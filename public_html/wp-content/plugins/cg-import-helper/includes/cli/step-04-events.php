@@ -149,10 +149,6 @@ function _person_from_event_attendee($bio, $dry_run) {
       'post_type' => 'cg_person',
       'post_status' => 'publish',
       'post_name' => $slug,
-      'meta_input' => array(
-        'email' => $bio['email'] ? str_replace('mailto:', '', $bio['email']) : null,
-        'role' => $bio['role'],
-      ),
     );
 
     if (!$dry_run) { 
@@ -161,9 +157,15 @@ function _person_from_event_attendee($bio, $dry_run) {
         set_post_thumbnail($post_id, $headshot_id);
       }
       $post = get_post($post_id);
+      if ($bio['email']) {
+        update_field('email', str_replace('mailto:', '', trim($bio['email'])), $post_id);
+      }
+      if ($bio['role']) {
+        update_field('role', trim($bio['role']), $post_id);
+      }
     }
 
-    WP_CLI::log(($dry_run ? "Dry Run: " : "") . "Bio for '{$post_data['post_title']}' ({$post_data['meta_input']['role']})");
+    WP_CLI::log(($dry_run ? "Dry Run: " : "") . "Bio for '{$post_data['post_title']}' ({$bio['role']})");
   }
 
   return $post;
