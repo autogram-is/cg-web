@@ -1,5 +1,6 @@
 {
   "name": "autogram/cumminggroup",
+  "version": "1.0.0",
   "description": "Custom theme for the Cumming Group web site",
   "type":"wordpress-theme",
   "license": "MIT",

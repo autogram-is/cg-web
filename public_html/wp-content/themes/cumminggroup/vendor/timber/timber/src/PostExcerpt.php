@@ -159,7 +159,7 @@ class PostExcerpt implements Stringable
             'end' => '&hellip;',
             'force' => false,
             'strip' => true,
-            'read_more' => false,
+            'read_more' => 'Read More',
             'always_add_read_more' => false,
             'always_add_end' => false,
         ];
