@@ -16,10 +16,10 @@ if (!defined('ABSPATH')) {
 define('CG_MIGRATE_PLUGIN_DIR', WP_PLUGIN_DIR . '/cg-migrate');
 define('CG_MIGRATE_DATA_DIR', CG_MIGRATE_PLUGIN_DIR . '/data');
 
-$inc_dirs = ['post-types', 'helpers', 'hooks', 'cli'];
+$inc_dirs = ['cli', 'helpers', 'hooks'];
 foreach ($inc_dirs as $dir) {
-    foreach (glob(join("/", [CG_MIGRATE_PLUGIN_DIR, 'includes', $dir, '*.php'])) as $inc) {
+    foreach (glob(join("/", [CG_MIGRATE_PLUGIN_DIR, $dir, '*.php'])) as $inc) {
         $inc = basename($inc);
-        require_once CG_MIGRATE_PLUGIN_DIR . '/includes/' . $dir . '/' . $inc;
+        require_once CG_MIGRATE_PLUGIN_DIR . '/' . $dir . '/' . $inc;
     }    
 }

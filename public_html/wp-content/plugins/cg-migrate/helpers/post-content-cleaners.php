@@ -26,15 +26,3 @@ function cgih_fusion_extract_slides($html) {
   }
   return $output;
 }
-
-function findAllTagInstances($tagName, $html = '') {
-	// Use a regex pattern to capture the full tag including attributes and content
-	$pattern = "/(<$tagName\b[^>]*>.*?<\/$tagName>)/is";
-	
-	// Use preg_match_all to find all matches
-	preg_match_all($pattern, $html, $matches);
-	
-	// Return all matches, which include the full HTML of each tag instance
-	return $matches[1];
-}
-
