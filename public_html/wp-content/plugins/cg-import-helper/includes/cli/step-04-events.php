@@ -16,6 +16,7 @@ function cg_migrate_event($post, $dry_run = false) {
   $extracted = _fusion_event_details($post->post_content);
 
   if (!$dry_run) {
+    cg_save_migration_body($post->ID, $post->post_body);
     $post->post_content = $extracted['body'];
     wp_update_post($post);
   }

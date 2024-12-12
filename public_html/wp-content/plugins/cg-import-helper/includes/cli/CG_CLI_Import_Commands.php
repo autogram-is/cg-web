@@ -203,6 +203,24 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    */
   public function posts($args, $assoc_args) {
     $dry_run = isset($assoc_args['dry-run']);
+    $post_ids = isset($assoc_args['post-ids']) ? explode(",", $assoc_args['post-ids']) : [];
+
+    if (count($post_ids) === 0) {
+      $args = [
+        'post_type'      => ['post', 'page'],
+        'fields'          => 'ids',
+        'posts_per_page' => -1,
+      ];
+
+      // Execute the query
+      $query = new WP_Query($args);
+      $post_ids = $query->posts;
+    }
+
+    foreach ($post_ids as $post_id) {
+      $post = get_post($post_id);
+      $post = cg_migrate_post($post, $dry_run);
+    }
   }
 
   /**
@@ -228,7 +246,6 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
   public function markup($args, $assoc_args) {
     $dry_run = isset($assoc_args['dry-run']);
   }
-
 
   /**
    * Remap old tags to new relationships.
@@ -293,23 +310,25 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    *
    * ## OPTIONS
    * 
+   * [--force-delete]
+   * : If set, the command always delete content instead of archiving.
+   *
    * [--dry-run]
    * : If set, the command will only simulate the updates without saving them.
    *
    * ## EXAMPLES
    *
-   *     wp cg delete-old
+   *     wp cg archive
    *
    * @param array $args
    * @param array $assoc_args
    * 
-   * @subcommand delete-old
-   * @alias delete_old
-   * @alias delete
+   * @subcommand archive
    */
-  public function delete_old($args, $assoc_args) {
+  public function archive($args, $assoc_args) {
     $dry_run = isset($assoc_args['dry-run']);
-
+    $force_delete = isset($assoc_args['force-delete']);
+    cg_archive_content($force_delete, $dry_run);
   }
 
   /**

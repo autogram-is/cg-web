@@ -24,10 +24,10 @@
         "not_found_in_trash": "No people found in Trash",
         "archives": "Person Archives",
         "attributes": "Person Attributes",
-        "featured_image": "",
-        "set_featured_image": "",
-        "remove_featured_image": "",
-        "use_featured_image": "",
+        "featured_image": "Headshot",
+        "set_featured_image": "Set Headshot",
+        "remove_featured_image": "Remove Headshot",
+        "use_featured_image": "Use as Headshot",
         "insert_into_item": "Insert into person",
         "uploaded_to_this_item": "Uploaded to this person",
         "filter_items_list": "Filter people list",
@@ -82,5 +82,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1733884675
+    "modified": 1733957836
 }

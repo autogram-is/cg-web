@@ -16,14 +16,16 @@ function cg_migrate_project($post, $dry_run = false, $preserve = false) {
     $messages[] = "$attachment_count gallery images";
   }
 
-  
+  if (!$dry_run) {
+    cg_save_migration_body($post->ID, $post->post_body);
+  }
   $fusion = cg_clean_project_markup($post);
   $post->post_content = $fusion['body'];
 
   if (!$dry_run) {
     wp_update_post($post);
     if ($fusion['facts']) {
-      add_post_meta($post->ID, 'cg_migration_history', $fusion['facts'], true);
+      cg_save_migration_data($post->ID, $fusion['facts']);
     }
   }
 
