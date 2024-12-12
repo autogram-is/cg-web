@@ -1,23 +1,38 @@
 {
-  "name": "autogram/cumminggroup",
-  "version": "1.0.0",
-  "description": "Custom theme for the Cumming Group web site",
-  "type":"wordpress-theme",
-  "license": "MIT",
-  "authors": [
-    {
-      "email": "team@autogram.is",
-      "name": "autogram"
+    "name": "autogram/cumminggroup",
+    "version": "1.0.0",
+    "description": "Custom theme for the Cumming Group web site",
+    "type": "wordpress-theme",
+    "license": "MIT",
+    "authors": [
+        {
+            "email": "team@autogram.is",
+            "name": "autogram"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        }
+    ],
+    "require": {
+        "timber/timber": "2.x-dev",
+        "palmiak/timber-acf-wp-blocks": "^1.15"
+    },
+    "require-dev": {
+        "symplify/vendor-patches": "*"
+    },
+    "config": {
+        "allow-plugins": {
+            "cweagans/composer-patches": true
+        }
+    },
+    "extra": {
+        "patches": {
+            "palmiak/timber-acf-wp-blocks": [
+                "patches/palmiak-timber-acf-wp-blocks-timber-acf-wp-blocks-php.patch"
+            ]
+        }
     }
-  ],
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://wpackagist.org"
-    }
-  ],
-  "require": {
-    "timber/timber": "2.x-dev",
-    "palmiak/timber-acf-wp-blocks": "^1.15"
-  }
 }

@@ -19,6 +19,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'cweagans/composer-patches' => array(
+            'pretty_version' => '1.7.3',
+            'version' => '1.7.3.0',
+            'reference' => 'e190d4466fe2b103a55467dfa83fc2fecfcaf2db',
+            'type' => 'composer-plugin',
+            'install_path' => __DIR__ . '/../cweagans/composer-patches',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
         'palmiak/timber-acf-wp-blocks' => array(
             'pretty_version' => '1.15',
             'version' => '1.15.0.0',
@@ -63,6 +72,15 @@
             'install_path' => __DIR__ . '/../symfony/polyfill-php81',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'symplify/vendor-patches' => array(
+            'pretty_version' => '11.3.7',
+            'version' => '11.3.7.0',
+            'reference' => 'dec8ec588192a3ee0d886288395b5cd6a768126e',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symplify/vendor-patches',
+            'aliases' => array(),
+            'dev_requirement' => true,
         ),
         'timber/timber' => array(
             'pretty_version' => '2.x-dev',

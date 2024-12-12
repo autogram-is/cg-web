@@ -19,6 +19,10 @@ class ComposerStaticInit45ee886cc44b90a50dfa9a43cb90e5d0
     );
 
     public static $prefixLengthsPsr4 = array (
+        'c' => 
+        array (
+            'cweagans\\Composer\\' => 18,
+        ),
         'T' => 
         array (
             'Twig\\' => 5,
@@ -33,6 +37,10 @@ class ComposerStaticInit45ee886cc44b90a50dfa9a43cb90e5d0
     );
 
     public static $prefixDirsPsr4 = array (
+        'cweagans\\Composer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cweagans/composer-patches/src',
+        ),
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
