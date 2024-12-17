@@ -107,6 +107,9 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    * 
    * [--post-ids]
    * : If set, only the specified posts will be processed.
+   *
+   * [--reprocess]
+   * : If set, reprocess previously-imported posts.
    * 
    * [--dry-run]
    * : If set, the command will only simulate the updates without saving them.
@@ -125,15 +128,7 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
     $post_ids = isset($assoc_args['post-ids']) ? explode(",", $assoc_args['post-ids']) : [];
 
     if (count($post_ids) === 0) {
-      $args = [
-        'post_type'      => ['avada_portfolio', 'cg_project'],
-        'fields'          => 'ids',
-        'posts_per_page' => -1,
-      ];
-
-      // Execute the query
-      $query = new WP_Query($args);
-      $post_ids = $query->posts;
+      $post_ids = _all_ids_for_types(['avada_portfolio', 'cg_project']);
     }
 
     foreach ($post_ids as $post_id) {
@@ -147,8 +142,11 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    *
    * ## OPTIONS
    * 
-   * [--dry-run]
-   * : If set, the command will only simulate the updates without saving them.
+   * [--post-ids]
+   * : If set, only the specified posts will be processed.
+   *
+   * [--reprocess]
+   * : If set, reprocess previously-imported posts.
    * 
    * [--dry-run]
    * : If set, the command will only simulate the updates without saving them.
@@ -167,15 +165,7 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
     $post_ids = isset($assoc_args['post-ids']) ? explode(",", $assoc_args['post-ids']) : [];
 
     if (count($post_ids) === 0) {
-      $args = [
-        'post_type'      => ['tribe_events', 'cg_events'],
-        'fields'          => 'ids',
-        'posts_per_page' => -1,
-      ];
-
-      // Execute the query
-      $query = new WP_Query($args);
-      $post_ids = $query->posts;
+      $post_ids = _all_ids_for_types(['tribe_events', 'cg_events']);
     }
 
     foreach ($post_ids as $post_id) {
@@ -185,36 +175,34 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
   }
 
   /**
-   * Convert press releases, podcasts, and other posts to new types.
+   * Migrate press releases, podcasts, and other posts to new structures.
    *
    * ## OPTIONS
+   * 
+   * [--post-ids]
+   * : If set, only the specified posts will be processed.
+   *
+   * [--reprocess]
+   * : If set, reprocess previously-imported posts.
    * 
    * [--dry-run]
    * : If set, the command will only simulate the updates without saving them.
    * 
    * ## EXAMPLES
    *
-   *     wp cg posts
+   *     wp cg news
    *
    * @param array $args
    * @param array $assoc_args
    * 
    * @subcommand posts
    */
-  public function posts($args, $assoc_args) {
+  public function news($args, $assoc_args) {
     $dry_run = isset($assoc_args['dry-run']);
     $post_ids = isset($assoc_args['post-ids']) ? explode(",", $assoc_args['post-ids']) : [];
 
     if (count($post_ids) === 0) {
-      $args = [
-        'post_type'      => ['post', 'page'],
-        'fields'          => 'ids',
-        'posts_per_page' => -1,
-      ];
-
-      // Execute the query
-      $query = new WP_Query($args);
-      $post_ids = $query->posts;
+      $post_ids = _all_ids_for_types('post');
     }
 
     foreach ($post_ids as $post_id) {
@@ -224,27 +212,40 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
   }
 
   /**
-   * Convert Fusion markup to scrubbed HTML.
+   * Migrate standalone pages.
    *
    * ## OPTIONS
+   * 
+   * [--post-ids]
+   * : If set, only the specified posts will be processed.
+   *
+   * [--reprocess]
+   * : If set, reprocess previously-imported posts.
    * 
    * [--dry-run]
    * : If set, the command will only simulate the updates without saving them.
    * 
-   * [--preserve-meta]
-   * : If set, the fusion meta properties will be preserved.
-   *
    * ## EXAMPLES
    *
-   *     wp cg markup
+   *     wp cg news
    *
    * @param array $args
    * @param array $assoc_args
    * 
-   * @subcommand markup
+   * @subcommand posts
    */
-  public function markup($args, $assoc_args) {
+  public function pages($args, $assoc_args) {
     $dry_run = isset($assoc_args['dry-run']);
+    $post_ids = isset($assoc_args['post-ids']) ? explode(",", $assoc_args['post-ids']) : [];
+
+    if (count($post_ids) === 0) {
+      $post_ids = _all_ids_for_types('page');
+    }
+  
+    foreach ($post_ids as $post_id) {
+      $post = get_post($post_id);
+      $post = cg_migrate_post($post, $dry_run);
+    }
   }
 
   /**
@@ -285,24 +286,11 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
       cg_get_tag_map(true);
     }
 
-    if (count($post_ids) > 0) {
-      WP_CLI::log(($dry_run ? "Dry Run: " : "") . "Mapping tags for posts " . join(', ', $post_ids));
-      cg_map_old_tags($post_ids, $dry_run, $preserve);
-    } else {
-      // Get the list of post ids
-      $args = [
-        'post_type'      => $post_types,       // Change to specific post type if needed
-        'fields'         => 'ids',        // Return only post IDs
-        'posts_per_page' => -1,          // Get all posts
-      ];
-
-      // Execute the query
-      $query = new WP_Query($args);
-      $post_ids = $query->posts;
-
-      WP_CLI::log(($dry_run ? "Dry Run: " : "") . "Mapping tags for ".count($post_ids)." posts");
-      cg_map_old_tags($post_ids, $dry_run, $preserve);
+    if (count($post_ids) === 0) {
+      $post_ids = _all_ids_for_types($post_types);
     }
+    WP_CLI::log(($dry_run ? "Dry Run: " : "") . "Mapping tags for ".count($post_ids)." posts");
+    cg_map_old_tags($post_ids, $dry_run, $preserve);
   }
 
   /**
@@ -378,31 +366,24 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    * @alias migrate
    */
   public function migrate() {
-    $dry_run = isset($assoc_args['dry-run']);
-
-    //  1. Build out Region, Office, Sector, and Service skeleton
-    // cg_cli_build_hierarchy($dry_run);
-
-    //  2. Build out the new page hierarchy
-
-    //  3. Migrate avada_portfolio posts to projects
-    cg_cli_migrate_projects($dry_run);
-
-    //    3a. Add non-featured image attachments to project gallery
-    //    3b. Convert portfolio tags to relationships
-    //  4. Migrate tribe_events posts to events
-    //    4a. Fold tribe_venues into events and delete
-    //    4b. Create Person records from event attendees
-    //  5. Handle existing `post` types
-    //    5a. Convert podcast-tagged posts to episodes
-    //    5b. Extract and reformat logo'd and byline'd news
-    //    5c. Convert portfolio/city/etc tags to portfolio relationships
-    //  6. Sanitize remaining fusion builder markup
-    //  7. Delete old posts
-    //  8. Delete old taxonomy terms and categories
-    //  9. Delete supporting legacy posts (fusion element, slides, avado, etc)
-
   }
 }
 
 WP_CLI::add_command('cg', 'CG_CLI_Import_Commands');
+
+function _all_ids_for_types($post_types, $reprocess = false) {
+  $args = [
+    'post_type'      => $post_types,
+    'fields'          => 'ids',
+    'posts_per_page' => -1,
+  ];
+
+  if (!$reprocess) {
+    // TODO
+  }
+
+  // Execute the query
+  $query = new WP_Query($args);
+
+  return $query->posts;
+}

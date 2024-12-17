@@ -63,3 +63,23 @@ function _post_fusion_converter($post, $dom, $node = null, &$chunks = []) {
   }
   return $chunks;
 }
+
+
+function _process_news($post, $dry_run) {
+  
+}
+
+
+function _process_podcast($post, $dry_run) {
+  
+}
+
+
+function _process_event_post($post, $dry_run) {
+  
+}
+
+
+function _process_case_study($post, $dry_run) {
+  
+}

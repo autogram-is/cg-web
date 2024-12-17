@@ -30,11 +30,11 @@ term_id,taxonomy,slug,name,count,new_type,new_slug,action
 460,news_and_insights,blog,Blog,39,,,
 461,news_and_insights,podcast,Podcast,22,,,
 462,news_and_insights,white-paper,White Paper,7,,,
-463,news_and_insights,case-study,Case Study,15,,,REMOVE
+463,news_and_insights,case-study,Case Study,15,,,
 464,news_and_insights,press-release,Press Release,43,,,
-465,news_and_insights,cumming-insights,Cumming Insights,0,,,REMOVE
-466,news_and_insights,other_news,Other,0,,,REMOVE
-468,news_and_insights,expert-insights-blog,Expert Insights Blog,0,,,REMOVE
+465,news_and_insights,cumming-insights,Cumming Insights,0,,,
+466,news_and_insights,other_news,Other,0,,,
+468,news_and_insights,expert-insights-blog,Expert Insights Blog,0,,,
 469,news_and_insights,events,Events,36,,,
 438,news_region,us_west,US — West,96,cg_region,us-northwest,
 439,news_region,us_east,US — East,48,cg_region,us-northeast,
