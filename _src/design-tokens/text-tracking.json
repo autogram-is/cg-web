@@ -1,0 +1,24 @@
+{
+  "title": "Tracking",
+  "description": "Desc",
+  "meta": {
+  },
+  "items": [
+    {
+      "name": "Tight",
+      "value": "-.03125ch"
+    },
+    {
+      "name": "Normal",
+      "value": "0"
+    },
+    {
+      "name": "Wide",
+      "value": ".03125ch"
+    },
+    {
+      "name": "Loose",
+      "value": ".0625ch"
+    }
+  ]
+}

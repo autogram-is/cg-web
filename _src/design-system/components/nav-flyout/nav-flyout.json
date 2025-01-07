@@ -1,0 +1,69 @@
+
+{ 
+  "title": "Navigation Flyout",
+  "keyLinks": [ 
+    {
+      "label": "CSS",
+      "url": "/_src/css/components/nav-flyout.css"
+    }, {
+      "label": "CSS",
+      "url": "/_src/css/components/toggle.css"
+    }, {
+      "label": "JS",
+      "url": "/_src/js/toggle.js"
+    } ],
+  "context": {
+    "links" : [
+      {
+        "title" : "Career Opportunities",
+        "href" : "#"
+      },
+      {
+        "title" : "Hiring Process",
+        "href" : "#"
+      },
+      {
+        "title" : "Benefits & Recognition",
+        "href" : "#"
+      },
+      {
+        "title" : "Life at Cumming Group",
+        "href" : "#"
+      }
+    ],
+    "teaser" : {
+      "body" : "We are always looking for great people, and given our global footprint and the vast services we offer on dozens of project types, we may very well have a position that’s perfectly suited for you."
+    }
+  },
+  "variants" : [
+    {
+      "title" : "Color Block",
+      "name" : "colorblock",
+      "note" : "Allows use of `.bg-regal-purple`, `.bg-legacy-red`, and `.bg-timeless-gold` helper classes.",
+      "context": {
+        "utilities" : "bg-regal-purple",
+        "links" : [
+          {
+            "title" : "Career Opportunities",
+            "href" : "#"
+          },
+          {
+            "title" : "Hiring Process",
+            "href" : "#"
+          },
+          {
+            "title" : "Benefits & Recognition",
+            "href" : "#"
+          },
+          {
+            "title" : "Life at Cumming Group",
+            "href" : "#"
+          }
+        ],
+        "teaser" : {
+          "body" : "We are always looking for great people, and given our global footprint and the vast services we offer on dozens of project types, we may very well have a position that’s perfectly suited for you."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+/* 
+VISUALLY HIDDEN UTILITY
+Info: https://piccalil.li/quick-tip/visually-hidden/ 
+*/
+
+.visually-hidden {
+  @mixin visuallyhidden;
+}
+.visually-hidden.focusable:focus,
+.visually-hidden.focusable:active {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}

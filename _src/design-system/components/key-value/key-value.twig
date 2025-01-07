@@ -1,0 +1,14 @@
+<div class="key-value {{ type }}">
+	{% if heading %}<h3 class="type-detail hed-accent">{{ heading }}</h3>{% endif %}
+	<dl class="flow {{ utilities }}">
+		{% for item in items %}
+		<div class="sidebar">
+			<dt class="type-detail">{{ item.key }}</dt>
+			<dd>{{ item.value }}</dd>
+		</div>
+		{% endfor %}
+		{% if cta %}
+			<a href="{{ cta.href }}" class="button factsheet-cta">{{ cta.text }}</a>
+		{% endif %}
+	</dl>
+</div>

@@ -1,0 +1,12 @@
+
+{ 
+  "title": "Logo Cluster",
+  "name" : "logo-cluster",
+  "keyLinks": [ {
+        "label": "CSS",
+        "url": "/_src/css/components/logo-cluster.css"
+      } ],
+  "context": {
+    "utilities" : "cluster all-center"
+  }
+}

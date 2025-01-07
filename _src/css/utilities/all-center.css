@@ -1,0 +1,11 @@
+/**
+ * ALL CENTER
+ * Centers the element’s contents vertically and horizontally
+ */
+.all-center,
+.all-center * {
+  text-align: center;
+  margin-inline: auto;
+  align-items: center;
+  justify-content: center;
+}

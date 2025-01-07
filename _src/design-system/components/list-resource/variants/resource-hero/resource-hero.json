@@ -1,0 +1,23 @@
+
+{ 
+  "title": "Hero",
+  "name" : "resource-hero",
+  "keyLinks": [ {
+        "label": "CSS",
+        "url": "/_src/css/components/resource-hero.css"
+      } ],
+  "context": {
+    "type" : "hero",
+    "title" : "Vail’s big remodel of Dobson Arena is back on track",
+    "href"  : "#",
+    "body"  : "After returning to the drawing board, Vail’s remodel of Dobson Ice Arena is back on track and within budget. At its Tuesday, June 4, meeting, the Vail Town Council and Vail Recreation District board agreed on a program for the remodel, kicking the project into its next phase",
+    "img" : {
+      "src" : "https://picsum.photos/1000/800?&blur=5",
+      "height" : 800,
+      "width" : 1000,
+      "alt" : ""
+    },
+    "tags" : ["News and Insights"],
+    "date" : "October 31, 2024"
+  }
+}

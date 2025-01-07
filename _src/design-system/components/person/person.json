@@ -1,0 +1,29 @@
+{
+  "title": "Person",
+  "keyLinks": [
+    {
+      "label": "CSS",
+      "url": "/_src/css/components/person.css"
+    }
+  ],
+  "context": {
+    "name": "Erwin Watt",
+    "title": "Senior Vice President",
+    "region" : "Northeast Region",
+    "sectors" : [
+      {
+        "text" : "Planning & Scheduling",
+        "href" : "#"
+      },{
+        "text" : "Dispute Resolution & Avoidance",
+        "href" : "#"
+      }
+    ],
+    "img" : {
+      "src" : "https://picsum.photos/1200/800?&blur=5.1",
+      "height" : 800,
+      "width" : 1200,
+      "alt" : ""
+    }
+  }
+}

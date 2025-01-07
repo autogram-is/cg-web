@@ -1,0 +1,35 @@
+{
+  "title": "Switcher",
+  "summary":".switcher",
+  "configuration" : {
+    "th" : [
+      "Property",
+      "Default value",
+      "Description"
+    ],
+    "tr" : [
+      { "td" : [ "`--gutter`", "`var(--space-s-m)`", "This defines the space between each item." ] },
+      { "td" : [ "`--switcher-vertical-alignment`", "`flex-start`", "This defines the space between each item." ] },
+      { "td" : [ "`--switcher-target-container-width`", "`40rem`", "Above this container width, child elements will sit side-by-side." ] }
+    ]
+  },
+  "context": {
+  },
+  "variants" : [
+    {
+      "title": "Reverse Switcher",
+      "context" : {
+        "type" : "reverse"
+      },
+      "configuration" : {
+        "th" : [
+          "Property",
+          "Description"
+        ],
+        "tr" : [
+          { "td" : [ "`.switcher[data-direction='rtl']`", "Flips the first item in source order to the right side of the layout when horizontally aligned; otherwise follows source order." ] }
+        ]
+      }
+    }
+  ]
+}

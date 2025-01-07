@@ -1,0 +1,6 @@
+.logo-cluster {
+  --gutter: var(--space-s);
+  img {
+    max-width: calc( 2 * var(--space-2xl) );
+  }
+}

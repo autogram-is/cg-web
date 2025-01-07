@@ -1,0 +1,1 @@
+Hides content in a way that ensures it remains available to users browsing via assistive technologies.

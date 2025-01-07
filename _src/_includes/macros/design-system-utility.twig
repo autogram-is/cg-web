@@ -1,0 +1,9 @@
+{% macro designSystemUtility(markup) %}
+<pre>
+<code>{{ rendered | escape}}</code>
+</pre>
+<h5 class="design-system__render-hed">Rendered</h5>
+<div class="design-system__example flow-space-3xs">
+{{ rendered }}
+</div>
+{% endmacro %}

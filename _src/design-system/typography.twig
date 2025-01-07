@@ -1,0 +1,419 @@
+---
+title: 'Typography'
+summary: Text sizes and leading follow fluid scales, meaning that `font-size` and `line-height` scale based on the size of the viewport.
+---
+
+{% extends "../_includes/layouts/design-system.twig" %}
+
+{% block inner %}
+  <nav class="cluster wrapper">
+    <a href="#typography">Composed Typefaces</a>
+    <a href="#accents">Type Accents</a>
+
+  {% for token in design.tokens %}
+    {% if token.title != "Colors" and token.title != "Spacing" %}<a href="#{{ token.title|slug}}">{{ token.title }}</a>{% endif %}{# Quick fix. #}
+  {% endfor %}
+  </nav>
+
+<div class="wrapper py-m">
+  <div class="design-system__inner flow">
+    <div class="region flow">
+      <h3 id="typography">Composed Typefaces</h3>
+      <p>Note that none of these heading styles rely on specific heading level markup.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Utility Class</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Page Heading</td>
+            <td><code>.type-pagehed</code></td>
+          </tr>
+          <tr>
+            <td>Display text</td>
+            <td><code>.type-display</code></td>
+          </tr>
+          <tr>
+            <td>Outlined</td>
+            <td><code>.type-outline</code></td>
+          </tr>
+          <tr>
+            <td>Heading</td>
+            <td><code>.type-hed</code></td>
+          </tr>
+          <tr>
+            <td>Detail</td>
+            <td><code>.type-detail</code></td>
+          </tr>
+          <tr>
+            <td>Eyebrow Heading</td>
+            <td><code>.type-eyebrow</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h5 class="design-system__render-hed">Rendered</h5>
+      <div class="design-system__example flow">
+        <div class="flow">
+          <div>
+            <p>Page Heading</p>
+            <h2 class="type-pagehed">Sphere at the Venetian Resort</h2>
+          </div>
+          <div>
+            <p>Linked Page Heading</p>
+            <h2 class="type-pagehed"><a href="#">Sphere at the Venetian Resort</a></h2>
+          </div>
+        </div>
+        <div>
+          <p>Display Text</p>
+          <h2 class="type-display">Sphere at the Venetian Resort</h2>
+        </div>
+        <div>
+          <p>Linked display text</p>
+          <h2 class="type-display"><a href="#">Sphere at the Venetian Resort</a></h2>
+        </div>
+        <div class="flow">
+          <div>
+            <p>Outline</p>
+            <h2 class="type-outline">2024</h2>
+          </div>
+          <div>
+            <p>Linked Outline</p>
+            <h2 class="type-outline"><a href="#">2024</a></h2>
+          </div>
+        </div>
+        <div class="flow">
+          <div>
+            <p>Heading</p>
+            <h2 class="type-hed">Sphere at the Venetian Resort</h2>
+          </div>
+          <div>
+            <p>Linked heading</p>
+            <h2 class="type-hed"><a href="#">Sphere at the Venetian Resort</a></h2>
+          </div>
+        </div>
+
+        <div class="flow">
+          <div>
+            <p>Eyebrow Heading</p>
+            <h2 class="type-eyebrow">Northeast Region</h2>
+          </div>
+          <div>
+            <p>Linked Eyebrow Heading</p>
+            <h2 class="type-eyebrow"><a href="#">Northeast Region</a></h2>
+          </div>
+        </div>
+
+        <div>
+          <p>Detail</p>
+          <h2 class="type-detail">Northeast Region</h2>
+        </div>
+        <div>
+          <p>Linked detail</p>
+          <h2 class="type-detail"><a href="#">Northeast Region</a></h2>
+        </div>
+      </div>
+    </div>
+    <div class="region flow">
+      <h3 id="accents">Type Accents</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Utility Class</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Accent</td>
+            <td><code>.hed-accent</code></td>
+          </tr>
+          <tr>
+            <td>Full Width Hatching</td>
+            <td><code>.hed-hatch</code></td>
+          </tr>
+          <tr>
+            <td>Grid Breaking Hatching</td>
+            <td><code>.hed-hatch</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h5 class="design-system__render-hed">Rendered</h5>
+
+      </p><strong>Accent</strong></p>
+      <div class="design-system__example flow">
+        <div class="flow">
+          <div>
+            <p><code>.type-pagehed</code></p>
+            <h2 class="type-pagehed hed-accent">Sphere at the Venetian Resort</h2>
+          </div>
+          <div>
+            <p><code>.type-display</code></p>
+            <h2 class="type-display hed-accent">Sphere at the Venetian Resort</h2>
+          </div>
+          <div>
+            <p><code>.type-hed</code></p>
+            <h2 class="type-hed hed-accent">Sphere at the Venetian Resort</h2>
+          </div>
+          <div>
+            <p><code>.type-eyebrow</code></p>
+            <h2 class="type-eyebrow hed-accent">Sphere at the Venetian Resort</h2>
+          </div>
+          <div>
+            <p><code>.type-detail</code></p>
+            <h2 class="type-detail hed-accent">Sphere at the Venetian Resort</h2>
+          </div>
+        </div>
+      </div>
+
+      </p><strong>Full Width Hatching</strong></p>
+      <div class="design-system__example flow">
+        <div class="flow">
+          <div>
+            <p><code>.type-pagehed</code></p>
+            <h2 class="type-pagehed hed-hatch">Sphere at the Venetian Resort</h2>
+          </div>
+          <div>
+            <p><code>.type-display</code></p>
+            <h2 class="type-display hed-hatch">Sphere at the Venetian Resort</h2>
+          </div>
+          <div>
+            <p><code>.type-hed</code></p>
+            <h2 class="type-hed hed-hatch">Sphere at the Venetian Resort</h2>
+          </div>
+          <div>
+            <p><code>.type-eyebrow</code></p>
+            <h2 class="type-eyebrow hed-hatch">Sphere at the Venetian Resort</h2>
+          </div>
+          <div>
+            <p><code>.type-detail</code></p>
+            <h2 class="type-detail hed-hatch">Sphere at the Venetian Resort</h2>
+          </div>
+        </div>
+      </div>
+
+      </p><strong>Grid Breaking Hatching</strong></p>
+      <div class="design-system__example flow">
+        <div class="flow wrapper">
+          <p>Note that left-hand padding has been added to this container for demo purposes only.</p>
+
+          <div>
+            <p><code>.type-pagehed</code></p>
+            <h2 class="type-pagehed hed-breakhatch">Sphere at the Venetian Resort</h2>
+          </div>
+          <div>
+            <p><code>.type-display</code></p>
+            <h2 class="type-display hed-breakhatch">Sphere at the Venetian Resort</h2>
+          </div>
+          <div>
+            <p><code>.type-hed</code></p>
+            <h2 class="type-hed hed-breakhatch">Sphere at the Venetian Resort</h2>
+          </div>
+          <div>
+            <p><code>.type-eyebrow</code></p>
+            <h2 class="type-eyebrow hed-breakhatch">Sphere at the Venetian Resort</h2>
+          </div>
+          <div>
+            <p><code>.type-detail</code></p>
+            <h2 class="type-detail hed-breakhatch">Sphere at the Venetian Resort</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="region flow">
+      <h3 id="sizes">Sizes</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Scale</th>
+            <th>Utility Class</th>
+            <th>CSS Custom Property</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for size in design.tokens.textSizes.items %}
+            <tr>
+              <td>{{ size.name }}</td>
+              <td>{{ size.min }}px – {{ size.max }}px</td>
+              <td>
+                <code>.text-{{ size.name | slug }}</code>
+              </td>
+              <td><code>var(--size-{{ size.name | slug }})</code></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <h5 class="design-system__render-hed">Rendered</h5>
+      <div class="design-system__example flow flow-space-3xs">
+        {% for size in design.tokens.textSizes.items %}
+          <p style="font-size: var(--size-{{ size.name | slug }})">{{ size.name }}</p>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="region flow">
+      <div>
+        <h3 id="leading">Leading</h3>
+        <p><code>line-height</code></p>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Scale</th>
+            <th>Utility Class</th>
+            <th>CSS Custom Property</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for size in design.tokens.textLeading.items %}
+            <tr>
+              <td>{{ size.name }}</td>
+              <td>{{ size.value }}</td>
+              <td>
+                <code>.leading-{{ size.name | slug }}</code>
+              </td>
+              <td><code>var(--leading-{{ size.name | slug }})</code></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <h5 class="design-system__render-hed">Rendered</h5>
+      <div class="design-system__example flow flow-space-3xs">
+      {% for size in design.tokens.textLeading.items %}
+        <p>{{ size.name }}</p>
+        <div style="line-height: var(--leading-{{ size.name | slug }})" class="text-step-00">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur.
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+
+    <div class="region flow">
+      <div>
+        <h3 id="tracking">Tracking</h3>
+        <p><code>letter-spacing</code></p>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Size</th>
+            <th>Utility Class</th>
+            <th>CSS Custom Property</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for size in design.tokens.textTracking.items %}
+            <tr>
+              <td>{{ size.name }}</td>
+              <td><code>{{ size.value }}</code></td>
+              <td>
+                <code>.tracking-{{ size.name | slug }}</code>
+              </td>
+              <td><code>var(--tracking-{{ size.name | slug }})</code></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <h5 class="design-system__render-hed">Rendered</h5>
+      <div class="design-system__example flow flow-space-s">
+      {% for size in design.tokens.textTracking.items %}
+        <div>
+          <p>{{ size.name }}</p>
+          <div style="letter-spacing: var(--tracking-{{ size.name | slug }})" class="text-step-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</div>
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+
+    <div class="region flow">
+      <h3 id="weights">Weights</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Numeric Weight</th>
+            <th>Utility Class</th>
+            <th>CSS Custom Property</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for weight in design.tokens.textWeights.items  %}
+          <tr>
+            <td>{{ weight.name }}</td>
+            <td>{{ weight.value }}</td>
+            <td>
+              <code>.weight-{{ weight.name | slug }}</code>
+            </td>
+            <td><code>var(--weight-{{ weight.name | slug }})</code></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <h5 class="design-system__render-hed">Rendered</h5>
+      <div class="design-system__example flow flow-space-3xs">
+      {% for weight in design.tokens.textWeights.items %}
+        <p style="font-weight: var(--weight-{{ weight.name | slug }})">{{ weight.name }}</p>
+      {% endfor %}
+      </div>
+    </div>
+
+    <div class="region flow">
+      <h3 id="fonts">Fonts</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Utility Class</th>
+            <th>CSS Custom Property</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for font in design.tokens.fonts.items %}
+            <tr>
+              <td>{{ font.name }}</td>
+              <td>{{ font.description }}</td>
+              <td>
+                <code>.font-{{ font.name | slug }}</code>
+              </td>
+              <td><code>var(--font-{{ font.name | slug }})</code></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <h5 class="design-system__render-hed">Rendered</h5>
+      <div class="design-system__example flow flow-space-3xs">
+        {% for font in design.tokens.fonts.items %}
+        <div style="font-family: {{ font.value }}" class="flow-space-m">
+          <p class="text-step-2">{{ font.name }}</p>
+          <p class="text-step-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{
+  "title": "Card",
+  "keyLinks": [
+    {
+      "label": "CSS",
+      "url": "/_src/css/components/card.css"
+    }
+  ],
+  "context": {
+    "title": "Energy Management <span class='amp'>&</span> Resilience",
+    "body": "Services focused specifically on energy at the building or campus scale, tailored towards programs, incentives, and cost savings.",
+    "listitems" : [
+      "Energy auditing and modeling",
+      "Energy project management and planning",
+      "Life cycle cost analysis (LCCA) and total cost of ownership (TCOO)",
+      "Solar photovoltaics and battery storage feasibility",
+      "Incentive program management",
+      "Benchmarking and utility bill financial analysis",
+      "Rate structure analysis and utility budget planning",
+      "Energy Management Systems (ISO 50001)",
+      "Energy resilience and distributed energy resources"
+    ]
+  },
+    "variants": [
+    {
+      "name": "color-block",
+      "title": "Color Block",
+      "note": "Makes use of [background color utility classes](/design-system/colors/).",
+      "context": {
+        "type": "color-block",
+        "utilities" : "bg-steel-shade",
+        "title": "Energy Management <span class='amp'>&</span> Resilience",
+        "body": "Services focused specifically on energy at the building or campus scale, tailored towards programs, incentives, and cost savings.",
+        "listitems" : [
+          "Energy auditing and modeling",
+          "Energy project management and planning",
+          "Life cycle cost analysis (LCCA) and total cost of ownership (TCOO)",
+          "Solar photovoltaics and battery storage feasibility",
+          "Incentive program management",
+          "Benchmarking and utility bill financial analysis",
+          "Rate structure analysis and utility budget planning",
+          "Energy Management Systems (ISO 50001)",
+          "Energy resilience and distributed energy resources"
+        ]
+      }
+    }
+  ]
+}

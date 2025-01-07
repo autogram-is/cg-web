@@ -1,0 +1,29 @@
+
+{ 
+  "title": "Toggle",
+  "summary" : "Toggles the visiblity of content on the page.",
+  "keyLinks": [{
+      "label": "CSS",
+      "url": "/_src/css/components/toggle.css"
+    }, {
+      "label": "JS",
+      "url": "/_src/js/toggle.js"
+    }],
+  "context": {
+
+  },
+  "variants" : [{ 
+    "title" : "Default to Open",
+    "name" : "open",
+    "note" : "Set `aria-expanded='true'` on the toggling element to default the disclosed element state to visible. Note that will function without the corresponding `aria-hidden` attribute on the disclosed element.",
+    "context" : { 
+      "open" : "true"
+    }
+  },{
+    "title": "Explicit Target",
+    "name" : "explicit",
+    "context": {
+      "target" : ".disclosed"
+    }
+  }]
+}

@@ -1,0 +1,79 @@
+
+{ 
+  "title": "List Markers",
+  "keyLinks": [ {
+      "label": "CSS",
+      "url": "/_src/css/components/list-markers.css"
+    } ],
+  "context": {
+    "listitems" : [
+      "First item",
+      "Second item",
+      "Third item"
+    ]
+  },
+  "variants" : [
+    {
+      "title": "Nested unordered list",
+      "name": "list-nested-ul",
+      "context": {
+        "listitems" : [
+          "First item",
+          "Second item",
+          "<ul><li>Nested ul</li></ul>",
+          "Third item",
+          "<ul><li>Nested ul</li><li><ol><li>Nested ol</li><li>Nested ol</li></ol></li><li>Nested ul</li></ul>",
+          "Fourth item",
+          "<ol><li>Nested ol</li></ol>"
+        ]
+      }
+    },{
+      "title": "CTA list",
+      "name": "list-cta",
+      "context": {
+        "type" : "cta-list",
+        "listitems" : [
+          "Accurate and actionable cost solutions",
+          "Vast sector knowledge",
+          "Early and continuous involvement"
+        ]
+      }
+    },
+    {
+      "title": "Client list",
+      "name": "list-client",
+      "context": {
+        "type" : "client-list",
+        "listitems" : [
+          "African American Museum, Charleston, SC",
+          "Smithsonian, Washington, DC",
+          "Oolite Arts, Miami, FL",
+          "Oregon Convention Center, Portland, OR",
+          "The Music Center, Los Angeles, CA",
+          "Sphere at The Venetian Resort, Las Vegas, NV",
+          "Jacob K. Javits Convention Center, New York, NY",
+          "Temple Beth Shalom, Needham, MA",
+          "Diamond Head Theatre, Honolulu, HI",
+          "The Music Center, Los Angeles, CA",
+          "Whitney Museum of American Art, New York, NY"
+        ]
+      }
+    },
+    {
+      "title": "Two column",
+      "name": "twocol",
+      "context": {
+        "type" : "twocol",
+        "listitems" : [
+            "Market research",
+            "Program goals and scope definition",
+            "Feasibility studies",
+            "Master scheduling/budgeting",
+            "Project delivery consulting",
+            "Entitlements",
+            "Consultant procurement"
+        ]
+      }
+    }
+  ]
+}

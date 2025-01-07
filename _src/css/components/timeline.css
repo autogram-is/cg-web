@@ -1,0 +1,207 @@
+.timeline {
+  .grid {
+    --grid-min-item-size: 12rem;
+    max-width: 40rem;
+    width: 100%;
+    margin-left: auto;
+  }
+  .timeline-item:nth-of-type( even ) .grid {
+    margin-left: 0;
+    margin-right: auto;
+    justify-content:start;
+  }
+
+
+  p {
+    text-wrap: balance;
+    width: 40rem;
+    margin-left: auto;
+  }
+  .timeline-item:nth-of-type( even ) p {
+    margin-left: 0;
+  }
+
+  container: timeline / inline-size;
+  position: relative;
+  margin-block: var(--space-xl);
+  &::after {
+    background: var(--color-steel-shade);
+    border-radius: 2px;
+    bottom: 0;
+    content: '';
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: height 1.5s ease-out;
+    width: var(--space-3xs);
+  }
+
+  .hed {
+    display: flex;
+    flex-direction: column;
+    line-height: .75;
+    margin-block: 0;
+    position: relative;
+    text-indent: var(--space-xs);
+    z-index: 2;
+    &::after {
+      background: var(--color-steel-shade);
+      border-radius: 2px;
+      content: "";
+      display: block;
+      height: var(--space-3xs);
+      margin-top: var(--space-s);
+      width: var(--space-xl);
+    }
+    &:first-of-type {
+      background: var(--color-light);
+    }
+  }
+
+  .timeline-item {
+    left: 0;
+    padding-inline: var(--space-xs);
+    margin-block: var(--space-l);
+    position: relative;
+    z-index: 2;
+    transition: opacity .5s ease;
+
+    &::before {
+      content:"";
+      display: inline-block;
+      height: var(--space-3xs);
+      width: var(--space-2xl);
+      background: var(--color-timeless-gold);
+      z-index: 9;
+    }
+
+    p {
+      --flow-space: 0;
+      max-width: unset;
+    }
+  }
+}
+
+@container timeline screen( sm ) {
+  .timeline {
+    .hed {
+      align-items: flex-end;
+      justify-content: flex-end;
+      flex-direction: row-reverse;
+      position: relative;
+      z-index: 2;
+
+      &:first-of-type {
+        &::after {
+          border-bottom-right-radius: 0;
+        }
+      }
+      &:not(:first-of-type) {
+        border-bottom: var(--space-xs) solid var(--color-light);
+      }
+      &::after {
+        position: relative;
+        margin-inline: 1px; /* 1px to account for rounding errors. */
+      }
+    }
+    &::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .hed,
+    .timeline-item {
+      left: 0;
+      width: calc( 50% - ( var(--space-3xs) / 2 ));
+
+      &:nth-of-type( odd ) {
+        text-align: right;
+        &::before {
+          align-self: flex-end;
+        }
+      }
+      &:nth-of-type( even ) {
+        left: calc( 50% + ( var(--space-3xs) / 2 ) - 1px);
+      }
+    }
+    .timeline-item {
+      display: flex;
+      flex-direction: column;
+      &:has(img) {
+        min-height: 10rem;
+      }
+      img {
+        max-height: 100%;
+        position: absolute;
+        top: 0;
+      }
+      &:nth-of-type(even) {
+        img {
+          left: 0;
+          transform: translateX( calc( -100% - var(--space-s-l) ) );
+        }
+      }
+      &:nth-of-type(odd) {
+        img {
+          left: 100%;
+          transform: translateX( var(--space-s-l) );
+        }
+      }
+    }
+    .hed {
+      padding: 0;
+      &:nth-of-type( odd ) {
+        left: calc( var(--space-3xs) + 1px );  /* 1px to account for rounding errors. */
+        direction: rtl;
+      }
+      &:nth-of-type( even ) {
+        left: calc( 50% - ( var(--space-3xs) / 2 ) );  /* 1px to account for rounding errors. */
+      }
+    }
+  }
+}
+
+@media( prefers-reduced-motion: reduce ) {
+  .timeline {
+    &::after {
+      transition-duration: 0.001s;
+    }
+    .timeline-item {
+      transition-duration: 0.001s;
+      .timeline-inner {
+        transition-duration: 0.001s;
+      }
+    }
+  }
+}
+
+
+.js {
+  .timeline {
+    .timeline-item {
+      opacity: 0;
+      &.show-card {
+        opacity: 1;
+      }
+    }
+    .hed {
+      opacity: 0;
+      transition: opacity .2s ease-in-out;
+      &:first-of-type,
+      &.show-hed {
+        opacity: 1;
+      }
+    }
+    &.show-line::after {
+      height: 100%;
+      z-index: 1;
+    }
+  }
+}
+
+html:not(.js) {
+  .timeline::after {
+    height: 100%;
+    z-index: 1;
+  }
+}

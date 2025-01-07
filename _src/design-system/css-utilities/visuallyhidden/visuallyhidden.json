@@ -1,0 +1,16 @@
+{
+  "title": "Visually Hidden",
+  "summary": "`.visually-hidden`",
+  "context": {
+  },
+  "variants": [
+    {
+      "name": "Focusable",
+      "note": "With the addition of the `focusable` class, a visually hidden element will becomes visible upon receving user focus.",
+      "context": {
+        "attr": "class",
+        "value" : "focusable"
+      }
+    }
+  ]
+}

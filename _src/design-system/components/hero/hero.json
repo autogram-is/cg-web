@@ -1,0 +1,65 @@
+
+{ 
+  "title": "Hero",
+  "keyLinks": [ {
+      "label": "CSS",
+      "url": "/_src/css/components/hero.css"
+    } ],
+  "context": {
+    "hed" : "Healthcare"
+  },
+  "variants" : [
+    {
+      "title" : "Standout Hero",
+      "note" : "Default treatment on project pages without images. Occupies up to 1/3rd of the vertical viewport size.",
+      "name" : "_standout-header",
+      "context" : {
+        "type" : "standout",
+        "hed" : "Cambridge Associates"
+      }
+    },
+    {
+      "title" : "Colorblock Hero",
+      "name" : "colorblock-header",
+      "note" : "Allows use of `.bg-regal-purple`, `.bg-legacy-red`, and `.bg-deep-steel` helper classes.",
+      "context" : {
+        "hed" : "Healthcare",
+        "utilities" : "bg-regal-purple"
+      }
+    },
+    {
+      "title" : "Image",
+      "name" : "banner-image",
+      "note" : "Occupies up to 80% of the vertical viewport size.",
+      "context" : {
+        "hed" : "Healthcare",
+        "img" : {
+          "src" : "https://picsum.photos/2400/1200?&blur=5",
+          "height" : 1200,
+          "width" : 2400,
+          "alt" : ""
+        },
+        "credit" : "UNC Rex",
+        "location" : "Raleigh, NC"
+      }
+    },{
+      "title" : "Colorblock Hero",
+      "name" : "colorblock-banner",
+      "note" : "`.bg-deep-steel`, `.bg-legacy-red`, `.bg-regal-purple`. Supports `.bg-timeless-gold`, though it should be noted that this will [fail WCAG SC 1.4.3: Contrast (Minimum) at any size](https://www.siegemedia.com/contrast-ratio#%23ffffff-on-%23ddb331).",
+      "context" : {
+        "type" : "reversed",
+        "hed" : "Healthcare",
+        "sector" : "Healthcare",
+        "img" : {
+          "src" : "https://picsum.photos/2400/1200?&blur=5",
+          "height" : 1200,
+          "width" : 2400,
+          "alt" : ""
+        },
+        "banner" : "bg-deep-steel",
+        "credit" : "UNC Rex",
+        "location" : "Raleigh, NC"
+      }
+    }
+  ]
+}

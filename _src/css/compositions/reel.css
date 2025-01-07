@@ -1,0 +1,41 @@
+/* 
+ REEL
+ A layout that creates a carousel-like element
+
+CUSTOM PROPERTIES AND CONFIGURATION
+--reel-space (var(--space-s-m)): This defines the space
+between each item.
+
+ Add an attribute of data-scroll="snap" to the element
+ to enable scroll snapping
+*/
+.reel {
+  display: flex;
+  height: auto;
+  max-width: 100%;
+  margin-inline: auto;
+
+  /* Padding allows child element hover states to show */
+  padding: 0.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.reel > * {
+  flex-basis: var(--reel-item-width, calc(33.333% - var(--reel-space, var(--space-s-m))));
+  flex-shrink: 0;
+}
+
+.reel > * + * {
+  margin-inline-start: var(--reel-space, var(--space-s-m));
+}
+
+/* SCROLL TYPE EXCEPTION
+   Sets the reel to snap on each item on scroll */
+.reel[data-scroll='snap'] {
+  scroll-snap-type: x mandatory;
+}
+
+.reel[data-scroll='snap'] > * {
+  scroll-snap-align: start;
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Sidebar",
+  "summary":".sidebar",
+  "configuration" : {
+    "th" : [
+      "Property",
+      "Default value",
+      "Description"
+    ],
+    "tr" : [
+      { "td" : [ "`--sidebar-gutter`", "`var(--space-s-m)`", "This defines the gap between the sidebar and primary content." ] },
+      { "td" : [ "`--sidebar-target-width`", "`20rem`", "The “fixed” sidebar width" ] },
+      { "td" : [ "`--sidebar-content-min-width`", "`50%`", "The minimum size of the primary content area" ] }
+    ]
+  },
+  "context": {
+  },
+  "variants" : [
+    {
+      "name": "rtl",
+      "title": "RTL",
+      "configuration" : {
+        "th" : [
+          "Exception",
+          "Description"
+        ],
+        "tr" : [
+          { "td" : [ "`.sidebar[data-direction='rtl']`", "Flips the sidebar to the right side of the layout, independent of source order." ] },
+          { "td" : [ "`.sidebar.swap", "Swaps the vertical position of the sidebar and content when breaking to two lines." ] }
+        ]
+      },
+      "context": {
+        "attr": "data-direction",
+        "value": "rtl"
+      }
+    }
+  ]
+}

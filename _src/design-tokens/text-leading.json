@@ -1,0 +1,28 @@
+{
+  "title": "Leading",
+  "description": "Consistent spacing sizes, based on a ratio, with min and max sizes. This allows you to set spacing based on the context size. For example, min for mobile and max for desktop browsers.",
+  "meta": {
+  },
+  "items": [
+    {
+      "name": "Seamless",
+      "value": 1
+    },
+    {
+      "name": "Tight",
+      "value": 1.15
+    },
+    {
+      "name": "Normal",
+      "value" : 1.3
+    },
+    {
+      "name": "Wide",
+      "value" : 1.5
+    },
+    {
+      "name": "Loose",
+      "value" : 1.6
+    }
+  ]
+}

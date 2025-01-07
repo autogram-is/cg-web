@@ -1,0 +1,16 @@
+{
+  "title": "Nested ordered list",
+  "name": "list-nested-ol",
+  "context": {
+    "type" : "list-nested-ol",
+    "element" : "ol",
+    "listitems" : [
+      "First item",
+      "Second item",
+      "<ul><li>Nested ul</li></ul>",
+      "Third item",
+      "<ul><li>Nested ul</li><li><ol><li>Nested ol</li><li>Nested ol</li></ol></li><li>Nested ul</li></ul>",
+      "Fourth item"
+    ]
+  }
+}

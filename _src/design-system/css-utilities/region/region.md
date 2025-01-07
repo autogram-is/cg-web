@@ -1,0 +1,1 @@
+A container that provides consistent vertical spacing for chunks/sections/regions of content.

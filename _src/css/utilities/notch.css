@@ -1,0 +1,22 @@
+/**
+ * NOTCH
+ * Used to create a grid-breaking container that slightly 
+ * overlaps the content above it, aligned with the left 
+ * side of the browser viewport but still aligned with the
+ * right side of an inner `.wrapper`
+ */
+.notch {
+  margin-top: calc( 0px - var(--space-m) );
+  .notch-inner {
+    border-top-right-radius: 2px;
+    &.sidebar > *:nth-child(2) {
+      border-top-right-radius: 2px;
+      flex-grow: 2;
+    }
+    padding-left: 20vw;
+    margin-left: -20vw;
+  }
+}
+.notch-inner {
+  background: var(--color-light);
+}

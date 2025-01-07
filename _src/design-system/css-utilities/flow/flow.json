@@ -1,0 +1,24 @@
+{
+  "title": "Flow",
+  "summary": "`.flow`",
+  "context": {
+  },
+  "variants": [
+    {
+      "name": "Defined",
+      "note": "Where `--flow-space` is not defined, the default value is `1em`.",
+      "context": {
+        "attr": "style",
+        "value" : "--flow-space: 2em"
+      }
+    },
+    {
+      "name": "Spacing Token",
+      "note": "You can also use the `flow-space` generated utility that allows you to use the **spacing design tokens**. For example, If you want that last paragraph to have `XL` spacing, you would change the code to the following:",
+      "context": {
+        "attr": "class",
+        "value" : "flow-space-xl"
+      }
+    }
+  ]
+}

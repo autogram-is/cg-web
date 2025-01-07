@@ -1,0 +1,104 @@
+/* 
+PROSE UTILITY
+
+*/
+.prose {
+  --flow-space: var(--space-m);
+  --region-space: var(--space-s-m);
+  font-size: var(--size-step-0);
+  padding-inline-end: var(--space-s-m);
+
+  & > h1, & > h2, & > h3, & > h4, & > h5 {
+    font-weight: var(--weight-normal);
+  }
+
+  & > p:first-of-type {
+    margin-block-start: 0;
+  }
+
+  & > p,
+  & > ul li,
+  & > ol li {
+    line-height: var(--leading-wide);
+    font-weight: var(--weight-light);
+    font-size: var(--size-step-0);
+  }
+  & > ul,
+  & > ol {
+    margin-block: var(--space-3xs);
+    padding-block: var(--space-3xs);
+    max-width: 40em;
+    &:last-child {
+      margin-bottom: var(--space-xs);
+    }
+  }
+  & > p {
+    line-height: var(--leading-loose);
+    max-width: 95ch;
+  }
+  & > p + p {
+    --flow-space: var(--space-s);
+  }
+
+  & > h1,  & > h2,  & > h3,  & > h4 {
+    --flow-space: var(--space-m-l);
+    & + p {
+      --flow-space: var(--space-2xs);
+    }
+  }
+  & > h1 {
+    font-size: var(--size-step-4);
+    font-weight: var(--weight-light);
+    margin-bottom: var(--space-m-l);
+    &::after {
+      content: "";
+      border-radius: 3px;
+      display: block;
+      width: var(--space-m-l);
+      margin-block: var(--space-s);
+      border: var(--content-division);
+    }
+  }
+  & > h2 {
+    color: var(--color-legacy-red);
+    font-size: var(--size-step-2);
+    font-weight: var(--weight-semibold);
+  }
+  & > h3 {
+    color: var(--color-deep-steel);
+    font-size: var(--size-step-0);
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+  }
+
+  & a {
+    color: var(--color-legacy-red);
+    text-decoration-color: var(--color-deep-steel);
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: transparent;
+    }
+  }
+
+  hr {
+    margin: var(--space-m) 0;
+    height: 2px;
+  }
+
+  & > figure:not(.pullquote) {
+    figcaption {
+      color: var(--color-deep-steel);
+      font-size: var(--size-step-0);
+      line-height: var(--leading-tight);
+      margin: var(--space-2xs) var(--space-m) 0 var(--space-3xs);
+      font-style: italic;
+    }
+  }
+
+  & > .pullquote {
+    border: solid var(--color-timeless-gold);
+    border-width: 2px 0;
+    margin-block: var(--flow-space);
+  }
+
+}

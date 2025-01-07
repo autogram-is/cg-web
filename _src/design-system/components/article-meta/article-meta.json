@@ -1,0 +1,23 @@
+
+{ 
+  "title": "Article Meta Info",
+  "keyLinks": [{
+    "label": "CSS",
+    "url": "/_src/css/components/article-meta.css"
+  }],
+  "context": {
+    "utilities" : "repel",
+    "date": "2024-10-31T00:00:00",
+    "heading" : "related tags",
+    "tags" : [
+      {
+        "name" : "News",
+        "url" : "https://cumming-group.com/category/news/"
+      },
+      {
+        "name" : "Other",
+        "url" : "https://cumming-group.com/category/news/"
+      }
+    ]
+  }
+}

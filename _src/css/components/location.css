@@ -1,0 +1,60 @@
+.location {
+  --flow-space: var(--space-xs);
+  font-size: var(--size-step-00);
+
+  a {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 2px;
+
+    &:hover {
+      text-decoration-color: var(--color-steel-midtone);
+    }
+  }
+  .hed {
+    font-size: var(--size-step-0);
+    font-weight: var(--weight-semibold);
+    margin-block-end: var(--space-2xs);
+    a {
+      text-decoration-color: transparent;
+      text-underline-offset: 3px;
+    }
+  }
+  p {
+    --flow-space: var(--space-3xs);
+    font-size: var(--size-step-00);
+    text-wrap: balance;
+  }
+  .addr {
+    --flow-space: var(--space-nudge);
+  }
+  .icon {
+    display: inline-block;
+    width: var(--space-m);
+
+    svg {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  .contact {
+    color: var(--color-deep-steel);
+    display: inline-block;
+    font-size: var(--size-step-00);
+    font-weight: var(--weight-regular);
+
+    *::before {
+
+    }
+    li {
+      --flow-space: var(--space-3xs);
+      display: flex;
+      flex-direction: row;
+    }
+    a {
+      color: var(--color-dark);
+      font-weight: var(--weight-semibold);
+      text-decoration: none;
+    }
+  }
+}

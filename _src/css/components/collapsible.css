@@ -1,0 +1,19 @@
+.collapsible {
+  padding: var(--space-s) 0;
+}
+.collapsible summary {
+  color: var(--color-lowlight);
+  font-weight: var(--weight-semibold);
+  cursor: pointer;
+}
+/*
+.collapsible summary::-webkit-details-marker,
+.collapsible summary::marker {
+  content: '';
+  display: none;
+}*/
+
+.collapsible .collapsible__content {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}

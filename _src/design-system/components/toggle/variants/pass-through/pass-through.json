@@ -1,0 +1,16 @@
+
+{ 
+  "title": "Pass-Through Toggle",
+  "name": "passthrough",
+  "note" : "If the toggle element is an `a`, the first interaction will open the associated content element, while the second interaction will follow the link `href` as expected.",
+  "keyLinks": [ {
+      "label": "CSS",
+      "url": "/_src/css/components/toggle.css"
+    }, {
+      "label": "JS",
+      "url": "/_src/js/toggle.js"
+    } ],
+  "context": {
+    "href" : "https://cumming-group.com"
+  }
+}

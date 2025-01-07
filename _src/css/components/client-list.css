@@ -1,0 +1,13 @@
+.client-list {
+  &.grid {
+    display: grid;
+    --gutter: var(--space-2xs);
+    --grid-min-item-size: 25rem;
+    --grid-placement: auto-fill;
+    grid-auto-flow: dense;
+
+  }
+  li {
+    display: list-item;
+  }
+}

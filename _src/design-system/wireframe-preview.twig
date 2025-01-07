@@ -1,0 +1,39 @@
+---
+title: 'Preview'
+pagination:
+  data: design.wireframes.previews
+  size: 1
+  addAllPagesToCollections: true
+  alias: item
+permalink: '{{ item.previewUrl }}/index.html'
+---
+{% set assetHash = global.random() %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/css/global.css?{{ assetHash }}" />
+    <title>CG Design System - {{ item.data.title }}</title>
+    <script type="text/javascript">(function() { document.documentElement.classList.add("js") }());</script>
+    <style>
+      .preview {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+      main {
+        flex-grow: 2;
+      }
+      {{ item.data.extraSampleCSS }}
+    </style>
+  </head>
+  <body class="pad-400 preview-{{ item.name }}">
+    <div class="preview">
+      {{ item.rendered | raw }}
+    </div>
+    <script type="module" src="/js/ui.js" defer></script>
+  </body>
+</html>

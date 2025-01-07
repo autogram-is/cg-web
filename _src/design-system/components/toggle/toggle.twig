@@ -1,0 +1,4 @@
+  <button role="button" data-toggle="{{ target }}" {% if type %}{{ type.attr }}="{{ type.value }}"{% endif %} aria-expanded="{{ open or false }}">Toggle 1</button>
+  <div aria-hidden="{{ open == "true" ? "false" : "true" }}" class="disclosed">
+    <p>Revealed content</p>
+  </div>

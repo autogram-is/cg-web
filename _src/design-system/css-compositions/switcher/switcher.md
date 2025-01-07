@@ -1,0 +1,1 @@
+Arranges two items side-by-side while there is enough horizontal space do so, and otherwise breaks to two lines.

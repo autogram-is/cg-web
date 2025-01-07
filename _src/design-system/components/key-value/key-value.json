@@ -1,0 +1,81 @@
+
+{ 
+  "title": "Key/Value List",
+    "keyLinks": [ {
+      "label": "CSS",
+      "url": "/_src/css/components/key-value.css"
+    }],
+  "context": {
+    "items" : [
+      {
+        "key" : "Service(s)",
+        "value" : "Project Management"
+      },
+      {
+        "key" : "Sector(s)",
+        "value" : "Higher Education"
+      },
+      {
+        "key" : "Office(s)",
+        "value" : "Waco"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "name": "mini",
+      "title": "Mini",
+      "context": {
+        "type": "mini",
+        "items" : [
+          {
+            "key" : "Service(s)",
+            "value" : "Project Management"
+          },
+          {
+            "key" : "Sector(s)",
+            "value" : "K-12 Education"
+          },
+          {
+            "key" : "Office(s)",
+            "value" : "Charleston"
+          }
+        ]
+      }
+    },{
+      "name": "fact-sheet",
+      "title": "Fact Sheet",
+      "context": {
+        "heading": "Project Facts",
+        "type": "fact-sheet",
+        "utilities" : "flow",
+        "items" : [
+          {
+            "key" : "Official Project Name",
+            "value" : "Beam Therapeutics IWMS (iOffice) Implementation"
+          },
+          {
+            "key" : "Project Location",
+            "value" : "Cambridge, MA"
+          },
+          {
+            "key" : "Client",
+            "value" : "Beam Therapeutics"
+          },
+          {
+            "key" : "Start Date",
+            "value" : "January 2018"
+          },
+          {
+            "key" : "Notes",
+            "value" : "This project includes the implementation and management of multiple iOffice modules throughout 2019 and 2020. All work was completed on time, with Fort Point continuing to provide Beam with as-needed IWMS services on an ongoing basis."
+          }
+        ],
+        "cta" : {
+          "text" : "Schedule a Meeting",
+          "href" : "#"
+        }
+      }
+    }
+  ]
+}

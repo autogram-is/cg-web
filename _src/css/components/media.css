@@ -1,0 +1,65 @@
+/* Resource Listing */
+
+.media {
+  margin: 0;
+  .switcher {
+    --switcher-vertical-alignment: stretch;
+    --gutter: calc( var(--space-m) * 2 );
+
+    .thumb {
+      iframe,
+      img {
+        display: flex;
+        border: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+      }
+    }
+
+    @supports not (aspect-ratio: 16/9) {
+      .swap {
+        display: block;
+        position: relative;
+        height: 0;
+        overflow: visible;
+        padding-bottom: 56.25%;
+        iframe,
+        img {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+    .type-hed {
+      --flow-space: var(--space-3xs);
+      font-size: var(--size-step-2);
+    }
+    figcaption {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .body {
+      padding: 0 var(--space-xl) 0 0;
+      p {
+        line-height: var(--leading-normal);
+      }
+    }
+  }
+  &[data-direction="rtl"] {
+    .body {
+      text-align: right;
+    }
+  }
+
+  &.bg-legacy-red,
+  &.bg-deep-steel,
+  &.bg-regal-purple {
+    @mixin invert;
+    &::before {
+      color: inherit;
+    }
+  }
+}
