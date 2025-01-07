@@ -11,8 +11,7 @@
     "start": "concurrently 'npm run serve' 'npm run css -- --watch' 'npm run js -- --watch'",
     "serve": "npx eleventy --serve",
     "css": "npx postcss _src/css/*.css --dir _site/css",
-    "js": "esbuild _src/js/bundle.js --bundle --outfile=_site/js/ui.js"//,
-   //"deploytotheme": "concurrently 'npx postcss _src/css/*.css --dir _site/css' 'esbuild _src/js/bundle.js --bundle --outfile=_site/js/ui.js'"
+    "js": "esbuild _src/js/bundle.js --bundle --outfile=_site/js/ui.js"
   },
   "keywords": [],
   "author": "Autogram",
