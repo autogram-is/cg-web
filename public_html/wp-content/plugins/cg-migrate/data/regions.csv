@@ -1,0 +1,25 @@
+id,taxonomy,slug,title,parent
+,region,na,North America,
+,region,eu,Europe,
+,region,uk,UK,
+,region,pacific-nw,Pacific Northwest,na
+,region,norcal,Northern California,na
+,region,socal,Southern California,na
+,region,hawaii,Hawaii,na
+,region,nevada,Nevada,na
+,region,northeast,Northeast,na
+,region,florida,Florida,na
+,region,southeast,Southeast,na
+,region,midwest,Midwest,na
+,region,southcentral,South Central,na
+,region,northcentral,North Central,na
+,region,northern-ireland,Northern Ireland,eu
+,region,france,France,eu
+,region,germany,Germany,eu
+,region,italy,Italy,eu
+,region,norway,Norway,eu
+,region,switzerland,Switzerland,eu
+,region,england,England,uk
+,region,scotland,Scotland,uk
+,region,wales,Wales,uk
+,region,ireland,Ireland,uk

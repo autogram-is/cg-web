@@ -1,0 +1,3 @@
+[submodule "cg-components"]
+	path = cg-components
+	url = git@github.com:Wilto/cg-components.git
