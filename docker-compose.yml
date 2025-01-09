@@ -30,5 +30,12 @@ services:
       MYSQL_USER: wordpressuser
       MYSQL_PASSWORD: wordpresspassword
 
+  #patterns:
+  #  image: httpd:2.4
+  #  ports:
+  #    - "8080:80"
+  #  volumes:
+  #    - ${PWD}/_site:/usr/local/apache2/htdocs
+
 volumes:
   db_data:
