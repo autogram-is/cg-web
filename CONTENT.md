@@ -7,7 +7,6 @@ classDiagram
     class Sector {
         string locale
         project[] projects
-        region[] regions
         service[] services
         person[] people
 
@@ -17,7 +16,6 @@ classDiagram
     class Service {
         string locale
         project[] projects
-        region[] regions
         sector[] sectors
         person[] people
 
@@ -26,19 +24,8 @@ classDiagram
 
     class Office {
         project[] projects
-        region[] regions
         sector[] sectors
         service[] services
-        person[] people
-
-        news_post[] related
-    }
-
-    class Region {
-        project[] projects
-        sector[] sectors
-        service[] services
-        office[] offices
         person[] people
 
         news_post[] related
@@ -60,7 +47,6 @@ classDiagram
         enum visibility
         attachment case_study
 
-        region[] regions
         sector[] sectors
         service[] services
         person[] people
@@ -73,7 +59,6 @@ classDiagram
         email email
         string phone
         project[] projects
-        region[] regions
         sector[] sectors
         service[] services
         office[] offices
@@ -109,12 +94,9 @@ classDiagram
     class Post {
         person[] people
         portfolio_post[] related
-    }
-
-    class Episode {
-        url media
-        person[] people
-        portfolio_post[] related
+        region[] regions
+        json podcast_info
+        json reprint_info
     }
 
     class Page {

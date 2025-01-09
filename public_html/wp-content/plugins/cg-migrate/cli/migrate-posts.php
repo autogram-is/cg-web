@@ -5,6 +5,29 @@ function cg_migrate_post($post, $dry_run = false) {
   $tags = wp_get_post_terms($post->ID, $taxonomies);
   $meta = get_post_meta($post->ID);
 
+  // 
+  foreach($tags as $tag) {
+    if (in_array($tag->term_taxonomy_id, [335, 461])) {
+      // Podcast episodes. Extract ID, episode number, guests.
+
+    } else if (in_array($tag->term_taxonomy_id, [340, 463])) {
+      // Case study. Hide and remap to project metadata manually.
+
+    } else if (in_array($tag->term_taxonomy_id, [35, 469])) {
+      // Events. Extract time, attendees, location. Convert to cg_event.
+
+    } else if (in_array($tag->term_taxonomy_id, [3, 464])) {
+      // Presss Release. Extract CTA form. Possibly convert About Cumming and CTA.
+
+    } else if (in_array($tag->term_taxonomy_id, [2, 459, 220])) {
+      // News. Extract byline, publication, publication date.
+
+    } else if (in_array($tag->term_taxonomy_id, [336, 369, 499, 460, 462])) {
+      // Blog / Thought Leadership.
+      
+    }
+  }
+
   // 'Events Hosted By Others' (map to events, or delete?)
   // Adapt these to the event template
 
@@ -34,7 +57,6 @@ function cg_migrate_post($post, $dry_run = false) {
     wp_update_post($post);
     cg_save_migration_body($post->ID, $raw);
   }
-
 }
 
 function _post_fusion_converter($post, $dom, $node = null, &$chunks = []) {
