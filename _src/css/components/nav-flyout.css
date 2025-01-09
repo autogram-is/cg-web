@@ -65,9 +65,13 @@
           margin-block: var(--space-3xs);
           text-decoration: none;
           text-transform: uppercase;
+
           &:hover {
-            color: var(--color-light);
             padding-left: var(--space-3xs);
+          }
+          &[aria-current] {
+            color: var(--color-timeless-gold);
+            padding-left: 0;
           }
         }
       }

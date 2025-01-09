@@ -1,0 +1,9 @@
+.central-lede {
+  .hed {
+    font-size: var(--size-step-4);
+  }
+  .prose p {
+    font-size: var(--size-step-1);
+    line-height: var(--leading-wide);
+  }
+}

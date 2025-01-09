@@ -8,10 +8,12 @@
     "wordpress:stop": "docker compose down",
     "components:create": "node _src/lib/code-sample-generator.js -b 'components'",
     "wireframes:create": "node _src/lib/code-sample-generator.js -b 'wireframes'",
-    "start": "concurrently 'npm run serve' 'npm run css -- --watch' 'npm run js -- --watch'",
+    "start": "concurrently 'npm run serve' 'npm run css -- --watch' 'npm run themecss -- --watch' 'npm run js -- --watch' 'npm run themejs -- --watch'",
     "serve": "npx eleventy --serve",
-    "css": "concurrently 'npx postcss _src/css/*.css --dir _site/css' 'npx postcss _src/css/*.css --dir theme/assets/css'",
-    "js": "concurrently 'esbuild _src/js/bundle.js --bundle --outfile=_site/js/ui.js' 'esbuild _src/js/bundle.js --bundle --outfile=theme/assets/js/ui.js'"
+    "css": "npx postcss _src/css/*.css --dir _site/css",
+    "themecss" : "npx postcss _src/css/*.css --dir theme/assets/css",
+    "js": "esbuild _src/js/bundle.js --bundle --outfile=_site/js/ui.js",
+    "themejs" : "esbuild _src/js/bundle.js --bundle --outfile=theme/assets/js/ui.js"
   },
   "keywords": [],
   "author": "Autogram",

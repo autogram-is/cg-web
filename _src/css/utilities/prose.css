@@ -101,4 +101,17 @@ PROSE UTILITY
     margin-block: var(--flow-space);
   }
 
+
+  &.prose-shifted {
+    --flow-space: var(--space-2xs);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    p {
+      align-self: flex-end;
+          max-width: 40rem;
+
+
+    }      
+  }
 }

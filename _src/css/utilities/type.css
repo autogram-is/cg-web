@@ -39,6 +39,7 @@
   color: var(--color-timeless-gold);
 }
 
+.type-serif,
 .type-display {
   display: flex;
   flex-direction: column;
@@ -66,6 +67,10 @@
   }
 }
 
+.type-serif {
+  font-size: var(--size-step-2);
+}
+.type-subhed,
 .type-hed {
   font-size: var(--size-step-3);
   font-weight: var(--weight-medium);
@@ -101,6 +106,10 @@
       border: var(--content-division);
     }
   }
+}
+.type-subhed {
+  font-family: var(--font-secondary);
+  font-size: var(--size-step-2);
 }
 .type-eyebrow,
 .type-detail {
@@ -167,7 +176,7 @@
 .type-standout {
   color: var(--color-steel-shade);
   font-family: var(--font-body);
-  font-size: var(--size-step-6);
+  font-size: var(--size-standout);
   font-weight: var(--weight-semibold);
   letter-spacing: var(--tracking-tight);
   line-height: var(--leading-tight);

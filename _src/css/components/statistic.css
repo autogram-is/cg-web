@@ -7,7 +7,7 @@
     flex-direction: column;
     dt {
       display: flex;
-      font-size: var(--size-step-5);
+      font-size: var(--size-standout);
       font-weight: var(--weight-semibold);
       line-height: var(--leading-tight);
       flex-direction: row;
@@ -18,7 +18,7 @@
       }
       sup,
       .sup {
-        align-self: flex-start !important;
+        align-self: flex-start;
       }
     }
     dd {

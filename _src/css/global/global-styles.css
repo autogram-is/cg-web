@@ -136,3 +136,9 @@ pre ::selection {
   color: var(--color-steel-dark);
 }
 
+
+@supports( color: color-mix(in srgb, red, white) ) {
+  .bg-timeless-backdrop .text-timeless-gold {
+    color: color-mix(in srgb, var(--color-timeless-gold) 90%, black);
+  }
+}

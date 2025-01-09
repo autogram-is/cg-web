@@ -13,11 +13,11 @@ export default function() {
 
           const headings = ob.target.querySelectorAll( ".type-hed" );
 
-          headings.forEach( el => {
+          headings.forEach( ( el, i ) => {
             const textNode = [ ...el.childNodes ].filter( ( node ) => node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== "" && !isNaN( parseFloat( node.nodeValue ) ) ),
               value = textNode.map( ( el ) => el.textContent ).join(""),
               valueFloat = parseFloat( value.replace(/,/g, ''), 10 ),
-              totalFrames = Math.round( opt.duration / opt.frameDuration );
+              totalFrames = Math.round( opt.duration / opt.frameDuration + ( i * 10 ) );
 
             [...textNode ].forEach( node => node.nodeValue = 0 );
             let frame = 0;

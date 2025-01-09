@@ -3,12 +3,12 @@
   z-index: 1;
     &::after {
     background: url("/images/topo-topright.svg") top right no-repeat;
-    background-size: auto 80%;
+    background-size: 40rem;
     bottom: 0;
     content: "";
     display: block;
     left: 0;
-    opacity: .8;
+    opacity: .4;
     position: absolute;
     right: 0;
     top: 0;
