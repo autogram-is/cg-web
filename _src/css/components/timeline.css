@@ -3,22 +3,6 @@
     --grid-min-item-size: 12rem;
     max-width: 40rem;
     width: 100%;
-    margin-left: auto;
-  }
-  .timeline-item:nth-of-type( even ) .grid {
-    margin-left: 0;
-    margin-right: auto;
-    justify-content:start;
-  }
-
-
-  p {
-    text-wrap: balance;
-    width: 40rem;
-    margin-left: auto;
-  }
-  .timeline-item:nth-of-type( even ) p {
-    margin-left: 0;
   }
 
   container: timeline / inline-size;
@@ -59,6 +43,10 @@
     }
   }
 
+  .type-detail {
+    margin-block-start: var(--space-xs);
+  }
+
   .timeline-item {
     left: 0;
     padding-inline: var(--space-xs);
@@ -78,7 +66,7 @@
 
     p {
       --flow-space: 0;
-      max-width: unset;
+      max-width: 38rem;
     }
   }
 }
@@ -116,6 +104,12 @@
 
       &:nth-of-type( odd ) {
         text-align: right;
+        & > * {
+          margin-left: auto;
+        }
+        ol, ul {
+          text-align: left;
+        }
         &::before {
           align-self: flex-end;
         }
