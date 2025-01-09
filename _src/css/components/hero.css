@@ -30,6 +30,7 @@
     }
   }
   .hero-highlight {
+    min-height: var(--space-2xl);
     img {
       width: 100%;
       height: auto;
@@ -57,16 +58,6 @@
 
     &:not([class*="bg-"]) {
       background-color: var(--color-timeless-gold);
-    }
-    &:empty {
-      &::before {
-        content: "";
-        display: block;
-        min-height: var(--space-xl);
-        height: 5vw;
-        max-height: var(--space-2xl);
-        opacity: .6;
-      }
     }
     &:not([class*="bg-"]) {
       &::before {
