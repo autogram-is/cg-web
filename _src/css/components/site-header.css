@@ -368,14 +368,19 @@
       flex-grow: 2;
       min-width: 10em;
     }
-    input[type="search"] {
-      width: 100%;
-      border: none;
-      padding: var(--space-2xs) var(--space-2xs) calc( var(--space-2xs) - 3px ) var(--space-2xs);
+    #site-search {
+      &::after {
+        display: none;
+      }
+      input[type="search"] {
+        width: 100%;
+        border-color: transparent !important;
+        padding: var(--space-2xs) var(--space-2xs) calc( var(--space-2xs) - 3px ) var(--space-2xs);
 
-      &::placeholder {
-        font-family: var(--font-detail);
-        color: var(--color-deep-steel);
+        &::placeholder {
+          font-family: var(--font-detail);
+          color: var(--color-deep-steel);
+        }
       }
     }
   }
