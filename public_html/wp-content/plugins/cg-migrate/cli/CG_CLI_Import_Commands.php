@@ -131,7 +131,7 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
     $post_ids = isset($assoc_args['post-ids']) ? explode(",", $assoc_args['post-ids']) : [];
 
     if (count($post_ids) === 0) {
-      $post_ids = $this->$this->ids_for_types(['avada_portfolio', 'cg_project']);
+      $post_ids = $this->ids_for_types(['avada_portfolio', 'cg_project']);
     }
 
     foreach ($post_ids as $post_id) {
@@ -168,7 +168,7 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
     $post_ids = isset($assoc_args['post-ids']) ? explode(",", $assoc_args['post-ids']) : [];
 
     if (count($post_ids) === 0) {
-      $post_ids = $this->$this->ids_for_types(['tribe_events', 'cg_events']);
+      $post_ids = $this->ids_for_types(['tribe_events', 'cg_events']);
     }
 
     foreach ($post_ids as $post_id) {
@@ -205,7 +205,7 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
     $post_ids = isset($assoc_args['post-ids']) ? explode(",", $assoc_args['post-ids']) : [];
 
     if (count($post_ids) === 0) {
-      $post_ids = $this->$this->ids_for_types('post');
+      $post_ids = $this->ids_for_types('post');
     }
 
     foreach ($post_ids as $post_id) {
@@ -242,7 +242,7 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
     $post_ids = isset($assoc_args['post-ids']) ? explode(",", $assoc_args['post-ids']) : [];
 
     if (count($post_ids) === 0) {
-      $post_ids = $this->$this->ids_for_types('page');
+      $post_ids = $this->ids_for_types('page');
     }
   
     foreach ($post_ids as $post_id) {
@@ -290,7 +290,7 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
     }
 
     if (count($post_ids) === 0) {
-      $post_ids = $this->$this->ids_for_types($post_types);
+      $post_ids = $this->ids_for_types($post_types);
     }
     WP_CLI::log(($dry_run ? "Dry Run: " : "") . "Mapping tags for ".count($post_ids)." posts");
     cg_map_old_tags($post_ids, $dry_run, $preserve);
