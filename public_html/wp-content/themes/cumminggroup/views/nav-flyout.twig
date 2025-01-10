@@ -1,22 +1,14 @@
-
-<li class="toggle nav-flyout {{ item.classes | join(' ') }}">
-  <a class="button flyout unset" data-toggle aria-expanded="true" href="{{ item.href }}" data-toggle-group="nav" id="{{item.text|slug}}-hed">{{ item.text }}</a>
-  <div class="subnav" aria-hidden="true" data-transition="fadein">
-    <div class="sidebar {{ utilities }} topo">
-      <ul role="list" aria-labelledby="{{item.text|slug}}-hed">
+<li class="toggle nav-topitem nav-flyout">
+  <button class="button flyout unset" data-toggle data-toggle-group="nav" id="hed-{{item.id}}" aria-expanded="false">
+    {{item.title}}
+  </button>
+  <div class="subnav" aria-hidden="false">
+    <div class="sidebar region swap" data-direction="rtl">
+      <ul role="list" aria-labelledby="hed-{{item.id}}">
         {% for item in items %}
         <li><a target="{{ item.target }}" href="{{ item.link }}" class="type-detail">{{ item.title }}</a></li>
         {% endfor %}
       </ul>
-
-      <!--
-      {% if item.subnav.teaser.title or item.subnav.teaser.body %}
-      <div class="region teaser">
-        <h3 class="type-hed">{{ item.subnav.teaser.title | md }}</h3>
-        {{ item.subnav.teaser.body | markdown }}
-      </div>
-      {% endif %}
-      -->
     </div>
   </div>
 </li>

@@ -1,12 +1,10 @@
-
 {% if menu %}
-<ul role="list">
+<ul role="list" class="nav-list">
   {% for item in items %}
-
-    {% if item.subnav %}
+    {% if item.children %}
       {% include "nav-flyout.twig" with {'items': item.children} %}
     {% else %}
-      <li class="{{ item.classes | join(' ') }}"><a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a></li>
+      <li class="nav-topitem {{ item.classes | join(' ') }}"><a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a></li>
     {% endif %}
 
   {% endfor %}
