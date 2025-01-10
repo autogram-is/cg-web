@@ -374,7 +374,7 @@
       }
       input[type="search"] {
         width: 100%;
-        border-color: transparent !important;
+        border-color: transparent;
         padding: var(--space-2xs) var(--space-2xs) calc( var(--space-2xs) - 3px ) var(--space-2xs);
 
         &::placeholder {

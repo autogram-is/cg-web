@@ -34,7 +34,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # and since `wordpress`, in turn, extends the official Docker image `php`,
 # the helper script docker-php-ext-enable (defined for image `php`)
 # works here, and we can use it to enable xdebug:
-RUN docker-php-ext-enable xdebug
+# RUN docker-php-ext-enable xdebug
 
 # Set the working directory
 WORKDIR /var/www/html
@@ -44,7 +44,7 @@ WORKDIR /var/www/html
 
 # Copy xdebug.ini if needed
 # COPY wp-config.php /usr/local/etc/php/conf.d/xdebug.ini to /usr/local/etc/php/conf.d/
-COPY files-to-copy/ /
+# COPY files-to-copy/ /
 
 # Copy your custom entrypoint script if needed
 # COPY docker-entrypoint.sh /usr/local/bin/
