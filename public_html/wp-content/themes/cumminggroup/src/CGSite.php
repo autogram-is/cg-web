@@ -103,7 +103,7 @@ class CGSite extends Site {
 		 *
 		 * @param string $text The headline to stylize
 		 */
-		function stylize_title(string $text) {
+		function stylize_title(?string $text) {
 				$symbol = ' + ';
 				return str_replace($symbol, " <span class=\"amp\">" . trim($symbol) . "</span> ", $text);
 		}
