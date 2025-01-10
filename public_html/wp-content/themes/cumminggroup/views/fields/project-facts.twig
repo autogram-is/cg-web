@@ -1,3 +1,4 @@
 {% if facts %}
-{% include 'partial/key-value-list.twig' with { heading: 'Project Facts', items: facts } %}
+{% include 'partial/key-value-list.twig' with { type: "mini", utilities: "flow", items: facts } %}
+{% include 'partial/key-value-list.twig' with { type: "mini fact-sheet region", utilities: "flow", items: facts } %}
 {% endif %}
