@@ -1,0 +1,1 @@
+All project pages use the [standout Hero component variant](http://localhost:8080/design-system/component/hero/#standout-hero).

@@ -1,0 +1,40 @@
+
+{ 
+  "title": "Gallery",
+  "name" : "gallery",
+  "keyLinks": [ {
+        "label": "CSS",
+        "url": "/_src/css/components/gallery.css"
+      } ],
+  "context": {
+    "images" : [
+      {
+        "src" : "https://cumming-group.com/wp-content/uploads/2023/03/Beam-Therapeutics_1.jpg"
+      },
+      {
+        "src" : "https://cumming-group.com/wp-content/uploads/2023/03/Beam-Therapeutics_2.jpg",
+        "credit" : "Image courtesy of Lorem Ipsum"
+      },
+      {
+        "src" : "https://cumming-group.com/wp-content/uploads/2023/03/Beam-Therapeutics_3.jpg"
+      }
+    ]
+  },
+  "variants" : [
+    {
+      "title" : "Color Block",
+      "name" : "colorblock",
+      "context" : {
+        "utilities" : "bg-steel-shade",
+        "images" : [
+          {
+            "src" : "https://cumming-group.com/wp-content/uploads/2024/03/Cambridge-Associates_1.jpg"
+          },
+          {
+            "src" : "https://cumming-group.com/wp-content/uploads/2024/03/Cambridge-Associates_2.jpg"
+          }
+        ]
+      }
+    }
+  ]
+}

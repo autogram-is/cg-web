@@ -1,0 +1,104 @@
+.site-footer {
+  background: var(--color-steel-shade);
+  color: var(--color-steel-highlight);
+  margin-top: var(--space-m);
+
+  .footer-cta {
+    .notch-inner {
+      padding-block: var(--space-m);
+      padding-right: var(--space-m-l);
+      color: var(--color-dark);
+      &:not([class*="bg-"]) {
+        background: var(--color-deep-steel);
+        @mixin invert;
+      }
+    }
+    p {
+      font-size: var(--size-step-1);
+    }
+  }
+
+  .footer-nav {
+    display: flex;
+  }
+  .grid {
+    justify-items: end;
+  }
+
+  .footer-primary {
+    --repel-vertical-alignment: flex-start;
+    margin-block: var(--space-s-m);
+    .type-hed {
+      font-size: var(--size-step-2);
+
+      svg {
+        fill: var(--color-steel-highlight);
+        max-width: 6em;
+      }
+    }
+
+    .body {
+      max-width: 30em;
+      p {
+        line-height: var(--leading-loose);
+      }
+    }
+
+    .footer-logo {
+      max-width: 7.5em;
+    }
+
+    .footer-nav {
+      --cluster-horizontal-alignment: flex-end;
+      --cluster-vertical-alignment: flex-start;
+      margin-block: var(--space-3xs) var(--space-s);
+      & > * {
+        padding-inline-end: var(--space-m);
+      }
+      .nav-group {
+        flex-grow: 2;
+        min-width: 12rem;
+      }
+      li {
+        --flow-space: var(--space-2xs);
+      }
+      a {
+        color: var(--color-steel-midtone);
+        font-size: var(--size-step-00);
+        &:hover {
+          color: var(--color-light);
+        }
+      }
+    }
+  }
+
+  .fine-print {
+    color: var(--color-steel-midtone);
+    .wrapper {
+      border-top: 1px solid var(--color-deep-steel);
+    }
+    .legal {
+      font-size: var(--size-step-000);
+      font-weight: var(--weight-semibold);
+      ul {
+        display: flex;
+        flex-direction: row;
+        li + li::before {
+          border-left: 1px solid var(--color-deep-steel);
+          bottom: 1px;
+          content: "";
+          display: inline-block;
+          position: relative;
+          margin-inline: var(--space-2xs);
+          height: .8ch;
+        }
+      }
+    }
+  }
+  a {
+    text-decoration: none;
+    &:hover {
+      color: var(--color-light);
+    }
+  }
+}

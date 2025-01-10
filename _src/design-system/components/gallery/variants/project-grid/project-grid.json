@@ -1,0 +1,12 @@
+
+{ 
+  "title": "Project Grid",
+  "name" : "project-grid",
+  "keyLinks": [ {
+        "label": "CSS",
+        "url": "/_src/css/components/gallery.css"
+      } ],
+  "context": {
+    "type" : "project-grid"
+  }
+}

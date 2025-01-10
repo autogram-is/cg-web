@@ -1,0 +1,68 @@
+
+{ 
+  "title": "Quote",
+  "keyLinks": [ {
+      "label": "CSS",
+      "url": "/_src/css/components/quote.css"
+    } ],
+  "context": {
+    "quote" : "Cumming Group, a long-valued partner of Providence, offered real-time market insight through their extensive exposure to healthcare projects across the country. Their diverse experience made them an indispensable ally during the entire Tarzana project, from design/preconstruction to construction.",
+    "author" : {
+      "name" : "Alex Herr",
+      "title" : "Chief Real Estate Officer",
+      "affiliation" : "Providence Cedars-Sinai Tarzana Medical Center"
+    }
+  },
+  "variants" : [
+    {
+      "title" : "With Thumbnail",
+      "name" : "_image",
+      "context": {
+        "quote" : "Cumming Group, a long-valued partner of Providence, offered real-time market insight through their extensive exposure to healthcare projects across the country. Their diverse experience made them an indispensable ally during the entire Tarzana project, from design/preconstruction to construction.",
+        "author" : {
+          "name" : "Alex Herr",
+          "title" : "Chief Real Estate Officer",
+          "affiliation" : "Providence Cedars-Sinai Tarzana Medical Center"
+        },
+        "img" : {
+          "src" : "https://picsum.photos/400/300?&blur=5",
+          "height" : 300,
+          "width" : 400,
+          "alt" : ""
+        }
+      }
+    },
+    {
+      "title" : "Color Block",
+      "name" : "colorblock",
+      "context": {
+        "utilities" : "bg-deep-steel",
+        "quote" : "Cumming Group, a long-valued partner of Providence, offered real-time market insight through their extensive exposure to healthcare projects across the country. Their diverse experience made them an indispensable ally during the entire Tarzana project, from design/preconstruction to construction.",
+        "author" : {
+          "name" : "Firstname Lastname",
+          "title" : "Independent Consultant",
+          "source" : "Magazine Monthly"
+        }
+      }
+    },{
+      "title" : "Hero with Thumbnail",
+      "name" : "pullquote-thumb",
+      "context": {
+        "type" : "pullquote",
+        "utilities" : "all-center",
+        "quote" : "Cumming Group, a long-valued partner of Providence, offered real-time market insight through their extensive exposure to healthcare projects across the country. Their diverse experience made them an indispensable ally during the entire Tarzana project, from design/preconstruction to construction.",
+        "author" : {
+          "name" : "Alex Herr",
+          "title" : "Chief Real Estate Officer",
+          "affiliation" : "Providence Cedars-Sinai Tarzana Medical Center"
+        },
+        "img" : {
+          "src" : "https://picsum.photos/400/300?&blur=5.1",
+          "height" : 300,
+          "width" : 400,
+          "alt" : ""
+        }
+      }
+    }
+  ]
+}

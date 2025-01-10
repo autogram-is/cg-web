@@ -1,0 +1,11 @@
+
+{ 
+  "title": "Inline Form",
+  "name" : "inline-form",
+  "keyLinks": [ {
+        "label": "CSS",
+        "url": "/_src/css/components/inline-form.css"
+      } ],
+  "context": {
+  }
+}

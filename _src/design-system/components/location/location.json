@@ -1,0 +1,18 @@
+
+{ 
+  "title": "Location",
+  "keyLinks": [ {
+      "label": "CSS",
+      "url": "/_src/css/components/card-location.css"
+    } ],
+  "context": {
+    "utilities" : "flow",
+    "title" : "Atlanta, GA",
+    "address" : [
+      "211 Perimeter Center Parkway NE, Suite 120",
+      "Atlanta, GA 30346"
+    ],
+    "phone" : "470-552-4009",
+    "map" : "#"
+  }
+}

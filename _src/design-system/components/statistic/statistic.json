@@ -1,0 +1,147 @@
+
+{ 
+  "title": "Statistic",
+  "keyLinks": [ {
+      "label": "CSS",
+      "url": "/_src/css/components/statistic.css"
+    },{
+      "label": "JS",
+      "url": "/_src/js/statistic.js"
+    } ],
+  "context": {
+    "stats" : [
+      {
+        "value": "2,000<span class='sup'>+</span>",
+        "label" : "Team members worldwide"
+      },{
+        "value": "50<span class='sup'>+</span>",
+        "label" : "Offices worldwide"
+      },{
+        "value": "27",
+        "label" : "Years in business"
+      },{
+        "value": "300<span class='sup'>+</span>",
+        "label" : "billion in completed projects"
+      },{
+        "value": "<span class='sup'>#</span>14",
+        "label" : "ranking on ENR's top 100 PM/CM list"
+      }
+    ]
+  },
+  "variants" : [{
+    "title" : "Color Block",
+    "name" : "colorblock",
+    "context" : {
+      "utilities" : "bg-deep-steel",
+      "stats" : [
+        {
+          "value": "2,000<span class='sup'>+</span>",
+          "label" : "Team members worldwide"
+        },{
+          "value": "50<span class='sup'>+</span>",
+          "label" : "Offices worldwide"
+        },{
+          "value": "27",
+          "label" : "Years in business"
+        },{
+          "value": "300<span class='sup'>+</span>",
+          "label" : "billion in completed projects"
+        },{
+          "value": "<span class='sup'>#</span>14",
+          "label" : "ranking on ENR's top 100 PM/CM list"
+        }
+      ]
+    }
+  },{
+    "title" : "Standout",
+    "name" : "standout",
+    "context" : {
+      "type" : "standout",
+      "stats" : [
+        {
+          "value": "2,000<span class='sup'>+</span>",
+          "label" : "Team members worldwide"
+        },{
+          "value": "50<span class='sup'>+</span>",
+          "label" : "Offices worldwide"
+        },{
+          "value": "27",
+          "label" : "Years in business"
+        },{
+          "value": "300<span class='sup'>+</span>",
+          "label" : "billion in completed projects"
+        },{
+          "value": "<span class='sup'>#</span>14",
+          "label" : "ranking on ENR's top 100 PM/CM list"
+        }
+      ]
+    }
+  },{
+    "title" : "Hero",
+    "name" : "hero",
+    "context" : {
+      "type" : "hero",
+      "stats" : [
+        {
+          "value": "2,000<span class='sup'>+</span>",
+          "label" : "Team members worldwide"
+        },{
+          "value": "50<span class='sup'>+</span>",
+          "label" : "Offices worldwide"
+        },{
+          "value": "27",
+          "label" : "Years in business"
+        },{
+          "value": "300<span class='sup'>+</span>",
+          "label" : "billion in completed projects"
+        },{
+          "value": "<span class='sup'>#</span>14",
+          "label" : "ranking on ENR's top 100 PM/CM list"
+        }
+      ]
+    }
+  },{
+    "title" : "Horizontal",
+    "name" : "horizontal",
+    "context" : {
+      "type" : "horizontal",
+      "utilities" : "text-timeless-gold",
+      "stats" : [
+        {
+          "value": "3,029,144<span>MTCO₂e</span>",
+          "label" : "Avoided"
+        },{
+          "value": "14,156,21<span>MTCO₂e</span>",
+          "label" : "Reductions planned"
+        },{
+          "value": "412,614<span>MWh</span>",
+          "label" : "Energy Saved"
+        },{
+          "value": "115<span>MW</span>",
+          "label" : "Solar PV Installed"
+        }
+      ]
+    }
+  },{
+    "title" : "Counter",
+    "name" : "counter",
+    "context" : {
+      "type" : "counter",
+      "stats" : [
+        {
+          "value": "3,029,144<span>MTCO₂e</span>",
+          "label" : "Avoided"
+        },{
+          "value": "14,156,21<span>MTCO₂e</span>",
+          "label" : "Reductions planned"
+        },{
+          "value": "412,614<span>MWh</span>",
+          "label" : "Energy Saved"
+        },{
+          "value": "115<span>MW</span>",
+          "label" : "Solar PV Installed"
+        }
+      ]
+    }    
+  }]
+}

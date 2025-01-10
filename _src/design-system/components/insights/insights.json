@@ -1,0 +1,11 @@
+
+{ 
+  "title": "Insight Card",
+  "name" : "insight",
+  "keyLinks": [ {
+        "label": "CSS",
+        "url": "/_src/css/components/insight.css"
+      } ],
+  "context": {
+  }
+}

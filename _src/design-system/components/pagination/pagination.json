@@ -1,0 +1,11 @@
+
+{ 
+  "title": "Pagination",
+  "name" : "pagination",
+  "keyLinks": [ {
+        "label": "CSS",
+        "url": "/_src/css/components/pagination.css"
+      } ],
+  "context": {
+  }
+}

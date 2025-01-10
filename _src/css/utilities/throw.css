@@ -1,0 +1,13 @@
+/**
+ * Throw
+ * Throw an element to the start/center/end of its flex container
+ */
+.throw-start {
+  align-self: flex-start;
+}
+.throw-center {
+  align-self: center;
+}
+.throw-end {
+  align-self: flex-end;
+}

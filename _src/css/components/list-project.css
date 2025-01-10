@@ -1,0 +1,97 @@
+/* Project Listing */
+
+.project-listing {
+  --sidebar-gutter: calc( ( var(--space-m) * 2 ) - var(--space-3xs) );
+  --sidebar-target-width: 45rem;
+  --sidebar-content-min-width: 35%;
+  margin-block-end: var(--space-m);
+
+  &.hatching {
+    position: relative;
+
+    &::before {
+      @mixin hatching;
+      content: "";
+      display: inline-block;
+      left: calc( 0px - var(--space-2xs) ); 
+      margin-top: calc( 0px - var(--space-2xs) );
+      position: absolute;
+      pointer-events: none;
+      width: clamp(10rem, 50%, 30rem);
+      z-index: 3;
+    }
+  }
+  .thumb {
+    aspect-ratio: 16/9;
+    position: relative;
+
+    img {
+      object-position: right bottom;
+      object-fit: cover;
+      max-height: 100%;
+      width: 100%;
+      max-width: none;
+      position: relative;
+    }
+  }
+  &:has([data-direction="rtl"]) {
+    .hed-accent::after {
+      left: auto;
+      right: 0;
+    }
+  }
+  .type-hed {
+    font-size: var(--size-step-2);
+  }
+  .body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: var(--space-3xs) var(--space-s) var(--space-xs) var(--space-3xs);
+  }
+  [data-direction="rtl"] {
+    .thumb::before {
+      left: auto;
+      right: calc( 0px - var(--space-s) );
+      background-position-x: right;
+    }
+    .body {
+      padding: var(--space-3xs) var(--space-3xs) var(--space-xs) var(--space-s);
+      text-align: right;
+    }
+  }
+
+  .meta {
+    font-size: var(--size-step-0);
+    line-height: var(--leading-tight);
+    li {
+      display: inline;
+    }
+    li+li {
+      margin-left: -.25ch; /* HACK: Account for age-old inline whitespace rendering issue. */
+    }
+    li+li::before {
+      content: ", ";
+    }
+    a {
+      text-decoration-color: transparent;
+      transition: text-decoration-color .125s linear;
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color:  var(--color-legacy-red);
+      }
+    }
+    .secondary {
+      --flow-space: var(--space-2xs);
+      a {
+        text-decoration: none;
+        transition: color .125s linear;
+        &:hover {
+          color: var(--color-legacy-red);
+        }
+      }
+      font-size: var(--size-step-00);
+    }
+  }
+}

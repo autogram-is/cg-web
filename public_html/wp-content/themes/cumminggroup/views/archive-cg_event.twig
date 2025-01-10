@@ -1,27 +1,9 @@
 {% extends "base.twig" %}
 {% block content %}
+	<h2 class="type-eyebrow hed-hatch">Upcoming Events</h2>
 	{% for post in posts %}
-		{# FPO: `loop.index` seems fine for determining the `type` value to pass along to a listing, but 
-			 I can't imagine we want to use it for layout this way. #}
-		{% set type = "" %}
-		{% if loop.index <= 3 %}
-			{% set type = loop.index == 1 ? "hero" : "secondary" %}
-		{% endif %}
-
-		{% if loop.index == 1 %}
-		<div class="hero flow">
-		{% endif %}
-
-		{% if loop.index == 2 %}
-			<div class="switcher region">
-		{% endif %}
-		{% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': type } %}
-
-		{% if loop.index == 3 %}
-			</div>
-		</div>
+		{% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': 'hero' } %}
 		<hr>
-		{% endif %}
 	{% endfor %}
 	{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
 {% endblock %}

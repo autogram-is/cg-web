@@ -1,0 +1,14 @@
+<div class="gallery {{ utilities }}">
+  <div class="wrapper gallery-inner">
+    {% for image in images %}
+    <figure>
+      <img src="{{ image.src }}">
+      {% if image.credit %}
+      <figcaption class="credit">
+        {{ image.credit }}
+      </figcaption>
+      {% endif %}
+    </figure>
+    {% endfor %}
+  </div>
+</div>

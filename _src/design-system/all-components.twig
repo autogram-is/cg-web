@@ -1,0 +1,35 @@
+---
+title: 'All components'
+summary: 'A collection of every component and their variants as a cumulutive reference.'
+---
+
+{% extends "../_includes/layouts/design-system.twig" %}
+
+{% block inner %}
+  {% from '../_includes/macros/design-system-pattern.twig' import designSystemPattern %}
+
+
+  {% for item in design.components.items %}
+  <div class="wrapper py-m">
+  <div class="design-system__inner flow">
+  <div class="flow">
+    <h2><a href="{{ item.url }}">{{ item.data.title }}</a></h2>
+
+    {{ _self.designSystemPattern(item.previewUrl, item.markup, item.rendered) }} 
+
+    {% if item.variants | length %}
+      <h3>Variants</h3>
+      <div class="cluster">
+        {% for variant in item.variants %}
+        <div class="flow-space-size-1">
+          {{ _self.designSystemPattern(variant.previewUrl, variant.markup, variant.rendered) }} 
+        </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+  </div>
+</div>
+  {% endfor %}
+
+{% endblock %}

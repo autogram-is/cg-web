@@ -1,0 +1,1 @@
+A layout that pushes items away from each other where there is space in the viewport, and stacks on small viewports.

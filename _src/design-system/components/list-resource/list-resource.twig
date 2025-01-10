@@ -1,0 +1,26 @@
+{% set rand = random(99999) %}
+<article class="resource-listing {{ type }} {{ utilities }}" aria-labelledby="hed-{{ rand }}">
+  <div class="sidebar item"{% if type == "reverse" %} data-direction="rtl"{% endif %}>
+    {% if img %}
+    <a href="{{ href }}" class="thumb">
+      <img src="{{ img.src }}" height="{{img.height}}" width="{{img.width}}" alt="">
+    </a>
+    {% endif %}
+    <div class="body flow">
+      <h3 class="type-hed hed-accent" id="hed-{{ rand }}"><a href="{{ href }}">{{ title }}</a></h3>
+      {{ body|markdown }}
+    </div>
+  </div>
+
+{# 
+  <div class="article-meta type-detail repel">
+    {% if date %}
+    <time datetime="2024-10-31T00:00:00">{{ date }}</time>
+    {% endif %}
+    {% if tags %}
+    <ul class="cluster" role="list" aria-label="related tags">
+      <li><a href="https://cumming-group.com/category/news/">News</a></li>
+    </ul>
+    {% endif %}
+  </div> #}
+</article>

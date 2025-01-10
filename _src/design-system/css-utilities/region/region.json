@@ -1,0 +1,20 @@
+{
+  "title": "Region",
+  "summary": "`.region`",
+  "notes" : "Where `--region-space` is not defined, the default value is `var(--space-s-m)`",
+  "context": {
+  },
+  "variants": [
+    {
+      "name": "Spacing token",
+      "note": "As expected, `--region-space` allows use of spacing design tokens:",
+      "context": {
+        "attr": "style",
+        "value" : "--region-space: var(--space-2xl)"
+      }
+    }
+  ]
+}
+
+
+

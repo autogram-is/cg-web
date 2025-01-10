@@ -1,0 +1,54 @@
+{
+  "title": "Grid",
+  "summary":".grid",
+  "configuration" : {
+    "th" : [
+      "Property",
+      "Default value",
+      "Description"
+    ],
+    "tr" : [
+      { "td" : [ "`--gutter`", "`var(--space-s-m)`", "This defines the space between each item." ] },
+      { "td" : [ "`--grid-min-item-size`", "`20rem`", "The minimum width of each item" ] },
+      { "td" : [ "`--grid-placement`", "`auto-fill`", "Set either `auto-fit` or `auto-fill` to change how empty grid tracks are handled" ] }
+    ]
+  },
+  "context": {
+  },
+  "variants" : [
+    {
+      "name": "masonry",
+      "title": "Masonry",
+      "configuration" : {
+        "th" : [
+          "Exception",
+          "Description"
+        ],
+        "tr" : [
+          { "td" : [ "`.grid[data-layout='masonry']`", "CSS-only masonry layout. Available in [Safari Technology Preview](https://caniuse.com/mdn-css_properties_grid-template-columns_masonry) only." ] }
+        ]
+      },
+      "context": {
+        "attr": "data-layout",
+        "value": "masonry"
+      }
+    },
+    {
+      "name": "50-50",
+      "title": "50-50",
+      "configuration" : {
+        "th" : [
+          "Exception",
+          "Description"
+        ],
+        "tr" : [
+          { "td" : [ "`.grid[data-layout='50-50']`", "Shorthand for a 50/50 grid layout that breaks to a single column based on the `--grid-min-item-size` of the elements it contains" ] }
+        ]
+      },
+      "context": {
+        "attr": "data-layout",
+        "value": "50-50"
+      }
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+---
+title: 'Layout Compositions'
+summary: These are flexible, compositional layouts that follow the [CUBE CSS composition principles](https://cube.fyi/composition.html).
+
+---
+
+{% extends "../_includes/layouts/design-system.twig" %}
+
+
+{% block inner %}
+<nav class="cluster wrapper">
+  {% for item in design.csscompositions.items %}
+  <a href="#{{ item.data.title|slug}}">{{ item.data.title }}</a>
+  {% endfor %}
+</nav>
+
+<div class="wrapper py-m">
+  <div class="design-system__inner flow">
+
+  <h3>Configuration</h3>
+  <p>If you want to change the value of a custom property, you can either set a value
+  in your context, or target the composition itself (E.G <code>.sidebar</code>) for extra specificity.</p>
+  <p>The default values are fallbacks for custom properties, so are easily overridden.</p>
+
+  <h3>Gutters and Spacing</h3> 
+  <p>All compositions use a consistent
+  <code>--gutter</code> Custom Property to manage spacing between items. You
+  can either set a value for this in context, just like in the configuration
+  section above, or you can use the <code>gutter</code> utility classes.</p>
+
+  <p>For example, you could increase the gutter on the sidebar like this:
+  <code>&lt;div class=&quot;sidebar gutter-xl&quot;&gt;</code>. </p>
+
+    {% for item in design.csscompositions.items %}
+    <div class="region flow">
+      <div class="flow flow-space-2xs">
+        <h3 id="{{ item.data.title|slug }}">{{ item.data.title }}</h3>
+        <p><code>{{ item.data.summary }}</code></p>
+      </div>
+
+      {{ item.docs | markdown | safe }}
+
+      <h4>Configuration</h4>
+      <table class="flow-space-2xs">
+        <thead>
+          <tr>
+          {% for th in item.data.configuration.th %}
+            <th>{{ th }}</th>
+          {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for tr in item.data.configuration.tr %}
+          <tr>
+            {% for td in tr.td %}
+            <td>{{ td | md }}</td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <pre><code>{{ item.rendered | escape}}</code></pre>
+
+      <h5 class="design-system__render-hed">Rendered</h5>
+      <div class="design-system__example flow-space-3xs">
+      {{ item.rendered }}
+      </div>
+
+      {% if item.variants | length %}
+      <h4>Variants</h4>
+      {% for variant in item.variants %}
+
+      <div class="flow flow-space-2xs">
+        <h5>{{ variant.data.title }}</h5>
+        {% if variant.data.summary %}
+        <p><code>{{ variant.data.summary }}</code></p>
+        {% endif %}
+      </div>
+
+      {{ variant.data.note | markdown | safe }}
+
+      <table class="flow-space-2xs">
+        <thead>
+          <tr>
+          {% for th in variant.data.configuration.th %}
+            <th>{{ th }}</th>
+          {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+            {% for tr in variant.data.configuration.tr %}
+            <tr>
+              {% for td in tr.td %}
+              <td>{{ td | md }}</td>
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <pre><code>{{ variant.rendered | escape }}</code></pre>
+
+      <h5 class="design-system__render-hed">Rendered</h5>
+      <div class="design-system__example flow-space-3xs">
+      {{ variant.rendered }}
+      </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+

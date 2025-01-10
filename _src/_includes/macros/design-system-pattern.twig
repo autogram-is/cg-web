@@ -1,0 +1,27 @@
+{% macro designSystemPattern(previewUrl, markup, rendered, size) %}
+<div class="flow">
+  <iframe class="design-system__preview-frame" src="{{ previewUrl }}?state=window" data-size="standard"></iframe>
+  <div class="flex design-system__fullscreen">
+    <a href="{{ previewUrl }}">View full screen</a>
+  </div>
+  {% if markup or rendered %}
+  <details>
+    <summary>Code</summary>
+    <div class="switcher">
+      {% if rendered %}
+      <div>
+        <p><strong>Ready to use HTML</strong></p>
+        <pre><code>{{ rendered }}</code></pre>
+      </div>
+      {% endif %}
+      {% if markup %}
+      <div>
+        <p><strong>Source (Twig)</strong></p>
+        <pre><code>{{ markup }}</code></pre>
+      </div>
+      {% endif %}
+    </div>
+  </details>
+  {% endif %}
+</div>
+{% endmacro %}

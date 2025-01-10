@@ -1,0 +1,65 @@
+---
+title: 'Core CSS Utilities'
+---
+
+
+{% extends "../_includes/layouts/design-system.twig" %}
+
+{% block inner %}
+<nav class="cluster wrapper">
+  {% for item in design.cssutilities.items %}
+  <a href="#{{ item.data.title|slug}}">{{ item.data.title }}</a>
+  {% endfor %}
+</nav>
+
+
+<div class="wrapper py-m">
+  <div class="design-system__inner flow">
+
+    {% for item in design.cssutilities.items %}
+    <div class="region flow">
+      <div>
+        <h2 id="{{ item.data.title|slug}}">{{ item.data.title }}</h2>
+        {{ item.data.summary | markdown }}
+      </div>
+      <div>
+        {{ item.docs | markdown | safe }}
+      </div>
+
+      <div>
+        <p><strong>Rendered</strong></p>
+        <div class="design-system__example design-system__css-utility-example">
+        {{ item.rendered }}
+        </div>
+      </div>
+      <div>
+        <p><strong>Usage</strong></p>
+        <pre><code>{{ item.rendered | escape}}</code></pre>
+      </div>
+
+
+      {% if item.variants | length %}
+      {% for variant in item.variants %}
+
+      {{ variant.data.note | markdown | safe }}
+
+      <div>
+        <p><strong>Rendered</strong></p>
+        <div class="design-system__example">
+        {{ variant.rendered }}
+        </div>
+      </div>
+
+      <div>
+        <p><strong>Usage</strong></p>
+        <pre><code>{{ variant.rendered | escape }}</code></pre>
+      </div>
+
+        {% endfor %}
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

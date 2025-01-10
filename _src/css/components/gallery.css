@@ -1,0 +1,95 @@
+.gallery {
+  position: relative;
+
+  &:not([class*="bg-"])::before {
+    background: var(--color-timeless-backdrop);
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: calc( var(--space-3xl) * 2 );
+  }
+  .gallery-inner {
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: var(--gutter);
+    position: relative;
+
+    figure {
+      position: relative;
+      .credit {
+        background: var(--color-backdrop);
+        border-radius: 0 2px 0 0;
+        bottom: 0;
+        color: var(--color-steel-highlight);
+        font-size: var(--size-microcopy);
+        left: 0;
+        padding-inline: var(--space-3xs);
+        pointer-events: none;
+        position: absolute;
+      }
+      &:nth-of-type(even) {
+        .credit {
+          border-radius: 2px 0 0 0;
+          left: auto;
+          right: 0;
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  @media screen(md) {
+    & {
+      margin-bottom: calc( var(--space-2xl) + var(--space-s-m) );
+    }
+    &:has(.project-listing) {
+      padding-block-end: var(--space-3xl);
+    }
+    .thumb:hover {
+      transform: translateY( calc( 0px - var(--space-3xs) ) );
+    }
+    &.project-grid {
+      .switcher {
+        --gutter: var(--space-xl)
+      }
+    }
+    &:not(.project-grid) {
+      .gallery-inner {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        & > * {
+          margin-block: 0;
+          width: calc( 50% - var(--space-m) );
+
+          .thumb {
+            transition: transform .2s ease-in-out;
+          }
+          &:nth-of-type(even) {
+            align-self: flex-end;
+            transform: translateY( calc( 50% + ( var(--gutter) / 2 ) ) );
+          }
+          &:nth-last-of-type(2):nth-of-type(odd) {
+            margin-bottom: var(--space-3xl);
+          }
+          &:last-of-type {
+            &:nth-of-type(odd) {
+              margin-block-end: calc( 0px - var(--space-2xl) );
+            }
+            &:nth-of-type(even) {
+              position: relative;
+              top: calc( 0px - var(--space-3xl) );
+            }
+          }
+          &:first-child:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,144 @@
+/* 
+  Global styles 
+
+  Low-specificity, global styles that apply to the whole 
+  project: https://cube.fyi/css.html
+*/
+body {
+  display: flex;
+  flex-direction: column;
+  color: var(--color-steel-dark);
+  background: var(--color-light);
+  font-size: var(--size-step-1);
+  font-family: sans-serif;
+  font-family: var(--font-body);
+  line-height: 1.4;
+  letter-spacing: var(--tracking-normal);
+  min-height: 100vh;
+}
+
+/* Fill remaining space with main to push footer to bottom on short pages */
+main {
+  flex-grow: 2;
+}
+
+/* Base typesetting */
+h1,
+h2,
+h3 {
+  font-weight: var(--weight-medium);
+  line-height: 1;
+  text-wrap: pretty;
+}
+
+h1 {
+  font-size: var(--size-step-5);
+}
+h2 {
+  font-size: var(--size-step-4);
+}
+h3 {
+  font-size: var(--size-step-3);
+}
+h4 {
+  font-size: var(--size-step-2);
+}
+h5 {
+  font-size: var(--size-step-1);
+}
+p {
+  font-weight: var(--weight-light);
+  line-height: var(--leading-normal);
+  font-size: var(--size-step-0);
+}
+
+/* Set line lengths */
+p,
+blockquote:not([class]) {
+  max-width: 100ch;
+}
+
+/* More generic elements */
+blockquote:not([class]) {
+  font-size: var(--size-step-2);
+}
+
+svg {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  flex: none;
+}
+
+[role='list'] {
+  padding: 0;
+}
+
+/* Base interactive elements */
+
+/* Set default form accent color to brand color */
+body {
+  accent-color: var(--color-regal-purple);
+}
+
+a {
+  color: currentcolor;
+  transition: .125s all ease-in-out;
+}
+a:hover {
+  text-decoration: none;
+}
+a.thumb {
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid;
+  outline-offset: 0.3ch;
+  outline-color: var(--color-legacy-red);
+}
+
+:target {
+  scroll-margin-top: 2ex;
+}
+
+main:focus {
+  outline: none;
+}
+
+hr {
+  --flow-space: var(--space-s);
+  background: var(--color-steel-highlight);
+  border: none;
+  height: 1px;
+  width: 100%;
+}
+
+
+fieldset {
+  border: var(--stroke);
+  padding-inline: var(--space-xs);
+  legend {
+    padding-inline: var(--space-3xs);
+    margin: 0 0 0 calc( 0px - var(--space-3xs) );
+  }
+}
+
+
+/* Base selection styles*/
+::selection {
+  background: var(--selection);
+  color: var(--color-steel-dark);
+}
+
+pre ::selection {
+  background: var(--selection);
+  color: var(--color-steel-dark);
+}
+
+
+@supports( color: color-mix(in srgb, red, white) ) {
+  .bg-timeless-backdrop .text-timeless-gold {
+    color: color-mix(in srgb, var(--color-timeless-gold) 90%, black);
+  }
+}

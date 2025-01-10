@@ -1,0 +1,120 @@
+/* Hero */
+
+.hero {
+  figure {
+    margin-block: 0;
+  }
+
+  .hero-sidebar {
+    display: flex;
+    flex-direction: column;
+    padding-right: var(--gutter);
+    & > * {
+      width: 100%;
+    }
+  }
+
+  .hero-photo {
+    position: relative;
+    color: var(--color-steel-highlight);
+    .credit {
+      background: var(--color-backdrop);
+      border-radius: 0 2.5px 0 0;
+      bottom: var(--space-m);
+      font-size: var(--size-microcopy);
+      left: 0;
+      padding-inline: var(--space-3xs);
+      pointer-events: none;
+      position: absolute;
+      z-index: 3;
+    }
+  }
+  .hero-highlight {
+    min-height: var(--space-2xl);
+    img {
+      width: 100%;
+      height: auto;
+      max-height: 80vh;
+      object-fit: cover;
+      object-position: 50% 50%;
+    }
+
+    &:has(.statistic) {
+      color: var(--color-light);
+      .type-hed, blockquote p {
+        color: var(--color-dark);
+      }
+      dd::after {
+        display: none;
+      }
+    }
+
+    &:has(.statistic) {
+      padding-bottom: var(--space-l);
+      .type-hed {
+        color: var(--color-light);
+      }
+    }
+
+    &:not([class*="bg-"]) {
+      background-color: var(--color-timeless-gold);
+    }
+    &:not([class*="bg-"]) {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+  .type-pagehed {
+    max-width: 80rem;
+    padding-right: var(--space-l-xl);
+  }
+  &.standout .hero-highlight:empty {
+    &::before {
+      height: 25vw;
+      max-height: 33vh;
+    }
+  }
+  .hero-header {
+    --sidebar-content-min-width: 60%;
+    --sidebar-gutter: var(--space-s-l);
+    --sidebar-target-width: 22rem;
+    position: relative;
+    z-index: 2;
+    .meta {
+      display: flex;
+      padding-top: var(--space-xs);
+      p {
+        font-weight: var(--weight-medium);
+        font-size: var(--size-step-1);
+        &+p {
+          display: flex;
+          align-items: center;
+          &::before {
+            content: "";
+            display: inline-block;
+            border-left: 2px solid var(--color-steel-midtone);
+            height: var(--space-s);
+            margin-left: var(--space-2xs);
+            padding-left: var(--space-2xs);
+          }
+        }
+      }
+    }
+    .notch-inner:has(.region) {
+      padding-block-start: var(--space-l);
+    }
+    .hed-banner {
+      .notch-inner {
+        &.bg-regal-purple,
+        &.bg-deep-steel,
+        &.bg-legacy-red,
+        &.bg-timeless-gold {
+          padding-block: var(--space-xs);
+          /* Timeless Gold BG Fails WCAG SC 1.4.3: Contrast (Minimum) at any size: https://www.siegemedia.com/contrast-ratio#%23ffffff-on-%23ddb331 */
+          color: var(--color-highlight);
+        }
+      }
+    }
+  }
+}

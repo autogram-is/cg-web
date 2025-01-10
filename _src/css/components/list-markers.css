@@ -1,0 +1,180 @@
+
+ul:not([role="list"]),
+ol:not([role="list"]) {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--size-step-0);
+  font-weight: var(--weight-light);
+  padding: var(--space-xs) 0;
+  margin-inline: var(--space-s);
+  li {
+    margin-block: var(--space-3xs);
+    padding-left: var(--space-2xs);
+    flex: none;
+    &::marker {
+      color: var(--color-legacy-red);
+      font-size: var(--size-step-0);
+      fill: var(--color-legacy-red);
+      padding-right: var(--space-s);
+    }
+  }
+  ul, ol {
+    margin-block: 0;
+  }
+}
+
+ul:not([role="list"]) {
+  margin-inline-start: var(--space-s);
+  li {
+    &::-webkit-details-marker {
+      display: none; 
+    }
+    &::marker {
+      content: "";
+      color: transparent; /* HACK: Safari only allows limited styles on ::marker. */
+    }
+    &:not(:has(ul),:has(ol))::marker {
+      content: "•";
+      color: var(--color-legacy-red);
+      font-size: var(--size-step-0);
+    }
+    ol li:not(:has(ul),:has(ol))::marker {
+      content: "" counter( listitem ) ".";
+      color: var(--color-legacy-red);
+      font-size: var(--size-step-0);
+    }
+  }
+}
+
+ol:not([role="list"]) {
+  counter-set: listitem;
+  padding: 0;
+  ol, ul {
+    counter-reset: listitem;
+  }
+  li {
+    &::-webkit-details-marker {
+      display: none; 
+    }
+    &::marker {
+      color: transparent; /* HACK: Safari only allows limited styles on ::marker. */
+      content: "";
+      display: none;
+    }
+    &:not(:has(ul),:has(ol)) {
+      counter-increment: listitem;
+    }
+    &:not(:has(ul),:has(ol))::marker,
+    &:not(:has(ul),:has(ol))::marker {
+      color: var(--color-legacy-red);
+      content: "" counter( listitem ) ".";
+      font-size: var(--size-step-0);
+      font-weight: var(--weight-semibold);
+    }
+
+    ul > li:not(:has(ul),:has(ol)) {
+      &::marker {
+        content: "•";
+        color: var(--color-legacy-red);
+        font-size: var(--size-step-0);
+      }
+    }
+  }
+}
+
+ul:not([role="list"]),
+ol:not([role="list"]) {
+  ul:not([role="list"]),
+  ol:not([role="list"]) {
+    margin-block: 0;
+    padding-block: 0;
+    li:first-of-type {
+      margin-block-start: 0;
+    }
+  }
+
+  &.cta-list {
+    & > li {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      line-height: var(--leading-tight);
+      &::marker {
+        color: transparent;
+        content: none;
+        display: none;
+      }
+      &::before {
+        aspect-ratio: 1/1;
+        background: var(--color-legacy-red) url("data:image/svg+xml,%3Csvg transform='rotate(90deg)' width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m6 15 6-6 6 6' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") 65% center no-repeat;
+        background-size: 80%;
+        border-radius: 50%;
+        content: "";
+        display: block;
+        font-size: var(--size-step-0);
+        height: var(--space-s);
+        margin-inline: 0 var(--space-xs);
+        width: var(--space-s);
+      }
+    }
+  }
+
+   &.client-list {
+    & > li {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      line-height: var(--leading-tight);
+      &::marker {
+        color: transparent;
+        content: none;
+        display: none;
+      }
+      &::before {
+        aspect-ratio: 1/1;
+        content: "+";
+        color: var(--color-timeless-gold);
+        font-size: var(--size-step-0);
+        font-weight: var(--weight-semibold);
+        display: block;
+        margin-inline: 0 var(--space-2xs);
+      }
+    }
+  }
+
+}
+
+.multicol {
+  container: test / inline-size;
+  ul,
+  ol {
+    columns: 1 auto;
+    display: block;
+    li {
+      display: flex;
+      flex-direction: row;
+      margin-block: 0 var(--space-2xs);
+      justify-content: stretch;
+      line-height: var(--leading-tight);
+      width: 100%;
+
+      &::before {
+        content: "•";
+        line-height: .8;
+        color: var(--color-legacy-red);
+        font-size: var(--size-step-2);
+        fill: var(--color-legacy-red);
+        padding-right: var(--space-xs);
+      }
+    }
+  }
+}
+
+@container test ( width > 32rem ) {
+  .multicol {
+    ul,
+    ol {
+      columns: 2 auto;
+    }
+  }
+}

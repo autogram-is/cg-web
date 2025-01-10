@@ -1,0 +1,201 @@
+/* Pullquote */
+
+.quote {
+  --sidebar-gutter: var(--space-xs);
+  color: var(--color-deep-steel);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: var(--space-s) var(--space-2xs);
+  position: relative;
+  width: 100%;
+
+
+  &.topo::after {
+    opacity: .25;
+  }
+  .caption {
+    margin-block-start: var(--space-s);
+  }
+  .body {
+    position: relative;
+    z-index: 1;
+    p {
+      color: inherit;
+      font-size: var(--size-step-3);
+      max-width: 45em;
+      text-wrap: balance;
+    }
+  }
+
+  blockquote {
+    position: relative;
+  }
+  blockquote::before {
+    bottom: 0;
+    color: var(--color-timeless-gold);
+    content: "“";
+    font-size: 12.5rem;
+    font-family: var(--font-body);
+    left: calc( 0px - var(--space-l) );
+    line-height: .8;
+    max-height: .75ch;
+    opacity: .25;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 0;
+    z-index: -1;
+  }
+
+  figcaption {
+    --flow-space: var(--space-m);
+    --sidebar-target-width: var(--space-3xl);
+    --sidebar-content-min-width: 70%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    color: inherit;
+    margin-block-start: var(--space-2xs);
+
+    line-height: var(--leading-tight);
+    .thumbnail {
+      max-width: var(--space-3xl);
+    }
+    .cite {
+      --flow-space: 0;
+    }
+    .attribution {
+      width: 100%;
+      line-height: inherit;
+      p {
+        color: inherit;
+        display: inline;
+        font-family: var(--font-body);
+        font-weight: var(--weight-semibold);
+        font-size: var(--size-step-2);
+        &:not(:empty):not(:last-child)::after {
+          content: ",";
+        }
+      }
+    }
+    .affiliation {
+      font-size: var(--size-step-1);
+      font-weight: var(--weight-normal);
+    }
+    .source {
+      --flow-space: var(--space-3xs);
+      display: block;
+      font-size: var(--size-step-0);
+    }
+  }
+  &.floating {
+    float: right;
+    padding: var(--space-xl) var(--space-xl) var(--space-l) var(--space-l);
+    margin-inline: var(--space-l) 0;
+    width: auto;
+    min-width: 25em;
+    max-width: 25%;
+
+    blockquote p {
+      font-size: var(--size-step-1);
+    }
+  }
+  &.bg-legacy-red,
+  &.bg-deep-steel,
+  &.bg-regal-purple,
+  &.bg-timeless-gold {
+    @mixin invert;
+    color: var(--color-light);
+    &::before {
+      color: inherit;
+    }
+  }
+
+  &.pullquote {
+    padding-inline: var(--gutter);
+
+    &:not([class*="bg-"]) {
+      background: var(--color-light);
+    }
+    .sidebar {
+      display: block;
+    }
+    &.topo::after {
+      background-size: auto 95%;
+    }
+
+    &.all-center {
+      padding-block-start: 0;
+      blockquote::before {
+        position: static;
+        transform: translateX(-25%);
+      }
+    }
+  }
+
+
+  &.hero-quote {
+    blockquote p {
+      font-weight: var(--weight-normal);
+      font-size: var(--size-step-4);
+    }
+    &::before {
+      display: none;
+    }
+    &.topo::after {
+      background-size: auto 95%;
+    }
+  }
+
+  &.testimonial {
+    --sidebar-gutter: var(--space-m);
+    --sidebar-target-width: 12rem;
+    --sidebar-content-min-width: 60%;
+    padding-block: var(--space-l);
+
+    &::before {
+      display: none;
+    }
+    .thumbnail {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      figcaption {
+        --flow-space: var(--space-3xs);
+        .attribution {
+          p {
+            font-size: var(--size-step-1);
+            width: 80%;
+          }
+        }
+        .affiliation {
+          margin-block-start: 0;
+        }
+      }
+      blockquote {
+        padding-inline-end: var(--space-xl);
+        p {
+          font-size: var(--size-step-1);
+          font-weight: var(--weight-regular);
+        }
+      }
+    }
+
+    [data-direction="rtl"] {
+      .body {
+        align-items: flex-end;
+        text-align: right;
+        blockquote {
+          padding-inline: var(--space-xl) 0;
+        }
+      }
+    }
+  }
+}

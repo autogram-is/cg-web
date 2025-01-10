@@ -1,0 +1,10 @@
+<figure class="statistic flow {{ utilities }} {{ type }}" {% if type == "counter" %}data-counter{% endif %}>
+  <dl>
+    {% for stat in stats %}
+    <div class="body">
+      <dt class="type-hed">{{ stat.value }}</dt>
+      <dd class="type-detail">{{ stat.label }}</dd>
+    </div>
+    {% endfor %}
+  </dl>
+</figure>

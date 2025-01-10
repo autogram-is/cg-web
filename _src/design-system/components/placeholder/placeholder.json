@@ -1,0 +1,22 @@
+
+{ 
+  "title": "Placeholder",
+  "keyLinks": [ {
+      "label": "CSS",
+      "url": "/_src/css/components/placeholder.css"
+    } ],
+  "context": {
+    "utilities" : "topo-full",
+    "title" : "In the news"
+  },
+  "variants" : [
+    {
+      "title" : "FPO",
+      "name" : "fpo",
+      "context": {
+        "type" : "fpo",
+        "title" : "For Placement Only"
+      }
+    }    
+  ]
+}

@@ -1,0 +1,49 @@
+---
+title: 'Colors'
+---
+
+{% extends "../_includes/layouts/design-system.twig" %}
+{% set summary %}
+You can either use colors directly, using a CSS Custom
+Property, or with generated CSS utility classes.
+{% endset %}
+
+{% block inner %}
+<div class="wrapper py-m">
+  <div class="design-system__inner flow">
+    <p>The opacity of the backgrounds set by these helper classes can be modified by setting a <code>--tw-bg-opacity</code> value on that element.</p>
+    <div class="table-wrapper scrollbar">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Custom Property</th> 
+            <th>Color Utility Class</th>
+            <th>Background Utility Class</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for color in design.tokens.colors.items %}
+            <tr>
+              <td>
+                <div class="cluster" style="flex-wrap: nowrap">
+                  <div class="design-system__swatch" style="background: {{ color.value }}" role="presentation"></div>
+                  <div>
+                    <h4 class="text-step-0">{{ color.name }}</h4>
+                    <code>{{ color.value|lower }}</code>
+                  </div>
+                </div>
+              </td>
+              <td><code>var(--color-{{ color.name | slug }})</code></td>
+              <td><code>.text-{{ color.name | slug }}</code></td>
+              <td><code>.bg-{{ color.name | slug }}</code></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

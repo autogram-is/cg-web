@@ -1,0 +1,38 @@
+.sector-listing {
+  --sidebar-gutter: 0;
+  --sidebar-target-width: 35rem;
+  --sidebar-content-min-width: 35%;
+
+  .feature {
+    position: relative;
+    &::before {
+      content: "";
+      background: var(--color-timeless-gold);
+      display: inline-block;
+      height: var(--space-s);
+      position: absolute;
+      left: 0;
+      top: calc( 0px - var(--space-2xs) );
+      width: 80%;
+      z-index: 2;
+    }
+  }
+  .body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-xs) var(--space-s) var(--space-xs) var(--space-s-l);
+  }
+
+  &[data-direction="rtl"] {
+    .feature::before {
+      left: auto;
+      right: 0;
+    }
+    .body {
+      align-items: flex-end;
+      padding: var(--space-xs) var(--space-s-l) var(--space-xs) var(--space-s);
+      text-align: right;
+    }
+  }
+}

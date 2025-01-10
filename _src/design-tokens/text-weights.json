@@ -1,0 +1,28 @@
+{
+  "title": "Weights",
+  "description": "Helper classes and custom properties for common font weights",
+  "meta": {
+  },
+  "items": [
+    {
+      "name": "Light",
+      "value": 200
+    },
+    {
+      "name": "Regular",
+      "value": 400
+    },
+    {
+      "name": "Semibold",
+      "value": 600
+    },
+    {
+      "name": "Bold",
+      "value": 700
+    },
+    {
+      "name": "Black",
+      "value": 900
+    }
+  ]
+}

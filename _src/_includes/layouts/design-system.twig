@@ -1,0 +1,48 @@
+
+{% extends "./base.twig" %}
+{% set pageStylesheets = ['/css/design-system.css', '/css/prism-theme.css'] %}
+
+{% block content %}
+    {%  set title = title ?? item.data.title %}
+    {%  set summary = summary ?? item.data.summary %}
+
+<main class="design-system sidebar">
+  <nav class="design-system__sidebar flow py-m" aria-label="design system">
+    <h1 class="design-system__brand">
+      <a href="/"><img src="/images/cg-logo.png" alt="{{ site.name }}" height="178" width="600"></a>
+    </h1>
+    {% for group in design.sidebar.linkGroups %}
+      <h2 class="type-detail">{{ group.title }}</h2>  
+      <ul class="stack-nav flow" role="list">
+      {% for link in group.items %}
+        <li><a href="{{ link.url }}" {% if link.url == page.url %}aria-current="page"{% endif %}>{{ link.text }}</a> </li>
+      {% endfor %}
+      </ul>
+    {% endfor %}
+    <h2 class="type-detail">Wireframes</h2>
+    <ul class="stack-nav flow" role="list">
+      {% for item in design.wireframes.items %}
+        <li><a href="{{ item.url }}" {% if item.url == page.url %}aria-current="page"{% endif %}>{{ item.data.title }}</a> </li>
+      {% endfor %}
+    </ul>
+    <h2 class="type-detail">Components</h2>
+    <ul class="stack-nav flow" role="list">
+      {% for item in design.components.items %}
+        <li><a href="{{ item.url }}" {% if item.url == page.url %}aria-current="page"{% endif %}>{{ item.data.title }}</a> </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <div class="flow">
+    <div class="design-system__summary bg-deep-steel">
+      <div class="wrapper flow py-l flow-space-m">
+        <h2 class="design-system__hed">{{ title }}</h2>
+        {% if summary %}
+          {{ summary | markdown | safe }}
+        {% endif %}
+      </div>
+    </div>
+    {% block inner %}
+    {% endblock %}
+  </div>
+</main>
+{% endblock %}

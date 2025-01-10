@@ -3,9 +3,28 @@
 
 # Never ever check 'em in.
 **/*.env
+package-lock.json
+*.log
+npm-debug.*
+*.scssc
+*.log
+*.swp
+.sass-cache
+.cache
 
 # XML import files
 import/*.xml
+
+# Node modules and output
+node_modules
+_site
+_src/_includes/css
+
+# Generated 
+_src/scss/_tokens.scss
+_src/scss/_themes.scss
+public_html/wp-content/themes/cumminggroup/assets/css
+public_html/wp-content/themes/cumminggroup/assets/js
 
 # public_html files OTHER than our plugins and theme.
 public_html/*.*

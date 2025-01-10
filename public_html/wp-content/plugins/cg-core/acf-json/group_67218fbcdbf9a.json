@@ -38,8 +38,8 @@
             "admin_column_enabled": 1,
             "admin_column_position": "",
             "admin_column_width": "",
-            "display_format": "d\/m\/Y g:i a",
-            "return_format": "d\/m\/Y g:i a",
+            "display_format": "Y-m-d H:i:s",
+            "return_format": "Y-m-d H:i:s",
             "first_day": 1,
             "allow_in_bindings": 1
         },
@@ -60,8 +60,8 @@
             "admin_column_enabled": 1,
             "admin_column_position": "",
             "admin_column_width": "",
-            "display_format": "d\/m\/Y g:i a",
-            "return_format": "d\/m\/Y g:i a",
+            "display_format": "Y-m-d H:i:s",
+            "return_format": "Y-m-d H:i:s",
             "first_day": 1,
             "allow_in_bindings": 1
         },
@@ -130,5 +130,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733351571
+    "modified": 1736454527
 }

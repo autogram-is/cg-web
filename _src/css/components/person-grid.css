@@ -1,0 +1,43 @@
+.person-grid {
+  container: person-grid / inline-size;
+  padding-block-end: var(--space-xl);
+  position: relative;
+  &::before {
+    background: var(--color-timeless-backdrop);
+    bottom: calc( var(--space-3xl) * 2 );
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+  .people-inner {
+    display: grid;
+    margin-block: 0;
+    max-width: 65rem;
+    grid-template-columns: repeat( auto-fit, 14rem );
+    gap: var(--space-xl);
+  }
+}
+
+.person {
+  max-width: 14rem;
+  width: 1fr;
+}
+
+@container person-grid screen( md ) {
+  .person-grid {
+    .people-inner {
+      grid-template-columns: repeat(4, 14rem);
+
+      & > *:nth-of-type( 3n+1 ) {
+        grid-column: 2/3;
+      }
+
+      & > *:nth-of-type( 6n+1) {
+        grid-column: 1/2;
+      }
+    }
+  }
+}

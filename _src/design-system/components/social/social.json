@@ -1,0 +1,23 @@
+
+{ 
+  "title": "Social Links",
+  "keyLinks": [ {
+      "label": "CSS",
+      "url": "/_src/css/components/social.css"
+    } ],
+  "context": {
+    "utilities" : "repel",
+    "links" : [
+      {
+        "title" : "LinkedIn",
+        "icon" : "",
+        "url" : "#"
+      },
+      {
+        "title" : "Mail",
+        "icon" : "",
+        "url" : "#"
+      }
+    ]
+  }
+}

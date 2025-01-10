@@ -1,0 +1,18 @@
+{
+  "title": "Cluster",
+  "summary":".cluster ",
+  "configuration" : {
+    "th" : [
+      "Property",
+      "Default value",
+      "Description"
+    ],
+    "tr" : [
+      { "td" : [ "`--gutter`", "`var(--space-s-m)`", "This defines the space between each item." ] },
+      { "td" : [ "`--cluster-horizontal-alignment`", "`flex-start`", "How items should align horizontally. Can be any acceptable flexbox aligmnent value." ] },
+      { "td" : [ "`--cluster-vertical-alignment`", "`center`", "How items should align vertically. Can be any acceptable flexbox alignment value." ] }
+    ]
+  },
+  "context": {
+  }
+}

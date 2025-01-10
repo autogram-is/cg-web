@@ -1,0 +1,57 @@
+{% set assetHash = global.random() %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    {% include "../partials/meta-info.twig" %}
+
+    <link rel="stylesheet" href="/css/global.css?{{ assetHash }}" />
+
+    {# Add facility for pages to declare an array of stylesheet paths #}
+    {% if pageStylesheets %}
+      {% for item in pageStylesheets %}
+        <link rel="stylesheet" href="{{ item }}?{{ assetHash }}" />
+      {% endfor %}
+    {% endif %}
+
+    <link rel="stylesheet" href="/css/prism-theme.css?{{ assetHash }}" />
+
+  </head>
+  <body>
+    {% block content %}{% endblock %}
+  </body>
+  <script type="module">
+    document.querySelectorAll('[data-element="code-block"]').forEach( el => {
+      const button = el.querySelector('[data-element="code-copy-button"]');
+      const notify = ( node, msg ) => node.innerHTML = msg || "";
+
+      if( !navigator.clipboard ){
+        button.setAttribute( "hidden","" );
+        return;
+      }
+
+      if( button ){
+        const codeRef = el.querySelector( `#${ button.getAttribute( "data-code-ref" ) }` );
+        const notif = button.parentNode.querySelector( '[role="alert"]' );
+
+        codeRef && button.addEventListener("click", async() => { 
+          try {
+            if( codeRef instanceof HTMLElement ) {
+              await navigator.clipboard.writeText( codeRef.innerText ), notify( notif, "Copied!");
+            } else {
+              throw new Error("Element not found or is not an HTMLElement.");
+            } setTimeout( () => {
+              notify( notif );
+            },3e3 );
+          } catch {
+            notify( notif );
+          }
+        });
+      }
+    });
+  </script>
+<script src=" https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js "></script>
+</html>

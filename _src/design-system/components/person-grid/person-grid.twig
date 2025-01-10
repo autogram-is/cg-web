@@ -1,0 +1,33 @@
+<div class="person-grid {{ utilities }}">
+  <ul class="wrapper people-inner" role="list">
+    {% for person in people %}
+    <li class="person">
+      <div class="sidebar">
+      {% if person.img %}
+        <div class="crop">
+          <img src="{{ person.img.src }}" height="{{ person.img.height }}" width="{{ person.img.width }}" alt="{{ person.img.alt }}">
+        </div>
+      {% endif %}
+        <div class="body">
+          <div class="person-header flow">
+            <h2 class="hed type-body">{% if contact %}<a href="mailto:{{ person.contact }}">{% endif %}{{ person.name }}{% if person.contact %}</a>{% endif %}</h2>
+            <div class="person-meta flow">
+              <span class="title type-detail">{{ person.title }}</span>
+              {% if person.sectors %}
+              <ul role="list" class="title-scope flow">
+                {% for sector in person.sectors %}
+                <li><a href="{{ sector.href }}">{{ sector.text }}</a></li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+              {% if person.region %}
+              <a href="#" class="location type-detail">{{ person.region }}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

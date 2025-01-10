@@ -1,6 +1,45 @@
 {
+  "name": "cg-components",
+  "version": "0.0.1",
+  "description": "",
+  "main": ".eleventy.js",
   "scripts": {
     "wordpress:start": "docker compose up -d",
-    "wordpress:stop": "docker compose down"
+    "wordpress:stop": "docker compose down",
+    "components:create": "node _src/lib/code-sample-generator.js -b 'components'",
+    "wireframes:create": "node _src/lib/code-sample-generator.js -b 'wireframes'",
+    "start": "concurrently 'npm run serve' 'npm run css -- --watch' 'npm run themecss -- --watch' 'npm run js -- --watch' 'npm run themejs -- --watch'",
+    "serve": "npx eleventy --serve",
+    "css": "npx postcss _src/css/*.css --dir _site/css",
+    "themecss" : "npx postcss _src/css/*.css --dir theme/assets/css",
+    "js": "esbuild _src/js/bundle.js --bundle --outfile=_site/js/ui.js",
+    "themejs" : "esbuild _src/js/bundle.js --bundle --outfile=theme/assets/js/ui.js"
+  },
+  "keywords": [],
+  "author": "Autogram",
+  "license": "N/A",
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-cache-assets": "^2.3.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "chalk": "^4.1.2",
+    "concurrently": "^7.2.0",
+    "cssnano": "^5.1.8",
+    "esbuild": "^0.14.39",
+    "markdown-it-anchor": "^8.6.4",
+    "postcss-cli": "^9.1.0",
+    "postcss-import": "^14.1.0",
+    "postcss-import-ext-glob": "^2.0.1",
+    "postcss-js": "^4.0.0",
+    "tailwindcss": "^3.0.24"
+  },
+  "devDependencies": {
+    "@11ty/eleventy-img": "^4.0.2",
+    "@factorial/eleventy-plugin-twig": "^0.1.3",
+    "postcss": "^8.4.40",
+    "postcss-mixins": "^10.0.1",
+    "postcss-nesting": "^13.0.0",
+    "prettier": "^2.6.2",
+    "twig": "^1.17.1"
   }
 }

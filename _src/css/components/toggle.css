@@ -1,0 +1,8 @@
+.toggle {
+  [aria-hidden="true"] {
+    display: none;
+  }
+}
+.toggle-hidden {
+  display: none;
+}

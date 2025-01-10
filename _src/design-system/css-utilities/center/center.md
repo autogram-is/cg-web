@@ -1,0 +1,1 @@
+Does what it says on the tin: center aligns text with `text-align` and uses `margin-inline: auto` to center align on the reading mode direction.
