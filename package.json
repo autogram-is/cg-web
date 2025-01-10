@@ -6,6 +6,8 @@
   "scripts": {
     "wordpress:start": "docker compose up -d",
     "wordpress:stop": "docker compose down",
+    "wordpress:savesql": "docker compose exec wordpress wp --allow-root db export ./wp-content/backups/db.sql",
+    "wordpress:loadsql": "docker compose exec wordpress wp --allow-root db import ./wp-content/backups/db.sql",
     "components:create": "node _src/lib/code-sample-generator.js -b 'components'",
     "wireframes:create": "node _src/lib/code-sample-generator.js -b 'wireframes'",
     "start": "concurrently 'npm run serve' 'npm run css -- --watch' 'npm run themecss -- --watch' 'npm run js -- --watch' 'npm run themejs -- --watch'",
