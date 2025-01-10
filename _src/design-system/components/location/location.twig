@@ -1,0 +1,22 @@
+<div class="location flow">
+    <h4 class="hed type-detail">{{ title }}</h4>
+    <div class="addr flow">
+    {% for line in address %}
+    <p>{{ line }}</p>
+    {% endfor %}
+    </div>
+    <ul class="contact flow" role="list">
+      {% if map %}
+      <li class="icon-map">
+        <a href="loc:{{ map }}">Google Map</a>
+      </li>
+      {% endif %}
+      {% if phone %}
+      <li class="icon-tel">
+        {{ phone }}
+        {# Note that a recognizable phone number will be automatically wrapped in a `tel:` link on mobile browsers: #}
+        {# <a href="tel:{{ phone }}">{{ phone }}</a> #}
+      </li>
+      {% endif %}
+    </ul>
+</div>

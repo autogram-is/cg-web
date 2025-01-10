@@ -1,0 +1,26 @@
+<div>
+  {% if dates.start %}
+  <time datetime="">{{ dates.start }}</time>
+  {% endif %}
+  {% if dates.end %}
+  - <time datetime="">{{ dates.end }}</time>
+  {% endif %}
+  <h1 class="type-pagehed hed-accent">{{ hed }}</h1>
+  <div class="lede-header">
+    {% if byline.name %}
+      <address class="hgroup">
+        <span class="author">{{ byline.name }}</span>
+        {% if byline %}
+        <span class="title">
+          <span class="title type-detail">{{ byline.title }}</span>
+          <span class="scope type-detail">{% if byline.scope.href %}<a href="{{ byline.scope.href }}">{{ byline.scope.name }}</a>{% endif %}</span>
+        </span>
+        {% endif %}
+      </address>
+    {% endif %}
+    {% if location %}
+    <span class="location"><a href="{{ location.url }}">{{ location.text }}</a></span>
+    {% endif %}
+    {{ lede | markdown }}
+  </div>
+</div>

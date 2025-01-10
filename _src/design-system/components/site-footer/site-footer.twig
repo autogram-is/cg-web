@@ -1,0 +1,66 @@
+<div class="page-spacer">
+
+  <main style="min-height: 5em">
+  </main>
+
+  <footer class="site-footer {{ utilities }} {{ type }}">
+    <div class="footer-cta">
+      <div class="notch wrapper">
+        <div class="notch-inner inner-cta repel">
+          <div class="body flow">
+            <h3 class="type-hed">Contact Us</h3>
+            <p>Need some help? Fill out the form below and our staff will be in touch!</p>
+          </div>
+          <a href="#" class="button glass">CTA</a>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="footer-primary region repel">
+        <div class="body">
+          {% if blurb %}
+          {% if blurb.heading %}
+          <h3 class="type-hed hed-accent">{{ blurb.heading }}</h3>
+          {% endif %}
+          {{ blurb.body | markdown }}
+          {% endif %}
+          {% if socials %}
+          <div class="region cluster socials">
+            {% for item in socials.items %}
+            <a href="{{ item.link }}" class="button inverted icon"><span>{{ item.text }}</span>{{ item.icon }}</a>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        <div class="footer-nav cluster">
+          {% for nav in footernav %}
+          <div class="flow nav-group">
+            <h4 class="type-detail">{{ nav.heading }}</h4>
+            <ul role="list" class="flow">
+              {% for item in nav.items %}
+              <li><a href="{{ item.link }}">{{ item.text }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="fine-print">
+      <div class="wrapper region repel">
+        {% if copyright %}
+        <small>{{ copyright }}</small>
+        {% endif %}
+        <nav class="legal" aria-label="Legal">
+          <ul role="list">
+            {% for link in legal %}
+            <li><a href="{{ link.link }}">{{ link.text }}</a></li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+</div>

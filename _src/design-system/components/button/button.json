@@ -1,0 +1,133 @@
+{
+  "title": "Button",
+  "summary" : "Mix-and-match utility classes for rendering buttons.",
+  "keyLinks": [
+    {
+      "label": "CSS",
+      "url": "/_src/css/components/button.css"
+    }
+  ],
+  "context": {
+    "text": "Action"
+  },
+  "variants": [
+    {
+      "name": "disabled",
+      "title": "Disabled",
+      "context": {
+        "text": "Action",
+        "type": "disabled"
+      }
+    },
+    {
+      "name": "hollow",
+      "title": "Hollow",
+      "context": {
+        "text": "Action",
+        "type": "hollow"
+      }
+    },
+    {
+      "name": "align-only",
+      "title": "Alignment Only",
+      "note" : "No background or borders, used to maintain size and spacing alongside other button treatments.",
+      "context": {
+        "text": "Action",
+        "type": "align-only"
+      }
+    },
+    {
+      "name": "inverted",
+      "title": "Inverted",
+      "context": {
+        "text": "Action",
+        "type": "inverted"
+      }
+    },
+    {
+      "name": "mini",
+      "title": "Mini",
+      "context": {
+        "text": "Action",
+        "type": "mini"
+      }
+    },
+    {
+      "name": "glass",
+      "title": "Glass",
+      "context": {
+        "text": "Action",
+        "type": "glass"
+      }
+    },
+    {
+      "name": "text",
+      "title": "Text Button",
+      "note": "Unsets all user agent/inherited button styles, for situations where a semantic `button` element should be styled in a way that resembles an anchor link (eg. a [toggle](/design-system/component/toggle/) that opens a subnav).",
+      "context": {
+        "text": "Action",
+        "type": "unset"
+      }
+    },
+    {
+      "name": "secondary",
+      "title": "Secondary",
+      "context": {
+        "text": "Action",
+        "type": "secondary"
+      }
+    },
+    {
+      "name": "icon",
+      "title": "Icon",
+      "context": {
+        "text": "Action",
+        "icon": {
+          "content": "→"
+        }
+      }
+    },
+    {
+      "name": "icon-reverse",
+      "title": "Icon Reversed",
+      "context": {
+        "type": "reversed",
+        "text": "Action",
+        "icon": {
+          "content": "→"
+        }
+      }
+    },
+    {
+      "name": "icon-only",
+      "title": "Icon Only",
+      "context": {
+        "text": "Action",
+        "type": "icon",
+        "icon": {
+          "content": "→"
+        }
+      }
+    },
+    {
+      "name": "rounded",
+      "title": "Rounded",
+      "context": {
+        "text": "Action",
+        "type": "rounded"
+      }
+    },
+    {
+      "name": "round",
+      "title": "Round",
+      "note": "Uses [CSS `aspect-ratio`](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio) to ensure consistent sizing.",
+      "context": {
+        "text": "Action",
+        "type": "round",
+        "icon": {
+          "content": "→"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+<!-- see: https://html.spec.whatwg.org/multipage/grouping-content.html#the-blockquote-element -->
+<figure class="quote flow topo {{ utilities }} {{ type }}">
+  <div class="wrapper region">
+    <blockquote class="body type-display">
+      {{ quote | markdown }}
+    </blockquote>
+    <figcaption class="sidebar caption">
+      {% if img %}
+      <div class="thumbnail">
+        <img src="{{ img.src }}" height="{{ img.height }}" width="{{ img.width }}" alt="{{ img.alt }}">
+      </div>
+      {% endif %}
+      <div class="cite flow">
+        <div class="attribution">
+          <p>{{ author.name | md }}</p>
+          <p>{{ author.title | md }}</p>
+        </div>
+        {% if author.affiliation %}
+        <p class="affiliation">{{ author.affiliation | md }}</p>
+        {% endif %}
+        <cite class="type-detail">{{ author.source | md }}</cite>
+      </div>
+    </figcaption>
+  </div>
+</figure>

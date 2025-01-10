@@ -1,0 +1,28 @@
+{% set rand = random(99999) %}
+<div class="region wrapper">
+<article aria-labelledby="hed-{{ rand }}" class="project-listing flow {{ type }} {{ utilities }}">
+  <div class="sidebar swap flow"{% if type == "reverse" %} data-direction="rtl"{% endif %}>
+    {% if image %}
+    <a href="{{ href }}" class="thumb">
+      <img src="{{ image.src }}" alt="{{ image.alt }}" width="2000">
+    </a>
+    {% endif %}
+    <div class="body">
+      <h3 class="type-hed hed-accent" id="hed-{{ rand }}">
+        <a href="{{ href }}">{{ title }}</a>
+      </h3>
+      <div class="meta flow">
+        <ul role="list">
+          {% for tag in tags %}
+          <li><a href="{{tag.url}}">{{ tag.title }}</a></li>
+          {% endfor %}
+        </ul>
+        <div class="type-detail secondary">
+          <a href="{{ region.url }}">{{ region.title }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+</div>

@@ -1,0 +1,80 @@
+{ 
+ "title": "Project Listing",
+ "name" : "list-project",
+  "keyLinks": [{
+    "label": "CSS",
+    "url": "/_src/css/components/list-project.css"
+  }],
+  "context": {
+    "title" : "Sphere at the Venetian Resort",
+    "href"   : "#",
+    "location" : "Boston, Massachusetts",
+    "image"  : {
+      "src" : "https://cumming-group.com/wp-content/uploads/2023/06/LGB_1.jpg",
+      "alt" : "Meaningfully describes the content of the image itself."
+    },
+    "region" : {
+      "title" : "Northeast Region",
+      "url" : "#"
+    },
+    "tags"   : [{
+        "title" : "Culture & Arts",
+        "url" : "#"
+      },{
+        "title" : "Sports & Venues",
+        "url" : "#"
+      }
+    ]
+  },
+  "variants" : [
+    {
+      "name" : "reverse",
+      "title" : "Reverse",
+      "context" : {
+        "type" : "reverse",
+        "title" : "Andaz",
+        "href"   : "#",
+        "location" : "Miami Beach, FL",
+        "image"  : {
+          "src" : "https://cumming-group.com/wp-content/uploads/2024/08/Andaz-Miami-11.jpg",
+          "alt" : "Meaningfully describes the content of the image itself."
+        },
+        "region" : {
+          "title" : "Southeast Region",
+          "url" : "#"
+        },
+        "tags"   : [{
+          "title" : "Hospitality",
+          "url" : "#"
+        }]
+      }
+    },
+    {
+      "name" : "hatching",
+      "title" : "Hatched",
+      "note" : "Hatching breaks the top and left grid.",
+      "context": {
+        "utilities" : "hatching",
+        "title" : "Sphere at the Venetian Resort",
+        "href"   : "#",
+        "location" : "Boston, Massachusetts",
+        "image"  : {
+          "src" : "https://cumming-group.com/wp-content/uploads/2023/06/LGB_1.jpg",
+          "alt" : "Meaningfully describes the content of the image itself."
+        },
+        "region" : {
+          "title" : "Northeast Region",
+          "url" : "#"
+        },
+        "tags"   : [{
+            "title" : "Culture & Arts",
+            "url" : "#"
+          },{
+            "title" : "Sports & Venues",
+            "url" : "#"
+          }
+        ]
+      }
+    }
+  ]
+}

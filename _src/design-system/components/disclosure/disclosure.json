@@ -1,0 +1,14 @@
+
+{ 
+  "title": "Disclosure",
+  "keyLinks": [ {
+      "label": "CSS",
+      "url": "/_src/css/components/disclosure.css"
+    }, {
+      "label": "JS",
+      "url": "/_src/js/disclosure.js"
+    } ],
+  "context": {
+    "default" : "open"
+  }
+}

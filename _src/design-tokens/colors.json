@@ -1,0 +1,70 @@
+{
+  "title": "Colors",
+  "description": "Hex color codes that can be shared, cross-platform. They can be converted at point of usage, such as HSL for web or CMYK for print.",
+  "items": [
+    {
+      "name": "Timeless Gold",
+      "value": "#ddb331"
+    },
+    {
+      "name": "Timeless Highlight",
+      "value": "#eac964"
+    },
+    {
+      "name": "Timeless Backdrop",
+      "value": "#f9f8f3"
+    },
+    {
+      "name": "Regal Purple",
+      "value": "#482b75"
+    },
+    {
+      "name": "Legacy Red",
+      "value": "#d23f33"
+    },
+    {
+      "name": "Deep Steel",
+      "value": "#39434d"
+    },
+    {
+      "name": "Steel Shade",
+      "value": "#1D242D"
+    },
+    {
+      "name": "Steel Midtone",
+      "value": "#acb4bb"
+    },
+    {
+      "name": "Steel Highlight",
+      "value": "#DEE2E9"
+    },
+    {
+      "name": "Aqua",
+      "value": "#208380"
+    },
+    {
+      "name": "Cyan",
+      "value": "#478FAF"
+    },
+    {
+      "name": "Khaki",
+      "value": "#A2A27F"
+    },
+    {
+      "name": "Dark",
+      "value": "#212121"
+    },
+    {
+      "name": "Highlight",
+      "value": "#F8FBFC"
+    },
+    {
+      "name": "Light",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "Backdrop",
+      "value": "rgba(0,0,0,.35)"
+    }
+  ]
+}

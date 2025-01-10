@@ -1,0 +1,49 @@
+/* WIREFRAMING
+-------------------------------------*/
+.frame {
+  background: var(--color-steel-highlight);
+  position: relative;
+  padding: 1.5em;
+  min-width: 5em;
+  margin: 0;
+  &.frame-s {
+    min-height: 6.25em;
+  }
+  &.frame-m {
+    min-height: 12.5em;
+  }
+  &.frame-l {
+    min-height: 25em;
+  }
+  &.frame-xl {
+    min-height: 40em;
+  }
+  .frame {
+    background: var(--color-backdrop);
+  }
+  &.inset {
+    margin: 2em 1em;
+  }
+  &:not(:has(div)) {
+    color: var(--color-deep-steel);
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-secondary);
+    font-size: var(--size-step-00);
+  }
+  &[data-component]::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--color-steel-highlight);
+    color: #39434d;
+    font-size: 1rem;
+    font-weight: normal;
+    display: block;
+    opacity: .65;
+    padding: 0 .5em;
+    border-radius: 0 0 0 .25em;
+    content: attr(data-component);
+  }
+}
+

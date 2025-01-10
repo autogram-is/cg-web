@@ -1,0 +1,22 @@
+{
+  "title": "News & Insights Detail",
+  "summary" : "A blog post.",
+  "context": {
+    "date": "2024-10-31T00:00:00",
+    "hed" : "Navigating the Complexities of Large-Scale Restorations: Essential Considerations for Institutional Property Owners",
+    "byline" : {
+      "name": "Erwin Watt",
+      "title": "Senior Vice President",
+      "sectors" : [
+        {
+          "text" : "Planning & Scheduling",
+          "href" : "#"
+        },
+        {
+          "text" : "Dispute Resolution & Avoidance",
+          "href" : "#"
+        }
+      ]
+    }
+  }
+}

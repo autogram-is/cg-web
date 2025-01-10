@@ -1,0 +1,84 @@
+---
+pagination:
+  data: design.wireframes.items
+  size: 1
+  addAllPagesToCollections: true
+  alias: item
+permalink: '{{ item.url }}/index.html'
+---
+
+
+{% if item.data.summary %}
+  {% set summary = item.data.summary %}
+{% endif %} 
+
+{% extends "../_includes/layouts/design-system.twig" %}
+
+{% block inner %}
+  {% if item.variants | length %}
+  <nav class="cluster wrapper" aria-label="variants">
+    <a href="#{{ item.data.title | slug }}">{{ item.data.title }}</a>
+
+    {% for variant in item.variants %}
+      <a href="#{{ variant.data.title | slug }}">{{ variant.data.title }}</a>
+    {% endfor %}
+  </nav>
+  {% endif %}
+
+<div class="wrapper py-m">
+  <div class="design-system__inner flow">
+    {% if item.docs %}
+    <article class="prose flow">
+      {{ item.docs | md  }}
+    </article>
+    {% endif %}
+
+    <div class="flow">
+      <div class="design-system__rendered">
+        <div class="design-system__fullscreen">
+          <a href="{{ item.previewUrl }}">View full screen</a>
+        </div>
+        <iframe class="design-system__preview-frame design-system__preview-wireframe" src="{{ item.previewUrl }}?state=window" data-size="standard"></iframe>
+      </div>
+    {% if item.structureddata | length %}
+      <h3>Structured Data</h3>
+      <div data-element="code-block">
+        <div class="design-system__snippet-header">
+          <div role="alert"></div>
+          <button type="button" data-element="code-copy-button" data-code-ref="codeblock-{{ item.name }}">Copy to clipboard</button>
+        </div>
+        <pre id="codeblock-{{ item.name }}"><code>{{ item.structureddata | escape }}</code></pre>
+      </div>
+    {% endif %}
+
+    {% if item.variants | length %}
+      {% for variant in item.variants %}
+      <div class="region flow">
+        <div class="flow flow-space-2xs">
+          <h2 id="{{ variant.data.title | slug }}">{{ variant.data.title }}</h2>
+          {% if variant.data.note %}
+            {{ variant.data.note | markdown }}
+          {% endif %}
+
+          {% if variant.docs %}
+          <article class="prose flow">
+            {{ variant.docs | md  }}
+          </article>
+          {% endif %}
+
+        </div>
+        <div class="flow-space-size-1">
+          <div class="flow">
+            <div class="design-system__rendered">
+            <div class="design-system__fullscreen">
+              <a href="{{ variant.previewUrl }}">View full screen</a>
+            </div>
+            <iframe class="design-system__preview-frame design-system__preview-wireframe" src="{{ variant.previewUrl }}?state=window" data-size="standard"></iframe> 
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    {% endif %}
+  {% endblock %}
+  </div>
+</div>

@@ -8,10 +8,17 @@ use Timber\Site;
 class CGSite extends Site {
 		public function __construct() {
 				add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
+				add_action( 'after_setup_theme', function () {
+					register_nav_menus([
+						'primary' => 'Primary Menu',
+						'primary_eu' => 'Primary Menu (EU Version)',
+						'footer' => 'Footer Menu',
+					]);
+				});
 
 				add_filter( 'timber/context', array( $this, 'add_to_context' ) );
 				add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
-
+				
 				parent::__construct();
 		}
 
@@ -21,11 +28,11 @@ class CGSite extends Site {
 		 * @param string $context context['this'] Being the Twig's {{ this }}.
 		 */
 		public function add_to_context( $context ) {
-			$context['menu'] = Timber::get_menu(908);
-			// $context['menu-eu'] = Timber::get_menu('eu');
-			// $context['footer'] = Timber::get_menu('footer');
-			$context['site'] = $this;
+			$context['menu'] = Timber::get_menu('primary');
+			$context['menu_eu'] = Timber::get_menu('primary_eu');
+			$context['footer_nav'] = Timber::get_menu('footer');
 
+			$context['site'] = $this;
 			return $context;
 		}
 
@@ -96,7 +103,8 @@ class CGSite extends Site {
 		 *
 		 * @param string $text The headline to stylize
 		 */
-		function stylize_title(string $text) {
+		function stylize_title(string | NULL $text) {
+			if (is_null($text)) return '';
 				$symbol = ' + ';
 				return str_replace($symbol, " <span class=\"amp\">" . trim($symbol) . "</span> ", $text);
 		}

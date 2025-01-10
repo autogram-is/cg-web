@@ -1,0 +1,32 @@
+<div class="person {{ type }} {{ utilities }}">
+  <div class="sidebar">
+  {% if img %}
+    <div class="crop">
+    <img src="{{ img.src }}" height="{{ img.height }}" width="{{ img.width }}" alt="{{ img.alt }}">
+    </div>
+  {% endif %}
+    <div class="body">
+      <div class="person-header flow">
+        <h2 class="hed type-body">{% if contact %}<a href="mailto:{{ contact }}">{% endif %}{{ name }}{% if contact %}</a>{% endif %}</h2>
+        <div class="person-meta flow">
+          <span class="title type-detail">{{ title }}</span>
+          {% if sectors %}
+          <ul role="list" class="title-scope flow">
+            {% for sector in sectors %}
+            <li><a href="{{ sector.href }}">{{ sector.text }}</a></li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+          {% if region %}
+          <a href="#" class="location type-detail">{{ region }}</a>
+          {% endif %}
+        </div>
+      </div>
+      {% if person %}
+      <div class="prose">
+        {{ person | markdown }}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

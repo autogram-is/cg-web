@@ -1,0 +1,40 @@
+.service-listing {
+  --gutter: 0;
+  --switcher-vertical-alignment: center;
+  --switcher-target-container-width: 40rem;
+  & > *:first-child {
+    align-self: flex-start;
+    max-width: var(--switcher-target-container-width);
+  }
+  & > *:nth-child(even) {
+    padding:  var(--space-xs) var(--space-m) var(--space-xs) var(--space-xs-s);
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-xs) var(--space-s) var(--space-xs) var(--space-s-l);
+  }
+
+  &[data-direction="rtl"] {
+    .feature::before {
+      left: auto;
+      right: 0;
+    }
+    .body {
+      align-items: flex-end;
+      padding: var(--space-xs) var(--space-s-l) var(--space-xs) var(--space-s);
+      text-align: right;
+
+      .cta-list li {
+        flex-direction: row-reverse;
+        text-align: right;
+
+        &::before {
+          margin-left: var(--space-xs);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Repel",
+  "summary":".repel",
+  "configuration" : {
+    "th" : [
+      "Property",
+      "Default value",
+      "Description"
+    ],
+    "tr" : [
+      { "td" : [ "`--gutter`", "`var(--space-s-m)`", "This defines the space between items." ] },
+      { "td" : [ "`--repel-vertical-alignment`", "`20rem`", "How items should align vertically. Can be any acceptable [flexbox alignment value](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container)." ] }
+    ]
+  },
+  "context": {
+  }
+}

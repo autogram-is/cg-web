@@ -1,0 +1,11 @@
+
+{ 
+  "title": "Statistic Hero",
+  "keyLinks": [ {
+      "label": "CSS",
+      "url": "/_src/css/components/hero.css"
+    } ],
+  "context": {
+    "hed" : "Healthcare"
+  }
+}

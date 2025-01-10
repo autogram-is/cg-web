@@ -1,0 +1,25 @@
+
+{ 
+  "title": "Client List",
+  "name" : "client-list",
+  "keyLinks": [ {
+        "label": "CSS",
+        "url": "/_src/css/components/client-list.css"
+      } ],
+  "context": {
+    "utilities" : "grid flow",
+    "items" : [
+      "African American Museum, Charleston, SC",
+      "Smithsonian, Washington, DC",
+      "Oolite Arts, Miami, FL",
+      "Oregon Convention Center, Portland, OR",
+      "The Music Center, Los Angeles, CA",
+      "Sphere at The Venetian Resort, Las Vegas, NV",
+      "Jacob K. Javits Convention Center, New York, NY",
+      "Temple Beth Shalom, Needham, MA",
+      "Diamond Head Theatre, Honolulu, HI",
+      "The Music Center, Los Angeles, CA ",
+      "Whitney Museum of American Art, New York, NY"
+    ]
+  }
+}

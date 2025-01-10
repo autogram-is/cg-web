@@ -1,0 +1,60 @@
+---
+title: 'Preview'
+pagination:
+  data: design.components.previews
+  size: 1
+  addAllPagesToCollections: true
+  alias: item
+permalink: '{{ item.previewUrl }}/index.html'
+---
+{% set assetHash = "global.random()" %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/css/global.css?{{ assetHash }}" />
+    <title>CG Design System - {{ item.title }}</title>
+
+    <script type="text/javascript">(function() { document.documentElement.classList.add("js") }());</script>
+    <style>
+      .preview-inverted {
+        background: var(--color-steel-shade);
+      }
+      [class*="compact"] {
+        margin-inline: auto;
+        width: 50%;
+      }
+      .preview-grid {
+        margin-inline: auto;
+        width: 25%;
+        min-width: 20rem;
+      }
+      .page-spacer {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        main {
+          flex-grow: 2;
+        }
+      }
+
+      .preview {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+      {{ item.data.extraSampleCSS }}
+
+      {{ item.extraSampleCSS }}
+    </style>
+  </head>
+  <body class="pad-400 preview-{{item.name}} {{ item.configuration }}">
+    <div class="preview">
+      {{ item.rendered }}
+    </div>
+    <script type="module" src="/js/ui.js" defer></script>
+  </body>
+</html>

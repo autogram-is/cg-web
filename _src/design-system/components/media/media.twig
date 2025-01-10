@@ -1,0 +1,20 @@
+<figure class="media {{ type }} {{ utilities }}">
+  <div class="switcher"{% if type == "reverse" %} data-direction="rtl"{% endif %}>
+
+    {% if media %}
+    <div class="thumb">
+      <div class="swap">
+        <a href="{{ href }}" data-media="{{ media.href }}">
+          <img decoding="async" src="{{ media.poster }}">
+        </a>
+      </div>
+    </div>
+    {% endif %}
+    <figcaption class="flow">
+      <div class="body">
+        <h3 class="type-hed hed-accent"><a href="{{ href }}">{{ heading }}</a></h3>
+        {{ body | markdown }}
+      </div>
+    </figcaption>
+  </div>
+</figure>

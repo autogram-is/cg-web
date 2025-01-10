@@ -1,0 +1,24 @@
+.attendees {
+  position: relative;
+
+  &.hatched::before {
+    @mixin hatching;
+    content: "";
+    display: inline-block;
+    top: 0;
+    left: calc( 0px - var(--space-2xs) ); 
+    margin-top: calc( 0px - var(--space-2xs) );
+    position: absolute;
+    pointer-events: none;
+    width: clamp(10rem, 50%, 30rem);
+    z-index: 3;
+  }
+  --cluster-vertical-alignment: flex-start;
+  margin-top: var(--space-l);
+  padding-block: var(--space-m);
+  padding-right: var(--space-l);
+
+  .hed {
+    font-size: var(--size-step-2);
+  }
+}

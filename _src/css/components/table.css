@@ -1,0 +1,31 @@
+/* Table */
+
+table.table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  font-size: var(--size-step-00);
+  width: 100%;
+  th, td {
+    padding: var(--space-3xs) var(--space-xs);
+    text-align: left;
+  }
+  th {
+    font-weight: var(--weight-normal);
+  }
+  thead th {
+    background: var(--color-timeless-gold);
+    color: var(--color-light);
+    font-family: var(--font-secondary);
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+  }
+  tbody th {
+    font-weight: var(--weight-semibold);
+  }
+  tbody tr:nth-of-type(even) {
+    background: var(--color-timeless-backdrop);
+  }
+  caption {
+    caption-side: bottom;
+  }
+}

@@ -1,0 +1,44 @@
+
+{ 
+  "title": "Media",
+  "keyLinks": [ {
+      "label": "CSS",
+      "url": "/_src/css/components/media.css"
+    } ],
+  "context": {
+    "heading" : "Construction Insiders Podcast",
+    "body" : "Check out our latest podcast about Integrated Project Delivery in Healthcare Construction: Evolving Strategies for Complex Facilities",
+    "media" : {
+      "poster" : "https://cumming-group.com/wp-content/uploads/2024/09/Healthcare-Podcast-Thumbnail-Steve-Mike.jpg",
+      "href" : "https://www.youtube.com/embed/nyD9sr_pEkY?autoplay=1"
+    }
+  },
+  "variants" : [
+    {
+      "title" : "Color Block",
+      "name" : "colorblock",
+      "context" : {
+        "utilities" : "bg-regal-purple",
+        "heading" : "Construction Insiders Podcast",
+        "body" : "Check out our latest podcast about Integrated Project Delivery in Healthcare Construction: Evolving Strategies for Complex Facilities",
+        "media" : {
+          "poster" : "https://cumming-group.com/wp-content/uploads/2024/09/Healthcare-Podcast-Thumbnail-Steve-Mike.jpg",
+          "href" : "https://www.youtube.com/embed/nyD9sr_pEkY?autoplay=1"
+        }
+      }
+    },
+    {
+      "title" : "Reverse",
+      "name" : "reverse",
+      "context" : {
+        "type" : "reverse",
+        "heading" : "Construction Insiders Podcast",
+        "body" : "Check out our latest podcast about Integrated Project Delivery in Healthcare Construction: Evolving Strategies for Complex Facilities",
+        "media" : {
+          "poster" : "https://cumming-group.com/wp-content/uploads/2024/09/Healthcare-Podcast-Thumbnail-Steve-Mike.jpg",
+          "href" : "https://www.youtube.com/embed/nyD9sr_pEkY?autoplay=1"
+        }
+      }
+    }
+  ]
+}

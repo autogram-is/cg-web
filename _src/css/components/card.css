@@ -1,0 +1,26 @@
+.card {
+  --flow-space: var(--space-xs);
+  align-items: center;
+  line-height: var(--leading-loose);
+  padding: var(--space-l-xl);
+  .hed {
+    font-size: var(--size-step-3);
+  }
+  .prose ul li {
+    margin-block: 0;
+    font-size: var(--size-step-00);
+  }
+
+
+  &a {
+    display: block;
+  }
+  &.bg-regal-purple,
+  &[class*="steel"],
+  &.bg-legacy-red {
+    @mixin invert;
+    li::marker {
+      color: inherit;
+    }
+  }
+}

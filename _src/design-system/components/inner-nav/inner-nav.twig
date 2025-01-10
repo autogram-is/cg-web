@@ -1,0 +1,9 @@
+<div class="inner-nav {{ utilities }}">
+  <nav aria-label="Skip to section">
+    <ul role="list" class="flow">
+      {% for link in links %}
+      <li class="type-detail icon-pre-chevron"><a href="{{ link.url }}">{{ link.text }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>

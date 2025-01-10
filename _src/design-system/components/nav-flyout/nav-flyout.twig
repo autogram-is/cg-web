@@ -1,0 +1,19 @@
+{% set rand = random(99999) %}
+<div class="nav-flyout">
+  <div class="subnav" {{ type }}>
+    <div class="sidebar region swap {{ utilities }}" data-direction="rtl">
+      {% if teaser.body %}
+      <div class="teaser">
+        <div class="body">
+          {{ teaser.body | markdown }}
+        </div>
+      </div>
+      {% endif %}
+      <ul role="list" aria-labelledby="id-{{ rand }}" >
+        {% for link in links %}
+        <li class="type-detail"><a href="{{ link.href }}" class="type-detail">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

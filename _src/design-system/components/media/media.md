@@ -1,0 +1,1 @@
+Media thumbnails accept a `data-media` attribute containing the URL of the linked video. In a reliable JavaScript environment, interacting with this thumbnail will replace the thumbnail with an embedded video player.

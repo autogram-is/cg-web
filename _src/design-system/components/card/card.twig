@@ -1,0 +1,22 @@
+<div class="card {{ utilities }} {{ type }}">
+  <h3 class="hed type-hed hed-accent">{{ title }}</h3>
+
+  <div class="prose flow"> 
+  {% if lede %}
+    <div class="lede">{{ lede|markdown }}</div>
+  {% endif %}
+    {{ body|markdown }}
+  {% if listitems %}
+    <ul class="flow">
+  {% for item in listitems %}
+      <li>{{ item|md }}</li>
+  {% endfor %}
+    </ul>
+  {% endif %}
+  {% if ctass %}
+    {% for item in listitems %}
+      {{ item|md }}
+    {% endfor %}
+  {% endif %}
+  </div>
+</div>

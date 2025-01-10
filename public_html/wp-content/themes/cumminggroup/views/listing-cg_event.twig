@@ -1,0 +1,36 @@
+<article class="resource-listing {{ type }} region" aria-labelledby="hed-{{ post.id }}">
+  {% block content %}
+  <div class="sidebar swap">
+    <div class="body flow">
+      <time class="type-detail">{{ post.start_date }} - {{ post.end_date }}</time>
+      <h2 class="type-hed" id="hed-{{ post.id }}">
+        <a href="{{ post.link }}">{{ post.title }}</a>
+      </h2>
+      {% if post.tags %}
+      <ul class="cluster listing-meta type-detail" role="list">
+        {% for tag in post.tags %}
+        <li><a href="{{ tag.link }}">{{ tag.name }}</a></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% if type == "hero" %}
+      <p>{{ post.excerpt }}</p>
+      {% endif %}
+    </div>
+    <div class="flow throw-center">
+      <div class="location flow">
+        <h3 class="hed type-detail">
+          {% if post.venue_url %}<a href="{{post.venue_url}}">{{post.venue_name}}</a>{% else %}{{post.venue_name}}{% endif %}
+        </h3>
+        {% if post.venue_address %}
+        <p class="icon-map">
+          <a href="https://www.google.com/maps/place/{{post.venue_address}}+{{post.venue_city}}+{{post.venue_state}}+{{post.venue_postcode}}">{{post.venue_address}}<br>{{post.venue_city}}, {{post.venue_state}} {{post.venue_postcode}} {{post.venue_country}}</a>
+        </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</article>
+
+

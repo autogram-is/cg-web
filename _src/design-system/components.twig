@@ -1,0 +1,123 @@
+---
+pagination:
+  data: design.components.items
+  size: 1
+  addAllPagesToCollections: true
+  alias: item
+permalink: '{{ item.url }}/index.html'
+---
+
+
+{% if item.data.summary %}
+  {% set summary = item.data.summary %}
+{% endif %} 
+
+{% extends "../_includes/layouts/design-system.twig" %}
+
+{% block inner %}
+  {% if item.variants | length %}
+  <nav class="cluster wrapper" aria-label="variants">
+    {% for variant in item.variants %}
+      <a href="#{{ variant.data.title | slug }}">{{ variant.data.title }}</a>
+    {% endfor %}
+  </nav>
+  {% endif %}
+
+<div class="wrapper py-m">
+  <div class="design-system__inner flow">
+
+    {% if item.docs %}
+    <article class="prose flow">
+      {{ item.docs | md  }}
+    </article>
+    {% endif %}
+
+    <div class="flow">
+      <div class="design-system__rendered">
+        <div class="design-system__fullscreen">
+          <a href="{{ item.previewUrl }}">View full screen</a>
+        </div>
+        <iframe class="design-system__preview-frame" src="{{ item.previewUrl }}?state=window" data-size="standard"></iframe>
+      </div>
+    {% if item.data.keyLinks | length %}
+      <div class="key-value mini">
+        {% for link in item.data.keyLinks %}
+        <dl class="flow">
+          <div class="sidebar">
+            <dt class="type-detail">{{ link.label }}</dt>
+            <dd>{{ link.url }}</dd>
+          </div>
+        {% endfor %}
+        </dl>
+      </div>
+    {% endif %}
+    {% if item.markup %}
+    <div>
+      <p><strong>Source (Twig)</strong></p>
+      <div data-element="code-block">
+        <div class="design-system__snippet-header">
+          <div role="alert"></div>
+          <button type="button" data-element="code-copy-button" data-code-ref="codeblock-{{ item.name }}">Copy to clipboard</button>
+        </div>
+        <pre class="language-html" id="codeblock-{{ item.name }}"><code>{{ item.markup | escape }}</code></pre>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if item.rendered %}
+    <div>
+      <p><strong>Rendered HTML</strong></p>
+      <div data-element="code-block">
+        <div class="design-system__snippet-header">
+          <div role="alert"></div>
+          <button type="button" data-element="code-copy-button" data-code-ref="codeblock-{{ item.name }}">Copy to clipboard</button>
+        </div>
+        <pre class="language-html" id="codeblock-{{ item.name }}"><code>{{ item.rendered | escape }}</code></pre>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if item.variants | length %}
+      <h2>Variants</h2>
+      {% for variant in item.variants %}
+      <div class="region flow">
+        <div class="flow flow-space-2xs">
+          <h3 id="{{ variant.data.title | slug }}">{{ variant.data.title }}</h3>
+        {% if variant.data.note %}
+          {{ variant.data.note | markdown }}
+        {% endif %}
+        </div>
+        <div class="flow-space-size-1">
+          <div class="flow">
+            <div class="design-system__rendered">
+            <div class="design-system__fullscreen">
+              <a href="{{ variant.previewUrl }}">View full screen</a>
+            </div>
+            <iframe class="design-system__preview-frame" src="{{ variant.previewUrl }}?state=window" data-size="standard"></iframe> 
+
+            {% if variant.rendered %}
+            <div>
+              <p><strong>Rendered HTML</strong></p>
+              <div data-element="code-block">
+                <div class="design-system__snippet-header">
+                  <div role="alert"></div>
+                  <button type="button" data-element="code-copy-button" data-code-ref="codeblock-{{ variant.name }}">Copy to clipboard</button>
+                </div>
+                <pre class="language-html" id="codeblock-{{ variant.name }}"><code>{{ variant.rendered | escape }}</code></pre>
+              </div>
+            </div>
+            {% endif %}
+            {% if variant.markup %}
+            <!--<div>
+              <p><strong>Source (Twig)</strong></p>
+              <pre><code>{{ variant.markup | escape }}</code></pre>
+            </div>-->
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    {% endif %}
+  {% endblock %}
+  </div>
+</div>

@@ -1,0 +1,16 @@
+
+{ 
+  "title": "Exclusive Toggle",
+  "name": "explicit-toggle",
+  "note" : "When multiple toggle elements have matching `data-toggle-group` values, only one can be opened at a time.",
+  "keyLinks": [ {
+      "label": "CSS",
+      "url": "/_src/css/components/toggle.css"
+    }, {
+      "label": "JS",
+      "url": "/_src/js/toggle.js"
+    } ],
+  "context": {
+    "group" : "grouped"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "title": "Attendees",
+  "keyLinks": [
+    {
+      "label": "CSS",
+      "url": "/_src/css/components/attendees.css"
+    },
+    {
+      "label": "CSS",
+      "url": "/_src/css/components/person.css"
+    }
+  ],
+  "context": {
+    "attendees" : [
+      {
+        "name": "Erwin Watt",
+        "title": "Senior Vice President",
+        "region" : "Northeast Region",
+        "sectors" : [
+          {
+            "text" : "Planning & Scheduling",
+            "href" : "#"
+          },
+          {
+            "text" : "Dispute Resolution & Avoidance",
+            "href" : "#"
+          }
+        ],
+        "img" : {
+          "src" : "https://picsum.photos/1200/800?&blur=5.1",
+          "height" : 800,
+          "width" : 1200,
+          "alt" : ""
+        }
+      },
+      {
+        "name": "Ashok Patel",
+        "title": "Managing Director",
+        "img" : {
+        "src" : "https://picsum.photos/1200/800?&blur=4",
+          "height" : 800,
+          "width" : 1200,
+          "alt" : ""
+        }
+      }, {
+        "name": "Erwin Watt",
+        "title": "Senior Vice President",
+        "region" : "Northeast Region",
+        "sectors" : [
+          {
+            "text" : "Planning & Scheduling",
+            "href" : "#"
+          },
+          {
+            "text" : "Dispute Resolution & Avoidance",
+            "href" : "#"
+          }
+        ],
+        "img" : {
+          "src" : "https://picsum.photos/1200/800?&blur=5.1",
+          "height" : 800,
+          "width" : 1200,
+          "alt" : ""
+        }
+      }, {
+        "name": "Erwin Watt",
+        "title": "Senior Vice President",
+        "region" : "Northeast Region",
+        "sectors" : [
+          {
+            "text" : "Planning & Scheduling",
+            "href" : "#"
+          },
+          {
+            "text" : "Dispute Resolution & Avoidance",
+            "href" : "#"
+          }
+        ],
+        "img" : {
+          "src" : "https://picsum.photos/1200/800?&blur=5.1",
+          "height" : 800,
+          "width" : 1200,
+          "alt" : ""
+        }
+      }
+    ]
+  }
+}

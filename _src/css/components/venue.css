@@ -1,0 +1,5 @@
+.venue {
+  .hed {
+    margin-block-end: var(--space-2xs);
+  }
+}

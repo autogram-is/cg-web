@@ -1,0 +1,138 @@
+---
+title: 'Spacing'
+summary: 'Spacing scales based on the size of the viewport.'
+---
+
+{% extends "../_includes/layouts/design-system.twig" %}
+
+{% block inner %}
+
+<div class="wrapper py-m">
+  <div class="design-system__inner flow">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Scale</th>
+          <th>CSS Custom Property</th>
+          <th>Visualized Size</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for size in design.tokens.spacing.items %}
+          <tr>
+            <th scope="row">{{ size.name }}</th>
+            <td>{{ size.min }}px – {{ size.max }}px</td>
+            <td><code>var(--space-{{ size.name | slug }})</code></td>
+            <td class="design-system__space-visual">
+              <div class="bg-deep-steel text-light text-step-00" style="width: var(--space-{{ size.name | slug }}); height: var(--space-{{ size.name | slug }})"></div>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <h4>Custom Utility Classes</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Flow Space Utility</th>
+          <th>Gutter Utility</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for size in design.tokens.spacing.items %}
+          <tr>
+            <th scope="row">{{ size.name }}</th>
+            <td>
+              <code>.flow-space-{{ size.name | slug }}</code>
+            </td>
+            <td>
+              <code>.gutter-{{ size.name | slug }}</code>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <h4>Tailwind-Provided Utility Classes</h4>
+
+    <p>The following utility classes are provided by <a href="https://tailwindcss.com/">Tailwind CSS</a>, which is incorporated into the build process for the sake of custom utility classes and processing design tokens. These utility classes will only be generated and included in the global stylesheet when used in markup.</p>
+
+    <p>While useful in some instances, we caution against relying on them as a default approach to general spacing for the sake of maintainability.</p>
+
+    <details>
+      <summary class="text-step-0 font-bold">Margin</summary>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>All sides</th>
+            <th>Vertical</th>
+            <th>Horizontal</th>
+            <th>Top</th>
+            <th>Right</th>
+            <th>Bottom</th>
+            <th>Left</th>
+            <th><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values/Basic_concepts_of_logical_properties_and_values">Logical</a> <code>padding-inline-start</code></th>
+            <th><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values/Basic_concepts_of_logical_properties_and_values">Logical</a> <code>padding-inline-end</code></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for size in design.tokens.spacing.items %}
+            <tr>
+              <th scope="row">{{ size.name }}</th>
+              <td><code>.m-{{ size.name | slug }}</code></td>
+              <td><code>.mx-{{ size.name | slug }}</code></td>
+              <td><code>.my-{{ size.name | slug }}</code></td>
+              <td><code>.mt-{{ size.name | slug }}</code></td>
+              <td><code>.mr-{{ size.name | slug }}</code></td>
+              <td><code>.mb-{{ size.name | slug }}</code></td>
+              <td><code>.ml-{{ size.name | slug }}</code></td>
+              <td><code>.ms-{{ size.name | slug }}</code></td>
+              <td><code>.me-{{ size.name | slug }}</code></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </details>
+
+    <details>
+      <summary class="text-step-0 font-bold">Padding</summary>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>All sides</th>
+            <th>Vertical</th>
+            <th>Horizontal</th>
+            <th>Top</th>
+            <th>Right</th>
+            <th>Bottom</th>
+            <th>Left</th>
+            <th><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values/Basic_concepts_of_logical_properties_and_values">Logical start</a></th>
+            <th><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values/Basic_concepts_of_logical_properties_and_values">Logical End</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for size in design.tokens.spacing.items %}
+            <tr>
+              <th scope="row">{{ size.name }}</th>
+              <td><code>.p-{{ size.name | slug }}</code></td>
+              <td><code>.px-{{ size.name | slug }}</code></td>
+              <td><code>.py-{{ size.name | slug }}</code></td>
+              <td><code>.pt-{{ size.name | slug }}</code></td>
+              <td><code>.pr-{{ size.name | slug }}</code></td>
+              <td><code>.pb-{{ size.name | slug }}</code></td>
+              <td><code>.pl-{{ size.name | slug }}</code></td>
+              <td><code>.ps-{{ size.name | slug }}</code></td>
+              <td><code>.pe-{{ size.name | slug }}</code></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </details>
+  </div>
+</div>
+{% endblock %}

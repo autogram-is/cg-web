@@ -1,0 +1,39 @@
+
+{ 
+  "title": "Lede Header",
+  "name" : "lede-header",
+  "keyLinks": [ {
+        "label": "CSS",
+        "url": "/_src/css/components/lede-header.css"
+      } ],
+  "context": {
+    "dates" : {
+      "start" : "November 26"
+    },
+    "hed" : "Navigating the Complexities of Large-Scale Restorations: Essential Considerations for Institutional Property Owners",
+    "byline" : {
+      "name" : "Jason Zubatkin",
+      "title" : "Sector Lead",
+      "scope" : {
+        "name" : "Arts & Culture",
+        "href" : "#"
+      }
+    },
+    "lede" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  "variants" : [{
+    "name" : "event-lede",
+    "title" : "Event Lede",
+    "context" : {
+      "hed" : "ULI South Carolina Capital Markets Conference",
+      "location" : {
+        "text" : "West Beach Conference Center",
+        "url" : "#"
+      },
+      "dates" : {
+        "start" : "November 20",
+        "end" : "November 21"
+      }
+    }
+  }]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Fonts",
+  "description": "Each array of fonts creates a priority-based order. The first font in the array should be the ideal font, followed by sensible, web-safe fallbacks",
+  "items": [
+    {
+      "name": "Display",
+      "description": "The primary font for display text (eg. primary headings, pullquotes).",
+      "value": [ "Utopia", "sans-serif" ]
+    },
+    {
+      "name": "Body",
+      "description": "The global font for body copy.",
+      "value": [ "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Verdana", "sans-serif" ]
+    },
+    {
+      "name": "Secondary",
+      "description": "Used for accent copy (eg. eyebrow headings, captions)",
+      "value": [ "Plex", "sans-serif" ]
+    }
+  ]
+}

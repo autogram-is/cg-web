@@ -1,0 +1,1 @@
+A horizontally centered wrapper that provides a consistent central column. This should be used in all contexts where the content needs to be in the center of the page.

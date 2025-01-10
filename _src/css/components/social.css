@@ -1,0 +1,30 @@
+.social-links {
+  --gutter: var(--space-3xs);
+  --cluster-vertical-alignment: center;
+  border: 2px solid var(--color-timeless-highlight);
+  border-width: 2px 0 ;
+  font-size: var(--size-step-00);
+  padding: var(--space-2xs);
+  margin-block: var(--space-m) var(--space-xs);
+  justify-self: flex-end;
+  align-self: flex-end;
+  .hed  {
+    color: var(--color-deep-steel);
+    padding-right: var(--space-2xl);
+    font-size: var(--size-step-00);
+  }
+  nav {
+    ul {
+      --gutter: var(--space-2xs);
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+      font-weight: var(--weight-semibold);
+      &:hover {
+        color: var(--color-legacy-red);
+      }
+    }
+  }
+
+}

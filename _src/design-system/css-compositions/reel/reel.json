@@ -1,0 +1,35 @@
+{
+  "title": "Reel",
+  "summary":".reel ",
+  "configuration" : {
+    "th" : [
+      "Property",
+      "Default value",
+      "Description"
+    ],
+    "tr" : [
+      { "td" : [ "`--reel-space`", "`var(--space-s-m)`", "This defines the space between each item." ] }
+    ]
+  },
+  "context": {
+  },
+  "variants" : [
+    {
+      "name": "scrollsnap",
+      "title": "Scroll Snap",
+      "configuration" : {
+        "th" : [
+          "Exception",
+          "Description"
+        ],
+        "tr" : [
+          { "td" : [ "`.reel[data-scroll='snap']`", "Enables carousel-like scroll snapping." ] }
+        ]
+      },
+      "context": {
+        "attr": "data-scroll",
+        "value": "snap"
+      }
+    }
+  ]
+}

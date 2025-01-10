@@ -1,0 +1,142 @@
+/* Impact Statistic */
+.statistic {
+  margin: 0;
+  padding-block: var(--space-s) var(--space-m); 
+  dl {
+    display: flex;
+    flex-direction: column;
+    dt {
+      display: flex;
+      font-size: var(--size-standout);
+      font-weight: var(--weight-semibold);
+      line-height: var(--leading-tight);
+      flex-direction: row;
+      align-items: flex-end;
+      .sup {
+        font-size: .625em;
+        line-height: 1.45; /* Adjust faux-superscript size relative to `font-size` of `dt`. */
+      }
+      sup,
+      .sup {
+        align-self: flex-start;
+      }
+    }
+    dd {
+      color: var(--color-deep-steel);
+      font-weight: var(--weight-regular);
+      line-height: var(--leading-tight);
+      padding: 0 var(--space-2xs) 0 0;
+      margin-block: 0;
+      text-wrap: pretty;
+      &::after {
+        border-bottom: var(--content-division);
+        content: "";
+        display: block;
+        margin-top: var(--space-s);
+        width: var(--space-l-xl);
+      }
+    }
+    div {
+      padding-block: var(--space-3xs);
+      &:last-of-type dd::after {
+        display: none;
+      }
+    }
+    div:not(:first-of-type) {
+      flex: 1;
+      flex-basis: calc(( 34em - 100%) * 999);
+      padding-right: var(--space-xs);
+      text-wrap: balance;
+    }
+  }
+
+  &.standout,
+  &.hero {
+    div:first-of-type {
+      min-width: 100%;
+      margin-inline: auto;
+      flex-grow: 2;
+      dt {
+        display: flex;
+        font-size: var(--size-impact);
+        font-weight: var(--weight-regular);
+      }
+      dd {
+        font-size: var(--size-step-2);
+      }
+    }   
+  }
+
+  &.horizontal {
+    dl {
+      justify-content: space-evenly;
+      gap: var(--space-s-m);
+      div {
+        flex: none;
+      }
+    }
+    div {
+      dd,
+      dt {
+        font-weight: var(--weight-regular);
+        padding: 0;
+        text-align: center;
+        justify-content: center;
+      }
+    }
+    dd::after {
+      display: none;
+    }
+  }
+  &.horizontal,
+  &.hero {
+    dl {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+  &.hero {
+    div {
+      &:first-of-type {
+        flex-wrap: wrap;
+        margin-bottom: var(--space-xs);
+        dt {
+          flex-grow: 2;
+          min-width: 100%;
+        }
+        dd::after {
+          margin-top: var(--space-m-l);
+          width: var(--space-2xl-3xl);
+        }
+      }
+      &:not(:first-of-type) {
+        dd::after {
+          border: none;
+        }
+      }
+    }
+  }
+
+  &.bg-deep-steel,
+  &.bg-legacy-red,
+  &.bg-regal-purple {
+    @mixin invert;
+    dd {
+      @mixin invert;
+      &::after {
+        border-color: inherit;
+      }
+    }
+  }
+}
+
+.js .statistic[data-counter] {
+  opacity: 0;
+  transform: translateY( var(--space-l) );
+  transition: opacity .3s ease-in-out .1s, transform .5s ease-in-out;
+  &.statistic-visible {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,11 @@
+{% set rand = random(99999) %}
+<div class="social-links {{ utilities }} {{ type }}">
+  <h3 class="hed type-detail" id="hed-{{ rand }}">Share this page</h3>
+  <nav aria-labelledby="hed-{{ rand }}">
+    <ul class="cluster" role="list">
+      {% for link in links %}
+      <li><a href="{{ link.url }}" class="button round secondary icon" title="{{ link.title }}"><span>{{ link.title }}</span>→</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>
