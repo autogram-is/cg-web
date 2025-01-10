@@ -1,7 +1,9 @@
-<div class="gallery {{ utilities }}">
-  <div class="wrapper">
-    {% for image in images -%}
-    <img src="{{ get_image(image) }}">
-    {%- endfor %}
+<div class="region region-double">
+  <div class="gallery {{ utilities }}">
+    <div class="wrapper gallery-inner">
+      {% for image in images -%}
+      <img src="{{ get_image(image) }}">
+      {%- endfor %}
+    </div>
   </div>
 </div>
