@@ -1,12 +1,12 @@
 <li class="toggle nav-topitem nav-flyout">
-  <button class="button flyout unset" data-toggle data-toggle-group="nav" id="hed-{{item.id}}" aria-expanded="false">
+  <button class="button flyout unset {% if menu.current_top_level_item.link == item.link %}current{% endif %}" data-toggle data-toggle-group="nav" id="hed-{{ item.id }}" aria-expanded="false">
     {{item.title}}
   </button>
   <div class="subnav" aria-hidden="false">
     <div class="sidebar region swap" data-direction="rtl">
-      <ul role="list" aria-labelledby="hed-{{item.id}}">
-        {% for item in items %}
-        <li><a target="{{ item.target }}" href="{{ item.link }}" class="type-detail">{{ item.title }}</a></li>
+      <ul role="list" aria-labelledby="hed-{{ item.id }}">
+        {% for subitem in subitems %}
+        <li><a target="{{ subitem.target }}" href="{{ subitem.link }}" class="type-detail"{% if subitem.current %} aria-current="page"{% endif %}>{{ subitem.title }}</a></li>
         {% endfor %}
       </ul>
     </div>
