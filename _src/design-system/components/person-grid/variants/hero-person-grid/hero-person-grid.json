@@ -1,0 +1,182 @@
+
+{ 
+  "title": "Person Grid (w/ Hero)",
+  "name" : "hero-person-grid",
+  "keyLinks": [ {
+        "label": "CSS",
+        "url": "/_src/css/components/person-grid.css"
+      } ],
+  "context": {
+    "people" : [
+      {
+        "name": "Erwin Watt",
+        "title": "Senior Vice President",
+        "type" : "executive",
+        "sectors" : [
+          {
+            "text" : "Planning & Scheduling",
+            "href" : "#"
+          },{
+            "text" : "Dispute Resolution & Avoidance",
+            "href" : "#"
+          }
+        ],
+        "img" : {
+          "src" : "https://picsum.photos/1200/800?&blur=5.1",
+          "height" : 800,
+          "width" : 1200,
+          "alt" : ""
+        },
+        "bio": "As President, Derek is responsible for overseeing Cumming Group’s organic and strategic growth initiatives, ensuring the delivery of superior client service, and nurturing a corporate culture that aligns with our mission, vision, and core values. In addition to his role in helping to guide the broader organization, Derek, an experienced Chartered Surveyor, works closely with our teams in the U.S. and Europe to provide more focused leadership and mentoring. Throughout his 20-plus years in the industry, Derek has participated in the development of more than 150 projects, with a unique specialization in hotel, resort, timeshare, and multi-family properties."
+      },{
+        "name": "Erwin Watt",
+        "title": "Senior Vice President",
+        "type" : "executive",
+        "sectors" : [
+          {
+            "text" : "Planning & Scheduling",
+            "href" : "#"
+          },{
+            "text" : "Dispute Resolution & Avoidance",
+            "href" : "#"
+          }
+        ],
+        "img" : {
+          "src" : "https://picsum.photos/1200/800?&blur=5.1",
+          "height" : 800,
+          "width" : 1200,
+          "alt" : ""
+        },
+        "bio" : "Elissa Connors is the Chief of Staff at Cumming Group. In this role, she is a partner to Cumming Group’s CEO and executive leadership team, supporting key initiatives across the business with a focus on operations, communications, and performance. Previously, Elissa was the Vice President of Operations for Lehrer Cumming, the former east coast affiliate of Cumming Group. She joined Cumming Group in 2018 through the acquisition of Lehrer, LLC where she led all marketing efforts. Elissa began her career in city government as a Policy Analyst for NYC Parks during the Bloomberg administration, where she formed a deep appreciation for the built environment. She holds a Bachelor of Arts from Binghamton University."
+      },{
+        "name": "Erwin Watt",
+        "title": "Senior Vice President",
+        "type": "executive",
+        "sectors" : [
+          {
+            "text" : "Planning & Scheduling",
+            "href" : "#"
+          },{
+            "text" : "Dispute Resolution & Avoidance",
+            "href" : "#"
+          }
+        ],
+        "img" : {
+          "src" : "https://picsum.photos/1200/800?&blur=5.1",
+          "height" : 800,
+          "width" : 1200,
+          "alt" : ""
+        },
+        "bio" : "As CFO, Al is responsible for managing the company’s financial health worldwide as well as supporting a wide range of strategic initiatives to help advance firm growth goals. Al’s 20 years of industry experience includes establishing and driving various corporate functions, such as finance, strategy, enterprise risk management, and procurement. Prior to joining Cumming Group, Al spent five-and-a-half years as Chief Financial & Strategy Officer for ASTAD Project Management in Doha, Qatar, and before that held executive-level positions with Weatherford International and Gannett/USA Today."
+      },{
+        "name": "Erwin Watt",
+        "title": "Senior Vice President",
+        "sectors" : [
+          {
+            "text" : "Planning & Scheduling",
+            "href" : "#"
+          },{
+            "text" : "Dispute Resolution & Avoidance",
+            "href" : "#"
+          }
+        ],
+        "img" : {
+          "src" : "https://picsum.photos/1200/800?&blur=5.1",
+          "height" : 800,
+          "width" : 1200,
+          "alt" : ""
+        }
+      },{
+        "name": "Erwin Watt",
+        "title": "Senior Vice President",
+        "sectors" : [
+          {
+            "text" : "Planning & Scheduling",
+            "href" : "#"
+          },{
+            "text" : "Dispute Resolution & Avoidance",
+            "href" : "#"
+          }
+        ],
+        "img" : {
+          "src" : "https://picsum.photos/1200/800?&blur=5.1",
+          "height" : 800,
+          "width" : 1200,
+          "alt" : ""
+        }
+      },{
+        "name": "Erwin Watt",
+        "title": "Senior Vice President",
+        "sectors" : [
+          {
+            "text" : "Planning & Scheduling",
+            "href" : "#"
+          },{
+            "text" : "Dispute Resolution & Avoidance",
+            "href" : "#"
+          }
+        ],
+        "img" : {
+          "src" : "https://picsum.photos/1200/800?&blur=5.1",
+          "height" : 800,
+          "width" : 1200,
+          "alt" : ""
+        }
+      },{
+        "name": "Erwin Watt",
+        "title": "Senior Vice President",
+        "sectors" : [
+          {
+            "text" : "Planning & Scheduling",
+            "href" : "#"
+          },{
+            "text" : "Dispute Resolution & Avoidance",
+            "href" : "#"
+          }
+        ],
+        "img" : {
+          "src" : "https://picsum.photos/1200/800?&blur=5.1",
+          "height" : 800,
+          "width" : 1200,
+          "alt" : ""
+        }
+      },{
+        "name": "Erwin Watt",
+        "title": "Senior Vice President",
+        "sectors" : [
+          {
+            "text" : "Planning & Scheduling",
+            "href" : "#"
+          },{
+            "text" : "Dispute Resolution & Avoidance",
+            "href" : "#"
+          }
+        ],
+        "img" : {
+          "src" : "https://picsum.photos/1200/800?&blur=5.1",
+          "height" : 800,
+          "width" : 1200,
+          "alt" : ""
+        }
+      },{
+        "name": "Erwin Watt",
+        "title": "Senior Vice President",
+        "sectors" : [
+          {
+            "text" : "Planning & Scheduling",
+            "href" : "#"
+          },{
+            "text" : "Dispute Resolution & Avoidance",
+            "href" : "#"
+          }
+        ],
+        "img" : {
+          "src" : "https://picsum.photos/1200/800?&blur=5.1",
+          "height" : 800,
+          "width" : 1200,
+          "alt" : ""
+        }
+      }
+    ]
+  }
+}

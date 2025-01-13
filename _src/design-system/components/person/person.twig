@@ -22,9 +22,9 @@
           {% endif %}
         </div>
       </div>
-      {% if person %}
+      {% if person.bio %}
       <div class="prose">
-        {{ person | markdown }}
+        {{ person.bio | markdown }}
       </div>
       {% endif %}
     </div>

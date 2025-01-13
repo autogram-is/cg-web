@@ -1,5 +1,4 @@
 .person {
-  width: 15rem;
   .body {
     display: flex;
     flex-direction: column;
@@ -23,6 +22,7 @@
     --flow-space: var(--space-xs);
     p {
       line-height: var(--leading-normal);
+      font-size: var(--size-step-00);
     }
   }
   .person-header {

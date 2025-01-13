@@ -25,5 +25,11 @@
       "width" : 1200,
       "alt" : ""
     }
-  }
+  },
+  "variants" : [
+    {
+      "title" : "Executive",
+      "name" : "executive"
+    }
+  ]
 }
