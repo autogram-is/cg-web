@@ -21,7 +21,6 @@
                 "cg_project",
                 "cg_sector",
                 "cg_service",
-                "cg_region",
                 "cg_office"
             ],
             "post_status": "",
@@ -73,5 +72,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733358671
+    "modified": 1736803184
 }

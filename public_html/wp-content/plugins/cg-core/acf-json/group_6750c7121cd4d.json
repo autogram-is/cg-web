@@ -3,39 +3,6 @@
     "title": "Service Connections",
     "fields": [
         {
-            "key": "field_6750c7121f572",
-            "label": "Regions",
-            "name": "regions",
-            "aria-label": "",
-            "type": "relationship",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_column_enabled": 0,
-            "post_type": [
-                "cg_region"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "filters": [
-                "search"
-            ],
-            "return_format": "id",
-            "min": "",
-            "max": "",
-            "allow_in_bindings": 1,
-            "elements": "",
-            "bidirectional": 1,
-            "bidirectional_target": [
-                "field_6750c726173cd"
-            ]
-        },
-        {
             "key": "field_6750c7121fd09",
             "label": "Sectors",
             "name": "sectors",
@@ -155,5 +122,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733884289
+    "modified": 1736803165
 }
