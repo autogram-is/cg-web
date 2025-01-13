@@ -1,25 +1,26 @@
-id,taxonomy,slug,title,parent
-,region,na,North America,
-,region,eu,Europe,
-,region,uk,UK,
-,region,pacific-nw,Pacific Northwest,na
-,region,norcal,Northern California,na
-,region,socal,Southern California,na
-,region,hawaii,Hawaii,na
-,region,nevada,Nevada,na
-,region,northeast,Northeast,na
-,region,florida,Florida,na
-,region,southeast,Southeast,na
-,region,midwest,Midwest,na
-,region,southcentral,South Central,na
-,region,northcentral,North Central,na
-,region,northern-ireland,Northern Ireland,eu
-,region,france,France,eu
-,region,germany,Germany,eu
-,region,italy,Italy,eu
-,region,norway,Norway,eu
-,region,switzerland,Switzerland,eu
-,region,england,England,uk
-,region,scotland,Scotland,uk
-,region,wales,Wales,uk
-,region,ireland,Ireland,uk
+title,zone,slug,,,,,
+Americas,,na,,,,,
+Europe,,eu,,,,,
+United Kingdom,,uk,,,,,
+France,Europe,france,,,,,
+Germany,Europe,germany,,,,,
+Ireland,Europe,ireland,,,,,
+Italy,Europe,italy,,,,,
+Norway,Europe,norway,,,,,
+Switzerland,Europe,switzerland,,,,,
+Florida,North America,florida,,,,,
+Hawaii,North America,hawaii,,,,,
+Mid-Atlantic,North America,midatlantic,,,,,
+Midwest,North America,midwest,,,,,
+North Central,North America,northcentral,,,,,
+Northeast,North America,northeast,,,,,
+Northern California,North America,norcal,,,,,
+Pacific Northwest,North America,pacific-nw,,,,,
+South Central,North America,southcentral,,,,,
+Southeast,North America,southeast,,,,,
+Southern California,North America,socal,,,,,
+Southwest,North America,southwest,,,,,
+England,United Kingdom,england,,,,,
+Northern Ireland,United Kingdom,northern-ireland,,,,,
+Scotland,United Kingdom,scotland,,,,,
+Wales,United Kingdom,wales,,,,,
