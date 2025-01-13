@@ -5,6 +5,9 @@ export default function() {
       // If an explicit disclosure target is set, use that; else, use the toggle's next sibling element:
       return el.dataset.toggle ? document.querySelector( el.dataset.toggle ) : el.nextElementSibling;
     },
+    detectCollision = ( el ) => {
+      el.classList[ el.getBoundingClientRect().x < 0 ? "add" : "remove" ]( "left-collision" );
+    },
     init = function( el ) {
       // TODO: Too early to use Element interfaces like https://caniuse.com/mdn-api_element_ariahidden ?
       const expandedSet = el.ariaExpanded,
@@ -82,6 +85,9 @@ export default function() {
       if( !state ) {
         // If we're opening the disclosure element, add this toggle to the history stack:
         openToggles.push( el );
+
+        // Try to prevent the disclosure element from colliding with the browser viewport:
+        detectCollision( target );
       } else {
         // If we're closing the disclosure element, remove this toggle fron the history stack:
         openToggles.splice( openToggles.indexOf( el ), 1 );
@@ -98,6 +104,16 @@ export default function() {
       }
       
       toggleState( el, target, state );
+
+      if( !state ) {
+      // If necessary prevent the disclosure element from colliding with the browser viewport:
+        detectCollision( target );
+        window.addEventListener( "resize", () => {
+          // FPO: detectCollision( target );
+        });
+      } else {
+        //window.removeEventListener( "resize", detectCollision );
+      }
     };
 
   // Initialize the "history" array used by the `esc`/modal handler with any already-open toggles: 
