@@ -77,9 +77,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "post_category",
                 "operator": "==",
-                "value": "cg_episode"
+                "value": "category:podcast"
             }
         ]
     ],
@@ -92,5 +92,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733947927
+    "modified": 1736806077
 }
