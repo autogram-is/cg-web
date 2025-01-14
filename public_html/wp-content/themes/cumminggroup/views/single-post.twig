@@ -5,3 +5,14 @@
 {% set pagetitle = title ? title : post.title %}
 <h1 class="type-pagehed hed-accent">{{ pagetitle }}</h1>
 {% endblock %}
+
+{% block content %}
+  <div class="lede-header">
+    {# <p class="lede">byline</p> #}
+  </div>
+  <div class="sidebar">
+    <div class="prose lede flow">
+      {{post.content}}
+    </div>
+  </div>
+{% endblock %}
