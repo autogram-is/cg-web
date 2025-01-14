@@ -3,8 +3,8 @@
 //  1. Build out Region, Office, Sector, and Service skeleton
 function cg_cli_build_hierarchy($dry_run = false, $preserve = false) {
   _populate_regions($dry_run, $preserve);
-  _populate_sectors($dry_run, $preserve);
-  _populate_services($dry_run, $preserve);
+  //_populate_sectors($dry_run, $preserve);
+  //_populate_services($dry_run, $preserve);
   _populate_offices($dry_run, $preserve);
 }
 
@@ -17,10 +17,11 @@ function _populate_regions($dry_run = false) {
     foreach ($items as $item) {
       if (!$item['title']) continue;
 
+      // May want to change this to a custom meta field in the future
       $parent = $item['zone'] ? term_exists($item['zone'], 'region') : NULL;
       $parent_id = $parent ? $parent['term_id'] : NULL;
   
-      $term_id = wp_insert_term(
+      $term = wp_insert_term(
         $item['title'],
         'region',
         array(
@@ -29,7 +30,7 @@ function _populate_regions($dry_run = false) {
         )
       );
 
-      WP_CLI::log("Created region tag $term_id (". $item['title'] . ")");
+      WP_CLI::log("Created region tag " . $term['term_id'] . " (". $item['title'] . ")");
     }
   }
 }
@@ -171,9 +172,11 @@ function _populate_offices($dry_run = false, $preserve = false) {
         }
 
         if($item['region']) {
-          $region_id = $item['region'] ? term_exists($item['region'], 'region') : NULL;
-          if ($region_id) {
-            wp_set_object_terms($post_id, $region_id, 'region');
+          $region = $item['region'] ? term_exists($item['region'], 'region') : NULL;
+          if ($region) {
+            wp_set_object_terms($post_id, (int)$region['term_id'], 'region');
+          } else {
+            WP_CLI::log("Could not find matching region (" . $item['region'] . ") for " . $post_data['post_title']);
           }
         }
 
