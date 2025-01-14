@@ -21,10 +21,6 @@ term_id,taxonomy,slug,name,count,new_type,new_slug,action
 1,category,uncategorized,Uncategorized,15,,,
 2,category,news,News,282,,,
 3,category,press-releases,Press Releases,86,,,
-4,category,region,Region,0,,,REMOVE
-5,category,region-west,West,84,region,us-northwest,
-6,category,region-east,East,111,region,us-northeast,
-7,category,region-international,International,25,region,europe,
 220,category,other-news,Other News,38,,,
 459,news_and_insights,news,News,109,,,
 460,news_and_insights,blog,Blog,39,,,
@@ -36,11 +32,6 @@ term_id,taxonomy,slug,name,count,new_type,new_slug,action
 466,news_and_insights,other_news,Other,0,,,
 468,news_and_insights,expert-insights-blog,Expert Insights Blog,0,,,
 469,news_and_insights,events,Events,36,,,
-438,news_region,us_west,US — West,96,region,us-northwest,
-439,news_region,us_east,US — East,48,region,us-northeast,
-440,news_region,us_central,US — Central,63,region,us-northcentral,
-441,news_region,europe_uk,Europe — UK,25,region,europe,
-442,news_region,other_region,Other,25,,,REMOVE
 443,news_topics,aviation,Aviation,1,cg_sector,transportation,
 444,news_topics,corporate,Corporate,0,,,REMOVE
 445,news_topics,culture_arts,Culture & Arts,3,cg_sector,culture-non-profit,
