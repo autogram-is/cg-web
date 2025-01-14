@@ -83,11 +83,11 @@ function projectFactTable($dom) {
 
   $output = [];
   foreach ($tableData as $row) {
-    $text = str_replace('(s)', 's', $row[0]);
+    $text = str_replace('(s)', 's', $row[0] ?? '');
     $text = str_replace(':', '', $text);
     $text = str_replace(' ', '_', $text);
     $text = strtolower($text);
-    $output[$text] = $row[1];
+    $output[$text] = $row[1] ?? '';
   }
   return $output;
 }

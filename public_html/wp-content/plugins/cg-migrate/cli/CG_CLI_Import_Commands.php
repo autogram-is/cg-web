@@ -72,9 +72,7 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
   public function hierarchy($args, $assoc_args) {
     $dry_run = isset($assoc_args['dry-run']);
     $preserve = isset($assoc_args['preserve']);
-    $lipsum = isset($assoc_args['lipsum']);
-
-    cg_cli_build_hierarchy($dry_run, $preserve, $lipsum);
+    cg_cli_build_hierarchy($dry_run, $preserve);
   }
 
   /**
