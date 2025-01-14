@@ -3,6 +3,24 @@
     "title": "Event Properties",
     "fields": [
         {
+            "key": "field_6786e5a94468d",
+            "label": "Event",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
             "key": "field_6721900ec8868",
             "label": "Event URL",
             "name": "event_url",
@@ -70,7 +88,7 @@
             "label": "All Day",
             "name": "all_day",
             "aria-label": "",
-            "type": "checkbox",
+            "type": "true_false",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -80,15 +98,12 @@
                 "id": ""
             },
             "admin_column_enabled": 0,
-            "choices": [],
-            "default_value": [],
-            "return_format": "value",
-            "allow_custom": 0,
-            "allow_in_bindings": 0,
-            "layout": "vertical",
-            "toggle": 0,
-            "save_custom": 0,
-            "custom_choice_button_text": "Add new choice"
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_67219d2d9f42e",
@@ -110,6 +125,197 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_6786e57a4468c",
+            "label": "Venue",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_672191c99dd95",
+            "label": "Venue Name",
+            "name": "venue_name",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_672191b278011",
+            "label": "Venue Link",
+            "name": "venue_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "default_value": "",
+            "allow_in_bindings": 1,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6721907868c25",
+            "label": "Phone",
+            "name": "venue_phone",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6721905768c21",
+            "label": "Street Address",
+            "name": "venue_address",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6721906768c22",
+            "label": "City",
+            "name": "venue_city",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6721907268c24",
+            "label": "State \/ Province",
+            "name": "venue_state",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6721906d68c23",
+            "label": "Country",
+            "name": "venue_country",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_672d0df242b15",
+            "label": "Postal Code",
+            "name": "venue_postcode",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -121,14 +327,14 @@
             }
         ]
     ],
-    "menu_order": 5,
-    "position": "side",
-    "style": "default",
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1736454527
+    "modified": 1736894323
 }
