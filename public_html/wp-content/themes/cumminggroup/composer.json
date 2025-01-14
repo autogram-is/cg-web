@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "timber/timber": "2.x-dev",
+        "timber/timber": "2.3.1",
         "palmiak/timber-acf-wp-blocks": "^1.15"
     },
     "require-dev": {
