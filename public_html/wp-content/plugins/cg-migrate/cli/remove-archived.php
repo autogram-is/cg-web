@@ -1,30 +1,22 @@
 <?php
 
 function cg_remove_archived($force_delete = false, $dry_run = false) {
-  $datalines = file(CG_MIGRATE_DATA_DIR . '/archive-list.csv');
-  $header = str_getcsv($datalines[0]);
+  $pages_to_delete = load_migration_csv('archive-list.csv');
 
-  $index = 0;
-  foreach ($datalines as $line) {
-    // Parse each line using str_getcsv
-    $data = str_getcsv($line);
-      
-    // Skip empty lines and header row
-    if (empty($data) || $index == 0) {
-      $index++;
-      continue;
-    }
-    
-    $row = array_combine($header, $data);
-
+  foreach ($pages_to_delete as $row) {
+    // id,type,slug,action,notes
     if (!$dry_run) {
       if ($force_delete || $row['action'] === 'DELETE') {
         wp_delete_post($row['id'], true);
       } else if ($row['action'] === 'ARCHIVE') {
-        wp_update_post(array(
-          'ID'          =>  $row['id'],
-          'post_status' =>  'private',
-        ));
+        if ($force_delete) {
+          wp_delete_post($row['id'], true); 
+        } else {
+          wp_update_post(array(
+            'ID'          =>  $row['id'],
+            'post_status' =>  'private',
+          ));
+        }
       }
     }
     WP_CLI::log(($dry_run ? "Dry Run: " : "") . (($force_delete || $row['action'] === 'DELETE') ? "Deleted #" : "Archived #") . $row['id'] . ' (' . $row['slug'] .')');
