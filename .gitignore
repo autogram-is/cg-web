@@ -11,6 +11,7 @@ npm-debug.*
 *.swp
 .sass-cache
 .cache
+watchtask.sh
 
 # XML import files
 import/*.xml
