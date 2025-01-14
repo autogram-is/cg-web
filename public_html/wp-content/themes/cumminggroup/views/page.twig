@@ -1,14 +1,10 @@
 {% extends "base.twig" %}
 
+{% block hero %}
+	{% set pagetitle = title ? title : post.title %}
+	<h1 class="type-pagehed hed-accent">{{ pagetitle | stylize }}</h1>
+{% endblock %}
+
 {% block content %}
-	<div class="content-wrapper">
-		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-			<section class="article-content">
-				<h1 class="article-h1">{{post.title}}</h1>
-				<div class="article-body">
-					{{post.content}}
-				</div>
-			</section>
-		</article>
-	</div>
+	{{post.content}}
 {% endblock %}
