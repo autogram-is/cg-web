@@ -1,0 +1,136 @@
+term_id,taxonomy,slug,name,count,new_type,new_slug,action
+335,category,podcast,Podcast,22,,,
+336,category,white-paper,White Paper,23,,,
+340,category,case-study,Case Study,14,,,REMOVE
+345,category,aia-courses,AIA Courses,3,,,REMOVE
+348,category,covid19-impacts,COVID-19 Impacts,11,,,REMOVE
+351,category,webinar,Webinar,2,,,
+355,category,events-hosted-by-others,Events Hosted by Others,36,,,
+360,category,chicago-white-papers,Chicago White Papers,5,cg_office,chicago,
+361,category,chicago-news,Chicago News,7,cg_office,chicago,
+364,category,sponsorships,Sponsorships,32,,,REMOVE
+366,category,continuing-education,Continuing Education,0,,,REMOVE
+367,category,rics-courses,RICS Courses,4,,,REMOVE
+369,category,expert-insiders-blog,Expert Insiders Blog,26,,,REMOVE
+373,category,why-cumming,Why Cumming,8,,,REMOVE
+374,category,internship-program,Internship Program,4,,,REMOVE
+425,category,boston,Boston,2,cg_office,boston,
+426,category,office-boston-blog,Office - Boston - Blog,1,cg_office,boston,
+499,category,blog,Blog,11,,,
+519,category,uncategorized-en-gb,Uncategorized,0,,,REMOVE
+1,category,uncategorized,Uncategorized,15,,,
+2,category,news,News,282,,,
+3,category,press-releases,Press Releases,86,,,
+4,category,region,Region,0,,,REMOVE
+5,category,region-west,West,84,region,us-northwest,
+6,category,region-east,East,111,region,us-northeast,
+7,category,region-international,International,25,region,europe,
+220,category,other-news,Other News,38,,,
+459,news_and_insights,news,News,109,,,
+460,news_and_insights,blog,Blog,39,,,
+461,news_and_insights,podcast,Podcast,22,,,
+462,news_and_insights,white-paper,White Paper,7,,,
+463,news_and_insights,case-study,Case Study,15,,,
+464,news_and_insights,press-release,Press Release,43,,,
+465,news_and_insights,cumming-insights,Cumming Insights,0,,,
+466,news_and_insights,other_news,Other,0,,,
+468,news_and_insights,expert-insights-blog,Expert Insights Blog,0,,,
+469,news_and_insights,events,Events,36,,,
+438,news_region,us_west,US — West,96,region,us-northwest,
+439,news_region,us_east,US — East,48,region,us-northeast,
+440,news_region,us_central,US — Central,63,region,us-northcentral,
+441,news_region,europe_uk,Europe — UK,25,region,europe,
+442,news_region,other_region,Other,25,,,REMOVE
+443,news_topics,aviation,Aviation,1,cg_sector,transportation,
+444,news_topics,corporate,Corporate,0,,,REMOVE
+445,news_topics,culture_arts,Culture & Arts,3,cg_sector,culture-non-profit,
+446,news_topics,gaming,Gaming,0,cg_sector,hospitality-gaming,
+447,news_topics,healthcare,Healthcare,15,cg_sector,healthcare,
+448,news_topics,higher-education,Higher Education,6,cg_sector,higher-education,
+449,news_topics,hospitality,Hospitality,5,cg_sector,hospitality-gaming,
+450,news_topics,industrial,Industrial,0,,,REMOVE
+451,news_topics,k-12-education,K-12 Education,13,cg_sector,k-12-education,
+452,news_topics,luxury-residential,Luxury Residential,0,cg_sector,luxury-residential,
+453,news_topics,mission-critical,Mission Critical,0,,,REMOVE
+454,news_topics,mixed-use,Mixed-use,2,,,
+455,news_topics,retail,Retail,1,cg_sector,retail,
+456,news_topics,themed-entertainment,Themed Entertainment,3,cg_sector,themed-entertainment,
+457,news_topics,other_topic,Other,44,,,REMOVE
+458,news_topics,energy-sustainability,Energy & Sustainability,6,cg_service,energy-sustainability-solutions,
+467,news_topics,life-science,Life Science,4,cg_sector,life-sciences,
+867,news_topics,manufacturing,Manufacturing,1,cg_sector,infrastructure,
+397,post_tag,los-angeles,Los Angeles,7,cg_office,los-angeles,
+398,post_tag,nashville,Nashville,4,cg_office,nashville,
+399,post_tag,san-diego,San Diego,4,cg_office,san-diego,
+400,post_tag,boston,Boston,4,cg_office,boston,
+401,post_tag,chicago,Chicago,7,cg_office,chicago,
+402,post_tag,las-vegas,Las Vegas,4,cg_office,las-vegas,
+403,post_tag,sacramento,Sacramento,1,cg_office,aliso-viejo,
+404,post_tag,aliso-viejo,Aliso Viejo,2,cg_office,murrieta,
+405,post_tag,murrieta,Murrieta,1,cg_office,oakland,
+406,post_tag,oakland,Oakland,1,cg_office,san-francisco,
+407,post_tag,san-francisco,San Francisco,1,cg_office,san-jose,
+408,post_tag,san-jose,San Jose,1,cg_office,scottsdale,
+409,post_tag,scottsdale,Scottsdale,1,cg_office,,
+472,post_tag,golf-tournament,Golf Tournament,3,,,REMOVE
+473,post_tag,healthcare,Healthcare,10,cg_sector,healthcare,
+474,post_tag,higher-education,Higher Education,4,cg_sector,higher-education,
+475,post_tag,colorado,Colorado,6,cg_office,denver,
+476,post_tag,dra,DRA,3,cg_service,dispute-resolution-avoidance,
+477,post_tag,dispute-resolution-and-avoidance,Dispute Resolution and Avoidance,3,cg_service,dispute-resolution-avoidance,
+478,post_tag,memphis,Memphis,1,cg_office,memphis,
+479,post_tag,aba-forum,ABA Forum,3,,,REMOVE
+480,post_tag,dallas,Dallas,3,cg_office,fort-worth,
+481,post_tag,uli,ULI,4,,,REMOVE
+482,post_tag,urban-land-institute,Urban Land Institute,1,,,REMOVE
+483,post_tag,themed-entertainment,Themed Entertainment,1,cg_sector,themed-entertainment,
+484,post_tag,orlando,Orlando,4,cg_office,orlando,
+485,post_tag,iaapa,IAAPA,1,,,REMOVE
+486,post_tag,life-sciences,Life Sciences,1,cg_sector,life-sciences,
+487,post_tag,phoenix,Phoenix,1,cg_office,phoenix,
+488,post_tag,new-york,New York,6,cg_office,new-york,
+489,post_tag,hospitality,Hospitality,6,cg_sector,hospitality-gaming,
+490,post_tag,toronto,Toronto,0,cg_office,toronto,
+491,post_tag,long-beach,Long Beach,1,,,
+496,post_tag,washington-d-c,Washington D.C.,3,cg_office,washington-dc,
+497,post_tag,texas,Texas,0,,,REMOVE
+8,post_tag,artwork,Artwork,0,,,REMOVE
+10,post_tag,design,Design,4,,,REMOVE
+11,post_tag,photo,Photo,0,,,REMOVE
+12,post_tag,slideshow,Slideshow,0,,,REMOVE
+13,post_tag,video,Video,0,,,REMOVE
+14,post_tag,videos,Videos,0,,,REMOVE
+150,post_tag,events,Events,0,,,REMOVE
+151,post_tag,indoors,Indoors,0,,,REMOVE
+152,post_tag,modern,Modern,0,,,REMOVE
+153,post_tag,outdoors,Outdoors,0,,,REMOVE
+154,post_tag,sales,Sales,0,,,REMOVE
+155,post_tag,trends,Trends,0,,,REMOVE
+897,post_tag,gaming,Gaming,2,cg_sector,hospitality-gaming,
+906,post_tag,california,California,2,,,
+895,post_tag,seattle,Seattle,1,cg_office,seattle,
+894,post_tag,aviation,Aviation,2,cg_sector,transportation,
+893,post_tag,technology,technology,1,,,
+892,post_tag,data-centers,Data centers,1,cg_sector,data-centers,
+891,post_tag,design-build,Design-Build,1,,,
+889,post_tag,project-delivery,Project Delivery,1,,,
+888,post_tag,dbia,DBIA,1,,,REMOVE
+885,post_tag,independent-schools,Independent Schools,1,cg_sector,higher-education,
+914,post_tag,community-colleges,community colleges,1,cg_sector,higher-education,
+913,post_tag,tribal-gaming,Tribal gaming,1,cg_sector,hospitality-gaming,
+909,post_tag,ipd,IPD,1,,,REMOVE
+862,post_tag,construction,construction,0,,,
+864,post_tag,education,Education,6,cg_sector,hospitality-gaming,
+865,post_tag,south-carolina,South Carolina,7,cg_office,columbia,
+866,post_tag,k-12,K-12,6,cg_sector,k-12-education,
+869,post_tag,scup,SCUP,1,,,REMOVE
+870,post_tag,university,University,2,cg_sector,higher-education,
+872,post_tag,philadelphia,Philadelphia,1,cg_office,philadelphia,
+908,post_tag,transportation,Transportation,1,cg_sector,transportation,
+907,post_tag,municipal,Municipal,1,cg_sector,public-sector,
+878,post_tag,sustainability,Sustainability,1,cg_services,energy-sustainability-solutions,
+879,post_tag,real-estate,Real Estate,1,,,
+881,post_tag,luxury-hospitality,Luxury Hospitality,2,cg_sector,luxury-hospitality,
+883,post_tag,k-12-education,K-12 Education,1,cg_sector,k-12-education,
+884,post_tag,new-jersey,New Jersey,2,cg_office,cranford,
+886,post_tag,finance-and-officers,Finance and Officers,1,,,REMOVE

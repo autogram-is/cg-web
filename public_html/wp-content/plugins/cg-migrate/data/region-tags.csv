@@ -1,0 +1,10 @@
+term_id,taxonomy,slug,name,count,new_type,new_slug,action
+4,category,region,Region,0,,,IGNORE
+5,category,region-west,West,84,,,IGNORE
+6,category,region-east,East,111,,,IGNORE
+7,category,region-international,International,25,,,IGNORE
+438,news_region,us_west,US — West,96,,,IGNORE
+439,news_region,us_east,US — East,48,,,IGNORE
+440,news_region,us_central,US — Central,63,,,IGNORE
+441,news_region,europe_uk,Europe — UK,25,,,IGNORE
+442,news_region,other_region,Other,25,,,IGNORE
