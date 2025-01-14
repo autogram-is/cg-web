@@ -1,6 +1,6 @@
 {
     "key": "group_6706d79cce2c4",
-    "title": "Project Facts",
+    "title": "Project Properties",
     "fields": [
         {
             "key": "field_67218eff01148",
@@ -106,7 +106,7 @@
             "admin_column_position": "",
             "admin_column_width": "",
             "display_format": "F j, Y",
-            "return_format": "d\/m\/Y",
+            "return_format": "F j, Y",
             "first_day": 1,
             "allow_in_bindings": 0
         },
@@ -128,6 +128,28 @@
             "display_format": "F j, Y",
             "return_format": "d\/m\/Y",
             "first_day": 1,
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_672196c22c7b2",
+            "label": "Case Study PDF",
+            "name": "case_study",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "return_format": "id",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "",
             "allow_in_bindings": 0
         },
         {
@@ -343,5 +365,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1736787191
+    "modified": 1736813774
 }
