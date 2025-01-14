@@ -130,6 +130,12 @@ class CGSite extends Site {
 				$category = NULL;
 			}
 
+			if (isset($atts['style'])) {
+				$style = sanitize_text_field($atts['style']);
+			} else {
+				$style = NULL;
+			}
+
 			// Using the WP_Query argument format.
 			$posts = Timber::get_posts( [
 				'post_type'     => $type,
@@ -138,8 +144,14 @@ class CGSite extends Site {
 				'paged' => (get_query_var('paged')) ? get_query_var('paged') : 1
 			]);
 
+			$data = array(
+				'posts' => $posts,
+				'category' => $category,
+				'style' => $style
+			);
+
 			// This time we use Timber::compile since shortcodes should return the code
-			return Timber::compile('shortcodes/index.twig', array('posts' => $posts));
+			return Timber::compile('shortcodes/index.twig', $data);
 		}
 
 }
