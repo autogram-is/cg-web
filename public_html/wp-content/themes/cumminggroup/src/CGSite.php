@@ -1,5 +1,6 @@
 <?php
 
+use Timber;
 use Timber\Site;
 
 /**
@@ -19,7 +20,10 @@ class CGSite extends Site {
 				add_filter( 'timber/context', array( $this, 'add_to_context' ) );
 				add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
 				
-				add_shortcode('index', array( $this, 'shortcode_post_index' ));
+				add_shortcode('index', 'cg_shortcode_index');
+				add_shortcode('events-upcoming', 'cg_shortcode_events_upcoming' );
+				add_shortcode('events-past', 'cg_shortcode_events_past' );
+				add_shortcode('offices', 'cg_shortcode_region_offices' );
 
 				parent::__construct();
 		}
@@ -110,48 +114,4 @@ class CGSite extends Site {
 				$symbol = ' + ';
 				return str_replace($symbol, " <span class=\"amp\">" . trim($symbol) . "</span> ", $text);
 		}
-
-		function shortcode_post_index($atts) {
-			if (isset($atts['type'])) {
-				$type = sanitize_text_field($atts['type']);
-			} else {
-				$type = 'post';
-			}
-
-			if (isset($atts['limit'])) {
-				$limit = (int)sanitize_text_field($atts['limit']);
-			} else {
-				$limit = get_option('posts_per_page');
-			}
-
-			if (isset($atts['category'])) {
-				$category = sanitize_text_field($atts['category']);
-			} else {
-				$category = NULL;
-			}
-
-			if (isset($atts['style'])) {
-				$style = sanitize_text_field($atts['style']);
-			} else {
-				$style = NULL;
-			}
-
-			// Using the WP_Query argument format.
-			$posts = Timber::get_posts( [
-				'post_type'     => $type,
-				'category_name' => $category,
-				'posts_per_page' => $limit,
-				'paged' => (get_query_var('paged')) ? get_query_var('paged') : 1
-			]);
-
-			$data = array(
-				'posts' => $posts,
-				'category' => $category,
-				'style' => $style
-			);
-
-			// This time we use Timber::compile since shortcodes should return the code
-			return Timber::compile('shortcodes/index.twig', $data);
-		}
-
 }

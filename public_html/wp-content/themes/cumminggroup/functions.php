@@ -11,6 +11,8 @@
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/src/CGSite.php';
 require_once __DIR__ . '/src/CGPost.php';
+require_once __DIR__ . '/src/CGProject.php';
+require_once __DIR__ . '/src/shortcodes.php';
 
 Timber\Timber::init();
 
@@ -27,17 +29,17 @@ add_filter('timber/acf-gutenberg-blocks-templates', function () {
 
 add_filter('timber/post/classmap', function ($classmap) {
   $custom_classmap = [
-      'page' => CGPost::class,
-      'post' => CGPost::class,
+    'page' => CGPost::class,
+    'post' => CGPost::class,
 
-      'event' => CGPost::class,
+    'event' => CGPost::class,
 
-      'person' => CGPost::class,
-      'office' => CGPost::class,
-      'sector' => CGPost::class,
-      'service' => CGPost::class,
-      'project' => CGPost::class,
-    ];
+    'person' => CGPost::class,
+    'office' => CGPost::class,
+    'sector' => CGPost::class,
+    'service' => CGPost::class,
+    'project' => CGProject::class,
+  ];
 
   return array_merge($classmap, $custom_classmap);
 });

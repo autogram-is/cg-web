@@ -1,0 +1,4 @@
+{% for post in posts %}
+  {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': style } %}
+  <hr>
+{% endfor %}

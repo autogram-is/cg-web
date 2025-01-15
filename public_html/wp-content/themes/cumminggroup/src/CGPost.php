@@ -1,5 +1,6 @@
 <?php
 
+use Timber;
 use Timber\Post;
 
 /**
@@ -13,22 +14,6 @@ class CGPost extends Post {
 	public function excerpt(array $options = []) {
 		return parent::excerpt($options);
 	}
-
-	/**
-	 * Gets the locale of the current post if one is applicable/available.
-	 *
-	 * @return \Timber\PostCollectionInterface
-	 */
-	public function locale() {
-		return '';
-	}
-
-	/**
-	 * Gets region pages connected to the current post.
-	 *
-	 * @return \Timber\PostCollectionInterface
-	 */
-	public function regions() { return $this->_related('regions'); }
 
 	/**
 	 * Gets office pages connected to the current post.
@@ -72,6 +57,14 @@ class CGPost extends Post {
 	 */
 	public function portfolio_tags() {
 		return array();
+	}
+
+	/**
+	 * For any region-tagged entity, find other items tagged with the same region(s).
+	 */
+	public function nearby($type = NULL, $limit = NULL) {
+		$term_list = wp_get_post_terms($this->ID, 'region', array( 'fields' => 'all' ));
+		
 	}
 
 	private function _related($field_name) {
