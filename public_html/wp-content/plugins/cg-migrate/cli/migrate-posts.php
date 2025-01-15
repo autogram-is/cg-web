@@ -57,6 +57,7 @@ function cg_migrate_post($post, $dry_run = false) {
     wp_update_post($post);
     cg_save_migration_body($post->ID, $raw);
   }
+  WP_CLI::log(($dry_run ? "Dry Run: " : "") . "Post #$post->ID ($post->post_title) processed");
 }
 
 function _post_fusion_converter($post, $dom, $node = null, &$chunks = []) {
