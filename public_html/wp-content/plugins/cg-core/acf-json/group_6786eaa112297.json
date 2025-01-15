@@ -1,13 +1,13 @@
 {
-    "key": "group_675100b654e49",
-    "title": "Podcast Episode Properties",
+    "key": "group_6786eaa112297",
+    "title": "Press Release Properties",
     "fields": [
         {
-            "key": "field_675100b6c6b7a",
-            "label": "Podcast Media",
-            "name": "podcast_media",
+            "key": "field_6786eaa1faa70",
+            "label": "Dateline",
+            "name": "dateline",
             "aria-label": "",
-            "type": "url",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -18,8 +18,11 @@
             },
             "admin_column_enabled": 0,
             "default_value": "",
+            "maxlength": "",
             "allow_in_bindings": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -27,7 +30,7 @@
             {
                 "param": "post_category",
                 "operator": "==",
-                "value": "category:podcast"
+                "value": "category:press-releases"
             }
         ]
     ],
@@ -40,5 +43,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1736896052
+    "modified": 1736895526
 }
