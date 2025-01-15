@@ -191,7 +191,7 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    * 
    * ## EXAMPLES
    *
-   *     wp cg news
+   *     wp cg posts
    *
    * @param array $args
    * @param array $assoc_args
@@ -200,52 +200,18 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    */
   public function posts($args, $assoc_args) {
     $dry_run = isset($assoc_args['dry-run']);
+    $reprocess = isset($assoc_args['reprocess']);
     $post_ids = isset($assoc_args['post-ids']) ? explode(",", $assoc_args['post-ids']) : [];
 
     if (count($post_ids) === 0) {
       $post_ids = $this->ids_for_types('post');
     }
 
+    WP_CLI::log(($dry_run ? "Dry Run: " : "") . "Posts " . join(', ', $post_ids). " found");
+
     foreach ($post_ids as $post_id) {
       $post = get_post($post_id);
-      $post = cg_migrate_post($post, $dry_run);
-    }
-  }
-
-  /**
-   * Migrate standalone pages.
-   *
-   * ## OPTIONS
-   * 
-   * [--post-ids]
-   * : If set, only the specified posts will be processed.
-   *
-   * [--reprocess]
-   * : If set, reprocess previously-imported posts.
-   * 
-   * [--dry-run]
-   * : If set, the command will only simulate the updates without saving them.
-   * 
-   * ## EXAMPLES
-   *
-   *     wp cg news
-   *
-   * @param array $args
-   * @param array $assoc_args
-   * 
-   * @subcommand posts
-   */
-  public function pages($args, $assoc_args) {
-    $dry_run = isset($assoc_args['dry-run']);
-    $post_ids = isset($assoc_args['post-ids']) ? explode(",", $assoc_args['post-ids']) : [];
-
-    if (count($post_ids) === 0) {
-      $post_ids = $this->ids_for_types('page');
-    }
-  
-    foreach ($post_ids as $post_id) {
-      $post = get_post($post_id);
-      $post = cg_migrate_post($post, $dry_run);
+      $post = cg_migrate_post($post, $dry_run, $reprocess);
     }
   }
 
