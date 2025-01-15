@@ -6,7 +6,15 @@ export default function() {
       return el.dataset.toggle ? document.querySelector( el.dataset.toggle ) : el.nextElementSibling;
     },
     detectCollision = ( el ) => {
-      el.classList[ el.getBoundingClientRect().x < 0 ? "add" : "remove" ]( "left-collision" );
+      const collisionObserver = new ResizeObserver( obs => {
+        obs.forEach( ob => {
+          const leftPos = ob.target.getBoundingClientRect().x;
+          if( leftPos < 0 ){
+            ob.target.classList.add( "left-collision" );
+          }
+        });
+      });
+      collisionObserver.observe( el );
     },
     init = function( el ) {
       // TODO: Too early to use Element interfaces like https://caniuse.com/mdn-api_element_ariahidden ?
@@ -85,9 +93,6 @@ export default function() {
       if( !state ) {
         // If we're opening the disclosure element, add this toggle to the history stack:
         openToggles.push( el );
-
-        // Try to prevent the disclosure element from colliding with the browser viewport:
-        detectCollision( target );
       } else {
         // If we're closing the disclosure element, remove this toggle fron the history stack:
         openToggles.splice( openToggles.indexOf( el ), 1 );
@@ -108,11 +113,6 @@ export default function() {
       if( !state ) {
       // If necessary prevent the disclosure element from colliding with the browser viewport:
         detectCollision( target );
-        window.addEventListener( "resize", () => {
-          // FPO: detectCollision( target );
-        });
-      } else {
-        //window.removeEventListener( "resize", detectCollision );
       }
     };
 

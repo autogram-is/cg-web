@@ -58,11 +58,13 @@
       flex-direction: column;
       justify-content: center;
       margin-block: 0;
+      padding-inline-end: var(--space-3xs);
       li {
         padding-block: var(--space-nudge);
         a {
           color: var(--color-light);
           font-size: var(--size-step-00);
+          line-height: var(--leading-tight);
           margin-block: var(--space-nudge);
           text-decoration: none;
           text-transform: uppercase;
