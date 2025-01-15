@@ -50,8 +50,8 @@ function cg_migrate_event($post, $dry_run = false) {
     if ($meta['_EventEndDate']) { 
       update_field('end_date', $meta['_EventEndDate'][0], $post->ID);
     }
-    if ($meta['_EventAllDay']) { 
-      update_field('all_day', $meta['_EventAllDay'][0], $post->ID);
+    if (key_exists('_EventAllDay', $meta) && $meta['_EventAllDay']) { 
+      update_field('all_day', true, $post->ID);
     }
     if ($meta['_EventURL']) { 
       update_field('event_url', $meta['_EventURL'][0], $post->ID);
@@ -190,4 +190,8 @@ function _absorb_venue($event_id, $venue_id, $dry_run) {
       wp_delete_post($venue_id);
     }
   }
+}
+
+function cg_migrate_event_post($post, $dry_run = false) {
+  // Loop through. Find title/text, title/text and return KV
 }

@@ -1,0 +1,15 @@
+slug,locale,title,parent,body
+home,na,Cumming Group,,
+about,both,About Cumming Group,,
+services,na,Services,,[services]
+sectors,na,Sectors,,[sectors]
+locations,both,Locations,,[locations na]
+news,both,News + Insights,,[index]
+events,both,Events,,[events]
+archive,both,Past Events,events,[past-events]
+analysis,both,Market Analysis,,[index category=market-analysis]
+careers,na,Careers,,
+opportunities,na,Career Opportunities,careers,
+process,na,Hiring Process,careers,
+benefits,na,Benefits + Recognition,careers,
+life-at-cumming,na,Life At Cumming Group,careers,
