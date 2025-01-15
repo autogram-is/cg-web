@@ -18,10 +18,10 @@
             },
             "admin_column_enabled": 0,
             "post_type": [
-                "cg_project",
+                "project",
                 "cg_sector",
-                "cg_service",
-                "cg_office"
+                "service",
+                "office"
             ],
             "post_status": "",
             "taxonomy": "",
@@ -59,7 +59,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "cg_event"
+                "value": "event"
             }
         ]
     ],

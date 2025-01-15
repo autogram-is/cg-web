@@ -7,7 +7,7 @@ function cg_map_old_tags($ids = [], $dry_run = false, $preserve = false) {
   // If the post being processed is one of these types, the relationships that replace the
   // term links should be post-type-specific. ie, $post_meta['sectors'], $post_meta['services']
   // and so on. Other post types have an all-purpose $post_meta['related'] relationship.
-  $portfolio_types = ['cg_project', 'cg_sector', 'cg_service', 'cg_region', 'cg_office'];
+  $portfolio_types = ['project', 'sector', 'service', 'cg_region', 'office'];
 
   foreach ($ids as $post_id) {
     $post = get_post($post_id);

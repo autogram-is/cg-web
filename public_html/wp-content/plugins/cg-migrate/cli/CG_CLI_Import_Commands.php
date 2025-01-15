@@ -129,7 +129,7 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
     $post_ids = isset($assoc_args['post-ids']) ? explode(",", $assoc_args['post-ids']) : [];
 
     if (count($post_ids) === 0) {
-      $post_ids = $this->ids_for_types(['avada_portfolio', 'cg_project']);
+      $post_ids = $this->ids_for_types(['avada_portfolio', 'project']);
     }
 
     foreach ($post_ids as $post_id) {
@@ -166,7 +166,7 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
     $post_ids = isset($assoc_args['post-ids']) ? explode(",", $assoc_args['post-ids']) : [];
 
     if (count($post_ids) === 0) {
-      $post_ids = $this->ids_for_types(['tribe_events', 'cg_events']);
+      $post_ids = $this->ids_for_types(['tribe_events', 'events']);
     }
 
     foreach ($post_ids as $post_id) {
@@ -281,7 +281,7 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
     $post_ids = isset($assoc_args['post-ids']) ? explode(",", $assoc_args['post-ids']) : [];
 
     // While other post types exist, these are the ones that were extensively tagged and need shuffling.
-    $post_types = $assoc_args['post-types'] ?? ['post', 'page', 'cg_project', 'cg_event', 'cg_episode'];
+    $post_types = $assoc_args['post-types'] ?? ['post', 'page', 'project', 'cg_event', 'cg_episode'];
 
     if ($dry_run) {
       cg_get_tag_map(true);

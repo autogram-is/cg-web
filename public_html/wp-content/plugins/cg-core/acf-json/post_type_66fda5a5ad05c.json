@@ -3,7 +3,7 @@
     "title": "Sectors",
     "menu_order": 0,
     "active": true,
-    "post_type": "cg_sector",
+    "post_type": "sector",
     "advanced_configuration": true,
     "import_source": "",
     "import_date": "",

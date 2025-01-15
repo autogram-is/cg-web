@@ -30,16 +30,13 @@ add_filter('timber/post/classmap', function ($classmap) {
       'page' => CGPost::class,
       'post' => CGPost::class,
 
-      'cg_region' => CGPost::class,
-      'cg_person' => CGPost::class,
-      'cg_office' => CGPost::class,
-      'cg_sector' => CGPost::class,
-      'cg_service' => CGPost::class,
-      'cg_project' => CGPost::class,
+      'event' => CGPost::class,
 
-      'cg_event' => CGPost::class,
-      'cg_report' => CGPost::class,
-      'cg_episode' => CGPost::class,
+      'person' => CGPost::class,
+      'office' => CGPost::class,
+      'sector' => CGPost::class,
+      'service' => CGPost::class,
+      'project' => CGPost::class,
     ];
 
   return array_merge($classmap, $custom_classmap);

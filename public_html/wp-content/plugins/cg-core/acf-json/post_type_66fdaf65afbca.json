@@ -3,7 +3,7 @@
     "title": "People",
     "menu_order": 0,
     "active": true,
-    "post_type": "cg_person",
+    "post_type": "person",
     "advanced_configuration": true,
     "import_source": "",
     "import_date": "",

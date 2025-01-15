@@ -6,7 +6,7 @@ function cg_migrate_project($post, $dry_run = false, $preserve = false) {
   if ($post->post_type === 'avada_portfolio') {
     $messages[] = 'updated type';
     if (!$dry_run) {
-      set_post_type($post->ID, 'cg_project');
+      set_post_type($post->ID, 'project');
       $post = get_post($post->ID);
     }
   }
