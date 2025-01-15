@@ -30,7 +30,12 @@ function _populate_regions($dry_run = false) {
         )
       );
 
-      WP_CLI::log("Created region tag " . $term['term_id'] . " (". $item['title'] . ")");
+      if (is_array($term)) {
+        WP_CLI::log("Created region tag " . $term['term_id'] . " (". $item['title'] . ")");
+      } else {
+        WP_CLI::error($term);
+      }
+
     }
   }
 }

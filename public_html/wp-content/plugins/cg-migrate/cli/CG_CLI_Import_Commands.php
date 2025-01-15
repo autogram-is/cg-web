@@ -215,6 +215,46 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
     }
   }
 
+    /**
+   * Migrate standalone pages.
+   *
+   * ## OPTIONS
+   * 
+   * [--post-ids]
+   * : If set, only the specified pages will be processed.
+   *
+   * [--reprocess]
+   * : If set, reprocess previously-imported pages.
+   * 
+   * [--dry-run]
+   * : If set, the command will only simulate the updates without saving them.
+   * 
+   * ## EXAMPLES
+   *
+   *     wp cg pages
+   *
+   * @param array $args
+   * @param array $assoc_args
+   * 
+   * @subcommand pages
+   */
+  public function pages($args, $assoc_args) {
+    $dry_run = isset($assoc_args['dry-run']);
+    $reprocess = isset($assoc_args['reprocess']);
+    $post_ids = isset($assoc_args['post-ids']) ? explode(",", $assoc_args['post-ids']) : [];
+
+    if (count($post_ids) === 0) {
+      $post_ids = $this->ids_for_types('page');
+    }
+
+    WP_CLI::log(($dry_run ? "Dry Run: " : "") . "Pages " . join(', ', $post_ids). " found");
+
+    foreach ($post_ids as $post_id) {
+      $post = get_post($post_id);
+      $post = cg_migrate_page($post, $dry_run, $reprocess);
+    }
+  }
+
   /**
    * Remap old tags to new relationships.
    *
