@@ -14,7 +14,7 @@ function cg_migrate_post($post, $dry_run = false) {
       // Case study. Hide and remap to project metadata manually.
 
     } else if (in_array($tag->term_taxonomy_id, [35, 469])) {
-      // Events. Extract time, attendees, location. Convert to cg_event.
+      // Events. Extract time, attendees, location. Convert to event.
 
     } else if (in_array($tag->term_taxonomy_id, [3, 464])) {
       // Presss Release. Extract CTA form. Possibly convert About Cumming and CTA.

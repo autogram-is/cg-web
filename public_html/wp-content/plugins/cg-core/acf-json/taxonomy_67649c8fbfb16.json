@@ -6,9 +6,9 @@
     "taxonomy": "region",
     "object_type": [
         "post",
-        "cg_project",
-        "cg_person",
-        "cg_office"
+        "project",
+        "person",
+        "office"
     ],
     "advanced_configuration": 1,
     "import_source": "",

@@ -3,7 +3,7 @@
     "title": "Services",
     "menu_order": 0,
     "active": true,
-    "post_type": "cg_service",
+    "post_type": "service",
     "advanced_configuration": true,
     "import_source": "",
     "import_date": "",

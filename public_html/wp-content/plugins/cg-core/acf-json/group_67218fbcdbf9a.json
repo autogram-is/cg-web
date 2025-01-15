@@ -323,7 +323,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "cg_event"
+                "value": "event"
             }
         ]
     ],

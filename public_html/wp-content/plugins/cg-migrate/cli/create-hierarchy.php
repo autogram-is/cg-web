@@ -3,8 +3,8 @@
 //  1. Build out Region, Office, Sector, and Service skeleton
 function cg_cli_build_hierarchy($dry_run = false, $preserve = false) {
   _populate_regions($dry_run, $preserve);
-  //_populate_sectors($dry_run, $preserve);
-  //_populate_services($dry_run, $preserve);
+  _populate_sectors($dry_run, $preserve);
+  _populate_services($dry_run, $preserve);
   _populate_offices($dry_run, $preserve);
 }
 
@@ -59,7 +59,7 @@ function _populate_sectors($dry_run = false, $preserve = false) {
     if (!$item['title']) continue;
 
     $post_data = array(
-      'post_type'     => 'cg_sector',
+      'post_type'     => 'sector',
       'post_title'    => sanitize_text_field($item['title']),
       'post_name'     => sanitize_text_field($item['slug']),
       'locale'        => empty($item['locale']) ? NULL : $item['locale'],
@@ -101,9 +101,9 @@ function _populate_services($dry_run = false, $preserve = false) {
 
   foreach($items as $item) {
     if (!$item['title']) continue;
-    
+
     $post_data = array(
-      'post_type'     => 'cg_service',
+      'post_type'     => 'service',
       'post_title'    => sanitize_text_field($item['title']),
       'post_name'     => sanitize_text_field($item['slug']),
       'locale'        => empty($item['locale']) ? NULL : $item['locale'],
@@ -145,7 +145,7 @@ function _populate_offices($dry_run = false, $preserve = false) {
     if (!$item['title']) continue;
 
     $post_data = array(
-      'post_type'     => 'cg_office',
+      'post_type'     => 'office',
       'post_title'    => sanitize_text_field($item['title']),
       'post_name'     => sanitize_text_field($item['slug']),
       'post_status'   => 'publish',
@@ -183,6 +183,30 @@ function _populate_offices($dry_run = false, $preserve = false) {
         WP_CLI::log($post_data['post_type'] ." '". $post_data['post_title'] . "' ($post_id) created.");
       }
     }
+  }
+}
+
+function _static_pages() {
+
+}
+
+function _navigation_menus($dry_run = false) {
+  $menus = [];
+
+  $items = load_migration_csv('nav-menus.csv');
+
+  if ($dry_run) {
+
+  } else {
+    $menu_id = wp_create_nav_menu($menu_name);
+
+    wp_update_nav_menu_item($menu_id, 0, array(
+      'menu-item-title' => 'About',
+      'menu-item-object' => 'page',
+      'menu-item-object-id' => get_page_by_path('about')->ID,
+      'menu-item-type' => 'post_type',
+      'menu-item-status' => 'publish'
+    ));
   }
 }
 

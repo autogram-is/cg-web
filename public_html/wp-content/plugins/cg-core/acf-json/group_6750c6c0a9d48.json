@@ -18,7 +18,7 @@
             },
             "admin_column_enabled": 0,
             "post_type": [
-                "cg_service"
+                "service"
             ],
             "post_status": "",
             "taxonomy": "",
@@ -51,7 +51,7 @@
             },
             "admin_column_enabled": 0,
             "post_type": [
-                "cg_project"
+                "project"
             ],
             "post_status": "",
             "taxonomy": "",
@@ -86,7 +86,7 @@
             "admin_column_position": "",
             "admin_column_width": "",
             "post_type": [
-                "cg_person"
+                "person"
             ],
             "post_status": "",
             "taxonomy": "",
@@ -109,7 +109,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "cg_sector"
+                "value": "sector"
             }
         ]
     ],

@@ -37,7 +37,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "cg_project"
+                "value": "project"
             }
         ]
     ],

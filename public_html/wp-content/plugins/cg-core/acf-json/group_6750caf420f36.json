@@ -20,7 +20,7 @@
             "post_type": [
                 "post",
                 "cg_episode",
-                "cg_event"
+                "event"
             ],
             "post_status": "",
             "taxonomy": "",
@@ -44,21 +44,21 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "cg_project"
+                "value": "project"
             }
         ],
         [
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "cg_sector"
+                "value": "sector"
             }
         ],
         [
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "cg_service"
+                "value": "service"
             }
         ],
         [
@@ -72,14 +72,14 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "cg_office"
+                "value": "office"
             }
         ],
         [
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "cg_person"
+                "value": "person"
             }
         ]
     ],

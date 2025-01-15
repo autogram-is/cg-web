@@ -7,7 +7,7 @@ function cg_migrate_event($post, $dry_run = false) {
   if ($post->post_type === 'tribe_events') {
     $messages[] = 'updated type';
     if (!$dry_run) {
-      set_post_type($post->ID, 'cg_event');
+      set_post_type($post->ID, 'event');
       $post = get_post($post->ID);
     }
   }
@@ -130,12 +130,12 @@ function _person_from_event_attendee($bio, $dry_run) {
   $slug = trim(sanitize_title($bio['name']));
   $headshot_id = attachment_url_to_postid($bio['headshot']);
 
-  $post = get_post_by_name($slug, 'cg_person');
+  $post = get_post_by_name($slug, 'person');
 
   if (!$post)  {
     $post_data = array(
       'post_title' => $bio['name'],
-      'post_type' => 'cg_person',
+      'post_type' => 'person',
       'post_status' => 'publish',
       'post_name' => $slug,
     );
@@ -192,6 +192,7 @@ function _absorb_venue($event_id, $venue_id, $dry_run) {
   }
 }
 
+// Posts tagged as "Events" or "Events Hosted by Others"
 function cg_migrate_event_post($post, $dry_run = false) {
   // Loop through. Find title/text, title/text and return KV
 }

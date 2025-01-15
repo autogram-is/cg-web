@@ -13,7 +13,7 @@ $context         = Timber::context();
 $timber_post     = Timber::get_post();
 $context['post'] = $timber_post;
 
-if ($timber_post->post_type === 'cg_project') {
+if ($timber_post->post_type === 'project') {
 	$facts = array();
 	// Project relationships
 

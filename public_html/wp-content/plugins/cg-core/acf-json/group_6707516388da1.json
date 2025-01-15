@@ -36,14 +36,14 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "cg_sector"
+                "value": "sector"
             }
         ],
         [
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "cg_service"
+                "value": "service"
             }
         ]
     ],

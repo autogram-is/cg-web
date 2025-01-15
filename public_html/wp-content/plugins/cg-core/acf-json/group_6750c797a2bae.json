@@ -20,7 +20,7 @@
             "admin_column_position": "",
             "admin_column_width": "",
             "post_type": [
-                "cg_sector"
+                "sector"
             ],
             "post_status": "",
             "taxonomy": "",
@@ -55,7 +55,7 @@
             "admin_column_position": "",
             "admin_column_width": "",
             "post_type": [
-                "cg_service"
+                "service"
             ],
             "post_status": "",
             "taxonomy": "",
@@ -88,7 +88,7 @@
             },
             "admin_column_enabled": 0,
             "post_type": [
-                "cg_person"
+                "person"
             ],
             "post_status": "",
             "taxonomy": "",
@@ -123,7 +123,7 @@
             "admin_column_position": "",
             "admin_column_width": "",
             "post_type": [
-                "cg_office"
+                "office"
             ],
             "post_status": "",
             "taxonomy": "",
@@ -146,7 +146,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "cg_project"
+                "value": "project"
             }
         ]
     ],

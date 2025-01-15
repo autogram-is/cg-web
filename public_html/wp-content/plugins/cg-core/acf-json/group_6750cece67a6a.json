@@ -77,7 +77,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "cg_person"
+                "value": "person"
             }
         ]
     ],

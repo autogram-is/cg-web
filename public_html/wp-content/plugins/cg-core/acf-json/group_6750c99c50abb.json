@@ -20,7 +20,7 @@
             "admin_column_position": "",
             "admin_column_width": "",
             "post_type": [
-                "cg_person"
+                "person"
             ],
             "post_status": "",
             "taxonomy": "",
@@ -57,7 +57,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "cg_event"
+                "value": "event"
             }
         ]
     ],
