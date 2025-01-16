@@ -14,7 +14,7 @@
   SupportsAlignContent: false
   SupportsAlignText: false
 #}
-<figure class="statistic flow {{ utilities }} {{ fields.variation }}" {% if fields.variation == "counter" %}data-counter{% endif %} data-{{ block.id }}>
+<figure class="statistic flow {{ utilities }} {{ fields.variation }}{{ fields.counter ? " counter" : "" }}"{{ fields.counter ? " data-counter" : "" }} data-{{ block.id }}>
   <dl>
     {% for stat in fields.statistics %}
     <div class="body">
