@@ -11,7 +11,7 @@
       {% endif %}
       <ul role="list" aria-labelledby="id-{{ rand }}" >
         {% for link in links %}
-        <li class="type-detail"><a href="{{ link.href }}" class="type-detail">{{ link.title }}</a></li>
+        <li class="type-detail"><a href="{{ link.href }}" class="type-detail">{{ link.title|safe }}</a></li>
         {% endfor %}
       </ul>
     </div>

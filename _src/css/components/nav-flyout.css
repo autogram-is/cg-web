@@ -16,6 +16,7 @@
     --sidebar-target-width: 16rem;
     --sidebar-vertical-alignment: flex-start;
     align-items: stretch;
+    padding-inline-end: var(--space-s);
 
     > ul {
       margin-inline: var(--space-m) 0;
@@ -47,7 +48,6 @@
   }
 
   .subnav {
-    position: absolute;
     right: 0;
     left: 0;
     top: 100%;
@@ -131,6 +131,7 @@
   .nav-flyout {
     position: relative;
     .subnav {
+      position: absolute;
       left: auto;
       min-width: 50em;
       right: 0;
