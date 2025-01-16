@@ -13,9 +13,11 @@
     "start": "concurrently 'npm run serve' 'npm run css -- --watch' 'npm run themecss -- --watch' 'npm run js -- --watch' 'npm run themejs -- --watch'",
     "serve": "npx eleventy --serve",
     "css": "npx postcss _src/css/*.css --dir _site/css",
-    "themecss" : "npx postcss _src/css/*.css --dir theme/assets/css",
     "js": "esbuild _src/js/bundle.js --bundle --outfile=_site/js/ui.js",
-    "themejs" : "esbuild _src/js/bundle.js --bundle --outfile=theme/assets/js/ui.js"
+    "themejs" : "esbuild _src/js/bundle.js --bundle --outfile=theme/assets/js/ui.js",
+    "themecss" : "npx postcss _src/css/*.css --dir theme/assets/css",
+    "themefonts" : "cp -R _src/fonts  ./public_html/wp-content/themes/cumminggroup/assets/",
+    "themeimages" : "cp -R _src/images ./public_html/wp-content/themes/cumminggroup/assets/"
   },
   "keywords": [],
   "author": "Autogram",

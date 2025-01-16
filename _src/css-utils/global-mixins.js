@@ -14,7 +14,7 @@ const globalMixins = {
     "white-space": "nowrap"
   },
   hatching: {
-    background: "url('/images/hatch.svg') 0 0 no-repeat",
+    background: "url('../images/hatch.svg') 0 0 no-repeat",
     height: "var(--space-s)",
     backgroundRepeat: "repeat-x",
     backgroundSize: "90rem"
