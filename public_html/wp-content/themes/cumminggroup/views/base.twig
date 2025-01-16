@@ -50,17 +50,18 @@
 					</div>
 				</div>
 			</div>
-			<div class="wrapper sidebar swap">
-				<div>
-					{% block content %}
-						Sorry, no content
-					{% endblock %}
-				</div>
-				{% block sidebar %}
+		</div>
+		<div class="wrapper sidebar swap">
+			<div class="region region-primary">
+				{% block content %}
+					Sorry, no content
 				{% endblock %}
 			</div>
-			{% block posthero %}
+			{% block sidebar %}
 			{% endblock %}
+		</div>
+		{% block posthero %}
+		{% endblock %}
 		</main>
 
 			{% block footer %}
