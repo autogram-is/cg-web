@@ -1,0 +1,26 @@
+{#
+  Title: Statistics
+  Description: Hero presentation for project or company statistics
+  Category: cumminggroup
+  Icon: chart-bar
+  Mode: edit
+  SupportsMode: true
+  Align: center
+  PostTypes: 
+  EnqueueStyle: 
+  SupportsAlign: none
+  SupportsMultiple: true
+  SupportsInnerBlocks: false
+  SupportsAlignContent: false
+  SupportsAlignText: false
+#}
+<figure class="statistic flow {{ utilities }} {{ fields.variation }}" {% if fields.variation == "counter" %}data-counter{% endif %} data-{{ block.id }}>
+  <dl>
+    {% for stat in fields.statistics %}
+    <div class="body">
+      <dt class="type-hed">{{ stat.value }}</dt>
+      <dd class="type-detail">{{ stat.label }}</dd>
+    </div>
+    {% endfor %}
+  </dl>
+</figure>
