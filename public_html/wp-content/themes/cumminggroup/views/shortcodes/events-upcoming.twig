@@ -1,4 +1,15 @@
+<div class="flow region">
+  <h2 class="type-eyebrow hed-hatch">Upcoming Events</h2>
 {% for post in posts %}
-  {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': style } %}
+  {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': "hero" } %}
   <hr>
 {% endfor %}
+  <div class="pagination repel temporal">
+    <a href="#" class="previous button mini align-only">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)" aria-hidden="true">
+        <path id="chevron" d="m9 6 6 6-6 6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+      <span>Previous Events</span>
+    </a>
+  </div>
+</div>
