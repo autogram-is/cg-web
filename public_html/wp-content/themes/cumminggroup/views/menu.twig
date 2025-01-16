@@ -4,7 +4,7 @@
     {% if item.children %}
       {% include "nav-flyout.twig" with {'subitems': item.children} %}
     {% else %}
-      <li class="nav-topitem {{ item.classes | join(' ') }}"><a target="{{ item.target }}" href="{{ item.link }}" {% if item.current %}aria-current="page"{% endif %}>{{ item.title }}</a></li>
+      <li class="nav-topitem {{ item.classes | join(' ') }}"><a target="{{ item.target }}" href="{{ item.link }}" {% if item.current %}aria-current="page"{% endif %}>{{ item.title| stylize  }}</a></li>
     {% endif %}
   {% endfor %}
   {% endif %}

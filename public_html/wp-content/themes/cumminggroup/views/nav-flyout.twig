@@ -6,7 +6,7 @@
     <div class="sidebar region swap" data-direction="rtl">
       <ul role="list" aria-labelledby="hed-{{ item.id }}">
         {% for subitem in subitems %}
-        <li><a target="{{ subitem.target }}" href="{{ subitem.link }}" class="type-detail"{% if subitem.current %} aria-current="page"{% endif %}>{{ subitem.title }}</a></li>
+        <li><a target="{{ subitem.target }}" href="{{ subitem.link }}" class="type-detail"{% if subitem.current %} aria-current="page"{% endif %}>{{ subitem.title | stylize }}</a></li>
         {% endfor %}
       </ul>
     </div>
