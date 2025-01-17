@@ -52,7 +52,7 @@
     & > * + *::before {
       content: "•";
       color: var(--color-timeless-gold);
-      margin-inline: var(--space-2xs) var(--space-3xs);
+      margin-inline: var(--space-2xs);
     }
   }
 

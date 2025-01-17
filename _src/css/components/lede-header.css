@@ -56,7 +56,6 @@
     font-size: var(--size-step-1);
     font-family: var(--font-secondary);
     max-width: 90ch;
-    margin-block: var(--space-m) var(--space-s);
     line-height: var(--leading-loose);
     font-weight: var(--weight-regular);
     text-wrap: pretty;
