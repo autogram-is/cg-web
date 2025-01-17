@@ -1,5 +1,20 @@
-{% for post in posts %}
-  {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': style } %}
+<div class="region region-double">
+  {% for post in posts|slice(0, 1) %}
+  {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': 'hero' } %}
+  {% endfor %}
+  <div class="switcher region">
+    {% for post in posts|slice(1, 2) %}
+    {% include ['listing-'~post[1].post_type~'.twig', 'listing.twig'] with { 'type': 'secondary' } %}
+    {% endfor %}
+  </div>
   <hr>
-{% endfor %}
-{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+  <div class="region">
+    {% for post in posts|slice(3) %}
+    {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': style } %}
+    {% endfor %}
+  </div>
+  <hr>
+  <div class="region">
+  {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+  </div>
+</div>
