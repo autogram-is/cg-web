@@ -17,7 +17,7 @@
 				<a href="{{ post.link }}">{{ post.title }}</a>
 			</h2>
 			{% if type == "hero" %}
-			<p>{{ post.excerpt }}</p>
+			<p>{{ post.excerpt.read_more(false) }}</p>
 			{% endif %}
 			{% if post.tags %}
 			<ul class="cluster listing-meta type-detail" role="list">
