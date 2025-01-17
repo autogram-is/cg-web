@@ -101,7 +101,7 @@
         }
       }
     }
-    .notch-inner:has(.region) {
+    .notch-inner {
       padding-block-start: var(--space-l);
     }
     .hed-banner {

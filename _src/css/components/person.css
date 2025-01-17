@@ -15,8 +15,18 @@
 
   .hed {
     --flow-space: var(--space-2xs);
+    color: var(--color-deep-steel);
     font-size: var(--size-step-2);
     font-weight: var(--weight-semibold);
+    a {
+      color: var(--color-steel-shade);
+      text-decoration: underline;
+      text-decoration-color: var(--color-legacy-red);
+      transition: text-decoration-color .125s ease-in-out;
+      &:hover {
+        text-decoration-color: transparent;
+      }
+    }
   }
   .prose {
     --flow-space: var(--space-xs);

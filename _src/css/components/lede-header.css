@@ -1,6 +1,7 @@
 .lede-header {
   color: var(--color-steel-shade);
   max-width: 85%;
+  margin-block-end: var(--space-l);
 
   &.hed-accent {
     &::after {

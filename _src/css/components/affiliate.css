@@ -1,0 +1,7 @@
+.affiliate {
+  --sidebar-gutter: var(--space-2xl-3xl);
+
+  .thumb {
+    margin-block: var(--space-3xs);
+  }
+}

@@ -1,0 +1,11 @@
+
+{ 
+  "title": "Affiliate",
+  "name" : "affiliate",
+  "keyLinks": [ {
+        "label": "CSS",
+        "url": "/_src/css/components/affiliate.css"
+      } ],
+  "context": {
+  }
+}
