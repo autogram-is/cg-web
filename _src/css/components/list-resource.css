@@ -1,7 +1,7 @@
 /* Resource Listing */
 
 .resource-listing {
-  --sidebar-gutter: var(--space-s);
+  --sidebar-gutter: var(--space-nudge);
   --sidebar-target-width: 15rem;
   --sidebar-content-min-width: 50%;
 
@@ -57,10 +57,8 @@
   }
 
   &.hero {
-    --sidebar-gutter: var(--space-s-l);
-
   .sidebar {
-    --sidebar-gutter: var(--space-s-l);
+    --sidebar-gutter: var(--space-xl);
     --sidebar-target-width: 25rem;
     --sidebar-content-min-width: 60%;
   }
@@ -80,13 +78,12 @@
   }
 
   .sidebar {
-    --sidebar-gutter: var(--space-s-l);
+    --sidebar-gutter: var(--space-s-m);
     --sidebar-target-width: 15rem;
     --sidebar-content-min-width: 50%;
   }
 
   &.secondary {
-    --sidebar-gutter: var(--space-s-l);
 
     time {
       font-size: var(--size-step-00);
@@ -99,6 +96,7 @@
       line-height: var(--leading-tight);
     }
     .sidebar {
+      --sidebar-gutter: var(--space-l);
       --sidebar-target-width: 20rem;
       --sidebar-content-min-width: 40%;
     }
