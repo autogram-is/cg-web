@@ -1,6 +1,5 @@
 <?php
 
-use Timber;
 use Timber\Site;
 
 /**
