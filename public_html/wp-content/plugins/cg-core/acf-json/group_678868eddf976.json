@@ -1,6 +1,6 @@
 {
     "key": "group_678868eddf976",
-    "title": "Team List Block",
+    "title": "Bios Block",
     "fields": [
         {
             "key": "field_678868eeb1c4b",
@@ -54,5 +54,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1737054539
+    "modified": 1737479084
 }

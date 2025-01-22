@@ -51,14 +51,6 @@ class CGPost extends Post {
 	public function related() { return $this->_related('related'); }
 
 	/**
-	 * Returns the portfolio pages a news item is related to, formatted such that they can be passed
-	 * to `links` output functions.
-	 */
-	public function portfolio_tags() {
-		return array();
-	}
-
-	/**
 	 * For any region-tagged entity, find other items tagged with the same region(s).
 	 */
 	public function nearby($type = NULL, $limit = NULL) {
