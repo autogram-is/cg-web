@@ -2,6 +2,8 @@
   --flow-space: var(--space-xs);
   font-size: var(--size-step-00);
 
+  max-width: 34rem;
+
   a {
     text-decoration: underline;
     text-decoration-color: transparent;

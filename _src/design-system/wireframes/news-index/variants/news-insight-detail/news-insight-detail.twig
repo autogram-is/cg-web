@@ -291,39 +291,34 @@
           <div class="region">
           	<time datetime="{{date}}" class="type-detail weight-regular">{{ date|longdate }}</time>
             <h1 class="type-pagehed hed-accent">{{ hed }}</h1>
-            <div class="lede-header">
-              <address class="person {{ type }} {{ utilities }}">
-                <div class="sidebar">
-                {% if byline.img %}
-                  <div class="crop">
-                  <img src="{{ byline.img.src }}" height="{{ byline.img.height }}" width="{{ byline.img.width }}" alt="{{ byline.img.alt }}">
-                  </div>
-                {% endif %}
-                  <div class="body">
-                    <div class="person-header flow">
-                      <h2 class="hed type-body">{% if contact %}<a href="mailto:{{ byline.contact }}">{% endif %}{{ byline.name }}{% if byline.contact %}</a>{% endif %}</h2>
-                      <div class="person-meta flow">
-                        <span class="title type-detail">{{ byline.title }}</span>
-                      </div>
-                    </div>
-                    {% if person %}
-                    <div class="prose">
-                      {{ person | markdown }}
-                    </div>
-                    {% endif %}
-                  </div>
-                </div>
-              </address>
-              <div class="lede">
-                <p>Embarking on a large-scale historic restoration or conservation project presents unique challenges and risks for institutions and other property owners. These projects often require modifying existing spaces to accommodate contemporary uses and facility needs – ranging from acoustics to mechanical systems – for which these spaces were not originally designed.</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
   <div class="wrapper">
+    <div class="lede-header">
+      <address class="hgroup person-header">
+        <span class="author">Jason Zubatkin</span>
+        <span class="title">
+          <span class="title type-detail">Sector Lead</span>
+          <span class="scope type-detail"><a href="#">Arts & Culture</a></span>
+        </span>
+      </address>
+      <div class="lede">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+          mollit anim id est laborum.
+        </p>
+      </div>
+    </div>
+
     <div class="prose flow">
   		<p>It is critical to have a trusted resource helping owners better anticipate challenges, adapt to unforeseen circumstances, and balance competing priorities. With the right planning and management strategy, a trusted project team can help navigate a complex process and present clear options for decision-making each step of the way.</p>
 

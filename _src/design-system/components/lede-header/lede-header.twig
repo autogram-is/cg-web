@@ -1,14 +1,18 @@
 <div>
-  {% if dates.start %}
-  <time datetime="">{{ dates.start }}</time>
-  {% endif %}
-  {% if dates.end %}
-  - <time datetime="">{{ dates.end }}</time>
-  {% endif %}
-  <h1 class="type-pagehed hed-accent">{{ hed }}</h1>
+  <div class="region">
+    {% if dates.start %}
+    <time datetime="">{{ dates.start }}</time>
+    {% endif %}
+    {% if dates.end %}
+    - <time datetime="">{{ dates.end }}</time>
+    {% endif %}
+    <h1 class="type-pagehed hed-accent">{{ hed }}</h1>
+  </div>
+
+
   <div class="lede-header">
     {% if byline.name %}
-      <address class="hgroup">
+      <address class="hgroup person-header">
         <span class="author">{{ byline.name }}</span>
         {% if byline %}
         <span class="title">
@@ -21,6 +25,8 @@
     {% if location %}
     <span class="location"><a href="{{ location.url }}">{{ location.text }}</a></span>
     {% endif %}
-    {{ lede | markdown }}
+    <div class="lede">
+      {{ lede | markdown }}
+    </div>
   </div>
 </div>

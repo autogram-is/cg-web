@@ -1,5 +1,6 @@
 .lede-header {
   color: var(--color-steel-shade);
+  margin-block-end: var(--space-s-m);
   max-width: 85%;
 
   &.hed-accent {
@@ -21,34 +22,7 @@
     font-size: var(--size-step-2);
   }
   .person-header {
-    margin-block-start: var(--space-s);
-  }
-  .hgroup {
-    .location,
-    .author,
-    .subhed {
-      font-weight: var(--weight-semibold);
-      line-height: var(--leading-normal);
-    }
-    .title {
-      color: var(--color-deep-steel);
-      display: flex;
-      span {
-        flex-direction: row;
-        font-size: var(--size-step-00);
-      }
-      a {
-        text-decoration-color: var(--color-steel-midtone);
-        &:hover {
-          text-decoration-color: var(--color-legacy-red);
-        }
-      }
-      * + *::before {
-        color: var(--color-timeless-gold);
-        content: "•";
-        padding-inline: var(--space-2xs);
-      }
-    }
+    margin-block-end: var(--space-s-m);
   }
 
   p {
