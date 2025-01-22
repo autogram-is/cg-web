@@ -1,0 +1,26 @@
+{#
+  Title: Region
+  Description: Offices listed by region
+  Category: cumminggroup
+  Icon: admin-site
+  Mode: preview
+  SupportsMode: true
+  Align: center
+  PostTypes: 
+  EnqueueStyle: 
+  SupportsAlign: none left right
+  SupportsMultiple: true
+  SupportsInnerBlocks: false
+  SupportsAlignContent: false
+  SupportsAlignText: false
+#}
+<div class="location flow">
+  {% if heading %}<h2 class="type-eyebrow hed-accent">{{ heading }}</h2>{% endif %}
+  <ul class="flow" role="list">
+  {% for post in posts %}
+    <li class="hed type-hed icon-map">
+      <a href="{{ post.link }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+</div>

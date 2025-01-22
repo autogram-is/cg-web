@@ -1,0 +1,22 @@
+{#
+  Title: Past Events
+  Description: Paged list of past events
+  Category: cumminggroup
+  Icon: calendar-alt
+  Mode: edit
+  SupportsMode: true
+  Align: center
+  PostTypes: 
+  EnqueueStyle: 
+  SupportsAlign: none
+  SupportsMultiple: true
+  SupportsReusable: true
+  SupportsInnerBlocks: false
+  SupportsAlignContent: false
+  SupportsAlignText: false
+#}
+{% for post in posts %}
+  {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': style } %}
+  <hr>
+{% endfor %}
+{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
