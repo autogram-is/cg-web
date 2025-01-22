@@ -1,6 +1,6 @@
 {
     "key": "group_67894af507fb0",
-    "title": "Project List Block",
+    "title": "Projects Block",
     "fields": [
         {
             "key": "field_67894af50aa74",
@@ -54,5 +54,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1737050901
+    "modified": 1737478490
 }
