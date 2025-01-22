@@ -9,24 +9,30 @@
       <div class="person-header flow">
         <h2 class="hed type-body">{% if contact %}<a href="mailto:{{ contact }}">{% endif %}{{ name }}{% if contact %}</a>{% endif %}</h2>
         <div class="person-meta flow">
-          <span class="title type-detail">{{ title }}</span>
+          <div>
+            <span class="title type-detail">{{ title }}</span>
+            <div class="locations">
+            {% for loc in regions %}
+            <a href="#" class="location type-detail">{{ loc }}</a>
+            {% endfor %}
+            </div>
+          </div>
           {% if sectors %}
-          <ul role="list" class="title-scope flow">
+          <ul role="list" class="title-scope">
             {% for sector in sectors %}
             <li><a href="{{ sector.href }}">{{ sector.text }}</a></li>
             {% endfor %}
           </ul>
           {% endif %}
-          {% if region %}
-          <a href="#" class="location type-detail">{{ region }}</a>
+          {% if contacts %}
+          <ul role="list" class="contacts">
+          {% for contact in contacts %}
+            <li><a href="#">{{contact}}</a></li>
+          {% endfor %}
+          </ul>
           {% endif %}
         </div>
       </div>
-      {% if person.bio %}
-      <div class="prose">
-        {{ person.bio | markdown }}
-      </div>
-      {% endif %}
     </div>
   </div>
 </div>

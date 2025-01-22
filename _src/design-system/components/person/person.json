@@ -9,16 +9,17 @@
   "context": {
     "name": "Erwin Watt",
     "title": "Senior Vice President",
-    "region" : "Northeast Region",
+    "regions" : ["Boston", "Cambridge"],
     "sectors" : [
       {
-        "text" : "Planning & Scheduling",
+        "text" : "Planning + Scheduling",
         "href" : "#"
       },{
-        "text" : "Dispute Resolution & Avoidance",
+        "text" : "Dispute Resolution + Avoidance",
         "href" : "#"
       }
     ],
+    "contacts" : ["(555) 555-5555", "email@address.com" ],
     "img" : {
       "src" : "https://picsum.photos/1200/800?&blur=5.1",
       "height" : 800,

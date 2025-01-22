@@ -1,10 +1,13 @@
 .person {
+  --flow-space: var(--space-nudge);
+
   .body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding-block-end: var(--space-2xs);
+      margin-block: var(--space-3xs);
+
   }
   .sidebar {
     --sidebar-target-width: 14rem;
@@ -15,7 +18,7 @@
 
   .hed {
     --flow-space: var(--space-2xs);
-    color: var(--color-deep-steel);
+    color: var(--color-dark);
     font-size: var(--size-step-2);
     font-weight: var(--weight-semibold);
     a {
@@ -35,24 +38,39 @@
       font-size: var(--size-step-00);
     }
   }
+  .title {
+    color: var(--color-steel-shade);
+    font-size: var(--size-step-0);
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--leading-seamless);
+  }
   .person-header {
-    margin-block-start: var(--space-xs);
+    --flow-space: var(--space-nudge);
+  }
+  .locations {
+    padding-block-start: var(--space-nudge);
+    display: flex;
   }
   .location {
-    color: var(--color-steel-shade);
+    line-height: var(--leading-seamless);
+    color: var(--color-deep-steel);
     font-size: var(--size-step-000);
-    display: inline-block;
+
+    & + &::before {
+      content: ",";
+      margin-inline-end: var(--space-nudge);
+    }
   }
   .person-meta {
     max-width: 100%;
-    --flow-space: var(--space-xs);
+    --flow-space: var(--space-2xs);
 
     .title {
-      font-size: var(--size-step-00);
+      font-size: var(--size-step-0);
       line-height: var(--leading-seamless);
     }
-    .title-scope {
-      --flow-space: var(--space-3xs);
+    .title-scope, .contacts {
+      --flow-space: var(--space-2xs);
       color: var(--color-steel-shade);
       line-height: var(--leading-seamless);
       max-width: 100%;
@@ -60,16 +78,14 @@
         display: inline;
         font-size: var(--size-step-0);
         line-height: var(--leading-seamless);
-        margin-block: 1px;
         & + li::before {
           content: "•";
           color: var(--color-timeless-gold);
           display: inline-block;
-          padding-inline: calc( var(--space-3xs) - 3px ) var(--space-3xs);
+          padding-inline: calc( var(--space-nudge) - 1px ) var(--space-3xs);
         }
       }
       a {
-          display: inline;
           line-height: var(--leading-seamless);
           font-family: var(--font-secondary);
           font-size: var(--size-microcopy);
@@ -77,6 +93,23 @@
           &:hover {
             text-decoration: underline;
             text-decoration-color: var(--color-legacy-red);
+          }
+        }
+      }
+      .contacts {
+        --flow-space: var(--space-3xs);
+        display: flex;
+        flex-direction: row;
+        font-size: var(--size-step-000);
+        letter-spacing: var(--tracking-tight);
+        li a {
+          font-family: var(--font-body);
+          font-weight: var(--weight-semibold);
+        }
+        li + li {
+          margin-left: var(--space-2xs);
+          &::before {
+            content:"";
           }
         }
       }
