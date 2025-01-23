@@ -9,6 +9,7 @@ function cg_migrate_post($post, $dry_run = false) {
   foreach($tags as $tag) {
     if (in_array($tag->term_taxonomy_id, [335, 461])) {
       // Podcast episodes. Extract ID, episode number, guests.
+      _process_podcast($post, $dry_run);
 
     } else if (in_array($tag->term_taxonomy_id, [340, 463])) {
       // Case study. Hide and remap to project metadata manually.
@@ -28,24 +29,6 @@ function cg_migrate_post($post, $dry_run = false) {
     }
   }
 
-  // 'Events Hosted By Others' (map to events, or delete?)
-  // Adapt these to the event template
-
-  // Webinars
-  //
-
-  // Press Releases
-  // Nothing fancy, just make the Fusion markup not terrible
-
-  // News / Other News (articles reprinted from third-party sources)
-  // Find attached images; non-featured image is the masthead on article reprints
-  
-  // Podcasts
-  // Convert to 'podcast' posts, remap meta tags and extract data from fusion markup
-  // Attach people
-
-  // Blog
-
   // Fallback case — just grab titles and texts from Fusion
   $raw = $post->post_content;
   $dom = cg_get_cleaned_dom($raw);
@@ -57,11 +40,25 @@ function cg_migrate_post($post, $dry_run = false) {
     wp_update_post($post);
     cg_save_migration_body($post->ID, $raw);
   }
+  
+  // 'Events Hosted By Others' (map to events, or delete?)
+
+  // Webinars
+
+  // Press Releases
+  // Split dateline to separate field, remove attached PDF
+
+  // News / Other News (articles reprinted from third-party sources)
+  
+  // Podcasts
+
+  // Blog
+  // Bylines/Authors
+
   WP_CLI::log(($dry_run ? "Dry Run: " : "") . "Post #$post->ID ($post->post_title) processed");
 }
 
 function _post_fusion_converter($post, $dom, $node = null, &$chunks = []) {
- 
   if ($node) {
     if ($node->nodeType === XML_ELEMENT_NODE) {
       // Fusion Titles get converted to H2s, Fusion Text gets converted to P tags.
@@ -89,20 +86,25 @@ function _post_fusion_converter($post, $dom, $node = null, &$chunks = []) {
 
 
 function _process_news($post, $dry_run) {
-  
+  // Find attached images; non-featured image is the masthead on article reprints
+  // Split attribution to byline; move publication name and link to separate fields
 }
-
 
 function _process_podcast($post, $dry_run) {
-  
+  // Strip duplicative heading and buzzsprout shortcode; migration spreadsheet has podcast IDs.
+  if (!$dry_run) {
+    $post->post_body = preg_replace("<\w+>\w+\s+Construction Insiders.*Episode \d+(</br>)?<\/\w+>", '', $post->post_body);
+    $post->post_body = preg_replace("<p>\[buzzsprout\s+episode='(\d+)'.*\]</p>", '', $post->post_body);  
+  }
 }
-
 
 function _process_event_post($post, $dry_run) {
-  
+  if (!$dry_run) {
+    set_post_type($post->ID, 'event');
+    wp_set_object_terms($post->ID, [], ['category']);
+  }
 }
 
-
 function _process_case_study($post, $dry_run) {
-  
+  // 
 }

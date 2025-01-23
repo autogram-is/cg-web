@@ -44,7 +44,6 @@ function cg_clean_project_markup($post) {
 }
 
 function fusionTextBlocks($dom, $node = null, &$chunks = []) {
- 
   if ($node) {
     if ($node->nodeType === XML_ELEMENT_NODE) {
       // Fusion Titles get converted to H2s, Fusion Text gets converted to P tags.

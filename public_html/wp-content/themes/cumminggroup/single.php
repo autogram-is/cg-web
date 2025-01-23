@@ -21,26 +21,26 @@ if ($timber_post->post_type === 'project') {
 	if ($timber_post->sectors) {
 		$relationships[] = array(
 			'key' => pluralize($timber_post->sectors, 'Sector'),
-			'value' => join(', ', array_map('get_post_a_tag', $timber_post->sectors)),
+			'value' => join(' ', array_map('get_post_a_tag', $timber_post->sectors)),
 		);
 	}
 
 	if ($timber_post->services) {
 		$relationships[] = array(
 			'key' => pluralize($timber_post->services, 'Service'),
-			'value' => join(', ', array_map('get_post_a_tag', $timber_post->services)),
+			'value' => join(' ', array_map('get_post_a_tag', $timber_post->services)),
 		);
 	}
 
 	if ($timber_post->offices) {
 		$relationships[] = array(
 			'key' => pluralize($timber_post->offices, 'Office'),
-			'value' => join(', ', array_map('get_post_a_tag', $timber_post->offices)),
+			'value' => join(' ', array_map('get_post_a_tag', $timber_post->offices)),
 		);
 	}
 
 	// Project facts
-	$fact_fields = ['facility', 'client', 'location', 'start_date', 'completion_date', 'budget', 'capacity', 'owner', 'architect', 'vendors', 'contractors'];
+	$fact_fields = ['facility', 'client', 'location', 'start_date', 'end_date', 'budget', 'capacity', 'owner', 'architect', 'vendors', 'contractors'];
 	foreach ($fact_fields as $fact_field) {
 		if ($timber_post->$fact_field) {
 			$facts[] = array(

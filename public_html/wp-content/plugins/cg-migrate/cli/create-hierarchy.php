@@ -9,7 +9,7 @@ function cg_cli_build_hierarchy($dry_run = false, $preserve = false) {
 }
 
 function _populate_regions($dry_run = false) {
-  $items = load_migration_csv('regions.csv');
+  $items = load_content_csv('regions.csv');
 
   if ($dry_run) {
     WP_CLI::log("Dry-Run: ". count($items) . " regions defined");
@@ -58,7 +58,7 @@ function _populate_sectors($dry_run = false, $preserve = false) {
     }
   }
 
-  $items = load_migration_csv('sectors.csv');
+  $items = load_content_csv('sectors.csv');
 
   foreach($items as $item) {
     if (!$item['title']) continue;
@@ -102,7 +102,7 @@ function _populate_services($dry_run = false, $preserve = false) {
     }
   }
 
-  $items = load_migration_csv('services.csv');
+  $items = load_content_csv('services.csv');
 
   foreach($items as $item) {
     if (!$item['title']) continue;
@@ -144,49 +144,15 @@ function _populate_offices($dry_run = false, $preserve = false) {
     }
   }
 
-  $items = load_migration_csv('offices.csv');
+  $items = load_content_csv('offices.csv');
 
   foreach($items as $item) {
     if (!$item['title']) continue;
-
-    $post_data = array(
-      'post_type'     => 'office',
-      'post_title'    => sanitize_text_field($item['title']),
-      'post_name'     => sanitize_text_field($item['slug']),
-      'post_status'   => 'publish',
-      'post_author'   => get_current_user_id(),
-      'post_date'     => current_time('mysql'),
-    );
-
     if ($dry_run) {
-      WP_CLI::log("Dry-Run: ". $post_data['post_type'] ." '". $post_data['post_title'] . "' created.");
+      WP_CLI::log("Dry-Run: Office ". $item['title'] . "' created.");
     } else {
-      $post_id = wp_insert_post($post_data, true);
-      if ($post_id) {
-        if ($item['location']) {
-          update_field('locale', $item['location'], $post_id);
-        }
-        if ($item['email']) {
-          update_field('locale', $item['email'], $post_id);
-        }
-        if ($item['phone']) {
-          update_field('locale', $item['phone'], $post_id);
-        }
-        if ($item['address']) {
-          update_field('locale', $item['address'], $post_id);
-        }
-
-        if($item['region']) {
-          $region = $item['region'] ? term_exists($item['region'], 'region') : NULL;
-          if ($region) {
-            wp_set_object_terms($post_id, (int)$region['term_id'], 'region');
-          } else {
-            WP_CLI::log("Could not find matching region (" . $item['region'] . ") for " . $post_data['post_title']);
-          }
-        }
-
-        WP_CLI::log($post_data['post_type'] ." '". $post_data['post_title'] . "' ($post_id) created.");
-      }
+      $id = cg_save_office($item['title'], true, true);
+      WP_CLI::log("Office '". $item['post_title'] . "' ($id) created.");
     }
   }
 }

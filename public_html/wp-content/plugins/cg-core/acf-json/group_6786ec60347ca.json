@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_6786ecb4791c9",
-            "label": "Reprint Author",
-            "name": "reprint_author",
+            "label": "Reprint Byline",
+            "name": "reprint_byline",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -100,6 +100,20 @@
                 "operator": "==",
                 "value": "category:news"
             }
+        ],
+        [
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "category:other-news"
+            }
+        ],
+        [
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "category:other-news"
+            }
         ]
     ],
     "menu_order": 0,
@@ -111,5 +125,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1736895827
+    "modified": 1737561940
 }

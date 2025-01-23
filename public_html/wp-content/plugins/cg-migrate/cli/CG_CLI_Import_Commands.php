@@ -364,7 +364,7 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    * 
    * ## EXAMPLES
    *
-   *     wp migrate
+   *     wp cg migrate
    *
    * @param array $args
    * @param array $assoc_args
@@ -373,6 +373,54 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    * @alias migrate
    */
   public function migrate() {
+  }
+
+
+  /**
+   * Exports tracking spreadsheets for content updates.
+   *
+   * ## OPTIONS
+   * 
+   * ## EXAMPLES
+   *
+   *     wp cg export
+   *
+   * @param array $args
+   * @param array $assoc_args
+   * 
+   * @subcommand export
+   * @alias export
+   */
+  public function export() {
+    cg_export_projects();
+    cg_export_offices();
+    cg_export_bios();
+    cg_export_news();
+  }
+
+  /**
+   * Imports content updates from tracking spreadsheets.
+   *
+   * ## OPTIONS
+   * 
+   * [--dry-run]
+   * : If set, the command will only simulate the updates without saving them.
+   * 
+   * ## EXAMPLES
+   *
+   *     wp cg import
+   *
+   * @param array $args
+   * @param array $assoc_args
+   * 
+   * @subcommand import
+   * @alias import
+   */
+  public function import() {
+    cg_import_offices();
+    cg_import_bios();
+    cg_import_projects();
+    cg_import_news();
   }
 
   private function ids_for_types($post_types, $reprocess = false) {
