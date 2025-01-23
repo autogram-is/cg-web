@@ -15,6 +15,7 @@ if (!defined('ABSPATH')) {
 
 define('CG_MIGRATE_PLUGIN_DIR', WP_PLUGIN_DIR . '/cg-migrate');
 define('CG_MIGRATE_DATA_DIR', CG_MIGRATE_PLUGIN_DIR . '/data');
+define('CG_MIGRATE_CONTENT_DIR', CG_MIGRATE_PLUGIN_DIR . '/content');
 
 $inc_dirs = ['cli', 'helpers', 'hooks'];
 foreach ($inc_dirs as $dir) {

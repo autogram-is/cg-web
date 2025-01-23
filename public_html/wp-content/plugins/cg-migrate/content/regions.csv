@@ -1,0 +1,27 @@
+title,zone,slug
+North America,,na
+Europe,,eu
+United Kingdom,,uk
+France,Europe,france
+Germany,Europe,germany
+Ireland,Europe,ireland
+Italy,Europe,italy
+Norway,Europe,norway
+Switzerland,Europe,switzerland
+Netherlands,Europe,netherlands
+Florida,North America,florida
+Hawaii,North America,hawaii
+Mid-Atlantic,North America,midatlantic
+Midwest,North America,midwest
+North Central,North America,northcentral
+Northeast,North America,northeast
+Northern California,North America,norcal
+Pacific Northwest,North America,pacific-nw
+South Central,North America,southcentral
+Southeast,North America,southeast
+Southern California,North America,socal
+Southwest,North America,southwest
+England,United Kingdom,england
+Northern Ireland,United Kingdom,northern-ireland
+Scotland,United Kingdom,scotland
+Wales,United Kingdom,wales

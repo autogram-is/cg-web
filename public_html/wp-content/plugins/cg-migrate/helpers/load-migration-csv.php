@@ -1,9 +1,36 @@
 <?php
 
 function load_migration_csv($filename = NULL) {
+  if ($filename) {
+    return load_csv(CG_MIGRATE_DATA_DIR . '/' . $filename);
+  }
+  return [];
+}
+
+function write_migration_csv($filename, $items = [], $headers = NULL) {
+  if ($filename) {
+    write_csv(CG_MIGRATE_DATA_DIR . '/' . $filename, $items, $headers);
+  }
+}
+
+function load_content_csv($filename = NULL) {
+  if ($filename) {
+    return load_csv(CG_MIGRATE_CONTENT_DIR . '/' . $filename);
+  }
+  return [];
+}
+
+function write_content_csv($filename, $items = [], $headers = NULL) {
+  if ($filename) {
+    write_csv(CG_MIGRATE_CONTENT_DIR . '/' . $filename, $items, $headers);
+  }
+}
+
+
+function load_csv($filename = NULL) {
   $results = array();
   if ($filename) {
-    $datalines = file(CG_MIGRATE_DATA_DIR . '/' . $filename);
+    $datalines = file($filename);
     $header = str_getcsv($datalines[0]);
 
     $index = 0;
@@ -23,3 +50,20 @@ function load_migration_csv($filename = NULL) {
 
   return $results;
 }
+
+function write_csv($filename, $items = [], $headers = NULL) {
+  if ($filename) {
+    $fp = fopen($filename, 'w');
+
+    if ($headers) {
+      fputcsv($fp, $headers, ',', '"', '');
+    }
+    foreach ($items as $fields) {
+      fputcsv($fp, $fields, ',', '"', '');
+    }
+
+    fclose($fp);
+  }
+}
+
+
