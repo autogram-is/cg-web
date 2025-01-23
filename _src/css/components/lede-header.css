@@ -1,6 +1,5 @@
 .lede-header {
   color: var(--color-steel-shade);
-  margin-block-end: var(--space-s-m);
   max-width: 85%;
 
   &.hed-accent {
@@ -37,14 +36,6 @@
   .subhed {
     margin-block: 0;
   }
-  .lede {
-    font-weight: var(--weight-light);
-    p {
-      font-family: var(--font-display);
-      font-size: var(--size-step-1);
-      max-width: 100ch;
-    }
-  }
   a {
     text-decoration-color: transparent;
     text-underline-offset: 3px;
@@ -58,4 +49,32 @@
   .person-meta {
     margin-block-start: 0;
   }
+
+  &.lede-news,
+  &.lede-home {
+    font-weight: var(--weight-light);
+    p {
+      font-family: var(--font-display);
+      font-size: var(--size-step-1);
+      max-width: 100ch;
+    }
+  }
+
+  &.lede-home {
+    position: static;
+    &::after {
+      background: var(--color-timeless-gold);
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      margin-block-start: calc(var(--region-space, var(--space-l-xl) * 2 ));
+      height: var(--space-m);
+      width: 40vw;
+      max-width: 30rem;
+    }
+    p {
+      font-size: var(--size-step-2);
+    }
+  } 
 }
