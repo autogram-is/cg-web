@@ -67,9 +67,9 @@ function _post_fusion_converter($post, $dom, $node = null, &$chunks = []) {
         $text = $dom->saveHTML($node);
         $chunks[] = wp_kses($text, cg_allowed_markup());
       } else if ($node->tagName === 'fusion_title') {
-        $text = trim($dom->saveHTML($node));
-        if ($text !== $post->post_title) {
-          $chunks[] = '<h2>' . wp_kses($text, 'plain') . '</h2>';
+        $raw = trim($dom->saveHTML($node));
+        if (wp_strip_all_tags($raw) !== $post->post_title) {
+          $chunks[] = '<h2>' . wp_kses($raw, 'plain') . '</h2>';
         }
       }
     }
