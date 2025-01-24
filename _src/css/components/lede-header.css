@@ -75,6 +75,7 @@
     }
     p {
       font-size: var(--size-step-2);
+      font-weight: var(--weight-regular);
     }
   } 
 }

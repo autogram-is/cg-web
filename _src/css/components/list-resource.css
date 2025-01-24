@@ -6,9 +6,12 @@
   --sidebar-content-min-width: 50%;
 
   .thumb {
-    display: block;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
     img {
       width: 100%;
+      margin: auto;
     }
   }
   .type-hed {
@@ -47,7 +50,6 @@
     --gutter: 0;
     display: flex;
     flex-direction: row;
-    padding-top: var(--space-2xs);
     font-size: var(--size-step-000);
     & > * + *::before {
       content: "•";

@@ -8,7 +8,7 @@
     left: 0;
     right: 0;
     top: 0;
-    bottom: calc( var(--space-3xl) * 2 );
+    bottom: calc( var(--space-3xl) * 4 );
   }
   .gallery-inner {
     display: flex;
