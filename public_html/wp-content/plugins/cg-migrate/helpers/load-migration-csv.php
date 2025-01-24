@@ -51,7 +51,16 @@ function load_csv($filename = NULL) {
   return $results;
 }
 
-function write_csv($filename, $items = [], $headers = NULL) {
+function write_csv(string $filename, array $items = [], ?array $headers = NULL) {
+  if (!$headers) {
+    // Construct headers from the incoming items
+    $headers = [];
+    foreach ($items as $item) {
+      $headers = array_merge($headers, array_keys($item));
+      $headers = array_keys(array_flip($headers));
+    }
+  }
+
   if ($filename) {
     $fp = fopen($filename, 'w');
 

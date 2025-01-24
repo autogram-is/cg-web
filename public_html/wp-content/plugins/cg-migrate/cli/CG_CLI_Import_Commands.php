@@ -393,6 +393,8 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
     cg_export_offices();
     cg_export_bios();
     cg_export_news();
+    cg_export_events();
+    cg_export_pages();
   }
 
   /**
