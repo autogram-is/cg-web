@@ -232,9 +232,6 @@
 }
 
 .hgroup {
-  .type-pagehed {
-    margin-bottom: 0;
-  }
   .location,
   .author,
   .subhed {
@@ -243,6 +240,9 @@
     letter-spacing: var(--tracking-tight);
     font-weight: var(--weight-semibold);
     line-height: var(--leading-normal);
+  }
+  .subhed {
+    margin-block-start: 0;
   }
   .title {
     color: var(--color-deep-steel);
@@ -268,7 +268,7 @@
       content: "";
       display: block;
       width: var(--space-xl-2xl);
-      margin-block-start: var(--space-m);
+      margin-block-start: calc( var(--space-s) - 4px ); /* `--space-s` less height of accent, to align with use on `.type-hed` */
       border: var(--content-division);
     }
   }
