@@ -32,7 +32,7 @@ function cg_save_base(string $post_type, array $post_data = [], bool $use_slug =
     $id = wp_update_post($post);
     WP_CLI::log($post->post_type . " '". $post->post_title ."' (" . $post->ID . ") updated");
   } elseif ($create) {
-    $post_data = array(
+    $input = array(
       'post_type' => $post_type,
       'post_title' => sanitize_text_field($post_data['title']),
       'post_name' => sanitize_text_field($post_data['slug']),
@@ -40,7 +40,7 @@ function cg_save_base(string $post_type, array $post_data = [], bool $use_slug =
       'post_author'   => get_current_user_id(),
       'post_date'     => current_time('mysql'),    
     );
-    $id = wp_insert_post($post_data);
+    $id = wp_insert_post($input);
     $post = get_post($id);
     if ($id) {
       WP_CLI::log($post->post_type . " '". $post->post_title ."' (" . $post->ID . ") created");
@@ -50,16 +50,15 @@ function cg_save_base(string $post_type, array $post_data = [], bool $use_slug =
   // Either update or creation was successful, handle common properties shared across post types.
   if ($id) {
     // handle region
-    if(array_key_exists('region', $post_data) && $post_data['region']) {
-      $region = $post_data['region'] ? term_exists($post_data['region'], 'region') : NULL;
+    if(array_key_exists('region', $post_data)) {
+      $region = term_exists($post_data['region'], 'region');
       if ($region) {
-        wp_set_object_terms($id, (int)$region['term_id'], 'region');
+        wp_set_object_terms($id, [(int)$region['term_id']], 'region');
       }
     }
-
     // Handle core business relationships (offices, projects, sectors, services, people)    
   }
 
   // Return the ID of the post (or an error, if it couldn't be created or updated successfully)
-  return $id;
+  return get_post($id);
 }

@@ -72,7 +72,7 @@ function _populate_sectors($dry_run = false, $preserve = false) {
     if ($dry_run) {
       WP_CLI::log("Dry-Run: Sector '". $item['title'] . "' created.");
     } else {
-      $id = cg_save_sector($item, true, true);
+      cg_save_sector($item, true, true);
     }
   }
 }
@@ -99,7 +99,7 @@ function _populate_services($dry_run = false, $preserve = false) {
     if ($dry_run) {
       WP_CLI::log("Dry-Run: Service '". $item['title'] . "' created.");
     } else {
-      $id = cg_save_service($item, true, true);
+      cg_save_service($item, true, true);
     }
   }
 }
@@ -122,7 +122,7 @@ function _populate_offices($dry_run = false, $preserve = false) {
     if ($dry_run) {
       WP_CLI::log("Dry-Run: Office ". $item['title'] . "' created.");
     } else {
-      $id = cg_save_office($item, true, true);
+      cg_save_office($item, true, true);
     }
   }
 }

@@ -40,7 +40,7 @@ function cg_import_offices($dry_run = false) {
 }
 
 function cg_import_bios($dry_run = false) {
-  $items = load_content_csv('bios.csv');
+  $items = load_content_csv('people.csv');
   $updated = 0;
   $created = 0;
 

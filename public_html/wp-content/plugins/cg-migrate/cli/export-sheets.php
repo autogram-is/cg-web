@@ -142,7 +142,7 @@ function cg_export_offices($dry_run = false) {
 }
 
 function cg_export_bios($dry_run = false) {
-  $filename = 'bios.csv';
+  $filename = 'people.csv';
   $headers = [
     'id',
     'title',
