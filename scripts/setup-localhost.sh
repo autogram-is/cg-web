@@ -1,4 +1,4 @@
-wp user create admin team@autogram.is --role=administrator --allow-root
+wp user create admin localhost@autogram.is --role=administrator --allow-root
 wp user update admin --user_pass="admin" --skip-email --allow-root
 
 wp option set siteurl http://localhost --allow-root

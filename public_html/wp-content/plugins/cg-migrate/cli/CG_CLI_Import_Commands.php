@@ -57,12 +57,9 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    * [--preserve]
    * : If set, preserves old business hierarchy pages even if new ones are created.
    *
-   * [--lipsum]
-   * : If set, populates post bodies with one paragraph of Lorem Ipsum text.
-   *
    * ## EXAMPLES
    *
-   *     wp cg portfolio
+   *     wp cg hierarchy
    *
    * @param array $args
    * @param array $assoc_args

@@ -17,6 +17,11 @@ function _populate_regions($dry_run = false) {
     foreach ($items as $item) {
       if (!$item['title']) continue;
 
+      if (term_exists($item['slug'], 'region')) {
+        WP_CLI::log("Region '" . $item['title'] . "' already exists");
+        continue;
+      }
+
       // May want to change this to a custom meta field in the future
       $parent = $item['zone'] ? term_exists($item['zone'], 'region') : NULL;
       $parent_id = $parent ? $parent['term_id'] : NULL;
@@ -31,7 +36,7 @@ function _populate_regions($dry_run = false) {
       );
 
       if (is_array($term)) {
-        WP_CLI::log("Created region tag " . $term['term_id'] . " (". $item['title'] . ")");
+        WP_CLI::log("Region '" . $term['title'] . "' created (#". $item['title'] . ")");
       } else {
         WP_CLI::error($term);
       }
@@ -48,6 +53,7 @@ function _populate_sectors($dry_run = false, $preserve = false) {
   if ($dry_run) {
     WP_CLI::log("Dry-Run: ". (count($old_sectors) + count($old_eu_sectors)) ." legacy Sectors found");
   } else if (!$preserve) {
+    WP_CLI::log((count($old_sectors) + count($old_eu_sectors)) ." legacy Sectors found");
     foreach ($old_sectors as $post) {
       wp_delete_post($post->ID, true);
       WP_CLI::log("Deleted legacy Sector $post->ID");
@@ -63,28 +69,10 @@ function _populate_sectors($dry_run = false, $preserve = false) {
   foreach($items as $item) {
     if (!$item['title']) continue;
 
-    $post_data = array(
-      'post_type'     => 'sector',
-      'post_title'    => sanitize_text_field($item['title']),
-      'post_name'     => sanitize_text_field($item['slug']),
-      'locale'        => empty($item['locale']) ? NULL : $item['locale'],
-      'post_status'   => 'publish',
-      'post_author'   => get_current_user_id(),
-      'post_date'     => current_time('mysql'),
-    );
-
     if ($dry_run) {
-      WP_CLI::log("Dry-Run: ". $post_data['post_type'] ." '". $post_data['post_title'] . "' created.");
+      WP_CLI::log("Dry-Run: Sector '". $item['title'] . "' created.");
     } else {
-      $post_id = wp_insert_post($post_data, true);
-      if ($post_id) {
-        // Check $item['region'] and connect to appropriate taxonomy tag
-
-        if ($item['locale']) {
-          update_field('locale', $item['locale'], $post_id);
-        }
-        WP_CLI::log($post_data['post_type'] ." '". $post_data['post_title'] . "' ($post_id) created.");
-      }
+      $id = cg_save_sector($item, true, true);
     }
   }
 }
@@ -94,8 +82,9 @@ function _populate_services($dry_run = false, $preserve = false) {
   $old_services = get_all_child_pages(14996);
 
   if ($dry_run) {
-    WP_CLI::log("Dry-Run: ". count($old_services) ." legacy Sectors found");
+    WP_CLI::log("Dry-Run: ". count($old_services) ." legacy Services found");
   } else if (!$preserve) {
+    WP_CLI::log(count($old_services) ." legacy Services found");
     foreach ($old_services as $post) {
       wp_delete_post($post->ID, true);
       WP_CLI::log("Deleted legacy Service $post->ID");
@@ -107,28 +96,10 @@ function _populate_services($dry_run = false, $preserve = false) {
   foreach($items as $item) {
     if (!$item['title']) continue;
 
-    $post_data = array(
-      'post_type'     => 'service',
-      'post_title'    => sanitize_text_field($item['title']),
-      'post_name'     => sanitize_text_field($item['slug']),
-      'locale'        => empty($item['locale']) ? NULL : $item['locale'],
-      'post_status'   => 'publish',
-      'post_author'   => get_current_user_id(),
-      'post_date'     => current_time('mysql'),
-    );
-
     if ($dry_run) {
-      WP_CLI::log("Dry-Run: ". $post_data['post_type'] ." '". $post_data['post_title'] . "' created.");
+      WP_CLI::log("Dry-Run: Service '". $item['title'] . "' created.");
     } else {
-      $post_id = wp_insert_post($post_data, true);
-      if ($post_id) {
-        // Check $item['region'] and connect to appropriate taxonomy tag
-
-        if ($item['locale']) {
-          update_field('locale', $item['locale'], $post_id);
-        }
-        WP_CLI::log($post_data['post_type'] ." '". $post_data['post_title'] . "' ($post_id) created.");
-      }
+      $id = cg_save_service($item, true, true);
     }
   }
 }
@@ -151,8 +122,7 @@ function _populate_offices($dry_run = false, $preserve = false) {
     if ($dry_run) {
       WP_CLI::log("Dry-Run: Office ". $item['title'] . "' created.");
     } else {
-      $id = cg_save_office($item['title'], true, true);
-      WP_CLI::log("Office '". $item['post_title'] . "' ($id) created.");
+      $id = cg_save_office($item, true, true);
     }
   }
 }
