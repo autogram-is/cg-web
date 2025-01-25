@@ -43,7 +43,7 @@ function cg_clean_project_markup($post) {
   return $result;
 }
 
-function fusionTextBlocks($post = null, $dom, $node = null, &$chunks = []) {
+function fusionTextBlocks($post, $dom, $node = null, &$chunks = []) {
   if ($node) {
     if ($node->nodeType === XML_ELEMENT_NODE) {
       // Fusion Titles get converted to H2s, Fusion Text gets converted to P tags.
@@ -56,7 +56,11 @@ function fusionTextBlocks($post = null, $dom, $node = null, &$chunks = []) {
         if (wp_strip_all_tags($text) !== $post->post_title) {
           $chunks[] = '<h2>' . str_replace('\n', '', wp_kses($text, 'plain')) . '</h2>';
         }
-
+      } else if (str_starts_with($node->tagName, 'fusion_')) {
+        $ignore = ['fusion_builder_container', 'fusion_builder_row', 'fusion_builder_column', 'fusion_slider', 'fusion_table', 'fusion_separator', 'fusion_slide'];
+        if (!in_array($node->tagName, $ignore)) {
+          WP_CLI::log("  Encountered '$node->tagName' Fusion Tag in " .  $post->post_type . ' ' . $post->ID);
+        }
       }
     }
   } else {

@@ -57,6 +57,11 @@ function _post_fusion_converter($post, $dom, $node = null, &$chunks = []) {
         if (wp_strip_all_tags($raw) !== $post->post_title) {
           $chunks[] = '<h2>' . str_replace('\n', '', wp_kses($raw, 'plain')) . '</h2>';
         }
+      } else if (str_starts_with($node->tagName, 'fusion_')) {
+        $ignore = ['fusion_builder_container', 'fusion_builder_row', 'fusion_builder_column', 'fusion_slider', 'fusion_table', 'fusion_separator', 'fusion_slide'];
+        if (!in_array($node->tagName, $ignore)) {
+          WP_CLI::log("   Encountered '$node->tagName' Fusion Tag in " .  $post->post_type . ' ' . $post->ID);
+        }
       }
     }
   } else {

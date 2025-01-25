@@ -1,63 +1,63 @@
-title,slug,location,email,phone,address,region
-San Diego,san-diego,CA,,858-485-6765,"15010 Avenue of Science, Suite 100, San Diego, CA 92128",socal
-Boston,boston,MA,,857-444-6910,"330 Congress Street, 2nd Floor, Boston, MA 02210",northeast
-Cranford,cranford,NJ,,908-516-7010,"200 South Avenue East, Suite 302, Cranford, NJ 07016",northeast
-New York,new-york,NY,,212-459-1818,"900 Third Avenue, 6th Floor, New York, NY 10022",northeast
-Westport,westport,CT,,203-635-9540,"276 Post Road West, 2nd Floor, Westport, CT 06880",northeast
-Toronto,toronto,ON,,,"265 Queen Street West, 2nd Floor, Toronto, Ontario, M5H 2M5, Canada",northeast
-Belfast,belfast,Northern Ireland,,+44 (0)28 9002 0507,"605 Antrim Road, Mallusk, Belfast, BT36 4RY",northern-ireland
-Oslo,oslo,Norway,,,"St. Olavs Gate 25, 0166 Oslo, Norway",norway
-Bend,bend,OR,,458-600-1284,"2838 NW Crossing Drive, Suite 7, Bend, OR 97703",pacific-nw
-Portland,portland,OR,,503-241-8099,"6000 Meadows Road, Suite 410, Lake Oswego, OR 97035",pacific-nw
-Seattle,seattle,WA,,206-876-8008,"601 Union Street, Suite 1825, Seattle, WA 98101",pacific-nw
-Vancouver,vancouver,BC,,,"777 Hornby Street, Suite 600, Vancouver, British Columbia, V6Z 1S4",pacific-nw
-Edinburgh,edinburgh,Scotland,,+44 (0) 747 199 7848,"61 Dublin Street, Edinburgh, EH3 6NL",scotland
-Aliso Viejo,aliso-viejo,CA,,949-900-0440,"120 Vantis Drive, Suite 510, Aliso Viejo, CA 92656",socal
-Los Angeles,los-angeles,CA,,213-408-4518,"350 South Grand Avenue, Suite 1900, Los Angeles, CA 90071",socal
-Murrieta,murrieta,CA,,951-252-8555,"25220 Hancock Avenue, Suite 440, Murrieta, CA 92562",socal
-Denver,denver,CO,,303-771-0396,"88 Inverness Circle East, Building G, Suite 101, Englewood, CO 80112",northcentral
-Fort Worth,fort-worth,TX,,888-422-1882,"4200 South Hulen Street, Suite 410, Fort Worth, TX 76109",southcentral
-Houston,houston,TX,,888-422-1882,"15115 Park Row, Suite 340, Houston, TX 77084",southcentral
-Richardson,richardson,TX,,888-422-1882,"3501 Token Drive, Suite 100, Richardson, TX 75082",southcentral
-Waco,waco,TX,,254-301-7781,"913 Franklin Avenue, Suite 207, Waco, TX 76701",southcentral
-Atlanta,atlanta,GA,,470-552-4009,"211 Perimeter Center Parkway NE, Suite 120, Atlanta, GA 30346 ",southeast
-Charleston,charleston,SC,,843-203-2900,"4399 Corporate Road, Building 300, North Charleston, SC 29405",southeast
-Columbia,columbia,SC,,803-256-1989,"720 Lady Street, Columbia, SC 29201",southeast
-Raleigh,raleigh,NC,,919-237-4100,"5540 Centerview Drive, Suite 316, Raleigh, NC 27606",southeast
-Nashville,nashville,TN,,615-610-9750,"1 Music Circle South, Suite 430, Nashville, TN 37203",southeast
-Scottsdale,scottsdale,AZ,,602-801-1970,"14350 North 87th Street, Suite 275, Scottsdale, AZ 85260",southwest
-Reno,reno,NV,,775-737-9383,"200 South Virginia Street, 8th Floor, Reno, NV 89501",southwest
-Las Vegas,las-vegas,NV,,702-793-4511,"3753 Howard Hughes Parkway, Suite 200, Las Vegas, Nevada 89169",southwest
-Zurich,zurich,Switzerland,,,"Bleicherweg 10, 8002, Zürich, Switzerland",switzerland
-Cardiff,cardiff,Wales,,+44 (0)29 2035 2300,"Chandlers House, Terra Nova Way, Penarth Marina, Cardiff, CF64 1SA",wales
-Vail,vail,CO,,970-977-3010,"0101 Fawcett Road, Unit 260, Avon, CO 81620",northcentral
-Stoke-On-Trent,stoke-on-trent,England,,+44 (0) 1782 211922,"The Gatehouse, Bessemer Drive, Stoke-on-Trent, ST1 5GR",england
-Exeter,exeter,England,,,"Suite 3B, Aston Court, Pynes Hill, Exeter, EX2 5AZ",england
-Boca Raton,boca-raton,FL,,561-391-6917,"129 NW 13th Street, Boca Raton, FL 33432",florida
-Miami,miami,FL,,786-785-6500,"545 NW 26th Street, Suite 610, Miami, FL 33127",florida
-Orlando,orlando,FL,,407-258-3580,"9100 Conroy Windermere Road, Suite 200, Windermere, FL 34786",florida
-West Palm Beach,west-palm-beach,FL,,561-320-8040,"560 Village Boulevard, Suite 120, West Palm Beach, FL 33409",florida
-Paris,paris,France,,,"124 rue Réaumur, 75002, Paris, France",france
-Dusseldorf,dusseldorf,Germany,,+49 (0) 211 992 101,"Königsallee 11, 40212 Düsseldorf, Germany",germany
-Munich,munich,Germany,,+49 (0) 211 992 101,"Design Offices München, Schwabinger Tor, Leopoldstraβe 180, 80804 München, Germany",germany
-Frankfurt,frankfurt,Germany,,,"Bockenheimer Anlage 46, 60322 Frankfurt am Main, Germany",germany
-Berlin,berlin,Germany,,,"Lietzenburger Strasse 75, 10719, Berlin, Germany",germany
-Honolulu,honolulu,HI,,808-947-4525,"841 Bishop Street, Suite 725, Honolulu, HI 96813",hawaii
-Cork,cork,Ireland,,353 21 202 9255,"74 South Mall, Cork, T12 F3FD, Ireland",ireland
-Milan,milan,Italy,,,"Via San Prospero, 1, 20121, Milan, Italy",italy
-Hilversum,hilversum,Netherlands,,,"Olympia 2D, 1213 NT, Hilversum, Netherlands",netherlands
-Silicon Valley,silicon-valley,CA,,408-246-6327,"4020 Moorpark Avenue, Suite 220, San Jose, CA 95117",norcal
-San Francisco,san-francisco,CA,,415-748-3080,"475 Sansome Street, Suite 700, San Francisco, CA 94111",norcal
-Sacramento,sacramento,CA,,916-660-9030,"3400 Douglas Boulevard, Suite 120, Roseville, CA 95661",norcal
-Oakland,oakland,CA,,510-906-2123,"1111 Broadway, Suite 300, Oakland, CA 94607",norcal
-Mountain View,mountain-view,CA,,650-324-5324,"201 Moffett Boulevard, Mountain View, CA 94043",norcal
-Concord,concord,CA,,925-671-7717,"3230 Monument Way, Concord, CA 94518",norcal
-Santa Rosa,santa-rosa,,,,,norcal
-Chicago,chicago,IL,,708-967-3571,"1 North LaSalle Street, Suite 1910, Chicago, IL 60602",midwest
-"Washington, D.C.",washington-dc,,,301-968-8880,"4550 Montgomery Avenue, Suite 350N, Bethesda, MD 20814",midatlantic
-Dublin,dublin,Ireland,,353 1 518 0800,"One West Pier Business Campus, Dun Laoghaire, Co.Dublin, A96 F8C0, Ireland",ireland
-London,london,England,,+44 (0) 20 7323 6809,"1 Fellmongers Path, Tower Bridge Road, London, SE1 3LY",england
-Manchester,manchester,England,,+44 (0) 161 503 9080,"31 Booth Street, Manchester, M2 4AF",england
-Chesterfield,chesterfield,England,,,"9 Royal Court, Basil Close, Chesterfield, S41 7SL",england
-Birmingham,birmingham,England,,,"87 Caroline Street, Birmingham, B3 1UP",england
-Buckingham,buckingham,England,,,"Units 11 & 12, Apollo Office Court, Radclive Road, Gawcott, Buckingham, MK18 4DF",england
+title,slug,location,email,phone,address,region,migration_status,migration_note
+"Silicon Valley",silicon-valley,CA,,408-246-6327,"4020 Moorpark Avenue, Suite 220, San Jose, CA 95117",norcal,needs-review,
+Stoke-On-Trent,stoke-on-trent,England,,"+44 (0) 1782 211922","The Gatehouse, Bessemer Drive, Stoke-on-Trent, ST1 5GR",england,needs-review,
+Exeter,exeter,England,,,"Suite 3B, Aston Court, Pynes Hill, Exeter, EX2 5AZ",england,needs-review,
+"Boca Raton",boca-raton,FL,,561-391-6917,"129 NW 13th Street, Boca Raton, FL 33432",florida,needs-review,
+Miami,miami,FL,,786-785-6500,"545 NW 26th Street, Suite 610, Miami, FL 33127",florida,needs-review,
+Orlando,orlando,FL,,407-258-3580,"9100 Conroy Windermere Road, Suite 200, Windermere, FL 34786",florida,needs-review,
+"West Palm Beach",west-palm-beach,FL,,561-320-8040,"560 Village Boulevard, Suite 120, West Palm Beach, FL 33409",florida,needs-review,
+Paris,paris,France,,,"124 rue Réaumur, 75002, Paris, France",france,needs-review,
+Dusseldorf,dusseldorf,Germany,,"+49 (0) 211 992 101","Königsallee 11, 40212 Düsseldorf, Germany",germany,needs-review,
+Munich,munich,Germany,,"+49 (0) 211 992 101","Design Offices München, Schwabinger Tor, Leopoldstraβe 180, 80804 München, Germany",germany,needs-review,
+Frankfurt,frankfurt,Germany,,,"Bockenheimer Anlage 46, 60322 Frankfurt am Main, Germany",germany,needs-review,
+Berlin,berlin,Germany,,,"Lietzenburger Strasse 75, 10719, Berlin, Germany",germany,needs-review,
+Honolulu,honolulu,HI,,808-947-4525,"841 Bishop Street, Suite 725, Honolulu, HI 96813",hawaii,needs-review,
+Cork,cork,Ireland,,"353 21 202 9255","74 South Mall, Cork, T12 F3FD, Ireland",ireland,needs-review,
+Milan,milan,Italy,,,"Via San Prospero, 1, 20121, Milan, Italy",italy,needs-review,
+Hilversum,hilversum,Netherlands,,,"Olympia 2D, 1213 NT, Hilversum, Netherlands",netherlands,needs-review,
+Vail,vail,CO,,970-977-3010,"0101 Fawcett Road, Unit 260, Avon, CO 81620",northcentral,needs-review,
+"San Francisco",san-francisco,CA,,415-748-3080,"475 Sansome Street, Suite 700, San Francisco, CA 94111",norcal,needs-review,
+Sacramento,sacramento,CA,,916-660-9030,"3400 Douglas Boulevard, Suite 120, Roseville, CA 95661",norcal,needs-review,
+Oakland,oakland,CA,,510-906-2123,"1111 Broadway, Suite 300, Oakland, CA 94607",norcal,needs-review,
+"Mountain View",mountain-view,CA,,650-324-5324,"201 Moffett Boulevard, Mountain View, CA 94043",norcal,needs-review,
+Concord,concord,CA,,925-671-7717,"3230 Monument Way, Concord, CA 94518",norcal,needs-review,
+"Santa Rosa",santa-rosa,,,,,norcal,needs-review,
+Chicago,chicago,IL,,708-967-3571,"1 North LaSalle Street, Suite 1910, Chicago, IL 60602",midwest,needs-review,
+"Washington, D.C.",washington-dc,,,301-968-8880,"4550 Montgomery Avenue, Suite 350N, Bethesda, MD 20814",midatlantic,needs-review,
+Dublin,dublin,Ireland,,"353 1 518 0800","One West Pier Business Campus, Dun Laoghaire, Co.Dublin, A96 F8C0, Ireland",ireland,needs-review,
+London,london,England,,"+44 (0) 20 7323 6809","1 Fellmongers Path, Tower Bridge Road, London, SE1 3LY",england,needs-review,
+Manchester,manchester,England,,"+44 (0) 161 503 9080","31 Booth Street, Manchester, M2 4AF",england,needs-review,
+Chesterfield,chesterfield,England,,,"9 Royal Court, Basil Close, Chesterfield, S41 7SL",england,needs-review,
+Birmingham,birmingham,England,,,"87 Caroline Street, Birmingham, B3 1UP",england,needs-review,
+Buckingham,buckingham,England,,,"Units 11 & 12, Apollo Office Court, Radclive Road, Gawcott, Buckingham, MK18 4DF",england,needs-review,
+Cardiff,cardiff,Wales,,"+44 (0)29 2035 2300","Chandlers House, Terra Nova Way, Penarth Marina, Cardiff, CF64 1SA",wales,needs-review,
+Bend,bend,OR,,458-600-1284,"2838 NW Crossing Drive, Suite 7, Bend, OR 97703",pacific-nw,needs-review,
+Portland,portland,OR,,503-241-8099,"6000 Meadows Road, Suite 410, Lake Oswego, OR 97035",pacific-nw,needs-review,
+Seattle,seattle,WA,,206-876-8008,"601 Union Street, Suite 1825, Seattle, WA 98101",pacific-nw,needs-review,
+Vancouver,vancouver,BC,,,"777 Hornby Street, Suite 600, Vancouver, British Columbia, V6Z 1S4",pacific-nw,needs-review,
+Edinburgh,edinburgh,Scotland,,"+44 (0) 747 199 7848","61 Dublin Street, Edinburgh, EH3 6NL",scotland,needs-review,
+"Aliso Viejo",aliso-viejo,CA,,949-900-0440,"120 Vantis Drive, Suite 510, Aliso Viejo, CA 92656",socal,needs-review,
+"Los Angeles",los-angeles,CA,,213-408-4518,"350 South Grand Avenue, Suite 1900, Los Angeles, CA 90071",socal,needs-review,
+Murrieta,murrieta,CA,,951-252-8555,"25220 Hancock Avenue, Suite 440, Murrieta, CA 92562",socal,needs-review,
+Denver,denver,CO,,303-771-0396,"88 Inverness Circle East, Building G, Suite 101, Englewood, CO 80112",northcentral,needs-review,
+"Fort Worth",fort-worth,TX,,888-422-1882,"4200 South Hulen Street, Suite 410, Fort Worth, TX 76109",southcentral,needs-review,
+Houston,houston,TX,,888-422-1882,"15115 Park Row, Suite 340, Houston, TX 77084",southcentral,needs-review,
+Waco,waco,TX,,254-301-7781,"913 Franklin Avenue, Suite 207, Waco, TX 76701",southcentral,needs-review,
+Zurich,zurich,Switzerland,,,"Bleicherweg 10, 8002, Zürich, Switzerland",switzerland,needs-review,
+"Las Vegas",las-vegas,NV,,702-793-4511,"3753 Howard Hughes Parkway, Suite 200, Las Vegas, Nevada 89169",southwest,needs-review,
+Reno,reno,NV,,775-737-9383,"200 South Virginia Street, 8th Floor, Reno, NV 89501",southwest,needs-review,
+Scottsdale,scottsdale,AZ,,602-801-1970,"14350 North 87th Street, Suite 275, Scottsdale, AZ 85260",southwest,needs-review,
+Nashville,nashville,TN,,615-610-9750,"1 Music Circle South, Suite 430, Nashville, TN 37203",southeast,needs-review,
+Raleigh,raleigh,NC,,919-237-4100,"5540 Centerview Drive, Suite 316, Raleigh, NC 27606",southeast,needs-review,
+Columbia,columbia,SC,,803-256-1989,"720 Lady Street, Columbia, SC 29201",southeast,needs-review,
+Charleston,charleston,SC,,843-203-2900,"4399 Corporate Road, Building 300, North Charleston, SC 29405",southeast,needs-review,
+Atlanta,atlanta,GA,,470-552-4009,"211 Perimeter Center Parkway NE, Suite 120, Atlanta, GA 30346 ",southeast,needs-review,
+Richardson,richardson,TX,,888-422-1882,"3501 Token Drive, Suite 100, Richardson, TX 75082",southcentral,needs-review,
+"San Diego",san-diego,CA,,858-485-6765,"15010 Avenue of Science, Suite 100, San Diego, CA 92128",socal,needs-review,
+Oslo,oslo,Norway,,,"St. Olavs Gate 25, 0166 Oslo, Norway",norway,needs-review,
+Belfast,belfast,"Northern Ireland",,"+44 (0)28 9002 0507","605 Antrim Road, Mallusk, Belfast, BT36 4RY",northern-ireland,needs-review,
+Toronto,toronto,ON,,,"265 Queen Street West, 2nd Floor, Toronto, Ontario, M5H 2M5, Canada",northeast,needs-review,
+Westport,westport,CT,,203-635-9540,"276 Post Road West, 2nd Floor, Westport, CT 06880",northeast,needs-review,
+"New York",new-york,NY,,212-459-1818,"900 Third Avenue, 6th Floor, New York, NY 10022",northeast,needs-review,
+Cranford,cranford,NJ,,908-516-7010,"200 South Avenue East, Suite 302, Cranford, NJ 07016",northeast,needs-review,
+Boston,boston,MA,,857-444-6910,"330 Congress Street, 2nd Floor, Boston, MA 02210",northeast,needs-review,
