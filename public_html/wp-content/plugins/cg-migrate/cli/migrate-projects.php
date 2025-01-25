@@ -37,13 +37,13 @@ function cg_clean_project_markup($post) {
 
   $result = [];
   $result['raw'] = $post->post_content;
-  $result['body'] = join(PHP_EOL, fusionTextBlocks($dom));
+  $result['body'] = join(PHP_EOL, fusionTextBlocks($post, $dom));
   $result['facts'] = projectFactTable($dom);
 
   return $result;
 }
 
-function fusionTextBlocks($dom, $node = null, &$chunks = []) {
+function fusionTextBlocks($post = null, $dom, $node = null, &$chunks = []) {
   if ($node) {
     if ($node->nodeType === XML_ELEMENT_NODE) {
       // Fusion Titles get converted to H2s, Fusion Text gets converted to P tags.
@@ -53,7 +53,10 @@ function fusionTextBlocks($dom, $node = null, &$chunks = []) {
         $chunks[] = wp_kses($text, cg_allowed_markup());
       } else if ($node->tagName === 'fusion_title') {
         $text = trim($dom->saveHTML($node));
-        $chunks[] = '<h2>' . str_replace('\n', '', wp_kses($text, 'plain')) . '</h2>';
+        if (wp_strip_all_tags($text) !== $post->post_title) {
+          $chunks[] = '<h2>' . str_replace('\n', '', wp_kses($text, 'plain')) . '</h2>';
+        }
+
       }
     }
   } else {
@@ -62,7 +65,7 @@ function fusionTextBlocks($dom, $node = null, &$chunks = []) {
 
   // Recursively traverse child nodes
   foreach ($node->childNodes as $child) {
-    fusionTextBlocks($dom, $child, $chunks);
+    fusionTextBlocks($post, $dom, $child, $chunks);
   }
   return $chunks;
 }

@@ -80,9 +80,9 @@ function _process_podcast($post, $dry_run) {
   // Strip duplicative heading and buzzsprout shortcode; migration spreadsheet has podcast IDs.
   $text = $post->post_content;
 
-  $text = preg_replace("/<h2>\s+(The )?Construction Insiders[\d\w\s\:]+Episode \d+\s+<\/h2>/", '', $text);
+  $text = preg_replace("/<h2>\s+(The )?Construction Insiders[\d\w\s\:,]+Episode \d+\s+<\/h2>/", '', $text);
   $text = preg_replace("/<h2>\s+Overview\s+<\/h2>/", '', $text);
-  $text = preg_replace("/<h2>\s+Podcast Transcript\s+<\/h2>/", '', '<h2>Episode Transcript</h2>');
+  $text = preg_replace("/<h2>\s+Podcast Transcript\s+<\/h2>/", '<h2>Episode Transcript</h2>', $text);
   $text = preg_replace("/\[buzzsprout [^]]*\]/", '', $text);
 
   if (strlen(trim($text)) > 0) {
