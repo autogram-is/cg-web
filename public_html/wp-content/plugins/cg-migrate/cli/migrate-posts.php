@@ -1,11 +1,16 @@
 <?php
 
 function cg_migrate_post($post, $dry_run = false) {
+  // First, clean up the Fusion Text cruft
+  $raw = $post->post_content;
+  $dom = cg_get_cleaned_dom($raw);
+  $cleaned = trim(join(PHP_EOL, _post_fusion_converter($post, $dom)));
+  $post->post_content = $cleaned;
+
   $taxonomies = get_post_taxonomies($post->ID);
   $tags = wp_get_post_terms($post->ID, $taxonomies);
   $meta = get_post_meta($post->ID);
 
-  // 
   foreach($tags as $tag) {
     if (in_array($tag->term_taxonomy_id, [335, 461])) {
       // Podcast episodes. Extract ID, episode number, guests.
@@ -13,12 +18,14 @@ function cg_migrate_post($post, $dry_run = false) {
 
     } else if (in_array($tag->term_taxonomy_id, [340, 463])) {
       // Case study. Hide and remap to project metadata manually.
+      
 
-    } else if (in_array($tag->term_taxonomy_id, [35, 469])) {
+    } else if (in_array($tag->term_taxonomy_id, [355, 469])) {
       // Events. Extract time, attendees, location. Convert to event.
+      $post->post_type = 'event';
 
     } else if (in_array($tag->term_taxonomy_id, [3, 464])) {
-      // Presss Release. Extract CTA form. Possibly convert About Cumming and CTA.
+      // Press Release. Extract CTA form. Possibly convert About Cumming and CTA.
 
     } else if (in_array($tag->term_taxonomy_id, [2, 459, 220])) {
       // News. Extract byline, publication, publication date.
@@ -29,33 +36,12 @@ function cg_migrate_post($post, $dry_run = false) {
     }
   }
 
-  // Fallback case — just grab titles and texts from Fusion
-  $raw = $post->post_content;
-  $dom = cg_get_cleaned_dom($raw);
-  $cleaned = trim(join(PHP_EOL, _post_fusion_converter($post, $dom)));
-
   if (!$dry_run && !empty($cleaned)) {
-    $post->post_content = $cleaned;
-
     wp_update_post($post);
     cg_save_migration_body($post->ID, $raw);
+    clean_post_cache($post->ID);
+    WP_CLI::log(($dry_run ? "Dry Run: " : "")  . $post->post_type . " #$post->ID ($post->post_title) processed");
   }
-  
-  // 'Events Hosted By Others' (map to events, or delete?)
-
-  // Webinars
-
-  // Press Releases
-  // Split dateline to separate field, remove attached PDF
-
-  // News / Other News (articles reprinted from third-party sources)
-  
-  // Podcasts
-
-  // Blog
-  // Bylines/Authors
-
-  WP_CLI::log(($dry_run ? "Dry Run: " : "") . "Post #$post->ID ($post->post_title) processed");
 }
 
 function _post_fusion_converter($post, $dom, $node = null, &$chunks = []) {
@@ -69,7 +55,7 @@ function _post_fusion_converter($post, $dom, $node = null, &$chunks = []) {
       } else if ($node->tagName === 'fusion_title') {
         $raw = trim($dom->saveHTML($node));
         if (wp_strip_all_tags($raw) !== $post->post_title) {
-          $chunks[] = '<h2>' . wp_kses($raw, 'plain') . '</h2>';
+          $chunks[] = '<h2>' . str_replace('\n', '', wp_kses($raw, 'plain')) . '</h2>';
         }
       }
     }
@@ -92,16 +78,17 @@ function _process_news($post, $dry_run) {
 
 function _process_podcast($post, $dry_run) {
   // Strip duplicative heading and buzzsprout shortcode; migration spreadsheet has podcast IDs.
-  if (!$dry_run) {
-    $post->post_body = preg_replace("<\w+>\w+\s+Construction Insiders.*Episode \d+(</br>)?<\/\w+>", '', $post->post_body);
-    $post->post_body = preg_replace("<p>\[buzzsprout\s+episode='(\d+)'.*\]</p>", '', $post->post_body);  
-  }
-}
+  $text = $post->post_content;
 
-function _process_event_post($post, $dry_run) {
-  if (!$dry_run) {
-    set_post_type($post->ID, 'event');
-    wp_set_object_terms($post->ID, [], ['category']);
+  $text = preg_replace("/<h2>\s+(The )?Construction Insiders[\d\w\s\:]+Episode \d+\s+<\/h2>/", '', $text);
+  $text = preg_replace("/<h2>\s+Overview\s+<\/h2>/", '', $text);
+  $text = preg_replace("/<h2>\s+Podcast Transcript\s+<\/h2>/", '', '<h2>Episode Transcript</h2>');
+  $text = preg_replace("/\[buzzsprout [^]]*\]/", '', $text);
+
+  if (strlen(trim($text)) > 0) {
+    $post->post_content = $text;
+  } else {
+    WP_CLI::log($post->ID ." regex broke");
   }
 }
 

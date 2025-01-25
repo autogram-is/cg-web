@@ -51,6 +51,9 @@ function fusionTextBlocks($dom, $node = null, &$chunks = []) {
       if ($node->tagName === 'fusion_text') {
         $text = $dom->saveHTML($node);
         $chunks[] = wp_kses($text, cg_allowed_markup());
+      } else if ($node->tagName === 'fusion_title') {
+        $text = trim($dom->saveHTML($node));
+        $chunks[] = '<h2>' . str_replace('\n', '', wp_kses($text, 'plain')) . '</h2>';
       }
     }
   } else {

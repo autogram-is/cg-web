@@ -27,7 +27,7 @@
             "default_value": false,
             "return_format": "value",
             "multiple": 0,
-            "allow_null": 0,
+            "allow_null": 1,
             "allow_in_bindings": 0,
             "ui": 0,
             "ajax": 0,
@@ -83,16 +83,58 @@
     "location": [
         [
             {
-                "param": "user_role",
+                "param": "post_type",
                 "operator": "==",
-                "value": "editor"
+                "value": "post"
             }
         ],
         [
             {
-                "param": "user_role",
+                "param": "post_type",
                 "operator": "==",
-                "value": "administrator"
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "office"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "person"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "project"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "sector"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "service"
             }
         ]
     ],
@@ -105,5 +147,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1737760297
+    "modified": 1737760748
 }

@@ -36,11 +36,10 @@ function _populate_regions($dry_run = false) {
       );
 
       if (is_array($term)) {
-        WP_CLI::log("Region '" . $term['title'] . "' created (#". $item['title'] . ")");
+        WP_CLI::log("Region '" . $item['title'] . "' created (#". $term['term_id'] . ")");
       } else {
         WP_CLI::error($term);
       }
-
     }
   }
 }

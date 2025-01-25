@@ -1,136 +1,136 @@
-term_id,taxonomy,slug,name,count,new_type,new_slug,action,notes
-335,category,podcast,Podcast,22,,,KEEP,
-336,category,white-paper,White Paper,23,,,REMOVE,These posts are all old and unpublished; delete entirely?
-340,category,case-study,Case Study,14,,,REMOVE,These need manual merging with related projects
-345,category,aia-courses,AIA Courses,3,,,REMOVE,
-348,category,covid19-impacts,COVID-19 Impacts,11,,,REMOVE,
-351,category,webinar,Webinar,2,,,REMOVE,
-355,category,events-hosted-by-others,Events Hosted by Others,36,,,REMOVE,"Migrate to the 'event' post type, and untag"
-360,category,chicago-white-papers,Chicago White Papers,5,,,REMOVE,These posts are all old and unpublished; delete entirely?
-361,category,chicago-news,Chicago News,7,office,chicago,RELATIONSHIP,Connect to Chicago office and untag
-364,category,sponsorships,Sponsorships,32,,,REMOVE,Preserve news announcement but remove category
-366,category,continuing-education,Continuing Education,0,,,REMOVE,
-367,category,rics-courses,RICS Courses,4,,,REMOVE,
-369,category,expert-insiders-blog,Expert Insiders Blog,26,category,blog,RETAG,
-373,category,why-cumming,Why Cumming,8,,,REMOVE,These posts will likely be rewritten
-374,category,internship-program,Internship Program,4,,,REMOVE,These posts will likely be archived
-425,category,boston,Boston,2,office,boston,RELATIONSHIP,
-426,category,office-boston-blog,Office - Boston - Blog,1,office,boston,RELATIONSHIP,
-499,category,blog,Blog,11,,,KEEP,
-519,category,uncategorized-en-gb,Uncategorized,0,,,REMOVE,
-1,category,uncategorized,Uncategorized,15,,,REMOVE,
-2,category,news,News,282,,,KEEP,
-3,category,press-releases,Press Releases,86,,,KEEP,
-4,category,region,Region,0,,,REMOVE,
-5,category,region-west,West,84,,,,Needs individual attention; new regions are more granular
-6,category,region-east,East,111,,,,Needs individual attention; new regions are more granular
-7,category,region-international,International,25,region,europe,RELATIONSHIP,
-220,category,other-news,Other News,38,category,news,RETAG,
-459,news_and_insights,news,News,109,category,news,RETAG,
-460,news_and_insights,blog,Blog,39,category,blog,RETAG,
-461,news_and_insights,podcast,Podcast,22,category,podcast,RETAG,
-462,news_and_insights,white-paper,White Paper,7,,,REMOVE,
-463,news_and_insights,case-study,Case Study,15,,,,
-464,news_and_insights,press-release,Press Release,43,category,press-release,RETAG,
-465,news_and_insights,cumming-insights,Cumming Insights,0,,,,
-466,news_and_insights,other_news,Other,0,category,news,RETAG,
-468,news_and_insights,expert-insights-blog,Expert Insights Blog,0,categrory,blog,RETAG,
-469,news_and_insights,events,Events,36,,,REMOVE,
-438,news_region,us_west,US — West,96,region,us-northwest,RELATIONSHIP,
-439,news_region,us_east,US — East,48,region,us-northeast,RELATIONSHIP,
-440,news_region,us_central,US — Central,63,region,us-northcentral,RELATIONSHIP,
-441,news_region,europe_uk,Europe — UK,25,region,europe,RELATIONSHIP,
-442,news_region,other_region,Other,25,,,REMOVE,
-443,news_topics,aviation,Aviation,1,sector,transportation,RELATIONSHIP,
-444,news_topics,corporate,Corporate,0,,,REMOVE,
-445,news_topics,culture_arts,Culture & Arts,3,sector,culture-non-profit,RELATIONSHIP,
-446,news_topics,gaming,Gaming,0,sector,hospitality-gaming,RELATIONSHIP,
-447,news_topics,healthcare,Healthcare,15,sector,healthcare,RELATIONSHIP,
-448,news_topics,higher-education,Higher Education,6,sector,higher-education,RELATIONSHIP,
-449,news_topics,hospitality,Hospitality,5,sector,hospitality-gaming,RELATIONSHIP,
-450,news_topics,industrial,Industrial,0,,,REMOVE,
-451,news_topics,k-12-education,K-12 Education,13,sector,k-12-education,RELATIONSHIP,
-452,news_topics,luxury-residential,Luxury Residential,0,sector,luxury-residential,RELATIONSHIP,
-453,news_topics,mission-critical,Mission Critical,0,,,REMOVE,
-454,news_topics,mixed-use,Mixed-use,2,,,REMOVE,
-455,news_topics,retail,Retail,1,sector,retail,RELATIONSHIP,
-456,news_topics,themed-entertainment,Themed Entertainment,3,sector,themed-entertainment,RELATIONSHIP,
-457,news_topics,other_topic,Other,44,,,REMOVE,
-458,news_topics,energy-sustainability,Energy & Sustainability,6,service,energy-sustainability-solutions,RELATIONSHIP,
-467,news_topics,life-science,Life Science,4,sector,life-sciences,RELATIONSHIP,
-867,news_topics,manufacturing,Manufacturing,1,sector,infrastructure,RELATIONSHIP,
-397,post_tag,los-angeles,Los Angeles,7,office,los-angeles,RELATIONSHIP,
-398,post_tag,nashville,Nashville,4,office,nashville,RELATIONSHIP,
-399,post_tag,san-diego,San Diego,4,office,san-diego,RELATIONSHIP,
-400,post_tag,boston,Boston,4,office,boston,RELATIONSHIP,
-401,post_tag,chicago,Chicago,7,office,chicago,RELATIONSHIP,
-402,post_tag,las-vegas,Las Vegas,4,office,las-vegas,RELATIONSHIP,
-403,post_tag,sacramento,Sacramento,1,office,sacramento,RELATIONSHIP,
-404,post_tag,aliso-viejo,Aliso Viejo,2,office,aliso-viejo,RELATIONSHIP,
-405,post_tag,murrieta,Murrieta,1,office,murrieta,RELATIONSHIP,
-406,post_tag,oakland,Oakland,1,office,oakland,RELATIONSHIP,
-407,post_tag,san-francisco,San Francisco,1,office,san-francisco,RELATIONSHIP,
-408,post_tag,san-jose,San Jose,1,office,san-jose,RELATIONSHIP,
-409,post_tag,scottsdale,Scottsdale,1,office,scottsdale,RELATIONSHIP,
-472,post_tag,golf-tournament,Golf Tournament,3,,,REMOVE,
-473,post_tag,healthcare,Healthcare,10,sector,healthcare,RELATIONSHIP,
-474,post_tag,higher-education,Higher Education,4,sector,higher-education,RELATIONSHIP,
-475,post_tag,colorado,Colorado,6,office,denver,RELATIONSHIP,
-476,post_tag,dra,DRA,3,service,dispute-resolution-avoidance,RELATIONSHIP,
-477,post_tag,dispute-resolution-and-avoidance,Dispute Resolution and Avoidance,3,service,dispute-resolution-avoidance,RELATIONSHIP,
-478,post_tag,memphis,Memphis,1,office,memphis,RELATIONSHIP,
-479,post_tag,aba-forum,ABA Forum,3,,,REMOVE,
-480,post_tag,dallas,Dallas,3,office,fort-worth,RELATIONSHIP,
-481,post_tag,uli,ULI,4,,,REMOVE,
-482,post_tag,urban-land-institute,Urban Land Institute,1,,,REMOVE,
-483,post_tag,themed-entertainment,Themed Entertainment,1,sector,themed-entertainment,RELATIONSHIP,
-484,post_tag,orlando,Orlando,4,office,orlando,RELATIONSHIP,
-485,post_tag,iaapa,IAAPA,1,,,REMOVE,
-486,post_tag,life-sciences,Life Sciences,1,sector,life-sciences,RELATIONSHIP,
-487,post_tag,phoenix,Phoenix,1,office,phoenix,RELATIONSHIP,
-488,post_tag,new-york,New York,6,office,new-york,RELATIONSHIP,
-489,post_tag,hospitality,Hospitality,6,sector,hospitality-gaming,RELATIONSHIP,
-490,post_tag,toronto,Toronto,0,office,toronto,RELATIONSHIP,
-491,post_tag,long-beach,Long Beach,1,,,,
-496,post_tag,washington-d-c,Washington D.C.,3,office,washington-dc,RELATIONSHIP,
-497,post_tag,texas,Texas,0,,,REMOVE,"Possibly remap to a Texas office, or the southwest region?"
-8,post_tag,artwork,Artwork,0,,,REMOVE,
-10,post_tag,design,Design,4,,,REMOVE,
-11,post_tag,photo,Photo,0,,,REMOVE,
-12,post_tag,slideshow,Slideshow,0,,,REMOVE,
-13,post_tag,video,Video,0,,,REMOVE,
-14,post_tag,videos,Videos,0,,,REMOVE,
-150,post_tag,events,Events,0,,,REMOVE,
-151,post_tag,indoors,Indoors,0,,,REMOVE,
-152,post_tag,modern,Modern,0,,,REMOVE,
-153,post_tag,outdoors,Outdoors,0,,,REMOVE,
-154,post_tag,sales,Sales,0,,,REMOVE,
-155,post_tag,trends,Trends,0,,,REMOVE,
-897,post_tag,gaming,Gaming,2,sector,hospitality-gaming,RELATIONSHIP,
-906,post_tag,california,California,2,,,,
-895,post_tag,seattle,Seattle,1,office,seattle,RELATIONSHIP,
-894,post_tag,aviation,Aviation,2,sector,transportation,RELATIONSHIP,
-893,post_tag,technology,technology,1,,,,
-892,post_tag,data-centers,Data centers,1,sector,data-centers,RELATIONSHIP,
-891,post_tag,design-build,Design-Build,1,,,,
-889,post_tag,project-delivery,Project Delivery,1,,,,
-888,post_tag,dbia,DBIA,1,,,REMOVE,
-885,post_tag,independent-schools,Independent Schools,1,sector,higher-education,RELATIONSHIP,
-914,post_tag,community-colleges,community colleges,1,sector,higher-education,RELATIONSHIP,
-913,post_tag,tribal-gaming,Tribal gaming,1,sector,hospitality-gaming,RELATIONSHIP,
-909,post_tag,ipd,IPD,1,,,REMOVE,
-862,post_tag,construction,construction,0,,,REMOVE,
-864,post_tag,education,Education,6,sector,hospitality-gaming,RELATIONSHIP,
-865,post_tag,south-carolina,South Carolina,7,office,columbia,RELATIONSHIP,
-866,post_tag,k-12,K-12,6,sector,k-12-education,RELATIONSHIP,
-869,post_tag,scup,SCUP,1,,,REMOVE,
-870,post_tag,university,University,2,sector,higher-education,RELATIONSHIP,
-872,post_tag,philadelphia,Philadelphia,1,office,philadelphia,RELATIONSHIP,
-908,post_tag,transportation,Transportation,1,sector,transportation,RELATIONSHIP,
-907,post_tag,municipal,Municipal,1,sector,public-sector,RELATIONSHIP,
-878,post_tag,sustainability,Sustainability,1,services,energy-sustainability-solutions,RELATIONSHIP,
-879,post_tag,real-estate,Real Estate,1,,,REMOVE,
-881,post_tag,luxury-hospitality,Luxury Hospitality,2,sector,luxury-hospitality,RELATIONSHIP,
-883,post_tag,k-12-education,K-12 Education,1,sector,k-12-education,RELATIONSHIP,
-884,post_tag,new-jersey,New Jersey,2,office,cranford,RELATIONSHIP,
-886,post_tag,finance-and-officers,Finance and Officers,1,,,REMOVE,
+"term_id","taxonomy","slug","name","count","new_type","new_slug","action","notes"
+"335","category","podcast","Podcast","22","","","KEEP",""
+"336","category","white-paper","White Paper","23","","","REMOVE","These posts are all old and unpublished; delete entirely?"
+"340","category","case-study","Case Study","14","","","REMOVE","These need manual merging with related projects"
+"345","category","aia-courses","AIA Courses","3","","","REMOVE",""
+"348","category","covid19-impacts","COVID-19 Impacts","11","","","REMOVE",""
+"351","category","webinar","Webinar","2","","","REMOVE",""
+"355","category","events-hosted-by-others","Events Hosted by Others","36","","","REMOVE","Migrate to the event post type and untag"
+"360","category","chicago-white-papers","Chicago White Papers","5","","","REMOVE","These posts are all old and unpublished; delete entirely?"
+"361","category","chicago-news","Chicago News","7","office","chicago","RELATIONSHIP","Connect to Chicago office and untag"
+"364","category","sponsorships","Sponsorships","32","","","REMOVE","Preserve news announcement but remove category"
+"366","category","continuing-education","Continuing Education","0","","","REMOVE",""
+"367","category","rics-courses","RICS Courses","4","","","REMOVE",""
+"369","category","expert-insiders-blog","Expert Insiders Blog","26","category","blog","RETAG",""
+"373","category","why-cumming","Why Cumming","8","","","REMOVE","These posts will likely be rewritten"
+"374","category","internship-program","Internship Program","4","","","REMOVE","These posts will likely be archived"
+"425","category","boston","Boston","2","office","boston","RELATIONSHIP",""
+"426","category","office-boston-blog","Office - Boston - Blog","1","office","boston","RELATIONSHIP",""
+"499","category","blog","Blog","11","","","KEEP",""
+"519","category","uncategorized-en-gb","Uncategorized","0","","","REMOVE",""
+"1","category","uncategorized","Uncategorized","15","","","REMOVE",""
+"2","category","news","News","282","","","KEEP",""
+"3","category","press-releases","Press Releases","86","","","KEEP",""
+"4","category","region","Region","0","","","REMOVE",""
+"5","category","region-west","West","84","","","REMOVE","Needs individual attention; new regions are more granular"
+"6","category","region-east","East","111","","","REMOVE","Needs individual attention; new regions are more granular"
+"7","category","region-international","International","25","","","REMOVE",""
+"220","category","other-news","Other News","38","category","news","RETAG",""
+"459","news_and_insights","news","News","109","category","news","RETAG",""
+"460","news_and_insights","blog","Blog","39","category","blog","RETAG",""
+"461","news_and_insights","podcast","Podcast","22","category","podcast","RETAG",""
+"462","news_and_insights","white-paper","White Paper","7","","","REMOVE",""
+"463","news_and_insights","case-study","Case Study","15","","","",""
+"464","news_and_insights","press-release","Press Release","43","category","press-release","RETAG",""
+"465","news_and_insights","cumming-insights","Cumming Insights","0","","","",""
+"466","news_and_insights","other_news","Other","0","category","news","RETAG",""
+"468","news_and_insights","expert-insights-blog","Expert Insights Blog","0","categrory","blog","RETAG",""
+"469","news_and_insights","events","Events","36","","","REMOVE",""
+"438","news_region","us_west","US — West","96","region","northwest","RELATIONSHIP",""
+"439","news_region","us_east","US — East","48","region","northeast","RELATIONSHIP",""
+"440","news_region","us_central","US — Central","63","region","northcentral","RELATIONSHIP",""
+"441","news_region","europe_uk","Europe — UK","25","region","uk","RELATIONSHIP",""
+"442","news_region","other_region","Other","25","","","REMOVE",""
+"443","news_topics","aviation","Aviation","1","sector","transportation","RELATIONSHIP",""
+"444","news_topics","corporate","Corporate","0","","","REMOVE",""
+"445","news_topics","culture_arts","Culture & Arts","3","sector","culture-non-profit","RELATIONSHIP",""
+"446","news_topics","gaming","Gaming","0","sector","hospitality-gaming","RELATIONSHIP",""
+"447","news_topics","healthcare","Healthcare","15","sector","healthcare","RELATIONSHIP",""
+"448","news_topics","higher-education","Higher Education","6","sector","higher-education","RELATIONSHIP",""
+"449","news_topics","hospitality","Hospitality","5","sector","hospitality-gaming","RELATIONSHIP",""
+"450","news_topics","industrial","Industrial","0","","","REMOVE",""
+"451","news_topics","k-12-education","K-12 Education","13","sector","k-12-education","RELATIONSHIP",""
+"452","news_topics","luxury-residential","Luxury Residential","0","sector","luxury-residential","RELATIONSHIP",""
+"453","news_topics","mission-critical","Mission Critical","0","","","REMOVE",""
+"454","news_topics","mixed-use","Mixed-use","2","","","REMOVE",""
+"455","news_topics","retail","Retail","1","sector","retail","RELATIONSHIP",""
+"456","news_topics","themed-entertainment","Themed Entertainment","3","sector","themed-entertainment","RELATIONSHIP",""
+"457","news_topics","other_topic","Other","44","","","REMOVE",""
+"458","news_topics","energy-sustainability","Energy & Sustainability","6","service","energy-sustainability-solutions","RELATIONSHIP",""
+"467","news_topics","life-science","Life Science","4","sector","life-sciences","RELATIONSHIP",""
+"867","news_topics","manufacturing","Manufacturing","1","sector","infrastructure","RELATIONSHIP",""
+"397","post_tag","los-angeles","Los Angeles","7","office","los-angeles","RELATIONSHIP",""
+"398","post_tag","nashville","Nashville","4","office","nashville","RELATIONSHIP",""
+"399","post_tag","san-diego","San Diego","4","office","san-diego","RELATIONSHIP",""
+"400","post_tag","boston","Boston","4","office","boston","RELATIONSHIP",""
+"401","post_tag","chicago","Chicago","7","office","chicago","RELATIONSHIP",""
+"402","post_tag","las-vegas","Las Vegas","4","office","las-vegas","RELATIONSHIP",""
+"403","post_tag","sacramento","Sacramento","1","office","sacramento","RELATIONSHIP",""
+"404","post_tag","aliso-viejo","Aliso Viejo","2","office","aliso-viejo","RELATIONSHIP",""
+"405","post_tag","murrieta","Murrieta","1","office","murrieta","RELATIONSHIP",""
+"406","post_tag","oakland","Oakland","1","office","oakland","RELATIONSHIP",""
+"407","post_tag","san-francisco","San Francisco","1","office","san-francisco","RELATIONSHIP",""
+"408","post_tag","san-jose","San Jose","1","office","san-jose","RELATIONSHIP",""
+"409","post_tag","scottsdale","Scottsdale","1","office","scottsdale","RELATIONSHIP",""
+"472","post_tag","golf-tournament","Golf Tournament","3","","","REMOVE",""
+"473","post_tag","healthcare","Healthcare","10","sector","healthcare","RELATIONSHIP",""
+"474","post_tag","higher-education","Higher Education","4","sector","higher-education","RELATIONSHIP",""
+"475","post_tag","colorado","Colorado","6","office","denver","RELATIONSHIP",""
+"476","post_tag","dra","DRA","3","service","dispute-resolution-avoidance","RELATIONSHIP",""
+"477","post_tag","dispute-resolution-and-avoidance","Dispute Resolution and Avoidance","3","service","dispute-resolution-avoidance","RELATIONSHIP",""
+"478","post_tag","memphis","Memphis","1","office","memphis","RELATIONSHIP",""
+"479","post_tag","aba-forum","ABA Forum","3","","","REMOVE",""
+"480","post_tag","dallas","Dallas","3","office","fort-worth","RELATIONSHIP",""
+"481","post_tag","uli","ULI","4","","","REMOVE",""
+"482","post_tag","urban-land-institute","Urban Land Institute","1","","","REMOVE",""
+"483","post_tag","themed-entertainment","Themed Entertainment","1","sector","themed-entertainment","RELATIONSHIP",""
+"484","post_tag","orlando","Orlando","4","office","orlando","RELATIONSHIP",""
+"485","post_tag","iaapa","IAAPA","1","","","REMOVE",""
+"486","post_tag","life-sciences","Life Sciences","1","sector","life-sciences","RELATIONSHIP",""
+"487","post_tag","phoenix","Phoenix","1","office","phoenix","RELATIONSHIP",""
+"488","post_tag","new-york","New York","6","office","new-york","RELATIONSHIP",""
+"489","post_tag","hospitality","Hospitality","6","sector","hospitality-gaming","RELATIONSHIP",""
+"490","post_tag","toronto","Toronto","0","office","toronto","RELATIONSHIP",""
+"491","post_tag","long-beach","Long Beach","1","","","",""
+"496","post_tag","washington-d-c","Washington D.C.","3","office","washington-dc","RELATIONSHIP",""
+"497","post_tag","texas","Texas","0","","","REMOVE","Possibly remap to a Texas office, or the southwest region?"
+"8","post_tag","artwork","Artwork","0","","","REMOVE",""
+"10","post_tag","design","Design","4","","","REMOVE",""
+"11","post_tag","photo","Photo","0","","","REMOVE",""
+"12","post_tag","slideshow","Slideshow","0","","","REMOVE",""
+"13","post_tag","video","Video","0","","","REMOVE",""
+"14","post_tag","videos","Videos","0","","","REMOVE",""
+"150","post_tag","events","Events","0","","","REMOVE",""
+"151","post_tag","indoors","Indoors","0","","","REMOVE",""
+"152","post_tag","modern","Modern","0","","","REMOVE",""
+"153","post_tag","outdoors","Outdoors","0","","","REMOVE",""
+"154","post_tag","sales","Sales","0","","","REMOVE",""
+"155","post_tag","trends","Trends","0","","","REMOVE",""
+"897","post_tag","gaming","Gaming","2","sector","hospitality-gaming","RELATIONSHIP",""
+"906","post_tag","california","California","2","","","",""
+"895","post_tag","seattle","Seattle","1","office","seattle","RELATIONSHIP",""
+"894","post_tag","aviation","Aviation","2","sector","transportation","RELATIONSHIP",""
+"893","post_tag","technology","technology","1","","","",""
+"892","post_tag","data-centers","Data centers","1","sector","data-centers","RELATIONSHIP",""
+"891","post_tag","design-build","Design-Build","1","","","",""
+"889","post_tag","project-delivery","Project Delivery","1","","","",""
+"888","post_tag","dbia","DBIA","1","","","REMOVE",""
+"885","post_tag","independent-schools","Independent Schools","1","sector","higher-education","RELATIONSHIP",""
+"914","post_tag","community-colleges","community colleges","1","sector","higher-education","RELATIONSHIP",""
+"913","post_tag","tribal-gaming","Tribal gaming","1","sector","hospitality-gaming","RELATIONSHIP",""
+"909","post_tag","ipd","IPD","1","","","REMOVE",""
+"862","post_tag","construction","construction","0","","","REMOVE",""
+"864","post_tag","education","Education","6","sector","hospitality-gaming","RELATIONSHIP",""
+"865","post_tag","south-carolina","South Carolina","7","office","columbia","RELATIONSHIP",""
+"866","post_tag","k-12","K-12","6","sector","k-12-education","RELATIONSHIP",""
+"869","post_tag","scup","SCUP","1","","","REMOVE",""
+"870","post_tag","university","University","2","sector","higher-education","RELATIONSHIP",""
+"872","post_tag","philadelphia","Philadelphia","1","office","philadelphia","RELATIONSHIP",""
+"908","post_tag","transportation","Transportation","1","sector","transportation","RELATIONSHIP",""
+"907","post_tag","municipal","Municipal","1","sector","public-sector","RELATIONSHIP",""
+"878","post_tag","sustainability","Sustainability","1","services","energy-sustainability-solutions","RELATIONSHIP",""
+"879","post_tag","real-estate","Real Estate","1","","","REMOVE",""
+"881","post_tag","luxury-hospitality","Luxury Hospitality","2","sector","luxury-hospitality","RELATIONSHIP",""
+"883","post_tag","k-12-education","K-12 Education","1","sector","k-12-education","RELATIONSHIP",""
+"884","post_tag","new-jersey","New Jersey","2","office","cranford","RELATIONSHIP",""
+"886","post_tag","finance-and-officers","Finance and Officers","1","","","REMOVE",""

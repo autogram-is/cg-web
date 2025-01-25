@@ -1,119 +1,119 @@
-term_id,taxonomy,slug,name,count,new_type,new_slug,
-902,portfolio_category,retail-eu,Retail EU,10,sector,retail,
-858,portfolio_category,offices-eu,Offices EU,16,sector,workplace,
-860,portfolio_category,industrial-logistics-warehousing-eu,"Industrial, Logistics & Warehousing EU",8,sector,industrial-logistics,
-859,portfolio_category,technology-data-centres-eu,Technology & Data Centres EU,5,sector,data-centers,
-911,portfolio_category,aviation-eu,Aviation EU,2,sector,transportation,
-901,portfolio_category,mixed-use-eu,Mixed-Use EU,7,sector,,
-900,portfolio_category,life-sciences-eu,Life Sciences EU,3,sector,life-sciences,
-899,portfolio_category,hospitality-eu,Hospitality EU,38,sector,hospitality,
-898,portfolio_category,corporate-solutions-eu,Corporate Solutions EU,11,sector,,
-857,portfolio_category,specialty-cladding-eu,Specialty - Cladding EU,1,sector,,
-856,portfolio_category,specialty-brownfield-eu,Specialty - Brownfield EU,5,sector,,
-880,portfolio_category,manufacturing,Manufacturing,1,sector,infrastructure,
-912,portfolio_category,transportation-eu,Transportation EU,4,sector,transportation,
-376,portfolio_category,portfolio-life-science-us,Life Science US,11,sector,life-sciences,
-381,portfolio_category,residential-eu,Residential EU,13,sector,residential,
-66,portfolio_category,project-sectors,Project Sectors,0,sector,,
-68,portfolio_category,portfolio-retail-us,Retail US,23,sector,retail,
-79,portfolio_category,portfolio-themed-entertainment-us,Themed Entertainment US,8,sector,themed-entertainment,
-83,portfolio_category,portfolio-commercial,Commercial,13,sector,,
-84,portfolio_category,portfolio-corporate-us,Corporate US,29,sector,,
-87,portfolio_category,portfolio-culture-arts-us,Culture & Arts US,29,sector,culture-non-profit,
-90,portfolio_category,portfolio-education-eu,Education EU,13,sector,higher-education,
-94,portfolio_category,portfolio-gaming-us,Gaming US,5,sector,hospitality-gaming,
-95,portfolio_category,portfolio-government,Government,2,sector,public-sector,
-98,portfolio_category,portfolio-healthcare-us,Healthcare US,32,sector,healthcare,
-102,portfolio_category,portfolio-higher-education-us,Higher Education US,24,sector,higher-education,
-103,portfolio_category,portfolio-hospitality-us,Hospitality US,54,sector,hospitality-gaming,
-105,portfolio_category,portfolio-industrial-us,Industrial US,6,sector,industrial-logistics,
-106,portfolio_category,portfolio-infrastructure-eu,Infrastructure EU,26,sector,infrastructure,
-108,portfolio_category,portfolio-k-12-education-us,K-12 Education US,34,sector,k-12-education,
-109,portfolio_category,portfolio-luxury-residential-us,Luxury Residential US,18,sector,luxury-residential,
-110,portfolio_category,portfolio-mission-critical-us,Mission Critical US,8,sector,,
-111,portfolio_category,portfolio-mixed-use-us,Mixed-Use US,15,sector,,
-281,portfolio_category,division,Division,0,sector,,
-284,portfolio_category,division-lehrer-cumming,Lehrer Cumming,1,sector,,
-322,portfolio_category,sustainability,Sustainability,12,sector,,
-326,portfolio_category,portfolio-aviation-us,Aviation US,8,sector,transportation,
-29,portfolio_skills,budget-analysis,Budget Analysis,0,service,,
-33,portfolio_skills,construction-management,Construction Management,23,service,,
-34,portfolio_skills,cost-estimating,Cost Estimating,24,service,,
-35,portfolio_skills,cost-management,Cost Management,112,service,cost-management,
-36,portfolio_skills,cost-modeling,Cost Modeling,1,service,,
-40,portfolio_skills,development-management,Development Management,4,service,,
-44,portfolio_skills,gmp-evaluation,GMP Evaluation,1,service,,
-52,portfolio_skills,master-planning,Master Planning,2,service,,
-58,portfolio_skills,owner-representation,Owner Representation,11,service,,
-60,portfolio_skills,planning,Planning,0,service,,
-61,portfolio_skills,preconstruction-services,Preconstruction Services,1,service,,
-63,portfolio_skills,program-management,Program Management,10,service,program-project-management,
-64,portfolio_skills,project-management,Project Management,203,service,program-project-management,
-65,portfolio_skills,project-monitoring,Project Monitoring,9,service,project-monitoring,
-72,portfolio_skills,scheduling,Scheduling,19,service,scheduling,
-81,portfolio_skills,value-engineering,Value Engineering,3,service,,
-321,portfolio_skills,sustainability,Sustainability,9,service,energy-sustainability-solutions,
-323,portfolio_skills,commissioning,Commissioning,4,service,,
-471,portfolio_skills,move-management,Move Management,1,service,,
-887,portfolio_skills,exhibit-development,Exhibit Development,2,service,,
-876,portfolio_tags,planning-scheduling,Planning & Scheduling,13,service,planning-scheduling,
-873,portfolio_tags,service-cost-management,Service: Cost Management,8,service,cost-management,
-877,portfolio_tags,sustainability,Sustainability,10,service,energy-sustainability-solutions,
-896,portfolio_tags,west-palm-beach,West Palm Beach,4,office,west-palm-beach,
-861,portfolio_tags,mountain-view,Mountain View,3,office,mountain-view,
-882,portfolio_tags,new-jersey,New Jersey,2,office,cranford,
-871,portfolio_tags,houston,Houston,4,office,houston,
-868,portfolio_tags,concord,Concord,3,office,concord,
-863,portfolio_tags,waco,Waco,7,office,waco,
-903,portfolio_tags,zurich,Zurich,3,office,zurich,
-910,portfolio_tags,project-monitoring,Project Monitoring,9,service,project-monitoring,
-850,portfolio_tags,stoke-on-trent,Stoke-on-Trent,18,office,stoke-on-trent,
-904,portfolio_tags,oslo,Oslo,4,office,oslo,
-905,portfolio_tags,italy,Italy,1,office,milan,
-342,portfolio_tags,nashville,Nashville,17,office,nashville,
-379,portfolio_tags,netherlands,Netherlands,0,office,,
-394,portfolio_tags,portland,Portland,22,office,portland,
-396,portfolio_tags,atlanta,Atlanta,2,office,atlanta,
-420,portfolio_tags,dublin,Dublin,10,office,dublin,
-421,portfolio_tags,cork,Cork,8,office,cork,
-422,portfolio_tags,dallas,Dallas,11,office,,
-424,portfolio_tags,aia-healthcare,AIA Healthcare,6,office,,
-427,portfolio_tags,dusseldorf,Dusseldorf,8,office,dusseldorf,
-428,portfolio_tags,belfast,Belfast,6,office,belfast,
-429,portfolio_tags,berlin,Berlin,6,office,berlin,
-430,portfolio_tags,munich,Munich,6,office,munich,
-431,portfolio_tags,paris,Paris,5,office,paris,
-432,portfolio_tags,reno,Reno,3,office,reno,
-434,portfolio_tags,edinburgh,Edinburgh,4,office,edinburgh,
-436,portfolio_tags,vail,Vail,2,office,vail,
-437,portfolio_tags,cardiff,Cardiff,6,office,cardiff,
-492,portfolio_tags,raleigh,Raleigh,6,office,raleigh,
-493,portfolio_tags,bend,Bend,4,office,bend,
-495,portfolio_tags,program-project-management,Program + Project Management,8,service,program-project-management,
-20,portfolio_tags,abu-dhabi,Abu Dhabi,0,office,,
-21,portfolio_tags,aliso-viejo,Aliso Viejo,13,office,aliso-viejo,
-28,portfolio_tags,boston,Boston,20,office,boston,
-30,portfolio_tags,charleston,Charleston,5,office,charleston,
-32,portfolio_tags,columbia,Columbia,7,office,columbia,
-37,portfolio_tags,cranford,Cranford,6,office,cranford,
-38,portfolio_tags,denver,Denver,17,office,denver,
-41,portfolio_tags,dubai,Dubai,0,office,,
-42,portfolio_tags,durham,Durham,2,office,raleigh,
-43,portfolio_tags,fort-mill,Fort Mill,0,office,,
-47,portfolio_tags,honolulu,Honolulu,3,office,honolulu,
-48,portfolio_tags,international,International,0,office,,
-49,portfolio_tags,las-vegas,Las Vegas,4,office,las-vegas,
-50,portfolio_tags,london,London,40,office,london,
-51,portfolio_tags,los-angeles,Los Angeles,29,office,los-angeles,
-53,portfolio_tags,miami,Miami,18,office,miami,
-55,portfolio_tags,murrieta,Murrieta,0,office,murrieta,
-56,portfolio_tags,new-york,New York,37,office,new-york,
-67,portfolio_tags,qatar,Qatar,0,office,,
-69,portfolio_tags,sacramento,Sacramento,3,office,sacramento,
-70,portfolio_tags,san-diego-pf,San Diego,6,office,san-diego,
-71,portfolio_tags,san-francisco,San Francisco,13,office,san-francisco,
-73,portfolio_tags,seattle,Seattle,1,office,seattle,
-76,portfolio_tags,silicon-valley,Silicon Valley,5,office,silicon-valley,
-82,portfolio_tags,washington-dc,Washington D.C.,5,office,washington-dc,
-288,portfolio_tags,chicago,Chicago,5,office,charleston,
-325,portfolio_tags,orlando,Orlando,2,office,orlando,
+"term_id","taxonomy","slug","name","count","new_type","new_slug","action","notes"
+"902","portfolio_category","retail-eu","Retail EU","10","sector","retail","RELATIONSHIP",""
+"858","portfolio_category","offices-eu","Offices EU","16","sector","workplace","RELATIONSHIP",""
+"860","portfolio_category","industrial-logistics-warehousing-eu","Industrial, Logistics & Warehousing EU","8","sector","industrial-logistics","RELATIONSHIP",""
+"859","portfolio_category","technology-data-centres-eu","Technology & Data Centres EU","5","sector","data-centers","RELATIONSHIP",""
+"911","portfolio_category","aviation-eu","Aviation EU","2","sector","transportation","RELATIONSHIP",""
+"901","portfolio_category","mixed-use-eu","Mixed-Use EU","7","sector","","RELATIONSHIP",""
+"900","portfolio_category","life-sciences-eu","Life Sciences EU","3","sector","life-sciences","RELATIONSHIP",""
+"899","portfolio_category","hospitality-eu","Hospitality EU","38","sector","hospitality","RELATIONSHIP",""
+"898","portfolio_category","corporate-solutions-eu","Corporate Solutions EU","11","sector","","RELATIONSHIP",""
+"857","portfolio_category","specialty-cladding-eu","Specialty - Cladding EU","1","sector","","RELATIONSHIP",""
+"856","portfolio_category","specialty-brownfield-eu","Specialty - Brownfield EU","5","sector","","RELATIONSHIP",""
+"880","portfolio_category","manufacturing","Manufacturing","1","sector","infrastructure","RELATIONSHIP",""
+"912","portfolio_category","transportation-eu","Transportation EU","4","sector","transportation","RELATIONSHIP",""
+"376","portfolio_category","portfolio-life-science-us","Life Science US","11","sector","life-sciences","RELATIONSHIP",""
+"381","portfolio_category","residential-eu","Residential EU","13","sector","residential","RELATIONSHIP",""
+"66","portfolio_category","project-sectors","Project Sectors","0","sector","","RELATIONSHIP",""
+"68","portfolio_category","portfolio-retail-us","Retail US","23","sector","retail","RELATIONSHIP",""
+"79","portfolio_category","portfolio-themed-entertainment-us","Themed Entertainment US","8","sector","themed-entertainment","RELATIONSHIP",""
+"83","portfolio_category","portfolio-commercial","Commercial","13","sector","","RELATIONSHIP",""
+"84","portfolio_category","portfolio-corporate-us","Corporate US","29","sector","","RELATIONSHIP",""
+"87","portfolio_category","portfolio-culture-arts-us","Culture & Arts US","29","sector","culture-non-profit","RELATIONSHIP",""
+"90","portfolio_category","portfolio-education-eu","Education EU","13","sector","higher-education","RELATIONSHIP",""
+"94","portfolio_category","portfolio-gaming-us","Gaming US","5","sector","hospitality-gaming","RELATIONSHIP",""
+"95","portfolio_category","portfolio-government","Government","2","sector","public-sector","RELATIONSHIP",""
+"98","portfolio_category","portfolio-healthcare-us","Healthcare US","32","sector","healthcare","RELATIONSHIP",""
+"102","portfolio_category","portfolio-higher-education-us","Higher Education US","24","sector","higher-education","RELATIONSHIP",""
+"103","portfolio_category","portfolio-hospitality-us","Hospitality US","54","sector","hospitality-gaming","RELATIONSHIP",""
+"105","portfolio_category","portfolio-industrial-us","Industrial US","6","sector","industrial-logistics","RELATIONSHIP",""
+"106","portfolio_category","portfolio-infrastructure-eu","Infrastructure EU","26","sector","infrastructure","RELATIONSHIP",""
+"108","portfolio_category","portfolio-k-12-education-us","K-12 Education US","34","sector","k-12-education","RELATIONSHIP",""
+"109","portfolio_category","portfolio-luxury-residential-us","Luxury Residential US","18","sector","luxury-residential","RELATIONSHIP",""
+"110","portfolio_category","portfolio-mission-critical-us","Mission Critical US","8","sector","","RELATIONSHIP",""
+"111","portfolio_category","portfolio-mixed-use-us","Mixed-Use US","15","sector","","RELATIONSHIP",""
+"281","portfolio_category","division","Division","0","sector","","RELATIONSHIP",""
+"284","portfolio_category","division-lehrer-cumming","Lehrer Cumming","1","sector","","RELATIONSHIP",""
+"322","portfolio_category","sustainability","Sustainability","12","service","energy-sustainability-solutions","RELATIONSHIP",""
+"326","portfolio_category","portfolio-aviation-us","Aviation US","8","sector","transportation","RELATIONSHIP",""
+"29","portfolio_skills","budget-analysis","Budget Analysis","0","service","","RELATIONSHIP",""
+"33","portfolio_skills","construction-management","Construction Management","23","service","","RELATIONSHIP",""
+"34","portfolio_skills","cost-estimating","Cost Estimating","24","service","","RELATIONSHIP",""
+"35","portfolio_skills","cost-management","Cost Management","112","service","cost-management","RELATIONSHIP",""
+"36","portfolio_skills","cost-modeling","Cost Modeling","1","service","","RELATIONSHIP",""
+"40","portfolio_skills","development-management","Development Management","4","service","","RELATIONSHIP",""
+"44","portfolio_skills","gmp-evaluation","GMP Evaluation","1","service","","RELATIONSHIP",""
+"52","portfolio_skills","master-planning","Master Planning","2","service","","RELATIONSHIP",""
+"58","portfolio_skills","owner-representation","Owner Representation","11","service","","RELATIONSHIP",""
+"60","portfolio_skills","planning","Planning","0","service","","RELATIONSHIP",""
+"61","portfolio_skills","preconstruction-services","Preconstruction Services","1","service","","RELATIONSHIP",""
+"63","portfolio_skills","program-management","Program Management","10","service","program-project-management","RELATIONSHIP",""
+"64","portfolio_skills","project-management","Project Management","203","service","program-project-management","RELATIONSHIP",""
+"65","portfolio_skills","project-monitoring","Project Monitoring","9","service","project-monitoring","RELATIONSHIP",""
+"72","portfolio_skills","scheduling","Scheduling","19","service","scheduling","RELATIONSHIP",""
+"81","portfolio_skills","value-engineering","Value Engineering","3","service","","RELATIONSHIP",""
+"321","portfolio_skills","sustainability","Sustainability","9","service","energy-sustainability-solutions","RELATIONSHIP",""
+"323","portfolio_skills","commissioning","Commissioning","4","service","","RELATIONSHIP",""
+"471","portfolio_skills","move-management","Move Management","1","service","","RELATIONSHIP",""
+"887","portfolio_skills","exhibit-development","Exhibit Development","2","service","","RELATIONSHIP",""
+"876","portfolio_tags","planning-scheduling","Planning & Scheduling","13","service","planning-scheduling","RELATIONSHIP",""
+"873","portfolio_tags","service-cost-management","Service: Cost Management","8","service","cost-management","RELATIONSHIP",""
+"877","portfolio_tags","sustainability","Sustainability","10","service","energy-sustainability-solutions","RELATIONSHIP",""
+"896","portfolio_tags","west-palm-beach","West Palm Beach","4","office","west-palm-beach","RELATIONSHIP",""
+"861","portfolio_tags","mountain-view","Mountain View","3","office","mountain-view","RELATIONSHIP",""
+"882","portfolio_tags","new-jersey","New Jersey","2","office","cranford","RELATIONSHIP",""
+"871","portfolio_tags","houston","Houston","4","office","houston","RELATIONSHIP",""
+"868","portfolio_tags","concord","Concord","3","office","concord","RELATIONSHIP",""
+"863","portfolio_tags","waco","Waco","7","office","waco","RELATIONSHIP",""
+"903","portfolio_tags","zurich","Zurich","3","office","zurich","RELATIONSHIP",""
+"910","portfolio_tags","project-monitoring","Project Monitoring","9","service","project-monitoring","RELATIONSHIP",""
+"850","portfolio_tags","stoke-on-trent","Stoke-on-Trent","18","office","stoke-on-trent","RELATIONSHIP",""
+"904","portfolio_tags","oslo","Oslo","4","office","oslo","RELATIONSHIP",""
+"905","portfolio_tags","italy","Italy","1","office","milan","RELATIONSHIP",""
+"342","portfolio_tags","nashville","Nashville","17","office","nashville","RELATIONSHIP",""
+"379","portfolio_tags","netherlands","Netherlands","0","office","","RELATIONSHIP",""
+"394","portfolio_tags","portland","Portland","22","office","portland","RELATIONSHIP",""
+"396","portfolio_tags","atlanta","Atlanta","2","office","atlanta","RELATIONSHIP",""
+"420","portfolio_tags","dublin","Dublin","10","office","dublin","RELATIONSHIP",""
+"421","portfolio_tags","cork","Cork","8","office","cork","RELATIONSHIP",""
+"422","portfolio_tags","dallas","Dallas","11","office","fort-worth","RELATIONSHIP",""
+"424","portfolio_tags","aia-healthcare","AIA Healthcare","6","office","","RELATIONSHIP",""
+"427","portfolio_tags","dusseldorf","Dusseldorf","8","office","dusseldorf","RELATIONSHIP",""
+"428","portfolio_tags","belfast","Belfast","6","office","belfast","RELATIONSHIP",""
+"429","portfolio_tags","berlin","Berlin","6","office","berlin","RELATIONSHIP",""
+"430","portfolio_tags","munich","Munich","6","office","munich","RELATIONSHIP",""
+"431","portfolio_tags","paris","Paris","5","office","paris","RELATIONSHIP",""
+"432","portfolio_tags","reno","Reno","3","office","reno","RELATIONSHIP",""
+"434","portfolio_tags","edinburgh","Edinburgh","4","office","edinburgh","RELATIONSHIP",""
+"436","portfolio_tags","vail","Vail","2","office","vail","RELATIONSHIP",""
+"437","portfolio_tags","cardiff","Cardiff","6","office","cardiff","RELATIONSHIP",""
+"492","portfolio_tags","raleigh","Raleigh","6","office","raleigh","RELATIONSHIP",""
+"493","portfolio_tags","bend","Bend","4","office","bend","RELATIONSHIP",""
+"495","portfolio_tags","program-project-management","Program + Project Management","8","service","program-project-management","RELATIONSHIP",""
+"20","portfolio_tags","abu-dhabi","Abu Dhabi","0","office","","RELATIONSHIP",""
+"21","portfolio_tags","aliso-viejo","Aliso Viejo","13","office","aliso-viejo","RELATIONSHIP",""
+"28","portfolio_tags","boston","Boston","20","office","boston","RELATIONSHIP",""
+"30","portfolio_tags","charleston","Charleston","5","office","charleston","RELATIONSHIP",""
+"32","portfolio_tags","columbia","Columbia","7","office","columbia","RELATIONSHIP",""
+"37","portfolio_tags","cranford","Cranford","6","office","cranford","RELATIONSHIP",""
+"38","portfolio_tags","denver","Denver","17","office","denver","RELATIONSHIP",""
+"41","portfolio_tags","dubai","Dubai","0","office","","RELATIONSHIP",""
+"42","portfolio_tags","durham","Durham","2","office","raleigh","RELATIONSHIP",""
+"43","portfolio_tags","fort-mill","Fort Mill","0","office","","RELATIONSHIP",""
+"47","portfolio_tags","honolulu","Honolulu","3","office","honolulu","RELATIONSHIP",""
+"48","portfolio_tags","international","International","0","office","","RELATIONSHIP",""
+"49","portfolio_tags","las-vegas","Las Vegas","4","office","las-vegas","RELATIONSHIP",""
+"50","portfolio_tags","london","London","40","office","london","RELATIONSHIP",""
+"51","portfolio_tags","los-angeles","Los Angeles","29","office","los-angeles","RELATIONSHIP",""
+"53","portfolio_tags","miami","Miami","18","office","miami","RELATIONSHIP",""
+"55","portfolio_tags","murrieta","Murrieta","0","office","murrieta","RELATIONSHIP",""
+"56","portfolio_tags","new-york","New York","37","office","new-york","RELATIONSHIP",""
+"67","portfolio_tags","qatar","Qatar","0","office","","RELATIONSHIP",""
+"69","portfolio_tags","sacramento","Sacramento","3","office","sacramento","RELATIONSHIP",""
+"70","portfolio_tags","san-diego-pf","San Diego","6","office","san-diego","RELATIONSHIP",""
+"71","portfolio_tags","san-francisco","San Francisco","13","office","san-francisco","RELATIONSHIP",""
+"73","portfolio_tags","seattle","Seattle","1","office","seattle","RELATIONSHIP",""
+"76","portfolio_tags","silicon-valley","Silicon Valley","5","office","silicon-valley","RELATIONSHIP",""
+"82","portfolio_tags","washington-dc","Washington D.C.","5","office","washington-dc","RELATIONSHIP",""
+"288","portfolio_tags","chicago","Chicago","5","office","charleston","RELATIONSHIP",""
+"325","portfolio_tags","orlando","Orlando","2","office","orlando","RELATIONSHIP",""

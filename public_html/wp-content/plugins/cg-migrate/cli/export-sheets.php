@@ -82,7 +82,7 @@ function cg_export_offices($dry_run = false) {
       $region = $regions[0]->slug ?? '';
 
       $item = array(
-        'id' => $post->ID,
+        // 'id' => $post->ID,
         'title' => $post->post_title,
         'slug' => $post->post_name,
     
@@ -125,7 +125,7 @@ function cg_export_bios($dry_run = false) {
       $offices = _get_rel_slugs('offices', $post->ID);
 
       $item = array(
-        'id' => $post->ID,
+        // 'id' => $post->ID,
         'title' => $post->post_title,
         'slug' => $post->post_name,
     
@@ -310,7 +310,6 @@ function cg_export_events($dry_run = false) {
     write_content_csv($filename, $items);
   }
 }
-
 
 function _load_post($id) {
   $post = get_post($id);

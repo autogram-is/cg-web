@@ -22,21 +22,11 @@ function cg_get_tag_map($rebuild = false) {
     WP_CLI::log("Building tag/relationship map");
 
     $map = [];
-    $datalines = file(CG_MIGRATE_DATA_DIR . '/tag-map.csv');
-    $header = str_getcsv($datalines[0]);
-    
-    $index = 0;
-    foreach ($datalines as $line) {
-      $data = str_getcsv($line);
-        
-      // Skip empty lines and header row
-      if (empty($data) || $index == 0) {
-        $index++;
-        continue;
-      }
-      
-      $row = array_combine($header, $data);
-  
+    $news = load_migration_csv('news-tags.csv');
+    $projects = load_migration_csv('project-tags.csv');
+    $items = array_merge($news, $projects);
+
+    foreach ($items as $row) {
       if ($row['term_id']) {
         if ($row['new_slug'] && $row['new_type']) {
           $replacement = get_post_by_name($row['new_slug'], $row['new_type']);

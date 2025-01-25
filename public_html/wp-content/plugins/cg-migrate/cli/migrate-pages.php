@@ -16,7 +16,7 @@ function cg_migrate_page($post, $dry_run = false) {
     wp_update_post($post);
     cg_save_migration_body($post->ID, $raw);
   }
-  WP_CLI::log(($dry_run ? "Dry Run: " : "") . "Post #$post->ID ($post->post_title) processed");
+  WP_CLI::log(($dry_run ? "Dry Run: " : "") . "Page #$post->ID ($post->post_title) processed");
 }
 
 function _page_fusion_converter($post, $dom, $node = null, &$chunks = []) {
@@ -31,7 +31,7 @@ function _page_fusion_converter($post, $dom, $node = null, &$chunks = []) {
       } else if ($node->tagName === 'fusion_title') {
         $text = trim($dom->saveHTML($node));
         if ($text !== $post->post_title) {
-          $chunks[] = '<h2>' . wp_kses($text, 'plain') . '</h2>';
+          $chunks[] = '<h2>' . str_replace('\n', '', wp_kses($text, 'plain')) . '</h2>';
         }
       }
     }
