@@ -240,7 +240,7 @@ function cg_export_pages($dry_run = false) {
     if ($post) {
       $item = array(
         'id' => $post->ID,
-        'modified' => date("Y-m-d", strtotime($post->post_modified)),
+        'created' => date("Y-m-d", strtotime($post->post_date)),
         'title' => $post->post_title,
         'slug' => $post->post_name,
         'parent' => $post->post_parent ? $post->post_parent : '',
