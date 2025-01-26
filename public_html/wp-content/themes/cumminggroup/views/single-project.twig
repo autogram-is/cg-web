@@ -1,8 +1,8 @@
 {% extends "single.twig" %}
+{% set pagetitle = title ? title : post.title %}
 
 {% block hero %}
 
-{% set pagetitle = title ? title : post.title %}
 <h1 class="type-pagehed hed-accent">{{ pagetitle }}</h1>
 {% endblock %}
 
@@ -15,9 +15,4 @@
 {% block posthero %}
 {% set gallery = post.meta('gallery') %}
 {% if gallery %}{% include "fields/gallery.twig" with { images: gallery } %}{% endif %}
-<div class="wrapper region">
-  <h2 class="type-eyebrow hed-hatch">Related Projects</h2>
-  <div class="grid region" data-layout="three-up">
-  </div>
-</div>
 {% endblock %}

@@ -1,31 +1,25 @@
 {% extends "single.twig" %}
+{% set pagetitle = (title ? title : post.title) | stylize %}
 
 {% block hero %}
 
-{% set pagetitle = title ? title : post.title %}
-<h1 class="type-pagehed hed-accent">{{ pagetitle | stylize }}</h1>
+<h1 class="type-pagehed hed-accent">{{ pagetitle }}</h1>
 {% endblock %}
 
 {% block sidebar %}
 {% endblock %}
 
 {% block posthero %}
-
   {% if post.projects | length %}
   <div class="region wrapper">
     <h2 class="type-hed hed-accent">Representative Experience</h2>
   </div>
-  {% include "partial/project-gallery.twig" with { projects: post.projects, sectors: true, offices: true, limit: 6 } %}
+  {% include "partial/project-gallery.twig" with { items: post.projects, sectors: true, offices: true, limit: 6 } %}
   {% endif %}
 
   {% if post.people | length %}
   <div class="region">
-    <div class="wrapper">
-      <h2 class="type-hed hed-accent" id="hed">{{ pagetitle | stylize }} Leadership</h2>
-    </div>
-    <div class="region">
-    {% include "partial/person-list.twig" with { projects: post.people } %}
-    </div>
+  {% include "partial/person-list.twig" with { heading: pagetitle ~ " Leadership", items: post.people } %}
   </div>
   {% endif %}
 

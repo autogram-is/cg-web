@@ -1,30 +1,42 @@
-<div class="person-grid flow {{ utilities }}">
-  <ul class="wrapper people-inner" role="list">
-    {% for person in people %}
-    <li class="person">
-      <div class="sidebar">
-      {% if person.thumbnail %}
-        <div class="crop">
-          <img src="{{ person.thumbnail.src }}" height="{{ person.thumbnail.height }}" width="{{ person.thumbnail.width }}" alt="{{ person.thumbnail.alt }}">
-        </div>
-      {% endif %}
-        <div class="body">
-          <div class="person-header flow">
-            <h2 class="hed type-body">{% if person.email %}<a href="mailto:{{ person.email }}">{% endif %}{{ person.name }}{% if person.email %}</a>{% endif %}</h2>
-            <div class="person-meta flow">
-              {% if person.role %}<span class="title type-detail">{{ person.role }}</span>{% endif %}
-              {% if sectors and person.sectors %}
-              <ul role="list" class="title-scope flow">
-                {% for sector in person.sectors %}
-                <li><a href="{{ sector.href }}">{{ sector.title | stylize }}</a></li>
-                {% endfor %}
-              </ul>
-              {% endif %}
+{% if limit %}{% set items = items | slice(0,limit) %}{% endif %}
+
+{% if heading %}
+<div class="region">
+  <div class="wrapper">
+    <h2 class="type-hed hed-accent" id="hed">{{ heading }}</h2>
+  </div>
+</div>
+{% endif %}
+
+<div class="region">
+  <div class="person-grid flow {{ utilities }}">
+    <ul class="wrapper people-inner" role="list">
+      {% for person in items %}
+      <li class="person">
+        <div class="sidebar">
+        {% if person.thumbnail %}
+          <div class="crop">
+            <img src="{{ person.thumbnail.src }}" height="{{ person.thumbnail.height }}" width="{{ person.thumbnail.width }}" alt="{{ person.thumbnail.alt }}">
+          </div>
+        {% endif %}
+          <div class="body">
+            <div class="person-header flow">
+              <h2 class="hed type-body">{% if person.email %}<a href="mailto:{{ person.email }}">{% endif %}{{ person.name }}{% if person.email %}</a>{% endif %}</h2>
+              <div class="person-meta flow">
+                {% if person.role %}<span class="title type-detail">{{ person.role }}</span>{% endif %}
+                {% if sectors and person.sectors %}
+                <ul role="list" class="title-scope flow">
+                  {% for sector in person.sectors %}
+                  <li><a href="{{ sector.href }}">{{ sector.title | stylize }}</a></li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </li>
-    {% endfor %}
-  </ul>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>

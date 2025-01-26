@@ -19,10 +19,14 @@
 {% block posthero %}
 
   {% if post.projects | length %}
-  <div class="region wrapper">
-    <h2 class="type-hed hed-accent">Representative Experience</h2>
+  {% include "partial/project-gallery.twig" with { heading: "Representative Experience", items: post.projects, sectors: true, services: true, limit: 6 } %}
+  {% endif %}
+
+
+  {% if post.people | length %}
+  <div class="region">
+  {% include "partial/person-list.twig" with { heading: pagetitle ~ " Team", items: post.people } %}
   </div>
-  {% include "partial/project-gallery.twig" with { projects: post.projects, sectors: true, services: true, limit: 6 } %}
   {% endif %}
 
 {% endblock %}

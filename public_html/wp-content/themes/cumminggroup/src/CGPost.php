@@ -43,6 +43,13 @@ class CGPost extends Post {
 	 */
 	public function projects() { return $this->_related('projects'); }
 
+		/**
+	 * Gets projects connected to the current post.
+	 *
+	 * @return \Timber\PostCollectionInterface
+	 */
+	public function people() { return $this->_related('people'); }
+
 	/**
 	 * On content with related portfolio-items (events, posts, etc), returns related portfolio pages.
 	 * On portfolio pages, returns the related news/events/posts.
