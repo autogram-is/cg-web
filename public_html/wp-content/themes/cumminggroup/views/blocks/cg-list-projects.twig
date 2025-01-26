@@ -15,23 +15,4 @@
   SupportsAlignContent: false
   SupportsAlignText: false
 #}
-<div class="gallery wrapper region region-double">
-  <div class="gallery-inner">
-    {% for project in get_posts(fields.posts) %}
-    <article aria-labelledby="hed-77215" class="project-listing region flow">
-      <div class="sidebar swap flow">
-        {% if project.thumbnail %}
-        <a href="#" class="thumb">
-          <img src="{{ project.thumbnail.src }}" height="{{ project.thumbnail.height }}" width="{{ project.thumbnail.width }}" alt="{{ project.thumbnail.alt }}">
-        </a>
-        {% endif %}
-        <div class="body">
-          <h3 class="type-hed">
-            <a href="{{ project.link }}">{{ project.title }}</a>
-          </h3>
-        </div>
-      </div>
-    </article>
-    {% endfor %}
-  </div>
-</div>
+{% include "partial/project-gallery.twig" with { projects: get_posts(fields.posts), services: true, sectors: true, offices: true, utilities: "wrapper region region-double" } %}

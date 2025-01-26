@@ -1,6 +1,7 @@
 <?php
 
 use Timber\Post;
+use Timber;
 
 /**
  * Class CGPost
@@ -68,7 +69,7 @@ class CGPost extends Post {
 		if (!$meta) {
 			$this->$field_prop = null;
 		} else {
-			$this->$field_prop = Timber::get_posts;
+			$this->$field_prop = Timber::get_posts($meta);
 			return $this->$field_prop;	
 		}
 	}

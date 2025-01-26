@@ -15,33 +15,4 @@
   SupportsAlignContent: false
   SupportsAlignText: false
 #}
-<div class="person-grid flow">
-  <ul class="wrapper people-inner" role="list">
-    {% for person in get_posts(fields.posts) %}
-    <li class="person">
-      <div class="sidebar">
-      {% if person.thumbnail %}
-        <div class="crop">
-          <img src="{{ person.thumbnail.src }}" height="{{ person.thumbnail.height }}" width="{{ person.thumbnail.width }}" alt="{{ person.thumbnail.alt }}">
-        </div>
-      {% endif %}
-        <div class="body">
-          <div class="person-header flow">
-            <h2 class="hed type-body">{% if person.email %}<a href="mailto:{{ person.email }}">{% endif %}{{ person.name }}{% if person.email %}</a>{% endif %}</h2>
-            <div class="person-meta flow">
-              <span class="title type-detail">{{ person.role }}</span>
-              {% if person.sectors %}
-              <ul role="list" class="title-scope flow">
-                {% for sector in person.sectors %}
-                <li><a href="{{ sector.href }}">{{ sector.text }}</a></li>
-                {% endfor %}
-              </ul>
-              {% endif %}
-            </div>
-          </div>
-        </div>
-      </div>
-    </li>
-    {% endfor %}
-  </ul>
-</div>
+{% include "partial/person-list.twig" with { projects: get_posts(fields.posts), services: true, sectors: true, offices: true } %}

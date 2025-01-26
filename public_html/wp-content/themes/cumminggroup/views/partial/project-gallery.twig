@@ -1,0 +1,43 @@
+{% if limit %}{% set projects = projects | slice(0,limit) %}{% endif %}
+<div class="gallery {{ utilities }}">
+  <div class="gallery-inner wrapper">
+  {% for project in projects %}
+    <article aria-labelledby="hed-{{ project.ID }}" class="project-listing flow">
+      <div class="sidebar swap flow">
+        {% if project.thumbnail %}
+        <a href="{{ project.link }}" class="thumb">
+          <img src="{{ project.thumbnail.src }}" height="{{ project.thumbnail.height }}" width="{{ project.thumbnail.width }}" alt="{{ project.thumbnail.alt }}">
+        </a>
+        {% endif %}
+        <div class="body">
+          <h3 class="type-hed" id="hed-{{ project.ID }}">
+            <a href="{{ project.link }}">{{ project.title }}</a>
+          </h3>
+          {% if services or services or offices %}
+          <div class="meta flow">
+            <ul role="list">
+            {% if sectors %}
+            {% for sector in project.sectors %}
+              <li><a href="{{ sector.link }}">{{ sector.title | stylize }}</a></li>
+            {% endfor %}
+            {% endif %}
+            {% if services %}
+            {% for service in project.services %}
+              <li><a href="{{ service.link }}">{{ service.title | stylize }}</a></li>
+            {% endfor %}
+            {% endif %}
+            </ul>
+            {% if offices %}
+            <div class="type-detail secondary">
+              {% for office in project.offices %}
+              <li><a href="{{ office.link }}">{{ office.title }}</a></li>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </article>
+  {% endfor %}
+  </div>

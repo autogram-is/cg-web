@@ -1,0 +1,33 @@
+{% extends "single.twig" %}
+
+{% block hero %}
+
+{% set pagetitle = title ? title : post.title %}
+<h1 class="type-pagehed hed-accent">{{ pagetitle | stylize }}</h1>
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block posthero %}
+
+  {% if post.projects | length %}
+  <div class="region wrapper">
+    <h2 class="type-hed hed-accent">Representative Experience</h2>
+  </div>
+  {% include "partial/project-gallery.twig" with { projects: post.projects, offices: true, services: true, limit: 6 } %}
+  </div>
+  {% endif %}
+
+  {% if post.people | length %}
+  <div class="region">
+    <div class="wrapper">
+      <h2 class="type-hed hed-accent" id="hed">{{ pagetitle | stylize }} Leadership</h2>
+    </div>
+    <div class="region">
+    {% include "partial/person-list.twig" with { projects: post.people } %}
+    </div>
+  </div>
+  {% endif %}
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "single.twig" %}
+
+{% block hero %}
+{% set pagetitle = title ? title : post.title %}
+<h1 class="type-pagehed hed-accent">{{ pagetitle }}</h1>
+{% endblock %}
+
+{% block content %}
+  <div class="lede-header">
+    {# <p class="lede">byline</p> #}
+  </div>
+  <div class="sidebar">
+    <div class="prose lede flow">
+      {{post.content}}
+    </div>
+  </div>
+{% endblock %}
+
+{% block posthero %}
+
+  {% if post.projects | length %}
+  <div class="region wrapper">
+    <h2 class="type-hed hed-accent">Representative Experience</h2>
+  </div>
+  {% include "partial/project-gallery.twig" with { projects: post.projects, sectors: true, services: true, limit: 6 } %}
+  {% endif %}
+
+{% endblock %}
+
