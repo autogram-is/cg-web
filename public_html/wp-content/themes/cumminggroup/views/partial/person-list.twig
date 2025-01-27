@@ -19,19 +19,44 @@
             <img src="{{ person.thumbnail.src }}" height="{{ person.thumbnail.height }}" width="{{ person.thumbnail.width }}" alt="{{ person.thumbnail.alt }}">
           </div>
         {% endif %}
-          <div class="body">
-            <div class="person-header flow">
-              <h2 class="hed type-body">{% if person.email %}<a href="mailto:{{ person.email }}">{% endif %}{{ person.name }}{% if person.email %}</a>{% endif %}</h2>
-              <div class="person-meta flow">
+         <div class="body">
+          <div class="person-header flow">
+            <h2 class="hed type-body">{% if person.excerpt | length > 0 %}<a href="{{ person.link }}">{% endif %}{{ person.name }}{% if person.excerpt %}</a>{% endif %}</h2>
+            <div class="person-meta flow">
+              <div>
                 {% if person.role %}<span class="title type-detail">{{ person.role }}</span>{% endif %}
-                {% if sectors and person.sectors %}
-                <ul role="list" class="title-scope flow">
-                  {% for sector in person.sectors %}
-                  <li><a href="{{ sector.href }}">{{ sector.title | stylize }}</a></li>
-                  {% endfor %}
-                </ul>
-                {% endif %}
+                <div class="locations">
+                {% for office in person.offices %}
+                <a href="#" class="location type-detail">{{ office }}</a>
+                {% endfor %}
+                </div>
               </div>
+              {% if sectors and person.sectors %}
+              <ul role="list" class="title-scope flow">
+                {% for sector in person.sectors %}
+                <li><a href="{{ sector.href }}">{{ sector.title | stylize }}</a></li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+              {% if person.show_contact %}
+                <div class="repel">
+                  <ul role="list" class="contacts flow">
+                    {% if person.email %}
+                    <li><a href="mailto:{{ person.email}}">{{ person.email}}</a></li>
+                    {% endif %}
+                    {% if person.phone %}
+                    <li>{{ person.phone}}</li> {# `href="tel:"` links will be generated in browsing contexts that support them. #}
+                    {% endif %}
+                  </ul>
+                  {% if person.linkedin %}
+                  <a href="{{ person.linkedin }}" class="button mini align-only icon">
+                    <span>LinkedIn</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                      <path d="M8.643 4A2.641 2.641 0 0 0 6 6.64C6 8.1 7.183 9.31 8.64 9.31c1.459 0 2.643-1.21 2.643-2.668A2.64 2.64 0 0 0 8.643 4zm12.892 7c-2.219 0-3.488 1.16-4.098 2.314h-.064v-2.003H13V26h4.557v-7.271c0-1.916.144-3.768 2.515-3.768 2.337 0 2.371 2.185 2.371 3.889V26H27v-8.068C27 13.984 26.151 11 21.535 11zm-15.172.31V26h4.56V11.31h-4.56z" fill></path></svg>
+                    </a>
+                  {% endif %}
+                </div>
+              {% endif %}
             </div>
           </div>
         </div>

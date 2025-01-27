@@ -46,6 +46,7 @@
   }
   .person-header {
     --flow-space: var(--space-nudge);
+    width: 100%;
   }
   .locations {
     padding-block-start: var(--space-nudge);
@@ -69,13 +70,15 @@
       font-size: var(--size-step-0);
       line-height: var(--leading-seamless);
     }
+    .title-scope li {
+      display: inline;
+    }
     .title-scope, .contacts {
       --flow-space: var(--space-2xs);
       color: var(--color-steel-shade);
-      line-height: var(--leading-seamless);
+      line-height: .85;
       max-width: 100%;
       li {
-        display: inline;
         font-size: var(--size-step-0);
         line-height: var(--leading-seamless);
         & + li::before {
@@ -85,33 +88,37 @@
           padding-inline: calc( var(--space-nudge) - 1px ) var(--space-3xs);
         }
       }
+      li,
       a {
-          line-height: var(--leading-seamless);
-          font-family: var(--font-secondary);
-          font-size: var(--size-microcopy);
-          text-decoration-color: transparent;
-          &:hover {
-            text-decoration: underline;
-            text-decoration-color: var(--color-legacy-red);
-          }
-        }
+        line-height: var(--leading-seamless);
+        font-family: var(--font-secondary);
+        font-size: var(--size-microcopy);
+        text-decoration-color: transparent;
       }
-      .contacts {
-        --flow-space: var(--space-3xs);
-        display: flex;
-        flex-direction: row;
-        font-size: var(--size-step-000);
-        letter-spacing: var(--tracking-tight);
-        li a {
-          font-family: var(--font-body);
-          font-weight: var(--weight-semibold);
-        }
-        li + li {
-          margin-left: var(--space-2xs);
-          &::before {
-            content:"";
-          }
+      a:hover {
+        text-decoration: underline;
+        text-decoration-color: var(--color-legacy-red);
+      }
+    }
+    .repel {
+      border-top: 1px solid var(--color-steel-highlight);
+    }
+    .contacts {
+      flex-wrap: wrap;
+      font-size: var(--size-step-000);
+      letter-spacing: var(--tracking-tight);
+      li {
+        --flow-space: var(--space-nudge);
+      }
+      li a {
+        font-family: var(--font-body);
+        font-weight: var(--weight-semibold);
+      }
+      li + li {
+        &::before {
+          display: none;
         }
       }
     }
   }
+}
