@@ -1,7 +1,7 @@
 {% extends "base.twig" %}
+{% set pagetitle = title ? title : post.title %}
 
 {% block hero %}
-	{% set pagetitle = title ? title : post.title %}
 	<h1 class="type-pagehed hed-accent">{{ pagetitle | stylize }}</h1>
 {% endblock %}
 

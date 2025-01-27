@@ -1,9 +1,11 @@
 {% extends "single.twig" %}
+{% set pagetitle = title ? title : post.title %}
+
 
 {% block hero %}
-{% set pagetitle = title ? title : post.title %}
-<h1 class="type-pagehed hed-accent">{{ pagetitle }}</h1>
+<h1 class="type-pagehed hed-accent">{{ pagetitle }}, {{ post.location }}</h1>
 {% endblock %}
+
 
 {% block content %}
   <div class="lede-header">
@@ -16,18 +18,16 @@
   </div>
 {% endblock %}
 
-{% block posthero %}
 
+{% block posthero %}
   {% if post.projects | length %}
   {% include "partial/project-gallery.twig" with { heading: "Representative Experience", items: post.projects, sectors: true, services: true, limit: 6 } %}
   {% endif %}
-
 
   {% if post.people | length %}
   <div class="region">
   {% include "partial/person-list.twig" with { heading: pagetitle ~ " Team", items: post.people } %}
   </div>
   {% endif %}
-
 {% endblock %}
 

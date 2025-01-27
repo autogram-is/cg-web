@@ -8,9 +8,7 @@
 		{{ function('wp_body_open') }}
 		<header class="site-header" id="header">
 			<a href="#main" class="skiplink visually-hidden focusable">{{ _e( 'Skip to content') }}</a>
-			{% block header %}
 			{% include 'partial/header.twig' %}
-			{% endblock %}
 		</header>
 
 		<main role="main" id="content">
@@ -50,21 +48,17 @@
 		</div>
 		<div class="wrapper sidebar swap">
 			<div class="region region-primary">
-				{% block content %}
-					Sorry, no content
-				{% endblock %}
+				{% block content %}{% endblock %}
 			</div>
 			{% block sidebar %}
 			{% endblock %}
 		</div>
-		{% block posthero %}
-		{% endblock %}
+		{% block posthero %}{% endblock %}
 		</main>
-
-			{% block footer %}
-				{% include 'footer.twig' %}
-				{{ function('wp_footer') }}
-			{% endblock %}
+		{% block footer %}
+			{% include 'footer.twig' %}
+			{{ function('wp_footer') }}
+		{% endblock %}
 		</body>
-		<script type="module" src="/wp-content/themes/cumminggroup/assets/js/ui.js{{ assetHash }}" defer></script>
+		<script type="module" src="{{ site.theme.link }}/assets/js/ui.js{{ assetHash }}" defer></script>
 </html>

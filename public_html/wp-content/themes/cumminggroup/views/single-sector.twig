@@ -1,15 +1,17 @@
 {% extends "single.twig" %}
 {% set pagetitle = (title ? title : post.title) | stylize %}
 
+
 {% block hero %}
-<h1 class="type-pagehed hed-accent">{{ pagetitle }}</h1>
+  <h1 class="type-pagehed hed-accent">{{ pagetitle }}</h1>
 {% endblock %}
+
 
 {% block sidebar %}
 {% endblock %}
 
-{% block posthero %}
 
+{% block posthero %}
   {% if post.projects | length %}
   {% include "partial/project-gallery.twig" with { heading: "Representative Experience", items: post.projects, offices: true, services: true, limit: 6 } %}
   {% endif %}

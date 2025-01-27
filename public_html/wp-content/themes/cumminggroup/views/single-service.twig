@@ -1,13 +1,15 @@
 {% extends "single.twig" %}
 {% set pagetitle = (title ? title : post.title) | stylize %}
 
-{% block hero %}
 
-<h1 class="type-pagehed hed-accent">{{ pagetitle }}</h1>
+{% block hero %}
+  <h1 class="type-pagehed hed-accent">{{ pagetitle }}</h1>
 {% endblock %}
+
 
 {% block sidebar %}
 {% endblock %}
+
 
 {% block posthero %}
   {% if post.projects | length %}
@@ -22,5 +24,4 @@
   {% include "partial/person-list.twig" with { heading: pagetitle ~ " Leadership", items: post.people } %}
   </div>
   {% endif %}
-
 {% endblock %}

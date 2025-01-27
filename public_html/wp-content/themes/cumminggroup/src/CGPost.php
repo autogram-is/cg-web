@@ -1,7 +1,6 @@
 <?php
 
 use Timber\Post;
-use Timber;
 
 /**
  * Class CGPost

@@ -11,7 +11,7 @@ class CGSite extends Site {
 				add_action( 'after_setup_theme', function () {
 					register_nav_menus([
 						'primary' => 'Primary Menu',
-						'primary_eu' => 'Primary Menu (EU Version)',
+						'primary-eu' => 'Primary Menu (EU Version)',
 						'footer' => 'Footer Menu',
 					]);
 				});
@@ -34,7 +34,7 @@ class CGSite extends Site {
 		 */
 		public function add_to_context( $context ) {
 			$context['menu'] = Timber::get_menu('primary');
-			$context['menu_eu'] = Timber::get_menu('primary_eu');
+			$context['menu_eu'] = Timber::get_menu('primary-eu');
 			$context['footer_nav'] = Timber::get_menu('footer');
 
 			$context['site'] = $this;
