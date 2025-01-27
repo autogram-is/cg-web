@@ -4,7 +4,8 @@ function cg_cli_build_nav_menus($dry_run = false) {
 
   $locations['primary'] = cg_cli_build_nav_menu('cg-primary-nav', 'na', $dry_run);
   $locations['primary-eu'] = cg_cli_build_nav_menu('cg-primary-nav-eu', 'eu', $dry_run);
-  //$locations['footer'] = cg_cli_build_nav_menu('cg-footer-nav', $dry_run);
+  $locations['footer'] = cg_cli_build_nav_menu('cg-footer-links', $dry_run);
+  $locations['fine-print'] = cg_cli_build_nav_menu('cg-fine-print', $dry_run);
   
   set_theme_mod('nav_menu_locations', $locations);
 }
@@ -130,8 +131,5 @@ function object_by_locale(string $post_type = 'post') {
       $output['eu'][] = $post;
     }
   }
-
-  WP_CLI::log(var_export($output, true));
-
   return $output;
 }

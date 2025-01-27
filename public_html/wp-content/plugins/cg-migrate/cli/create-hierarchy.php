@@ -126,10 +126,6 @@ function _populate_offices($dry_run = false, $preserve = false) {
   }
 }
 
-function _static_pages() {
-
-}
-
 function get_all_child_pages($post_id) {
   $params = array('post_type' => 'page', 'posts_per_page' => -1);
   $query = new WP_Query();
