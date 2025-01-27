@@ -1,0 +1,9 @@
+{% extends "base.twig" %}
+{% set pagetitle = title ? title : post.title %}
+
+{% block hero %}
+{% endblock %}
+
+{% block content %}
+	{{post.content}}
+{% endblock %}
