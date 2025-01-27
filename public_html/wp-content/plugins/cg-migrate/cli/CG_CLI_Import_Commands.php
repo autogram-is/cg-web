@@ -73,15 +73,12 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
   }
 
   /**
-   * Create stubbed informational pages and navigation menus.
+   * Create NA and EU navigation menus.
    *
    * ## OPTIONS
    * 
    * [--dry-run]
    * : If set, the command will only simulate the updates without saving them.
-   * 
-   * [--preserve]
-   * : If set, preserves old pages even if new ones are created.
    * 
    * ## EXAMPLES
    *
@@ -95,7 +92,7 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    */
   public function navigation($args, $assoc_args) {
     $dry_run = isset($assoc_args['dry-run']);
-    $preserve = isset($assoc_args['preserve']);
+    cg_cli_build_nav_menus($dry_run);
   }
 
   /**

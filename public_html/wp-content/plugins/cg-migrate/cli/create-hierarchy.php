@@ -130,26 +130,6 @@ function _static_pages() {
 
 }
 
-function _navigation_menus($dry_run = false) {
-  $menus = [];
-
-  $items = load_migration_csv('nav-menus.csv');
-
-  if ($dry_run) {
-
-  } else {
-    $menu_id = wp_create_nav_menu($menu_name);
-
-    wp_update_nav_menu_item($menu_id, 0, array(
-      'menu-item-title' => 'About',
-      'menu-item-object' => 'page',
-      'menu-item-object-id' => get_page_by_path('about')->ID,
-      'menu-item-type' => 'post_type',
-      'menu-item-status' => 'publish'
-    ));
-  }
-}
-
 function get_all_child_pages($post_id) {
   $params = array('post_type' => 'page', 'posts_per_page' => -1);
   $query = new WP_Query();
