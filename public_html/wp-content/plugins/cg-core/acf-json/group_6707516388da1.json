@@ -21,7 +21,7 @@
             "admin_column_width": "",
             "choices": {
                 "all": "All Locales",
-                "us": "United States",
+                "na": "North America",
                 "eu": "Europe"
             },
             "default_value": "all",

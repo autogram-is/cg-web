@@ -1,0 +1,19 @@
+title,url,description,object-slug,object-id,object,status,type,parent
+About,#,,,,,published,custom,
+About Us,,,about-us-eu,,page,published,post_type,About
+Team,,,team,,page,published,post_type,About
+Clients,,,clients-eu,,page,published,post_type,About
+Affiliates,,,affiliates,,page,published,post_type,About
+"Environmental, Social and Corporate Governance",,,environmental-social-and-corporate-governance-eu,,page,published,post_type,About
+Services,,,services,,page,published,post_type,
+Sectors,,,sectors,,page,published,post_type,
+Locations,#,,,,,published,custom,
+Americas,,,locations-na,,page,published,post_type,Locations
+Europe + UK,,,locations-eu,,page,published,post_type,Locations
+News + Insights,,,news-insights,,page,published,post_type,
+Events,,,events-promotions,,page,published,post_type,
+Market Analysis,,,market-analysis,,page,published,post_type,
+Careers,#,,,,,published,custom,
+Career Opportunities,,,careers-eu,,page,published,post_type,Careers
+Apprenticeship Programme,,,apprenticeship-programme,,page,published,post_type,Careers
+Gratuate Programme,,,graduate-programme,,page,published,post_type,Careers

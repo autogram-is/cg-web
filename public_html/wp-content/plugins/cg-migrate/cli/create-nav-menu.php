@@ -3,7 +3,7 @@ function cg_cli_build_nav_menus($dry_run = false) {
   $locations = get_theme_mod('nav_menu_locations');
 
   $locations['primary'] = cg_cli_build_nav_menu('cg-primary-nav', 'na', $dry_run);
-  //$locations['primary-eu'] = cg_cli_build_nav_menu('cg-primary-nav-eu', 'eu', $dry_run);
+  $locations['primary-eu'] = cg_cli_build_nav_menu('cg-primary-nav-eu', 'eu', $dry_run);
   //$locations['footer'] = cg_cli_build_nav_menu('cg-footer-nav', $dry_run);
   
   set_theme_mod('nav_menu_locations', $locations);
@@ -55,6 +55,7 @@ function cg_cli_build_nav_menu(string $menu, $locale = false, $dry_run = false) 
           'post_title' => $item['title'],
           'post_name' => $item['object-slug'],
           'post_type' => $item['object'],
+          'post_status' => 'publish',
         ));
         $post = get_post($post_id);
         WP_CLI::log(($dry_run ? "Dry-Run: " : "") . "Created " . $post->post_title . " '" . $post->ID . "'");
@@ -125,7 +126,7 @@ function object_by_locale(string $post_type = 'post') {
     if ($locale !== 'eu') {
       $output['na'][] = $post;
     }
-    if ($locale === 'na') {
+    if ($locale !== 'na') {
       $output['eu'][] = $post;
     }
   }
