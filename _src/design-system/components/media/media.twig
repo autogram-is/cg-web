@@ -10,11 +10,13 @@
       </div>
     </div>
     {% endif %}
+    {% if heading or body %}
     <figcaption class="flow">
       <div class="body">
         <h3 class="type-hed hed-accent"><a href="{{ href }}">{{ heading }}</a></h3>
         {{ body | markdown }}
       </div>
     </figcaption>
+    {% endif %}
   </div>
 </figure>

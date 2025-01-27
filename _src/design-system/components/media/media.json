@@ -15,6 +15,16 @@
   },
   "variants" : [
     {
+      "title" : "Media Only",
+      "name" : "isolated",
+      "context" : {
+        "media" : {
+          "poster" : "https://cumming-group.com/wp-content/uploads/2024/09/Healthcare-Podcast-Thumbnail-Steve-Mike.jpg",
+          "href" : "https://www.youtube.com/embed/nyD9sr_pEkY?autoplay=1"
+        }
+      }
+    },
+    {
       "title" : "Color Block",
       "name" : "colorblock",
       "context" : {
