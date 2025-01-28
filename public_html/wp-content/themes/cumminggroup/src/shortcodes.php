@@ -26,8 +26,17 @@ function cg_shortcode_events_upcoming($atts) {
   // Lists all events whose start_date is in the future.
 
   $query_options = array(
+    'meta_query' => array(
+      array(
+        'key' => 'start_date',
+        'value' => current_time('mysql'),
+        'compare' => '>=',
+        'type' => 'DATE'
+      )
+    ),
     'post_type'     => 'event',
     'posts_per_page' => _attr($atts, 'limit', 10),
+    'orderby' => 'start_date'
   );
 
   $data = array(
@@ -41,9 +50,18 @@ function cg_shortcode_events_upcoming($atts) {
 function cg_shortcode_events_past($atts) {
   // Lists all events whose end_date is in the past.
   $query_options = array(
+        'meta_query' => array(
+      array(
+        'key' => 'start_date',
+        'value' => current_time('mysql'),
+        'compare' => '<=',
+        'type' => 'DATE'
+      )
+    ),
     'post_type'     => 'event',
     'posts_per_page' => _attr($atts, 'limit', 20),
     'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
+    'orderby' => 'start_date'
   );
 
   $data = array(
