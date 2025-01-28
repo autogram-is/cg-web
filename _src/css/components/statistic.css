@@ -12,13 +12,17 @@
       line-height: var(--leading-tight);
       flex-direction: row;
       align-items: flex-end;
-      .sup {
+      .sup,
+      .sub {
         font-size: .625em;
         line-height: 1.45; /* Adjust faux-superscript size relative to `font-size` of `dt`. */
       }
       sup,
       .sup {
         align-self: flex-start;
+      }
+      .sub {
+        align-self: flex-end;
       }
     }
     dd {
