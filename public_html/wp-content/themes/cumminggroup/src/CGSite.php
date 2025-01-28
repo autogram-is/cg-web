@@ -136,7 +136,7 @@ class CGSite extends Site {
 			}
 
 			$prefix = '\-\+#$€~';
-			$num = '\d\.,\-\+';
+			$num = '\d\.,';
 			$regex = "/([" . $prefix . "])?([" . $num . "]+)?([" . $prefix . "])?(.+)?/";
 			$output = '';
 
