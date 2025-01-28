@@ -131,9 +131,12 @@ class CGSite extends Site {
 		 * @param string $text The statistic to stylize
 		 */
 		function stylize_statistic(string | NULL $text) {
-			if (is_null($text) || trim($text) === '') return '';
-			$prefix = '-+#$€~';
-			$num = '\d\.,-';
+			if (is_null($text) || trim($text) === '') {
+				return '';
+			}
+
+			$prefix = '\-\+#$€~';
+			$num = '\d\.,\-\+';
 			$regex = "/([" . $prefix . "])?([" . $num . "]+)?([" . $prefix . "])?(.+)?/";
 			$output = '';
 
@@ -144,7 +147,7 @@ class CGSite extends Site {
 			$remainder = $match[4] ?? '';
 			
 			if ($statistic) {
-				if ($prefix) $output .= '<span class="sup">' . $prefix . '</span>';
+				if ($prefix) $output .= '<span class="sup">' . trim($prefix) . '</span>';
 				if ($statistic) $output .= trim($statistic);
 				if ($suffix) $output .= '<span class="sup">' . trim($suffix) . '</span>';
 				if ($remainder) $output .= '<span>' . trim($remainder) . '</span>';
