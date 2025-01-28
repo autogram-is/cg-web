@@ -99,6 +99,7 @@ class CGSite extends Site {
 
 				$twig->addFilter(new \Twig\TwigFilter( 'pluralize', 'pluralize' ));
 				$twig->addFilter(new \Twig\TwigFilter( 'stylize', [ $this, 'stylize_title' ] ));
+				$twig->addFilter(new \Twig\TwigFilter( 'statistic', [ $this, 'stylize_statistic' ] ));
 
 				return $twig;
 		}
@@ -115,4 +116,14 @@ class CGSite extends Site {
 				$symbol = ' + ';
 				return str_replace($symbol, " <span class=\"amp\">" . trim($symbol) . "</span> ", $text);
 		}
-}
+
+		/**
+		 * Apply special styling to the value field of a statistic.
+		 *
+		 * @param string $text The statistic to stylize
+		 */
+		function stylize_statistic(string | NULL $text) {
+			if (is_null($text)) return '';
+			return $text;
+		}
+	}
