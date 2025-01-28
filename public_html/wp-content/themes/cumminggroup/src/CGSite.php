@@ -120,10 +120,29 @@ class CGSite extends Site {
 		/**
 		 * Apply special styling to the value field of a statistic.
 		 *
+		 * Examples:
+		 * 
+		 * 	3,029,144 MTCO₂e => 3,029,144<span>MTCO₂e</span>
+		 *	412,614 MWh => 412,614<span>MWh</span>
+		 *	115+ MW => 115<span class="sup">+</span><span>MW</span>
+		 *	2,000+ => 2,000<span class="sup">+</span>
+		 *	#14 => <span class="sup">#</span>14
+		 *
 		 * @param string $text The statistic to stylize
 		 */
 		function stylize_statistic(string | NULL $text) {
-			if (is_null($text)) return '';
-			return $text;
+			if (is_null($text) || trim($text) === '') return '';
+			$prefix = '-+#$€~';
+			$num = '\d\.,-';
+			$regex = "/([" . $prefix . "])?([" . $num . "]+)?([" . $prefix . "])?(.+)?/";
+			$output = '';
+
+			preg_match($regex, trim($text), $match);
+			if (array_key_exists(1, $match) && $match[1]) $output .= '<span class="sup">' . $match[1] . '</span>';
+			if (array_key_exists(2, $match) && $match[2]) $output .= trim($match[2]);
+			if (array_key_exists(3, $match) && $match[3]) $output .= '<span class="sup">' . trim($match[3]) . '</span>';
+			if (array_key_exists(4, $match) && $match[4]) $output .= '<span>' . trim($match[4]) . '</span>';
+
+			return $output;
 		}
 	}
