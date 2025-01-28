@@ -13,16 +13,15 @@
       flex-direction: row;
       align-items: flex-end;
       .sup,
-      .sub {
+      span {
         font-size: .625em;
         line-height: 1.45; /* Adjust faux-superscript size relative to `font-size` of `dt`. */
       }
-      sup,
-      .sup {
-        align-self: flex-start;
-      }
-      .sub {
+      span {
         align-self: flex-end;
+        &.sup {
+          align-self: flex-start;
+        }
       }
     }
     dd {
