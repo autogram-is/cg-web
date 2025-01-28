@@ -138,11 +138,20 @@ class CGSite extends Site {
 			$output = '';
 
 			preg_match($regex, trim($text), $match);
-			if (array_key_exists(1, $match) && $match[1]) $output .= '<span class="sup">' . $match[1] . '</span>';
-			if (array_key_exists(2, $match) && $match[2]) $output .= trim($match[2]);
-			if (array_key_exists(3, $match) && $match[3]) $output .= '<span class="sup">' . trim($match[3]) . '</span>';
-			if (array_key_exists(4, $match) && $match[4]) $output .= '<span>' . trim($match[4]) . '</span>';
-
+			$prefix = $match[1] ?? '';
+			$statistic = $match[2] ?? '';
+			$suffix = $match[3] ?? '';
+			$remainder = $match[4] ?? '';
+			
+			if ($statistic) {
+				if ($prefix) $output .= '<span class="sup">' . $prefix . '</span>';
+				if ($statistic) $output .= trim($statistic);
+				if ($suffix) $output .= '<span class="sup">' . trim($suffix) . '</span>';
+				if ($remainder) $output .= '<span>' . trim($remainder) . '</span>';
+			} else {
+				$output = trim($text);
+			}
+		
 			return $output;
 		}
 	}
