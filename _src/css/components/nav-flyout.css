@@ -68,13 +68,16 @@
           margin-block: var(--space-nudge);
           text-decoration: none;
           text-transform: uppercase;
-
+          position: relative;
           &:hover {
             padding-left: var(--space-3xs);
           }
           &[aria-current] {
-            color: var(--color-timeless-gold);
+            color: var(--color-timeless-highlight);
             padding-left: 0;
+            .amp {
+              color: var(--color-timeless-gold);
+            }
           }
         }
       }

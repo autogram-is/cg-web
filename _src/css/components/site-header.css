@@ -136,40 +136,57 @@
           text-decoration: none;
           text-transform: uppercase;
         }
-        li.nav-topitem > a,
-        li.nav-topitem > button.flyout {
-          /* Hover accent */
-          &::before {
-            content: "";
-            display: block;
-            height: 2px;
-            background: var(--color-timeless-gold);
-            width: 0;
-            position: absolute;
-            bottom: 0;
-            transform: translateX(0);
-            transition: width .2s ease-in-out,transform .2s ease-in-out;
-            @media( prefers-reduced-motion ) {
-              transition: none;
+        li.nav-topitem {
+          a,
+          button.flyout {
+            /* Hover accent */
+            &::before {
+              content: "";
+              display: block;
+              height: 2px;
+              background: var(--color-timeless-gold);
+              width: 0;
+              position: absolute;
+              bottom: 0;
+              transform: translateX(0);
+
+              transition: width .2s ease-in-out,transform .2s ease-in-out;
+              @media( prefers-reduced-motion ) {
+                transition: none;
+              }
+            }
+            &.current,
+            &[aria-current="page"] {
+              &::before {
+                background: var(--color-deep-steel);
+                transition: background .125s linear;
+              }
+              &[aria-expanded="true"]::before {
+                background: var(--color-timeless-gold);
+              }
+            }
+            &.current::before,
+            &[aria-current="page"]::before,
+            &[aria-expanded="true"]::before,
+            &:hover::before {
+              width: var(--space-l);
             }
           }
-          &.current,
-          &[aria-current="page"] {
+          &:has([aria-current="page"]) button {
             &::before {
               background: var(--color-deep-steel);
               transition: background .125s linear;
+              width: var(--space-l);
             }
             &[aria-expanded="true"]::before {
               background: var(--color-timeless-gold);
             }
           }
-          &.current::before,
-          &[aria-current="page"]::before,
-          &[aria-expanded="true"]::before,
-          &:hover::before {
-            width: var(--space-l);
+          .subnav ul li a:hover {
+            &::before {
+              display: none;
+            }
           }
-
         }
       }
     }
@@ -321,18 +338,23 @@
           flex-grow: 2;
           justify-content: space-between;
           min-width: 50em;
-          li.nav-topitem > a,
-          li.nav-topitem > button {
-            padding-block: var(--space-xs);
-            &::before{
-              left: 50%;
+          li.nav-topitem {
+            & > a,
+            & > button {
+              padding-block: var(--space-xs);
+              &::before{
+                left: 50%;
+              }
+              &.current::before,
+              &[aria-current="page"]::before,
+              &[aria-expanded="true"]::before,
+              &:hover::before {
+                width: var(--space-l);
+                transform: translateX( calc( 0px - ( var(--space-l) / 2 ) ) );
+              }
             }
-            &.current::before,
-            &[aria-current="page"]::before,
-            &[aria-expanded="true"]::before,
-            &:hover::before {
-              width: var(--space-l);
-              transform: translateX( calc( 0px - ( var(--space-l) / 2 ) ) );
+            &:has([aria-current="page"]) button::before {
+              transform: translateX( calc( 0px - ( var(--space-l) / 2 ) ) ) !important;
             }
           }
           nav {  
