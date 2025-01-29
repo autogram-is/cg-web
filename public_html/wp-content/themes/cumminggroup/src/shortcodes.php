@@ -41,6 +41,7 @@ function cg_shortcode_events_upcoming($atts) {
 
   $data = array(
     'posts' => Timber::get_posts($query_options),
+    'archive' => _attr($atts, 'archive' )
   );
 
   // This time we use Timber::compile since shortcodes should return the code
