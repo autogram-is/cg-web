@@ -11,6 +11,7 @@
 {% endblock %}
 
 
+
 {% block posthero %}
   {% if post.projects | length %}
   {% include "partial/project-gallery.twig" with { heading: "Representative Experience", items: post.projects, offices: true, services: true, limit: 6 } %}
@@ -21,4 +22,5 @@
   {% include "partial/person-list.twig" with { heading: pagetitle ~ " Leadership", items: post.people } %}
   </div>
   {% endif %}
+
 {% endblock %}

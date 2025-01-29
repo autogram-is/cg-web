@@ -1,7 +1,9 @@
 {% extends "base.twig" %}
+<div class="wrapper">
 {% block content %}
 	{% for post in posts %}
 		{% include ['listing-'~post.post_type~'.twig', 'listing.twig'] %}
 	{% endfor %}
 	{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
 {% endblock %}
+</div>

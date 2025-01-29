@@ -16,18 +16,20 @@
   Example: { "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit…", "author": "John Doe" }
 #}
 
-<figure class="{{ classes }} quote flow {{ fields.variation }}" data-{{ block.id }}>
-  <blockquote class="body type-display">
-    {{ fields.quote }}
-  </blockquote>
-  <figcaption class="sidebar">
-    {% if fields.attribution %}
-    <div>
-      <div class="attribution">
-        <p>{{ fields.attribution }}</p>
-        {% if fields.affiliation %}<p>{{ fields.affiliation }}</p>{% endif %}
+<div class="wrapper">
+  <figure class="{{ classes }} quote flow {{ fields.variation }}" data-{{ block.id }}>
+    <blockquote class="body type-display">
+      {{ fields.quote }}
+    </blockquote>
+    <figcaption class="sidebar">
+      {% if fields.attribution %}
+      <div>
+        <div class="attribution">
+          <p>{{ fields.attribution }}</p>
+          {% if fields.affiliation %}<p>{{ fields.affiliation }}</p>{% endif %}
+        </div>
       </div>
-    </div>
-    {% endif %}
-  </figcaption>
-</figure>
+      {% endif %}
+    </figcaption>
+  </figure>
+</div>
