@@ -2,6 +2,10 @@
 
 .media {
   margin: 0;
+  .swap {
+    background-size: cover;
+  }
+
   .switcher {
     --switcher-vertical-alignment: stretch;
     --gutter: calc( var(--space-m) * 2 );

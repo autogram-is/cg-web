@@ -15,8 +15,10 @@ export default function() {
   mediablocks.forEach( media => {
     media.addEventListener( "click", function( e ) {
       const source = this.dataset.media,
-        player = createiframe( source, this );
+        player = createiframe( source, this ),
+        poster = this.querySelector('img').src;
 
+      this.parentNode.style.backgroundImage = "url(" + poster + ")";
       this.parentNode.insertBefore( player, this );
       this.remove();
 

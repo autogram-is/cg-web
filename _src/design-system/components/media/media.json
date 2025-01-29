@@ -25,15 +25,24 @@
       }
     },
     {
-      "title" : "Color Block",
-      "name" : "colorblock",
+      "title" : "Legacy Media",
+      "name" : "legacy",
+      "note" : "Poster can be extracted from `data-episode-artwork`.",
       "context" : {
-        "utilities" : "bg-regal-purple",
-        "heading" : "Construction Insiders Podcast",
-        "body" : "Check out our latest podcast about Integrated Project Delivery in Healthcare Construction: Evolving Strategies for Complex Facilities",
+        "heading" : "The Value of Published Metrics in M/E/P Estimating",
         "media" : {
-          "poster" : "https://cumming-group.com/wp-content/uploads/2024/09/Healthcare-Podcast-Thumbnail-Steve-Mike.jpg",
-          "href" : "https://www.youtube.com/embed/nyD9sr_pEkY?autoplay=1"
+          "poster" : "https://cumming-group.com/wp-content/uploads/2019/10/Podcast-Graphic_Episode-1_Pete-Melucci.jpg",
+          "href" : "https://www.buzzsprout.com/552622/episodes/1955688-the-value-of-published-metrics-in-m-e-p-estimating.mp3"
+        }
+      }
+    },
+    {
+      "title" : "Legacy Media Only",
+      "name" : "legacy-only",
+      "context" : {
+        "media" : {
+          "poster" : "https://cumming-group.com/wp-content/uploads/2019/10/Podcast-Graphic_Episode-1_Pete-Melucci.jpg",
+          "href" : "https://www.buzzsprout.com/552622/episodes/1955688-the-value-of-published-metrics-in-m-e-p-estimating.mp3"
         }
       }
     },
