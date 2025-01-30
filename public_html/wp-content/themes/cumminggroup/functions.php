@@ -7,14 +7,18 @@
  * do the heavy lifting of defining content types, etc.
  */
 
+ use Timber\Timber;
+ use Timber\PostQuery;
+
 // Load Composer dependencies.
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/src/CGSite.php';
 require_once __DIR__ . '/src/CGPost.php';
 require_once __DIR__ . '/src/CGProject.php';
 require_once __DIR__ . '/src/shortcodes.php';
+require_once __DIR__ . '/src/blocks.php';
 
-Timber\Timber::init();
+Timber::init();
 
 // Sets the directories (inside your theme) to find .twig files.
 Timber::$dirname = [ 'templates', 'views' ];
@@ -44,7 +48,7 @@ add_filter('timber/post/classmap', function ($classmap) {
   return array_merge($classmap, $custom_classmap);
 });
 
-function pluralize(int | array | Timber\PostQuery $items, string $singular, string $plural=null) {
+function pluralize(int | array | PostQuery $items, string $singular, string $plural=null) {
   if (is_int($items) && $items < 2) return $singular;
   if(count($items)==1 || !strlen($singular)) return $singular;
   if($plural!==null) return $plural;
