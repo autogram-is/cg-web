@@ -16,20 +16,40 @@
   Example: { "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit…", "author": "John Doe" }
 #}
 
-<div class="wrapper">
-  <figure class="{{ classes | replace({'is-style-': ""}) }} quote flow" data-{{ block.id }}>
-    <blockquote class="body type-display">
-      {{ fields.quote }}
-    </blockquote>
-    <figcaption class="sidebar">
-      {% if fields.attribution %}
-      <div>
-        <div class="attribution">
-          <p>{{ fields.attribution }}</p>
-          {% if fields.affiliation %}<p>{{ fields.affiliation }}</p>{% endif %}
+{% set person = get_posts(fields.team_member) %}
+
+<figure class="quote flow {{ classes | replace({'is-style-': ""}) }}" data-{{ block.id }}">
+  <div class="wrapper region switcher">
+    {% if person %}
+    <div class="thumbnail">
+			<img
+				src="{{person.thumbnail.src|resize(800, 1200) }}"
+				height="{{person.thumbnail.height}}"
+				width="{{person.thumbnail.width}}"
+				alt="{{person.thumbnail.alt}}" />
+    </div>
+    {% endif %}
+    <div>
+      <blockquote class="body type-display">{{ fields.quote }}</blockquote>
+      <figcaption class="sidebar caption">
+        {% if person %}
+        <div class="cite flow">
+          <div class="attribution">
+            <p>{{ person.title }}</p>
+          </div>
+          <p class="affiliation">{{ person.role }}</p>
+          <cite class="type-detail"></cite>
         </div>
-      </div>
-      {% endif %}
-    </figcaption>
-  </figure>
-</div>
+        {% elseif fields.attribution or fields.affiliation %}
+        <div class="cite flow">
+          <div class="attribution">
+            {% if fields.author %}<p>{{ fields.author }}</p>{% endif %}
+          </div>
+          {% if fields.affiliation %}<p class="affiliation">{{ fields.team_member.role }}</p>{% endif %}
+          <cite class="type-detail"></cite>
+        </div>
+        {% endif %}
+      </figcaption>
+    </div>
+  </div>
+</figure>

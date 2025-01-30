@@ -17,9 +17,6 @@ function cg_register_block_styles() {
   register_block_style('acf/cg-pullquote',
     array('name' => 'bg-deep-steel','label' => __( 'Dark Background', 'textdomain' ), 'is_default' => false)
   );
-  register_block_style('acf/cg-pullquote',
-    array('name' => 'topo','label' => __( 'Topography', 'textdomain' ), 'is_default' => false, 'inline_style' => 'topo.all-center.pullquote')
-  );
 
   /**
    * Additional Styles for the Cumming Group statistics block
