@@ -206,31 +206,6 @@
   }
 }
 
-.hed-breakhatch {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  position: relative;
-  &::before {
-    @mixin hatching;
-    content: "";
-    pointer-events: none;
-    width: 50vw;
-    margin-left: calc( 0px - 50vw - var(--space-2xs) );
-    z-index: 0;
-    margin-inline-end: var(--space-2xs);
-  }
-  &.type-hed::before {
-    margin-top: .1ch;
-  }
-  &.type-display::before {
-    margin-top: 1px;
-  }
-  &.type-pagehed::before {
-    margin-top: .575ch;
-  }
-}
-
 .hgroup {
   .location,
   .author,
