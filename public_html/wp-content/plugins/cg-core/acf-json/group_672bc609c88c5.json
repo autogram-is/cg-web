@@ -3,35 +3,6 @@
     "title": "Pull Quote",
     "fields": [
         {
-            "key": "field_678940144ba55",
-            "label": "Variation",
-            "name": "variation",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_column_enabled": 0,
-            "choices": {
-                "default": "Default Style",
-                "bg-deep-steel": "Color Block",
-                "topo all-center pullquote": "Hero"
-            },
-            "default_value": "default",
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "allow_in_bindings": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
             "key": "field_672bc6098990a",
             "label": "Quote",
             "name": "quote",
@@ -54,6 +25,47 @@
             "new_lines": ""
         },
         {
+            "key": "field_679bb411cf381",
+            "label": "Team Member",
+            "name": "team_member",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_672bc6348990c",
+                        "operator": "==empty"
+                    },
+                    {
+                        "field": "field_678940a94ba56",
+                        "operator": "==empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "post_type": [
+                "person"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "return_format": "object",
+            "multiple": 0,
+            "allow_null": 1,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
             "key": "field_672bc6348990c",
             "label": "Attribution",
             "name": "attribution",
@@ -61,7 +73,14 @@
             "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_679bb411cf381",
+                        "operator": "==empty"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -83,7 +102,14 @@
             "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_679bb411cf381",
+                        "operator": "==empty"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -116,5 +142,5 @@
     "active": true,
     "description": "Editor Block",
     "show_in_rest": 0,
-    "modified": 1737054428
+    "modified": 1738257646
 }

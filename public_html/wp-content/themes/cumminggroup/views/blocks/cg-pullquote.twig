@@ -1,9 +1,9 @@
 {#
-  Title: Pull Quote
+  Title: Team Quote
   Description: Pull quote with attribution
   Category: cumminggroup
   Icon: format-quote
-  Mode: preview
+  Mode: edit
   SupportsMode: true
   Align: center
   PostTypes: 
@@ -17,7 +17,7 @@
 #}
 
 <div class="wrapper">
-  <figure class="{{ classes }} quote flow {{ fields.variation }}" data-{{ block.id }}>
+  <figure class="{{ classes | replace({'is-style-': ""}) }} quote flow" data-{{ block.id }}>
     <blockquote class="body type-display">
       {{ fields.quote }}
     </blockquote>

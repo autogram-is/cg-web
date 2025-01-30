@@ -16,7 +16,7 @@
 #}
 <div class="bg-timeless-backdrop">
   <div class="wrapper">
-    <figure class="statistic flow text-timeless-gold {{ utilities }} {{ fields.variation }}{{ fields.counter ? " counter" : "" }}"{{ fields.counter ? " data-counter" : "" }} data-{{ block.id }}>
+    <figure class="statistic flow text-timeless-gold {{ classes | replace({'is-style-': ""}) }} {{ utilities }} {{ fields.counter ? " counter" : "" }}"{{ fields.counter ? " data-counter" : "" }} data-{{ block.id }}>
       <dl>
         {% for stat in fields.statistics %}
         <div class="body">
