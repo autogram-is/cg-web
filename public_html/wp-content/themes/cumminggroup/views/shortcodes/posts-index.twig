@@ -1,4 +1,4 @@
-<div class="wrapper">
+
 
 <div class="region">
 {%  if 'current' in posts.pagination.pages[0].class %}
@@ -26,5 +26,4 @@
 <hr>
 <div class="region">
 {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
-</div>
 </div>
