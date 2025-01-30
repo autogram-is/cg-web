@@ -1,24 +1,21 @@
-<div class="compact">
-  <form action="POST" class="region flow">
-    <label>
+<div class="compact {{ utilities }}">
+  <form action="POST" class="region">
+    <label class="{{ type }}">
       <span>Text Input</span>
       <input type="text">
     </label>
 
-    <label>
-      <div>
-        <span class="label">Text (placeholder)</span>
-        <span class="note"></span>
-      </div>
+    <label class="{{ type }}">
+      <span class="label">Text (placeholder)</span>
       <input type="text" placeholder="Placeholder">
     </label>
 
-    <label>
+    <label class="{{ type }}">
       <span class="label">Text (Required)</span>
       <input type="text" required>
     </label>
 
-    <label>
+    <label class="{{ type }}">
       <div class="repel">
         <span class="label">Text (validated)</span>
         <span class="note">Four or more characters required.</span>
@@ -26,27 +23,27 @@
       <input type="text" minlength="4" required>
     </label>
 
-    <label>
+    <label class="{{ type }}">
       <span class="label">Email</span>
       <input type="email" required>
     </label>
 
-    <label>
+    <label class="{{ type }}">
       <span class="label">Text (Disabled)</span>
       <input type="text" disabled>
     </label>
 
-    <label>
+    <label class="{{ type }}">
       <span class="label">Textarea</span>
       <textarea></textarea>
     </label>
 
-    <label>
+    <label class="{{ type }}">
       <span class="label">Date</span>
       <input type="date">
     </label>
 
-    <label>
+    <label class="{{ type }}">
       <span class="label">Select</span>
       <div class="select">
         <select>
@@ -59,7 +56,7 @@
       </div>
     </label>
 
-    <label>
+    <label class="{{ type }}">
       <span class="label">Select (multiple)</span>
       <select multiple>
         <option>option 1</option>
@@ -69,7 +66,7 @@
       </select>
     </label>
 
-    <label>
+    <label class="{{ type }}">
       <span class="label">Datalist</span>
       <input list="datalist">
       <datalist id="datalist">
@@ -79,12 +76,12 @@
       </datalist>
     </label>
 
-     <label>
+     <label class="{{ type }}">
       <span class="label">Checkbox</span>
       <input type="checkbox"> 
     </label>
 
-    <fieldset>
+    <fieldset class="{{ type }}">
       <legend class="type-detail">Radios</legend>
       <label>
         <span class="label">Value 1</span>

@@ -1,4 +1,3 @@
-
 { 
   "title": "Forms",
   "name" : "forms",
@@ -7,5 +6,22 @@
         "url": "/_src/css/components/forms.css"
       } ],
   "context": {
-  }
+    "utilities" : "wrapper"
+  },
+  "variants" : [
+    {
+      "title" : "Inverted",
+      "name" : "inverted-form",
+      "context" : {
+        "utilities" : "wrapper bg-deep-steel"
+      }
+    },
+    {
+      "title" : "Inline",
+      "name" : "input-inline",
+      "context" : {
+        "type" : "input-inline"
+      }
+    }
+  ]
 }
