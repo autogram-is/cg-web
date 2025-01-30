@@ -28,12 +28,15 @@ form {
       font-family: var(--font-body);
       font-weight: var(--weight-regular);
       margin: 0;
+      padding: 0;
+    }
+    textarea {
+      padding: calc(var(--space-2xs) + var(--space-nudge)) var(--space-xs) calc( var(--space-2xs) - 1px ) var(--space-xs);
     }
     span {
       display: block;
-      &.label {
-        margin-block-end: var(--space-nudge);
-      }
+      margin-block: var(--space-xs) var(--space-nudge);
+
       &.note {
         color: var(--color-steel-midtone);
         font-weight: var(--weight-regular);
@@ -66,7 +69,7 @@ form {
       }
     }
     &:has([required]) {
-      .label::after {
+      .req::after {
         color: var(--color-steel-midtone);
         content: "*";
         display: inline-block;
@@ -75,7 +78,7 @@ form {
       }
     }
     &:has(input:invalid) {
-      .label::after {
+      .req::after {
         color: var(--color-legacy-red);
       }
       span.note {
@@ -124,6 +127,14 @@ form {
     option {
       padding-block: var(--space-nudge);
       text-indent: var(--space-2xs);
+    }
+  }
+  option[disabled] {
+    color: red;
+  }
+  select:valid {
+    option[disabled] {
+      display: none;
     }
   }
 }
@@ -250,6 +261,10 @@ form {
       height: var(--space-l);
       padding: var(--space-3xs);
       width: var(--space-l);
+    }
+
+    input[type="submit"] {
+      margin-block: var(--space-s) var(--space-nudge);
     }
   }
 }

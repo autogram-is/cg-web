@@ -13,3 +13,5 @@ import media from './media.js';
 media();
 import statistic from './statistic.js';
 statistic();
+  import formDisclose from './form-disclose.js';
+  formDisclose();

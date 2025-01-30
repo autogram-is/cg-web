@@ -1,0 +1,51 @@
+<div class="form-disclose compact">
+  <form action="POST" class="region">
+
+    <label>
+      <span class="req">Please select a topic</span>
+      <div class="select">
+        <select required data-form-disclose="fields">
+          <option disabled selected value="">Topics</option>
+          <option>option 1</option>
+          <option>option 2</option>
+          <option>option 3</option>
+        </select>
+      </div>
+    </label>
+
+    <div id="fields">
+      <div class="switcher">
+        <label>
+          <span class="req">Email</span>
+          <input type="email" required data-form-disclose="add-fields">
+        </label>
+        <label>
+          <span>Your Company</span>
+          <input type="text" required>
+        </label>
+      </div>
+      <div id="add-fields">
+        <div class="switcher">
+          <label>
+            <span>First Name</span>
+            <input type="text" required>
+          </label>
+          <label>
+            <span>First Name</span>
+            <input type="text" required>
+          </label>
+        </div>
+        <label>
+          <span>Subject</span>
+          <input type="text" required>
+        </label>
+        <label>
+          <span>Your message</span>
+          <textarea rows="5"></textarea>
+        </label>
+      </div>
+    </div>
+
+    <input type="submit" class="button">
+  </form>
+</div>
