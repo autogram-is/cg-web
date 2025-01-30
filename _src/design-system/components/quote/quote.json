@@ -15,7 +15,7 @@
   },
   "variants" : [
     {
-      "title" : "With Thumbnail",
+      "title" : "With Headshot",
       "name" : "_image",
       "context": {
         "quote" : "Cumming Group, a long-valued partner of Providence, offered real-time market insight through their extensive exposure to healthcare projects across the country. Their diverse experience made them an indispensable ally during the entire Tarzana project, from design/preconstruction to construction.",
@@ -25,9 +25,9 @@
           "affiliation" : "Providence Cedars-Sinai Tarzana Medical Center"
         },
         "img" : {
-          "src" : "https://picsum.photos/400/300?&blur=5",
-          "height" : 300,
-          "width" : 400,
+          "src" : "https://picsum.photos/1200/800?&blur=9",
+          "height" : 800,
+          "width" : 1200,
           "alt" : ""
         }
       }
@@ -45,8 +45,8 @@
         }
       }
     },{
-      "title" : "Hero with Thumbnail",
-      "name" : "pullquote-thumb",
+      "title" : "Centered with Headshot",
+      "name" : "pullquote-centered",
       "context": {
         "type" : "pullquote",
         "utilities" : "all-center",
@@ -57,9 +57,28 @@
           "affiliation" : "Providence Cedars-Sinai Tarzana Medical Center"
         },
         "img" : {
-          "src" : "https://picsum.photos/400/300?&blur=5.1",
-          "height" : 300,
-          "width" : 400,
+          "src" : "https://picsum.photos/1200/800?&blur=9",
+          "height" : 800,
+          "width" : 1200,
+          "alt" : ""
+        }
+      }
+    },{
+      "title" : "Centered with Headshot",
+      "name" : "pullquote-centered-thumb",
+      "context": {
+        "type" : "pullquote",
+        "utilities" : "all-center",
+        "quote" : "Cumming Group, a long-valued partner of Providence, offered real-time market insight through their extensive exposure to healthcare projects across the country. Their diverse experience made them an indispensable ally during the entire Tarzana project, from design/preconstruction to construction.",
+        "author" : {
+          "name" : "Alex Herr",
+          "title" : "Chief Real Estate Officer",
+          "affiliation" : "Providence Cedars-Sinai Tarzana Medical Center"
+        },
+        "img" : {
+          "src" : "https://picsum.photos/1200/800?&blur=9",
+          "height" : 800,
+          "width" : 1200,
           "alt" : ""
         }
       }

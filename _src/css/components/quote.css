@@ -11,6 +11,12 @@
   position: relative;
   width: 100%;
 
+  .switcher {
+    --switcher-vertical-alignment: center;
+    --gutter: calc( var(--space-m) * 2 );
+    --switcher-target-container-width: 50rem;
+  }
+
 
   &.topo::after {
     opacity: .25;
@@ -23,7 +29,7 @@
     z-index: 1;
     p {
       color: inherit;
-      font-size: var(--size-step-3);
+      font-size: calc( var(--size-step-2));
       max-width: 45em;
       text-wrap: balance;
     }
