@@ -3,36 +3,6 @@
     "title": "Statistics Block",
     "fields": [
         {
-            "key": "field_67893c706d7ea",
-            "label": "Variation",
-            "name": "variation",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_column_enabled": 0,
-            "choices": {
-                "default": "Default Styling",
-                "hero": "Hero",
-                "horizontal": "Horizontal",
-                "standout": "Standout"
-            },
-            "default_value": "default",
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "allow_in_bindings": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
             "key": "field_678939a665f42",
             "label": "Statistics",
             "name": "statistics",
@@ -120,9 +90,9 @@
             "message": "",
             "default_value": 0,
             "allow_in_bindings": 0,
-            "ui": 0,
             "ui_on_text": "",
-            "ui_off_text": ""
+            "ui_off_text": "",
+            "ui": 1
         }
     ],
     "location": [
@@ -143,5 +113,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1737055176
+    "modified": 1738257402
 }
