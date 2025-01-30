@@ -28,10 +28,19 @@ function cg_import_offices($dry_run = false) {
     WP_CLI::log("Dry-Run: " . count($items) . " projects read");
   } else {
     foreach ($items as $item) {
+      if ($item['name'] || $item['email'] || $item['phone'] || $item['address']) {
+        $item['office_details'] = [];
+        $item['office_details'][] = array(
+          'name' => $item['name'] ?? '',
+          'email' => $item['name'] ?? '',
+          'phone' => $item['phone'] ?? '',
+          'address' => $item['address'] ?? '',
+        );
+      }
       $id = cg_save_office($item);
-      if ($item['id'] && $item['id'] === $id) {
+      if (($item['id'] ?? false) && $item['id'] === $id) {
         $updated++;
-      } elseif (!$item['id'] && $id) {
+      } elseif (!($item['id'] ?? false) && $id) {
         $created++;
       }
     }
