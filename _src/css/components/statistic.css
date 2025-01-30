@@ -31,6 +31,7 @@
       padding: 0 var(--space-2xs) 0 0;
       margin-block: 0;
       text-wrap: pretty;
+      display: block;
       &::after {
         border-bottom: var(--content-division);
         content: "";
