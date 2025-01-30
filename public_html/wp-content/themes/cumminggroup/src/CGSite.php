@@ -1,6 +1,7 @@
 <?php
 
 use Timber\Site;
+use Timber\Timber;
 
 /**
  * Class CGSite
@@ -15,7 +16,10 @@ class CGSite extends Site {
 						'footer' => 'Footer Links',
 						'fine-print' => 'Fine Print Links',
 					]);
+
+					cg_register_block_styles();
 				});
+				add_action('enqueue_block_assets', array($this, 'enqueue_editor_assets'));
 
 				add_filter( 'timber/context', array( $this, 'add_to_context' ) );
 				add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
@@ -24,6 +28,8 @@ class CGSite extends Site {
 				add_shortcode('events-upcoming', 'cg_shortcode_events_upcoming' );
 				add_shortcode('events-past', 'cg_shortcode_events_past' );
 				add_shortcode('offices', 'cg_shortcode_region_offices' );
+
+				add_filter('get_block_type_variations', 'cg_block_type_variations', 10, 2);
 
 				parent::__construct();
 		}
@@ -77,11 +83,24 @@ class CGSite extends Site {
 				);
 
 				add_theme_support( 'menus' );
-
+				
+				add_theme_support( 'editor-styles' );
 				add_theme_support('disable-layout-styles');
 				add_theme_support('disable-custom-colors');
 				add_theme_support('disable-custom-font-sizes');
 				add_theme_support('disable-custom-gradients');
+		}
+
+		/**
+		 * Include baseline styles for the Gutenberg editor
+		 */
+		public function enqueue_editor_assets() {
+			if (is_admin()) {
+				wp_enqueue_style(
+					'cg-editor-editor-styles',
+					get_theme_root_uri() . "/cumminggroup/assets/css/editor-styles.css"
+				);	
+			}
 		}
 
 		/**
@@ -90,12 +109,6 @@ class CGSite extends Site {
 		 * @param Twig\Environment $twig get extension.
 		 */
 		public function add_to_twig( $twig ) {
-				/**
-				 * Required when you want to use Twig’s template_from_string.
-				 * @link https://twig.symfony.com/doc/3.x/functions/template_from_string.html
-				 */
-				// $twig->addExtension( new Twig\Extension\StringLoaderExtension() );
-				// $twig->addFilter( new Twig\TwigFilter( 'myfoo', [ $this, 'myfoo' ] ) );
 
 				$twig->addFilter(new \Twig\TwigFilter( 'pluralize', 'pluralize' ));
 				$twig->addFilter(new \Twig\TwigFilter( 'stylize', [ $this, 'stylize_title' ] ));
