@@ -61,8 +61,21 @@ class CGPost extends Post {
 	 * For any region-tagged entity, find other items tagged with the same region(s).
 	 */
 	public function nearby($type = NULL, $limit = NULL) {
-		$term_list = wp_get_post_terms($this->ID, 'region', array( 'fields' => 'all' ));
-		
+		$regions = wp_get_post_terms($this->ID, 'region');
+
+		$query_args = [
+			'post_type'      => 'office',
+			'posts_per_page' => -1,
+			'fields'         => 'id',
+			'tax_query'      => [
+					[
+							'taxonomy' => 'region',
+							'field'    => 'term_id',
+							'terms'    => $regions,
+					],
+			],
+		];
+		$nearby_offices = (new WP_Query($query_args))->posts;
 	}
 
 	private function _related($field_name) {

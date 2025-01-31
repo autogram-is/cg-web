@@ -8,7 +8,7 @@
             "name": "categories",
             "aria-label": "",
             "type": "taxonomy",
-            "instructions": "",
+            "instructions": "If no category is selected, all news posts will be included.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -94,5 +94,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738293459
+    "modified": 1738354564
 }

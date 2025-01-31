@@ -128,11 +128,11 @@ function cg_populate_custom_block_data($context) {
   } else if ('cg-list-news' === $slug) {
     // Build news, optionally filtered by category to, to populate $context['posts']
     $query_options = array(
-      'post_type' => 'event',
-      'posts_per_page' => $fields['limit'] ?? 10,
+      'post_type' => 'post',
+      'posts_per_page' => $fields['limit'] ?? 20,
       'category_name' => $fields['category'] ?? NULL,
     );
-    if ($fields['paged']) {
+    if ($fields['pagination']) {
       $query_options['paged'] = get_query_var('paged') ? get_query_var('paged') : 1;
     }
     $context['posts'] = Timber::get_posts($query_options);
