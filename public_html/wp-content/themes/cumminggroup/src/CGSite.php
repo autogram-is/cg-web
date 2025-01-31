@@ -30,6 +30,7 @@ class CGSite extends Site {
 				add_shortcode('offices', 'cg_shortcode_region_offices' );
 
 				add_filter('get_block_type_variations', 'cg_block_type_variations', 10, 2);
+				add_filter('timber/acf-gutenberg-blocks-data', 'cg_populate_custom_block_data');
 
 				parent::__construct();
 		}
@@ -84,7 +85,7 @@ class CGSite extends Site {
 
 				add_theme_support( 'menus' );
 				
-				add_theme_support( 'editor-styles' );
+				add_theme_support('editor-styles');
 				add_theme_support('disable-layout-styles');
 				add_theme_support('disable-custom-colors');
 				add_theme_support('disable-custom-font-sizes');
