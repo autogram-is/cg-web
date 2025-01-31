@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_679c416083cd6",
-            "label": "Event Window",
+            "label": "Default Event Window",
             "name": "window",
             "aria-label": "",
             "type": "radio",
@@ -81,7 +81,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/cg-events-upcoming"
+                "value": "acf\/cg-list-events"
             }
         ]
     ],
@@ -94,5 +94,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738293888
+    "modified": 1738366466
 }

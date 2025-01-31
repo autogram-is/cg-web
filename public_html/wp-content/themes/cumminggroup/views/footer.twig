@@ -1,5 +1,6 @@
 
-	<footer class="site-footer {{ utilities }} {{ type }}">
+	<footer class="site-footer">
+
 		<div class="footer-cta">
 			<div class="notch wrapper">
 				<div class="notch-inner inner-cta repel">
@@ -11,55 +12,61 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="wrapper">
 			<div class="footer-primary region repel">
 				<div class="body">
-					{% if blurb %}
-					{% if blurb.heading %}
-					<h3 class="type-hed hed-accent">heading</h3>
+					{% if footer.heading or footer.notice %}
+						{% if footer.heading %}
+						<h3 class="type-hed hed-accent">{{ footer.heading }}</h3>
+						{% endif %}
+						{% if footer.notice %}
+						{{ footer.notice }}
+						{% endif %}
 					{% endif %}
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					{% endif %}
-					{% if socials %} 
+					{% if footer.social %} 
 					<div class="region cluster socials">
-						{% for item in socials.items %}
-						<a href="{{ item.link }}" class="button inverted icon"><span>{{ item.text }}</span>{{ item.icon }}</a>
+						{% for item in footer.social %}
+						<a href="{{ item.url }}" class="button inverted">
+						{%- if item.icon -%}<span class="dashicons {{ item.icon }}"></span>
+						{%- else -%}
+						<span>{{ item.label }}</span>
+						{%- endif -%}
+						</a>
 						{% endfor %}
 					</div>
 					{% endif %}
 				</div>
+				{% if footer.nav %}
 				<div class="footer-nav cluster">
-					{% for nav in footernav %}
 					<div class="flow nav-group">
-						<h4 class="type-detail">{{ nav.heading }}</h4>
-						<ul role="list" class="flow">
-							{% for item in nav.items %}
-							<li><a href="{{ item.link }}">{{ item.text }}</a></li>
-							{% endfor %}
-						</ul>
-					</div>
+					{% for item in footer.nav.items %}
+					<h4 class="type-detail">{{ item.title }}</h4>
+					{% if item.children -%}
+					<ul role="list" class="flow">
+						{% for child in item.children %}
+							<li><a href="{{ child.link }}">{{ child.title }}</a></li>
+						{% endfor %}
+					</ul>
+					{%- endif %}
 					{% endfor %}
+					</div>
 				</div>
+				{% endif %}
 			</div>
 		</div>
 
 		<div class="fine-print">
 			<div class="wrapper region repel">
-				<small>Copyright {{"now"|date('Y')}}</small>
+				<small>{{ footer.copyright | replace({'[YEAR]': "now"|date('Y')}) }}</small>
 				<nav class="legal" aria-label="Legal">
 					<ul role="list">
-						{%  if legal %}
-						{% for link in legal %}
-						<li><a href="{{ link.link }}">{{ link.text }}</a></li>
-						{% endfor %}
-						{% endif %}
-					</ul>
+					{% for item in footer.fine_print.items %}
+          <li><a href="{{item.link}}">{{item.title}}</a></li>
+					{% endfor %}
+        	</ul>
 				</nav>
 			</div>
 		</div>
+	
 	</footer>

@@ -20,7 +20,7 @@ class CGSite extends Site {
 					cg_register_block_styles();
 				});
 				add_action('enqueue_block_assets', array($this, 'enqueue_editor_assets'));
-
+				add_action('wp_enqueue_scripts', array($this, 'enqueue_assets'));
 				add_filter( 'timber/context', array( $this, 'add_to_context' ) );
 				add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
 				
@@ -43,9 +43,13 @@ class CGSite extends Site {
 		public function add_to_context( $context ) {
 			$context['menu'] = Timber::get_menu('primary');
 			$context['menu_eu'] = Timber::get_menu('primary-eu');
-			$context['footer_nav'] = Timber::get_menu('footer');
-			$context['fine_print'] = Timber::get_menu('fine-print');
 
+			$context['options'] = get_fields('option');
+
+			$context['footer'] = get_fields('footer');
+			$context['footer']['nav'] = Timber::get_menu('footer');
+			$context['footer']['fine_print'] = Timber::get_menu('fine-print');
+		
 			$context['site'] = $this;
 			return $context;
 		}
@@ -102,6 +106,10 @@ class CGSite extends Site {
 					get_theme_root_uri() . "/cumminggroup/assets/css/editor-styles.css"
 				);	
 			}
+		}
+
+		public function enqueue_assets() {
+			wp_enqueue_style('dashicons');
 		}
 
 		/**
