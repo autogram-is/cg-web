@@ -1,0 +1,11 @@
+
+{ 
+  "title": "Central Column",
+  "name" : "central",
+  "keyLinks": [ {
+        "label": "CSS",
+        "url": "/_src/css/components/central.css"
+      } ],
+  "context": {
+  }
+}

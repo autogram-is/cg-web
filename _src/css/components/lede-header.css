@@ -79,3 +79,13 @@
     }
   } 
 }
+
+p.is-style-lede {
+  color: var(--color-deep-steel);
+  font-size: var(--size-step-1);
+  font-family: var(--font-secondary);
+  max-width: 90ch;
+  line-height: var(--leading-loose);
+  font-weight: var(--weight-regular);
+  text-wrap: pretty;
+}

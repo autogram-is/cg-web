@@ -1,14 +1,27 @@
 .person-grid {
   position: relative;
-  &::before {
-    background: var(--color-timeless-backdrop);
-    bottom: calc( var(--space-3xl) * 2 );
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
+  &[class*="bg-"] {
+    background: none;
+    &::before {
+      left: -50vw;
+      right: -50vw;
+      bottom: 0;
+      top: 0;
+      z-index: -1;
+      bottom: calc( var(--space-3xl) * 2 );
+      content: "";
+      display: block;
+      position: absolute;
+      width: 200vw;
+      z-index: -1;
+    }
+    &.bg-timeless-highlight::before { background: var(--color-timeless-highlight); }
+    &.bg-timeless-backdrop::before  { background: var(--color-timeless-backdrop); }
+    &.bg-timeless-gold::before      { background: var(--color-timeless-gold); }
+    &.bg-steel-shade::before        { background: var(--color-steel-shade); }
+    &.bg-deep-steel::before         { background: var(--color-deep-steel); }
+    &.bg-regal-purple::before       { background: var(--color-regal-purple); }
+    &.bg-legacy-red::before         { background: var(--color-legacy-red); }
   }
   .people-inner {
     max-width: 65rem;

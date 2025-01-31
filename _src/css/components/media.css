@@ -2,6 +2,7 @@
 
 .media {
   margin: 0;
+
   .swap {
     background-size: cover;
   }
@@ -59,7 +60,8 @@
 
   &.bg-legacy-red,
   &.bg-deep-steel,
-  &.bg-regal-purple {
+  &.bg-regal-purple,
+  &.bg-steel-shade {
     @mixin invert;
     &::before {
       color: inherit;

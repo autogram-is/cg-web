@@ -248,3 +248,9 @@
     }
   }
 }
+
+.bg-timeless-gold {
+  .hed-accent::after {
+    border-color: var(--color-timeless-highlight) !important;
+  }    
+}

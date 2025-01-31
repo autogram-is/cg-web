@@ -14,3 +14,15 @@
     padding-block: var(--region-space, var(--space-l-xl));
   }
 }
+
+.component-region {
+  margin-top: var(--region-space, var(--space-s-m));
+  margin-bottom: var(--region-space, var(--space-s-m));
+
+  &.region-primary {
+    margin-block: var(--region-space, var(--space-s-m)) calc( var(--region-space, var(--space-l-xl) * 2 ) );
+  }
+  &.region-double {
+    margin-block: var(--region-space, var(--space-l-xl));
+  }
+}

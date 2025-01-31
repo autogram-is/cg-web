@@ -20,6 +20,8 @@ body {
 /* Fill remaining space with main to push footer to bottom on short pages */
 main {
   flex-grow: 2;
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 /* Base typesetting */

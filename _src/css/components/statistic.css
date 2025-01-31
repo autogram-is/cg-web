@@ -121,8 +121,14 @@
       }
     }
   }
-
+  &.bg-timeless-backdrop,
+  &:not([class*="bg-"]) {
+    dt {
+      color: var(--color-timeless-gold);
+    }
+  }
   &.bg-deep-steel,
+  &.bg-steel-shade,
   &.bg-legacy-red,
   &.bg-regal-purple {
     @mixin invert;

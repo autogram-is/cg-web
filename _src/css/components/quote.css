@@ -4,11 +4,8 @@
   --sidebar-gutter: var(--space-xs);
   color: var(--color-deep-steel);
   margin: 0;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   padding-block: var(--space-s) var(--space-2xs);
-  position: relative;
   width: 100%;
 
   .switcher {
@@ -109,12 +106,15 @@
   }
   &.bg-legacy-red,
   &.bg-deep-steel,
-  &.bg-regal-purple,
-  &.bg-timeless-gold {
+  &.bg-steel-shade,
+  &.bg-regal-purple {
     @mixin invert;
     color: var(--color-light);
-    &::before {
-      color: inherit;
+  }
+  &.bg-timeless-gold,
+  &.bg-timeless-highlight {
+    blockquote::before {
+      color: var(--color-deep-steel);
     }
   }
 

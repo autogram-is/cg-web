@@ -1,14 +1,28 @@
 .gallery {
   position: relative;
-
-  &:not([class*="bg-"])::before {
-    background: var(--color-timeless-backdrop);
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: calc( var(--space-3xl) * 4 );
+  &[class*="bg-"] {
+    background: none;
+    &::before {
+      content: "";
+      display: block;
+      width: 200vw;
+      position: absolute;
+      left: -50vw;
+      right: -50vw;
+      bottom: 0;
+      top: 0;
+      z-index: -1;
+    }
+    &.bg-timeless-highlight::before { background: var(--color-timeless-highlight); }
+    &.bg-timeless-backdrop::before  { background: var(--color-timeless-backdrop); }
+    &.bg-timeless-gold::before      { background: var(--color-timeless-gold); }
+    &.bg-steel-shade::before        { background: var(--color-steel-shade); }
+    &.bg-deep-steel::before         { background: var(--color-deep-steel); }
+    &.bg-regal-purple::before       { background: var(--color-regal-purple); }
+    &.bg-legacy-red::before         { background: var(--color-legacy-red); }
+  }
+  &::before {
+    bottom: calc( var(--space-3xl) * 4 ) !important;
   }
   .gallery-inner {
     display: flex;
