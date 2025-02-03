@@ -3,6 +3,122 @@
     "title": "Footer Settings",
     "fields": [
         {
+            "key": "field_67a10201f201a",
+            "label": "CTA",
+            "name": "cta",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_67a0e5a1bdee3",
+                    "label": "Default Footer CTA",
+                    "name": "default",
+                    "aria-label": "",
+                    "type": "forms",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "admin_column_enabled": 0,
+                    "return_format": "id",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "allow_in_bindings": 0
+                },
+                {
+                    "key": "field_67a0faea9f0c3",
+                    "label": "Overrides",
+                    "name": "overrides",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Add Row",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_67a0fb0a9f0c4",
+                            "label": "Page Type",
+                            "name": "page_type",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "admin_column_enabled": 0,
+                            "choices": {
+                                "sector": "Sector",
+                                "service": "Service",
+                                "project": "Project",
+                                "office": "Office",
+                                "event": "Event",
+                                "post": "Post"
+                            },
+                            "default_value": false,
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "allow_in_bindings": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_repeater": "field_67a0faea9f0c3"
+                        },
+                        {
+                            "key": "field_67a0fb619f0c5",
+                            "label": "Custom Form",
+                            "name": "form",
+                            "aria-label": "",
+                            "type": "forms",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "admin_column_enabled": 0,
+                            "return_format": "id",
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "allow_in_bindings": 0,
+                            "parent_repeater": "field_67a0faea9f0c3"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "key": "field_679d45fe2a4f4",
             "label": "Footer heading",
             "name": "heading",
@@ -23,28 +139,6 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
-        },
-        {
-            "key": "field_679d41252f730",
-            "label": "Footer notice",
-            "name": "notice",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_column_enabled": 0,
-            "default_value": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "rows": 4,
-            "placeholder": "",
-            "new_lines": "wpautop"
         },
         {
             "key": "field_679d4042ac631",
@@ -141,6 +235,28 @@
             ]
         },
         {
+            "key": "field_679d41252f730",
+            "label": "Footer notice",
+            "name": "notice",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "default_value": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": "wpautop"
+        },
+        {
             "key": "field_679d4333a8aef",
             "label": "Copyright",
             "name": "copyright",
@@ -181,5 +297,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738361987
+    "modified": 1738607127
 }
