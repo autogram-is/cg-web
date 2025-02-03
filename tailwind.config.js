@@ -110,6 +110,19 @@ module.exports = {
         
       });
 
+      Object.keys(colors).forEach(key => {
+        addUtilities({
+          [`.is-style-bg-${key}`]: postcssJs.objectify(
+            postcss.parse(`background: ${colors[key]}`)
+          )
+        });
+        addUtilities({
+          [`.is-style-text-${key}`]: postcssJs.objectify(
+            postcss.parse(`color: ${colors[key]}`)
+          )
+        });
+      });
+
       groups.concat( type ).forEach(({key, prefix}) => {
         const group = currentConfig.theme[key];
 
