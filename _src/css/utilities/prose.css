@@ -85,7 +85,7 @@ PROSE UTILITY
     height: 2px;
   }
 
-  & > figure:not(.pullquote) {
+  & > figure:not(.quote) {
     figcaption {
       color: var(--color-deep-steel);
       font-size: var(--size-step-0);
@@ -94,13 +94,6 @@ PROSE UTILITY
       font-style: italic;
     }
   }
-
-  & > .pullquote {
-    border: solid var(--color-timeless-gold);
-    border-width: 2px 0;
-    margin-block: var(--flow-space);
-  }
-
 
   &.prose-shifted {
     --flow-space: var(--space-2xs);

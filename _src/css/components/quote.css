@@ -204,4 +204,25 @@
       }
     }
   }
+  &.excerpt {
+    border: solid var(--color-timeless-gold);
+    border-width: 2px 0;
+    margin-block: var(--flow-space);
+    .body {
+      position: relative;
+      z-index: 1;
+      p {
+        color: inherit;
+        font-size: var(--size-step-1);
+        max-width: 45em;
+        text-wrap: balance;
+      }
+    }
+    .attribution p {
+      font-size: var(--size-step-1);
+    }
+    .affiliation {
+      font-size: var(--size-step-0);
+    }
+  }
 }
