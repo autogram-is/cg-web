@@ -28,6 +28,15 @@
   }
 
   .central-inner > * {
-    --flow-space: var(--space-m);
+    --flow-space: var(--region-space, var(--space-s-m));
+    &:empty {
+      display: none;
+    }
+    &p {
+      --flow-space: var(--space-xs);
+    }
+    &p:last-of-type {
+      margin-block-end: calc( var(--space-l-xl) * 2 ) !important;
+    }
   }
 }
