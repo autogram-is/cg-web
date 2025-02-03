@@ -17,10 +17,10 @@
       }
     },
     {
-      "title" : "Inline",
-      "name" : "input-inline",
+      "title" : "Condensed",
+      "name" : "input-condensed",
       "context" : {
-        "type" : "input-inline"
+        "type" : "input-condensed"
       }
     }
   ]

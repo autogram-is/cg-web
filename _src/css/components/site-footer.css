@@ -1,4 +1,5 @@
 .site-footer {
+  @mixin invert;
   background: var(--color-steel-shade);
   color: var(--color-steel-highlight);
   margin-top: var(--space-m);
@@ -15,6 +16,10 @@
     }
     p {
       font-size: var(--size-step-1);
+    }
+
+    .form-disclose {
+      min-width: 25%;
     }
   }
 

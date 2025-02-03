@@ -6,28 +6,64 @@
   <footer class="site-footer {{ utilities }} {{ type }}">
     <div class="footer-cta">
       <div class="notch wrapper">
-        <div class="notch-inner inner-cta repel">
-          <div class="body flow">
-            <h3 class="type-hed">Contact Us</h3>
-            <p>Need some help? Fill out the form below and our staff will be in touch!</p>
-          </div>
-
-          <div class="form-disclose">
-            <form>
+        <form>
+          <div class="notch-inner inner-cta form-disclose">
+            <div class="repel">
+              <div class="body flow">
+                <h3 class="type-hed">Contact Us</h3>
+                <p>Need some help? Fill out the form below and our staff will be in touch!</p>
+              </div>
+              <div class="bg-deep-steel">
+                <label class="inverted">
+                  <span class="visually-hidden">Please select a topic</span>
+                  <div class="select" required>
+                    <select required data-form-disclose="fields">
+                      <option disabled selected value="">Please select a topic</option>
+                      <option value="Accounting and Billing">Accounting and Billing</option>
+                      <option value="Employment Inquiries">Employment Inquiries</option>
+                      <option value="Project Support">Project Support</option>
+                      <option value="Bidders and Contractors">Bidders and Contractors</option>
+                      <option value="Other Comments and Questions">Other Comments and Questions</option>
+                    </select>
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div id="fields" class="bg-deep-steel">
+              <div class="switcher">
+                <label>
+                  <span>Email</span>
+                  <input type="email" required data-form-disclose="add-fields">
+                </label>
+                <label>
+                  <span>Company</span>
+                  <input type="text" required>
+                </label>
+              </div>
+              <div class="switcher">
+                <label>
+                  <span>First Name</span>
+                  <input type="text" required>
+                </label>
+                <label>
+                  <span>Last Name</span>
+                  <input type="text" required>
+                </label>
+              </div>
+            </div>
+            <div id="add-fields" class="bg-deep-steel">
               <label>
-                <span class="req">Please select a topic</span>
-                <div class="select">
-                  <select required data-form-disclose="add-fields">
-                    <option disabled selected value="">Topics</option>
-                    <option>option 1</option>
-                    <option>option 2</option>
-                    <option>option 3</option>
-                  </select>
-                </div>
+                <span>Subject</span>
+                <input type="text" required>
               </label>
-            </form>
+              <label>
+                <span>Your message</span>
+                <textarea rows="5"></textarea>
+              </label>
+              <input type="submit" value="Submit" class="button">
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
     <div class="wrapper">

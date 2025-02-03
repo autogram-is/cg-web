@@ -23,6 +23,7 @@ const globalMixins = {
     color: "var(--color-steel-highlight)",
     fill: "var(--color-steel-highlight)",
     borderColor: "var(--color-steel-midtone)",
+    '--selection' : "var(--color-regal-purple)",
     'a:hover': {
       color: "var(--color-light)"
     }
