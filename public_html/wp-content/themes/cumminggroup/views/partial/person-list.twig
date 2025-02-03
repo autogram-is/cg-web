@@ -16,7 +16,9 @@
         <div class="sidebar">
         {% if person.thumbnail %}
           <div class="crop">
+            {% if person.excerpt | length > 0 %}<a href="{{ person.link }}">{% endif %}
             <img src="{{ person.thumbnail.src }}" height="{{ person.thumbnail.height }}" width="{{ person.thumbnail.width }}" alt="{{ person.thumbnail.alt }}">
+            {% if person.excerpt %}</a>{% endif %}
           </div>
         {% endif %}
          <div class="body">

@@ -26,4 +26,8 @@
     &.bg-regal-purple::before       { background: var(--color-regal-purple); }
     &.bg-legacy-red::before         { background: var(--color-legacy-red); }
   }
+
+  .central-inner > * {
+    --flow-space: var(--space-m);
+  }
 }

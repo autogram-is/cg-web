@@ -106,12 +106,16 @@ PROSE UTILITY
     }      
   }
 
-  &.lede {
-    p:first-of-type {
-      color: var(--color-deep-steel);
-      font-family: var(--font-display);
-      font-size: var(--size-step-0);
-      max-width: 100ch;
+  p.is-style-lede-header {
+    color: var(--color-deep-steel);
+    font-size: var(--size-step-1);
+    font-family: var(--font-secondary);
+    max-width: 90ch;
+    line-height: var(--leading-loose);
+    font-weight: var(--weight-regular);
+    text-wrap: pretty;
+    &:first-of-type {
+      margin-block: var(--space-s-m);
     }
   }
 }

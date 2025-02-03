@@ -14,12 +14,14 @@
 
 {% block posthero %}
   {% if post.projects | length %}
-  {% include "partial/project-gallery.twig" with { heading: "Representative Experience", items: post.projects, offices: true, services: true, limit: 6 } %}
+  <div class="region">
+  {% include "partial/project-gallery.twig" with { heading: "Representative Experience", items: post.projects, offices: true, services: true, limit: 6, utilities: "bg-timeless-backdrop" } %}
+  </div>
   {% endif %}
 
   {% if post.people | length %}
   <div class="region">
-  {% include "partial/person-list.twig" with { heading: pagetitle ~ " Leadership", items: post.people } %}
+  {% include "partial/person-list.twig" with { heading: pagetitle ~ " Leadership", items: post.people, utilities: "bg-timeless-backdrop"} %}
   </div>
   {% endif %}
 

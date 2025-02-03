@@ -20,7 +20,7 @@
 
 <figure class="quote flow {{ classes | replace({'is-style-': ""}) }}" data-{{ block.id }}">
   <div class="wrapper region switcher">
-    {% if person %}
+    {% if person.thumbnail.src %}
     <div class="thumbnail">
 			<img
 				src="{{person.thumbnail.src|resize(800, 1200) }}"
