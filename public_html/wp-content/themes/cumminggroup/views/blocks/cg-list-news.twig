@@ -1,6 +1,6 @@
 {#
   Title: News
-  Description: Grid of curated news and insights posts
+  Description: Index list of News + Insight posts
   Category: cumminggroup
   Icon: admin-page
   Mode: edit
@@ -16,6 +16,7 @@
   SupportsAlignText: false
 #}
 <div class="region">
+{%  if 'current' in posts.pagination.pages[0].class %}
 {% for post in posts|slice(0, 1) %}
 {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': 'hero' } %}
 {% endfor %}
@@ -30,6 +31,13 @@
   {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': style } %}
   {% endfor %}
 </div>
+{% else %}
+<div class="region">
+  {% for post in posts %}
+  {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': style } %}
+  {% endfor %}
+</div>
+{%  endif  %}
 <hr>
 <div class="region">
 {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}

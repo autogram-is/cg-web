@@ -25,11 +25,11 @@
             "append": ""
         },
         {
-            "key": "field_670809ad04827",
-            "label": "Email",
-            "name": "email",
+            "key": "field_679bc126cb4a5",
+            "label": "Offices",
+            "name": "office_details",
             "aria-label": "",
-            "type": "email",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -38,60 +38,110 @@
                 "class": "",
                 "id": ""
             },
-            "admin_column_enabled": 0,
-            "default_value": "",
-            "allow_in_bindings": 0,
-            "placeholder": "contact-our-office@cumming-group.com",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_670809d304828",
-            "label": "Phone",
-            "name": "phone",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_column_enabled": 1,
-            "admin_column_position": "",
-            "admin_column_width": "",
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "555-555-1212",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_670809e404829",
-            "label": "Address",
-            "name": "address",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_column_enabled": 1,
-            "admin_column_position": "",
-            "admin_column_width": "",
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "rows": 3,
-            "placeholder": "",
-            "new_lines": "wpautop"
+            "layout": "row",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_679bc1aecb4a6",
+            "button_label": "Add Office",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_679bc1aecb4a6",
+                    "label": "Office Name",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "admin_column_enabled": 0,
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_679bc126cb4a5"
+                },
+                {
+                    "key": "field_670809e404829",
+                    "label": "Address",
+                    "name": "address",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "admin_column_enabled": 1,
+                    "admin_column_position": "",
+                    "admin_column_width": "",
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 3,
+                    "placeholder": "",
+                    "new_lines": "",
+                    "parent_repeater": "field_679bc126cb4a5"
+                },
+                {
+                    "key": "field_670809d304828",
+                    "label": "Phone",
+                    "name": "phone",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "admin_column_enabled": 1,
+                    "admin_column_position": "",
+                    "admin_column_width": "",
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_679bc126cb4a5"
+                },
+                {
+                    "key": "field_670809ad04827",
+                    "label": "Email",
+                    "name": "email",
+                    "aria-label": "",
+                    "type": "email",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "admin_column_enabled": 0,
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_679bc126cb4a5"
+                }
+            ]
         }
     ],
     "location": [
@@ -112,5 +162,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1737747506
+    "modified": 1738265389
 }

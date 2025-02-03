@@ -81,15 +81,34 @@ function cg_export_offices($dry_run = false) {
       $regions = get_the_terms($id, 'region');
       $region = $regions[0]->slug ?? '';
 
+      // We're only handling the first office in this import;
+      // A handfull of offices are actually 2-3 offices in one city.
+
+      $details = get_field('office_details', $post->ID);
+      if ($details) {
+        $name = $details[0]['name'] ?? '';
+        $email = $details[0]['email'] ?? '';
+        $phone = $details[0]['phone'] ?? '';
+        $address = $details[0]['address'] ?? '';
+      } else {
+        $name = '';
+        $email = '';
+        $phone = '';
+        $address = '';
+      }
+
       $item = array(
         // 'id' => $post->ID,
         'title' => $post->post_title,
         'slug' => $post->post_name,
     
         'location' => get_field('location', $post->ID, false),
-        'email' => get_field('email', $post->ID, false),
-        'phone' => get_field('phone', $post->ID, false),
-        'address' => get_field('address', $post->ID, false),
+
+        'name' => $name,
+        'email' => $email,
+        'phone' => wp_kses($phone, 'strip'),
+        'address' => $address,
+
         'region' => $region,
 
         'migration_status' => get_field('migration_status', $post->ID, false),

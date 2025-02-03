@@ -10,7 +10,7 @@ classDiagram
         service[] services
         person[] people
 
-        news_post[] related
+        post[] related
     }
 
     class Service {
@@ -19,16 +19,24 @@ classDiagram
         sector[] sectors
         person[] people
 
-        news_post[] related
+        post[] related
     }
 
     class Office {
+        string location
+
+        multi office_details
+        string name
+        string email
+        string phone
+        string address
+
         project[] projects
         sector[] sectors
         service[] services
         person[] people
 
-        news_post[] related
+        post[] related
     }
 
     class Project {
@@ -51,7 +59,7 @@ classDiagram
         service[] services
         person[] people
 
-        news_post[] related
+        post[] related
     }
 
     class Person {
@@ -63,7 +71,7 @@ classDiagram
         service[] services
         office[] offices
 
-        news_post[] related
+        post[] related
     }
 ```
 

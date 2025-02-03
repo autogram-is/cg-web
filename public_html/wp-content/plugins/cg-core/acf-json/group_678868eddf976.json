@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_678868eeb1c4b",
-            "label": "Team members",
+            "label": "Selected team members",
             "name": "posts",
             "aria-label": "",
             "type": "relationship",
@@ -34,6 +34,28 @@
             "elements": "",
             "bidirectional": 0,
             "bidirectional_target": []
+        },
+        {
+            "key": "field_679c3f9d51613",
+            "label": "Display Headshots",
+            "name": "headshots",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "message": "",
+            "default_value": 1,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
         }
     ],
     "location": [
@@ -54,5 +76,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1737479084
+    "modified": 1738293427
 }
