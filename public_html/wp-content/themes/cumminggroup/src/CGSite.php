@@ -9,6 +9,7 @@ use Timber\Timber;
 class CGSite extends Site {
 		public function __construct() {
 				add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
+				
 				add_action( 'after_setup_theme', function () {
 					register_nav_menus([
 						'primary' => 'Primary Menu',
@@ -32,6 +33,9 @@ class CGSite extends Site {
 				add_filter('get_block_type_variations', 'cg_block_type_variations', 10, 2);
 				add_filter('timber/acf-gutenberg-blocks-data', 'cg_populate_custom_block_data');
 
+				// If we end up using Gravity Forms, we need this set to true to avoid its parade of custom CSS.
+				add_filter( 'gform_disable_css', '__return_true' );
+
 				parent::__construct();
 		}
 
@@ -53,7 +57,7 @@ class CGSite extends Site {
 			$context['site'] = $this;
 			return $context;
 		}
-
+		
 		public function theme_supports() {
 				// Add default posts and comments RSS feed links to head.
 				add_theme_support( 'automatic-feed-links' );
@@ -118,12 +122,38 @@ class CGSite extends Site {
 		 * @param Twig\Environment $twig get extension.
 		 */
 		public function add_to_twig( $twig ) {
-
-				$twig->addFilter(new \Twig\TwigFilter( 'pluralize', 'pluralize' ));
-				$twig->addFilter(new \Twig\TwigFilter( 'stylize', [ $this, 'stylize_title' ] ));
-				$twig->addFilter(new \Twig\TwigFilter( 'statistic', [ $this, 'stylize_statistic' ] ));
-
+				$twig->addFilter(
+					new \Twig\TwigFilter( 'pluralize', 'pluralize' )
+				);
+				$twig->addFilter(
+					new \Twig\TwigFilter( 'stylize', [ $this, 'stylize_title' ] )
+				);
+				$twig->addFilter(
+					new \Twig\TwigFilter( 'statistic', [ $this, 'stylize_statistic' ] )
+				);
+				$twig->addFilter(
+					new \Twig\TwigFilter( 'gravityform', [ $this, 'render_gravity_form' ],  )
+				);
 				return $twig;
+		}
+
+		function render_gravity_form(?string $form_id = null) {
+			if ($form_id && function_exists('gravity_form')) {
+				$output = gravity_form(
+					$form_id,
+					$display_title = true,
+					$display_description = true,
+					$display_inactive = false,
+					$field_values = null,
+					$ajax = false,
+					$tabindex = 0,
+					$echo = true,
+					$form_theme = null,
+					$style_settings = null
+				);
+
+				return $output;
+			}
 		}
 
 		/**
@@ -133,7 +163,7 @@ class CGSite extends Site {
 		 *
 		 * @param string $text The headline to stylize
 		 */
-		function stylize_title(string | NULL $text) {
+		function stylize_title(?string $text) {
 			if (is_null($text)) return '';
 				$symbol = ' + ';
 				return str_replace($symbol, " <span class=\"amp\">" . trim($symbol) . "</span> ", $text);
@@ -152,7 +182,7 @@ class CGSite extends Site {
 		 *
 		 * @param string $text The statistic to stylize
 		 */
-		function stylize_statistic(string | NULL $text) {
+		function stylize_statistic(?string $text) {
 			if (is_null($text) || trim($text) === '') {
 				return '';
 			}

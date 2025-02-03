@@ -22,12 +22,19 @@ add_action( 'init', function() {
 add_filter( 'block_categories_all', function($categories) {
   $text = array_slice($categories, 0, 1);  // Get the first item
   $others = array_slice($categories, 1);   // Get the rest of the array
-  $cumminggroup = array(
-    'slug'  => 'cumminggroup',
-    'title' => __( 'Cumming Group', 'cumminggroup' ),
+
+  $custom[] = array(
+    'slug'  => 'cg-index',
+    'title' => __( 'Cumming Group Content Lists', 'cumminggroup' ),
   );
+
+  $custom[] = array(
+    'slug'  => 'cg-component',
+    'title' => __( 'Cumming Group Page Components', 'cumminggroup' ),
+  );
+
   // Merge them with the new entry in between
-  $categories = array_merge($text, [$cumminggroup], $others);
+  $categories = array_merge($text, $custom, $others);
   return $categories;
 });
 

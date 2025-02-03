@@ -4,11 +4,14 @@
 		<div class="footer-cta">
 			<div class="notch wrapper">
 				<div class="notch-inner inner-cta repel">
-					<div class="body flow">
+					<div class="body flow bg-deep-steel">
+					{% if footer.cta.default %}
+						{{ footer.cta.default | gravityform }}
+					{% else %}
 						<h3 class="type-hed">Contact Us</h3>
 						<p>Need some help? Fill out the form below and our staff will be in touch!</p>
-					</div>
 					<a href="#" class="button glass">CTA</a>
+					{% endif %}
 				</div>
 			</div>
 		</div>
