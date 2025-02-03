@@ -29,9 +29,6 @@
 
   .central-inner > * {
     --flow-space: var(--region-space, var(--space-s-m));
-    &:empty {
-      display: none;
-    }
     &p {
       --flow-space: var(--space-xs);
     }
