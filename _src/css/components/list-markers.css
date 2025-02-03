@@ -93,6 +93,12 @@ ol:not([role="list"]) {
     }
   }
 
+  &.is-style-default {
+    margin-block: var(--region-space);
+    margin-inline-start: var(--space-l);
+  }
+
+  &.is-style-cta-list,
   &.cta-list {
     & > li {
       display: flex;
