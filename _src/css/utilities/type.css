@@ -249,8 +249,8 @@
   }
 }
 
-.bg-timeless-gold {
+[class*="bg-timeless-gold"] {
   .hed-accent::after {
-    border-color: var(--color-timeless-highlight) !important;
+    border-color: var(--color-timeless-highlight)
   }    
 }

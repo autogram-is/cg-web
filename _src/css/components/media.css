@@ -58,10 +58,10 @@
     }
   }
 
-  &.bg-legacy-red,
-  &.bg-deep-steel,
-  &.bg-regal-purple,
-  &.bg-steel-shade {
+  &[class*="bg-deep-steel"],
+  &[class*="bg-steel-shade"],
+  &[class*="bg-legacy-red"],
+  &[class*="bg-regal-purple"] {
     @mixin invert;
     &::before {
       color: inherit;

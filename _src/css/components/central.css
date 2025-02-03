@@ -18,13 +18,13 @@
       z-index: -1;
     }
 
-    &.bg-timeless-highlight::before { background: var(--color-timeless-highlight); }
-    &.bg-timeless-backdrop::before  { background: var(--color-timeless-backdrop); }
-    &.bg-timeless-gold::before      { background: var(--color-timeless-gold); }
-    &.bg-steel-shade::before        { background: var(--color-steel-shade); }
-    &.bg-deep-steel::before         { background: var(--color-deep-steel); }
-    &.bg-regal-purple::before       { background: var(--color-regal-purple); }
-    &.bg-legacy-red::before         { background: var(--color-legacy-red); }
+    &[class*="bg-timeless-highlight"]::before { background: var(--color-timeless-highlight); }
+    &[class*="bg-timeless-backdrop"]::before  { background: var(--color-timeless-backdrop); }
+    &[class*="bg-timeless-gold"]::before      { background: var(--color-timeless-gold); }
+    &[class*="bg-steel-shade"]::before        { background: var(--color-steel-shade); }
+    &[class*="bg-deep-steel"]::before         { background: var(--color-deep-steel); }
+    &[class*="bg-regal-purple"]::before       { background: var(--color-regal-purple); }
+    &[class*="bg-legacy-red"]::before         { background: var(--color-legacy-red); }
   }
 
   .central-inner > * {
