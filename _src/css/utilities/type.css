@@ -1,3 +1,4 @@
+.is-style-type-pagehed,
 .type-pagehed {
   color: var(--color-steel-shade);
   font-family: var(--font-body);
@@ -18,6 +19,7 @@
     }
   }
 
+  &.is-style-hed-accent,
   &.hed-accent {
     &::after {
       content: "";
@@ -36,7 +38,9 @@
   color: var(--color-timeless-gold);
 }
 
+&.is-style-type-serif,
 .type-serif,
+&.is-style-type-display,
 .type-display {
   display: flex;
   flex-direction: column;
@@ -55,6 +59,7 @@
       color: var(--color-legacy-red);
     }
   }
+  &.is-style-hed-accent,
   &.hed-accent::after {
     content: "";
     display: inline-block;
@@ -64,10 +69,13 @@
   }
 }
 
+&.is-style-type-serif,
 .type-serif {
   font-size: var(--size-step-2);
 }
+&.is-style-type-subhed,
 .type-subhed,
+&.is-style-type-hed,
 .type-hed {
   font-size: var(--size-step-3);
   font-weight: var(--weight-medium);
@@ -88,6 +96,7 @@
     font-size: 1.5ch;
     color: var(--color-timeless-gold);
   }
+  &.is-style-hed-accent,
   &.hed-accent {
     position: relative;
     padding-bottom: var(--space-s);
@@ -104,11 +113,14 @@
     }
   }
 }
+&.is-style-type-subhed,
 .type-subhed {
   font-family: var(--font-secondary);
   font-size: var(--size-step-2);
 }
+&.is-style-type-eyebrow,
 .type-eyebrow,
+&.is-style-type-detail,
 .type-detail {
   color: inherit;
   display: flex;
@@ -126,6 +138,7 @@
       text-decoration-color: var(--color-legacy-red);
     }
   }
+  &.is-style-hed-accent,
   &.hed-accent {
     position: relative;
     padding-bottom: var(--space-s);
@@ -145,10 +158,11 @@
     }
   }
 }
+&.is-style-type-eyebrow,
 .type-eyebrow {
   font-size: var(--size-step-2);
 }
-
+&.is-style-type-outline,
 .type-outline {
   color: var(--color-timeless-backdrop);
   font-weight: var(--weight-semibold);
@@ -169,7 +183,7 @@
     }
   }
 }
-
+&.is-style-type-standout,
 .type-standout {
   color: var(--color-steel-shade);
   font-family: var(--font-body);
@@ -179,7 +193,7 @@
   line-height: var(--leading-tight);
   text-wrap: pretty; /* https://caniuse.com/mdn-css_properties_text-wrap_pretty */
 }
-
+&.is-style-hed-hatch,
 .hed-hatch {
   position: relative;
   display: flex;
@@ -195,12 +209,15 @@
     max-height: 100%;
     content: "";
   }
+  &.is-style-type-hed,
   &.type-hed::after {
     margin-top: .1ch;
   }
+  &.is-style-type-display,
   &.type-display::after {
     margin-top: 1px;
   }
+  &.is-style-type-pagehed,
   &.type-pagehed::after {
     margin-top: .575ch;
   }
@@ -250,6 +267,7 @@
 }
 
 [class*="bg-timeless-gold"] {
+  &.is-style-hed-accent::after,
   .hed-accent::after {
     border-color: var(--color-timeless-highlight)
   }    
