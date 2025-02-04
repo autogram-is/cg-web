@@ -5,20 +5,22 @@
   Icon: format-quote
   Mode: edit
   SupportsMode: true
-  Align: center
+  Align: false
   PostTypes: 
   EnqueueStyle: 
-  SupportsAlign: none left right
+  SupportsAlign: none
   SupportsMultiple: true
   SupportsInnerBlocks: false
   SupportsAlignContent: false
-  SupportsAlignText: false
-  Example: { "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit…", "author": "John Doe" }
+  SupportsAlignText: true
+  Example: { "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit…", "attribution": "John Doe, CEO", "affiliation": "Architecture, Inc." }
 #}
 
+{% if fields.team_member %}
 {% set person = get_posts(fields.team_member) %}
+{% endif %}
 
-<figure class="quote flow {{ classes | replace({'is-style-': ""}) }}" data-{{ block.id }}">
+<figure class="quote flow {{ classes | replace({'is-style-': ""}) }}"">
   <div class="wrapper region switcher">
     {% if person.thumbnail.src %}
     <div class="thumbnail">
@@ -40,12 +42,12 @@
           <p class="affiliation">{{ person.role }}</p>
           <cite class="type-detail"></cite>
         </div>
-        {% elseif fields.attribution or fields.affiliation %}
+        {% elseif fields.attribution %}
         <div class="cite flow">
           <div class="attribution">
-            {% if fields.author %}<p>{{ fields.author }}</p>{% endif %}
+            {% if fields.attribution %}<p>{{ fields.attribution }}</p>{% endif %}
           </div>
-          {% if fields.affiliation %}<p class="affiliation">{{ fields.team_member.role }}</p>{% endif %}
+          {% if fields.affiliation %}<p class="affiliation">{{ fields.affiliation }}</p>{% endif %}
           <cite class="type-detail"></cite>
         </div>
         {% endif %}
