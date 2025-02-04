@@ -117,13 +117,4 @@ PROSE UTILITY
   & > p:first-of-type {
     margin-block: var(--space-s-m);
   }
-  & > p.is-style-lede-header {
-    color: var(--color-deep-steel);
-    font-size: var(--size-step-1);
-    font-family: var(--font-secondary);
-    max-width: 90ch;
-    line-height: var(--leading-loose);
-    font-weight: var(--weight-regular);
-    text-wrap: pretty;
-  }
 }

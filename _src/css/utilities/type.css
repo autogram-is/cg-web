@@ -254,3 +254,19 @@
     border-color: var(--color-timeless-highlight)
   }    
 }
+
+p.is-style-lede-header {
+  color: var(--color-deep-steel);
+  font-size: var(--size-step-1);
+  font-family: var(--font-secondary);
+  max-width: 90ch;
+  margin-block: var(--region-space, var(--space-s-m));
+  line-height: var(--leading-loose);
+  font-weight: var(--weight-regular);
+  text-wrap: pretty;
+
+  &:first-of-type:last-of-type,
+  & + p.is-style-lede-header:last-of-type {
+    margin-block-end: var(--space-xl);
+  }
+}
