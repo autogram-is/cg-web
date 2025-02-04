@@ -38,7 +38,7 @@
   {% endfor %}
 </div>
 {%  endif  %}
-{% if pagination %}
+{% if fields.pagination %}
 <hr>
 <div class="region">
 {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
