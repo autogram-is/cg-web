@@ -9,8 +9,7 @@ use Timber\Timber;
 class CGSite extends Site {
 		public function __construct() {
 				add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
-				
-				add_action( 'after_setup_theme', function () {
+				add_action('after_setup_theme', function() {
 					register_nav_menus([
 						'primary' => 'Primary Menu',
 						'primary-eu' => 'Primary Menu EU',
@@ -22,16 +21,12 @@ class CGSite extends Site {
 				});
 				add_action('enqueue_block_assets', array($this, 'enqueue_editor_assets'));
 				add_action('wp_enqueue_scripts', array($this, 'enqueue_assets'));
-				add_filter( 'timber/context', array( $this, 'add_to_context' ) );
-				add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
+				add_filter('timber/context', array( $this, 'add_to_context') );
+				add_filter('timber/twig', array($this, 'add_to_twig') );
 				
-				add_shortcode('index', 'cg_shortcode_index');
-				add_shortcode('events-upcoming', 'cg_shortcode_events_upcoming' );
-				add_shortcode('events-past', 'cg_shortcode_events_past' );
-				add_shortcode('offices', 'cg_shortcode_region_offices' );
-
-				add_filter('get_block_type_variations', 'cg_block_type_variations', 10, 2);
 				add_filter('timber/acf-gutenberg-blocks-data', 'cg_populate_custom_block_data');
+			
+				add_filter('get_block_type_variations', 'cg_block_type_variations', 10, 2);
 
 				// If we end up using Gravity Forms, we need this set to true to avoid its parade of custom CSS.
 				add_filter( 'gform_disable_css', '__return_true' );
