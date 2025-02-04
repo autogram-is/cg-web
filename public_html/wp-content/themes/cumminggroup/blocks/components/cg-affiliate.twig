@@ -14,9 +14,20 @@
   SupportsAlignContent: false
   SupportsAlignText: false
 #}
-
-{# Logo #}
-
-{# Heading #}
-
-{# Description #}
+<div class="affiliate region region-double">
+  <div class="wrapper">
+    <div class="sidebar">
+      {% if fields.logo %}
+      {% set logo = get_image(fields.logo) %}
+      <span class="thumb">
+        <a href="{{ fields.link }}"><img src="{{ logo.src }}" height="auto" alt="{{ fields.name ?? logo.alt }}"></a>
+      </span>
+      {% endif %}
+      <div class="flow">
+        <div class="prose flow">
+          <p>{{ fields.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
