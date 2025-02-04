@@ -114,10 +114,10 @@ PROSE UTILITY
       max-width: 100ch;
     }
   }
-  p:first-of-type {
+  & > p:first-of-type {
     margin-block: var(--space-s-m);
   }
-  p.is-style-lede-header {
+  & > p.is-style-lede-header {
     color: var(--color-deep-steel);
     font-size: var(--size-step-1);
     font-family: var(--font-secondary);
