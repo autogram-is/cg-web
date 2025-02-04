@@ -161,7 +161,7 @@ Make sure you escape spaces with a `\`.
 Let's say you want a new page wireframe called "my-wireframe":
 
 ```bash
-npm run wireframe:create -- -p my-wireframe -n my-wireframe -t My\ Wireframe
+npm run wireframes:create -- -p my-wireframe -n my-wireframe -t My\ Wireframe
 ```
 
 This command will create the following folder and file structure:
