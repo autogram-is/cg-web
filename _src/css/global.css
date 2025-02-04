@@ -8,6 +8,8 @@
 @import 'global/variables.css';
 @import 'global/icons.css';
 @import 'global/global-styles.css';
+@import 'global/gf-overrides.css';
+
 
 @import-glob 'components/*.css';
 @import-glob 'compositions/*.css';

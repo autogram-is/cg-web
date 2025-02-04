@@ -1,0 +1,126 @@
+/* Gravity Form overrides */
+
+[id*="gform_wrapper"] {
+  all: unset;
+  display: block;
+  margin-block: var(--region-space, var(--space-s-m));
+
+  .gfield_required {
+    display: inline;
+  }
+  .gform_fields {
+    all: unset;
+    display: flex;
+    gap: var(--space-s-m);
+    flex-wrap: wrap;
+
+    li {
+      all: unset;
+      display: block !important;
+      flex-basis: calc( 100% - var(--space-s-m));
+
+      &[class*="_half"] {
+        flex-basis: calc( 50% - var(--space-s-m));
+      }
+
+      &:has(input) {
+        position: relative;
+        &::after {
+          background: var(--input-border-highlight);
+          bottom: -1px;
+          content: "";
+          height: 2px;
+          left: 0;
+          pointer-events: none;
+          position: absolute;
+          transition: width .35s ease-in-out, background .3s ease-in-out;
+          width: 0;
+        }
+      }
+      input:not([type="range"]):not([type="radio"]):not([type="checkbox"]):not([type="color"]):not([type="submit"]):focus,
+      textarea:focus,
+      select:focus {
+        outline: 1px solid var(--input-focus);
+      }
+      input:not([type="range"]):not([type="radio"]):not([type="checkbox"]):not([type="color"]):not([type="submit"]):focus-visible,
+      textarea:focus-visible,
+      select:focus-visible {
+        outline: none;
+      }
+      &:has(input:not([type="range"]):not([type="radio"]):not([type="checkbox"]):not([type="color"]):focus) {
+        &::after {
+          width: 100%;
+        }
+      }
+      &:has([required]),
+      &:has([aria-required="true"]) {
+        .gfield_required {
+          color: var(--color-steel-midtone);
+          content: "*";
+          margin-left: var(--space-nudge);
+          transition: color .25s linear;
+        }
+      }
+      &:has(input:invalid),
+      &:has([aria-required="true"]:placeholder-shown) {
+        .gfield_required {
+          color: var(--color-legacy-red);
+        }
+        span.note {
+          opacity: 1;
+        }
+      }
+      &:has(input:focus:invalid),
+      &:has(input[aria-required="true"]:focus:placeholder-shown) {
+        &::after {
+          background: var(--color-legacy-red);
+        }
+      }
+    }
+    li::marker,
+    li::before {
+      display: none;
+    }
+  }
+  .gravity-select-parent {
+    position: relative;
+    @supports( appearance: none ) {
+      .select-arrow {
+        background: var(--color-timeless-backdrop) url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' transform='rotate(90)'%3E%3Cpath id='chevron' d='m9 6 6 6-6 6' stroke='%2339434d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center center no-repeat;
+        position: absolute;
+        color: transparent !important;
+        right: 1px;
+        left: auto !important;
+        top: 1px;
+        bottom: 1px;
+        height: auto !important;
+        max-height: 100%;
+        width: var(--space-xl) !important;
+        pointer-events: none;
+        transition: background-color .125s linear;
+      }
+      select:focus+.select-arrow {
+        background-color: var(--input-highlight);
+      }
+    }
+  }
+
+  .gfield_label {
+    padding-block-end: var(--space-nudge);
+  }
+}
+.inverted,
+[class*="bg-deep-steel"],
+[class*="bg-steel-shade"],
+[class*="bg-regal-purple"] {
+  &, form {
+    .gravity-select-parent {
+      position: relative;
+      @supports( appearance: none ) {
+        .select-arrow {
+          background: var(--color-dark) url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' transform='rotate(90)'%3E%3Cpath id='chevron' d='m9 6 6 6-6 6' stroke='%23acb4bb ' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center center no-repeat;
+        }
+      }
+    }
+  }
+}
