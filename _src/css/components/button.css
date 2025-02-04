@@ -93,8 +93,17 @@
     svg {
       margin-inline-start: 0;
     }
-    span {
+    span:not(.dashicons) {
       @mixin visuallyhidden;
+    }
+    span.dashicons {
+      height: auto;
+      width: auto;
+      aspect-ratio: 1/1;
+      &::before {
+        font-size: var(--size-step-2);
+        background-size: cover;
+      }
     }
   }
   &.icon {
