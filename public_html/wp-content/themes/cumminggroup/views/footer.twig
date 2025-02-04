@@ -1,75 +1,75 @@
 
-	<footer class="site-footer">
+<footer class="site-footer">
 
-		<div class="footer-cta">
-			<div class="notch wrapper">
-				<div class="notch-inner inner-cta repel">
-					<div class="body flow bg-deep-steel">
-					{% if footer.cta.default %}
-						{{ footer.cta.default | gravityform }}
-					{% else %}
-						<h3 class="type-hed">Contact Us</h3>
-						<p>Need some help? Fill out the form below and our staff will be in touch!</p>
-					<a href="#" class="button glass">CTA</a>
-					{% endif %}
-				</div>
+{% if footer.cta.default or footer.cta.fallback %}
+	<div class="footer-cta">
+		<div class="notch wrapper">
+			<div class="notch-inner inner-cta repel">
+				<div class="body flow bg-deep-steel">
+				{% if footer.cta.default %}
+					{{ footer.cta.default | gravityform }}
+				{% elseif footer.cta.fallback %}
+					{% apply shortcodes %}{{ footer.cta.default }}{% endapply %}
+				{%- endif %}
 			</div>
 		</div>
+	</div>
+{% endif %}
 
-		<div class="wrapper">
-			<div class="footer-primary region repel">
-				<div class="body">
-					{% if footer.heading or footer.notice %}
-						{% if footer.heading %}
-						<h3 class="type-hed hed-accent">{{ footer.heading }}</h3>
-						{% endif %}
-						{% if footer.notice %}
-						{{ footer.notice }}
-						{% endif %}
+	<div class="wrapper">
+		<div class="footer-primary region repel">
+			<div class="body">
+				{% if footer.heading or footer.notice %}
+					{% if footer.heading %}
+					<h3 class="type-hed hed-accent">{{ footer.heading }}</h3>
 					{% endif %}
-					{% if footer.social %} 
-					<div class="region cluster socials">
-						{% for item in footer.social %}
-						<a href="{{ item.url }}" class="button inverted">
-						{%- if item.icon -%}<span class="dashicons {{ item.icon }}"></span>
-						{%- else -%}
-						<span>{{ item.label }}</span>
-						{%- endif -%}
-						</a>
-						{% endfor %}
-					</div>
+					{% if footer.notice %}
+					{{ footer.notice }}
 					{% endif %}
-				</div>
-				{% if footer.nav %}
-				<div class="footer-nav cluster">
-					<div class="flow nav-group">
-					{% for item in footer.nav.items %}
-					<h4 class="type-detail">{{ item.title }}</h4>
-					{% if item.children -%}
-					<ul role="list" class="flow">
-						{% for child in item.children %}
-							<li><a href="{{ child.link }}">{{ child.title }}</a></li>
-						{% endfor %}
-					</ul>
-					{%- endif %}
+				{% endif %}
+				{% if footer.social %} 
+				<div class="region cluster socials">
+					{% for item in footer.social %}
+					<a href="{{ item.url }}" class="button inverted">
+					{%- if item.icon -%}<span class="dashicons {{ item.icon }}"></span>
+					{%- else -%}
+					<span>{{ item.label }}</span>
+					{%- endif -%}
+					</a>
 					{% endfor %}
-					</div>
 				</div>
 				{% endif %}
 			</div>
-		</div>
-
-		<div class="fine-print">
-			<div class="wrapper region repel">
-				<small>{{ footer.copyright | replace({'[YEAR]': "now"|date('Y')}) }}</small>
-				<nav class="legal" aria-label="Legal">
-					<ul role="list">
-					{% for item in footer.fine_print.items %}
-          <li><a href="{{item.link}}">{{item.title}}</a></li>
+			{% if footer.nav %}
+			<div class="footer-nav cluster">
+				<div class="flow nav-group">
+				{% for item in footer.nav.items %}
+				<h4 class="type-detail">{{ item.title }}</h4>
+				{% if item.children -%}
+				<ul role="list" class="flow">
+					{% for child in item.children %}
+						<li><a href="{{ child.link }}">{{ child.title }}</a></li>
 					{% endfor %}
-        	</ul>
-				</nav>
+				</ul>
+				{%- endif %}
+				{% endfor %}
+				</div>
 			</div>
+			{% endif %}
 		</div>
-	
-	</footer>
+	</div>
+
+	<div class="fine-print">
+		<div class="wrapper region repel">
+			<small>{{ footer.copyright | replace({'[YEAR]': "now"|date('Y')}) }}</small>
+			<nav class="legal" aria-label="Legal">
+				<ul role="list">
+				{% for item in footer.fine_print.items %}
+				<li><a href="{{item.link}}">{{item.title}}</a></li>
+				{% endfor %}
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+</footer>

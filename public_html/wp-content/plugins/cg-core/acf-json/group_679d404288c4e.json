@@ -34,7 +34,7 @@
                     },
                     "admin_column_enabled": 0,
                     "return_format": "id",
-                    "allow_null": 0,
+                    "allow_null": 1,
                     "multiple": 0,
                     "allow_in_bindings": 0
                 },
@@ -115,6 +115,28 @@
                             "parent_repeater": "field_67a0faea9f0c3"
                         }
                     ]
+                },
+                {
+                    "key": "field_67a253cc8462e",
+                    "label": "Fallback Content",
+                    "name": "fallback",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "If no footer forms are accessible, include this footer markup.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "admin_column_enabled": 0,
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 1,
+                    "rows": 3,
+                    "placeholder": "",
+                    "new_lines": ""
                 }
             ]
         },
@@ -297,5 +319,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738607127
+    "modified": 1738692951
 }
