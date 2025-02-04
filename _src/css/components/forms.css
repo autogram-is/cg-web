@@ -295,59 +295,61 @@ form {
 }
 
 .inverted,
-&[class*="bg-deep-steel"],
-&[class*="bg-steel-shade"],
-&[class*="bg-regal-purple"] {
-  --input-background: var(--color-backdrop);
-  --input-border: var(--color-dark);
-  --input-focus: var(--color-dark);
-  --input-active: var(--color-regal-purple);
-  --input-active-inner: var(--color-steel-shade);
-  --input-disabled: var(--color-steel-shade);
-  --input-disabled-border: var(--color-dark);
-  --input-placeholder: var(--color-steel-midtone);
-  --input-highlight: var(--color-regal-purple);
-  label,
-  input,
-  textarea,
-  select,
-  select option,
-  legend {
-    color: var(--color-steel-highlight);
-  }
-  fieldset {
-    border: 1px solid var(--input-border);
-  }
-  @supports (appearance: none) {
-    .select {
-      &:has(select:focus)::after,
-      &:hover::after {
-        background: var(--color-regal-purple);
+[class*="bg-deep-steel"],
+[class*="bg-steel-shade"],
+[class*="bg-regal-purple"] {
+  form {
+    --input-background: var(--color-backdrop);
+    --input-border: var(--color-dark);
+    --input-focus: var(--color-dark);
+    --input-active: var(--color-regal-purple);
+    --input-active-inner: var(--color-steel-shade);
+    --input-disabled: var(--color-steel-shade);
+    --input-disabled-border: var(--color-dark);
+    --input-placeholder: var(--color-steel-midtone);
+    --input-highlight: var(--color-regal-purple);
+    label,
+    input,
+    textarea,
+    select,
+    select option,
+    legend {
+      color: var(--color-steel-highlight);
+    }
+    fieldset {
+      border: 1px solid var(--input-border);
+    }
+    @supports (appearance: none) {
+      .select {
+        &:has(select:focus)::after,
+        &:hover::after {
+          background: var(--color-regal-purple);
+        }
+        &::after {
+          background: var(--color-dark);
+          content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' transform='rotate(90)'%3E%3Cpath id='chevron' d='m9 6 6 6-6 6' stroke='%23acb4bb ' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        }
       }
-      &::after {
-        background: var(--color-dark);
-        content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' transform='rotate(90)'%3E%3Cpath id='chevron' d='m9 6 6 6-6 6' stroke='%23acb4bb ' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-      }
     }
-  }
-  label {
-    .req::after {
-      color: var(--color-legacy-red);
-    }
-    span.note {
-      color: var(--color-steel-midtone);
-    }
-    &:has(input:invalid) {
+    label {
       .req::after {
         color: var(--color-legacy-red);
       }
       span.note {
-        opacity: 1;
+        color: var(--color-steel-midtone);
+      }
+      &:has(input:invalid) {
+        .req::after {
+          color: var(--color-legacy-red);
+        }
+        span.note {
+          opacity: 1;
+        }
       }
     }
-  }
-  & > input[type='checkbox'],
-  & > input[type='radio'] {
-    background: var(--color-steel-shade);
+    & > input[type='checkbox'],
+    & > input[type='radio'] {
+      background: var(--color-steel-shade);
+    }
   }
 }
