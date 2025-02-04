@@ -30,7 +30,7 @@
 				{% if footer.social %} 
 				<div class="region cluster socials">
 					{% for item in footer.social %}
-					<a href="{{ item.url }}" class="button inverted">
+					<a href="{{ item.url }}" class="button inverted icon">
 					{%- if item.icon -%}<span class="dashicons {{ item.icon }}"></span>
 					{%- else -%}
 					<span>{{ item.label }}</span>
@@ -42,18 +42,18 @@
 			</div>
 			{% if footer.nav %}
 			<div class="footer-nav cluster">
-				<div class="flow nav-group">
 				{% for item in footer.nav.items %}
-				<h4 class="type-detail">{{ item.title }}</h4>
-				{% if item.children -%}
-				<ul role="list" class="flow">
-					{% for child in item.children %}
-						<li><a href="{{ child.link }}">{{ child.title }}</a></li>
-					{% endfor %}
-				</ul>
-				{%- endif %}
-				{% endfor %}
+				<div class="flow nav-group">
+					<h4 class="type-detail">{{ item.title }}</h4>
+					{% if item.children -%}
+					<ul role="list" class="flow">
+						{% for child in item.children %}
+							<li><a href="{{ child.link }}">{{ child.title }}</a></li>
+						{% endfor %}
+					</ul>
+					{%- endif %}
 				</div>
+				{% endfor %}
 			</div>
 			{% endif %}
 		</div>
