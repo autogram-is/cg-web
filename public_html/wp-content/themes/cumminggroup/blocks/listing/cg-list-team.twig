@@ -1,0 +1,18 @@
+{#
+  Title: Bios
+  Description: Grid of curated team members
+  Category: cg-index
+  Icon: admin-users
+  Mode: edit
+  SupportsMode: true
+  Align: false
+  PostTypes: 
+  EnqueueStyle: 
+  SupportsAlign: none
+  SupportsMultiple: true
+  SupportsReusable: true
+  SupportsInnerBlocks: false
+  SupportsAlignContent: false
+  SupportsAlignText: false
+#}
+{% include "partial/person-list.twig" with { items: get_posts(fields.posts), services: true, sectors: true, offices: true } %}

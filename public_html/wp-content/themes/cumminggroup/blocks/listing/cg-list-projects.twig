@@ -1,0 +1,18 @@
+{#
+  Title: Projects
+  Description: Grid of curated projects
+  Category: cg-index
+  Icon: format-gallery
+  Mode: edit
+  SupportsMode: true
+  Align: false
+  PostTypes: 
+  EnqueueStyle: 
+  SupportsAlign: none
+  SupportsMultiple: true
+  SupportsReusable: true
+  SupportsInnerBlocks: false
+  SupportsAlignContent: false
+  SupportsAlignText: false
+#}
+{% include "partial/project-gallery.twig" with { items: get_posts(fields.posts), services: true, sectors: true, offices: true, utilities: "wrapper region region-double" } %}

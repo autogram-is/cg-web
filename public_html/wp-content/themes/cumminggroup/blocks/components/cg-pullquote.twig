@@ -1,0 +1,57 @@
+{#
+  Title: Team Quote
+  Description: Pull quote with attribution
+  Category: cg-component
+  Icon: format-quote
+  Mode: edit
+  SupportsMode: true
+  Align: false
+  PostTypes: 
+  EnqueueStyle: 
+  SupportsAlign: none
+  SupportsMultiple: true
+  SupportsInnerBlocks: false
+  SupportsAlignContent: false
+  SupportsAlignText: true
+  Example: { "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit…", "attribution": "John Doe, CEO", "affiliation": "Architecture, Inc." }
+#}
+
+{% if fields.team_member %}
+{% set person = get_posts(fields.team_member) %}
+{% endif %}
+
+<figure class="quote flow {{ classes | replace({'is-style-': ""}) }}"">
+  <div class="wrapper region switcher">
+    {% if person.thumbnail.src %}
+    <div class="thumbnail">
+			<img
+				src="{{person.thumbnail.src|resize(800, 1200) }}"
+				height="{{person.thumbnail.height}}"
+				width="{{person.thumbnail.width}}"
+				alt="{{person.thumbnail.alt}}" />
+    </div>
+    {% endif %}
+    <div>
+      <blockquote class="body type-display">{{ fields.quote }}</blockquote>
+      <figcaption class="sidebar caption">
+        {% if person %}
+        <div class="cite flow">
+          <div class="attribution">
+            <p>{{ person.title }}</p>
+          </div>
+          <p class="affiliation">{{ person.role }}</p>
+          <cite class="type-detail"></cite>
+        </div>
+        {% elseif fields.attribution %}
+        <div class="cite flow">
+          <div class="attribution">
+            {% if fields.attribution %}<p>{{ fields.attribution }}</p>{% endif %}
+          </div>
+          {% if fields.affiliation %}<p class="affiliation">{{ fields.affiliation }}</p>{% endif %}
+          <cite class="type-detail"></cite>
+        </div>
+        {% endif %}
+      </figcaption>
+    </div>
+  </div>
+</figure>

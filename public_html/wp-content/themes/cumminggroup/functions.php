@@ -15,7 +15,6 @@ require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/src/CGSite.php';
 require_once __DIR__ . '/src/CGPost.php';
 require_once __DIR__ . '/src/CGProject.php';
-require_once __DIR__ . '/src/shortcodes.php';
 require_once __DIR__ . '/src/blocks.php';
 
 Timber::init();
@@ -73,3 +72,7 @@ function get_post_a_tag($post) {
 function snake_to_title_case(string $input) {
   return mb_convert_case(str_replace('_', " ", $input), MB_CASE_TITLE_SIMPLE);
 }
+
+add_filter('timber/acf-gutenberg-blocks-templates', function () {
+  return ['blocks']; // default: ['views/blocks']
+});

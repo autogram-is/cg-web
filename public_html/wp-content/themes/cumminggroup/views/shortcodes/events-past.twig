@@ -1,8 +1,0 @@
-<div class="region region-primary flow">
-  {% include 'partial/pagination-events.twig' with { posts: posts, pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
-{% for post in posts %}
-  {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': style } %}
-  <hr>
-{% endfor %}
-  {% include 'partial/pagination-events-nextprev.twig' with { pagination: posts.pagination({}) } %}
-</div>
