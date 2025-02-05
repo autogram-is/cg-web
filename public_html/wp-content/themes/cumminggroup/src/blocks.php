@@ -13,14 +13,35 @@ function cg_register_block_styles() {
     array('name' => 'type-display', 'label' => __( 'Display', 'textdomain' ), 'is_default' => false)
   );
   register_block_style('core/heading',
-    array('name' => 'hed-accent', 'label' => __( 'Accented', 'textdomain' ), 'is_default' => false)
+    array('name' => 'hed-accent', 'label' => __( 'Underline Accent', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('core/heading',
+    array('name' => 'hed-hatch','label' => __( 'Hatched Accent', 'textdomain' ), 'is_default' => false)
   );
 
   /**
    * Additional Styles for the core heading block
    */
   register_block_style('acf/cg-pullquote',
-    array('name' => 'bg-deep-steel','label' => __( 'Dark Background', 'textdomain' ), 'is_default' => false)
+    array('name' => 'bg-timeless-backdrop','label' => __( 'Timeless Backdrop', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-pullquote',
+    array('name' => 'bg-timeless-highlight','label' => __( 'Timeless Highlight', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-pullquote',
+    array('name' => 'bg-timeless-gold','label' => __( 'Timeless Highlight', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-pullquote',
+    array('name' => 'bg-steel-shade','label' => __( 'Steel Shade', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-pullquote',
+    array('name' => 'bg-deep-steel','label' => __( 'Deep Steel', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-pullquote',
+    array('name' => 'bg-regal-purple','label' => __( 'Timeless Highlight', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-pullquote',
+    array('name' => 'bg-legacy-red','label' => __( 'Timeless Highlight', 'textdomain' ), 'is_default' => false)
   );
 
   /**
@@ -40,7 +61,7 @@ function cg_register_block_styles() {
    * List treatments
    */
   register_block_style('core/list',
-    array('name' => 'client-list','label' => __( 'Clients', 'textdomain' ), 'is_default' => false)
+    array('name' => 'client-list','label' => __( 'Plus', 'textdomain' ), 'is_default' => false)
   );
   register_block_style('core/list',
     array('name' => 'cta-list','label' => __( 'CTAs', 'textdomain' ), 'is_default' => false)
