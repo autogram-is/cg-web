@@ -1,6 +1,7 @@
 .gallery {
   position: relative;
-  &[class*="bg-"] {
+  &[class*="bg-"],
+  [class*="bg-"] {
     background: none;
     &::before {
       content: "";
@@ -9,21 +10,26 @@
       position: absolute;
       left: -50vw;
       right: -50vw;
-      bottom: 0;
+      bottom: calc( var(--space-3xl) * 4 ) !important;
       top: 0;
       z-index: -1;
     }
+    &.is-style-bg-timeless-highlight::before,
     &.bg-timeless-highlight::before { background: var(--color-timeless-highlight); }
+    &.is-style-bg-timeless-backdrop::before,
     &.bg-timeless-backdrop::before  { background: var(--color-timeless-backdrop); }
+    &.is-style-bg-timeless-gold::before,
     &.bg-timeless-gold::before      { background: var(--color-timeless-gold); }
+    &.is-style-bg-steel-shade::before,
     &.bg-steel-shade::before        { background: var(--color-steel-shade); }
+    &.is-style-bg-deep-steel::before,
     &.bg-deep-steel::before         { background: var(--color-deep-steel); }
+    &.is-style-bg-regal-purple::before,
     &.bg-regal-purple::before       { background: var(--color-regal-purple); }
+    &.is-style-bg-legacy-red::before,
     &.bg-legacy-red::before         { background: var(--color-legacy-red); }
   }
-  &::before {
-    bottom: calc( var(--space-3xl) * 4 ) !important;
-  }
+
   .gallery-inner {
     display: flex;
     flex-direction: column;

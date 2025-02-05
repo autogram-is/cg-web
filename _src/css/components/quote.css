@@ -24,7 +24,9 @@
   .body {
     position: relative;
     z-index: 1;
-    p {
+
+    &,
+    & p {
       color: inherit;
       font-size: calc( var(--size-step-2));
       max-width: 45em;

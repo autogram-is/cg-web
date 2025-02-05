@@ -16,10 +16,10 @@
 #}
 {%- set counter = fields.counter and not is_preview -%}
 
-<div class="region" data-{{ block.id }}>
-  <div class="bg-timeless-backdrop">
+<div class="region region-double" data-{{ block.id }}>
+  <div class="is-style-bg-timeless-backdrop">
     <div class="wrapper">
-      <figure class="statistic flow text-timeless-gold {{ classes | replace({'is-style-': ""}) }} {{ utilities }} {{ counter ? " counter" : "" }}"{{ counter ? " data-counter" : "" }}>
+      <figure class="statistic flow {{ classes | replace({'is-style-': ""}) }} {{ utilities }} {{ counter ? " counter" : "" }}"{{ counter ? " data-counter" : "" }}>
         <dl>
           {% for stat in fields.statistics %}
           <div class="body">

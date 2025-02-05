@@ -20,8 +20,8 @@
 {% set person = get_posts(fields.team_member) %}
 {% endif %}
 
-<figure class="quote flow {{ classes | replace({'is-style-': ""}) }}"">
-  <div class="wrapper region switcher">
+<figure class="quote flow {{ classes }}">
+  <div class="wrapper region region-double switcher">
     {% if person.thumbnail.src %}
     <div class="thumbnail">
 			<img

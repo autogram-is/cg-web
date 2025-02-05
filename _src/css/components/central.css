@@ -3,7 +3,7 @@
   position: relative;
   width: 100vw;
   overflow: hidden;
-  [class*="bg-"] {
+  [class*="is-style-bg"] {
     background: none;
     position: relative;
     &::before {
