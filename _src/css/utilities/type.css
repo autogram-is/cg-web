@@ -38,9 +38,9 @@
   color: var(--color-timeless-gold);
 }
 
-&.is-style-type-serif,
+.is-style-type-serif,
 .type-serif,
-&.is-style-type-display,
+.is-style-type-display,
 .type-display {
   display: flex;
   flex-direction: column;
@@ -69,13 +69,13 @@
   }
 }
 
-&.is-style-type-serif,
+.is-style-type-serif,
 .type-serif {
   font-size: var(--size-step-2);
 }
-&.is-style-type-subhed,
+.is-style-type-subhed,
 .type-subhed,
-&.is-style-type-hed,
+.is-style-type-hed,
 .type-hed {
   font-size: var(--size-step-3);
   font-weight: var(--weight-medium);
@@ -113,14 +113,14 @@
     }
   }
 }
-&.is-style-type-subhed,
+.is-style-type-subhed,
 .type-subhed {
   font-family: var(--font-secondary);
   font-size: var(--size-step-2);
 }
-&.is-style-type-eyebrow,
+.is-style-type-eyebrow,
 .type-eyebrow,
-&.is-style-type-detail,
+.is-style-type-detail,
 .type-detail {
   color: inherit;
   display: flex;
@@ -158,11 +158,11 @@
     }
   }
 }
-&.is-style-type-eyebrow,
+.is-style-type-eyebrow,
 .type-eyebrow {
   font-size: var(--size-step-2);
 }
-&.is-style-type-outline,
+.is-style-type-outline,
 .type-outline {
   color: var(--color-timeless-backdrop);
   font-weight: var(--weight-semibold);
@@ -183,7 +183,7 @@
     }
   }
 }
-&.is-style-type-standout,
+.is-style-type-standout,
 .type-standout {
   color: var(--color-steel-shade);
   font-family: var(--font-body);
@@ -193,7 +193,7 @@
   line-height: var(--leading-tight);
   text-wrap: pretty; /* https://caniuse.com/mdn-css_properties_text-wrap_pretty */
 }
-&.is-style-hed-hatch,
+.is-style-hed-hatch,
 .hed-hatch {
   position: relative;
   display: flex;
