@@ -10,9 +10,15 @@
       position: absolute;
       left: -50vw;
       right: -50vw;
-      bottom: calc( var(--space-3xl) * 4 ) !important;
+      bottom: calc( var(--space-3xl) * 2 );
       top: 0;
       z-index: -1;
+    }
+    &[class*="bg-"]:has(figure:first-of-type:last-of-type),
+    [class*="bg-"]:has(figure:first-of-type:last-of-type) {
+      &::before {
+        bottom: 0;
+      }
     }
     &.is-style-bg-timeless-highlight::before,
     &.bg-timeless-highlight::before { background: var(--color-timeless-highlight); }

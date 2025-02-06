@@ -67,6 +67,19 @@ function cg_register_block_styles() {
   );
 
   /**
+   * Backdrop styles for CG gallery blocks
+   */
+  register_block_style('acf/cg-gallery',
+    array('name' => 'bg-timeless-backdrop','label' => __( 'Timeless Backdrop', 'textdomain' ), 'is_default' => true)
+  );
+  register_block_style('acf/cg-gallery',
+    array('name' => 'bg-timeless-highlight','label' => __( 'Timeless Highlight', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-gallery',
+    array('name' => 'bg-timeless-gold','label' => __( 'Timeless Gold', 'textdomain' ), 'is_default' => false)
+  );
+
+  /**
    * List treatments
    */
   register_block_style('core/list',

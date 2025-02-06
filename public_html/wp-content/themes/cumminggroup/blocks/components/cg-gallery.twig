@@ -1,0 +1,43 @@
+{#
+  Title: CG Gallery
+  Description: Cumming Group image gallery
+  Category: cg-component
+  Icon: format-gallery
+  Mode: edit
+  SupportsMode: true
+  Align: false
+  PostTypes: 
+  EnqueueStyle: 
+  SupportsAlign: none
+  SupportsMultiple: true
+  SupportsInnerBlocks: false
+  SupportsAlignContent: false
+  SupportsAlignText: false
+#}
+<div class="region region-double">
+  <div class="gallery {{ classes }}">
+    <div class="gallery-inner">
+      {% for image in fields.gallery %}
+      <figure>
+        <img 
+          src="{{ image.url }}"
+          srcset="
+            {{ image.sizes.medium }} {{ image.sizes["medium_width-width"] }}w, 
+            {{ image.sizes.medium_large }} {{ image.sizes["medium_large-width"] }}w, 
+            {{ image.sizes.large }} {{ image.sizes["large-width"] }}w,
+            {{ image.url }} {{ image.width }}w"
+          height="{{image.height}}"
+          width="{{image.width}}"
+          alt="{{image.alt}}"
+          loading="lazy"
+          sizes="auto">
+        {% if image.caption %}
+        <figcaption class="credit">
+          {{ image.caption }}
+        </figcaption>
+        {% endif %}
+      </figure>
+      {% endfor %}
+    </div>
+  </div>
+</div>

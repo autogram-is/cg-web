@@ -1,10 +1,10 @@
 {
-    "key": "group_67102b0f5238f",
-    "title": "Photo Gallery",
+    "key": "group_67a4d2886c643",
+    "title": "CG Gallery",
     "fields": [
         {
-            "key": "field_67102c142cc25",
-            "label": "Photo Gallery",
+            "key": "field_67a4d28895546",
+            "label": "Gallery",
             "name": "gallery",
             "aria-label": "",
             "type": "gallery",
@@ -17,8 +17,8 @@
                 "id": ""
             },
             "admin_column_enabled": 0,
-            "return_format": "id",
-            "library": "uploadedTo",
+            "return_format": "array",
+            "library": "all",
             "min": "",
             "max": "",
             "min_width": "",
@@ -35,13 +35,13 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "block",
                 "operator": "==",
-                "value": "project"
+                "value": "acf\/cg-gallery"
             }
         ]
     ],
-    "menu_order": 1,
+    "menu_order": 0,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -50,5 +50,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738854990
+    "modified": 1738855275
 }
