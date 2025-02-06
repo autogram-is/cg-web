@@ -12,10 +12,14 @@
 
 // Load Composer dependencies.
 require_once __DIR__ . '/vendor/autoload.php';
+
 require_once __DIR__ . '/src/CGSite.php';
 require_once __DIR__ . '/src/CGPost.php';
 require_once __DIR__ . '/src/CGProject.php';
-require_once __DIR__ . '/src/blocks.php';
+require_once __DIR__ . '/src/CGTwigFilters.php';
+require_once __DIR__ . '/src/CGRelatedContentHelper.php';
+
+require_once __DIR__ . '/src/block-hooks.php';
 
 Timber::init();
 
@@ -23,7 +27,6 @@ Timber::init();
 Timber::$dirname = [ 'templates', 'views' ];
 
 new CGSite();
-// use CGPost;
 
 // Set the directory Timber-generated blocks are stored in
 add_filter('timber/acf-gutenberg-blocks-templates', function () {
@@ -34,13 +37,12 @@ add_filter('timber/post/classmap', function ($classmap) {
   $custom_classmap = [
     'page' => CGPost::class,
     'post' => CGPost::class,
-
     'event' => CGPost::class,
-
     'person' => CGPost::class,
     'office' => CGPost::class,
     'sector' => CGPost::class,
     'service' => CGPost::class,
+
     'project' => CGProject::class,
   ];
 
