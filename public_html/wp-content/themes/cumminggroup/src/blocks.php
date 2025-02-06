@@ -66,16 +66,6 @@ function cg_register_block_styles() {
     array('name' => 'bg-legacy-red','label' => __( 'Legacy Red', 'textdomain' ), 'is_default' => false)
   );
 
-  register_block_style('acf/cg-statistics',
-    array('name' => 'horizontal','label' => __( 'Horizontal', 'textdomain' ), 'is_default' => false)
-  );
-  register_block_style('acf/cg-statistics',
-    array('name' => 'hero','label' => __( 'Hero', 'textdomain' ), 'is_default' => false)
-  );
-  register_block_style('acf/cg-statistics',
-    array('name' => 'standout','label' => __( 'Standout', 'textdomain' ), 'is_default' => false)
-  );
-
   /**
    * List treatments
    */
