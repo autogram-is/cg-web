@@ -10,9 +10,6 @@ function cg_register_block_styles() {
    * Additional Styles for the core heading block
    */
   register_block_style('core/heading',
-    array('name' => 'type-display', 'label' => __( 'Display', 'textdomain' ), 'is_default' => false)
-  );
-  register_block_style('core/heading',
     array('name' => 'hed-accent', 'label' => __( 'Underline Accent', 'textdomain' ), 'is_default' => false)
   );
   register_block_style('core/heading',
@@ -20,16 +17,16 @@ function cg_register_block_styles() {
   );
 
   /**
-   * Additional Styles for the core heading block
+   * Backdrop styles for CG quote blocks
    */
   register_block_style('acf/cg-pullquote',
-    array('name' => 'bg-timeless-backdrop','label' => __( 'Timeless Backdrop', 'textdomain' ), 'is_default' => false)
+    array('name' => 'bg-timeless-backdrop','label' => __( 'Timeless Backdrop', 'textdomain' ), 'is_default' => true)
   );
   register_block_style('acf/cg-pullquote',
     array('name' => 'bg-timeless-highlight','label' => __( 'Timeless Highlight', 'textdomain' ), 'is_default' => false)
   );
   register_block_style('acf/cg-pullquote',
-    array('name' => 'bg-timeless-gold','label' => __( 'Timeless Highlight', 'textdomain' ), 'is_default' => false)
+    array('name' => 'bg-timeless-gold','label' => __( 'Timeless Gold', 'textdomain' ), 'is_default' => false)
   );
   register_block_style('acf/cg-pullquote',
     array('name' => 'bg-steel-shade','label' => __( 'Steel Shade', 'textdomain' ), 'is_default' => false)
@@ -38,15 +35,37 @@ function cg_register_block_styles() {
     array('name' => 'bg-deep-steel','label' => __( 'Deep Steel', 'textdomain' ), 'is_default' => false)
   );
   register_block_style('acf/cg-pullquote',
-    array('name' => 'bg-regal-purple','label' => __( 'Timeless Highlight', 'textdomain' ), 'is_default' => false)
+    array('name' => 'bg-regal-purple','label' => __( 'Regal Purple', 'textdomain' ), 'is_default' => false)
   );
   register_block_style('acf/cg-pullquote',
-    array('name' => 'bg-legacy-red','label' => __( 'Timeless Highlight', 'textdomain' ), 'is_default' => false)
+    array('name' => 'bg-legacy-red','label' => __( 'Legacy Red', 'textdomain' ), 'is_default' => false)
   );
 
   /**
-   * Additional Styles for the Cumming Group statistics block
+   * Backdrop styles for CG statistic blocks
    */
+  register_block_style('acf/cg-statistics',
+    array('name' => 'bg-timeless-backdrop','label' => __( 'Timeless Backdrop', 'textdomain' ), 'is_default' => true)
+  );
+  register_block_style('acf/cg-statistics',
+    array('name' => 'bg-timeless-highlight','label' => __( 'Timeless Highlight', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-statistics',
+    array('name' => 'bg-timeless-gold','label' => __( 'Timeless Gold', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-statistics',
+    array('name' => 'bg-steel-shade','label' => __( 'Steel Shade', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-statistics',
+    array('name' => 'bg-deep-steel','label' => __( 'Deep Steel', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-statistics',
+    array('name' => 'bg-regal-purple','label' => __( 'Regal Purple', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-statistics',
+    array('name' => 'bg-legacy-red','label' => __( 'Legacy Red', 'textdomain' ), 'is_default' => false)
+  );
+
   register_block_style('acf/cg-statistics',
     array('name' => 'horizontal','label' => __( 'Horizontal', 'textdomain' ), 'is_default' => false)
   );

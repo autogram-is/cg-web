@@ -7,7 +7,7 @@
 body {
   display: flex;
   flex-direction: column;
-  color: var(--color-steel-dark);
+  color: var(--color-steel-shade);
   background: var(--color-light);
   font-size: var(--size-step-1);
   font-family: sans-serif;
@@ -130,12 +130,12 @@ fieldset {
 /* Base selection styles*/
 ::selection {
   background: var(--selection);
-  color: var(--color-steel-dark);
+  color: var(--color-steel-shade);
 }
 
 pre ::selection {
   background: var(--selection);
-  color: var(--color-steel-dark);
+  color: var(--color-steel-shade);
 }
 
 

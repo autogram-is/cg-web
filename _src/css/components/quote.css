@@ -214,6 +214,7 @@
     .body {
       position: relative;
       z-index: 1;
+      &,
       p {
         color: inherit;
         font-size: var(--size-step-1);
