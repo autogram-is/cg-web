@@ -90,7 +90,7 @@
         {
             "key": "field_67900e594814f",
             "label": "MP3 URL",
-            "name": "mp3_url",
+            "name": "podcast_mp3_url",
             "aria-label": "",
             "type": "url",
             "instructions": "",
@@ -125,5 +125,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738861447
+    "modified": 1738865531
 }
