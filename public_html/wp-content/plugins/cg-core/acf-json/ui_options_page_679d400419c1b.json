@@ -1,23 +1,26 @@
 {
     "key": "ui_options_page_679d400419c1b",
-    "title": "Global Footer",
+    "title": "Site Options",
     "active": true,
     "menu_order": 0,
-    "page_title": "Global Footer",
-    "menu_slug": "footer",
-    "parent_slug": "themes.php",
+    "page_title": "Site Options",
+    "menu_slug": "cg-options",
+    "parent_slug": "none",
     "advanced_configuration": 1,
     "icon_url": "",
     "menu_title": "",
-    "position": "",
-    "redirect": false,
+    "position": 3,
+    "redirect": 0,
     "description": "",
-    "menu_icon": [],
+    "menu_icon": {
+        "type": "dashicons",
+        "value": "dashicons-admin-generic"
+    },
     "update_button": "Update",
     "updated_message": "Options Updated",
-    "capability": "edit_themes",
+    "capability": "edit_theme_options",
     "data_storage": "post_id",
-    "post_id": "footer",
+    "post_id": "cg_options",
     "autoload": 1,
-    "modified": 1738701221
+    "modified": 1738789975
 }

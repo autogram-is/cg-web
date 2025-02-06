@@ -3,35 +3,41 @@
 use Timber\Site;
 use Timber\Timber;
 
+use \CGRelatedContentHelper;
+use \CGTwigFilters;
+
 /**
  * Class CGSite
  */
 class CGSite extends Site {
 		public function __construct() {
-				add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
-				add_action('after_setup_theme', function() {
-					register_nav_menus([
-						'primary' => 'Primary Menu',
-						'primary-eu' => 'Primary Menu EU',
-						'footer' => 'Footer Links',
-						'fine-print' => 'Fine Print Links',
-					]);
+			$twig_handler = new CGTwigFilters();
+			add_filter('timber/twig', array($twig_handler, 'add_to_twig') );
+			add_filter('timber/context', array( $this, 'add_to_context') );
 
-					cg_register_block_styles();
-				});
-				add_action('enqueue_block_assets', array($this, 'enqueue_editor_assets'));
-				add_action('wp_enqueue_scripts', array($this, 'enqueue_assets'));
-				add_filter('timber/context', array( $this, 'add_to_context') );
-				add_filter('timber/twig', array($this, 'add_to_twig') );
-				
-				add_filter('timber/acf-gutenberg-blocks-data', 'cg_populate_custom_block_data');
+			add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
+			add_action('after_setup_theme', function() {
+				register_nav_menus([
+					'primary' => 'Primary Menu',
+					'primary-eu' => 'Primary Menu EU',
+					'footer' => 'Footer Links',
+					'fine-print' => 'Fine Print Links',
+				]);
+
+				cg_register_block_styles();
+			});
+	
+			add_action('enqueue_block_assets', array($this, 'enqueue_editor_assets'));
+			add_action('wp_enqueue_scripts', array($this, 'enqueue_assets'));
 			
-				add_filter('get_block_type_variations', 'cg_block_type_variations', 10, 2);
+			add_filter('timber/acf-gutenberg-blocks-data', 'cg_populate_custom_block_data');
+		
+			add_filter('get_block_type_variations', 'cg_block_type_variations', 10, 2);
 
-				// If we end up using Gravity Forms, we need this set to true to avoid its parade of custom CSS.
-				add_filter( 'gform_disable_css', '__return_true' );
+			// If we end up using Gravity Forms, we need this set to true to avoid its parade of custom CSS.
+			add_filter( 'gform_disable_css', '__return_true' );
 
-				parent::__construct();
+			parent::__construct();
 		}
 
 		/**
@@ -40,6 +46,13 @@ class CGSite extends Site {
 		 * @param string $context context['this'] Being the Twig's {{ this }}.
 		 */
 		public function add_to_context( $context ) {
+			$context['options'] = get_fields('option');
+			$context['cg_options'] = get_fields('cg_options');
+
+			$locale_switch_id = $context['cg_options']['locale_switch_id'] ?? NULL;
+			if ($locale_switch_id && ifso($locale_switch_id)) {
+			}
+
 			$context['menu'] = Timber::get_menu('primary');
 			$context['menu_eu'] = Timber::get_menu('primary-eu');
 
@@ -107,101 +120,38 @@ class CGSite extends Site {
 			}
 		}
 
+		/**
+		 * Used to display social footer icons; this is less than ideal but works.
+		 * In the future, straight SVGs would be much better.
+		 */
 		public function enqueue_assets() {
 			wp_enqueue_style('dashicons');
 		}
 
 		/**
-		 * This is where you can add your own functions to twig.
-		 *
-		 * @param Twig\Environment $twig get extension.
+		 * The IfSo conditional content plugin uses somewhat opaque methods to obtain the user's
+		 * current location. We're pulling the user's continent, as it provides a fairly limited
+		 * list of options to switch between.
 		 */
-		public function add_to_twig( $twig ) {
-				$twig->addFilter(
-					new \Twig\TwigFilter( 'pluralize', 'pluralize' )
-				);
-				$twig->addFilter(
-					new \Twig\TwigFilter( 'stylize', [ $this, 'stylize_title' ] )
-				);
-				$twig->addFilter(
-					new \Twig\TwigFilter( 'statistic', [ $this, 'stylize_statistic' ] )
-				);
-				$twig->addFilter(
-					new \Twig\TwigFilter( 'gravityform', [ $this, 'render_gravity_form' ],  )
-				);
-				return $twig;
-		}
+		public function enqueue_geolocation_script() {
+			if(!defined('IFSO_PLUGIN_BASE_DIR')) return;
+			require_once(IFSO_PLUGIN_BASE_DIR. 'services/geolocation-service/geolocation-service.class.php');
+			$geo_data = \IfSo\Services\GeolocationService\GeolocationService::get_instance()->get_user_location();
 
-		function render_gravity_form(?string $form_id = null) {
-			if ($form_id && function_exists('gravity_form')) {
-				$output = gravity_form(
-					$form_id,
-					$display_title = true,
-					$display_description = true,
-					$display_inactive = false,
-					$field_values = null,
-					$ajax = false,
-					$tabindex = 0,
-					$echo = true,
-					$form_theme = null,
-					$style_settings = null
-				);
-
-				return $output;
-			}
-		}
-
-		/**
-		 * Apply special styling to the visible title of a page.
-		 * 
-		 * - Wraps ' + ' in a span with class 'amp'
-		 *
-		 * @param string $text The headline to stylize
-		 */
-		function stylize_title(?string $text) {
-			if (is_null($text)) return '';
-				$symbol = ' + ';
-				return str_replace($symbol, " <span class=\"amp\">" . trim($symbol) . "</span> ", $text);
-		}
-
-		/**
-		 * Apply special styling to the value field of a statistic.
-		 *
-		 * Examples:
-		 * 
-		 * 	3,029,144 MTCO₂e => 3,029,144<span>MTCO₂e</span>
-		 *	412,614 MWh => 412,614<span>MWh</span>
-		 *	115+ MW => 115<span class="sup">+</span><span>MW</span>
-		 *	2,000+ => 2,000<span class="sup">+</span>
-		 *	#14 => <span class="sup">#</span>14
-		 *
-		 * @param string $text The statistic to stylize
-		 */
-		function stylize_statistic(?string $text) {
-			if (is_null($text) || trim($text) === '') {
-				return '';
-			}
-
-			$prefix = '\-\+#$€~';
-			$num = '\d\.,';
-			$regex = "/([" . $prefix . "])?([" . $num . "]+)?([" . $prefix . "])?(.+)?/";
-			$output = '';
-
-			preg_match($regex, trim($text), $match);
-			$prefix = $match[1] ?? '';
-			$statistic = $match[2] ?? '';
-			$suffix = $match[3] ?? '';
-			$remainder = $match[4] ?? '';
+			// IfSo geolocation variables consist of:
+			// 
+			// - $countryCode;
+			// - $city;
+			// - $stateProv;
+			// - $continentCode;
+			// - $continentName;
+			// - $timeZone;
+			// - $ipAddress;
+			// - $coords;
 			
-			if ($statistic) {
-				if ($prefix) $output .= '<span class="sup">' . trim($prefix) . '</span>';
-				if ($statistic) $output .= trim($statistic);
-				if ($suffix) $output .= '<span class="sup">' . trim($suffix) . '</span>';
-				if ($remainder) $output .= '<span>' . trim($remainder) . '</span>';
-			} else {
-				$output = trim($text);
+			$ifso_continent = !empty($geo_data->get('continentName')) ? $geo_data->get('continentName') : '';
+			if(function_exists('wp_add_inline_script')) {
+				wp_add_inline_script('if-so',"var ifso_continent = '{$ifso_continent}';",'after');
 			}
-		
-			return $output;
 		}
 	}
