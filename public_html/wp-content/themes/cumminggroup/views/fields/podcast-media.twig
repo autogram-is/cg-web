@@ -1,3 +1,15 @@
-{# display podcast title, season, and episode #}
-
-{# output a youtube player if the youtube_url is present, mp3 player if the mp3_url is present #}
+<figure class="media">
+  <div class="switcher">
+    <div class="thumb">
+      <div class="">
+        <a href="" data-media="{{ youtube ?? mp3 }}">
+        {% if poster %}
+          <img decoding="async" src="{{ poster.src }}">
+        {% else %}
+          <span class="placeholder fpo"></span>
+        {% endif %}
+        </a>
+      </div>
+    </div>
+  </div>
+</figure>

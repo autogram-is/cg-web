@@ -1,33 +1,11 @@
 {
-    "key": "group_675100b654e49",
-    "title": "Podcast Episode Properties",
+    "key": "group_67a4e37cc09c6",
+    "title": "Downloadable Resource Block",
     "fields": [
         {
-            "key": "field_678ffd332b8a3",
-            "label": "Podcast Name",
-            "name": "podcast_name",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_column_enabled": 0,
-            "default_value": "The Construction Insiders Podcast",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_678ffed8cd9da",
-            "label": "Season Number",
-            "name": "podcast_season",
+            "key": "field_67a4e37c04530",
+            "label": "Heading",
+            "name": "download_heading",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -47,9 +25,9 @@
             "append": ""
         },
         {
-            "key": "field_678ffd782b8a4",
-            "label": "Episode Number",
-            "name": "podcast_episode",
+            "key": "field_67a4e40104531",
+            "label": "Description",
+            "name": "download_description",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -69,11 +47,11 @@
             "append": ""
         },
         {
-            "key": "field_675100b6c6b7a",
-            "label": "Youtube URL",
-            "name": "podcast_youtube_url",
+            "key": "field_67a4e41a04532",
+            "label": "Thumbnail",
+            "name": "download_thumbnail",
             "aria-label": "",
-            "type": "url",
+            "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -83,18 +61,26 @@
                 "id": ""
             },
             "admin_column_enabled": 0,
-            "default_value": "",
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
             "allow_in_bindings": 0,
-            "placeholder": ""
+            "preview_size": "medium"
         },
         {
-            "key": "field_67900e594814f",
-            "label": "MP3 URL",
-            "name": "podcast_mp3_url",
+            "key": "field_67a4e436f9eec",
+            "label": "Downloadable File",
+            "name": "download_file",
             "aria-label": "",
-            "type": "url",
+            "type": "file",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -102,17 +88,20 @@
                 "id": ""
             },
             "admin_column_enabled": 0,
-            "default_value": "",
-            "allow_in_bindings": 1,
-            "placeholder": ""
+            "return_format": "id",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0
         }
     ],
     "location": [
         [
             {
-                "param": "post_category",
+                "param": "block",
                 "operator": "==",
-                "value": "category:podcast"
+                "value": "acf\/cg-resource-download"
             }
         ]
     ],
@@ -125,5 +114,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738865531
+    "modified": 1738864359
 }

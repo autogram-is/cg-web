@@ -1,0 +1,25 @@
+{% extends "single.twig" %}
+{% set pagetitle = title ? title : post.title %}
+{% set podcast = post.podcast_name %}
+{% set season = post.podcast_season %}
+{% set episode = post.podcast_episode %}
+{% set youtube = post.podcast_youtube_url | youtube %}
+{% set mp3 = post.podcast_mp3_url %}
+{% set poster = post.thumbnail %}
+
+{% block hero %}
+  <time datetime="{{post.date('Y-m-d')}}">{{post.date}}</time>
+  <h1 class="type-pagehed hed-accent">{{ pagetitle }}</h1>
+{% endblock %}
+
+{% block content %}
+  {% if podcast %}<div class="lede-header">
+  <p>{{ podcast }}{% if season %}: Season {{ season }}{% endif %}{% if episode %}, Episode {{ season }}{% endif %}</p>
+  </div>{% endif %}
+  {% if youtube or mp3 %}{% include 'fields/podcast-media.twig' with { youtube: youtube, mp3: mp3, poster: poster } %}{% endif %}
+  <div class="sidebar">
+    <div class="prose central-inner lede flow">
+      {{post.content}}
+    </div>
+  </div>
+{% endblock %}

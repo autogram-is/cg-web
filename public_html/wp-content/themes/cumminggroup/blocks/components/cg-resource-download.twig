@@ -1,0 +1,28 @@
+{#
+  Title: Downloadable Resource
+  Description: Preview, teaser, and download link for a PDF or other file
+  Category: cg-component
+  Icon: pdf
+  Mode: edit
+  SupportsMode: true
+  Align: false
+  PostTypes: 
+  EnqueueStyle: 
+  SupportsAlign: none
+  SupportsMultiple: true
+  SupportsInnerBlocks: false
+  SupportsAlignContent: false
+  SupportsAlignText: false
+#}
+{%- set file = get_attachment(fields.download_file) -%}
+
+<div>
+{% if fields.download_thumbnail -%}
+{% set thumb = get_image(fields.download_thumbnail) %}
+{# thumbnail image here #}
+{% endif %}
+<p>{{ fields.download_description }}</p>{% endif %}
+{% if fields.download_heading %}<h2>{{ fields.download_heading }}</h2>{% endif %}
+{% if fields.download_description %}<p>{{ fields.download_description }}</p>{% endif %}
+<a href="{{ file.src }}" title="{{ file.alt }}">Download</a>
+</div>
