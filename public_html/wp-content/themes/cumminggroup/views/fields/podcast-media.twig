@@ -2,13 +2,16 @@
   <div class="switcher">
     <div class="thumb">
       <div class="">
-        <a href="" data-media="{{ youtube ?? mp3 }}">
+      {% if youtube %}
+        <a href="" data-media="{{ youtube | youtube_url('embed') }}">
         {% if poster %}
           <img decoding="async" src="{{ poster.src }}">
         {% else %}
-          <span class="placeholder fpo"></span>
+          <img decoding="async" src="{{ youtube | youtube_url('poster') }}">
         {% endif %}
         </a>
+      {% elseif mp3 %}
+      {% endif %}
       </div>
     </div>
   </div>
