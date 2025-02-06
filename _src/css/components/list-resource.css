@@ -212,6 +212,9 @@
       }
     }
   }
+  hr:last-child {
+    display: none;
+  }
 }
 
 [class*="bg-deep-steel"],
