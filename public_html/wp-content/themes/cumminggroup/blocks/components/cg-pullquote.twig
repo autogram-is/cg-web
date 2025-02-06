@@ -20,7 +20,6 @@
 {% set person = get_posts(fields.team_member) %}
 {% endif %}
 
-Variant: {{ fields.type }}
 <figure class="quote flow {{ classes }} {{ fields.type }}">
   <div class="wrapper region switcher">
     {% if person.thumbnail.src %}
