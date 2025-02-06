@@ -20,6 +20,9 @@ function cg_register_block_styles() {
    * Backdrop styles for CG quote blocks
    */
   register_block_style('acf/cg-pullquote',
+    array('name' => 'bg-none','label' => __( 'No Backdrop', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-pullquote',
     array('name' => 'bg-timeless-backdrop','label' => __( 'Timeless Backdrop', 'textdomain' ), 'is_default' => true)
   );
   register_block_style('acf/cg-pullquote',
@@ -45,6 +48,9 @@ function cg_register_block_styles() {
    * Backdrop styles for CG statistic blocks
    */
   register_block_style('acf/cg-statistics',
+    array('name' => 'bg-none','label' => __( 'No Backdrop', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-statistics',
     array('name' => 'bg-timeless-backdrop','label' => __( 'Timeless Backdrop', 'textdomain' ), 'is_default' => true)
   );
   register_block_style('acf/cg-statistics',
@@ -67,8 +73,39 @@ function cg_register_block_styles() {
   );
 
   /**
+   * Backdrop styles for CG news blocks
+   */
+  register_block_style('acf/cg-list-news',
+    array('name' => 'bg-none','label' => __( 'No Backdrop', 'textdomain' ), 'is_default' => true)
+  );
+  register_block_style('acf/cg-list-news',
+    array('name' => 'bg-timeless-backdrop','label' => __( 'Timeless Backdrop', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-list-news',
+    array('name' => 'bg-timeless-highlight','label' => __( 'Timeless Highlight', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-list-news',
+    array('name' => 'bg-timeless-gold','label' => __( 'Timeless Gold', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-list-news',
+    array('name' => 'bg-steel-shade','label' => __( 'Steel Shade', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-list-news',
+    array('name' => 'bg-deep-steel','label' => __( 'Deep Steel', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-list-news',
+    array('name' => 'bg-regal-purple','label' => __( 'Regal Purple', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-list-news',
+    array('name' => 'bg-legacy-red','label' => __( 'Legacy Red', 'textdomain' ), 'is_default' => false)
+  );
+
+  /**
    * Backdrop styles for CG gallery blocks
    */
+  register_block_style('acf/cg-gallery',
+    array('name' => 'bg-none','label' => __( 'No Backdrop', 'textdomain' ), 'is_default' => false)
+  );
   register_block_style('acf/cg-gallery',
     array('name' => 'bg-timeless-backdrop','label' => __( 'Timeless Backdrop', 'textdomain' ), 'is_default' => true)
   );

@@ -115,6 +115,21 @@ hr {
   height: 1px;
   width: 100%;
 }
+[class*="bg-timeless-backdrop"],
+[class*="bg-timeless-highlight"] {
+  hr {
+    background: var(--color-timeless-gold);
+  }
+}
+[class*="bg-legacy-red"],
+[class*="bg-regal-purple"],
+[class*="bg-deep-steel"],
+[class*="bg-steel-shade"] {
+  hr {
+    background: rgba(255,255,255,.125);
+  }
+}
+
 
 
 fieldset {

@@ -144,3 +144,81 @@
     margin-block: 0;
   }
 }
+
+/* Layout styles to suit WordPress' block indexes. */
+.resource-listings:not(.listings-index) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gutter, var(--space-s-m));
+  align-items: var(--switcher-vertical-alignment, flex-start);
+  flex-basis: calc((var(--switcher-target-container-width, 40rem) - 100%) * 999);
+  
+  & > .resource-listing {
+    align-self: center;
+    flex-grow: 1;
+    flex-basis: calc((var(--switcher-target-container-width, 40rem) - 100%) * 999);
+  }
+  & > .resource-listing:nth-of-type(2) ~ * {
+    flex-basis: 100%;
+  }
+
+  &.listings-hero {
+    & > .resource-listing:nth-of-type(1) ~ * {
+      flex-basis: calc((var(--switcher-target-container-width, 40rem) - 100%) * 999);
+    }
+    & > .resource-listing:nth-of-type(3) ~ * {
+      flex-basis: 100%;
+    }
+    & > .resource-listing:first-of-type {
+      flex-basis: 100%;
+      .sidebar {
+        --sidebar-gutter: var(--space-xl);
+        --sidebar-target-width: 25rem;
+        --sidebar-content-min-width: 60%;
+      }
+      time {
+        font-size: var(--size-step-0);
+      }
+      .type-hed {
+        font-size: var(--size-step-4);
+      }
+      .body {
+        p {
+          font-size: var(--size-step-1);
+          line-height: var(--leading-wide);
+        }
+      }
+    }
+    & > .resource-listing:nth-of-type(3) ~ * {
+      flex-basis: 100%;
+    }
+  }
+  &.listings-secondary {
+    .resource-listing:first-of-type {
+      time {
+        font-size: var(--size-step-00);
+      }
+      .type-hed {
+        font-size: var(--size-step-2);
+      }
+      p {
+        font-size: var(--size-step-1);
+        line-height: var(--leading-tight);
+      }
+      .sidebar {
+        --sidebar-gutter: var(--space-l);
+        --sidebar-target-width: 20rem;
+        --sidebar-content-min-width: 40%;
+      }
+    }
+  }
+}
+
+[class*="bg-deep-steel"],
+[class*="bg-steel-shade"],
+[class*="bg-legacy-red"],
+[class*="bg-regal-purple"] {
+  time {
+    color: var(--color-steel-midtone);
+  }
+}

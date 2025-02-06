@@ -16,31 +16,17 @@
   SupportsAlignText: false
 #}
 <div class="region">
-{%  if 'current' in posts.pagination.pages[0].class %}
-{% for post in posts|slice(0, 1) %}
-{% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': 'hero' } %}
-{% endfor %}
-<div class="switcher region">
-  {% for post in posts|slice(1, 2) %}
-  {% include ['listing-'~post[1].post_type~'.twig', 'listing.twig'] with { 'type': 'secondary' } %}
-  {% endfor %}
-</div>
-<hr>
-<div class="region">
-  {% for post in posts|slice(3) %}
-  {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': style } %}
-  {% endfor %}
-</div>
-{% else %}
-<div class="region">
+  <div class="region resource-listings {{ classes }} listings-{{ fields.layout }}">
   {% for post in posts %}
   {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': style } %}
+  {% if ( fields.layout == "secondary" and loop.index == 2 ) or ( fields.layout == "hero" and loop.index == 3 ) %}
+    <hr>
+  {% endif %}
   {% endfor %}
+  {% if fields.pagination %}
+  <div class="region">
+  {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+  </div>
+  {% endif %}
+  </div>
 </div>
-{%  endif  %}
-{% if fields.pagination %}
-<hr>
-<div class="region">
-{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
-</div>
-{% endif %}
