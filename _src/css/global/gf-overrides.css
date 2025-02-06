@@ -5,6 +5,21 @@
   display: block;
   margin-block: var(--region-space, var(--space-s-m));
 
+  input, select, textarea {
+    font-size: var(--size-step-00) !important;
+
+    &.small {
+      padding: calc(var(--space-3xs) + var(--space-nudge)) var(--space-2xs) var(--space-3xs) var(--space-2xs) !important;
+
+      font-size: var(--size-step-000) !important;
+    }
+    &.medium {
+      font-size: var(--size-step-00) !important;
+    }
+    &.large {
+      font-size: var(--size-step-0)  !important;
+    }
+  }
   .gfield_required {
     display: inline;
   }
@@ -14,27 +29,60 @@
     gap: var(--space-s-m);
     flex-wrap: wrap;
 
+    fieldset {
+      display: block;
+      width: calc( 100% - var(--space-s-m));
+    }
+    .gfield:not([data-conditional-logic="hidden"]) {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: space-between !important;
+
+      .ginput_container,
+      input {
+        flex-basis: 100% !important;
+        width: 100% !important;
+      }
+    }
+    label,
+    label + .gfield_description {
+      display: inline-block;
+    }
+    .gfield_description {
+      all: unset !important;
+      margin-block: var(--space-3xs) var(--space-nudge) !important;
+      color: var(--color-steel-midtone) !important;
+      font-weight: var(--weight-regular) !important;
+      font-size: var(--size-step-000) !important;
+      text-transform: none !important;
+      transition: opacity .2s linear !important;
+    }
+    .ginput_complex {
+      display: flex;
+      flex-direction: row;
+      justify-content: stretch;
+      gap: var(--space-s-m);
+      & > * {
+        flex-grow: 2;
+      }
+    }
+    [id*="field_"],
     li {
       all: unset;
-      display: block !important;
+      display: block;
       flex-basis: calc( 100% - var(--space-s-m));
 
       &[class*="_half"] {
         flex-basis: calc( 50% - var(--space-s-m));
       }
-
-      &:has(input) {
-        position: relative;
-        &::after {
-          background: var(--input-border-highlight);
-          bottom: -1px;
-          content: "";
-          height: 2px;
-          left: 0;
-          pointer-events: none;
-          position: absolute;
-          transition: width .35s ease-in-out, background .3s ease-in-out;
-          width: 0;
+      input {
+        border-bottom: 2px solid var(--input-border) !important;
+        &:focus {
+          border-bottom: 2px solid var(--input-border-highlight) !important;
+        }
+        &:focus:invalid,
+        &[aria-required="true"]:focus:placeholder-shown {
+          border-bottom: 2px solid var(--input-invalid) !important;
         }
       }
       input:not([type="range"]):not([type="radio"]):not([type="checkbox"]):not([type="color"]):not([type="submit"]):focus,
@@ -47,34 +95,29 @@
       select:focus-visible {
         outline: none;
       }
-      &:has(input:not([type="range"]):not([type="radio"]):not([type="checkbox"]):not([type="color"]):focus) {
-        &::after {
-          width: 100%;
-        }
-      }
       &:has([required]),
       &:has([aria-required="true"]) {
-        .gfield_required {
+        .gfield_required:not(.gfield_required_text) {
           color: var(--color-steel-midtone);
-          content: "*";
           margin-left: var(--space-nudge);
           transition: color .25s linear;
+          &::after {
+            content: "*";
+            color: var(--color-legacy-red);
+          }
+        }
+        .gfield_required_asterisk {
+          display: none;
+        }
+        .gfield_required_text {
+          @mixin visuallyhidden;
         }
       }
-      &:has(input:invalid),
-      &:has([aria-required="true"]:placeholder-shown) {
-        .gfield_required {
-          color: var(--color-legacy-red);
-        }
-        span.note {
-          opacity: 1;
-        }
-      }
-      &:has(input:focus:invalid),
-      &:has(input[aria-required="true"]:focus:placeholder-shown) {
-        &::after {
-          background: var(--color-legacy-red);
-        }
+    }
+    &:has([required]):valid,
+    &:has([aria-required="true"]) {
+      &::after {
+        color: var(--color-steel-midtone);
       }
     }
     li::marker,
