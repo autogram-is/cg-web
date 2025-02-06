@@ -139,6 +139,12 @@
       }
     }
   }
+  &[class*="bg-deep-steel"],
+  &[class*="bg-steel-shade"] {
+    dt {
+      color: var(--color-timeless-gold);
+    }
+  }
 }
 
 .js .statistic[data-counter] {
