@@ -3,7 +3,7 @@
 {% set podcast = post.podcast_name %}
 {% set season = post.podcast_season %}
 {% set episode = post.podcast_episode %}
-{% set youtube = post.podcast_youtube_url | replace({ 'youtu.be': 'www.youtube.com/embed' }) %}
+{% set youtube = post.podcast_youtube_url | youtube %}
 {% set mp3 = post.podcast_mp3_url %}
 {% set poster = post.thumbnail %}
 
