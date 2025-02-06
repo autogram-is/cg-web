@@ -18,7 +18,11 @@
 <div class="region">
   <div class="region resource-listings {{ classes }} listings-{{ fields.layout }}">
   {% for post in posts %}
-  {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': style } %}
+  {% if ( fields.layout == "hero" and loop.index == 1 ) %}
+    {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': 'hero' } %}
+  {%  else  %}
+    {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': style } %}
+  {% endif %}
   {% if ( fields.layout == "secondary" and loop.index == 2 ) or ( fields.layout == "hero" and loop.index == 3 ) %}
     <hr>
   {% endif %}
