@@ -1,12 +1,10 @@
 .inline-form {
-  padding: var(--space-s) var(--space-xs);
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  p {
+  padding-inline: var(--space-s);
+  align-self: flex-start;
+  a {
     font-size: var(--size-step-00);
   }
+
   .submit {
     --flow-space: var(--space-s);
   }

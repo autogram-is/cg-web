@@ -147,7 +147,7 @@
   }
   &.mini {
     aspect-ratio: auto;
-    padding: var(--space-3xs) var(--space-2xs) calc(var(--space-3xs)-1px);
+    padding: calc( var(--space-2xs) - var(--space-nudge) ) var(--space-2xs) calc(var(--space-2xs) - var(--space-nudge) );
   }
 
   &.mini.icon {

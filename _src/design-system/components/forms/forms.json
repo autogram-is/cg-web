@@ -17,10 +17,11 @@
       }
     },
     {
-      "title" : "Condensed",
-      "name" : "input-condensed",
+      "title" : "Small",
+      "name" : "input-small",
+      "note": "`input.small` convention is intended to match GF usage.",
       "context" : {
-        "type" : "input-condensed"
+        "type" : "small"
       }
     }
   ]

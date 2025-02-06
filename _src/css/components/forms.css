@@ -1,15 +1,15 @@
 form {
   --input-active: var(--color-timeless-highlight);
   --input-active-inner: var(--color-light);
-  --input-background: var(--color-light);
+  --input-background: var(--color-timeless-backdrop);
   --input-placeholder: var(--color-steel-midtone);
   --input-highlight: var(--color-timeless-gold);
-  --input-border: var(--color-steel-midtone);
+  --input-border: var(--color-timeless-highlight);
   --input-border-highlight: var(--color-timeless-gold);
   --input-invalid: var(--color-legacy-red);
   --input-disabled: var(--color-highlight);
   --input-disabled-border: var(--color-steel-highlight);
-  --input-focus: var(--color-deep-steel);
+  --input-focus: var(--color-steel-highlight);
   label {
     color: var(--color-steel-shade);
     display: block;
@@ -21,6 +21,9 @@ form {
     text-transform: uppercase;
     .repel {
       --gutter: 0;
+    }
+    &:has(.small) {
+      font-size: var(--size-step-000);
     }
     input,
     textarea,
@@ -49,7 +52,7 @@ form {
     &:has(input) {
       &::after {
         background: var(--input-border-highlight);
-        bottom: -1px;
+        bottom: 0;
         content: "";
         height: 2px;
         left: 0;
@@ -75,7 +78,7 @@ form {
       }
     }
     &:has([required]) {
-      .req::after {
+      .label::after {
         color: var(--color-steel-midtone);
         content: "*";
         display: inline-block;
@@ -84,7 +87,7 @@ form {
       }
     }
     &:has(input:invalid) {
-      .req::after {
+      .label::after {
         color: var(--color-legacy-red);
       }
       span.note {
@@ -100,14 +103,16 @@ form {
 
   input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]), textarea, select {
     background: var(--input-background);
-    border: 1px solid var(--input-border);
+    border: 1px solid transparent;
+    border-bottom: 2px solid var(--input-border);
     &:disabled {
       background: var(--input-disabled);
-      border-color: var(--input-disabled-border);
+      border-bottom-color: var(--input-disabled-border);
       cursor: not-allowed;
     }
     &:focus { 
       border: 1px solid var(--input-focus);
+      border-bottom: 2px solid var(--input-focus);
     }
   }
 
@@ -116,6 +121,10 @@ form {
   select:not([multiple]) {
     padding: calc(var(--space-2xs) + var(--space-nudge)) var(--space-xs) calc( var(--space-2xs) - 1px ) var(--space-xs);
     width: 100%;
+    &.small {
+      font-size: var(--size-step-000);
+      padding: calc(var(--space-3xs) + var(--space-nudge)) var(--space-2xs) var(--space-3xs) var(--space-2xs);
+    }
     &::placeholder {
       color: var(--input-placeholder);
       font-style: italic;
@@ -152,7 +161,7 @@ form {
       &::after {
         align-items: center;
         background: var(--color-timeless-backdrop);
-        bottom: 1px;
+        bottom: 2px;
         content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' transform='rotate(90)'%3E%3Cpath id='chevron' d='m9 6 6 6-6 6' stroke='%2339434d ' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
         display: flex;
         justify-content: center;
@@ -184,7 +193,7 @@ form {
       & > input[type='checkbox'],
       & > input[type='radio'] {
         appearance: none;
-        background: var(--color-steel-midtone);
+        background: var(--color-steel-highlight);
         border: var(--space-nudge) solid var(--input-active-inner);
         cursor: pointer;
         display: inline-block;
@@ -215,7 +224,7 @@ form {
       display: inline-block;
       position: relative;
       &:after {
-        background: var(--color-steel-midtone);
+        background: var(--color-steel-highlight);
         border: var(--space-nudge) solid var(--input-background);
         border-radius: var(--space-2xs);
         content: '';
