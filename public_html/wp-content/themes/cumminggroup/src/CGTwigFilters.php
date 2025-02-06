@@ -105,14 +105,12 @@ class CGTwigFilters {
 
   /**
    * Given a YouTube video URL or ID, generate the proper embedding URL
-   * 
-   * 
    *
    * @param string $text ID or URL to format
    */
   function youtube_embed_url(?string $url) {
     if ($url && preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/\s]{11})%i', $url, $match)) {
-      return 'https://www.youtube.com/embed/' . $match[1];
+      return 'https://www.youtube-nocookie.com/embed/' . $match[1];
     }
     return $url;
   }
