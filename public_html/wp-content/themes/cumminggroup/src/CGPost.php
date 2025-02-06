@@ -1,6 +1,7 @@
 <?php
 
 use Timber\Post;
+use Timber\Timber;
 
 /**
  * Class CGPost
@@ -60,22 +61,25 @@ class CGPost extends Post {
 	/**
 	 * For any region-tagged entity, find other items tagged with the same region(s).
 	 */
-	public function nearby($type = NULL, $limit = NULL) {
-		$regions = wp_get_post_terms($this->ID, 'region');
+	public function nearbyNews(string $type = NULL, int $limit = -1) {
+		$helper = new CGRelatedContentHelper();
+		return $helper->nearby($this->ID, 'news', $limit);
+	}
 
-		$query_args = [
-			'post_type'      => 'office',
-			'posts_per_page' => -1,
-			'fields'         => 'id',
-			'tax_query'      => [
-					[
-							'taxonomy' => 'region',
-							'field'    => 'term_id',
-							'terms'    => $regions,
-					],
-			],
-		];
-		$nearby_offices = (new WP_Query($query_args))->posts;
+	/**
+	 * For any region-tagged entity, find other items tagged with the same region(s).
+	 */
+	public function nearbyOffices(string $type = NULL, int $limit = -1) {
+		$helper = new CGRelatedContentHelper();
+		return $helper->nearby($this->ID, 'news', $limit);
+	}
+
+	/**
+	 * For any region-tagged entity, find other items tagged with the same region(s).
+	 */
+	public function nearbyProjects(string $type = NULL, int $limit = -1) {
+		$helper = new CGRelatedContentHelper();
+		return $helper->nearby($this->ID, 'projects', $limit);
 	}
 
 	private function _related($field_name) {

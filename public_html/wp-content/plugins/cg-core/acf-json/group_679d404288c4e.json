@@ -306,7 +306,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "footer"
+                "value": "cg-options"
             }
         ]
     ],
@@ -319,5 +319,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738695172
+    "modified": 1738789253
 }
