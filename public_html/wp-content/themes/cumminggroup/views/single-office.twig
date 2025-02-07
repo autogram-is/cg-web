@@ -3,7 +3,7 @@
 
 
 {% block hero %}
-<h1 class="type-pagehed hed-accent">{{ pagetitle }}, {{ post.location }}</h1>
+<h1 class="type-pagehed hed-accent">{{ pagetitle }}{% if post.location %}, {{ post.location }}{% endif %}</h1>
 {% endblock %}
 
 
@@ -12,8 +12,20 @@
     {# <p class="lede">byline</p> #}
   </div>
   <div class="sidebar">
-    <div class="prose lede flow">
-      {{post.content}}
+    <div class="flow">
+      <div class="grid">
+        {% for office in post.office_details %}
+        <div class="wrapper region region-primary lede-header">
+          {% if office.name %}<p><strong>{{ office.name }}</strong> <small><em>A Cumming Group company</em></small></p>{% endif %}
+          {% if office.address %}
+          <p class="icon-map">
+            <a href="#">{{ office.address }}</a>
+          </p>
+          {% endif %}
+          {% if office.phone %}<p class="icon-tel"><a href="tel:{{ office.phone }}">{{ office.phone }}</a></p>{% endif %}
+        </div>
+        {% endfor %}
+      </div>
     </div>
   </div>
 {% endblock %}
