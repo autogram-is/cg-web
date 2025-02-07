@@ -14,17 +14,7 @@
   <div class="sidebar">
     <div class="flow">
       <div class="grid">
-        {% for office in post.office_details %}
-        <div class="wrapper region region-primary lede-header">
-          {% if office.name %}<p><strong>{{ office.name }}</strong> <small><em>A Cumming Group company</em></small></p>{% endif %}
-          {% if office.address %}
-          <p class="icon-map">
-            <a href="#">{{ office.address }}</a>
-          </p>
-          {% endif %}
-          {% if office.phone %}<p class="icon-tel"><a href="tel:{{ office.phone }}">{{ office.phone }}</a></p>{% endif %}
-        </div>
-        {% endfor %}
+        {% include 'fields/office-locations.twig' with { city: post } %}
       </div>
     </div>
   </div>
