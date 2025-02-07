@@ -1,1 +1,11 @@
-{# for each office iterate over the locations and print their addresses #}
+{% for office in city.office_details %}
+<div class="wrapper region region-primary lede-header">
+  {% if office.name %}<p><strong>{{ office.name }}</strong> <small><em>A Cumming Group company</em></small></p>{% endif %}
+  {% if office.address %}
+  <p class="icon-map">
+    <a href="#">{{ office.address }}</a>
+  </p>
+  {% endif %}
+  {% if office.phone %}<p class="icon-tel"><a href="tel:{{ office.phone }}">{{ office.phone }}</a></p>{% endif %}
+</div>
+{% endfor %}
