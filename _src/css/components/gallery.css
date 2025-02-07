@@ -1,5 +1,6 @@
 .gallery {
   position: relative;
+
   &[class*="bg-"],
   [class*="bg-"] {
     background: none;

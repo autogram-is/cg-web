@@ -3,7 +3,7 @@
 .project-listing {
   --sidebar-gutter: calc( ( var(--space-m) * 2 ) - var(--space-3xs) );
   --sidebar-target-width: 45rem;
-  --sidebar-content-min-width: 35%;
+  --sidebar-content-min-width: 50%;
   margin-block-end: var(--space-m);
 
   &.hatching {
