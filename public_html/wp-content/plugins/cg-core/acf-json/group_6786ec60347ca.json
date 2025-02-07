@@ -1,29 +1,7 @@
 {
     "key": "group_6786ec60347ca",
-    "title": "News Properties",
+    "title": "News Reprint Properties",
     "fields": [
-        {
-            "key": "field_6786ecb4791c9",
-            "label": "Reprint Byline",
-            "name": "reprint_byline",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_column_enabled": 0,
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
         {
             "key": "field_6786ec91791c8",
             "label": "Reprint URL",
@@ -125,5 +103,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1737561940
+    "modified": 1738948184
 }
