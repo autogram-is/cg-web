@@ -9,12 +9,28 @@
 
 
 {% block content %}
-  <div class="lede-header">
-    {# <p class="lede">byline</p> #}
-  </div>
-  <div class="sidebar">
-    <div class="prose central-inner lede flow">
-      {{post.content}}
-    </div>
+  {% if post.team_authors %}
+  <address class="hgroup person-header">
+    {% for team_author in post.team_authors %}
+    {% set author = get_posts(team_author) %}
+    {% set jobtitle = author.get_field('role') %}
+    {% set sectors = author.get_field('sectors') %}
+    <span class="author">{{ author.name }}</span>
+    {% if author.title %}
+    <span class="title">
+      <span class="title type-detail">{{ jobtitle }}</span>
+      {% if sectors %}
+        {% for sector in sectors %}
+        {% set author_sector = get_posts(sector) %}
+        <span class="title type-detail"><a href="{{ sector.href }}">{{ author_sector | stylize }}</a></span>
+        {% endfor %}
+    {% endif %}
+    </span>
+    {% endif %}
+    {% endfor %}
+  </address>
+  {% endif %}
+  <div class="prose central-inner lede flow">
+    {{post.content}}
   </div>
 {% endblock %}
