@@ -1,0 +1,1 @@
+Used to feature arbitrary content on any page.

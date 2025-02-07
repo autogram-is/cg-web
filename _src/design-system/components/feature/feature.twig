@@ -1,22 +1,31 @@
-<div class="card {{ utilities }} {{ type }}">
-  <h3 class="hed type-hed hed-accent">{{ title }}</h3>
-
-  <div class="prose flow"> 
-  {% if lede %}
-    <div class="lede">{{ lede|markdown }}</div>
-  {% endif %}
-    {{ body|markdown }}
-  {% if listitems %}
-    <ul class="flow">
-  {% for item in listitems %}
-      <li>{{ item|md }}</li>
-  {% endfor %}
-    </ul>
-  {% endif %}
-  {% if ctass %}
-    {% for item in listitems %}
-      {{ item|md }}
-    {% endfor %}
-  {% endif %}
+<div class="central">
+  <div class="wrapper">
+    <div class="feature {{ type }} {{ utilities }}">
+      <div class="sidebar item"{% if type == "reverse" %} data-direction="rtl"{% endif %}>
+        {% if img %}
+        <a href="{{ href }}" class="thumb">
+          <img src="{{ img.src }}" height="{{img.height}}" width="{{img.width}}" alt="">
+        </a>
+        {% endif %}
+        <div class="body flow">
+          <div class="hgroup {% if body %}hed-accent {% endif %}flow">
+            {% if eyebrow %}
+            {% if eyebrow|date('U') != 0 %}
+            <time class="type-detail weight-regular" datetime="{{eyebrow}}">{{ eyebrow|longdate }}</time>
+            {% else %}
+            <span class="type-detail weight-regular">{{ eyebrow }}</span>
+            {% endif %}
+            {% endif %}
+            {% if hed %}
+            <h3 class="type-hed"><a href="{{ href }}">{{ hed }}</a></h3>
+            {% endif %}
+            {% if subhed %}
+            <p class="subhed">{{ subhed }}</p>
+            {% endif %}
+          </div>
+          {{ body|markdown }}
+        </div>
+      </div>
+    </div>
   </div>
 </div>

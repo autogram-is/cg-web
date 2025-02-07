@@ -1,5 +1,5 @@
 {
-  "title": "Card",
+  "title": "Feature",
   "keyLinks": [
     {
       "label": "CSS",
@@ -7,41 +7,77 @@
     }
   ],
   "context": {
-    "title": "Energy Management <span class='amp'>&</span> Resilience",
-    "body": "Services focused specifically on energy at the building or campus scale, tailored towards programs, incentives, and cost savings.",
-    "listitems" : [
-      "Energy auditing and modeling",
-      "Energy project management and planning",
-      "Life cycle cost analysis (LCCA) and total cost of ownership (TCOO)",
-      "Solar photovoltaics and battery storage feasibility",
-      "Incentive program management",
-      "Benchmarking and utility bill financial analysis",
-      "Rate structure analysis and utility budget planning",
-      "Energy Management Systems (ISO 50001)",
-      "Energy resilience and distributed energy resources"
-    ]
+    "href"  : "#",
+    "eyebrow": "2024-10-31T00:00:00",
+    "hed" : "Market Analysis",
+    "subhed" : "US Construction Market Overview",
+    "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. ",
+    "img" : {
+      "src" : "https://picsum.photos/1200/1000?&blur=5",
+      "height" : 1000,
+      "width" : 1200,
+      "alt" : ""
+    },
+    "tags" : ["News and Insights"],
+    "date" : "October 31, 2024"
   },
-    "variants": [
+  "variants": [
+    {
+      "name": "no-thumb",
+      "title": "No Thumbnail",
+      "note": "Makes use of [background color utility classes](/design-system/colors/).",
+      "context": {
+        "type": "color-block",
+        "utilities" : "is-style-bg-steel-shade",
+        "href"  : "#",
+        "eyebrow": "Q1, 2025",
+        "hed" : "Market Analysis",
+        "subhed" : "US Construction Market Overview",
+        "body": "Services focused specifically on energy at the building or campus scale, tailored towards programs, incentives, and cost savings.",
+        "tags" : ["News and Insights"],
+        "date" : "October 31, 2024"
+      }
+    },
     {
       "name": "color-block",
       "title": "Color Block",
       "note": "Makes use of [background color utility classes](/design-system/colors/).",
       "context": {
         "type": "color-block",
-        "utilities" : "bg-steel-shade",
-        "title": "Energy Management <span class='amp'>&</span> Resilience",
+        "utilities" : "is-style-bg-steel-shade",
+        "href"  : "#",
+        "eyebrow": "Q1, 2025",
+        "hed" : "Market Analysis",
+        "subhed" : "US Construction Market Overview",
         "body": "Services focused specifically on energy at the building or campus scale, tailored towards programs, incentives, and cost savings.",
-        "listitems" : [
-          "Energy auditing and modeling",
-          "Energy project management and planning",
-          "Life cycle cost analysis (LCCA) and total cost of ownership (TCOO)",
-          "Solar photovoltaics and battery storage feasibility",
-          "Incentive program management",
-          "Benchmarking and utility bill financial analysis",
-          "Rate structure analysis and utility budget planning",
-          "Energy Management Systems (ISO 50001)",
-          "Energy resilience and distributed energy resources"
-        ]
+        "img" : {
+          "src" : "https://picsum.photos/1200/1000?&blur=5",
+          "height" : 1000,
+          "width" : 1200,
+          "alt" : ""
+        },
+        "tags" : ["News and Insights"],
+        "date" : "October 31, 2024"
+      }
+    },
+    {
+      "name": "hgroup-only",
+      "title": "Heading Group Only",
+      "context": {
+        "type": "color-block",
+        "utilities" : "is-style-bg-timeless-backdrop",
+        "href"  : "#",
+        "eyebrow": "Q1, 2025",
+        "hed" : "Market Analysis",
+        "subhed" : "US Construction Market Overview",
+        "img" : {
+          "src" : "https://picsum.photos/1200/1000?&blur=5",
+          "height" : 1000,
+          "width" : 1200,
+          "alt" : ""
+        },
+        "tags" : ["News and Insights"],
+        "date" : "October 31, 2024"
       }
     }
   ]

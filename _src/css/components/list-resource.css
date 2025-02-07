@@ -62,7 +62,7 @@
   .sidebar {
     --sidebar-gutter: var(--space-xl);
     --sidebar-target-width: 25rem;
-    --sidebar-content-min-width: 60%;
+    --sidebar-content-min-width: 50%;
   }
 
     time {

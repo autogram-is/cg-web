@@ -263,7 +263,7 @@
     &::after {
       content: "";
       display: block;
-      width: var(--space-xl-2xl);
+      width: var(--space-m-l);
       margin-block-start: calc( var(--space-s) - 4px ); /* `--space-s` less height of accent, to align with use on `.type-hed` */
       border: var(--content-division);
     }
@@ -298,4 +298,11 @@ p.is-style-lede-header {
 [class*="bg-steel-shade"],
 [class*="bg-regal-purple"] {
   @mixin invert;
+  .hgroup {
+    .location,
+    .author,
+    .subhed {
+      color: var(--color-steel-midtone);
+    }
+  }
 }

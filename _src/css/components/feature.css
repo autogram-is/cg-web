@@ -1,26 +1,43 @@
-.card {
-  --flow-space: var(--space-xs);
-  align-items: center;
-  line-height: var(--leading-loose);
-  padding: var(--space-l-xl);
-  .hed {
-    font-size: var(--size-step-3);
-  }
-  .prose ul li {
-    margin-block: 0;
-    font-size: var(--size-step-00);
-  }
+/* Resource Listing */
 
-
-  &a {
-    display: block;
+.feature {
+ .sidebar {
+    --sidebar-gutter: var(--space-s-m);
+    --sidebar-content-min-width: 40%;
+    align-items: center;
   }
-  &.bg-regal-purple,
-  &[class*="steel"],
-  &.bg-legacy-red {
-    @mixin invert;
-    li::marker {
-      color: inherit;
+  .body {
+    padding-block: var(--space-s);
+    time {
+      font-size: var(--size-step-00);
     }
+    .type-hed {
+      --flow-space: var(--space-3xs);
+      font-size: var(--size-step-3);
+    }
+    p {
+      font-size: var(--size-step-0);
+      line-height: var(--leading-tight);
+      &.subhed {
+        font-size: var(--size-step-1);
+      }
+      &:last-of-type:not(.subhed) {
+        margin-block-end: var(--space-s-m);
+      }
+    }
+    .listing-meta {
+      --gutter: 0;
+      display: flex;
+      flex-direction: row;
+      font-size: var(--size-step-000);
+      & > * + *::before {
+        content: "•";
+        color: var(--color-timeless-gold);
+        margin-inline: var(--space-2xs);
+      }
+    }
+  }
+  &:not(:has(.thumb)) .body {
+    padding-block-start: var(--space-l);
   }
 }
