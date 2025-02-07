@@ -5,15 +5,6 @@
     margin-block: 0;
   }
 
-  .hero-sidebar {
-    display: flex;
-    flex-direction: column;
-    padding-right: var(--gutter);
-    & > * {
-      width: 100%;
-    }
-  }
-
   .hero-photo {
     position: relative;
     color: var(--color-steel-highlight);

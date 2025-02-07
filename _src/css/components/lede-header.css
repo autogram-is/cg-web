@@ -20,10 +20,6 @@
     color: var(--color-deep-steel);
     font-size: var(--size-step-2);
   }
-  .person-header {
-    margin-block-end: var(--space-s-m);
-  }
-
   p {
     color: var(--color-deep-steel);
     font-size: var(--size-step-1);
@@ -79,3 +75,8 @@
     }
   } 
 }
+
+.person-header {
+  margin-block: var(--space-s-m);
+}
+

@@ -10,7 +10,7 @@
       position: absolute;
       left: -50vw;
       right: -50vw;
-      bottom: calc( var(--space-3xl) * 2 );
+      bottom: 25%;
       top: 0;
       z-index: -1;
     }
@@ -18,6 +18,12 @@
     [class*="bg-"]:has(figure:first-of-type:last-of-type) {
       &::before {
         bottom: 0;
+      }
+    }
+    &[class*="bg-"]:has(article:first-of-type:last-of-type),
+    [class*="bg-"]:has(article:first-of-type:last-of-type) {
+      &::before {
+        bottom: calc( var(--space-3xl) * 3 );
       }
     }
     &.is-style-bg-timeless-highlight::before,

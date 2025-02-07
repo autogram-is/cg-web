@@ -33,4 +33,8 @@
       --flow-space: var(--space-xs);
     }
   }
+
+  .wrapper .sidebar {
+    --sidebar-target-width: 22rem;
+  }
 }
