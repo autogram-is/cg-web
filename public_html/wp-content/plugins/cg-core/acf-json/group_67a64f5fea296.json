@@ -1,13 +1,13 @@
 {
-    "key": "group_675100b654e49",
-    "title": "Podcast Episode Properties",
+    "key": "group_67a64f5fea296",
+    "title": "Featured Card",
     "fields": [
         {
-            "key": "field_678ffd332b8a3",
-            "label": "Podcast Name",
-            "name": "podcast_name",
+            "key": "field_67a64f6020cdd",
+            "label": "Linked Post",
+            "name": "post",
             "aria-label": "",
-            "type": "text",
+            "type": "post_object",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -17,39 +17,23 @@
                 "id": ""
             },
             "admin_column_enabled": 0,
-            "default_value": "The Construction Insiders Podcast",
-            "maxlength": "",
+            "post_type": "",
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "return_format": "object",
+            "multiple": 0,
+            "allow_null": 0,
             "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
         },
         {
-            "key": "field_678ffed8cd9da",
-            "label": "Season Number",
-            "name": "podcast_season",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_column_enabled": 0,
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_678ffd782b8a4",
-            "label": "Episode Number",
-            "name": "podcast_episode",
+            "key": "field_67a64f9f20cde",
+            "label": "Headline Override",
+            "name": "headline",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -69,11 +53,11 @@
             "append": ""
         },
         {
-            "key": "field_675100b6c6b7a",
-            "label": "Youtube URL",
-            "name": "podcast_youtube_url",
+            "key": "field_67a64fb320cdf",
+            "label": "Excerpt Override",
+            "name": "excerpt",
             "aria-label": "",
-            "type": "url",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -84,15 +68,18 @@
             },
             "admin_column_enabled": 0,
             "default_value": "",
+            "maxlength": "",
             "allow_in_bindings": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
-            "key": "field_67900e594814f",
-            "label": "MP3 URL",
-            "name": "podcast_mp3_url",
+            "key": "field_67a64fc120ce0",
+            "label": "Thumbnail Override",
+            "name": "thumbnail",
             "aria-label": "",
-            "type": "url",
+            "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -102,17 +89,25 @@
                 "id": ""
             },
             "admin_column_enabled": 0,
-            "default_value": "",
-            "allow_in_bindings": 1,
-            "placeholder": ""
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
         }
     ],
     "location": [
         [
             {
-                "param": "post_category",
+                "param": "post_type",
                 "operator": "==",
-                "value": "category:podcast"
+                "value": "post"
             }
         ]
     ],
@@ -125,5 +120,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738954166
+    "modified": 1738952729
 }
