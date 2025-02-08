@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('CG_MIGRATE_PLUGIN_DIR', WP_PLUGIN_DIR . '/cg-migrate');
+define('CG_MIGRATE_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('CG_MIGRATE_DATA_DIR', CG_MIGRATE_PLUGIN_DIR . '/data');
 define('CG_MIGRATE_CONTENT_DIR', CG_MIGRATE_PLUGIN_DIR . '/content');
 

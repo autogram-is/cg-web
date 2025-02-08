@@ -13,6 +13,12 @@ Version: 1.0.0
 Author URI: http://autogram.is/
 */
 
-require_once __DIR__ .'/hooks/acf-configuration.php';
-require_once __DIR__ .'/hooks/blocks-and-patterns.php';
+define('CG_CORE_PLUGIN_DIR', plugin_dir_path(__FILE__));
 
+$inc_dirs = ['util', 'hooks'];
+foreach ($inc_dirs as $dir) {
+    foreach (glob(join("/", [CG_CORE_PLUGIN_DIR, $dir, '*.php'])) as $inc) {
+        $inc = basename($inc);
+        require_once CG_CORE_PLUGIN_DIR . '/' . $dir . '/' . $inc;
+    }    
+}

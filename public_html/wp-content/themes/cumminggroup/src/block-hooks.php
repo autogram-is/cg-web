@@ -3,6 +3,49 @@
 use Timber\Timber;
 
 /**
+ * Forcibly remove 'block patterns' that define custom page layouts.
+ */
+add_action( 'init', function() {
+  if (!class_exists('WP_Block_Patterns_Registry')) {
+    return;
+  }
+  $patterns = (array) WP_Block_Patterns_Registry::get_instance()->get_all_registered();
+  foreach ( $patterns as $pattern ) {
+    unregister_block_pattern($pattern['name']);
+  }
+});
+
+
+// Disable remotely loaded patterns from wordpress.org
+add_filter( 'should_load_remote_block_patterns', '__return_false' );
+
+// Add our custom block categories
+add_filter( 'block_categories_all', function($categories) {
+  $text = array_slice($categories, 0, 1);  // Get the first item
+  $others = array_slice($categories, 1);   // Get the rest of the array
+
+  $custom[] = array(
+    'slug'  => 'cg-index',
+    'title' => __( 'Cumming Group Content Lists', 'cumminggroup' ),
+  );
+
+  $custom[] = array(
+    'slug'  => 'cg-component',
+    'title' => __( 'Cumming Group Page Components', 'cumminggroup' ),
+  );
+
+  // Merge them with the new entry in between
+  $categories = array_merge($text, $custom, $others);
+  return $categories;
+});
+
+// An opportunity to edit existing block metadata.
+// This fires for every individual block.
+add_filter( 'block_type_metadata_settings', function( $settings, $metadata = null ) {
+  return $settings;
+});
+
+/**
  * Register Cumming Group styles for Gutenberg blocks.
  */
 function cg_register_block_styles() {
@@ -133,6 +176,34 @@ function cg_register_block_styles() {
     array('name' => 'lede-header','label' => __( 'Lede', 'textdomain' ), 'is_default' => false)
   );
 }
+
+/**
+ * Disable jank typography features on core blocks.
+ */
+add_filter('block_type_metadata', function($metadata) {
+  // Check if 'supports' key exists.
+  if (isset( $metadata['supports'] ) && isset( $metadata['supports']['color'] ) ) {
+    // Remove Background color and Gradients support.
+    $metadata['supports']['color']['background'] = false;
+    $metadata['supports']['color']['gradients']  = false;
+    $metadata['supports']['color']['text']  = false;
+  }
+  if (isset( $metadata['supports'] ) && isset( $metadata['supports']['typography'] ) ) {
+    $metadata['supports']['typography']['fontSize'] = false;
+    $metadata['supports']['typography']['dropCap'] = false;
+    $metadata['supports']['typography']['fontStyle'] = false;
+    $metadata['supports']['typography']['fontWeight'] = false;
+    $metadata['supports']['typography']['letterSpacing'] = false;
+    $metadata['supports']['typography']['lineHeight'] = false;
+    $metadata['supports']['typography']['textColumns'] = false;
+    $metadata['supports']['typography']['textDecoration'] = false;
+    $metadata['supports']['typography']['textTransform'] = false;
+    $metadata['supports']['typography']['writingMode'] = false;
+    $metadata['supports']['typography']['fontSizes'] = false;
+  }
+
+  return $metadata;
+});
 
 /**
  * Register custom block type variations.

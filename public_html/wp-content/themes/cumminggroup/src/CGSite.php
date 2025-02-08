@@ -3,9 +3,6 @@
 use Timber\Site;
 use Timber\Timber;
 
-use \CGRelatedContentHelper;
-use \CGTwigFilters;
-
 /**
  * Class CGSite
  */
@@ -106,6 +103,8 @@ class CGSite extends Site {
 				add_theme_support('disable-custom-colors');
 				add_theme_support('disable-custom-font-sizes');
 				add_theme_support('disable-custom-gradients');
+
+				remove_theme_support( 'core-block-patterns' );
 		}
 
 		/**
