@@ -1,8 +1,8 @@
 {
   "name": "autogram/cg-migration",
   "version": "1.0.0",
-  "description": "Custom theme for the Cumming Group web site",
-  "type":"wordpress-theme",
+  "description": "MIgration plugin for the Cumming Group web site",
+  "type":"wordpress-plugin",
   "license": "MIT",
   "authors": [
     {
@@ -15,9 +15,5 @@
       "type": "composer",
       "url": "https://wpackagist.org"
     }
-  ],
-  "require": {
-    "ezyang/htmlpurifier": "^4.18",
-    "badcow/lorem-ipsum": "^1.1"
-  }
+  ]
 }
