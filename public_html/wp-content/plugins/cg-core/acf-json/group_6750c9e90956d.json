@@ -5,7 +5,7 @@
         {
             "key": "field_6750c9e97cd2e",
             "label": "Related Portfolio Items",
-            "name": "related",
+            "name": "related_portfolio_items",
             "aria-label": "",
             "type": "relationship",
             "instructions": "",
@@ -18,9 +18,9 @@
             },
             "admin_column_enabled": 0,
             "post_type": [
-                "project",
-                "cg_sector",
+                "sector",
                 "service",
+                "project",
                 "office"
             ],
             "post_status": "",
@@ -52,14 +52,14 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "cg_episode"
+                "value": "event"
             }
         ],
         [
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "event"
+                "value": "report"
             }
         ]
     ],
@@ -72,5 +72,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1736803184
+    "modified": 1738968241
 }

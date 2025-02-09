@@ -13,6 +13,8 @@ Version: 1.0.0
 Author URI: http://autogram.is/
 */
 
+require_once __DIR__ . '/vendor/autoload.php';
+
 define('CG_CORE_PLUGIN_DIR', plugin_dir_path(__FILE__));
 
 $inc_dirs = ['util', 'hooks'];

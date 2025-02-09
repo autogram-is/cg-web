@@ -50,13 +50,6 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "cg_episode"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
                 "value": "event"
             }
         ]
@@ -70,5 +63,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733884403
+    "modified": 1738963055
 }

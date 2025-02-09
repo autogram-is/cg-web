@@ -1,6 +1,6 @@
 {
     "key": "group_67a4d2886c643",
-    "title": "CG Gallery",
+    "title": "Gallery Block",
     "fields": [
         {
             "key": "field_67a4d28895546",
@@ -50,5 +50,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738855275
+    "modified": 1738959864
 }

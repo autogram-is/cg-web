@@ -1,0 +1,22 @@
+{
+  "name": "autogram/cg-core",
+  "version": "1.0.0",
+  "description": "Core code and shared utilities for the Cumming Group web site",
+  "type": "wordpress-plugin",
+  "license": "MIT",
+  "authors": [
+    {
+      "email": "team@autogram.is",
+      "name": "autogram"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "require": {
+    "brick/phonenumber": "^0.6.0"
+  }
+}

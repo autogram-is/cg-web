@@ -5,7 +5,7 @@
         {
             "key": "field_6750caf4230e7",
             "label": "Related News",
-            "name": "related",
+            "name": "related_news",
             "aria-label": "",
             "type": "relationship",
             "instructions": "",
@@ -19,8 +19,8 @@
             "admin_column_enabled": 0,
             "post_type": [
                 "post",
-                "cg_episode",
-                "event"
+                "event",
+                "report"
             ],
             "post_status": "",
             "taxonomy": "",
@@ -65,13 +65,6 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "cg_region"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
                 "value": "office"
             }
         ],
@@ -92,5 +85,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733358683
+    "modified": 1738968470
 }

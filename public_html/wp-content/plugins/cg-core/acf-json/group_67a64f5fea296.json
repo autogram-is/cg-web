@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_67a64f6020cdd",
-            "label": "Linked Post",
-            "name": "post",
+            "label": "Featured Post",
+            "name": "featured_post",
             "aria-label": "",
             "type": "post_object",
             "instructions": "",
@@ -105,9 +105,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "block",
                 "operator": "==",
-                "value": "post"
+                "value": "acf\/cg-featured-post"
             }
         ]
     ],
@@ -120,5 +120,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738952729
+    "modified": 1738959724
 }

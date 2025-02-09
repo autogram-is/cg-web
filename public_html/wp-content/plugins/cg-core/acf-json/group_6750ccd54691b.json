@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_6750ccf6e74c7",
-            "label": "People",
+            "label": "Leadership",
             "name": "people",
             "aria-label": "",
             "type": "relationship",
@@ -87,5 +87,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1736803102
+    "modified": 1738977331
 }
