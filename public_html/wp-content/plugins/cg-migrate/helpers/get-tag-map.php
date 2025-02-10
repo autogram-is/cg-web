@@ -31,25 +31,25 @@ function cg_get_tag_map($rebuild = false) {
         if ($row['action'] === 'RETAG') {
           $replacement = term_exists($row['new_slug'], $row['new_type']);
           if ($replacement) {
-            $map[$row['term_id']] = array(
+            $map[intval($row['term_id'])] = array(
               'action' => $row['action'],
               'old' => $row['taxonomy'],
               'type'   => $row['new_type'],
-              'id'     => $replacement['term_id'],
+              'id'     => intval($replacement['term_id']),
             );  
           }
         } elseif ($row['action'] === 'RELATE') {
           $replacement = get_post_by_name($row['new_slug'], $row['new_type']);
           if ($replacement) {
-            $map[$row['term_id']] = array(
+            $map[intval($row['term_id'])] = array(
               'action' => $row['action'],
               'old' => $row['taxonomy'],
               'type'   => $row['new_type'],
-              'id'     => $replacement->ID,
+              'id'     => intval($replacement->ID),
             );  
           }
         } else {
-          $map[$row['term_id']] = array(
+          $map[intval($row['term_id'])] = array(
             'old' => $row['taxonomy'],
             'action' => $row['action'],
           );

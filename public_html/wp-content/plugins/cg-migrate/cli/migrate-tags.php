@@ -21,6 +21,7 @@ function cg_map_old_tags($ids = [], $dry_run = false, $preserve = false) {
     $post = get_post($post_id);
     
     if ($post) {
+      $to_relate = [];
       $to_add = [];
       $to_remove = [];
 
@@ -42,13 +43,13 @@ function cg_map_old_tags($ids = [], $dry_run = false, $preserve = false) {
               if (in_array($post->post_type, $portfolio_types)) {
                 $target_field_name = $record['type'] . 's';
               }
-              $to_relate[$target_field_name][] = $record['id'];
-              $to_remove[$record['old']][] = $term->term_id;
+              $to_relate[$target_field_name][] = intval($record['id']);
+              $to_remove[$record['old']][] = intval($term->term_id);
             } else if ($record['action'] === 'RETAG') {
-              $to_add[$record['type']][] = $record['id'];
-              $to_remove[$record['old']][] = $term->term_id;
+              $to_add[$record['type']][] = intval($record['id']);
+              $to_remove[$record['old']][] = intval($term->term_id);
             } else if ($record['action'] === 'UNTAG') {
-              $to_remove[$record['old']][] = $term->term_id;
+              $to_remove[$record['old']][] = intval($term->term_id);
             }
           }
         }
@@ -75,7 +76,8 @@ function cg_map_old_tags($ids = [], $dry_run = false, $preserve = false) {
       }
 
       // Apply new taxonomy tags
-      foreach($to_relate as $taxonomy => $ids) {
+      foreach($to_add as $taxonomy => $ids) {
+        $ids = array_unique($ids);
         $tags_added += count($ids);
         if (!$dry_run) {
           // Get the existing field values
