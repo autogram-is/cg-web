@@ -1,6 +1,5 @@
 /* 
 PROSE UTILITY
-
 */
 .prose {
   --flow-space: var(--space-m);
@@ -10,10 +9,6 @@ PROSE UTILITY
 
   & > h1, & > h2, & > h3, & > h4, & > h5 {
     font-weight: var(--weight-normal);
-  }
-
-  & > p:first-of-type {
-    margin-block-start: 0;
   }
 
   & > p,
@@ -32,78 +27,41 @@ PROSE UTILITY
       margin-bottom: var(--space-xs);
     }
   }
+
   & > p {
     line-height: var(--leading-loose);
     max-width: 95ch;
   }
+  & > p {
+    margin-block: var(--region-space, var(--space-s-m));
+  }
   & > p + p {
     --flow-space: var(--space-s);
   }
-
   & > h1,  & > h2,  & > h3,  & > h4 {
     --flow-space: var(--space-m-l);
     & + p {
       --flow-space: var(--space-2xs);
     }
   }
-  & > h1 {
+  & > h1.is-style-default,
+  & > h1:not([class]) {
     font-size: var(--size-step-4);
     font-weight: var(--weight-light);
     margin-bottom: var(--space-m-l);
-    &::after {
-      content: "";
-      border-radius: 3px;
-      display: block;
-      width: var(--space-m-l);
-      margin-block: var(--space-s);
-      border: var(--content-division);
-    }
   }
-  & > h2 {
+  & > h2.is-style-default,
+  & > h2:not([class]) {
     color: var(--color-legacy-red);
     font-size: var(--size-step-2);
     font-weight: var(--weight-semibold);
   }
-  & > h3 {
+  & > h3.is-style-default,
+  & > h3:not([class]) {
     color: var(--color-deep-steel);
     font-size: var(--size-step-0);
     font-weight: var(--weight-semibold);
     text-transform: uppercase;
-  }
-
-  & a {
-    color: var(--color-legacy-red);
-    text-decoration-color: var(--color-deep-steel);
-    &:hover {
-      text-decoration: underline;
-      text-decoration-color: transparent;
-    }
-  }
-
-  hr {
-    margin: var(--space-m) 0;
-    height: 2px;
-  }
-
-  & > figure:not(.quote) {
-    figcaption {
-      color: var(--color-deep-steel);
-      font-size: var(--size-step-0);
-      line-height: var(--leading-tight);
-      margin: var(--space-2xs) var(--space-m) 0 var(--space-3xs);
-      font-style: italic;
-    }
-  }
-
-  &.prose-shifted {
-    --flow-space: var(--space-2xs);
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    p {
-      align-self: flex-end;
-      max-width: 40rem;
-    }      
   }
 
   &.lede {
