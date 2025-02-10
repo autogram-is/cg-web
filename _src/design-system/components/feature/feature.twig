@@ -24,6 +24,13 @@
             {% endif %}
           </div>
           {{ body|markdown }}
+
+          {% if cta.link %}
+          <a href="#" class="button secondary feature-cta">
+            <span>{{ cta.text }}</span>
+            {{ cta.icon }}
+          </a>
+          {% endif %}
         </div>
       </div>
     </div>

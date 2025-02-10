@@ -9,7 +9,7 @@
   letter-spacing: var(--tracking-loose);
   font-size: var(--size-step-00);
   font-weight: var(--weight-regular);
-  padding: var(--space-xs) var(--space-s) calc(var(--space-xs)-1px);
+  padding: var(--space-2xs) var(--space-s) calc(var(--space-2xs)-1px);
   text-decoration: none;
   text-transform: uppercase;
   transition: all .125s linear;

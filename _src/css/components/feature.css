@@ -22,7 +22,7 @@
         font-size: var(--size-step-1);
       }
       &:last-of-type:not(.subhed) {
-        margin-block-end: var(--space-s-m);
+        margin-block-end: var(--space-3xs);
       }
     }
     .listing-meta {
