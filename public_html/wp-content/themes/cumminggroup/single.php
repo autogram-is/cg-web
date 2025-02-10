@@ -13,53 +13,6 @@ $context         = Timber::context();
 $timber_post     = Timber::get_post();
 $context['post'] = $timber_post;
 
-if ($timber_post->post_type === 'project') {
-	$relationships = array();
-	$facts = array();
-
-	// Project relationships
-	if ($timber_post->sectors) {
-		$relationships[] = array(
-			'key' => pluralize($timber_post->sectors, 'Sector'),
-			'value' => join(' ', array_map('get_post_a_tag', $timber_post->sectors)),
-		);
-	}
-
-	if ($timber_post->services) {
-		$relationships[] = array(
-			'key' => pluralize($timber_post->services, 'Service'),
-			'value' => join(' ', array_map('get_post_a_tag', $timber_post->services)),
-		);
-	}
-
-	if ($timber_post->offices) {
-		$relationships[] = array(
-			'key' => pluralize($timber_post->offices, 'Office'),
-			'value' => join(' ', array_map('get_post_a_tag', $timber_post->offices)),
-		);
-	}
-
-	// Project facts
-	$fact_fields = ['facility', 'client', 'location', 'start_date', 'end_date', 'budget', 'capacity', 'owner', 'architect', 'vendors', 'contractors'];
-	foreach ($fact_fields as $fact_field) {
-		if ($timber_post->$fact_field) {
-			$facts[] = array(
-				'key' => snake_to_title_case($fact_field),
-				'value' => $timber_post->$fact_field,
-			);
-		}
-	}
-
-	// Assemble project facts
-	if (count($facts) > 0) {
-		$context['facts'] = $facts;
-	}
-
-	if (count($relationships) > 0) {
-		$context['relationships'] = $relationships;
-	}
-}
-
 $templates = array(
 	'single-' . $timber_post->ID . '.twig',
 	'single-' . $timber_post->post_type . '.twig',
@@ -68,8 +21,8 @@ $templates = array(
 );
 
 // Allow category-specific templates, just in case.
-$categories = get_the_category($post->ID);
-if (count($categories) > 0) {
+$categories = get_the_terms($post->ID, 'news_category');
+if (!is_wp_error($categories) && count($categories) > 0) {
 	$context['news_category'] = $categories[0];
 	array_unshift($templates, 'single-' . $timber_post->post_type . '-' . $categories[0]->slug . '.twig');
 }

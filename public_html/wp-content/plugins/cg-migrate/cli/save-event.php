@@ -7,6 +7,8 @@ function cg_save_event(array $post_data = [], bool $use_slug = false, bool $crea
 
   if ($post) {
     // Update additional fields here
+  } else {
+    WP_CLI::log("Could not update event '". $post_data['title'] ."'");
   }
 
   return $post;

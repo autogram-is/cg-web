@@ -1,15 +1,15 @@
 
 <footer class="site-footer">
 
-{% if footer.cta.default or footer.cta.fallback %}
+{% if settings.cta.default or settings.cta.fallback %}
 	<div class="footer-cta">
 		<div class="notch wrapper">
 			<div class="notch-inner inner-cta repel">
 				<div class="body flow bg-deep-steel">
-				{% if footer.cta.default %}
-					{{ footer.cta.default | gravityform }}
-				{% elseif footer.cta.fallback %}
-					{% apply shortcodes %}{{ footer.cta.default }}{% endapply %}
+				{% if settings.cta.default %}
+					{{ settings.cta.default | gravityform }}
+				{% elseif settings.cta.fallback %}
+					{% apply shortcodes %}{{ settings.cta.default }}{% endapply %}
 				{%- endif %}
 			</div>
 		</div>
@@ -19,17 +19,17 @@
 	<div class="wrapper">
 		<div class="footer-primary region repel">
 			<div class="body">
-				{% if footer.heading or footer.notice %}
-					{% if footer.heading %}
-					<h3 class="type-hed hed-accent">{{ footer.heading }}</h3>
+				{% if settings.heading or settings.notice %}
+					{% if settings.heading %}
+					<h3 class="type-hed hed-accent">{{ settings.heading }}</h3>
 					{% endif %}
-					{% if footer.notice %}
-					{{ footer.notice }}
+					{% if settings.notice %}
+					{{ settings.notice }}
 					{% endif %}
 				{% endif %}
-				{% if footer.social %} 
+				{% if settings.social %} 
 				<div class="region cluster socials">
-					{% for item in footer.social %}
+					{% for item in settings.social %}
 					<a href="{{ item.url }}" class="button inverted icon">
 					{%- if item.icon -%}<span class="dashicons {{ item.icon }}"></span>
 					{%- else -%}
@@ -40,9 +40,9 @@
 				</div>
 				{% endif %}
 			</div>
-			{% if footer.nav %}
+			{% if settings.nav %}
 			<div class="footer-nav cluster">
-				{% for item in footer.nav.items %}
+				{% for item in footer_links.items %}
 				<div class="flow nav-group">
 					<h4 class="type-detail">{{ item.title }}</h4>
 					{% if item.children -%}
@@ -61,10 +61,10 @@
 
 	<div class="fine-print">
 		<div class="wrapper region repel">
-			<small>{{ footer.copyright | replace({'[YEAR]': "now"|date('Y')}) }}</small>
+			<small>{{ settings.copyright | replace({'[YEAR]': "now"|date('Y')}) }}</small>
 			<nav class="legal" aria-label="Legal">
 				<ul role="list">
-				{% for item in footer.fine_print.items %}
+				{% for item in fine_print_links.items %}
 				<li><a href="{{item.link}}">{{item.title}}</a></li>
 				{% endfor %}
 				</ul>

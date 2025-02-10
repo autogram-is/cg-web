@@ -28,15 +28,6 @@ function cg_import_offices($dry_run = false) {
     WP_CLI::log("Dry-Run: " . count($items) . " projects read");
   } else {
     foreach ($items as $item) {
-      if ($item['name'] || $item['email'] || $item['phone'] || $item['address']) {
-        $item['office_details'] = [];
-        $item['office_details'][] = array(
-          'name' => $item['name'] ?? '',
-          'email' => $item['name'] ?? '',
-          'phone' => $item['phone'] ?? '',
-          'address' => $item['address'] ?? '',
-        );
-      }
       $id = cg_save_office($item);
       if (($item['id'] ?? false) && $item['id'] === $id) {
         $updated++;
@@ -87,4 +78,22 @@ function cg_import_news($dry_run = false) {
     WP_CLI::log(count($items) . " news posts updated");
   }
 
+}
+
+
+function _cols_to_id_array($post_data, $type, $cols) {
+  $slugs = [];
+  foreach($cols as $col) {
+    if (array_key_exists($col, $post_data) && $post_data[$col]) {
+      $slugs[] = trim($post_data[$col]);
+    }
+  }
+
+  $ids = [];
+  foreach (array_unique($slugs) as $slug) {
+    $post = get_post_by_name($slug, $type);
+    if ($post) $ids[] = $post->ID;
+  };
+
+  return $ids;
 }

@@ -1,8 +1,4 @@
 <?php
-
-// use WP_CLI;
-// use WP_CLI_Command;
-
 if (!class_exists('WP_CLI_Command')) {
   return;
 }
@@ -35,7 +31,7 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
       // Get the post
       $post = get_post($post_id);
       if ($post) {
-        $taxonomies = get_post_taxonomies($post_id);      
+        $taxonomies = get_post_taxonomies($post_id);
         $post->meta = get_post_meta($post_id);
         $post->taxonomy = wp_get_post_terms($post_id, $taxonomies);
 

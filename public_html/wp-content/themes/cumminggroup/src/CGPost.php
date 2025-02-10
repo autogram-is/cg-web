@@ -16,79 +16,73 @@ class CGPost extends Post {
 	}
 
 	/**
-	 * Gets office pages connected to the current post.
-	 *
-	 * @return \Timber\PostCollectionInterface
-	 */
-	public function offices() { return $this->_related('offices'); }
-
-	/**
 	 * Gets sector pages connected to the current post.
 	 *
 	 * @return \Timber\PostCollectionInterface
 	 */
-	public function sectors() { return $this->_related('sectors'); }
+	public function sectors(?int $limit = -1) { return $this->relationship('sectors', $limit); }
 
 	/**
 	 * Gets services connected to the current post.
 	 *
 	 * @return \Timber\PostCollectionInterface
 	 */
-	public function services() { return $this->_related('services'); }
+	public function services(?int $limit = -1) { return $this->relationship('services', $limit); }
 
 	/**
 	 * Gets projects connected to the current post.
 	 *
 	 * @return \Timber\PostCollectionInterface
 	 */
-	public function projects() { return $this->_related('projects'); }
+	public function projects(?int $limit = -1) { return $this->relationship('projects', $limit); }
 
-		/**
-	 * Gets projects connected to the current post.
+	/**
+	 * Gets office pages connected to the current post.
 	 *
 	 * @return \Timber\PostCollectionInterface
 	 */
-	public function people() { return $this->_related('people'); }
+	public function offices(?int $limit = -1) { return $this->relationship('offices', $limit); }
 
 	/**
-	 * On content with related portfolio-items (events, posts, etc), returns related portfolio pages.
-	 * On portfolio pages, returns the related news/events/posts.
+	 * Gets services connected to the current post.
 	 *
 	 * @return \Timber\PostCollectionInterface
 	 */
-	public function related() { return $this->_related('related'); }
+	public function people(?int $limit = -1) { return $this->relationship('people', $limit); }
 
 	/**
-	 * For any region-tagged entity, find other items tagged with the same region(s).
+	 * Loads the people related to this item.
+	 *
+	 * @return \Timber\PostCollectionInterface
 	 */
-	public function nearbyNews(string $type = NULL, int $limit = -1) {
-		$helper = new CGRelatedContentHelper();
-		return $helper->nearby($this->ID, 'news', $limit);
-	}
+	public function internal_bylines() { return $this->relationship('internal_bylines'); }
 
 	/**
-	 * For any region-tagged entity, find other items tagged with the same region(s).
+	 * Gets services connected to the current post.
+	 *
+	 * @return \Timber\PostCollectionInterface
 	 */
-	public function nearbyOffices(string $type = NULL, int $limit = -1) {
-		$helper = new CGRelatedContentHelper();
-		return $helper->nearby($this->ID, 'news', $limit);
-	}
+	public function related_news(?int $limit = -1) { return $this->relationship('related_news', $limit); }
 
 	/**
-	 * For any region-tagged entity, find other items tagged with the same region(s).
+	 * For news, events, and market insight reports, `service` `sector` `project` and `office`
+	 * are collapsed to a single field.
+	 *
+	 * @return \Timber\PostCollectionInterface
 	 */
-	public function nearbyProjects(string $type = NULL, int $limit = -1) {
-		$helper = new CGRelatedContentHelper();
-		return $helper->nearby($this->ID, 'projects', $limit);
-	}
+	public function related_portfolio_items() { return $this->relationship('related_portfolio_items'); }
 
-	private function _related($field_name) {
+	private function relationship(string $field_name, ?int $limit = -1) {
 		$field_prop = '_'.$field_name;
 		if (isset($this->$field_prop)) {
 			return $this->$field_prop;
 		}
 
 		$meta = $this->meta($field_name);
+		if (is_array($meta) && ($limit > 0)) {
+			$meta = array_slice($meta, 0, $limit);
+		}
+		
 		if (!$meta) {
 			$this->$field_prop = null;
 		} else {

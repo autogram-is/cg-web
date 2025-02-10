@@ -6,16 +6,33 @@ function cg_save_project(array $post_data = [], bool $use_slug = false, bool $cr
   $post = cg_save_base('project', $post_data, false, false);
 
   if ($post) {
-    update_field('client', $post_data['client'] ?? NULL, $post->ID);
-    update_field('facility', $post_data['facility'] ?? NULL, $post->ID);
-    update_field('location', $post_data['location'] ?? NULL, $post->ID);
-    update_field('start_date', $post_data['start_date'] ?? NULL, $post->ID);
-    update_field('end_date', $post_data['end_date'] ?? NULL, $post->ID);
+    $facts = [];
+    setKey('client', $post_data, $facts);
+    setKey('facility', $post_data, $facts);
+    setKey('location', $post_data, $facts);
+    setKey('start_date', $post_data, $facts);
+    setKey('end_date', $post_data, $facts);
 
-    update_field('owner', $post_data['owner'] ?? NULL, $post->ID);
-    update_field('architect', $post_data['architect'] ?? NULL, $post->ID);
-    update_field('vendors', $post_data['vendors'] ?? NULL, $post->ID);
-    update_field('contractors', $post_data['contractors'] ?? NULL, $post->ID);
+    setKey('owner', $post_data, $facts);
+    setKey('architect', $post_data, $facts);
+    setKey('vendors', $post_data, $facts);
+    setKey('contractors', $post_data, $facts);
+
+    update_field('facts', $facts, $post->ID);
+
+    // Important relationships
+    update_field('sectors', $post_data['sectors'] ?? NULL, $post->ID);
+    update_field('services', $post_data['services'] ?? NULL, $post->ID);
+    update_field('offices', $post_data['offices'] ?? NULL, $post->ID);
+    update_field('people', $post_data['people'] ?? NULL, $post->ID);
+  } else {
+    WP_CLI::log("Could not update project '". $post_data['title'] ."'");
+  }
+
+  function setKey($key, $source, &$target) {
+    if (array_key_exists($key, $source) && $source[$key] !== NULL) {
+      $target[$key] = $source[$key];
+    }
   }
 
   return $post;

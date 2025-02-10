@@ -7,10 +7,14 @@ function cg_save_person(array $post_data = [], bool $use_slug = true, bool $crea
 
   if ($post) {
     update_field('role', $post_data['role'] ?? NULL, $post->ID);
-    update_field('show_contact', $post_data['show_contact'] ?? NULL, $post->ID);
     update_field('email', $post_data['email'] ?? NULL, $post->ID);
     update_field('phone', $post_data['phone'] ?? NULL, $post->ID);
     update_field('linkedin', $post_data['linkedin'] ?? NULL, $post->ID);
+
+    update_field('show_contact', $post_data['show_contact'] ?? NULL, $post->ID);
+    update_field('former_employee', $post_data['former_employee'] ?? NULL, $post->ID);
+  } else {
+    WP_CLI::log("Could not update person '". $post_data['title'] ."'");
   }
 
   return $post;

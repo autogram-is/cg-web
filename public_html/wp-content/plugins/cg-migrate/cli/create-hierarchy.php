@@ -46,8 +46,8 @@ function _populate_regions($dry_run = false) {
 
 function _populate_sectors($dry_run = false, $preserve = false) {
   // Load all the children of the existing 'Sectors' and 'EU Sectors' landing pages
-  $old_sectors = get_all_child_pages(15041);
-  $old_eu_sectors = get_all_child_pages(57642);
+  $old_sectors = get_all_child_pages(CG_MIGRATE_LEGACY_SECTOR_LANDING);
+  $old_eu_sectors = get_all_child_pages(CG_MIGRATE_LEGACY_EU_SECTOR_LANDING);
 
   if ($dry_run) {
     WP_CLI::log("Dry-Run: ". (count($old_sectors) + count($old_eu_sectors)) ." legacy Sectors found");
@@ -78,7 +78,7 @@ function _populate_sectors($dry_run = false, $preserve = false) {
 
 function _populate_services($dry_run = false, $preserve = false) {
   // Load all the children of the existing 'Services' landing page
-  $old_services = get_all_child_pages(14996);
+  $old_services = get_all_child_pages(CG_MIGRATE_LEGACY_SERVICE_LANDING);
 
   if ($dry_run) {
     WP_CLI::log("Dry-Run: ". count($old_services) ." legacy Services found");
@@ -104,7 +104,7 @@ function _populate_services($dry_run = false, $preserve = false) {
 }
 
 function _populate_offices($dry_run = false, $preserve = false) {
-  $old_offices = get_all_child_pages(62959);
+  $old_offices = get_all_child_pages(CG_MIGRATE_LEGACY_OFFICE_LANDING);
   if ($dry_run) {
     WP_CLI::log("Dry-Run: ". count($old_offices) ." legacy Offices found");
   } else if (!$preserve) {

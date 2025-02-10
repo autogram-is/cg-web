@@ -18,6 +18,7 @@ function cg_export_projects($dry_run = false) {
       $sectors = _get_rel_slugs('sectors', $post->ID);
       $services = _get_rel_slugs('services', $post->ID);
       $offices = _get_rel_slugs('offices', $post->ID);
+      $facts = get_field('facts', $post->ID) ?? [];
 
       $item = array(
         'id' => $post->ID,
@@ -25,16 +26,17 @@ function cg_export_projects($dry_run = false) {
         'title' => $post->post_title,
         'slug' => $post->post_name,
     
-        'client' => get_field('client', $post->ID, false),
-        'facility' => get_field('facility', $post->ID, false),
-        'location' => get_field('location', $post->ID, false),
-        'start_date' => get_field('start_date', $post->ID, false),
-        'end_date' => get_field('end_date', $post->ID, false),
+        'client' => $facts['client'] ?? '',
+        'facility' => $facts['facility'] ?? '',
+        'location' => $facts['facts'] ?? '',
+        'start_date' => $facts['start_date'] ?? '',
+        'end_date' => $facts['end_date'] ?? '',
     
-        'owner' => get_field('owner', $post->ID, false),
-        'architect' => get_field('architect', $post->ID, false),
-        'vendors' => get_field('vendors', $post->ID, false),
-        'contractors' => get_field('contractors', $post->ID, false),
+
+        'owner' => $facts['owner'] ?? '',
+        'architect' => $facts['architect'] ?? '',
+        'vendors' => $facts['vendors'] ?? '',
+        'contractors' => $facts['contractors'] ?? '',
     
         'case_study_id' => get_field('migration_case_study', $post->ID, false),
 
@@ -42,10 +44,12 @@ function cg_export_projects($dry_run = false) {
         'sector2' => $sectors[1] ?? '',
         'sector3' => $sectors[2] ?? '',
         'sector4' => $sectors[3] ?? '',
+
         'service1' => $services[0] ?? '',
         'service2' => $services[1] ?? '',
         'service3' => $services[2] ?? '',
         'service4' => $services[3] ?? '',
+
         'office1' => $offices[0] ?? '',
         'office2' => $offices[1] ?? '',
         'office3' => $offices[2] ?? '',
@@ -194,7 +198,7 @@ function cg_export_news($post_ids = [], $dry_run = false) {
       $sectors = _get_rel_slugs('sectors', $post->ID);
       $services = _get_rel_slugs('services', $post->ID);
       $offices = _get_rel_slugs('offices', $post->ID);
-      $bios = _get_rel_slugs('people', $post->ID);
+      $bios = _get_rel_slugs('internal_byline', $post->ID);
       $categories = get_the_terms($id, 'category');
       $category = $categories[0]->slug ?? '';
 
@@ -206,7 +210,7 @@ function cg_export_news($post_ids = [], $dry_run = false) {
         'category' => $category,
     
         'location' => get_field('location', $post->ID, false),
-        'byline' => get_field('reprint_author', $post->ID, false),
+        'byline' => get_field('external_byline', $post->ID, false),
 
         'reprint_url' => get_field('reprint_url', $post->ID, false),
         'reprint_publication' => get_field('reprint_publication', $post->ID, false),
@@ -216,17 +220,19 @@ function cg_export_news($post_ids = [], $dry_run = false) {
         'season' => get_field('podcast_season', $post->ID, false),
         'episode' => get_field('podcast_episode', $post->ID, false),
         'youtube_url' => get_field('podcast_youtube_url', $post->ID, false),
-        'buzzsprout_id' => get_field('podcast_buzzsprout_id', $post->ID, false),
+        'mp3_url' => get_field('podcast_mp3_id', $post->ID, false),
 
         'sector1' => $sectors[0] ?? '',
         'sector2' => $sectors[1] ?? '',
         'sector3' => $sectors[2] ?? '',
+
         'service1' => $services[0] ?? '',
         'service2' => $services[1] ?? '',
         'service3' => $services[2] ?? '',
-        'bio1' => $bios[0] ?? '',
-        'bio2' => $bios[1] ?? '',
-        'bio3' => $bios[2] ?? '',
+
+        'internal_byline1' => $bios[0] ?? '',
+        'internal_byline2' => $bios[1] ?? '',
+
         'office' => $offices[0] ?? '',
 
         'migration_status' => get_field('migration_status', $post->ID, false),
@@ -293,6 +299,7 @@ function cg_export_events($dry_run = false) {
     $post = _load_post($id);
     if ($post) {
       $people = _get_rel_slugs('people', $post);
+      $related = _get_rel_slugs('related_portfolio_items', $post);
 
       $item = array(
         'id' => $post->ID,
@@ -312,6 +319,7 @@ function cg_export_events($dry_run = false) {
         'venue_state' => get_field('venue_state', $post->ID, false),
         'venue_postcode' => get_field('venue_postcode', $post->ID, false),
         'venue_country' => get_field('venue_country', $post->ID, false),
+
         'person1'  => $people[0] ?? '',
         'person2'  => $people[1] ?? '',
         'person3'  => $people[2] ?? '',

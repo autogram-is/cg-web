@@ -6,6 +6,6 @@
     <a href="#">{{ office.address }}</a>
   </p>
   {% endif %}
-  {% if office.phone %}<p class="icon-tel"><a href="tel:{{ office.phone }}">{{ office.phone }}</a></p>{% endif %}
+  {% if office.phone %}<p class="icon-tel"><a href="{{ office.phone | phone_url }}">{{ office.phone | phone }}</a></p>{% endif %}
 </div>
 {% endfor %}

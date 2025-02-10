@@ -83,9 +83,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "admin_column_enabled": 1,
-                    "admin_column_position": "",
-                    "admin_column_width": "",
+                    "admin_column_enabled": 0,
                     "default_value": "",
                     "maxlength": "",
                     "allow_in_bindings": 0,
@@ -108,9 +106,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "admin_column_enabled": 1,
-                    "admin_column_position": "",
-                    "admin_column_width": "",
+                    "admin_column_enabled": 0,
                     "default_value": "",
                     "maxlength": "",
                     "allow_in_bindings": 0,
@@ -162,5 +158,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738873815
+    "modified": 1739160597
 }

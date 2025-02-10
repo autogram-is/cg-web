@@ -3,11 +3,11 @@
     <div class="thumb">
       <div class="">
       {% if youtube %}
-        <a href="" data-media="{{ youtube | youtube_url('embed') }}">
+        <a href="" data-media="{{ youtube | youtube_embed }}">
         {% if poster %}
           <img decoding="async" src="{{ poster.src }}">
         {% else %}
-          <img decoding="async" src="{{ youtube | youtube_url('poster') }}">
+          <img decoding="async" src="{{ youtube | youtube_poster }}">
         {% endif %}
         </a>
       {% elseif mp3 %}
