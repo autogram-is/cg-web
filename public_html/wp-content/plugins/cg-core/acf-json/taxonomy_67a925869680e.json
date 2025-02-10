@@ -58,7 +58,8 @@
     "show_in_quick_edit": 1,
     "show_admin_column": 0,
     "rewrite": {
-        "permalink_rewrite": "taxonomy_key",
+        "permalink_rewrite": "custom_permalink",
+        "slug": "news\/{slug}",
         "with_front": "1",
         "rewrite_hierarchical": "0"
     },
@@ -71,5 +72,5 @@
     "meta_box": "default",
     "meta_box_cb": "",
     "meta_box_sanitize_cb": "",
-    "modified": 1739138509
+    "modified": 1739209747
 }

@@ -80,7 +80,6 @@ function cg_import_news($dry_run = false) {
 
 }
 
-
 function _cols_to_id_array($post_data, $type, $cols) {
   $slugs = [];
   foreach($cols as $col) {

@@ -199,7 +199,7 @@ function cg_export_news($post_ids = [], $dry_run = false) {
       $services = _get_rel_slugs('services', $post->ID);
       $offices = _get_rel_slugs('offices', $post->ID);
       $bios = _get_rel_slugs('internal_byline', $post->ID);
-      $categories = get_the_terms($id, 'category');
+      $categories = get_the_terms($id, 'news_category');
       $category = $categories[0]->slug ?? '';
 
       $item = array(

@@ -1,5 +1,13 @@
 <?php
-
+/**
+ * The tag migration map takes existing tags and categories from
+ * a number of taxonomies and does one of the following:
+ * 
+ * - Remaps an individual taxo term to a new one (UNTAG)
+ * - Remaps an individual taxo term to a relationship with another post (RELATE)
+ * - Removes the taxo term from the post (RETAG)
+ * - Removes the taxo term and archives the post (ARCHIVE)
+ */
 function cg_map_old_tags($ids = [], $dry_run = false, $preserve = false) {
   $map = cg_get_tag_map();
   $taxonomies = ['category', 'post_tag', 'news_and_insights', 'news_region', 'news_topics', 'portfolio_category', 'portfolio_skills', 'portfolio_tags'];

@@ -2,41 +2,42 @@
 
 //  1. Build out Region, Office, Sector, and Service skeleton
 function cg_cli_build_hierarchy($dry_run = false, $preserve = false) {
-  _populate_regions($dry_run, $preserve);
+  _populate_taxonomies($dry_run, $preserve);
   _populate_sectors($dry_run, $preserve);
   _populate_services($dry_run, $preserve);
   _populate_offices($dry_run, $preserve);
 }
 
-function _populate_regions($dry_run = false) {
-  $items = load_content_csv('regions.csv');
+function _populate_taxonomies($dry_run = false) {
+  $items = load_content_csv('taxonomies.csv');
 
   if ($dry_run) {
-    WP_CLI::log("Dry-Run: ". count($items) . " regions defined");
+    WP_CLI::log("Dry-Run: ". count($items) . " taxonomy terms defined");
   } else {
     foreach ($items as $item) {
       if (!$item['title']) continue;
 
-      if (term_exists($item['slug'], 'region')) {
-        WP_CLI::log("Region '" . $item['title'] . "' already exists");
+      if (term_exists($item['slug'], $item['taxonomy'])) {
+        WP_CLI::log($item['taxonomy'] . "'" . $item['title'] . "' already exists");
         continue;
       }
-
-      // May want to change this to a custom meta field in the future
-      $parent = $item['zone'] ? term_exists($item['zone'], 'region') : NULL;
-      $parent_id = $parent ? $parent['term_id'] : NULL;
   
+      // May want to change this to a custom meta field in the future
+      $parent = $item['parent'] ? term_exists($item['zone'], $item['taxonomy']) : NULL;
+      $parent_id = $parent ? $parent['term_id'] : NULL;
+      
       $term = wp_insert_term(
-        $item['title'],
-        'region',
+        mb_trim($item['title']),
+        $item['taxonomy'],
         array(
           'slug' => $item['slug'],
-          'parent' => $parent_id
+          'parent' => $parent_id,
+          'description' => mb_trim($item['description'])
         )
       );
 
       if (is_array($term)) {
-        WP_CLI::log("Region '" . $item['title'] . "' created (#". $term['term_id'] . ")");
+        WP_CLI::log($item['taxonomy'] . "'" . $item['title'] . "' created (#". $term['term_id'] . ")");
       } else {
         WP_CLI::error($term);
       }
