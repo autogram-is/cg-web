@@ -50,6 +50,7 @@ function load_csv($filename = NULL) {
       try {
         $results[] = array_combine($header, $data);
       } catch (Exception $ex) {
+        WP_CLI::log(var_export($header, true));
         WP_CLI::log(var_export($data, true));
         return [];
       }
