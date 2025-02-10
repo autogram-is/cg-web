@@ -12,11 +12,11 @@
 
 
 {% block posthero %}
-  {% if post.projects | length %}
+  {% if post.projects(6) | length %}
   <div class="region wrapper">
     <h2 class="type-hed hed-accent">Representative Experience</h2>
   </div>
-  {% include "partial/project-gallery.twig" with { items: post.projects, sectors: true, offices: true, limit: 6 } %}
+  {% include "partial/project-gallery.twig" with { items: post.projects, sectors: true, offices: true } %}
   {% endif %}
 
   {% if post.people | length %}

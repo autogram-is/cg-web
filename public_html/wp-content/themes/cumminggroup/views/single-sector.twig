@@ -13,9 +13,9 @@
 
 
 {% block posthero %}
-  {% if post.projects | length %}
+  {% if post.projects(6) | length %}
   <div class="region wrapper">
-  {% include "partial/project-gallery.twig" with { heading: "Representative Experience", items: post.projects, offices: true, services: true, limit: 6, utilities: "bg-timeless-backdrop" } %}
+  {% include "partial/project-gallery.twig" with { heading: "Representative Experience", items: post.projects, offices: true, services: true, utilities: "bg-timeless-backdrop" } %}
   </div>
   {% endif %}
 

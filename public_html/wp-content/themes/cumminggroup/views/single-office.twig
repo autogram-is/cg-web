@@ -22,8 +22,8 @@
 
 
 {% block posthero %}
-  {% if post.projects | length %}
-  {% include "partial/project-gallery.twig" with { heading: "Representative Experience", items: post.projects, sectors: true, services: true, limit: 6 } %}
+  {% if post.projects(6) | length %}
+  {% include "partial/project-gallery.twig" with { heading: "Representative Experience", items: post.projects, sectors: true, services: true } %}
   {% endif %}
 
   {% if post.people | length %}
