@@ -24,7 +24,7 @@ $templates = array(
 // follows the pattern: `single-post-categoryslug.twig`
 if ($timber_post->post_type === 'post') {
 	$categories = get_the_terms($post->ID, 'news-category');
-	if (!is_wp_error($categories) && count($categories) > 0) {
+	if ($categories != NULL && !is_wp_error($categories) && count($categories) > 0) {
 		$context['news-category'] = $categories[0];
 		array_unshift($templates, 'single-' . $timber_post->post_type . '-' . $categories[0]->slug . '.twig');
 	}
