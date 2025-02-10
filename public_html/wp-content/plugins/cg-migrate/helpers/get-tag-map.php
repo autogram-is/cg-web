@@ -1,52 +1,57 @@
 <?php
 
 /**
- * Map structure:
+ * Output map structure:
  * 
  * [
  *   $term_id => [
- *     'action'   => $action, // IGNORE, REMOVE, or REPLACE
- *     'taxonomy' => $taxonomy_name,
- *     'type'     => $post_type,
- *     'id'       => $post_id
+ *     'action'   => // RETAG, RELATE, UNTAG, ARCHIVE
+ *     'new_type' => // post-type or taxonomy name
+ *     'new_slug' => // slug of post or taxonomy item
  *   ],
  * ]
+ * 
+ * Depending on the type of post being processed, different actions may
+ * need to be taken (ie, populating the 'related_portfolio_items' relationship
+ * rather than the 'services' relationship when processing news items)
  */
 
 function cg_get_tag_map($rebuild = false) {
   // Load the tag / post map from the CSV file
-
   $map = get_transient('cg_tag_map');
 
   if ($map === false || $rebuild) {
     WP_CLI::log("Building tag/relationship map");
 
     $map = [];
-    $news = load_migration_csv('news-tags.csv');
-    $projects = load_migration_csv('project-tags.csv');
-    $items = array_merge($news, $projects);
+    $tags = load_migration_csv('tags.csv');
 
-    foreach ($items as $row) {
+    foreach ($tags as $row) {
       if ($row['term_id']) {
-        if ($row['new_slug'] && $row['new_type']) {
+        if ($row['action'] === 'RETAG') {
+          $replacement = term_exists($row['new_slug'], $row['new_type']);
+          if ($replacement) {
+            $map[$row['term_id']] = array(
+              'action' => $row['action'],
+              'old' => $row['taxonomy'],
+              'type'   => $row['new_type'],
+              'id'     => $replacement['term_id'],
+            );  
+          }
+        } elseif ($row['action'] === 'RELATE') {
           $replacement = get_post_by_name($row['new_slug'], $row['new_type']);
           if ($replacement) {
             $map[$row['term_id']] = array(
-              'action' => 'REPLACE',
-              'taxonomy' => $row['taxonomy'],
-              'type' => $replacement->post_type,
-              'id' => $replacement->ID,
-            );
+              'action' => $row['action'],
+              'old' => $row['taxonomy'],
+              'type'   => $row['new_type'],
+              'id'     => $replacement->ID,
+            );  
           }
-        } else if ($row['action'] === 'REMOVE') {
+        } else {
           $map[$row['term_id']] = array(
-            'taxonomy' => $row['taxonomy'],
-            'action' => 'REMOVE'
-          );
-        } else if ($row['action'] === 'IGNORE') {
-          $map[$row['term_id']] = array(
-            'taxonomy' => $row['taxonomy'],
-            'action' => 'IGNORE'
+            'old' => $row['taxonomy'],
+            'action' => $row['action'],
           );
         }
       }
