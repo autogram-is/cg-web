@@ -39,6 +39,7 @@ function cg_export_projects($dry_run = false) {
         'contractors' => $facts['contractors'] ?? '',
     
         'case_study_id' => get_field('migration_case_study', $post->ID, false),
+        'case_study_pdf' => get_field('case_study_pdf', $post->ID, false),
 
         'sector1' => $sectors[0] ?? '',
         'sector2' => $sectors[1] ?? '',
