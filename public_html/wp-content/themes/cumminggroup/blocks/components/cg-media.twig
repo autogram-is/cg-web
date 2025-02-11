@@ -1,0 +1,36 @@
+{#
+  Title: Media
+  Description: Embedded media
+  Category: cg-component
+  Icon: embed-video
+  Mode: edit
+  SupportsMode: true
+  Align: false
+  PostTypes: 
+  EnqueueStyle: 
+  SupportsAlign: none
+  SupportsMultiple: true
+  SupportsInnerBlocks: false
+  SupportsAlignContent: false
+  SupportsAlignText: false
+#}
+<figure class="media">
+  {% set youtube = fields.get_field('youtube') %}
+  {{ youtube }}
+  <div class="switcher">
+    <div class="thumb">
+      <div class="">
+      {% if youtube %}
+        <a href="" data-media="{{ youtube | youtube_embed }}">
+        {% if poster %}
+          <img decoding="async" src="{{ poster.src }}">
+        {% else %}
+          <img decoding="async" src="{{ youtube | youtube_poster }}">
+        {% endif %}
+        </a>
+      {% elseif mp3 %}
+      {% endif %}
+      </div>
+    </div>
+  </div>
+</figure>
