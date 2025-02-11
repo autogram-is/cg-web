@@ -18,14 +18,20 @@ function cg_save_news(array $post_data = [], bool $use_slug = false, bool $creat
     update_field('reprint_publication', $post_data['reprint_publication'] ?? NULL, $post->ID);
     update_field('reprint_logo', $post_data['reprint_logo'] ?? NULL, $post->ID);
 
-    // People mentioned in posts
-    update_field('people', $post_data['people'] ?? NULL, $post->ID);
+    // People mentioned in news posts
+    if (key_exists('people', $post_data) && $post_data['people']) {
+      update_field('people', $post_data['people'] ?? NULL, $post->ID);
+    }
 
-    // Authors of posts
-    update_field('internal_byline', $post_data['internal_byline'] ?? NULL, $post->ID);
+    // Byline'd authors of posts
+    if (key_exists('internal_byline', $post_data) && $post_data['internal_byline']) {
+      update_field('internal_byline', $post_data['internal_byline'] ?? NULL, $post->ID);
+    }
 
     // Offices, Sectors, Services, and Projects
-    update_field('related_portfolio_items', $post_data['related_portfolio_items'] ?? NULL, $post->ID);
+    if (key_exists('related_portfolio_items', $post_data) && $post_data['related_portfolio_items']) {
+      update_field('related_portfolio_items', $post_data['related_portfolio_items'] ?? NULL, $post->ID);
+    }
 
     // Handle 
   } else {
@@ -33,4 +39,14 @@ function cg_save_news(array $post_data = [], bool $use_slug = false, bool $creat
   }
 
   return $post;
+}
+
+
+function cg_remap_news_import_fields($data) {
+  if ($data['podcast'] ?? false) $data['podcast_name'] = $data['podcast'];
+  if ($data['season'] ?? false) $data['podcast_season'] = $data['season'];
+  if ($data['episode'] ?? false) $data['podcast_episode'] = $data['episode'];
+  if ($data['youtube_url'] ?? false) $data['podcast_youtube_url'] = $data['youtube_url'];
+  if ($data['mp3_url'] ?? false) $data['podcast_mp3_url'] = $data['mp3_url'];
+  return $data;
 }

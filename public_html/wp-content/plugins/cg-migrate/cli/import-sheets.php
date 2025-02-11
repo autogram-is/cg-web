@@ -73,18 +73,21 @@ function cg_import_bios($dry_run = false) {
 
 function cg_import_news($dry_run = false) {
   $items = load_content_csv('news.csv');
+  $deleted = 0;
   $updated = 0;
-  $created = 0;
 
   if ($dry_run) {
     WP_CLI::log("Dry-Run: " . count($items) . " news posts read");
   } else {
     foreach ($items as $item) {
-      $id = cg_save_news($item, false, false);
-      if ($item['id'] && $item['id'] === $id) {
-        $updated++;
-      } elseif (!$item['id'] && $id) {
-        $created++;
+      if ($item['migration_status'] === 'delete') {
+        wp_delete_post($item['id'], TRUE);
+        WP_CLI::log("news '" . $item['title'] . "' deleted " . $item['migration notes']);
+        $deleted++;
+      } else {
+        $item = cg_remap_news_import_fields($item);
+        cg_save_news($item, false, false);
+        $updated++;  
       }
     }
     WP_CLI::log(count($items) . " news posts updated");

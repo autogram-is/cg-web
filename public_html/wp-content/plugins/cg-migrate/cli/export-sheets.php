@@ -148,12 +148,12 @@ function cg_export_bios($dry_run = false) {
       $offices = _get_rel_slugs('offices', $post->ID);
 
       $item = array(
-        // 'id' => $post->ID,
         'title' => $post->post_title,
         'slug' => $post->post_name,
     
         'role' => get_field('role', $post->ID),
-        'show_contact' => get_field('show_contact', $post->ID),
+        'hide_contact' => get_field('hide_contact', $post->ID),
+        'ex_employee' => get_field('ex_employee', $post->ID),
         'email' => get_field('email', $post->ID),
         'phone' => get_field('phone', $post->ID),
         'linkedin' => get_field('linkedin', $post->ID),
@@ -195,10 +195,8 @@ function cg_export_news($post_ids = [], $dry_run = false) {
   foreach ($ids as $id) {
     $post = _load_post($id);
     if ($post) {
-      $sectors = _get_rel_slugs('sectors', $post->ID);
-      $services = _get_rel_slugs('services', $post->ID);
-      $offices = _get_rel_slugs('offices', $post->ID);
-      $bios = _get_rel_slugs('internal_byline', $post->ID);
+      $related = _get_rel_slugs('related_portfolio_items', $post->ID, $true);
+      $internal_bylines = _get_rel_slugs('internal_byline', $post->ID);
       $categories = get_the_terms($id, 'news_category');
       $category = $categories[0]->slug ?? '';
 
@@ -222,18 +220,21 @@ function cg_export_news($post_ids = [], $dry_run = false) {
         'youtube_url' => get_field('podcast_youtube_url', $post->ID, false),
         'mp3_url' => get_field('podcast_mp3_id', $post->ID, false),
 
-        'sector1' => $sectors[0] ?? '',
-        'sector2' => $sectors[1] ?? '',
-        'sector3' => $sectors[2] ?? '',
+        'sector1' => $related['sector'][0] ?? '',
+        'sector2' => $related['sector'][1] ?? '',
+        'sector3' => $related['sector'][2] ?? '',
 
-        'service1' => $services[0] ?? '',
-        'service2' => $services[1] ?? '',
-        'service3' => $services[2] ?? '',
+        'service1' => $related['service'][0] ?? '',
+        'service2' => $related['service'][1] ?? '',
+        'service3' => $related['service'][2] ?? '',
 
-        'internal_byline1' => $bios[0] ?? '',
-        'internal_byline2' => $bios[1] ?? '',
+        'office1' => $related['office'][0] ?? '',
+        'office2' => $related['office'][1] ?? '',
+        'office3' => $related['office'][2] ?? '',
+        'office4' => $related['office'][3] ?? '',
 
-        'office' => $offices[0] ?? '',
+        'internal_byline1' => $internal_bylines[0] ?? '',
+        'internal_byline2' => $internal_bylines[1] ?? '',
 
         'migration_status' => get_field('migration_status', $post->ID, false),
         'migration_note' => get_field('migration_note', $post->ID, false),
@@ -299,7 +300,7 @@ function cg_export_events($dry_run = false) {
     $post = _load_post($id);
     if ($post) {
       $people = _get_rel_slugs('people', $post);
-      $related = _get_rel_slugs('related_portfolio_items', $post);
+      $related = _get_rel_slugs('related_portfolio_items', $post, true);
 
       $item = array(
         'id' => $post->ID,
@@ -348,13 +349,20 @@ function _load_post($id) {
   return $post;
 }
 
-function _get_rel_slugs($relationship, $post) {
+function _get_rel_slugs($relationship, $post, $nest_by_type = false) {
   $output = [];
   $ids = get_field($relationship, $post);
   if ($ids) {
     foreach ($ids as $id) {
       $related = get_post($id);
-      $output[] = $related->post_name;
+      if ($nest_by_type) {
+        if (!array_key_exists($related->post_type, $output)) {
+          $output[$related->post_type] = [];
+        }
+        $output[$related->post_type][] = $related->post_name;
+      } else {
+        $output[] = $related->post_name;
+      }
     }
   }
   return $output;

@@ -76,21 +76,7 @@
             {
                 "param": "post_taxonomy",
                 "operator": "==",
-                "value": "category:news"
-            }
-        ],
-        [
-            {
-                "param": "post_taxonomy",
-                "operator": "==",
-                "value": "category:other-news"
-            }
-        ],
-        [
-            {
-                "param": "post_taxonomy",
-                "operator": "==",
-                "value": "category:other-news"
+                "value": "news-category:news"
             }
         ]
     ],
@@ -103,5 +89,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738948184
+    "modified": 1739238740
 }

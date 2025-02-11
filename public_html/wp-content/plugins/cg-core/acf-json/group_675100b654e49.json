@@ -110,9 +110,9 @@
     "location": [
         [
             {
-                "param": "post_category",
+                "param": "post_taxonomy",
                 "operator": "==",
-                "value": "category:podcast"
+                "value": "news-category:podcast"
             }
         ]
     ],
@@ -125,5 +125,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738954166
+    "modified": 1739238700
 }
