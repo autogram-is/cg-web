@@ -1,0 +1,8 @@
+/* These styles are enqueued alongside the Gutenberg defaults. */
+.editor-styles-wrapper .wp-block-post-content h1::after {
+  content: "Headings in the post body should be h2 or below.";
+  color: red;
+  display: block;
+  font-size: 1rem;
+  opacity: .8;
+}

@@ -80,3 +80,10 @@ function snake_to_title_case(string $input) {
 add_filter('timber/acf-gutenberg-blocks-templates', function () {
   return ['blocks']; // default: ['views/blocks']
 });
+
+// Add style overrides for Gutenberg.
+add_action('enqueue_block_editor_assets', 'gutenberg_editor_assets');
+
+function gutenberg_editor_assets() {
+  wp_enqueue_style('my-gutenberg-editor-styles', get_theme_file_uri('editor-override.css'), FALSE);
+}
