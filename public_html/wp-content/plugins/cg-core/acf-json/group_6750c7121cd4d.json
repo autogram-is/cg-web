@@ -37,7 +37,7 @@
         },
         {
             "key": "field_6750c712208c1",
-            "label": "Sector Leadership",
+            "label": "Leadership",
             "name": "people",
             "aria-label": "",
             "type": "relationship",
@@ -122,5 +122,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738977423
+    "modified": 1739221449
 }

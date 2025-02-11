@@ -23,21 +23,21 @@ function _populate_taxonomies($dry_run = false) {
       }
   
       // May want to change this to a custom meta field in the future
-      $parent = $item['parent'] ? term_exists($item['zone'], $item['taxonomy']) : NULL;
+      $parent = $item['parent'] ? term_exists($item['parent'], $item['taxonomy']) : NULL;
       $parent_id = $parent ? $parent['term_id'] : NULL;
       
       $term = wp_insert_term(
-        mb_trim($item['title']),
+        trim($item['title']),
         $item['taxonomy'],
         array(
           'slug' => $item['slug'],
-          'parent' => $parent_id,
-          'description' => mb_trim($item['description'])
+          'parent' => (int) $parent_id,
+          'description' => trim($item['description'])
         )
       );
 
       if (is_array($term)) {
-        WP_CLI::log($item['taxonomy'] . "'" . $item['title'] . "' created (#". $term['term_id'] . ")");
+        WP_CLI::log($item['taxonomy'] . " '" . $item['title'] . "' created (#". $term['term_id'] . ")");
       } else {
         WP_CLI::error($term);
       }

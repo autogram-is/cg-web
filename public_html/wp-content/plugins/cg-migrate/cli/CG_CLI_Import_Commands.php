@@ -409,9 +409,9 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    * @alias import
    */
   public function import() {
-    cg_import_offices();
-    cg_import_bios();
-    cg_import_projects();
+    //cg_import_offices();
+    //cg_import_bios();
+    //cg_import_projects();
     cg_import_news();
   }
 

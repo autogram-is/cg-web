@@ -35,7 +35,7 @@
             {
                 "param": "taxonomy",
                 "operator": "==",
-                "value": "category"
+                "value": "news-category"
             }
         ]
     ],
@@ -48,5 +48,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738954211
+    "modified": 1739221735
 }

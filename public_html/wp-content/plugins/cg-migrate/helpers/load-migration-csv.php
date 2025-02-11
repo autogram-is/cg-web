@@ -37,14 +37,23 @@ function load_csv($filename = NULL) {
     foreach ($datalines as $line) {
       // Parse each line using str_getcsv
       $data = str_getcsv($line);
-        
+
       // Skip empty lines and header row
       if (empty($data) || $index == 0) {
         $index++;
         continue;
       }
 
-      $results[] = array_combine($header, $data);		 
+      if (count($data) !== count($header)) {
+      }
+
+      try {
+        $results[] = array_combine($header, $data);
+      } catch (Exception $ex) {
+        WP_CLI::log(var_export($header, true));
+        WP_CLI::log(var_export($data, true));
+        return [];
+      }
     }
   }
 

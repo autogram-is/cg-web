@@ -92,8 +92,8 @@
         },
         {
             "key": "field_6790517a38802",
-            "label": "Show Contact Details",
-            "name": "show_contact",
+            "label": "Hide Contact Details",
+            "name": "hide_contact",
             "aria-label": "",
             "type": "true_false",
             "instructions": "",
@@ -106,7 +106,7 @@
             },
             "admin_column_enabled": 0,
             "message": "",
-            "default_value": 1,
+            "default_value": 0,
             "allow_in_bindings": 0,
             "ui_on_text": "",
             "ui_off_text": "",
@@ -114,8 +114,8 @@
         },
         {
             "key": "field_67a6629a3b91a",
-            "label": "Former Employee",
-            "name": "former_employee",
+            "label": "Ex Employee",
+            "name": "ex_employee",
             "aria-label": "",
             "type": "true_false",
             "instructions": "",
@@ -153,5 +153,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738977617
+    "modified": 1739232191
 }
