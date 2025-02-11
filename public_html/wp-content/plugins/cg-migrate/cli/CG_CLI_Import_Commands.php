@@ -15,6 +15,9 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
 	 * <post_ids>...
 	 * : The ID(s) of the post(s) to check.
    * 
+   * [--fusion]
+   * : Parse and display Fusion Builder markup in the post body.
+   * 
    * ## EXAMPLES
    *
    *     wp inspect-post
@@ -28,14 +31,21 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    */
   public function inspect_post($args, $assoc_args) {
     foreach ($args as $post_id) {
+      $fusion = isset($assoc_args['fusion']);
+
       // Get the post
       $post = get_post($post_id);
       if ($post) {
-        $taxonomies = get_post_taxonomies($post_id);
-        $post->meta = get_post_meta($post_id);
-        $post->taxonomy = wp_get_post_terms($post_id, $taxonomies);
-
-        WP_CLI::log(print_r($post, true));  
+        if ($fusion) {
+          $body = $post->post_content;
+          $dom = cg_get_cleaned_dom($body);
+          WP_CLI::log(print_r($body, true));  
+        } else {
+          $taxonomies = get_post_taxonomies($post_id);
+          $post->meta = get_post_meta($post_id);
+          $post->taxonomy = wp_get_post_terms($post_id, $taxonomies);
+          WP_CLI::log(print_r($post, true));  
+        }
       } else {
         WP_CLI::log("Post #$post_id not found");
       }
@@ -409,9 +419,9 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    * @alias import
    */
   public function import() {
-    //cg_import_offices();
-    //cg_import_bios();
-    //cg_import_projects();
+    cg_import_offices();
+    cg_import_bios();
+    cg_import_projects();
     cg_import_news();
   }
 

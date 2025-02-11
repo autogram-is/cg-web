@@ -27,8 +27,11 @@ function cg_save_project(array $post_data = [], bool $use_slug = false, bool $cr
     if (array_key_exists('sectors', $post_data) && $post_data['sectors']) update_field('sectors', $post_data['sectors'] ?? NULL, $post->ID);
     if (array_key_exists('services', $post_data) && $post_data['services']) update_field('services', $post_data['services'] ?? NULL, $post->ID);
     if (array_key_exists('offices', $post_data) && $post_data['offices']) update_field('offices', $post_data['offices'] ?? NULL, $post->ID);
-    if (array_key_exists('people', $post_data) && $post_data['people'])update_field('people', $post_data['people'] ?? NULL, $post->ID);
+    if (array_key_exists('people', $post_data) && $post_data['people']) update_field('people', $post_data['people'] ?? NULL, $post->ID);
   
+    // Case study PDF
+    if (array_key_exists('case_study_pdf', $post_data) && $post_data['case_study_pdf']) update_field('case_study_pdf', $post_data['case_study_pdf'] ?? NULL, $post->ID);
+
   } else {
     WP_CLI::log("Could not update project '". $post_data['title'] ."'");
   }
@@ -56,5 +59,9 @@ function _map_project_relationships(&$post_data) {
   $office_ids = _cols_to_id_array($post_data, 'office', ['office1', 'office2', 'office3']);
   if (count($office_ids) > 0) {
     $post_data['offices'] = $office_ids;
+  }
+
+  if (key_exists('case_study_id', $post_data) && $post_data['case_study_id']) {
+    // Case study processing goes here
   }
 }
