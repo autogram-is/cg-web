@@ -53,20 +53,21 @@ function cg_import_offices($dry_run = false) {
 function cg_import_bios($dry_run = false) {
   $items = load_content_csv('people.csv');
   $updated = 0;
-  $created = 0;
+  $deleted = 0;
 
   if ($dry_run) {
     WP_CLI::log("Dry-Run: " . count($items) . " bios read");
   } else {
     foreach ($items as $item) {
-      $id = cg_save_person($item);
-      if ($item['id'] && $item['id'] === $id) {
+      if ($item['migration_status'] === 'delete') {
+        WP_CLI::log("person '" . $item['title'] . "' deleted " . $item['migration_notes']);
+        $deleted++;
+      } else {
+        cg_save_person($item);
         $updated++;
-      } elseif (!$item['id'] && $id) {
-        $created++;
       }
     }
-    WP_CLI::log("$updated bios updated, $created created");
+    WP_CLI::log("$updated bios updated, $deleted deleted");
   }
 }
 
