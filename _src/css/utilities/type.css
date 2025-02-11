@@ -76,7 +76,6 @@
 .is-style-type-subhed,
 .type-subhed,
 .is-style-type-hed,
-.wp-block-heading,
 .type-hed {
   font-size: var(--size-step-3);
   font-weight: var(--weight-medium);
@@ -97,6 +96,24 @@
     font-size: 1.5ch;
     color: var(--color-timeless-gold);
   }
+  &.is-style-hed-accent,
+  &.hed-accent {
+    position: relative;
+    padding-bottom: var(--space-s);
+    margin-bottom: var(--space-2xs);
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: inline-block;
+      width: var(--space-m-l);
+      border: var(--content-division);
+    }
+  }
+}
+.wp-block-heading {
   &.is-style-hed-accent,
   &.hed-accent {
     position: relative;
@@ -211,17 +228,17 @@
     content: "";
   }
   &.is-style-type-hed::after,
-  &.wp-block-heading::after,
+  h2.wp-block-heading::after,
   &.type-hed::after {
     margin-top: .1ch;
   }
   &.is-style-type-display::after,
-  &.wp-block-heading::after,
+  h3.wp-block-heading::after,
   &.type-display::after {
     margin-top: 1px;
   }
   &.is-style-type-pagehed,
-  &.wp-block-heading::after,
+  h4.wp-block-heading::after,
   &.type-pagehed::after {
     margin-top: .575ch;
   }
