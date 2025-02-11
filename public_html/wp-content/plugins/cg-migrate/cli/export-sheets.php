@@ -195,17 +195,21 @@ function cg_export_news($post_ids = [], $dry_run = false) {
   foreach ($ids as $id) {
     $post = _load_post($id);
     if ($post) {
-      $related = _get_rel_slugs('related_portfolio_items', $post->ID, $true);
+      $related = _get_rel_slugs('related_portfolio_items', $post->ID, TRUE);
       $internal_bylines = _get_rel_slugs('internal_byline', $post->ID);
       $categories = get_the_terms($id, 'news_category');
-      $category = $categories[0]->slug ?? '';
+      if (is_wp_error($categories)) {
+        $category = '';
+      } else {
+        $category = $categories[0]->slug ?? '';
+      }
 
       $item = array(
         'id' => $post->ID,
         'date' => get_the_date("Y-m-d", $post),
         'title' => $post->post_title,
         'slug' => $post->post_name,
-        'category' => $category,
+        'news_category' => $category,
     
         'location' => get_field('location', $post->ID, false),
         'byline' => get_field('external_byline', $post->ID, false),
