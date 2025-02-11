@@ -20,6 +20,8 @@
   {% for post in posts %}
   {% if ( fields.layout == "hero" and loop.index == 1 ) %}
     {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': 'hero' } %}
+  {%  elseif ( fields.layout == "hero" and ( loop.index == 2 or loop.index == 3 ) ) or ( fields.layout == "secondary" and ( loop.index == 1 or loop.index == 2 )) %}
+    {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': 'secondary' } %}
   {%  else  %}
     {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': style } %}
   {% endif %}
