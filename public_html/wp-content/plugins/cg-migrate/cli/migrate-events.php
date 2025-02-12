@@ -17,7 +17,7 @@ function cg_migrate_event($post, $dry_run = false) {
 
   if (!$dry_run) {
     $raw = $post->post_content;
-    $post->post_content = $extracted['body'];
+    $post->post_content = $extracted['processed'];
     wp_update_post($post);
     cg_save_migration_data($post->ID, array('raw' => $raw));
     cg_mark_migrated($post->ID);
@@ -68,20 +68,33 @@ function cg_migrate_event($post, $dry_run = false) {
 }
 
 function _fusion_event_details($html) {
-  $dom = new DOMDocument();
-  $contentType = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">';
+  $output = [];
 
-  @$dom->loadHTML($contentType . $html); // Suppress warnings for malformed HTML
+  $dom = cg_get_dom($html);
 
-  $output = array(
-    'email' => '',
-    'attendees' => [],
-    'html' => $html,
-  );
+  $markup_people = cg_event_attendee_markup($dom);
+  $fusion_people = cg_event_person_components($dom);
+  $output['attendees'] = array_merge($fusion_people, $markup_people);
+  
+  $preserve_children = ['fusion_accordion', 'fusion_builder_column', 'fusion_builder_row', 'fusion_builder_container', 'fusion_testimonials'];
+  $remove_entirely = ['fusion_portfolio', 'fusion_blog', 'fusion_slider', 'fusion_slide', 'fusion_code', 'fusion_global', 'fusion_separator'];
+  $simple_tags = ['fusion_checklist', 'fusion_li_item', 'fusion_highlight', 'fusion_button', 'fusion_toggle'];
+  $media_tags = ['fusion_imageframe', 'fusion_image', 'fusion_gallery', 'fusion_youtube', 'fusion_testimonial'];
+
+  $headings_to_ignore = ['Overview'];
+
+  cg_dom_remove_tags($dom, $preserve_children, true);
+  cg_dom_remove_tags($dom, $remove_entirely, false);
+  cg_dom_process_fusion_tags($dom, $simple_tags);
+  cg_dom_process_fusion_tags($dom, $media_tags);
+
+  cg_dom_process_fusion_tags($dom, ['fusion_text']);
+  cg_dom_process_fusion_titles($dom, $headings_to_ignore);
+  
+  cg_log_remaining_fusion_tags($dom);
 
   // Create a new DOMXPath instance
   $xpath = new DOMXPath($dom);
-
   // Find "schedule a meeting" buttons
   // a button
   $button = $xpath->query('//a[button]')->item(0);
@@ -90,38 +103,9 @@ function _fusion_event_details($html) {
     $button->parentNode->removeChild($button);
   }
 
-  // Bios of CG staff in attendance. Structure:
-  // h4 Attendees
-  // div
-  //   p img
-  //   div
-  //     p name
-  //     p title
-  //     p a email
-  @$h4 = $xpath->query('//h4')->item(0);
-  if ($h4 && $h4->textContent === 'Attendees') {
-      @$bios = $xpath->query('//h4/following-sibling::div/div');
-      foreach ($bios as $bio) {
-          @$img = $xpath->query('img', $bio)->item(0);
-          @$props = $xpath->query('div/p', $bio);
-          @$email = $xpath->query('div//a', $bio)->item(0);
-          $attendee = array(
-              'headshot' => @$img->attributes['src']->value,
-              'name' => @$props->item(0)->textContent,
-              'role' => @$props->item(1)->textContent,
-              'email' => @$email->attributes['href']->value,
-          );
-          if ($attendee['name']) {
-              $output['attendees'][] = $attendee;
-          }
-          $bio->parentNode->removeChild($bio);
-      }
-      $h4->parentNode->removeChild($h4);
-  }
+  $html = trim($dom->saveHTML());
 
-  $html = trim(str_replace($contentType, '', $dom->saveHTML()));
-
-  $output['body'] = wp_kses($html, cg_allowed_markup());
+  $output['processed'] = wp_kses($html, cg_allowed_markup());
 
   return $output;
 }
@@ -148,6 +132,9 @@ function _person_from_event_attendee($bio, $dry_run) {
       $post = get_post($post_id);
       if ($bio['email']) {
         update_field('email', str_replace('mailto:', '', trim($bio['email'])), $post_id);
+      }
+      if ($bio['role']) {
+        update_field('role', trim($bio['role']), $post_id);
       }
       if ($bio['role']) {
         update_field('role', trim($bio['role']), $post_id);
@@ -190,9 +177,4 @@ function _absorb_venue($event_id, $venue_id, $dry_run) {
       wp_delete_post($venue_id);
     }
   }
-}
-
-// Posts tagged as "Events" or "Events Hosted by Others"
-function cg_migrate_event_post($post, $dry_run = false) {
-  // Loop through. Find title/text, title/text and return KV
 }

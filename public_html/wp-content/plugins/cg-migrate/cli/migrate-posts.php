@@ -1,11 +1,9 @@
 <?php
 
 function cg_migrate_post($post, $dry_run = false) {
-  // First, clean up the Fusion Text cruft
-  $raw = $post->post_content;
-  $dom = cg_get_cleaned_dom($raw);
-  $cleaned = trim(join(PHP_EOL, _post_fusion_converter($post, $dom)));
-  $post->post_content = $cleaned;
+  $data = cg_default_process_markup($post);
+  $content = wp_kses($data['processed'], cg_extended_markup());
+  $post->post_content = trim($content);
 
   $taxonomies = get_post_taxonomies($post->ID);
   $tags = wp_get_post_terms($post->ID, $taxonomies);
@@ -36,45 +34,11 @@ function cg_migrate_post($post, $dry_run = false) {
     }
   }
 
-  if (!$dry_run && !empty($cleaned)) {
+  if (!$dry_run) {
     wp_update_post($post);
-    cg_save_migration_body($post->ID, $raw);
     clean_post_cache($post->ID);
     WP_CLI::log(($dry_run ? "Dry Run: " : "")  . $post->post_type . " #$post->ID ($post->post_title) processed");
   }
-}
-
-function _post_fusion_converter($post, $dom, $node = null, &$chunks = []) {
-  if ($node) {
-    if ($node->nodeType === XML_ELEMENT_NODE) {
-      // Fusion Titles get converted to H2s, Fusion Text gets converted to P tags.
-      // This needs to be a bit more rigorous but for now it works.
-      if ($node->tagName === 'fusion_text') {
-        $text = $dom->saveHTML($node);
-        $chunks[] = wp_kses($text, cg_allowed_markup());
-      } else if ($node->tagName === 'fusion_title') {
-        $raw = trim($dom->saveHTML($node));
-        if (wp_strip_all_tags($raw) !== $post->post_title) {
-          $chunks[] = '<h2>' . str_replace('\n', '', wp_kses($raw, 'plain')) . '</h2>';
-        }
-      } else if ($node->tagName === 'fusion_person') {
-        WP_CLI::log("   Encountered '$node->tagName' Fusion Tag in " .  $post->post_type . ' ' . $post->ID);
-      } else if (str_starts_with($node->tagName, 'fusion_')) {
-        $ignore = ['fusion_builder_container', 'fusion_builder_row', 'fusion_builder_column', 'fusion_slider', 'fusion_table', 'fusion_separator', 'fusion_slide'];
-        if (!in_array($node->tagName, $ignore)) {
-          WP_CLI::log("   Encountered '$node->tagName' Fusion Tag in " .  $post->post_type . ' ' . $post->ID);
-        }
-      }
-    }
-  } else {
-    $node = $dom;
-  }
-
-  // Recursively traverse child nodes
-  foreach ($node->childNodes as $child) {
-    _post_fusion_converter($post, $dom, $child, $chunks);
-  }
-  return $chunks;
 }
 
 
@@ -100,5 +64,5 @@ function _process_podcast($post, $dry_run) {
 }
 
 function _process_case_study($post, $dry_run) {
-  // 
+  // Unpublish.
 }
