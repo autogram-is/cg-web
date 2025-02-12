@@ -1,4 +1,3 @@
-
 { 
   "title": "Hero",
   "keyLinks": [ {
@@ -6,11 +5,11 @@
       "url": "/_src/css/components/hero.css"
     } ],
   "context": {
-    "hed" : "Healthcare"
+    "hed" : "Lorem ipsum"
   },
   "variants" : [
     {
-      "title" : "Standout Hero",
+      "title" : "Standout",
       "note" : "Default treatment on project pages without images. Occupies up to 1/3rd of the vertical viewport size.",
       "name" : "_standout-header",
       "context" : {
@@ -19,46 +18,59 @@
       }
     },
     {
-      "title" : "Colorblock Hero",
-      "name" : "colorblock-header",
-      "note" : "Allows use of `.bg-regal-purple`, `.bg-legacy-red`, and `.bg-deep-steel` helper classes.",
-      "context" : {
-        "hed" : "Healthcare",
-        "utilities" : "bg-regal-purple"
-      }
-    },
-    {
       "title" : "Image",
       "name" : "banner-image",
       "note" : "Occupies up to 80% of the vertical viewport size.",
       "context" : {
-        "hed" : "Healthcare",
+        "hed" : "Lorem Ipsum",
         "img" : {
           "src" : "https://picsum.photos/2400/1200?&blur=5",
           "height" : 1200,
           "width" : 2400,
           "alt" : ""
         },
-        "credit" : "UNC Rex",
-        "location" : "Raleigh, NC"
+        "credit" : "Photo by person"
       }
     },{
-      "title" : "Colorblock Hero",
-      "name" : "colorblock-banner",
-      "note" : "`.bg-deep-steel`, `.bg-legacy-red`, `.bg-regal-purple`. Supports `.bg-timeless-gold`, though it should be noted that this will [fail WCAG SC 1.4.3: Contrast (Minimum) at any size](https://www.siegemedia.com/contrast-ratio#%23ffffff-on-%23ddb331).",
+      "title" : "Project",
+      "name" : "hero-project",
       "context" : {
-        "type" : "reversed",
-        "hed" : "Healthcare",
-        "sector" : "Healthcare",
+        "hed" : "Lorem Ipsum",
         "img" : {
           "src" : "https://picsum.photos/2400/1200?&blur=5",
           "height" : 1200,
           "width" : 2400,
           "alt" : ""
         },
-        "banner" : "bg-deep-steel",
-        "credit" : "UNC Rex",
-        "location" : "Raleigh, NC"
+        "credit" : "Photo courtesy of Cole Otto",
+        "project" : {
+          "name" : "1 East Parade, Leeds, UK",
+          "link" : "#"
+        }
+      }
+    },{
+      "title" : "Statistic",
+      "name" : "hero-stat",
+      "context" : {
+        "hed" : "Lorem Ipsum",
+        "stats" : [
+          {
+            "value": "2,000<span class='sup'>+</span>",
+            "label" : "Team members worldwide"
+          },{
+            "value": "50<span class='sup'>+</span>",
+            "label" : "Offices worldwide"
+          },{
+            "value": "27",
+            "label" : "Years in business"
+          },{
+            "value": "300<span class='sup'>+</span>",
+            "label" : "billion in completed projects"
+          },{
+            "value": "<span class='sup'>#</span>14",
+            "label" : "ranking on ENR's top 100 PM/CM list"
+          }
+        ]
       }
     }
   ]

@@ -1,16 +1,62 @@
-
-<div class="hero {{ type }}">
-  <div class="hero-highlight {{ utilities }}">
-  {% if img %}
-  <img src="{{ img.src }}" width="{{ img.width }}" height="{{ img.height }}" alt="{{ img.alt }}" aria-describedby="hero-capt" />
-  {% endif %}
-  </div>
-  <div class="notch hero-header sidebar" data-direction="rtl">
-    {% if hed %}
-    <div class="hed-banner wrapper">
-      <div class="notch-inner">
-        <h1 class="notch-inner hed type-pagehed {{ banner }}">{{ hed }}</h1>
+<main>
+  <div class="hero {{ type }}">
+    <div class="hero-highlight topo-full {{ utilities }}">
+      {% if stats %}
+      <figure class="statistic flow hero statistic-visible" data-counter="">
+        <dl class="wrapper">
+          {% for stat in stats %}
+          <div class="body">
+            <dt class="type-hed">{{ stat.value }}</dt>
+            <dd class="type-detail">{{ stat.label }}</dd>
+          </div>
+          {% endfor %}
+        </dl>
+      </figure>
+      {% endif %}
+      {% if img %}
+      <figure class="hero-photo">
+        <img src="{{ img.src }}" width="{{ img.width }}" height="{{ img.height }}" alt="{{ img.alt }}"/>
+      </figure>
+      {% endif %}
+    </div>
+    <div {% if project %} class="project-sidebar sidebar" data-direction="rtl"{% endif %}>
+      {% if project %}
+      <div class="hero-caption">
+        <div class="body">
+          <h3 class="type-detail hed" id="hed-55763"><a href="http://localhost/projects/1-east-parade-leeds-uk/">1 East Parade, Leeds, UK</a></h3>
+        </div>
       </div>
-    {% endif %}
+      {% endif %}
+      <div class="notch hero-header">
+        <div class="hed-banner">
+          <div class="notch-inner">
+            <div class="sidebar swap">
+              <div>
+                <h1 class="type-pagehed hed-accent {{ banner }}">{{ hed }}</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+
+  <div class="central">
+    <div class="wrapper flow central-inner prose">
+      <p class="is-style-lede-header">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </div>
+
+</main>
