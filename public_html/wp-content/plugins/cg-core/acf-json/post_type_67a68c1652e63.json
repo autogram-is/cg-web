@@ -74,8 +74,7 @@
     "has_archive": false,
     "has_archive_slug": "",
     "rewrite": {
-        "permalink_rewrite": "custom_permalink",
-        "slug": "projects",
+        "permalink_rewrite": "post_type_key",
         "with_front": "0",
         "feeds": "0",
         "pages": "1"
@@ -86,5 +85,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1739235025
+    "modified": 1739398812
 }
