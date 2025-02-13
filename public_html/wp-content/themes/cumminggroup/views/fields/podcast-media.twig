@@ -3,14 +3,14 @@
     <div class="thumb">
       <div class="">
       {% if youtube %}
-        <a href="" data-media="{{ youtube | youtube_embed }}">
+        <a href="" data-media="{{ post.podcast_youtube_url | youtube_embed }}">
         {% if poster %}
           <img decoding="async" src="{{ poster.src }}">
         {% else %}
-          <img decoding="async" src="{{ youtube | youtube_poster }}">
+          <img decoding="async" src="{{ post.podcast_youtube_url | youtube_poster }}">
         {% endif %}
         </a>
-      {% elseif mp3 %}
+      {% elseif post.podcast_mp3_url %}
       {% endif %}
       </div>
     </div>

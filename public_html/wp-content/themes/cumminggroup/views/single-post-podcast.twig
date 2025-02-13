@@ -14,8 +14,8 @@
 {% endblock %}
 
 {% block content %}
-  {% if podcast %}<div class="lede-header">
-  <p>{{ podcast }}{% if season %}: Season {{ season }}{% endif %}{% if episode %}, Episode {{ season }}{% endif %}</p>
+  {% if post.podcast_name %}<div class="lede-header">
+  <p>{{ post.podcast_name }}{% if post.podcast_season %}: Season {{ post.podcast_season }}{% endif %}{% if post.podcast_episode %}, Episode {{ post.podcast_episode }}{% endif %}</p>
   </div>{% endif %}
   {% if youtube or mp3 %}{% include 'fields/podcast-media.twig' with { youtube: youtube, mp3: mp3 } %}{% endif %}
   <div class="sidebar">
