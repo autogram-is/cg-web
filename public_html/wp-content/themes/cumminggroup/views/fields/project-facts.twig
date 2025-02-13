@@ -80,13 +80,13 @@
       {% if facts.start_date -%}
       <div class="sidebar">
         <dt class="type-detail">Project Started</dt>
-        <dd>{{ facts.start_date }}</dd>
+        <dd>{{ facts.start_date | date('F Y') }}</dd>
       </div>
       {%- endif %}
       {% if facts.end_date -%}
       <div class="sidebar">
         <dt class="type-detail">Project Completed</dt>
-        <dd>{{ facts.end_date }}</dd>
+        <dd>{{ facts.end_date | date('F Y')  }}</dd>
       </div>
       {%- endif %}
       </div>
