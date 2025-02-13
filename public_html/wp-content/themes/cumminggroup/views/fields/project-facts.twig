@@ -1,6 +1,104 @@
-{% if relationships %}
-{% include 'partial/key-value-list.twig' with { type: "mini", utilities: "flow", items: relationships } %}
-{% endif %}
-{% if facts %}
-{% include 'partial/key-value-list.twig' with { type: "mini fact-sheet region", utilities: "flow", items: facts } %}
-{% endif %}
+{% set sectors = post.sectors %}
+{% set services = post.services %}
+{% set offices = post.offices %}
+{% set facts = post.facts %}
+
+<div class="flow">
+  <div class="key-value mini">
+    <dl class="flow">
+      {% if sectors -%}
+      <div class="sidebar">
+        <dt class="type-detail">Sectors</dt>
+        {% for sector in sectors %}
+        <dd><a href="{{ sector.link }}">{{ sector.title }}</a></dd>
+        {% endfor %}
+      </div>
+      {%- endif %}
+      {% if services -%}
+      <div class="sidebar">
+        <dt class="type-detail">Services</dt>
+        {% for service in services %}
+        <dd><a href="{{ service.link }}">{{ service.title }}</a></dd>
+        {% endfor %}
+      </div>
+      {%- endif %}
+      {% if offices -%}
+      <div class="sidebar">
+        <dt class="type-detail">Offices</dt>
+        {% for office in offices %}
+        <dd><a href="{{ office.link }}">{{ office.title }}{% if office.location %}, {{ office.location }}{% endif %}</a></dd>
+        {% endfor %}
+      </div>
+      {%- endif %}
+      </div>
+    </dl>
+  </div>
+  <div class="key-value region flow mini fact-sheet">
+    <dl class="flow">
+      {% if facts.facility -%}
+      <div class="sidebar">
+        <dt class="type-detail">Facility Name</dt>
+        <dd>{{ facts.facility }}</dd>
+      </div>
+      {%- endif %}
+      {% if facts.location -%}
+      <div class="sidebar">
+        <dt class="type-detail">Location</dt>
+        <dd>{{ facts.location }}</dd>
+      </div>
+      {%- endif %}
+      {% if facts.owner -%}
+      <div class="sidebar">
+        <dt class="type-detail">Owner</dt>
+        <dd>{{ facts.owner }}</dd>
+      </div>
+      {%- endif %}
+      {% if facts.client -%}
+      <div class="sidebar">
+        <dt class="type-detail">Client</dt>
+        <dd>{{ facts.client }}</dd>
+      </div>
+      {%- endif %}
+      {% if facts.architect -%}
+      <div class="sidebar">
+        <dt class="type-detail">Architect</dt>
+        <dd>{{ facts.architect }}</dd>
+      </div>
+      {%- endif %}
+      {% if facts.vendors -%}
+      <div class="sidebar">
+        <dt class="type-detail">Vendors</dt>
+        <dd>{{ facts.vendors }}</dd>
+      </div>
+      {%- endif %}
+      {% if facts.contractors -%}
+      <div class="sidebar">
+        <dt class="type-detail">Other Contractors</dt>
+        <dd>{{ facts.contractors }}</dd>
+      </div>
+      {%- endif %}
+      {% if facts.start_date -%}
+      <div class="sidebar">
+        <dt class="type-detail">Project Started</dt>
+        <dd>{{ facts.start_date }}</dd>
+      </div>
+      {%- endif %}
+      {% if facts.end_date -%}
+      <div class="sidebar">
+        <dt class="type-detail">Project Completed</dt>
+        <dd>{{ facts.end_date }}</dd>
+      </div>
+      {%- endif %}
+      </div>
+    </dl>
+  </div>
+
+  {% if post.case_study_pdf %}
+  <a href="#" class="button repel factsheet-cta">
+    <span>Download Case Study</span>
+    <svg width="24" height="24" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5.625 15a.75.75 0 0 0-1.5 0h1.5Zm-.75 1h-.75.75Zm14.4-1a.75.75 0 0 0-1.5 0h1.5Zm-8.166.539a.75.75 0 0 0 1.182.922l-1.182-.922Zm5.082-4.078a.75.75 0 0 0-1.182-.922l1.182.922Zm-5.082 5a.75.75 0 0 0 1.182-.922l-1.182.922ZM8.39 10.54a.75.75 0 0 0-1.182.922l1.182-.922ZM10.95 16a.75.75 0 0 0 1.5 0h-1.5Zm1.5-11a.75.75 0 0 0-1.5 0h1.5ZM4.125 15v1h1.5v-1h-1.5Zm0 1c0 2.053 1.628 3.75 3.675 3.75v-1.5c-1.183 0-2.175-.99-2.175-2.25h-1.5ZM7.8 19.75h7.8v-1.5H7.8v1.5Zm7.8 0c2.047 0 3.675-1.697 3.675-3.75h-1.5c0 1.26-.992 2.25-2.175 2.25v1.5ZM19.275 16v-1h-1.5v1h1.5Zm-6.984.461 3.9-5-1.182-.922-3.9 5 1.182.922Zm0-.922-3.9-5-1.182.922 3.9 5 1.182-.922Zm.159.461V5h-1.5v11h1.5Z" fill="#fff"></path>
+    </svg>
+  </a>
+  {% endif %}
+</div>
