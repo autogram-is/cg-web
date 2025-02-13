@@ -1,0 +1,85 @@
+{
+    "key": "group_67ae1fdd1b6ab",
+    "title": "Placeholder Thumbnail",
+    "fields": [
+        {
+            "key": "field_67ae1fdd21e34",
+            "label": "Placeholder Text",
+            "name": "placeholder_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67ae2024f5f61",
+            "label": "Background Color",
+            "name": "placeholder_bg",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "choices": {
+                "bg-timeless-gold": "Timeless Gold",
+                "bg-deep-steel": "Deep Steel",
+                "bg-legacy-red": "Legacy Red",
+                "bg-regal-purple": "Regal Purple",
+                "bg-steel-shade": "Steel Shade"
+            },
+            "default_value": "bg-timeless-gold",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "news-category:news"
+            }
+        ],
+        [
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "news-category:podcast"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1739468260
+}
