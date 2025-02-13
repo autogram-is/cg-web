@@ -1,5 +1,37 @@
 <?php
 
+function cg_projects_with_fallback(int $post_id, int $limit = 6) {
+  $projects = get_field('projects', $post_id) ?? [];
+
+  $directCount = count($projects);
+  if ($limit > $directCount) {
+    $offices = cg_get_related_offices($post_id);
+    $nearby = cg_get_projects_for_portfolio_items($offices, ($limit - $directCount), $projects) ?? [];
+    if ($nearby) {
+      $projects = array_merge($projects, $nearby);
+    }
+  }
+  $projects = array_slice($projects, 0, $limit);
+  return $projects;
+}
+
+function cg_news_with_fallback(int $post_id, int $limit = 6) {
+  $news = get_field('related_news', $post_id) ?? [];
+
+  $directCount = count($news);
+  if ($limit > $directCount) {
+    $offices = cg_get_related_offices($post_id);
+    $nearby = cg_get_news_for_portfolio_items($offices, ($limit - $directCount), $news) ?? [];
+    if ($nearby) {
+      $news = array_merge($news, $nearby);
+    }
+  }
+  $news = array_slice($news, 0, $limit);
+  return $news;
+}
+
+
+
 /**
  * Given an item that is either tagged with a region, or has an `offices`
  * field, return its list of related offices.
@@ -9,14 +41,14 @@ function cg_get_related_offices(int $post_id) {
   if (is_array($offices) && count($offices)) return $offices;
 
   $regions = wp_get_object_terms($post_id, 'region', array('fields' => 'ids'));
-  if (is_error($regions) || count($regions) === 0) {
+  if (is_wp_error($regions) || count($regions) === 0) {
     return [];
   }
 
   $region_content_query = [
     'post_type'      => 'office',
     'post__not_in'   => [$post_id],
-    'fields'         => 'id',
+    'fields'         => 'ids',
     'tax_query'      => [
       [
         'taxonomy' => 'region',
@@ -37,7 +69,7 @@ function cg_get_projects_for_portfolio_items(array $post_ids, int $limit = 10, a
   foreach ($post_ids as $post_id) {
     // This respects the order projects appear in on the item itself,
     // rather than the recency of the projects.
-    $projects = get_field('projects', $post_ids);
+    $projects = get_field('projects', $post_id);
     if (is_array($projects) && count($projects) > 0) {
       $project_buckets[$post_id] = $projects;
     }
@@ -69,22 +101,22 @@ function cg_get_news_for_portfolio_items(array $post_ids, int $limit = 10, array
  * containing a mostly-equal number of values from each array.
  */
 function cg_balance_buckets(array $lists = [], int $limit = 10, array $ignore = []) {
-  $output = [];
-  while (count($output) < $limit) {
-    foreach(array_values($lists) as $list) {
-      // This skips a bucket when a duplicate or ignored value is
-      // found. Might want to revisit later.
-      if (is_array($list) && (count($list) > 0)) {
-        $val = array_shift($list);
-        if (!in_array($val, $output) && !in_array($val, $ignore)) {
-          $output[] = $val;
+  $result = [];
+  $maxLength = max(array_map('count', $lists));
+  $count = 0;
+  
+  for ($i = 0; $i < $maxLength; $i++) {
+    foreach ($lists as $list) {
+      if (isset($list[$i]) && !in_array($list[$i], $ignore, true)) {
+        $result[] = $list[$i];
+        $count++;
+        if ($limit !== null && $count >= $limit) {
+          return $result;
         }
-      }
-      if (count($output) >= $limit) {
-        return $output;
       }
     }
   }
-  return $output;
+  
+  return $result;
 }
 
