@@ -1,0 +1,28 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="sidebar">
+		<div class="flow central-inner prose">
+			{{post.content}}
+		</div>	
+	</div>
+{% endblock %}
+
+{% block sidebar %}
+	<div class="location flow">
+		<h3 class="hed type-detail">
+			{% if post.venue_url %}<a href="{{post.venue_url}}">{{post.venue_name}}</a>{% else %}{{post.venue_name}}{% endif %}
+		</h3>
+		{% if post.venue_address %}
+		<p class="icon-map">
+			<a href="https://www.google.com/maps/place/{{post.venue_address}}+{{post.venue_city}}+{{post.venue_state}}+{{post.venue_postcode}}">{{post.venue_address}}<br>{{post.venue_city}}, {{post.venue_state}} {{post.venue_postcode}} {{post.venue_country}}</a>
+		</p>
+		{% endif %}
+	</div>
+{% endblock %}
+
+{% block posthero %}
+{% if post.people %}
+{% include 'partial/person-list.twig' with { heading: "See us there", items: post.people } %}
+{% endif %}
+{% endblock %}
