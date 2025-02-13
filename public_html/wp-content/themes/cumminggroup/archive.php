@@ -14,6 +14,8 @@
  * @since   Timber 0.2
  */
 
+use Timber\Timber;
+
 $templates = array( 'archive.twig', 'index.twig' );
 
 $context = Timber::context();
@@ -33,6 +35,13 @@ if ( is_day() ) {
 } elseif ( is_post_type_archive() ) {
 	$context['title'] = post_type_archive_title( '', false );
 	array_unshift( $templates, 'archive-' . get_post_type() . '.twig' );
+} elseif ( is_news_category() ) {
+	// Get the category and put it into the context
+	// $news_category = get_term_by('slug', get_query_var('news-category'), 'news-category');
+	$context['title'] = single_cat_title( '', false );
+	$context['term'] = Timber::get_term();
+	array_unshift( $templates, 'archive-news-category.twig' );
+	array_unshift( $templates, 'archive-news-category' . get_query_var('news-category') . '.twig' );
 }
 
 $context['posts'] = Timber::get_posts();

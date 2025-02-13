@@ -1,0 +1,14 @@
+{# This file demonstrates using most of the index.twig template and modifying 
+   just a small part. See `search.twig` for an example of another approach #}
+
+{% extends "index.twig" %}
+{% set pagetitle = title | stylize %}
+
+{% block hero %}
+  <h1 class="type-pagehed hed-accent">{{ pagetitle }}</h1>
+	{% if term.description %}<p>{{ term.description }}</p>{% endif %}
+{% endblock %}
+
+{% block content %}
+  {{ parent() }}
+{% endblock %}

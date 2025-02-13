@@ -96,3 +96,14 @@ function cg_disable_gutenberg($current_status, $post_type) {
   if ($post_type === 'event') return false;
   return $current_status;
 }
+
+function is_news_category() {
+  global $wp_query;
+
+	if ( ! isset( $wp_query ) ) {
+		_doing_it_wrong( __FUNCTION__, __( 'Conditional query tags do not work before the query is run. Before then, they always return false.' ), '3.1.0' );
+		return false;
+	}
+
+	return get_query_var('news-category') ?? false;
+}

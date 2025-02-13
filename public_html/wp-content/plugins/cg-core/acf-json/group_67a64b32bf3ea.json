@@ -3,6 +3,28 @@
     "title": "News Category Properties",
     "fields": [
         {
+            "key": "field_67ae287ad6e2b",
+            "label": "Custom Headline",
+            "name": "headline",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Override the headline on news index pages",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_67a64b3271ecc",
             "label": "Default Thumbnail",
             "name": "thumbnail",
@@ -48,5 +70,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739221735
+    "modified": 1739466919
 }

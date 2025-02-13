@@ -55,7 +55,7 @@ class CGPost extends Post {
 	 *
 	 * @return \Timber\PostCollectionInterface
 	 */
-	public function internal_bylines() { return $this->relationship('internal_bylines'); }
+	public function internal_authors() { return $this->relationship('internal_authors'); }
 
 	/**
 	 * Gets services connected to the current post.
