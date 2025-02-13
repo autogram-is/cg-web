@@ -9,6 +9,10 @@
 				width="{{post.thumbnail.width}}"
 				alt="{{post.thumbnail.alt}}" />
 		</a>
+		{% elseif post.placeholder_text %}
+		<span class="placeholder topo-full {{ post.placeholder_bg }}">
+			<span>{{ post.placeholder_text }}</span>
+		</span>
 		{% endif %}
 		<div class="body flow">
 			<time datetime="{{post.date('y-m-d')}}" class="type-detail">{{ post.date }}</time>
