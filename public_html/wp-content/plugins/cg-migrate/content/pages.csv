@@ -1,4 +1,9 @@
 id,created,title,slug,parent,status,migration_status,migration_note
+69157,2025-02-12,"Market Analysis",market-analysis,,publish,,
+69155,2025-02-12,Events,events,,publish,,
+69152,2025-02-12,"Europe + UK",locations-eu,,publish,,
+69150,2025-02-12,Americas,locations-na,,publish,,
+68244,2025-02-03,"Accessibility Standards Policy",accessibility-standards-policy,,publish,,
 67807,2024-11-04,"Cookie Policy",cookie-policy-1124,,publish,,
 67815,2024-11-04,"Terms of Use",terms-of-use-1124,,publish,,
 67803,2024-11-04,Impressum,impressum-1124,,publish,,
