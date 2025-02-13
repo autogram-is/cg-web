@@ -9,29 +9,9 @@
 
 
 {% block content %}
-  {% if post.related_people %}
-  <address class="hgroup person-header">
-    {% for team_author in post.related_people %}
-    {% set author = get_posts(team_author) %}
-    {% set jobtitle = author.get_field('role') %}
-    {% set sectors = author.get_field('sectors') %}
-    <span class="author">{{ author.name }}</span>
-    {% if author.title %}
-    <span class="title">
-      <span class="title type-detail">{{ jobtitle }}</span>
-      {% if sectors %}
-        {% for sector in sectors %}
-        {% set author_sector = get_posts(sector) %}
-        <span class="title type-detail"><a href="{{ sector.href }}">{{ author_sector | stylize }}</a></span>
-        {% endfor %}
-    {% endif %}
-    </span>
-    {% endif %}
-    {% endfor %}
-  </address>
-  {% endif %}
+  {% include 'fields/news-bylines.twig' %}
   <div class="prose central-inner lede flow">
-    {{post.content}}
+    {{ post.content }}
   </div>
   {% include 'partial/share-this.twig' %}
 {% endblock %}

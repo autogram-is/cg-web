@@ -1,0 +1,18 @@
+{% if post.external_byline %}
+<div class="lede-header lede-news region">
+  <address class="hgroup person-header">
+    <span class="author">{{ post.external_byline }}</span>
+  </address>
+</div>
+{% elseif post.internal_authors %}
+{% for author in post.internal_authors %}
+  <address class="hgroup person-header">
+    <span class="author">{{ author.title }}</span>
+    {% if author.role %}
+    <span class="title">
+      <span class="title type-detail">{{ author.role }}</span>
+    </span>
+    {% endif %}
+  </address>
+{% endfor %}
+{% endif %}
