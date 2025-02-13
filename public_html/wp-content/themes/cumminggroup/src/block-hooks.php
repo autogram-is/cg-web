@@ -191,6 +191,10 @@ function cg_register_block_styles() {
   register_block_style('core/paragraph',
     array('name' => 'lede-header','label' => __( 'Lede', 'textdomain' ), 'is_default' => false)
   );
+  register_block_style('core/paragraph',
+    array('name' => 'lede-standout','label' => __( 'Standout Lede', 'textdomain' ), 'is_default' => false)
+  );
+
 }
 
 /**
