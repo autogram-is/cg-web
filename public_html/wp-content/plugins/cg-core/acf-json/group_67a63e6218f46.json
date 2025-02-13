@@ -10,7 +10,14 @@
             "type": "post_object",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_67a63e6262449",
+                        "operator": "==empty"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -40,7 +47,14 @@
             "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_67a65d3756777",
+                        "operator": "==empty"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -65,7 +79,7 @@
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "side",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
@@ -73,5 +87,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739467510
+    "modified": 1739474386
 }
