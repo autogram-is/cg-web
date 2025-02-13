@@ -148,6 +148,18 @@ fieldset {
   color: var(--color-steel-shade);
 }
 
+[class*="bg-legacy-red"],
+[class*="bg-steel-shade"],
+[class*="bg-deep-steel"],
+[class*="bg-regal-purple"] {
+  --selection: var(--color-regal-purple);
+  --selection-color: var(--color-timeless-backdrop);
+}
+[class*="bg-regal-purple"] {
+  --selection: var(--color-steel-shade);
+}
+
+
 pre ::selection {
   background: var(--selection);
   color: var(--color-steel-shade);
