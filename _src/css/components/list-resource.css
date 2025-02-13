@@ -1,10 +1,10 @@
 /* Resource Listing */
 
 .resource-listing {
-  --sidebar-gutter: var(--space-nudge);
-  --sidebar-target-width: 16rem;
-  --sidebar-content-min-width: 50%;
-
+  .sidebar {
+    --sidebar-target-width: 16rem;
+    --sidebar-content-min-width: 50%;
+  }
   .thumb {
     justify-content: center;
     align-items: center;
@@ -139,6 +139,11 @@
 }
 
 /* Layout styles to suit WordPress' block indexes. */
+.resource-listings.listings-index {
+  .sidebar {
+    --sidebar-target-width: 16rem;
+  }
+}
 .resource-listings:not(.listings-index) {
   display: flex;
   flex-wrap: wrap;
