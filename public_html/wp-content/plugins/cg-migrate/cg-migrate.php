@@ -6,7 +6,7 @@
  * Author: Autogram
  */
 
-require_once __DIR__ . '/vendor/autoload.php';
+// require_once __DIR__ . '/vendor/autoload.php';
 
 // Exit if accessed directly
 if (!defined('ABSPATH')) {
@@ -22,7 +22,7 @@ define('CG_MIGRATE_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('CG_MIGRATE_DATA_DIR', CG_MIGRATE_PLUGIN_DIR . '/data');
 define('CG_MIGRATE_CONTENT_DIR', CG_MIGRATE_PLUGIN_DIR . '/content');
 
-$inc_dirs = ['cli', 'helpers', 'hooks'];
+$inc_dirs = ['cli', 'helpers', 'hooks', 'markup'];
 foreach ($inc_dirs as $dir) {
     foreach (glob(join("/", [CG_MIGRATE_PLUGIN_DIR, $dir, '*.php'])) as $inc) {
         $inc = basename($inc);

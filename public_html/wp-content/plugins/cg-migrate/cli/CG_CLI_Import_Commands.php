@@ -17,6 +17,12 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    * 
    * [--fusion]
    * : Parse and display Fusion Builder markup in the post body.
+   *
+   * [--blocks]
+   * : Parse and display block structures in the post body.
+   * 
+   * [--details]
+   * : Parse and display the full post data structure.
    * 
    * ## EXAMPLES
    *
@@ -32,15 +38,24 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
   public function inspect_post($args, $assoc_args) {
     foreach ($args as $post_id) {
       $fusion = isset($assoc_args['fusion']);
+      $blocks = isset($assoc_args['blocks']);
+      $details = isset($assoc_args['details']);
 
       // Get the post
       $post = get_post($post_id);
       if ($post) {
         if ($fusion) {
-          $body = $post->post_content;
-          $dom = cg_get_cleaned_dom($body);
-          WP_CLI::log(print_r($body, true));  
-        } else {
+          $output = cg_default_process_markup($post);
+          $body = wp_kses($output['processed'], cg_extended_markup());
+          WP_CLI::log(trim($body));  
+        }
+        
+        if ($blocks) {
+          $data = parse_blocks($post->post_content);
+          WP_CLI::log(var_dump($data, true));  
+        } 
+        
+        if ($details) {
           $taxonomies = get_post_taxonomies($post_id);
           $post->meta = get_post_meta($post_id);
           $post->taxonomy = wp_get_post_terms($post_id, $taxonomies);

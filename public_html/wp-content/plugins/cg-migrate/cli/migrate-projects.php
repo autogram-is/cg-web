@@ -16,62 +16,44 @@ function cg_migrate_project($post, $dry_run = false, $preserve = false) {
     $messages[] = "$attachment_count gallery images";
   }
 
-  if (!$dry_run) {
-    cg_save_migration_body($post->ID, $post->post_body);
-  }
-  $fusion = cg_clean_project_markup($post);
-  $post->post_content = $fusion['body'];
+  $processed_content = cg_clean_project_markup($post);
+  $content = wp_kses($processed_content['body'], cg_extended_markup());
 
   if (!$dry_run) {
+    $post->post_content = trim($content);
     wp_update_post($post);
-    if ($fusion['facts']) {
-      cg_save_migration_data($post->ID, $fusion['facts']);
-    }
   }
 
   WP_CLI::log(($dry_run ? "Dry Run: " : "") . "Project #$post->ID ($post->post_title): " . join(', ', $messages));
 }
 
 function cg_clean_project_markup($post) {
-  $dom = cg_get_cleaned_dom($post->post_content);
+  $output = [];
 
-  $result = [];
-  $result['raw'] = $post->post_content;
-  $result['body'] = join(PHP_EOL, fusionTextBlocks($post, $dom));
-  $result['facts'] = projectFactTable($dom);
+  $dom = cg_get_dom($post->post_content);
 
-  return $result;
-}
+  $preserve_children = ['fusion_accordion', 'fusion_builder_column', 'fusion_builder_row', 'fusion_builder_container', 'fusion_testimonials'];
+  $remove_entirely = ['fusion_portfolio', 'fusion_blog', 'fusion_slider', 'fusion_slide', 'fusion_code', 'fusion_global', 'fusion_separator'];
+  $simple_tags = ['fusion_checklist', 'fusion_li_item', 'fusion_highlight', 'fusion_button', 'fusion_toggle'];
+  $media_tags = ['fusion_imageframe', 'fusion_image', 'fusion_gallery', 'fusion_youtube', 'fusion_testimonial'];
 
-function fusionTextBlocks($post, $dom, $node = null, &$chunks = []) {
-  if ($node) {
-    if ($node->nodeType === XML_ELEMENT_NODE) {
-      // Fusion Titles get converted to H2s, Fusion Text gets converted to P tags.
-      // This needs to be a bit more rigorous but for now it works.
-      if ($node->tagName === 'fusion_text') {
-        $text = $dom->saveHTML($node);
-        $chunks[] = wp_kses($text, cg_allowed_markup());
-      } else if ($node->tagName === 'fusion_title') {
-        $text = trim($dom->saveHTML($node));
-        if (wp_strip_all_tags($text) !== $post->post_title) {
-          $chunks[] = '<h2>' . str_replace('\n', '', wp_kses($text, 'plain')) . '</h2>';
-        }
-      } else if (str_starts_with($node->tagName, 'fusion_')) {
-        $ignore = ['fusion_builder_container', 'fusion_builder_row', 'fusion_builder_column', 'fusion_slider', 'fusion_table', 'fusion_separator', 'fusion_slide'];
-        if (!in_array($node->tagName, $ignore)) {
-          WP_CLI::log("  Encountered '$node->tagName' Fusion Tag in " .  $post->post_type . ' ' . $post->ID);
-        }
-      }
-    }
-  } else {
-    $node = $dom;
-  }
+  cg_dom_remove_tags($dom, $preserve_children, true);
+  cg_dom_remove_tags($dom, $remove_entirely, false);
+  cg_dom_process_fusion_tags($dom, $simple_tags);
+  cg_dom_process_fusion_tags($dom, $media_tags);
+  cg_dom_process_fusion_tags($dom, ['fusion_text']);
 
-  // Recursively traverse child nodes
-  foreach ($node->childNodes as $child) {
-    fusionTextBlocks($post, $dom, $child, $chunks);
-  }
-  return $chunks;
+  cg_dom_process_fusion_titles($dom, [$post->post_title], 2);
+  $output['facts'] = projectFactTable($dom);
+
+  cg_dom_remove_tags($dom, ['table']);
+
+  cg_log_remaining_fusion_tags($dom);
+
+  $output['raw'] = $post->post_content;
+  $output['body'] = $dom->saveHTML();
+
+  return $output;
 }
 
 function projectFactTable($dom) {

@@ -7,8 +7,8 @@
  * do the heavy lifting of defining content types, etc.
  */
 
- use Timber\Timber;
- use Timber\PostQuery;
+use Timber\Timber;
+use Timber\PostQuery;
 
 // Load Composer dependencies.
 require_once __DIR__ . '/vendor/autoload.php';
@@ -86,4 +86,13 @@ add_action('enqueue_block_editor_assets', 'gutenberg_editor_assets');
 
 function gutenberg_editor_assets() {
   wp_enqueue_style('my-gutenberg-editor-styles', get_theme_file_uri('editor-override.css'), FALSE);
+}
+
+add_filter('use_block_editor_for_post_type', 'cg_disable_gutenberg', 10, 2);
+function cg_disable_gutenberg($current_status, $post_type) {
+  // Use your post type key instead of 'product'
+  if ($post_type === 'office') return false;
+  if ($post_type === 'person') return false;
+  if ($post_type === 'event') return false;
+  return $current_status;
 }
