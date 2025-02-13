@@ -9,9 +9,9 @@
 
 
 {% block content %}
-  {% if post.team_authors %}
+  {% if post.related_people %}
   <address class="hgroup person-header">
-    {% for team_author in post.team_authors %}
+    {% for team_author in post.related_people %}
     {% set author = get_posts(team_author) %}
     {% set jobtitle = author.get_field('role') %}
     {% set sectors = author.get_field('sectors') %}
@@ -33,4 +33,7 @@
   <div class="prose central-inner lede flow">
     {{post.content}}
   </div>
+  {% include 'partial/share-this.twig' %}
 {% endblock %}
+
+{% block posthero %}{% endblock %}

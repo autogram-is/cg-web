@@ -42,6 +42,10 @@ class CGTwigFilters {
       new \Twig\TwigFilter( 'phone_url', function($input) { return cg_format_phone($input, 'url'); })
     );
 
+    $twig->addFilter(
+      new \Twig\TwigFilter( 'share_link', [ $this, 'share_link' ] )
+    );
+
     return $twig;
   }
 
@@ -117,5 +121,28 @@ class CGTwigFilters {
     }
   
     return $output;
+  }
+
+  function share_link(int $post_id, ?string $target = 'email') {
+    // See https://developer.x.com/en/docs/x-for-websites/tweet-button/overview
+    // See https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins/share-plugin
+
+    $post = get_post($post_id);
+    $link = get_post_permalink($post_id);
+    $url = '';
+
+    if ('linkedin' === $target) {
+      $url = "https://www.linkedin.com/sharing/share-offsite/";
+      $url .= "?url=" . urlencode($link);
+    } else if ('twitter' === $target) {
+      $url = "http://twitter.com/share/";
+      $url .= "?text=" . urlencode($post->title + '\n\n' . $link);
+    } else {
+      $url = "mailto:";
+      $url .= "?subject=" . rawurlencode(htmlspecialchars_decode($post->post_title));
+      $url .= "&body=" . urlencode($link);
+    }
+
+    if ($url) return $url;
   }
 }

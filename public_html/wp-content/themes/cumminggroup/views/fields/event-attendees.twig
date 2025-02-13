@@ -1,0 +1,34 @@
+<div class="attendees flow notch-inner bg-timeless-backdrop">
+  <h2 class="hed type-hed">We’ll be there!</h2>
+  <ul role="list" class="cluster">
+    {% for attendee in attendees %}
+    <li class="person">
+      <div class="sidear">
+      {% if attendee.img %}
+        <div class="crop">
+          <img src="{{ attendee.img.src }}" height="{{ attendee.img.height }}" width="{{ attendee.img.width }}" alt="{{ attendee.img.alt }}">
+        </div>
+      {% endif %}
+        <div class="body">
+          <div class="person-header flow">
+            <h2 class="hed type-body">{% if attendee.contact %}<a href="mailto:{{ contact }}">{% endif %}{{ attendee.name }}{% if attendee.contact %}</a>{% endif %}</h2>
+            <div class="person-meta flow">
+              <span class="title type-detail">{{ attendee.title }}</span>
+              {% if attendee.sectors %}
+              <ul role="list" class="title-scope flow">
+                {% for sector in attendee.sectors %}
+                <li><a href="{{ sector.href }}">{{ sector.text }}</a></li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+              {% if attendee.region %}
+              <a href="#" class="location type-detail">{{ attendee.region }}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

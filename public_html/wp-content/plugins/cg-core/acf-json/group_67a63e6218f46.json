@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_67a65d3756777",
-            "label": "Internal Bylines",
-            "name": "internal_bylines",
+            "label": "Internal Authors",
+            "name": "internal_authors",
             "aria-label": "",
             "type": "post_object",
             "instructions": "",
@@ -34,7 +34,7 @@
         },
         {
             "key": "field_67a63e6262449",
-            "label": "External Byline",
+            "label": "Custom Byline",
             "name": "external_byline",
             "aria-label": "",
             "type": "text",
@@ -58,16 +58,9 @@
     "location": [
         [
             {
-                "param": "post_taxonomy",
+                "param": "post_type",
                 "operator": "==",
-                "value": "news-category:news"
-            }
-        ],
-        [
-            {
-                "param": "post_taxonomy",
-                "operator": "==",
-                "value": "news-category:podcast"
+                "value": "post"
             }
         ]
     ],
@@ -80,5 +73,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739239239
+    "modified": 1739467510
 }
