@@ -2,6 +2,17 @@
 {% set pagetitle = title ? title : post.title %}
 
 {% block hero %}
+	<h1 class="type-pagehed type-home hed-accent">{{ pagetitle | stylize }}</h1>
+{% endblock %}
+
+{% block floatingsidebar %}
+	<div class="hero-caption">
+		{% set first = post.hero_projects[0] %}
+		<div class="body">
+			<h3 class="type-eyebrow hed"><a href="{{ TimberPost(first).link }}">{{ first.post_title }}</a></h3>
+		</div>
+	</div>
+
 {% endblock %}
 
 {% block content %}
@@ -9,3 +20,4 @@
 		{{post.content}}
 	</div>
 {% endblock %}
+

@@ -29,6 +29,11 @@
       border: var(--content-division);
     }
   }
+  &.type-home {
+    margin-block-start: var(--space-2xl);
+    font-size: var(--size-standout);
+    font-weight: var(--weight-normal);
+  }
 }
 
 .amp {
@@ -201,7 +206,6 @@
     }
   }
 }
-.is-style-type-standout,
 .type-standout {
   color: var(--color-steel-shade);
   font-family: var(--font-body);
@@ -310,6 +314,18 @@ p.is-style-lede-header {
   }
 }
 
+p.is-style-lede-standout {
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+  font-family: var(--font-display);
+  font-size: var(--size-step-2);
+  font-weight: var(--weight-light);
+  letter-spacing: var(--tracking-normal);
+  line-height: var(--leading-loose);
+  text-wrap: balance; /* https://caniuse.com/mdn-css_properties_text-wrap_pretty */
+}
+
 [class*="bg-legacy-red"],
 [class*="bg-deep-steel"],
 [class*="bg-steel-shade"],
@@ -322,4 +338,8 @@ p.is-style-lede-header {
       color: var(--color-steel-midtone);
     }
   }
+}
+
+.is-style-type-standout {
+  border: 1px solid red;
 }

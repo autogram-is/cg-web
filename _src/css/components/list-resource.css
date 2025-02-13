@@ -5,6 +5,9 @@
     --sidebar-target-width: 16rem;
     --sidebar-content-min-width: 50%;
   }
+  .item {
+    height: 100%;
+  }
   .thumb {
     justify-content: center;
     align-items: center;
@@ -139,6 +142,7 @@
 }
 
 /* Layout styles to suit WordPress' block indexes. */
+.resource-listings {}
 .resource-listings.listings-index {
   .sidebar {
     --sidebar-target-width: 16rem;

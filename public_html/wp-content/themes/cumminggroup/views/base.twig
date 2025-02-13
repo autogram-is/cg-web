@@ -33,14 +33,18 @@
 					</figure>
 					{% endif %}
 				</div>
-				<div class="notch hero-header">
-					<div class="hed-banner">
-						<div class="notch-inner">
-							{% block hero %}
-							<time datetime="{{post.date('Y-m-d')}}">{{post.date}}</time>
-							{% set pagetitle = title ? title : post.title %}
-							<h1 class="type-pagehed hed-accent">{{ pagetitle | stylize }}</h1>
-							{% endblock %}
+				<div{% if block("floatingsidebar") is defined %} class="project-sidebar sidebar" data-direction="rtl"{% endif %}>
+					{% block floatingsidebar %}
+					{% endblock %}
+					<div class="notch hero-header">
+						<div class="hed-banner">
+							<div class="notch-inner">
+								{% block hero %}
+								<time datetime="{{post.date('Y-m-d')}}">{{post.date}}</time>
+								{% set pagetitle = title ? title : post.title %}
+								<h1 class="type-pagehed hed-accent">{{ pagetitle | stylize }}</h1>
+								{% endblock %}
+							</div>
 						</div>
 					</div>
 				</div>
