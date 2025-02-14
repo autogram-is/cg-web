@@ -18,8 +18,8 @@
             },
             "admin_column_enabled": 0,
             "choices": {
+                "default": "Featured Image",
                 "hide": "No hero",
-                "image": "Featured Image",
                 "gallery": "Gallery",
                 "statistics": "Statistics",
                 "project": "Featured Project"
@@ -226,5 +226,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739487094
+    "modified": 1739494399
 }

@@ -6,13 +6,13 @@
 {% endblock %}
 
 {% block floatingsidebar %}
+{% if post.hero.type == 'project' and post.hero.project %}
 	<div class="hero-caption">
-		{% set first = post.hero_projects[0] %}
 		<div class="body">
-			<h3 class="type-eyebrow hed"><a href="{{ TimberPost(first).link }}">{{ first.post_title }}</a></h3>
+			<h3 class="type-eyebrow hed"><a href="{{ post.hero.project.link }}">{{ post.hero.project.title }}</a></h3>
 		</div>
 	</div>
-
+{% endif %}
 {% endblock %}
 
 {% block content %}

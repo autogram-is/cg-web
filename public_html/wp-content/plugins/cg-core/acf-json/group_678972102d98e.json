@@ -22,6 +22,7 @@
                 "needs-content": "Needs content",
                 "needs-review": "Needs review",
                 "approved": "Approved for live",
+                "archive": "Unpublish for later review",
                 "delete": "To Be Deleted"
             },
             "default_value": false,
@@ -54,30 +55,6 @@
             "rows": 3,
             "placeholder": "",
             "new_lines": ""
-        },
-        {
-            "key": "field_67941b6ca346b",
-            "label": "Case Study Post",
-            "name": "migration_case_study",
-            "aria-label": "",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_column_enabled": 0,
-            "default_value": "",
-            "min": "",
-            "max": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": ""
         }
     ],
     "location": [
@@ -147,5 +124,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739462534
+    "modified": 1739499316
 }
