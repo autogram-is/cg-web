@@ -2,7 +2,8 @@
 
 [id*="gform_wrapper"] {
   all: unset;
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
   margin-block: var(--region-space, var(--space-s-m));
 
   input, select, textarea {
@@ -66,8 +67,11 @@
         flex-grow: 2;
       }
     }
-    [id*="field_"],
-    li {
+    .gfield--type-honeypot {
+      @mixin visuallyhidden;
+    }
+    [id*="field_"]:not(.gfield--type-honeypot),
+    li:not(.gfield--type-honeypot) {
       all: unset;
       display: block;
       flex-basis: calc( 100% - var(--space-s-m));
