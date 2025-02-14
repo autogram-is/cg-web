@@ -102,16 +102,18 @@ function cg_get_news_for_portfolio_items(array $post_ids, int $limit = 10, array
  */
 function cg_balance_buckets(array $lists = [], int $limit = 10, array $ignore = []) {
   $result = [];
-  $maxLength = max(array_map('count', $lists));
-  $count = 0;
-  
-  for ($i = 0; $i < $maxLength; $i++) {
-    foreach ($lists as $list) {
-      if (isset($list[$i]) && !in_array($list[$i], $ignore, true)) {
-        $result[] = $list[$i];
-        $count++;
-        if ($limit !== null && $count >= $limit) {
-          return $result;
+  if (count($lists) > 0) {
+    $maxLength = max(array_map('count', $lists));
+    $count = 0;
+    
+    for ($i = 0; $i < $maxLength; $i++) {
+      foreach ($lists as $list) {
+        if (isset($list[$i]) && !in_array($list[$i], $ignore, true)) {
+          $result[] = $list[$i];
+          $count++;
+          if ($limit !== null && $count >= $limit) {
+            return $result;
+          }
         }
       }
     }
