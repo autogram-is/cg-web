@@ -184,3 +184,15 @@ ol:not([role="list"]) {
     }
   }
 }
+
+ul.markers,
+ol.markers {
+  li {
+    display: flex;
+    &::before {
+      content: "•";
+      color: var(--color-legacy-red);
+      margin-right: var(--space-3xs);
+    }
+  }
+}

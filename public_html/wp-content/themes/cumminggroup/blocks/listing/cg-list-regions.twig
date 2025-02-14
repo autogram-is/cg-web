@@ -14,19 +14,21 @@
   SupportsAlignContent: false
   SupportsAlignText: false
 #}
-<div class="switcher region region-primary" data-layout="three-up">
-  {% for region in regions %}
-  <div class="flow">
-    <div class="location flow">
-      {% if region.heading %}<h2 class="type-eyebrow hed-accent">{{ region.heading }}</h2>{% endif %}
-      <ul class="flow" role="list">
-        {% for post in region.posts|sort((a, b) => a.location <=> b.location) %}
-        <li class="hed type-hed icon-map">
-          <a href="{{ post.link }}">{{ post.title }}</a>
-        </li>
-        {% endfor %}
-      </ul>
+<div class="region region-primary">
+  <div class="switcher" data-layout="three-up">
+    {% for region in regions %}
+    <div class="flow">
+      <div class="location flow">
+        {% if region.heading %}<h2 class="type-eyebrow hed-accent">{{ region.heading }}</h2>{% endif %}
+        <ul class="flow markers" role="list">
+          {% for post in region.posts|sort((a, b) => a.location <=> b.location) %}
+          <li class="hed type-hed">
+            <a href="{{ post.link }}">{{ post.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
+    {%- endfor %}
   </div>
-  {%- endfor %}
 </div>

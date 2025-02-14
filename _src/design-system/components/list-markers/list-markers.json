@@ -74,6 +74,22 @@
             "Consultant procurement"
         ]
       }
+    },{
+      "title": "Marker Override",
+      "note" : "Adds `::before`-based markers to all `li`, regardless of usage or presence of `[role='list']`.",
+      "name": "markers",
+      "context": {
+        "type" : "markers",
+        "listitems" : [
+            "Market research",
+            "Program goals and scope definition",
+            "Feasibility studies",
+            "Master scheduling/budgeting",
+            "Project delivery consulting",
+            "Entitlements",
+            "Consultant procurement"
+        ]
+      }
     }
   ]
 }
