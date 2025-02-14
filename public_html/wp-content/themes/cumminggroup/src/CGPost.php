@@ -88,9 +88,9 @@ class CGPost extends Post {
 		$this->_hero = ["type" => $type];
 		
 		if ('project' === $type) {
-			$project_id = $this->meta('hero_project');
-			if ($project_id) {
-				$this->_hero['project'] = Timber::get_post($project_id);
+			$project_ids = $this->meta('hero_projects');
+			if (is_array($project_ids) && count($project_ids) > 0) {
+				$this->_hero['project'] = Timber::get_post($project_ids[array_rand($project_ids)]);
 			}
 
 		} else if ('statistics' === $type) {
