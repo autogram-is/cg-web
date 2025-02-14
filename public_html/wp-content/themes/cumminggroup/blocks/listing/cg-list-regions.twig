@@ -21,10 +21,8 @@
       <div class="location flow">
         {% if region.heading %}<h2 class="type-eyebrow hed-accent">{{ region.heading }}</h2>{% endif %}
         <ul class="flow markers" role="list">
-          {% for post in region.posts|sort((a, b) => a.location <=> b.location) %}
-          <li class="hed type-hed">
-            <a href="{{ post.link }}">{{ post.title }}</a>
-          </li>
+          {% for post in region.posts|sort_locations %}
+          <li class="hed type-hed"><a href="{{ post.link }}">{{ post.title }}, {{ post.location }}</a></li>
           {% endfor %}
         </ul>
       </div>

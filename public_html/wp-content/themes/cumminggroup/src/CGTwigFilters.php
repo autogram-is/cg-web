@@ -46,6 +46,10 @@ class CGTwigFilters {
       new \Twig\TwigFilter( 'share_link', [ $this, 'share_link' ] )
     );
 
+    $twig->addFilter(
+      new \Twig\TwigFilter( 'sort_locations', [ $this, 'sort_locations' ] )
+    );
+
     return $twig;
   }
 
@@ -77,6 +81,26 @@ class CGTwigFilters {
 
       return $output;
     }
+  }
+
+    /**
+   * Sort offices
+   *
+   * - Sort by location, then title within the location, alphabetically
+   *
+   * @param string $text The headline to stylize
+   */
+
+  function sort_locations(\Traversable $locations): array{
+    $loc_array = iterator_to_array($locations);
+
+    foreach ($loc_array as $key => $row) {
+      $title[$key]  = $row -> title;
+      $location[$key] = $row -> location;
+    }
+    
+    array_multisort($location, SORT_ASC, $title, SORT_ASC, $loc_array);
+    return $loc_array;
   }
 
   /**
