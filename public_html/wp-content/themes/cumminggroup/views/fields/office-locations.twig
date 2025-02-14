@@ -1,6 +1,12 @@
 {% for office in city.office_details %}
-<div class="wrapper region region-primary lede-header">
-  {% if office.name %}<p><strong>{{ office.name }}</strong> <small><em>A Cumming Group company</em></small></p>{% endif %}
+<div class="lede-header office">
+
+  {% if office.name %}
+  <div class="office-name">
+    <h2 class="name">{{ office.name }}</h2> 
+    <small class="note">A Cumming Group company</small>
+  </div>
+  {% endif %}
   {% if office.address %}
   <p class="icon-map">
     <a href="#">{{ office.address }}</a>

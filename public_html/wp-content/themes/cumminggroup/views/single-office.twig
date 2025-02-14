@@ -11,17 +11,14 @@
   <div class="lede-header">
     {# <p class="lede">byline</p> #}
   </div>
-  <div class="sidebar">
-    <div class="flow">
-      <div class="grid">
-        {% include 'fields/office-locations.twig' with { city: post } %}
-      </div>
-    </div>
+  <div class="grid region region-primary">
+    {% include 'fields/office-locations.twig' with { city: post } %}
   </div>
 {% endblock %}
 
 
 {% block posthero %}
+  <div class="wrapper">
   {% if post.nearby_projects(6) | length %}
   {% include "partial/project-gallery.twig" with { heading: "Representative Experience", items: post.nearby_projects(6), sectors: true, services: true } %}
   {% endif %}
@@ -30,6 +27,7 @@
   <div class="region">
   {% include "partial/person-list.twig" with { heading: pagetitle ~ " Team", items: post.people } %}
   </div>
+</div>
   {% endif %}
 {% endblock %}
 
