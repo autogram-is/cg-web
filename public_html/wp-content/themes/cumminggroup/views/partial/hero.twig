@@ -15,12 +15,12 @@
     width="{{hero.project.thumbnail.width}}"
     alt="{{hero.project.thumbnail.alt}}" />
 
-{% elseif hero.type == 'statistic' %} {# a set of high-impact statistics #}
+{% elseif hero.type == 'statistics' %} {# a set of high-impact statistics #}
   <figure class="statistic flow hero">
     <dl class="wrapper">
     {% for stat in hero.statistics %}
       <div class="body">
-        <dt class="type-hed">{{ stat.value }}</dt>
+        <dt class="type-hed">{{ stat.value | statistic | raw }}</dt>
         {%if stat.label %}<dd class="type-detail">{{ stat.label }}</dd>{% endif %}
       </div>
     {% endfor %}

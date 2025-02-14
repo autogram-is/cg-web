@@ -72,10 +72,10 @@
         },
         {
             "key": "field_67ae7710b13c7",
-            "label": "Project",
-            "name": "hero_project",
+            "label": "Projects",
+            "name": "hero_projects",
             "aria-label": "",
-            "type": "post_object",
+            "type": "relationship",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
@@ -100,18 +100,23 @@
                 "publish"
             ],
             "taxonomy": "",
+            "filters": [
+                "search"
+            ],
             "return_format": "id",
-            "multiple": 0,
-            "allow_null": 0,
-            "allow_in_bindings": 0,
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 1,
+            "elements": [
+                "featured_image"
+            ],
             "bidirectional": 0,
-            "ui": 1,
             "bidirectional_target": []
         },
         {
             "key": "field_674f6878d49fc",
             "label": "Statistics",
-            "name": "statistics",
+            "name": "hero_statistics",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -226,5 +231,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739494399
+    "modified": 1739555481
 }
