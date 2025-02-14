@@ -13,29 +13,9 @@
 
 		<main role="main" id="content">
 			<div class="hero">
-				<div class="hero-highlight topo-full">
-					{% if post.thumbnail %}
-					<img
-						src="{{post.thumbnail.src|resize(2000, 850) }}"
-						height="{{post.thumbnail.height}}"
-						width="{{post.thumbnail.width}}"
-						alt="{{post.thumbnail.alt}}" />
-					{% elseif post.meta('statistics') %}
-					<figure class="statistic flow hero">
-						<dl class="wrapper">
-						{% for stat in post.meta('statistics') %}
-							<div class="body">
-								<dt class="type-hed">{{ stat.value }}</dt>
-								{%if stat.label %}<dd class="type-detail">{{ stat.label }}</dd>{% endif %}
-							</div>
-						{% endfor %}
-						</dl>
-					</figure>
-					{% endif %}
-				</div>
+				{% include 'partial/hero.twig' %}
 				<div{% if block("floatingsidebar") is defined %} class="project-sidebar sidebar" data-direction="rtl"{% endif %}>
-					{% block floatingsidebar %}
-					{% endblock %}
+					{% block floatingsidebar %}{% endblock %}
 					<div class="notch hero-header">
 						<div class="hed-banner">
 							<div class="notch-inner">

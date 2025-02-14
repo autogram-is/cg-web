@@ -1,14 +1,19 @@
 {% extends "base.twig" %}
 {% set pagetitle = title ? title : post.title %}
 
+
 {% block hero %}
 	<h1 class="type-pagehed hed-accent">{{ pagetitle | stylize }}</h1>
 {% endblock %}
 
+
+{% block floatingsidebar %}
+{%- include 'partial/hero-notch-details.twig' -%}
+{% endblock %}
+
+
 {% block content %}
-	<div class="sidebar">
-		<div class="flow central-inner prose">
-			{{post.content}}
-		</div>
+	<div class="flow central-inner prose">
+		{{post.content}}
 	</div>
 {% endblock %}

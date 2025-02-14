@@ -1,27 +1,42 @@
-<div class="hero {{ type }}">
-  <div class="hero-highlight {{ utilities }}">
-    {% if post.thumbnail %}
-    <img src="{{post.thumbnail.src|resize(2000, 850) }}" height="{{post.thumbnail.height}}" width="{{post.thumbnail.width}}" alt="{{post.thumbnail.alt}}" aria-describedby="hero-capt" />
-    {% endif %}
-    {% elseif post.meta('statistics') %}
-    <figure class="statistic flow hero">
-      <dl class="wrapper">
-      {% for stat in post.meta('statistics') %}
-        <div class="body">
-          <dt class="type-hed">{{ stat.value }}</dt>
-          {%if stat.label %}<dd class="type-detail">{{ stat.label }}</dd>{% endif %}
-        </div>
-      {% endfor %}
-      </dl>
-    </figure>
-    {% endif %}
-  </div>
-  <div class="notch hero-header sidebar" data-direction="rtl">
-    {% if hed %}
-    <div class="hed-banner">
-      <div class="notch-inner">
-        <h1 class="notch-inner hed type-pagehed {{ banner }}">{{ hed }}</h1>
+{#- post.hero is populated by the hero method on the CGPost class -#}
+<!-- {{ post.hero.type }} hero component -->
+{%- set hero = post.hero -%}
+
+<div class="hero-highlight topo-full">
+{% if hero.type == 'gallery' and hero.image %} {# a random selection from multiple images #}
+  <img src="{{hero.image.src|resize(2000, 850) }}"
+    height="{{hero.image.height}}"
+    width="{{hero.image.width}}"
+    alt="{{hero.image.alt}}" />
+
+{% elseif hero.type == 'project' and hero.project.thumbnail %} {# a project's featured image #}
+  <img src="{{hero.project.thumbnail.src|resize(2000, 850) }}"
+    height="{{hero.project.thumbnail.height}}"
+    width="{{hero.project.thumbnail.width}}"
+    alt="{{hero.project.thumbnail.alt}}" />
+
+{% elseif hero.type == 'statistic' %} {# a set of high-impact statistics #}
+  <figure class="statistic flow hero">
+    <dl class="wrapper">
+    {% for stat in hero.statistics %}
+      <div class="body">
+        <dt class="type-hed">{{ stat.value }}</dt>
+        {%if stat.label %}<dd class="type-detail">{{ stat.label }}</dd>{% endif %}
       </div>
-    {% endif %}
-  </div>
+    {% endfor %}
+    </dl>
+  </figure>
+
+{% elseif hero.type == 'hide' %}  {# Don't display anything - just use the color treatment #}
+  {# Consider choosing from different color/image treatments? #}
+
+{% else %} {# The fallback: display the post's featured image in the header #}
+  {% if post.thumbnail %}
+  <img src="{{post.thumbnail.src|resize(2000, 850) }}"
+    height="{{post.thumbnail.height}}"
+    width="{{post.thumbnail.width}}"
+    alt="{{post.thumbnail.alt}}" />
+  {% endif %}
+{% endif %}
 </div>
+<!-- end {{ post.hero.type }} hero component -->

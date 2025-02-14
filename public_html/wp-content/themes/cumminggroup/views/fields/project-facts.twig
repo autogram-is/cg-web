@@ -8,7 +8,7 @@
     <dl class="flow">
       {% if sectors -%}
       <div class="sidebar">
-        <dt class="type-detail">Sectors</dt>
+        <dt class="type-detail">{{ sectors | pluralize('Sectors', 'Sector') }}</dt>
         {% for sector in sectors %}
         <dd><a href="{{ sector.link }}">{{ sector.title }}</a></dd>
         {% endfor %}
@@ -16,7 +16,7 @@
       {%- endif %}
       {% if services -%}
       <div class="sidebar">
-        <dt class="type-detail">Services</dt>
+        <dt class="type-detail">{{ services | pluralize('Services', 'Service') }}</dt>
         {% for service in services %}
         <dd><a href="{{ service.link }}">{{ service.title }}</a></dd>
         {% endfor %}
@@ -24,7 +24,7 @@
       {%- endif %}
       {% if offices -%}
       <div class="sidebar">
-        <dt class="type-detail">Offices</dt>
+        <dt class="type-detail">{{ offices | pluralize('Offices', 'Office') }}</dt>
         {% for office in offices %}
         <dd><a href="{{ office.link }}">{{ office.title }}{% if office.location %}, {{ office.location }}{% endif %}</a></dd>
         {% endfor %}

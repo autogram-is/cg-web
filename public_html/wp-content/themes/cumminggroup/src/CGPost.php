@@ -20,49 +20,49 @@ class CGPost extends Post {
 	 *
 	 * @return \Timber\PostCollectionInterface
 	 */
-	public function sectors(?int $limit = -1) { return $this->relationship('sectors', $limit); }
+	public function sectors(?int $limit = -1) { return $this->_cache_relationship('sectors', $limit); }
 
 	/**
 	 * Gets services connected to the current post.
 	 *
 	 * @return \Timber\PostCollectionInterface
 	 */
-	public function services(?int $limit = -1) { return $this->relationship('services', $limit); }
+	public function services(?int $limit = -1) { return $this->_cache_relationship('services', $limit); }
 
 	/**
 	 * Gets projects connected to the current post.
 	 *
 	 * @return \Timber\PostCollectionInterface
 	 */
-	public function projects(?int $limit = -1) { return $this->relationship('projects', $limit); }
+	public function projects(?int $limit = -1) { return $this->_cache_relationship('projects', $limit); }
 
 	/**
 	 * Gets office pages connected to the current post.
 	 *
 	 * @return \Timber\PostCollectionInterface
 	 */
-	public function offices(?int $limit = -1) { return $this->relationship('offices', $limit); }
+	public function offices(?int $limit = -1) { return $this->_cache_relationship('offices', $limit); }
 
 	/**
 	 * Gets services connected to the current post.
 	 *
 	 * @return \Timber\PostCollectionInterface
 	 */
-	public function people(?int $limit = -1) { return $this->relationship('people', $limit); }
+	public function people(?int $limit = -1) { return $this->_cache_relationship('people', $limit); }
 
 	/**
 	 * Loads the people related to this item.
 	 *
 	 * @return \Timber\PostCollectionInterface
 	 */
-	public function internal_authors() { return $this->relationship('internal_authors'); }
+	public function internal_authors() { return $this->_cache_relationship('internal_authors'); }
 
 	/**
 	 * Gets services connected to the current post.
 	 *
 	 * @return \Timber\PostCollectionInterface
 	 */
-	public function related_news(?int $limit = -1) { return $this->relationship('related_news', $limit); }
+	public function related_news(?int $limit = -1) { return $this->_cache_relationship('related_news', $limit); }
 
 	/**
 	 * For news, events, and market insight reports, `service` `sector` `project` and `office`
@@ -70,9 +70,48 @@ class CGPost extends Post {
 	 *
 	 * @return \Timber\PostCollectionInterface
 	 */
-	public function related_portfolio_items() { return $this->relationship('related_portfolio_items'); }
+	public function related_portfolio_items() { return $this->_cache_relationship('related_portfolio_items'); }
 
-	private function relationship(string $field_name, ?int $limit = -1) {
+	/**
+	 * For news, events, and market insight reports, `service` `sector` `project` and `office`
+	 * are collapsed to a single field.
+	 *
+	 * @return \Timber\PostCollectionInterface
+	 */
+	public function hero() { 
+		$field_prop = '_hero';
+		if (isset($this->_hero)) {
+			return $this->_hero;
+		}
+
+		$type = $this->meta('hero_type') ?? 'default';
+		$this->_hero = ["type" => $type];
+		
+		if ('project' === $type) {
+			$project_id = $this->meta('hero_project');
+			if ($project_id) {
+				$this->_hero['project'] = Timber::get_post($project_id);
+			}
+
+		} else if ('statistics' === $type) {
+			$this->_hero['statistics'] = $this->meta('hero_statistics') ?? [];
+
+		} else if ('gallery' === $type) {
+			$images = $this->meta('hero_gallery');
+			if ($images && count($images) > 0) {
+				$this->_hero['image'] = Timber::get_image($images[array_rand($images)]);
+			}
+
+		} else if ('default' === $type) {
+			if ($this->thumbnail()) {
+				$this->_hero['image'] = $this->thumbnail();
+			}
+		}
+
+		return $this->_hero;	
+	}
+
+	private function _cache_relationship(string $field_name, ?int $limit = -1) {
 		$field_prop = '_'.$field_name;
 		if (isset($this->$field_prop)) {
 			return $this->$field_prop;

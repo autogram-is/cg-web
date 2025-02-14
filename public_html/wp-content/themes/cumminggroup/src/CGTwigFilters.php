@@ -10,7 +10,7 @@ class CGTwigFilters {
 
   public function add_to_twig($twig) {
     $twig->addFilter(
-      new \Twig\TwigFilter( 'pluralize', 'pluralize' )
+      new \Twig\TwigFilter( 'pluralize', [$this, 'pluralize'] )
     );
     $twig->addFilter(
       new \Twig\TwigFilter( 'stylize', [ $this, 'stylize_title' ] )
@@ -49,6 +49,16 @@ class CGTwigFilters {
     return $twig;
   }
 
+  function pluralize(Countable $countable, string $pluralString, ?string $singularString = '', ?string $noneString = '') {
+    $count = count($countable);
+    if ($count < 1) {
+      return $noneString ?? '';
+    } elseif ($count === 1) {
+      return $singularString ?? '';
+    } else {
+      return $pluralString;
+    }
+  }
 
   function render_gravity_form(?string $form_id = null) {
     if ($form_id && function_exists('gravity_form')) {

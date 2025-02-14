@@ -18,10 +18,11 @@
             },
             "admin_column_enabled": 0,
             "choices": {
+                "default": "Featured Image",
                 "hide": "No hero",
-                "image": "Featured Image",
                 "gallery": "Gallery",
-                "statistics": "Statistics"
+                "statistics": "Statistics",
+                "project": "Featured Project"
             },
             "default_value": "image",
             "return_format": "value",
@@ -68,6 +69,44 @@
             "mime_types": "",
             "insert": "append",
             "preview_size": "medium"
+        },
+        {
+            "key": "field_67ae7710b13c7",
+            "label": "Project",
+            "name": "hero_project",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_67a668095ab5a",
+                        "operator": "==",
+                        "value": "project"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "post_type": [
+                "project"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
         },
         {
             "key": "field_674f6878d49fc",
@@ -187,5 +226,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738970673
+    "modified": 1739494399
 }
