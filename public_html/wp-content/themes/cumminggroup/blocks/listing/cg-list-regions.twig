@@ -24,6 +24,9 @@
           {% for post in region.posts|sort_locations %}
           <li class="hed type-hed"><a href="{{ post.link }}">{{ post.title }}, {{ post.location }}</a></li>
           {% endfor %}
+          {% for post in fakearray|sort_locations %}
+          <li class="hed type-hed"><a href="{{ post.link }}">{{ post.title }}, {{ post.location }}</a></li>
+          {% endfor %}
         </ul>
       </div>
     </div>

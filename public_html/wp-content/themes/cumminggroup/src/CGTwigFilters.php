@@ -91,11 +91,12 @@ class CGTwigFilters {
    * @param string $text The headline to stylize
    */
 
-  function sort_locations(\Traversable $locations): array{
+  function sort_locations(?Traversable $locations): array {
+    if( is_null($locations) ) return [];
     $loc_array = iterator_to_array($locations);
 
     foreach ($loc_array as $key => $row) {
-      $title[$key]  = $row -> title;
+      $title[$key]    = $row -> title;
       $location[$key] = $row -> location;
     }
     
