@@ -268,6 +268,8 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
       $post = get_post($post_id);
       $post = cg_migrate_page($post, $dry_run, $reprocess);
     }
+
+    cg_apply_fixed_pages($dry_run);
   }
 
   /**
