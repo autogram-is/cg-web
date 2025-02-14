@@ -2,19 +2,13 @@
 {% set pagetitle = (title ? title : post.title) | stylize %}
 
 
-{% block floatingsidebar %}
-{% if post.hero.type == 'project' and post.hero.project %}
-	<div class="hero-caption">
-		<div class="body">
-			<h3 class="type-eyebrow hed"><a href="{{ post.hero.project.link }}">{{ post.hero.project.title }}</a></h3>
-		</div>
-	</div>
-{% endif %}
+{% block hero %}
+  <h1 class="type-pagehed hed-accent">{{ pagetitle }}</h1>
 {% endblock %}
 
 
-{% block hero %}
-  <h1 class="type-pagehed hed-accent">{{ pagetitle }}</h1>
+{% block floatingsidebar %}
+{%- include 'partial/hero-notch-details.twig' -%}
 {% endblock %}
 
 
@@ -27,7 +21,7 @@
 
   {% if post.people | length %}
   <div class="region wrapper">
-  {% include "partial/person-list.twig" with { heading: pagetitle ~ " Leadership", items: post.people } %}
+  {% include "partial/person-list.twig" with { heading: pagetitle ~ " Leadership", items: post.people, utilities: "bg-timeless-backdrop" } %}
   </div>
   {% endif %}
 {% endblock %}

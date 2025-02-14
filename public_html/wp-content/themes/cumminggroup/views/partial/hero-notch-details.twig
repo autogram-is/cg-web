@@ -1,0 +1,7 @@
+{% if post.hero.type == 'project' and post.hero.project %}
+	<div class="hero-caption">
+		<div class="body">
+			<h3 class="type-eyebrow hed"><a href="{{ post.hero.project.link }}">{{ post.hero.project.title }}</a></h3>
+		</div>
+	</div>
+{% endif %}
