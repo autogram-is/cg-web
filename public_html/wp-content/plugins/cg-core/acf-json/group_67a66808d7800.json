@@ -111,7 +111,7 @@
         {
             "key": "field_674f6878d49fc",
             "label": "Statistics",
-            "name": "statistics",
+            "name": "hero_statistics",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -226,5 +226,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739494399
+    "modified": 1739554852
 }
