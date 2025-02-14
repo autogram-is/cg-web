@@ -27,7 +27,7 @@
     padding-left: var(--gutter);
     padding-right: var(--gutter);
   }
-  .project-sidebar {
+  .project-sidebar:has {
     margin: 0 auto;
     --gutter: 0;
     --sidebar-target-width: 15rem;
@@ -46,6 +46,10 @@
 
     .hed {
       justify-content: flex-end;
+      a {
+        text-decoration: underline;
+        text-decoration-color: var(--color-legacy-red);
+      }
     }
   }
   .hero-highlight {
