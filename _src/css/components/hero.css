@@ -27,7 +27,7 @@
     padding-left: var(--gutter);
     padding-right: var(--gutter);
   }
-  .project-sidebar:has {
+  .project-sidebar:has(.hero-caption) {
     margin: 0 auto;
     --gutter: 0;
     --sidebar-target-width: 15rem;
@@ -37,18 +37,18 @@
       margin-left: auto;
       padding-left: var(--space-s-m);
     }
-  }
-  .hero-caption {
-    position: relative;
-    margin-block-start: var(--space-2xs);
-    margin-inline: var(--space-s-m);
-    z-index: 9;
+    .hero-caption {
+      position: relative;
+      margin-block-start: var(--space-2xs);
+      margin-inline: var(--space-s-m);
+      z-index: 9;
 
-    .hed {
-      justify-content: flex-end;
-      a {
-        text-decoration: underline;
-        text-decoration-color: var(--color-legacy-red);
+      .hed {
+        justify-content: flex-end;
+        a {
+          text-decoration: underline;
+          text-decoration-color: var(--color-legacy-red);
+        }
       }
     }
   }
