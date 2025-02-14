@@ -18,7 +18,6 @@
 
 
 {% block posthero %}
-  <div class="wrapper">
   {% if post.nearby_projects(6) | length %}
   <div class="region wrapper">
   {% include "partial/project-gallery.twig" with { heading: "Representative Experience", items: post.nearby_projects(6), sectors: true, services: true } %}
@@ -29,7 +28,6 @@
   <div class="region">
   {% include "partial/person-list.twig" with { heading: pagetitle ~ " Team", items: post.people } %}
   </div>
-</div>
   {% endif %}
 {% endblock %}
 
