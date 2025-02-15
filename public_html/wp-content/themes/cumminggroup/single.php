@@ -22,15 +22,38 @@ $templates = array(
 	'single.twig'
 );
 
+
+// If the post is a person's bio, but their bio page has been deactivated,
+// generate a 404 instead of the normal page.
+if ($timber_post->post_type == 'person') {
+	$generate = get_field('generate_bio_page', $timber_post->ID) ?? false;
+	$ex = get_field('ex_employee', $timber_post->ID) ?? false;
+	if (($ex === true) || ($generate === false)) {
+		if (current_user_can( 'read_private_posts' )) {
+			$context['bio_is_hidden'] = true;
+		} else {
+			global $wp_query;
+			$wp_query->set_404();
+			status_header(404);
+			$context = Timber::context();
+			Timber::render('404.twig', $context);
+			return;	
+		}
+	}
+}
+
+
 // Allow different news post templates depending on the news category;
 // follows the pattern: `single-post-categoryslug.twig`
 if ($timber_post->post_type === 'post') {
 	$categories = get_the_terms($post->ID, 'news-category');
 	if ($categories != NULL && !is_wp_error($categories) && count($categories) > 0) {
-		$context['news-category'] = $categories[0];
+		$context['news_category'] = $categories[0];
 		array_unshift($templates, 'single-' . $timber_post->post_type . '-' . $categories[0]->slug . '.twig');
 	}
 }
+
+
 
 // Allow different template for office, service, and sector pages if the ?projects=all
 // get parameter is set.
