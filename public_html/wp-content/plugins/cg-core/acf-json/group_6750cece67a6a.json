@@ -40,9 +40,7 @@
                 "class": "",
                 "id": ""
             },
-            "admin_column_enabled": 1,
-            "admin_column_position": "",
-            "admin_column_width": "",
+            "admin_column_enabled": 0,
             "default_value": "",
             "allow_in_bindings": 0,
             "placeholder": "",
@@ -113,6 +111,30 @@
             "ui": 1
         },
         {
+            "key": "field_67afd333b8e85",
+            "label": "Bio Page",
+            "name": "generate_bio_page",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 1,
+            "admin_column_position": "",
+            "admin_column_width": "",
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_67a6629a3b91a",
             "label": "Ex Employee",
             "name": "ex_employee",
@@ -126,7 +148,9 @@
                 "class": "",
                 "id": ""
             },
-            "admin_column_enabled": 0,
+            "admin_column_enabled": 1,
+            "admin_column_position": "",
+            "admin_column_width": "",
             "message": "",
             "default_value": 0,
             "allow_in_bindings": 0,
@@ -153,5 +177,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739232191
+    "modified": 1739576214
 }

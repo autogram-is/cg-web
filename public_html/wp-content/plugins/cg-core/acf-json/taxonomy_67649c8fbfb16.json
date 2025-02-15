@@ -7,7 +7,6 @@
     "object_type": [
         "post",
         "project",
-        "person",
         "office"
     ],
     "advanced_configuration": 1,
@@ -72,5 +71,5 @@
     "meta_box": "default",
     "meta_box_cb": "",
     "meta_box_sanitize_cb": "",
-    "modified": 1736886092
+    "modified": 1739577796
 }
