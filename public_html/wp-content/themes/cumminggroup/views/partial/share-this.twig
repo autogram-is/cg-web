@@ -4,10 +4,10 @@
     <nav aria-labelledby="share-icons">
       <ul class="cluster" role="list">
         <li>
-          <a href="{{ post.id | share_link('linkedin') }}" class="button round secondary icon"><span class="dashicons dashicons-linkedin text-light"></span></a>
+          <a href="{{ post.id | share_link('linkedin') }}" class="button round secondary icon"><span class="dashicons dashicons-linkedin text-light"></span><span class="visually-hidden">LinkedIn</span></a>
         </li>
         <li>
-          <a href="{{ post.id | share_link('email') }}" class="button round secondary icon"><span class="dashicons dashicons-email-alt text-light"></span></a>
+          <a href="{{ post.id | share_link('email') }}" class="button round secondary icon"><span class="dashicons dashicons-email-alt text-light"></span><span class="visually-hidden">Email</span></a>
         </li>
       </ul>
     </nav>
