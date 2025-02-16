@@ -166,6 +166,7 @@ function cg_export_bios($dry_run = false) {
         'service3' => $services[2] ?? '',
         'office' => $offices[0] ?? '',
 
+        'headshot' =>  attachment_url_to_postid(get_the_post_thumbnail_url($post->ID)),
         'migration_status' => get_field('migration_status', $post->ID, false),
         'migration_note' => get_field('migration_note', $post->ID, false),
       );
