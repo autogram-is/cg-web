@@ -66,14 +66,6 @@ function cg_save_base(string $post_type, array $post_data = [], bool $use_slug =
     if(array_key_exists('migration_note', $post_data)) {
       update_field('migration_note', $post_data['migration_note'] ?? NULL, $post->ID);
     }
-
-    if (array_key_exists('migration_status', $post_data)) {
-      $action = strtolower(trim($post_data['migration_status']));
-      if (($action === 'delete') || ($action === 'archive')) {
-        wp_trash_post( $id );
-        WP_CLI::log($post_type . " '". $post_data['title'] ."' (" . ($post_data['id'] ?? $post_data['slug']) . ") trashed");
-      }
-    }
   }
 
 
