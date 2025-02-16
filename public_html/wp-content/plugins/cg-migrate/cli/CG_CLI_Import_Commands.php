@@ -410,7 +410,7 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    */
   public function export() {
     cg_export_projects();
-    cg_export_offices();
+    // cg_export_offices();
     cg_export_bios();
     cg_export_news();
     cg_export_events();
@@ -450,6 +450,9 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
 	 * <post_ids>...
 	 * : The ID(s) of the post(s) to check.
    * 
+   * [--slugs]
+   * : If set, use slugs to identify the posts rather than IDs.
+   * 
    * ## EXAMPLES
    *
    *     wp cg save 1 2 3 4
@@ -460,11 +463,17 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    * @subcommand save
    * @alias save
    */
-  public function save($args) {
+  public function save($args, $assoc_args) {
+    $use_slugs = $assoc_args['slugs'];
+
     foreach ($args as $id) {
       $post = get_post($id);
       if ($post) {
-        $filename = CG_MIGRATE_CONTENT_DIR . '/' . $post->ID . '.html';
+        if ($use_slugs) {
+          $filename = CG_MIGRATE_CONTENT_DIR . '/' . $post->post_type . '.' . $post->post_name . '.html';
+        } else {
+          $filename = CG_MIGRATE_CONTENT_DIR . '/' . $post->ID . '.html';
+        }
         file_put_contents($filename, $post->post_content);
         WP_CLI::log("Wrote $post->post_type '$post->post_title' to $post->ID.html.");
       } else {

@@ -11,7 +11,7 @@ id,created,title,slug,parent,status,migration_status,migration_note
 63664,2024-01-24,Home Copy | Footer Logo QC,home-3,,publish,delete,
 63073,2023-12-08,Careers,careers-eu,,publish,delete,"European version of US page, different content/wording needed but not a separate page"
 63056,2023-12-08,Apprenticeship Programme,apprenticeship-programme,63073,publish,,
-62959,2023-12-08,Offices,offices,,publish,archive,Replaced by /locations
+62959,2023-12-08,Offices,offices,,publish,delete,Replaced by /locations
 62925,2023-12-08,Careers (Mobile),careers-mobile,,publish,delete,Mobile version of page only
 62923,2023-12-08,Sectors (Mobile),sectors-mobile,,publish,delete,Mobile version of page only
 62921,2023-12-08,Services (Mobile),services-mobile,,publish,delete,Mobile version of page only
