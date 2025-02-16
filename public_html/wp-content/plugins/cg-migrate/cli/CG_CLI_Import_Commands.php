@@ -442,6 +442,37 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
     cg_import_news();
   }
 
+  /**
+   * Saves a post's core content to an export file for later reloading.
+   *
+   * ## OPTIONS
+   * 
+	 * <post_ids>...
+	 * : The ID(s) of the post(s) to check.
+   * 
+   * ## EXAMPLES
+   *
+   *     wp cg save 1 2 3 4
+   *
+   * @param array $args
+   * @param array $assoc_args
+   * 
+   * @subcommand save
+   * @alias save
+   */
+  public function save($args) {
+    foreach ($args as $id) {
+      $post = get_post($id);
+      if ($post) {
+        $filename = CG_MIGRATE_CONTENT_DIR . '/' . $post->ID . '.html';
+        file_put_contents($filename, $post->post_content);
+        WP_CLI::log("Wrote $post->post_type '$post->post_title' to $post->ID.html.");
+      } else {
+        WP_CLI::log("Could not load post $id; skipping.");
+      }
+    }
+  }
+
   private function ids_for_types($post_types, $reprocess = false) {
     $args = [
       'post_type'      => $post_types,

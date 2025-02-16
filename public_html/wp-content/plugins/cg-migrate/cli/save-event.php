@@ -55,8 +55,7 @@ function cg_clean_event_markup($post) {
   cg_dom_process_fusion_tags($dom, $media_tags);
   cg_dom_process_fusion_tags($dom, ['fusion_text']);
 
-  cg_dom_process_fusion_titles($dom, [$post->post_title], 2);
-  $output['facts'] = projectFactTable($dom);
+  cg_dom_process_fusion_titles($dom, [$post->post_title, 'Overview'], 2);
 
   cg_dom_remove_tags($dom, ['table']);
 

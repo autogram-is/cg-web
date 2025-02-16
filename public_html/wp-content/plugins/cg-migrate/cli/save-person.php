@@ -11,7 +11,8 @@ function cg_save_person(array $post_data = [], bool $use_slug = true, bool $crea
     update_field('phone', trim($post_data['phone']) ?? NULL, $post->ID);
     update_field('linkedin', trim($post_data['linkedin']) ?? NULL, $post->ID);
 
-    update_field('show_contact', boolval($post_data['show_contact'] ?? NULL), $post->ID);
+    update_field('generate_bio_page', boolval($post_data['generate_bio_page'] ?? NULL), $post->ID);
+    update_field('hide_contact', boolval($post_data['hide_contact'] ?? NULL), $post->ID);
     update_field('ex_employee', boolval($post_data['ex_employee'] ?? NULL), $post->ID);
   } else {
     WP_CLI::log("Could not update person '". $post_data['title'] ."'");

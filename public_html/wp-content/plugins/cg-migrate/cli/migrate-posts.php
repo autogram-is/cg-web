@@ -1,7 +1,7 @@
 <?php
 
 function cg_migrate_post($post, $dry_run = false) {
-  $data = cg_default_process_markup($post);
+  $data = cg_process_news_markup($post);
   $content = wp_kses($data['processed'], cg_extended_markup());
   $post->post_content = trim($content);
 
@@ -63,6 +63,30 @@ function _process_podcast($post, $dry_run) {
   }
 }
 
-function _process_case_study($post, $dry_run) {
-  // Unpublish.
+function cg_process_news_markup(object $post) {
+  $output = [];
+  $output['original'] = $post->post_content;
+
+  $dom = cg_get_dom($post->post_content);
+
+  $preserve_children = ['fusion_accordion', 'fusion_builder_column', 'fusion_builder_row', 'fusion_builder_container', 'fusion_testimonials'];
+  $remove_entirely = ['fusion_portfolio', 'fusion_blog', 'fusion_slider', 'fusion_slide', 'fusion_code', 'fusion_global', 'fusion_separator'];
+  $simple_tags = ['fusion_checklist', 'fusion_li_item', 'fusion_highlight', 'fusion_button', 'fusion_toggle'];
+  $media_tags = ['fusion_imageframe', 'fusion_image', 'fusion_gallery', 'fusion_youtube', 'fusion_testimonial'];
+
+  $headings_to_ignore = [$post->post_title, 'Overview'];
+
+  cg_dom_remove_tags($dom, $preserve_children, true);
+  cg_dom_remove_tags($dom, $remove_entirely, false);
+  cg_dom_process_fusion_tags($dom, $simple_tags);
+  cg_dom_process_fusion_tags($dom, $media_tags);
+  cg_dom_process_fusion_tags($dom, ['fusion_text']); // Ignore paragraphs that are a parseable date
+
+  cg_dom_process_fusion_titles($dom, $headings_to_ignore);
+
+  $output['processed'] = $dom->saveHTML();
+  
+  cg_log_remaining_fusion_tags($dom);
+
+  return $output;  
 }

@@ -90,7 +90,7 @@
         },
         {
             "key": "field_6790517a38802",
-            "label": "Hide Contact Details",
+            "label": "Hide Contact",
             "name": "hide_contact",
             "aria-label": "",
             "type": "true_false",
@@ -177,5 +177,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739576214
+    "modified": 1739593737
 }

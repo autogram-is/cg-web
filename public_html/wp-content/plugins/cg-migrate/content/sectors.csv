@@ -1,22 +1,26 @@
-title,slug,locale,,,,,
-Civic,civic,na,,,,,
-Culture + Non-Profit,culture-non-profit,na,,,,,
-Data Centers,data-centers,both,,,,,
-Healthcare,healthcare,na,,,,,
-Higher Education,higher-education,na,,,,,
-Hospitality,hospitality,eu,,,,,
-Hospitality + Gaming,hospitality-gaming,na,,,,,
-Industrial + Logistics,industrial-logistics,eu,,,,,
-Infrastructure,infrastructure,both,,,,,
-K-12 Education,k-12-education,na,,,,,
-Life Sciences,life-sciences,eu,,,,,
-Luxury Residential,luxury-residential,na,,,,,
-Public Sector,public-sector,eu,,,,,
-Research + Manufacturing,research-manufacturing,na,,,,,
-Residential,residential,eu,,,,,
-Retail,retail,both,,,,,
-Sports + Recreation,sports-recreation,na,,,,,
-Student Accommodation,student-accomodation,eu,,,,,
-Themed Entertainment,themed-entertainment,na,,,,,
-Transportation,transportation,na,,,,,
-Workplace,workplace,both,,,,,
+id,title,slug,locale,migration_status,migration_notes
+,Aviation,aviation,eu,needs-content,
+,Civic,civic,us,needs-content,new US sector
+,Culture + Non-Profit,culture-non-profit,us,needs-content,current sector title is CULTURE & ARTS
+,Data Centers,data-centers,both,needs-content,
+,Energy + Utilities,energy-utilities,eu,needs-content,
+,Healthcare,healthcare,us,needs-content,
+,Higher Education,higher-education,us,needs-content,
+,Highways,highways,eu,needs-content,
+,Hospitality,hospitality,eu,needs-content,
+,Hospitality + Gaming,hospitality-gaming,us,needs-content,current sector title is HOSPITALITY
+,Industrial + Logistics,industrial-logistics,eu,needs-content,"current sector title is Industrial, Logistics & Warehousing"
+,Infrastructure,infrastructure,us,needs-content,new US sector
+,K-12 Education,k-12-education,us,needs-content,
+,Life Sciences,life-sciences,eu,needs-content,
+,Luxury Residential,luxury-residential,us,needs-content,
+,Public Sector,public-sector,eu,needs-content,new EU sector
+,Rail + Mass Transit,rail-mass-transit,eu,needs-content,
+,Research + Manufacturing,research-manufacturing,us,needs-content,current sector is LIFE SCIENCE
+,Residential,residential,eu,needs-content,
+,Retail,retail,both,needs-content,
+,Sports + Recreation,sports-recreation,us,needs-content,new sector
+,Student Accommodation,student-accomodation,eu,needs-content,current sector title is EDUCATION
+,Themed Entertainment,themed-entertainment,us,needs-content,
+,Transportation,transportation,us,needs-content,current sector title is AVIATION
+,Workplace,workplace,both,needs-content,current sector title is CORPORATE (US) and CORPORATE SOLUTIONS and OFFICES (EU)

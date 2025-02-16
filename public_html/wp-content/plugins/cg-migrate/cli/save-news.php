@@ -43,10 +43,32 @@ function cg_save_news(array $post_data = [], bool $use_slug = false, bool $creat
 
 
 function cg_remap_news_import_fields($data) {
+  if ($data['title'] ?? false) $data['post_title'] = $data['title'];
   if ($data['podcast'] ?? false) $data['podcast_name'] = $data['podcast'];
   if ($data['season'] ?? false) $data['podcast_season'] = $data['season'];
   if ($data['episode'] ?? false) $data['podcast_episode'] = $data['episode'];
   if ($data['youtube_url'] ?? false) $data['podcast_youtube_url'] = $data['youtube_url'];
   if ($data['mp3_url'] ?? false) $data['podcast_mp3_url'] = $data['mp3_url'];
+
+  $service_ids = _cols_to_id_array($data, 'service', ['service1', 'service2', 'service3']);
+  if (count($service_ids) > 0) {
+    $post_data['services'] = $service_ids;
+  }
+
+  $sector_ids = _cols_to_id_array($data, 'sector', ['sector1', 'sector2', 'sector3']);
+  if (count($sector_ids) > 0) {
+    $post_data['sectors'] = $sector_ids;
+  }
+
+  $office_ids = _cols_to_id_array($data, 'office', ['office1', 'office2', 'office3', 'office4']);
+  if (count($office_ids) > 0) {
+    $post_data['offices'] = $office_ids;
+  }
+
+  $office_ids = _cols_to_id_array($data, 'internal_byline', ['internal_byline1', 'internal_byline2', 'internal_byline3']);
+  if (count($office_ids) > 0) {
+    $post_data['offices'] = $office_ids;
+  }
+
   return $data;
 }

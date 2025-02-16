@@ -12,10 +12,10 @@ Americas,,,locations-na,,page,published,post_type,Locations
 Europe + UK,,,locations-eu,,page,published,post_type,Locations
 News + Insights,#,,,,,published,custom,
 Latest Updates,,,news-insights,,page,published,post_type,News + Insights
-News,,,news,,news_category,published,taxonomy,News + Insights
-Company Blog,,,blog,,news_category,published,taxonomy,News + Insights
-Podcast,,,podcasts,,news_category,published,taxonomy,News + Insights
-Press Releases,,,press-releases,,news_category,published,taxonomy,News + Insights
+News,,,news,,news-category,published,taxonomy,News + Insights
+Company Blog,,,blog,,news-category,published,taxonomy,News + Insights
+Podcast,,,podcast,,news-category,published,taxonomy,News + Insights
+Press Releases,,,press-releases,,news-category,published,taxonomy,News + Insights
 Events,,,events-promotions,,page,published,post_type,
 Market Analysis,,,market-analysis,,page,published,post_type,
 Careers,#,,,,,published,custom,
