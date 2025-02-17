@@ -2,9 +2,13 @@
 
 .media {
   margin: 0;
+  &:not(:has(.body)) {
+    max-width: 65rem;
+  }
 
   .swap {
-    background-size: cover;
+    background-size: auto;
+    background-position: center center;
   }
 
   .switcher {
@@ -12,13 +16,24 @@
     --gutter: calc( var(--space-m) * 2 );
 
     .thumb {
+      aspect-ratio: 16/9;
+
       iframe,
       img {
+        aspect-ratio: 16/9;
+        object-position: center center;
+        object-fit: cover;
         display: flex;
+        content-fit: ;
         border: none;
         margin: 0;
         padding: 0;
         width: 100%;
+      }
+      & > div {
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: center center;
       }
     }
 

@@ -1,13 +1,11 @@
 export default function() {
   const mediablocks = document.querySelectorAll( "[data-media]" ),
     createiframe = ( src, poster ) => {
-      const iframe = document.createElement( "iframe" ),
-        size = poster.getBoundingClientRect();
+      const iframe = document.createElement( "iframe" );
 
-      iframe.src = src;
-
-      iframe.style.aspectRatio = size.width > size.height ? size.width + "/" + size.height : size.height + "/" + size.width;
+      iframe.src = src + "?autoplay=1";
       iframe.setAttribute( "allow", "allowfullscreen" );
+      iframe.setAttribute( "allow", "autoplay" );
 
       return iframe;
     };
