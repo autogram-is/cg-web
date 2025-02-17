@@ -1,4 +1,4 @@
-id,date,title,slug,client,facility,location,start_date,end_date,owner,architect,vendors,contractors,case_study_pdf,sector1,sector2,sector3,sector4,service1,service2,service3,service4,office1,office2,office3,migration_status,migration_note
+id,date,title,slug,client,facility,location,start_date,end_date,owner,architects,vendors,contractors,case_study_pdf,sector1,sector2,sector3,sector4,service1,service2,service3,service4,office1,office2,office3,migration_status,migration_note
 68076,2024-12-19,Hyperscale Data Center Facilities,hyperscale-data-center-facilities,,,,,,,,,,,data-centers,,,,planning-scheduling,,,,,,,auto-migrated,
 68060,2024-12-16,LAX01-01 Data Center ,lax01-01-data-center,Prime Data Centers,,,,,,,,,,data-centers,,,,cost-commercial-management,,,,los-angeles,,,auto-migrated,
 68033,2024-12-13,Hyperscale Data Center Portfolio,hyperscale-data-center-portfolio-north-america-europe,,,,,,,,,,,data-centers,,,,planning-scheduling,cost-commercial-management,,,,,,auto-migrated,

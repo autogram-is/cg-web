@@ -65,22 +65,25 @@
         <dd>{{ facts.client }}</dd>
       </div>
       {%- endif %}
-      {% if facts.architect -%}
+      {% if facts.architects -%}
       <div class="sidebar">
-        <dt class="type-detail">Architect</dt>
-        <dd>{{ facts.architect }}</dd>
+        {% set architects = facts.architects | split("\n") %}
+        <dt class="type-detail">{{ architects | pluralize('Architects', 'Architect') }}</dt>
+        {% for architect in architects %}<dd>{{ architect }}</dd>{% endfor %}
       </div>
       {%- endif %}
       {% if facts.vendors -%}
       <div class="sidebar">
-        <dt class="type-detail">Vendors</dt>
-        <dd>{{ facts.vendors }}</dd>
+        {% set vendors = facts.vendors | split("\n") %}
+        <dt class="type-detail">{{ vendors | pluralize('Vendors', 'Vendor') }}</dt>
+        {% for vendor in vendors %}<dd>{{ vendor }}</dd>{% endfor %}
       </div>
       {%- endif %}
       {% if facts.contractors -%}
       <div class="sidebar">
-        <dt class="type-detail">Other Contractors</dt>
-        <dd>{{ facts.contractors }}</dd>
+        {% set contractors = facts.contractors | split("\n") %}
+        <dt class="type-detail">{{ contractors | pluralize('Contractors', 'Contractor') }}</dt>
+        {% for contractor in contractors %}<dd>{{ contractor }}</dd>{% endfor %}
       </div>
       {%- endif %}
       {% if facts.start_date -%}

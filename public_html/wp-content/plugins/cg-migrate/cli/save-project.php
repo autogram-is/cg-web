@@ -17,9 +17,20 @@ function cg_save_project(array $post_data = [], bool $use_slug = false, bool $cr
     setKey('end_date', $post_data, $facts);
 
     setKey('owner', $post_data, $facts);
-    setKey('architect', $post_data, $facts);
+    setKey('architects', $post_data, $facts);
     setKey('vendors', $post_data, $facts);
     setKey('contractors', $post_data, $facts);
+
+    // These are multi-line fields
+    if (key_exists('architects', $facts)) {
+      $facts['architects'] = str_replace(";", "\n", $facts['architects']);
+    }
+    if (key_exists('vendors', $facts)) {
+      $facts['vendors'] = str_replace(";", "\n", $facts['vendors']);
+    }
+    if (key_exists('contractors', $facts)) {
+      $facts['contractors'] = str_replace(";", "\n", $facts['contractors']);
+    }
 
     update_field('facts', $facts, $post->ID);
 
