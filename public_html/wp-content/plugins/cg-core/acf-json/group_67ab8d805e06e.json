@@ -26,7 +26,7 @@
             "taxonomy": [
                 "news-category:podcast"
             ],
-            "return_format": "object",
+            "return_format": "id",
             "multiple": 0,
             "allow_null": 0,
             "allow_in_bindings": 0,
@@ -97,5 +97,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739821163
+    "modified": 1739834402
 }
