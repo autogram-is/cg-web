@@ -203,10 +203,10 @@
                 },
                 {
                     "key": "field_67218b8e58f4f",
-                    "label": "Architect",
-                    "name": "architect",
+                    "label": "Architects",
+                    "name": "architects",
                     "aria-label": "",
-                    "type": "text",
+                    "type": "textarea",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -218,10 +218,10 @@
                     "admin_column_enabled": 0,
                     "default_value": "",
                     "maxlength": "",
-                    "allow_in_bindings": 0,
+                    "allow_in_bindings": 1,
+                    "rows": 3,
                     "placeholder": "",
-                    "prepend": "",
-                    "append": ""
+                    "new_lines": ""
                 },
                 {
                     "key": "field_67218b9c58f50",
@@ -288,5 +288,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738963337
+    "modified": 1739824623
 }

@@ -64,6 +64,8 @@ function _process_podcast(&$post) {
   $text = preg_replace("/<h\d>\s*Podcast Transcript\s*<\/h\d>/", '<h2>Episode Transcript</h2>', $text);
   $text = preg_replace("/\[buzzsprout [^]]*\]/", '', $text);
 
+  $text = preg_replace("/<h\d>\s*(The )?Construction Insiders[\d\w\s\:,]+<\/h\d>/", '', $text);
+
   if (strlen(trim($text)) > 0) {
     $post->post_content = $text;
   } else {
@@ -97,4 +99,8 @@ function cg_process_news_markup(object $post) {
   cg_log_remaining_fusion_tags($dom);
 
   return $output;  
+}
+
+function cg_extract_bylines(&$post) {
+  
 }

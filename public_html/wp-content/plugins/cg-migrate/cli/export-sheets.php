@@ -33,9 +33,9 @@ function cg_export_projects($dry_run = false) {
         'end_date' => $facts['end_date'] ?? '',
     
         'owner' => $facts['owner'] ?? '',
-        'architect' => $facts['architect'] ?? '',
-        'vendors' => $facts['vendors'] ?? '',
-        'contractors' => $facts['contractors'] ?? '',
+        'architects' => str_replace("\n", "; ", ($facts['architects'] ?? '')),
+        'vendors' => str_replace("\n", "; ", ($facts['vendors'] ?? '')),
+        'contractors' => str_replace("\n", "; ", ($facts['contractors'] ?? '')),
     
         'case_study_pdf' => get_field('case_study_pdf', $post->ID, false),
 

@@ -53,14 +53,18 @@ class CGTwigFilters {
     return $twig;
   }
 
-  function pluralize(Countable $countable, string $pluralString, ?string $singularString = '', ?string $noneString = '') {
-    $count = count($countable);
-    if ($count < 1) {
-      return $noneString ?? '';
-    } elseif ($count === 1) {
-      return $singularString ?? '';
+  function pluralize(Countable|array $countable, string $pluralString, ?string $singularString = '', ?string $noneString = '') {
+    if ($countable) {
+      $count = count($countable);
+      if ($count < 1) {
+        return $noneString ?? '';
+      } elseif ($count === 1) {
+        return $singularString ?? '';
+      } else {
+        return $pluralString;
+      }  
     } else {
-      return $pluralString;
+      return $singularString ?? '';
     }
   }
 
