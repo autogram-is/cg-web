@@ -7,6 +7,7 @@
     align-items: center;
   }
   .body {
+    --flow-space: var(--space-xs);
     padding-block: var(--space-s);
     time {
       font-size: var(--size-step-00);

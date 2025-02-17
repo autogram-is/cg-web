@@ -1,6 +1,6 @@
 {#
-  Title: Featured Posts
-  Description: Embedded treatment of news items
+  Title: Featured Post
+  Description: Embedded treatment for any post type
   Category: cg-component
   Icon: embed-post
   Mode: edit
@@ -14,11 +14,43 @@
   SupportsAlignContent: false
   SupportsAlignText: false
 #}
+{% set eyebrow = block.data.eyebrow ? block.data.eyebrow : feature.date %}
+{% set title   = block.data.heading ? block.data.heading : feature.title %}
+{% set subhed  = block.data.subhed ? block.data.subhed : feature.title %}
 
-{# featured image or overide #}
 
-{# title or override #}
+<div class="feature">
+  <div class="sidebar item">
+    {% set feature = get_posts(fields.featured_post) %}
 
-{# excerpt or override #}
-
-{# link to… #}
+    {% if feature.thumbnail %}
+    <a href="{{ feature.link }}" class="thumb">
+      <img
+        src="{{feature.thumbnail.src|resize(800, 650) }}"
+        height="{{feature.thumbnail.height}}"
+        width="{{feature.thumbnail.width}}"
+        alt="{{feature.thumbnail.alt}}" />
+    </a>
+    {% elseif feature.placeholder_text %}
+    <span class="placeholder topo-full {{ feature.placeholder_bg }}">
+      <span>{{ feature.placeholder_text }}</span>
+    </span>
+    {% endif %}
+    <div class="body flow">
+      <div class="hgroup {% if fields.excerpt %}hed-accent {% endif %}flow">
+        {% if eyebrow|date('y-m-d') %}
+        <time datetime="{{eyebrow|date('y-m-d')}}" class="type-detail weight-regular">{{ eyebrow }}</time>
+        {% else %}
+        <span class="type-detail weight-regular">{{ eyebrow }}</span>
+        {% endif %}
+        <h2 class="type-hed">
+          <a href="{{ feature.link }}">{{ title }}</a>
+        </h2>
+        {% if subhed %}
+        <p class="subhed">{{ subhed }}</p>
+        {% endif %}
+      </div>
+      <p>{{ fields.excerpt }}</p>
+    </div>
+  </div>
+</div>

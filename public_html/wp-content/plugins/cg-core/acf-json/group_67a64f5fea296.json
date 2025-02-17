@@ -31,9 +31,53 @@
             "bidirectional_target": []
         },
         {
+            "key": "field_67b37b8ddeed6",
+            "label": "Eyebrow Override",
+            "name": "eyebrow",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_67a64f9f20cde",
-            "label": "Headline Override",
-            "name": "headline",
+            "label": "Heading Override",
+            "name": "heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67b37bd4975f3",
+            "label": "Subhead",
+            "name": "subhed",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -57,7 +101,7 @@
             "label": "Excerpt Override",
             "name": "excerpt",
             "aria-label": "",
-            "type": "text",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -69,10 +113,10 @@
             "admin_column_enabled": 0,
             "default_value": "",
             "maxlength": "",
-            "allow_in_bindings": 0,
+            "allow_in_bindings": 1,
+            "rows": "",
             "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "new_lines": ""
         },
         {
             "key": "field_67a64fc120ce0",
@@ -120,5 +164,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738959724
+    "modified": 1739816640
 }
