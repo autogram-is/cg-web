@@ -19,7 +19,7 @@
 
 {% block posthero %}
   {% if post.nearby_projects(6) | length %}
-  <div class="region wrapper">
+  <div class="region region-primary wrapper">
   {% include "partial/project-gallery.twig" with { heading: "Representative Experience", items: post.nearby_projects(6), sectors: true, services: true } %}
   </div>
   {% endif %}
