@@ -23,5 +23,7 @@
 
 {% block posthero %}
 {% set gallery = post.meta('gallery') %}
+<div class="region region-primary">
 {% if gallery %}{% include "fields/gallery.twig" with { images: gallery } %}{% endif %}
+</div>
 {% endblock %}

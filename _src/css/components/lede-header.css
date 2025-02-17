@@ -21,7 +21,7 @@
     .office-name {
       margin-block-end: var(--space-2xs);
       .name {
-        font-size: var(--size-step-3);
+        font-size: var(--size-step-2);
         font-weight: var(--weight-semibold);
         margin-block: 0;
       }

@@ -6,6 +6,31 @@
   <h1 class="type-pagehed hed-accent">{{ pagetitle }}</h1>
 {% endblock %}
 
+{% block sidebar %}
+<div class="inline-form region flow bg-timeless-backdrop">
+  <p>Learn more about our flexible approach to service delivery:</p>
+  <form class="flow">
+    <label>
+      <span class="label">Email</span>
+      <input type="email" required="" class="small">
+    </label>
+    <label>
+      <span class="label">Name</span>
+      <input type="text" class="small">
+    </label>
+    <label>
+      <span class="label">Company</span>
+      <input type="text" class="small">
+    </label>
+    <div class="repel">
+      <a href="#">Privacy Information</a>
+      <button class="button mini submit throw-end">Subscribe</button>
+    </div>
+  </form>
+</div>
+{% endblock %}
+
+
 
 {% block floatingsidebar %}
 {%- include 'partial/hero-notch-details.twig' -%}
@@ -14,7 +39,7 @@
 
 {% block posthero %}
   {% if post.projects(6) | length %}
-  <div class="region wrapper">
+  <div class="region region-primary wrapper">
   {% include "partial/project-gallery.twig" with { heading: "Representative Experience", items: post.projects, offices: true, services: true, utilities: "bg-timeless-backdrop" } %}
   </div>
   {% endif %}

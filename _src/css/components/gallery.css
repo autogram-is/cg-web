@@ -77,9 +77,6 @@
     & {
       margin-bottom: calc( var(--space-2xl) + var(--space-s-m) );
     }
-    &:has(.project-listing) {
-      padding-block-end: var(--space-3xl);
-    }
     .thumb:hover {
       transform: translateY( calc( 0px - var(--space-3xs) ) );
     }

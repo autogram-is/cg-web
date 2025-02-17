@@ -15,4 +15,6 @@
   SupportsAlignContent: false
   SupportsAlignText: false
 #}
+<div class="region">
 {% include ['/partial/project-'~fields.layout~'.twig', 'partial/project-gallery.twig'] with { items: get_posts(fields.posts), services: true, sectors: true, offices: true, utilities: classes } %}
+</div>

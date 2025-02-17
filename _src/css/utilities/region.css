@@ -8,10 +8,10 @@
   padding-bottom: var(--region-space, var(--space-s-m));
 
   &.region-primary {
-    padding-block: var(--region-space, var(--space-s-m)) calc( var(--region-space ) * 4 );
+    padding-block: var(--region-space, var(--space-s-m)) calc( var(--region-space,var(--space-s-m) ) * 4 );
   }
   &.region-double {
-    padding-block: var(--region-space, var(--space-l-xl));
+    padding-block: calc( var(--region-space ) * 2 );
   }
 }
 

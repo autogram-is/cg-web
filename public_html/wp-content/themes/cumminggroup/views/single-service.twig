@@ -14,7 +14,7 @@
 
 {% block posthero %}
   {% if post.projects(6) | length %}
-  <div class="region wrapper">
+  <div class="region region-primary wrapper">
   {% include "partial/project-gallery.twig" with { heading: "Representative Experience", items: post.projects, offices: true, sectors: true, utilities: "bg-timeless-backdrop" } %}
   </div>
   {% endif %}

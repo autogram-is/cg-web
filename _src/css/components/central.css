@@ -26,14 +26,15 @@
     &[class*="bg-regal-purple"]::before       { background: var(--color-regal-purple); }
     &[class*="bg-legacy-red"]::before         { background: var(--color-legacy-red); }
   }
-
-  .central-inner > * {
-    --flow-space: var(--region-space, var(--space-s-m));
-    &p {
-      --flow-space: var(--space-xs);
+  .central-inner {
+    padding-block-end: calc(var(--region-space) * 2 );
+    & > * {
+      --flow-space: var(--region-space, var(--space-s-m));
+      &p {
+        --flow-space: var(--space-xs);
+      }
     }
   }
-
   .wrapper .sidebar {
     --sidebar-target-width: 22rem;
   }

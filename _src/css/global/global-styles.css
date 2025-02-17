@@ -110,7 +110,6 @@ main:focus {
 
 hr:not([class]),
 hr.wp-block-separator:not(.is-style-dots):not(.is-style-wide) {
-  margin-block: var(--space-m-l);
   background: var(--color-steel-highlight);
   border: none;
   height: 1px;
