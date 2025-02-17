@@ -12,11 +12,11 @@ function cg_format_phone(?string $input, string $format = 'display') {
         } else if ($format === 'local') {
           return $number->format(PhoneNumberFormat::NATIONAL);
         } else {
-          return $number->format(PhoneNumberFormat::INTERNATIONAL);
+          return $number->format(PhoneNumberFormat::INTERNATIONAL) . " <!-- " . $number->getRegionCode() . " -->";
         }
       }
     }
     catch (PhoneNumberParseException $e) {
-      return $input;
+      return $input . "<!-- " . $e->getMessage() . "-->";
     }
   }
