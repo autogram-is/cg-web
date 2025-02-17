@@ -9,25 +9,31 @@
       {% if sectors -%}
       <div class="sidebar">
         <dt class="type-detail">{{ sectors | pluralize('Sectors', 'Sector') }}</dt>
+        <dd>
         {% for sector in sectors %}
-        <dd><a href="{{ sector.link }}">{{ sector.title }}</a></dd>
+          <a href="{{ sector.link }}">{{ sector.title }}</a>
         {% endfor %}
+        </dd>
       </div>
       {%- endif %}
       {% if services -%}
       <div class="sidebar">
         <dt class="type-detail">{{ services | pluralize('Services', 'Service') }}</dt>
+        <dd>
         {% for service in services %}
-        <dd><a href="{{ service.link }}">{{ service.title }}</a></dd>
+          <a href="{{ service.link }}">{{ service.title }}</a>
         {% endfor %}
+        </dd>
       </div>
       {%- endif %}
       {% if offices -%}
       <div class="sidebar">
         <dt class="type-detail">{{ offices | pluralize('Offices', 'Office') }}</dt>
+        <dd>
         {% for office in offices %}
-        <dd><a href="{{ office.link }}">{{ office.title }}{% if office.location %}, {{ office.location }}{% endif %}</a></dd>
+          <a href="{{ office.link }}">{{ office.title }}{% if office.location %}, {{ office.location }}{% endif %}</a>
         {% endfor %}
+        </dd>
       </div>
       {%- endif %}
       </div>
