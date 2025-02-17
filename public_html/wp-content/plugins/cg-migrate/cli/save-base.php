@@ -63,13 +63,11 @@ function cg_save_base(string $post_type, array $post_data = [], bool $use_slug =
     if(array_key_exists('migration_status', $post_data)) {
       update_field('migration_status', $post_data['migration_status'] ?? NULL, $post->ID);
     }
-    if(array_key_exists('case_study_id', $post_data)) {
-      update_field('migration_case_study', $post_data['case_study_id'] ?? NULL, $post->ID);
-    }
     if(array_key_exists('migration_note', $post_data)) {
       update_field('migration_note', $post_data['migration_note'] ?? NULL, $post->ID);
     }
   }
+
 
   // Return the ID of the post (or an error, if it couldn't be created or updated successfully)
   return get_post($id);

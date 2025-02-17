@@ -32,13 +32,11 @@ function cg_export_projects($dry_run = false) {
         'start_date' => $facts['start_date'] ?? '',
         'end_date' => $facts['end_date'] ?? '',
     
-
         'owner' => $facts['owner'] ?? '',
         'architect' => $facts['architect'] ?? '',
         'vendors' => $facts['vendors'] ?? '',
         'contractors' => $facts['contractors'] ?? '',
     
-        'case_study_id' => get_field('migration_case_study', $post->ID, false),
         'case_study_pdf' => get_field('case_study_pdf', $post->ID, false),
 
         'sector1' => $sectors[0] ?? '',
@@ -153,6 +151,7 @@ function cg_export_bios($dry_run = false) {
         'slug' => $post->post_name,
     
         'role' => get_field('role', $post->ID),
+        'generate_bio_page' => get_field('generate_bio_page', $post->ID),
         'hide_contact' => get_field('hide_contact', $post->ID),
         'ex_employee' => get_field('ex_employee', $post->ID),
         'email' => get_field('email', $post->ID),
@@ -167,6 +166,7 @@ function cg_export_bios($dry_run = false) {
         'service3' => $services[2] ?? '',
         'office' => $offices[0] ?? '',
 
+        'headshot' =>  attachment_url_to_postid(get_the_post_thumbnail_url($post->ID)),
         'migration_status' => get_field('migration_status', $post->ID, false),
         'migration_note' => get_field('migration_note', $post->ID, false),
       );

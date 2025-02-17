@@ -111,6 +111,16 @@ function _fusion_event_details($html) {
 }
 
 function _person_from_event_attendee($bio, $dry_run) {
+  $known_duplicates = array(
+    'Eugenie LeRoux' => 'Eugenie LaRoux',
+    'Kimberly McHugh' => 'Kim McHugh',
+    'William Foulkes' => 'Bill Foulkes',
+    'Chris Whitley' => 'Chris Whitley, Jr.'
+  );
+  foreach ($known_duplicates as $dupe => $correct) {
+    $bio['name'] = str_replace($dupe, $correct, trim($bio['name']));
+  }
+
   $slug = trim(sanitize_title($bio['name']));
   $headshot_id = attachment_url_to_postid($bio['headshot']);
 

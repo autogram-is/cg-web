@@ -31,7 +31,7 @@
 				<div class="region cluster socials">
 					{% for item in settings.social %}
 					<a href="{{ item.url }}" class="button inverted icon">
-					{%- if item.icon -%}<span class="dashicons {{ item.icon }}"></span>
+					{%- if item.icon -%}<span class="dashicons {{ item.icon }}"></span><span class="visually-hidden">{{ item.label }}</span>
 					{%- else -%}
 					<span>{{ item.label }}</span>
 					{%- endif -%}

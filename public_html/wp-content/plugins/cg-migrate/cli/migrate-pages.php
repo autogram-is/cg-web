@@ -24,12 +24,12 @@ function cg_apply_fixed_pages($dry_run = false) {
     $file = basename($match);
     $path = CG_MIGRATE_CONTENT_DIR . '/' . $file;
 
-    $slug = str_replace('.html', '', $file);
+    $chunks = explode('.', $file);
 
-    if (ctype_digit($slug)) {
-      $post = get_post(intval($slug));
+    if (count($chunks) === 2) {
+      $post = get_post(intval($chunks[0]));
     } else {
-      $post = get_post_by_name($slug, 'page');
+      $post = get_post_by_name($chunks[1], $chunks[0]);
     }
 
     if ($post && file_exists($path)) {

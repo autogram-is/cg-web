@@ -33,7 +33,7 @@ function cg_import_offices($dry_run = false) {
     foreach ($items as $item) {
       if ($item['migration_status'] === 'delete') {
         cg_delete_office($item['slug']);
-        WP_CLI::log("office '" . $item['title'] . "' deleted. " . $item['migration_notes']);
+        WP_CLI::log("office '" . $item['title'] . "' deleted. " . $item['migration_notes'] ?? '');
         $deleted++;
       } else {
         if (in_array($item['slug'], $processed)) {

@@ -70,6 +70,29 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
   /**
    * Import the portfolio organization hierarchy
    *
+   * ## EXAMPLES
+   *
+   *     wp cg stub
+   *
+   * @subcommand do
+   */
+  public function do($args) {
+    // WP_CLI::log(var_export($data, true));
+    // update_field('social', $social, 'cg_options');
+
+    $args = array( 
+      'posts_per_page' => -1,
+      'post_type'      => 'post',
+    );
+    $posts = get_posts($args);
+    foreach ($posts as $post) {
+      cg_postprocess_news($post);
+    }
+  }
+
+  /**
+   * Import the portfolio organization hierarchy
+   *
    * ## OPTIONS
    * 
    * [--dry-run]
@@ -268,8 +291,6 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
       $post = get_post($post_id);
       $post = cg_migrate_page($post, $dry_run, $reprocess);
     }
-
-    cg_apply_fixed_pages($dry_run);
   }
 
   /**
@@ -390,6 +411,39 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    * @alias migrate
    */
   public function migrate() {
+    WP_CLI::log("*** Starting migration\n");
+
+    WP_CLI::log("\n*** Building portfolio hierarchy...\n");
+    $this->hierarchy([], []);
+
+    WP_CLI::log("\n*** Updating project portfolio...\n");
+    $this->projects([], []);
+
+    WP_CLI::log("\n*** Updating news posts...\n");
+    $this->posts([], []);
+
+    WP_CLI::log("\n*** Updating events...\n");
+    $this->events([], []);
+
+    WP_CLI::log("\n*** Updating static pages...\n");
+    $this->pages([], []);
+
+    WP_CLI::log("\n*** Re-mapping old tags...\n");
+    $this->tags([], []);
+
+    WP_CLI::log("\n*** Building navigation menus...\n");
+    $this->navigation([], []);
+
+    WP_CLI::log("\n*** Applying manual content updates...\n");
+    $this->import([], []);
+
+    WP_CLI::log("\n*** Updating site options...\n");
+    cg_populate_site_defaults();
+
+    WP_CLI::log("\n*** Updating site options...\n");
+    $this->archive([], []);
+
+    WP_CLI::log("\n*** Migration complete...\n");
   }
 
 
@@ -410,7 +464,7 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    */
   public function export() {
     cg_export_projects();
-    cg_export_offices();
+    // cg_export_offices();
     cg_export_bios();
     cg_export_news();
     cg_export_events();
@@ -440,6 +494,47 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
     cg_import_bios();
     cg_import_projects();
     cg_import_news();
+    cg_apply_fixed_pages();
+  }
+
+  /**
+   * Saves a post's core content to an export file for later reloading.
+   *
+   * ## OPTIONS
+   * 
+	 * <post_ids>...
+	 * : The ID(s) of the post(s) to check.
+   * 
+   * [--slugs]
+   * : If set, use slugs to identify the posts rather than IDs.
+   * 
+   * ## EXAMPLES
+   *
+   *     wp cg save 1 2 3 4
+   *
+   * @param array $args
+   * @param array $assoc_args
+   * 
+   * @subcommand save
+   * @alias save
+   */
+  public function save($args, $assoc_args) {
+    $use_slugs = $assoc_args['slugs'] ?? false;
+
+    foreach ($args as $id) {
+      $post = get_post($id);
+      if ($post) {
+        if ($use_slugs) {
+          $filename = CG_MIGRATE_CONTENT_DIR . '/' . $post->post_type . '.' . $post->post_name . '.html';
+        } else {
+          $filename = CG_MIGRATE_CONTENT_DIR . '/' . $post->ID . '.html';
+        }
+        file_put_contents($filename, $post->post_content);
+        WP_CLI::log("Wrote $post->post_type '$post->post_title' to $post->ID.html.");
+      } else {
+        WP_CLI::log("Could not load post $id; skipping.");
+      }
+    }
   }
 
   private function ids_for_types($post_types, $reprocess = false) {

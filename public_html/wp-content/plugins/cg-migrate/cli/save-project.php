@@ -46,6 +46,8 @@ function setKey($key, $source, &$target) {
 }
 
 function _map_project_relationships(&$post_data) {
+  if ($post_data['title'] ?? false) $post_data['post_title'] = $post_data['title'];
+
   $service_ids = _cols_to_id_array($post_data, 'service', ['service1', 'service2', 'service3', 'service4']);
   if (count($service_ids) > 0) {
     $post_data['services'] = $service_ids;

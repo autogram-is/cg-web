@@ -50,22 +50,22 @@ function cg_cli_build_nav_menu(string $menu, $locale = false, $dry_run = false) 
         WP_CLI::log(($dry_run ? "Dry-Run: " : "") . "Added '" . $item['title'] . "' ($id) to $menu");
       }
     } elseif($item['type'] === 'taxonomy')  {
-      $term = get_term_by('slug', $item['slug'], $item['object']);
+      $term = get_term_by('slug', $item['object-slug'], $item['object']);
       if ($term) {
         if (!$dry_run) {
           $id = wp_update_nav_menu_item($menu_id, 0, array(
-            'menu-item-title' => wp_slash($item['title'] ?? $term['name']),
+            'menu-item-title' => wp_slash($item['title'] ?? $term->name),
             'menu-item-url' => $item['url'],
             'menu-item-description' => wp_slash($item['description']),
-            'menu-item-object' => $term['taxonomy'],
-            'menu-item-object-id' => $term['term_id'],
+            'menu-item-object' => $term->taxonomy,
+            'menu-item-object-id' => $term->term_id,
             'menu-item-type' => 'taxonomy',
             'menu-item-status' => 'publish',
             'menu-item-parent-id' => $parents[$item['parent']] ?? NULL,
             'menu-item-position' => $order++,
           ));
-          WP_CLI::log(($dry_run ? "Dry-Run: " : "") . ($item['parent'] ? '  ' : '') . "Added '" . $item['title'] . "' ($id) to $menu");  
         }
+        WP_CLI::log(($dry_run ? "Dry-Run: " : "") . ($item['parent'] ? '  ' : '') . "Added '" . $item['title'] . "' ($id) to $menu");  
       }
     } elseif($item['type'] === 'post_type')  {
       $post = get_post_by_name($item['object-slug'], $item['object']);
@@ -135,6 +135,8 @@ function object_by_locale(string $post_type = 'post') {
   $query = new WP_Query(array(
     'post_type' => $post_type,
     'fields' => 'ids',
+    'orderby'   => 'post_title',
+    'order' => 'ASC',
     'posts_per_page' => -1,
   ));
 

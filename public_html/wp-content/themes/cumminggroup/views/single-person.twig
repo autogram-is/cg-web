@@ -1,0 +1,31 @@
+{% extends "single.twig" %}
+{% set pagetitle = title ? title : post.title %}
+
+
+{% block hero %}
+<h1 class="type-pagehed hed-accent">{{ pagetitle }}{% if post.location %}, {{ post.location }}{% endif %}</h1>
+{% if bio_is_hidden %}{% include 'partial/hidden-bio-warning.twig' %}{% endif %}
+{% endblock %}
+
+
+{% block content %}
+  <div class="grid region region-primary">
+    {% include 'fields/office-locations.twig' with { city: post } %}
+  </div>
+{% endblock %}
+
+
+{% block posthero %}
+  {% if post.nearby_projects(6) | length %}
+  <div class="region wrapper">
+  {% include "partial/project-gallery.twig" with { heading: "Representative Experience", items: post.nearby_projects(6), sectors: true, services: true } %}
+  </div>
+  {% endif %}
+
+  {% if post.people | length %}
+  <div class="region">
+  {% include "partial/person-list.twig" with { heading: pagetitle ~ " Team", items: post.people } %}
+  </div>
+  {% endif %}
+{% endblock %}
+
