@@ -92,7 +92,7 @@ function cg_export_offices($dry_run = false) {
         $name = $details[0]['name'] ?? '';
         $email = $details[0]['email'] ?? '';
         $phone = $details[0]['phone'] ?? '';
-        $address = $details[0]['address'] ?? '';
+        $address = str_replace("\n", "; ", $details[0]['address'] ?? '');
       } else {
         $name = '';
         $email = '';
