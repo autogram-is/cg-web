@@ -61,6 +61,26 @@
             "allow_null": 1,
             "multiple": 0,
             "allow_in_bindings": 0
+        },
+        {
+            "key": "field_67b3d13dc542c",
+            "label": "Market Analysis contact form",
+            "name": "default_analysis_form",
+            "aria-label": "",
+            "type": "forms",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "return_format": "id",
+            "allow_null": 1,
+            "multiple": 0,
+            "allow_in_bindings": 0
         }
     ],
     "location": [
@@ -81,5 +101,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739485679
+    "modified": 1739837814
 }
