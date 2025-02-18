@@ -15,7 +15,7 @@
 
 {% block content %}
   <div class="region region-primary">
-    <div class="sidebar region">
+    <div class="sidebar region person">
       {% if post.thumbnail %}
       <div>
       <img src="{{post.thumbnail.src }}"
@@ -24,7 +24,7 @@
         alt="{{post.thumbnail.alt}}" />
       {% endif %}
       </div>
-      <div>
+      <div class="person-body">
         {{ post.content }}
       </div>
     </div>

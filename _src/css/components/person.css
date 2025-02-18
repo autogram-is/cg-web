@@ -31,6 +31,15 @@
       }
     }
   }
+  .person-body {
+    p {
+      color: var(--color-deep-steel);
+      font-size: var(--size-step-1);
+      font-family: var(--font-secondary);
+      line-height: var(--leading-loose);
+      font-weight: var(--weight-regular);
+    }
+  }
   .prose {
     --flow-space: var(--space-xs);
     p {
