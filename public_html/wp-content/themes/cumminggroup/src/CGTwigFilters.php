@@ -90,7 +90,7 @@ class CGTwigFilters {
     }
   }
 
-    /**
+  /**
    * Sort offices
    *
    * - Sort by location, then title within the location, alphabetically
@@ -99,9 +99,10 @@ class CGTwigFilters {
    */
 
   function sort_locations(?Traversable $locations): array {
-    if( is_null($locations) ) return [];
+    if( is_null($locations)) return [];
     $loc_array = iterator_to_array($locations);
-
+    if (count($loc_array) === 0) return [];
+    
     foreach ($loc_array as $key => $row) {
       $title[$key]    = $row -> title;
       $location[$key] = $row -> location;
