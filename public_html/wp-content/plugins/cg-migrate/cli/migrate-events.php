@@ -27,7 +27,7 @@ function cg_migrate_event($post, $dry_run = false) {
   // Process the attendees
   $attendees = [];
   foreach ($extracted['attendees'] as $bio) {
-    $bioPost = _person_from_event_attendee($bio, $dry_run);
+    $bioPost = _person_from_post_markup($bio, $dry_run);
     if ($bioPost) {
       $attendees[] = $bioPost->ID;
     }
@@ -110,7 +110,7 @@ function _fusion_event_details($html) {
   return $output;
 }
 
-function _person_from_event_attendee($bio, $dry_run) {
+function _person_from_post_markup($bio, $dry_run) {
   $known_duplicates = array(
     'Eugenie LeRoux' => 'Eugenie LaRoux',
     'Kimberly McHugh' => 'Kim McHugh',

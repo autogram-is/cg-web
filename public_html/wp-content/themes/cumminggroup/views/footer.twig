@@ -1,13 +1,13 @@
 
 <footer class="site-footer bg-steel-shade">
 
-{% if settings.cta.default or settings.cta.fallback %}
+{% if settings.cta.form or settings.cta.fallback %}
 	<div class="footer-cta">
 		<div class="notch wrapper">
 			<div class="notch-inner inner-cta repel">
 				<div class="body flow bg-deep-steel">
-				{% if settings.cta.default %}
-					{{ settings.cta.default | gravityform }}
+				{% if settings.cta.form %}
+					{{ settings.cta.form | gravityform }}
 				{% elseif settings.cta.fallback %}
 					{% apply shortcodes %}{{ settings.cta.default }}{% endapply %}
 				{%- endif %}

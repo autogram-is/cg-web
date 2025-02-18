@@ -10,8 +10,11 @@
           <img decoding="async" src="{{ post.podcast_youtube_url | youtube_poster }}">
         {% endif %}
         </a>
-      {% elseif post.podcast_mp3_url %}
-      {% endif %}
+        {% elseif post.podcast_mp3_url %}
+          <a href="{{ post.podcast_mp3_url }}" data-media="{{ post.podcast_mp3_url }}">
+            <img decoding="async" src="{{ post.thumbnail }}">
+          </a>
+        {% endif %}
       </div>
     </div>
   </div>

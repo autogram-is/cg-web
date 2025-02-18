@@ -1,13 +1,13 @@
 {
-    "key": "group_67ab8d805e06e",
-    "title": "Media Block",
+    "key": "group_67b3f13e47ae2",
+    "title": "Market Reports Block",
     "fields": [
         {
-            "key": "field_67ab8d8068cac",
-            "label": "Media Post",
-            "name": "media",
+            "key": "field_67b3f13e4b1f4",
+            "label": "Layout",
+            "name": "layout",
             "aria-label": "",
-            "type": "post_object",
+            "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -17,29 +17,24 @@
                 "id": ""
             },
             "admin_column_enabled": 0,
-            "post_type": [
-                "post"
-            ],
-            "post_status": [
-                "publish"
-            ],
-            "taxonomy": [
-                "news-category:podcast"
-            ],
-            "return_format": "id",
+            "choices": {
+                "index": "Index"
+            },
+            "default_value": "index",
+            "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
             "allow_in_bindings": 0,
-            "bidirectional": 0,
-            "ui": 1,
-            "bidirectional_target": []
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         },
         {
-            "key": "field_67b39042c1368",
-            "label": "Heading Override",
-            "name": "heading",
+            "key": "field_67b3f13e4b962",
+            "label": "Limit",
+            "name": "limit",
             "aria-label": "",
-            "type": "text",
+            "type": "number",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -50,18 +45,20 @@
             },
             "admin_column_enabled": 0,
             "default_value": "",
-            "maxlength": "",
+            "min": "",
+            "max": "",
             "allow_in_bindings": 0,
             "placeholder": "",
+            "step": "",
             "prepend": "",
             "append": ""
         },
         {
-            "key": "field_67b3905ac1369",
-            "label": "Excerpt Override",
-            "name": "excerpt",
+            "key": "field_67b3f13e4bd47",
+            "label": "Show pagination",
+            "name": "pagination",
             "aria-label": "",
-            "type": "textarea",
+            "type": "true_false",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -71,12 +68,12 @@
                 "id": ""
             },
             "admin_column_enabled": 0,
-            "default_value": "",
-            "maxlength": "",
+            "message": "",
+            "default_value": 1,
             "allow_in_bindings": 0,
-            "rows": "",
-            "placeholder": "",
-            "new_lines": ""
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
         }
     ],
     "location": [
@@ -84,7 +81,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/cg-media"
+                "value": "acf\/cg-list-reports"
             }
         ]
     ],
@@ -97,5 +94,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739834402
+    "modified": 1739846015
 }

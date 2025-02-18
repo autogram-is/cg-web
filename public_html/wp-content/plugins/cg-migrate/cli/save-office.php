@@ -38,7 +38,7 @@ function cg_add_loc_to_office(array $data = []) {
     'name' => trim($data['name'] ?? ''),
     'email' => trim($data['email'] ?? ''),
     'phone' => trim($data['phone'] ?? ''),
-    'address' => trim($data['address'] ?? ''),
+    'address' => str_replace("; ", "\n", ($data['address'] ?? '')),
   );
 
   $post = get_post_by_name($data['slug'], 'office');

@@ -9,7 +9,7 @@ function cg_fusion_person(DOMElement &$el) {
     'email' => $el->getAttribute('email'),
     'phone' => $el->getAttribute('phone'),
   );
-  $el->parentElement->remove($el);
+  cg_delete_node($el);
   return $person;
 }
 
