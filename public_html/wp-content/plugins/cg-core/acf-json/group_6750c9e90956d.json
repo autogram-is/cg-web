@@ -59,7 +59,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "report"
+                "value": "analysis"
             }
         ]
     ],
@@ -72,5 +72,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738968241
+    "modified": 1739837162
 }

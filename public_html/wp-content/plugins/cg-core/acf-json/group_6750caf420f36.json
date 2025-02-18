@@ -20,7 +20,7 @@
             "post_type": [
                 "post",
                 "event",
-                "report"
+                "analysis"
             ],
             "post_status": "",
             "taxonomy": "",
@@ -85,5 +85,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738968470
+    "modified": 1739837135
 }
