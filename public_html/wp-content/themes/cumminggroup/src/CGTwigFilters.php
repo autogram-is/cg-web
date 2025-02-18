@@ -13,6 +13,9 @@ class CGTwigFilters {
       new \Twig\TwigFilter( 'pluralize', [$this, 'pluralize'] )
     );
     $twig->addFilter(
+      new \Twig\TwigFilter( 'date_quarter', [$this, 'date_quarter'] )
+    );
+    $twig->addFilter(
       new \Twig\TwigFilter( 'stylize', [ $this, 'stylize_title' ] )
     );
     $twig->addFilter(
@@ -183,5 +186,16 @@ class CGTwigFilters {
     }
 
     if ($url) return $url;
+  }
+
+  /**
+   * Takes a date string and returns a 'Q1, 2025' style date string.
+   */
+  function date_quarter(string $dateStr) {
+    $date = strtotime($dateStr);
+    $month = date("n", $date);
+    $year = date("Y", $date);
+    $quarter = ceil($month / 3);
+    return "Q$quarter, $year";
   }
 }

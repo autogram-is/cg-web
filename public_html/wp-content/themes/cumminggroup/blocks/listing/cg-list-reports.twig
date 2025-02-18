@@ -1,0 +1,36 @@
+{#
+  Title: Reports
+  Description: Index of Market Analysis reports
+  Category: cg-index
+  Icon: chart-area
+  Mode: edit
+  SupportsMode: true
+  Align: false
+  PostTypes: 
+  EnqueueStyle: 
+  SupportsAlign: none
+  SupportsMultiple: true
+  SupportsReusable: true
+  SupportsInnerBlocks: false
+  SupportsAlignContent: false
+  SupportsAlignText: false
+#}
+<div class="resource-listings {{ classes }} listings-{{ fields.layout }}">
+{% for post in posts %}
+{% if ( fields.layout == "hero" and loop.index == 1 ) %}
+  {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': 'hero' } %}
+{%  elseif ( fields.layout == "hero" and ( loop.index == 2 or loop.index == 3 ) ) or ( fields.layout == "secondary" and ( loop.index == 1 or loop.index == 2 )) %}
+  {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': 'secondary' } %}
+{%  else  %}
+  {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': style } %}
+{% endif %}
+{% if ( fields.layout == "secondary" and loop.index == 2 ) or ( fields.layout == "hero" and loop.index == 3 ) %}
+  <hr>
+{% endif %}
+{% endfor %}
+{% if fields.pagination %}
+<div class="region">
+{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+</div>
+{% endif %}
+</div>

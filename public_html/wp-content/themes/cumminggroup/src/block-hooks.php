@@ -308,6 +308,17 @@ function cg_populate_custom_block_data($context) {
     }
     $context['posts'] = Timber::get_posts($query_options);
 
+  } else if ('cg-list-reports' === $slug) {
+    // Build news, optionally filtered by category to, to populate $context['posts']
+    $query_options = array(
+      'post_type' => 'report',
+      'posts_per_page' => isset( $fields['limit'] ) && $fields['limit'] > 0 ? $fields['limit'] : 10,
+    );
+    if ($fields['pagination']) {
+      $query_options['paged'] = get_query_var('paged') ? get_query_var('paged') : 1;
+    }
+    $context['posts'] = Timber::get_posts($query_options);
+
   } else if ('cg-list-team' === $slug) {
     // Build people, falling back on current post's related people, to populate $context['posts']
     $context['posts'] = $posts;
