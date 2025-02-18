@@ -31,7 +31,7 @@
   {# Consider choosing from different color/image treatments? #}
 
 {% else %} {# The fallback: display the post's featured image in the header #}
-  {% if post.thumbnail %}
+  {% if post.thumbnail and not post.type == "person" %}
   <img src="{{post.thumbnail.src|resize(2000, 850) }}"
     height="{{post.thumbnail.height}}"
     width="{{post.thumbnail.width}}"

@@ -3,13 +3,32 @@
 
 
 {% block hero %}
-<h1 class="type-pagehed hed-accent">{{ pagetitle }}{% if post.location %}, {{ post.location }}{% endif %}</h1>
+<div class="hgroup hed-accent">
+  <h1 class="hed type-pagehed">{{ pagetitle }}{% if post.location %}, {{ post.location }}{% endif %}</h1>
+  {% if post.role %}
+  <span class="subhed">{{ post.role }}</span>
+  {% endif %}
+</div>
 {% if bio_is_hidden %}{% include 'partial/hidden-bio-warning.twig' %}{% endif %}
 {% endblock %}
 
 
 {% block content %}
-  <div class="grid region region-primary">
+  <div class="region region-primary">
+    <div class="sidebar region">
+      {% if post.thumbnail %}
+      <div>
+      <img src="{{post.thumbnail.src }}"
+        height="{{post.thumbnail.height}}"
+        width="{{post.thumbnail.width}}"
+        alt="{{post.thumbnail.alt}}" />
+      {% endif %}
+      </div>
+      <div>
+        {{ post.content }}
+      </div>
+    </div>
+    test
     {% include 'fields/office-locations.twig' with { city: post } %}
   </div>
 {% endblock %}
