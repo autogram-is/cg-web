@@ -5,13 +5,26 @@ function cg_migrate_post($post, $dry_run = false) {
   $content = wp_kses($data['processed'], cg_extended_markup());
   $post->post_content = trim($content);
 
+  $people = [];
+  foreach ($data['people'] as $bio) {
+    $bioPost = _person_from_post_markup($bio, $dry_run);
+    if ($bioPost) {
+      $people[] = $bioPost->ID;
+    }
+  }
+  if (count($people)) {
+    $messages[] = count($people) . ' people';
+    if (!$dry_run) {
+      update_field('internal_bylines', $people, $post->ID);
+    }
+  }
+
   if (!$dry_run) {
     wp_update_post($post);
     clean_post_cache($post->ID);
     WP_CLI::log(($dry_run ? "Dry Run: " : "")  . $post->post_type . " #$post->ID ($post->post_title) processed");
   }
 }
-
 
 
 function cg_postprocess_news($post, $dry_run = false) {
@@ -80,7 +93,7 @@ function cg_process_news_markup(object $post) {
   $dom = cg_get_dom($post->post_content);
 
   $preserve_children = ['fusion_accordion', 'fusion_builder_column', 'fusion_builder_row', 'fusion_builder_container', 'fusion_testimonials'];
-  $remove_entirely = ['fusion_portfolio', 'fusion_blog', 'fusion_slider', 'fusion_slide', 'fusion_code', 'fusion_global', 'fusion_separator'];
+  $remove_entirely = ['fusion_portfolio', 'fusion_blog', 'fusion_slider', 'fusion_slide', 'fusion_code', 'fusion_global', 'fusion_separator', 'fusion_table'];
   $simple_tags = ['fusion_checklist', 'fusion_li_item', 'fusion_highlight', 'fusion_button', 'fusion_toggle'];
   $media_tags = ['fusion_imageframe', 'fusion_image', 'fusion_gallery', 'fusion_youtube', 'fusion_testimonial'];
 
@@ -93,6 +106,8 @@ function cg_process_news_markup(object $post) {
   cg_dom_process_fusion_tags($dom, ['fusion_text']); // Ignore paragraphs that are a parseable date
 
   cg_dom_process_fusion_titles($dom, $headings_to_ignore);
+
+  $output['people'] = cg_event_person_components($dom);
 
   $output['processed'] = $dom->saveHTML();
   
