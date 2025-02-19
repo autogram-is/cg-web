@@ -133,7 +133,7 @@ function cg_post_templates($post, $directory = '') {
     $categories = get_the_terms($post->ID, 'news-category');
     if ($categories != NULL && !is_wp_error($categories) && count($categories) > 0) {
       $context['news_category'] = $categories[0];
-      $templates[] = $post->post_type . '-' . $categories[0]->slug . '.twig';
+      $templates[] = $directory . $post->post_type . '-' . $categories[0]->slug . '.twig';
     }
   }
 
