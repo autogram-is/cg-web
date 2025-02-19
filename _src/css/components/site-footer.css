@@ -9,6 +9,19 @@
       padding-block: var(--space-m);
       padding-right: var(--space-m-l);
       color: var(--color-dark);
+      .body {
+        width: 100%;
+      }
+
+      [id*="gform_wrapper"] {
+        margin-block: var(--space-2xs);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        & > * {
+          margin-block: var(--space-2xs);
+        }
+      }
       &:not([class*="bg-"]) {
         background: var(--color-deep-steel);
         @mixin invert;
