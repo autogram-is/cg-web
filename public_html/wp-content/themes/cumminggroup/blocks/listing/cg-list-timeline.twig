@@ -1,0 +1,41 @@
+{#
+	Title: CG Timeline
+	Description: A timeline made up of heading/description pairs or linked posts.
+	Category: cg-index
+	Icon: dashicons-excerpt-view
+	Mode: edit
+	SupportsMode: true
+	Align: false
+	PostTypes: 
+	EnqueueStyle: 
+	SupportsAlign: none
+	SupportsMultiple: true
+	SupportsReusable: true
+	SupportsInnerBlocks: false
+	SupportsAlignContent: false
+	SupportsAlignText: false
+#}
+<div class="timeline">
+	{% for yearspan in fields.timeline %}
+	<h3 class="hed type-outline">{{ yearspan.yearhed }}</h3>
+	<ol role="list">
+		{% for event in yearspan.events %}
+		<li class="timeline-item">
+			{% if event.eventstat %}
+			<h4 class="type-standout">{{ event.eventstat }}</h4>
+			{% endif %}
+			{% if event.items %}
+			<h4 class="type-detail">{{ event.eventhed }}</h4>
+			<ul class="client-list grid flow">
+				{% for item in event.items %}
+				<li>{{ item.item }}</li>
+				{% endfor %}
+      </ul>
+			{% else %}
+			<p>{{ event.eventhed }}</p>
+			{% endif %}
+		</li>
+		{% endfor %}
+	</ol>
+	{% endfor %}
+</div>
