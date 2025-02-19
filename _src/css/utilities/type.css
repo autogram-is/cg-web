@@ -315,6 +315,7 @@
   }
 }
 
+p.is-style-lede-standout,
 .is-style-lede-standout {
   display: flex;
   flex-direction: column;
@@ -324,6 +325,7 @@
   font-weight: var(--weight-light);
   letter-spacing: var(--tracking-normal);
   line-height: var(--leading-loose);
+  margin-block: var(--space-s-m);
   text-wrap: balance; /* https://caniuse.com/mdn-css_properties_text-wrap_pretty */
 }
 
