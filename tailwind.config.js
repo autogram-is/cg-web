@@ -27,6 +27,7 @@ module.exports = {
   content: [
     './_src/**/*.{html,js,jsx,mdx,njk,json,twig}',
     './_src/design-system/**/*.{twig,json}',
+    './public_html/wp-content/themes/cumminggroup/**/*.{twig,json}'
   ],
   presets: [],
   theme: {
