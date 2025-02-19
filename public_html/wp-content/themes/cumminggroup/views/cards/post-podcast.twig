@@ -1,0 +1,44 @@
+<div class="region">
+  <figure class="media">
+    <div class="switcher">
+      <div class="thumb">
+        <div>
+        {% set mp3 = feature.meta('podcast_mp3_url') %}
+        {% set youtube = feature.meta('podcast_youtube_url') %}
+        {% set thumbnail = get_post( thumbnail ) %}
+        {% if youtube %}
+          <a href="{{ youtube }}" data-media="{{ youtube | youtube_embed }}">
+          {% if feature.media.poster %}
+            <img decoding="async" src="{{ thumbnail ? thumbnail.src : feature.poster.src }}">
+          {% else %}
+            <img decoding="async" src="{{ thumbnail ? thumbnail.src : youtube | youtube_poster }}">
+          {% endif %}
+          </a>
+        {% elseif mp3 %}
+          <a href="{{ mp3 }}" data-media="{{ mp3 }}">
+            <img decoding="async" src="{{ thumbnail ? thumbnail.src : feature.thumbnail }}">
+          </a>
+        {% endif %}
+        </div>
+      </div>
+      <figcaption class="flow">
+        <div class="body">
+          <div class="hgroup {% if fields.excerpt %}hed-accent {% endif %}flow">
+            {% set eyebrow = eyebrow ? eyebrow : feature.eyebrow %}
+            {% if eyebrow|date('y-m-d') %}
+            <time datetime="{{eyebrow|date('y-m-d')}}" class="type-detail weight-regular">{{ eyebrow }}</time>
+            {% else %}
+            <span class="type-detail weight-regular">{{ eyebrow }}</span>
+            {% endif %}
+            <h3 class="type-hed">
+              <a href="{{ feature.link }}">{{ title ? title : feature.title }}</a>
+            </h3>
+            <p class="subhed">{{ subhed ? subhed : feature.subhed }}</p>
+          </div>
+
+          <p>{{ excerpt ? excerpt : feature.excerpt.read_more(false) }}</p>
+        </div>
+      </figcaption>
+    </div>
+  </figure>
+</div>

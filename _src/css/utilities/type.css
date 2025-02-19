@@ -289,6 +289,9 @@
       border: var(--content-division);
     }
   }
+  & + p {
+    margin-block-start: var(--space-xs);
+  }
 }
 
 [class*="bg-timeless-gold"] {

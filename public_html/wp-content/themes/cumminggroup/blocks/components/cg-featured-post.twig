@@ -14,45 +14,12 @@
   SupportsAlignContent: false
   SupportsAlignText: false
 #}
-{% set eyebrow = block.data.eyebrow ? block.data.eyebrow : feature.date %}
-{% set title   = block.data.heading ? block.data.heading : feature.title %}
-{% set subhed  = block.data.subhed ? block.data.subhed : feature.title %}
-
-
-<div class="region">
-  <div class="feature">
-    <div class="sidebar item">
-      {% set feature = get_posts(fields.featured_post) %}
-
-      {% if feature.thumbnail %}
-      <a href="{{ feature.link }}" class="thumb">
-        <img
-          src="{{feature.thumbnail.src|resize(800, 650) }}"
-          height="{{feature.thumbnail.height}}"
-          width="{{feature.thumbnail.width}}"
-          alt="{{feature.thumbnail.alt}}" />
-      </a>
-      {% elseif feature.placeholder_text %}
-      <span class="placeholder topo-full {{ feature.placeholder_bg }}">
-        <span>{{ feature.placeholder_text }}</span>
-      </span>
-      {% endif %}
-      <div class="body flow">
-        <div class="hgroup {% if fields.excerpt %}hed-accent {% endif %}flow">
-          {% if eyebrow|date('y-m-d') %}
-          <time datetime="{{eyebrow|date('y-m-d')}}" class="type-detail weight-regular">{{ eyebrow }}</time>
-          {% else %}
-          <span class="type-detail weight-regular">{{ eyebrow }}</span>
-          {% endif %}
-          <h2 class="type-hed">
-            <a href="{{ feature.link }}">{{ title }}</a>
-          </h2>
-          {% if subhed %}
-          <p class="subhed">{{ subhed }}</p>
-          {% endif %}
-        </div>
-        <p>{{ fields.excerpt }}</p>
-      </div>
-    </div>
-  </div>
-</div>
+{% set feature = get_post( block.data.featured_post ) %}
+{% set override = block.data %}
+{% include template_list( feature, 'cards') with { 
+    thumbnail: override.thumbnail,
+    eyebrow  : override.eyebrow,
+    title    : override.title, 
+    subhed   : override.subhed,
+    excerpt  : override.excerpt
+} %}

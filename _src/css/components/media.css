@@ -66,6 +66,9 @@
         line-height: var(--leading-wide);
       }
     }
+    .hgroup .subhed {
+      font-size: var(--size-step-1);
+    }
   }
   &[data-direction="rtl"] {
     .body {

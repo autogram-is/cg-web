@@ -1,0 +1,34 @@
+<div class="region">
+  <div class="feature">
+    <div class="sidebar item">
+      {% if feature.thumbnail %}
+      <a href="{{ feature.link }}" class="thumb">
+        <img
+          src="{{feature.thumbnail.src|resize(800, 650) }}"
+          height="{{feature.thumbnail.height}}"
+          width="{{feature.thumbnail.width}}"
+          alt="{{feature.thumbnail.alt}}" />
+      </a>
+      {% elseif feature.placeholder_text %}
+      <span class="placeholder topo-full {{ feature.placeholder_bg }}">
+        <span>{{ feature.placeholder_text }}</span>
+      </span>
+      {% endif %}
+      <div class="body flow">
+        <div class="hgroup {% if fields.excerpt %}hed-accent {% endif %}flow">
+          {% set eyebrow = eyebrow ? eyebrow : feature.eyebrow %}
+          {% if eyebrow|date('y-m-d') %}
+          <time datetime="{{eyebrow|date('y-m-d')}}" class="type-detail weight-regular">{{ eyebrow }}</time>
+          {% else %}
+          <span class="type-detail weight-regular">{{ eyebrow }}</span>
+          {% endif %}
+          <h2 class="type-hed">
+            <a href="{{ feature.link }}">{{ title ? title : feature.title }}</a>
+          </h2>
+          <p class="subhed">{{ subhed ? subhed : feature.subhed }}</p>
+        </div>
+          <p>{{ excerpt ? excerpt : feature.excerpt.read_more(false) }}</p>
+      </div>
+    </div>
+  </div>
+</div>
