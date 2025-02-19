@@ -36,6 +36,9 @@ PROSE UTILITY
     --region-space: var(--space-2xs);
     margin-block: var(--region-space, var(--space-2xs));
   }
+  & > p:last-of-type {
+    margin-block-end: var(--space-s-m);
+  }
   & > h1,  & > h2,  & > h3,  & > h4, & > h5, & > h6 {
     --flow-space: var(--space-m-l);
   }
@@ -61,6 +64,25 @@ PROSE UTILITY
     font-weight: var(--weight-normal);
     letter-spacing: var(--tracking-tight);
     text-transform: uppercase;
+    &.is-style-hed-accent,
+    &.hed-accent {
+      position: relative;
+      padding-bottom: var(--space-s);
+      margin-bottom: var(--space-2xs);
+      &::after {
+        border: 1px solid var(--color-timeless-gold);
+        bottom: 0;
+        content: "";
+        display: inline-block;
+        left: 0;
+        position: absolute;
+        width: var(--space-s-m);
+      }
+      .amp {
+        font-size: 1.8ch;
+        padding-inline: var(--space-nudge);
+      }
+    }
     strong {
       font-weight: var(--weight-semibold);
     }
