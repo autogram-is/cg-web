@@ -36,9 +36,6 @@ PROSE UTILITY
     --region-space: var(--space-2xs);
     margin-block: var(--region-space, var(--space-2xs));
   }
-  & > p:last-of-type {
-    margin-block-end: var(--space-s-m);
-  }
   & > h1,  & > h2,  & > h3,  & > h4, & > h5, & > h6 {
     --flow-space: var(--space-m-l);
   }
