@@ -195,7 +195,46 @@ function cg_register_block_styles() {
     array('name' => 'lede-standout','label' => __( 'Standout Lede', 'textdomain' ), 'is_default' => false)
   );
 
+    /**
+   * Paragraphs
+   */
+  register_block_style('core/columns',
+    array('name' => 'bg-none','label' => __( 'No Backdrop', 'textdomain' ), 'is_default' => true)
+  );
+  register_block_style('core/columns',
+    array('name' => 'bg-timeless-backdrop','label' => __( 'Timeless Backdrop', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('core/columns',
+    array('name' => 'bg-timeless-highlight','label' => __( 'Timeless Highlight', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('core/columns',
+    array('name' => 'bg-timeless-gold','label' => __( 'Timeless Gold', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('core/columns',
+    array('name' => 'bg-steel-shade','label' => __( 'Steel Shade', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('core/columns',
+    array('name' => 'bg-deep-steel','label' => __( 'Deep Steel', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('core/columns',
+    array('name' => 'bg-regal-purple','label' => __( 'Regal Purple', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('core/columns',
+    array('name' => 'bg-legacy-red','label' => __( 'Legacy Red', 'textdomain' ), 'is_default' => false)
+  );
+
+
 }
+
+function columns_block_classes( $block_content, $block ) {
+    return preg_replace('/wp-block-columns/', 'wp-block-columns region', $block_content);
+}
+add_filter( 'render_block_core/columns', 'columns_block_classes', 10, 2 );
+
+function column_block_classes( $block_content, $block ) {
+    return preg_replace('/wp-block-column/', 'wp-block-column prose flow', $block_content);
+}
+add_filter( 'render_block_core/column', 'column_block_classes', 10, 2 );
 
 /**
  * Disable jank typography features on core blocks.

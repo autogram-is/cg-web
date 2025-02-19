@@ -299,6 +299,7 @@
 }
 
 p.is-style-lede-header {
+  --region-space: var(--region-space, var(--space-s-m));
   color: var(--color-deep-steel);
   font-size: var(--size-step-1);
   font-family: var(--font-secondary);
@@ -340,6 +341,6 @@ p.is-style-lede-standout {
   }
 }
 
-.is-style-type-standout {
-  border: 1px solid red;
+.has-text-align-center {
+  margin-inline: auto;
 }

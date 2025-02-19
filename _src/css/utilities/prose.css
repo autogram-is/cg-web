@@ -33,16 +33,11 @@ PROSE UTILITY
     max-width: 95ch;
   }
   & > p {
-    margin-block: var(--region-space, var(--space-s-m));
-  }
-  & > p + p {
-    --flow-space: var(--space-s);
+    --region-space: var(--space-2xs);
+    margin-block: var(--region-space, var(--space-2xs));
   }
   & > h1,  & > h2,  & > h3,  & > h4, & > h5, & > h6 {
     --flow-space: var(--space-m-l);
-    & + p {
-      margin-block-start: var(--space-2xs);
-    }
   }
   & > h1[class*="is-style-hed"],  & > h2[class*="is-style-hed"],  & > h3[class*="is-style-hed"],  & > h4[class*="is-style-hed"] {
     --flow-space: var(--space-m-l);
@@ -58,7 +53,17 @@ PROSE UTILITY
   }
   & > h3.wp-block-heading,
   & > h3:not([class]) {
-    font-size: var(--size-step-2);
+    color: inherit;
+    display: flex;
+    flex-direction: row;
+    font-family: var(--font-body);
+    font-size: var(--size-step-1);
+    font-weight: var(--weight-normal);
+    letter-spacing: var(--tracking-tight);
+    text-transform: uppercase;
+    strong {
+      font-weight: var(--weight-semibold);
+    }
   }
   & > h4.wp-block-heading,
   & > h4:not([class]) {
@@ -89,8 +94,5 @@ PROSE UTILITY
       font-size: var(--size-step-0);
       max-width: 100ch;
     }
-  }
-  & > p:first-of-type {
-    margin-block: var(--space-s-m);
   }
 }
