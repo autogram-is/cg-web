@@ -1,4 +1,4 @@
-{% extends "single.twig" %}
+{% extends "single/default.twig" %}
 {% set pagetitle = title ? title : post.title %}
 
 
@@ -8,9 +8,6 @@
 
 
 {% block content %}
-  <div class="lede-header">
-    {# <p class="lede">byline</p> #}
-  </div>
   <div class="grid region region-primary">
     {% include 'fields/office-locations.twig' with { city: post } %}
   </div>

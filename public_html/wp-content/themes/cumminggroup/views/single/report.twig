@@ -1,4 +1,4 @@
-{% extends "base.twig" %}
+{% extends "single/default.twig" %}
 
 {% block hero %}
   <time datetime="{{ post.date('Y-m-d') }}">{{ post.date | date_quarter }}</time>
@@ -36,6 +36,5 @@
 {% endblock %}
 
 {% block posthero %}
-
   {# Display four most recent market analysis reports that are not the current post #}
 {% endblock %}

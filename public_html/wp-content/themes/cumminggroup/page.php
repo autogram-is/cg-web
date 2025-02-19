@@ -26,13 +26,10 @@ $context = Timber::context();
 $timber_post     = Timber::get_post();
 $context['post'] = $timber_post;
 
-$templates = [
-  'page-' . $timber_post->post_name . '.twig',
-  'page.twig'
-];
+$templates = cg_post_templates($timber_post, 'single');
 
 if (is_front_page()) {
-	array_unshift( $templates, 'front-page.twig', 'home.twig' );
+	array_unshift( $templates, 'front-page.twig', 'page-home.twig' );
 }
 
 Timber::render( $templates, $context );

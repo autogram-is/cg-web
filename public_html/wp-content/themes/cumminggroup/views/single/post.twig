@@ -1,4 +1,4 @@
-{% extends "single.twig" %}
+{% extends "single/default.twig" %}
 {% set pagetitle = title ? title : post.title %}
 
 
@@ -6,7 +6,6 @@
   <time datetime="{{post.date('Y-m-d')}}">{{post.date}}</time>
   <h1 class="type-pagehed hed-accent">{{ pagetitle }}</h1>
 {% endblock %}
-
 
 {% block content %}
   {% include 'fields/news-bylines.twig' %}

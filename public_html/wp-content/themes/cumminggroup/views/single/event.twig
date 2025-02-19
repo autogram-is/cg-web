@@ -1,4 +1,4 @@
-{% extends "base.twig" %}
+{% extends "single/default.twig" %}
 
 {% block hero %}
 	{% if post.start_date %}
@@ -8,14 +8,6 @@
   	<time datetime="{{post.date('Y-m-d')}}">{{post.date}}</time>
 	{% endif %}
   <h1 class="type-pagehed hed-accent">{{ post.title }}</h1>
-{% endblock %}
-
-{% block content %}
-	<div class="sidebar">
-		<div class="flow central-inner prose">
-			{{post.content}}
-		</div>	
-	</div>
 {% endblock %}
 
 {% block sidebar %}

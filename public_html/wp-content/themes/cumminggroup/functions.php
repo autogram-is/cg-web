@@ -42,6 +42,7 @@ add_filter('timber/post/classmap', function ($classmap) {
     'event' => CGPost::class,
     'sector' => CGPost::class,
     'service' => CGPost::class,
+    'report' => CGPost::class,
 
     'person' => CGPerson::class,
     'office' => CGOffice::class,
@@ -106,4 +107,39 @@ function is_news_category() {
 	}
 
 	return get_query_var('news-category') ?? false;
+}
+
+
+/**
+ * Returns an array of potential templates for a post, optionally in a given subdirectory.
+ * 
+ * For post ID 1 with a title 'My Post', the following array will be returned:
+ * 
+ * - post-1.twig
+ * - post-category-slug.twig
+ * - post-my-post.twig
+ * - post.twig
+ * - default.twig
+ * 
+ * @return array
+ */
+function cg_post_templates($post, $directory = '') {
+  $templates = [];
+  if ($directory && !str_ends_with($directory, '/')) $directory .= '/';
+  
+  $templates[] = $directory . $post->post_type . '-' . $post->ID . '.twig';
+
+  if ($post->post_type === 'post') {
+    $categories = get_the_terms($post->ID, 'news-category');
+    if ($categories != NULL && !is_wp_error($categories) && count($categories) > 0) {
+      $context['news_category'] = $categories[0];
+      $templates[] = $post->post_type . '-' . $categories[0]->slug . '.twig';
+    }
+  }
+
+  $templates[] = $directory . $post->post_type . '.twig';
+  $templates[] = $directory . $post->post_type . '-' . $post->post_name . '.twig';
+  $templates[] = $directory . 'default.twig';
+
+  return $templates;
 }

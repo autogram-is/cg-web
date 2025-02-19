@@ -53,6 +53,10 @@ class CGTwigFilters {
       new \Twig\TwigFilter( 'sort_locations', [ $this, 'sort_locations' ] )
     );
 
+    $twig->addFunction(
+      new \Twig\TwigFunction( 'template_list', 'cg_post_templates' )
+    );
+
     return $twig;
   }
 
