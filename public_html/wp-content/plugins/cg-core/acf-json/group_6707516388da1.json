@@ -45,6 +45,13 @@
                 "operator": "==",
                 "value": "service"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
         ]
     ],
     "menu_order": 0,
@@ -56,5 +63,5 @@
     "active": true,
     "description": "EU, USA, or Both",
     "show_in_rest": 0,
-    "modified": 1733344839
+    "modified": 1740027754
 }
