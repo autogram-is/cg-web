@@ -2,7 +2,11 @@
   <div class="gallery {{ utilities }}">
     <div class="wrapper gallery-inner">
       {% for image in images -%}
-      <img src="{{ get_image(image) }}">
+      <img 
+        src="{{ get_image(image) }}"
+        srcset="{{ get_image(image).srcset }}"
+        sizes="auto"
+        loading="lazy">
       {%- endfor %}
     </div>
   </div>

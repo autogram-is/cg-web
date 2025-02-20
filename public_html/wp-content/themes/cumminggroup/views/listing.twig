@@ -4,9 +4,17 @@
 		{% if post.thumbnail %}
 		<a href="{{ post.link }}" class="thumb">
 			<img
-				src="{{post.thumbnail.src|resize(800, 650) }}"
-				height="{{post.thumbnail.height}}"
-				width="{{post.thumbnail.width}}"
+				src="{{post.thumbnail.src|resize(1200, 975) }}"
+				srcset="{{ post.thumbnail.src|resize(1200, 975) }} 1200w, {{ post.thumbnail.src|resize(800, 650) }} 800w, {{ post.thumbnail.src|resize(600, 487) }} 600w, {{ post.thumbnail.src|resize(400, 325) }} 400w"
+				{% if type == "hero" %}
+				sizes="(min-width: 1240px) 401px, calc(96.74vw - 38px)"
+				loading="eager"
+				{% else %}
+				sizes="auto"
+				loading="lazy"
+				{% endif %}
+				height="1200"
+				width="975"
 				alt="{{post.thumbnail.alt}}" />
 		</a>
 		{% elseif post.placeholder_text %}

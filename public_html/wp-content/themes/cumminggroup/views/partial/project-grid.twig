@@ -10,7 +10,14 @@
         <div class="sidebar swap flow">
           {% if project.thumbnail %}
           <a href="{{ project.link }}" class="thumb">
-            <img src="{{ project.thumbnail.src }}" height="{{ project.thumbnail.height }}" width="{{ project.thumbnail.width }}" alt="{{ project.thumbnail.alt }}">
+            <img 
+            src="{{ project.thumbnail.src }}" 
+            srcset="{{ project.thumbnail.srcset }}"
+            sizes="auto"
+            loading="lazy"
+            height="{{ project.thumbnail.height }}" 
+            width="{{ project.thumbnail.width }}" 
+            alt="{{ project.thumbnail.alt }}">
           </a>
           {% endif %}
           <div class="body">

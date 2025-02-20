@@ -4,7 +4,7 @@
 
 <div class="hero-highlight topo-full">
   {% if hero.type == 'default' and hero.image %} {# the homepage featured image #}
-  <img src="{{hero.image.src|resize(2000, 850) }}"
+  <img src="{{hero.image.src }}"
     srcset="{{ hero.image.srcset }}"
     sizes="100vw"
     height="{{hero.image.height}}"
@@ -12,7 +12,7 @@
     alt="{{hero.image.alt}}" />
 
 {% elseif hero.type == 'gallery' and hero.image %} {# a random selection from multiple images #}
-  <img src="{{hero.image.src|resize(2000, 850) }}"
+  <img src="{{hero.image.src }}"
     srcset="{{ hero.image.srcset }}"
     sizes="100vw"
     height="{{hero.image.height}}"
@@ -20,7 +20,7 @@
     alt="{{hero.image.alt}}" />
 
 {% elseif hero.type == 'project' and hero.project.thumbnail %} {# a project's featured image #}
-  <img src="{{hero.project.thumbnail.src|resize(2000, 850) }}"
+  <img src="{{hero.project.thumbnail.src }}"
     srcset="{{ hero.image.srcset }}"
     sizes="100vw"
     height="{{hero.project.thumbnail.height}}"
