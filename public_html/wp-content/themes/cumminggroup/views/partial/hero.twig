@@ -3,7 +3,13 @@
 {%- set hero = post.hero -%}
 
 <div class="hero-highlight topo-full">
-{% if hero.type == 'gallery' and hero.image %} {# a random selection from multiple images #}
+  {% if hero.type == 'default' and hero.image %} {# the homepage featured image #}
+  <img src="{{hero.image.src|resize(2000, 850) }}"
+    height="{{hero.image.height}}"
+    width="{{hero.image.width}}"
+    alt="{{hero.image.alt}}" />
+
+{% elseif hero.type == 'gallery' and hero.image %} {# a random selection from multiple images #}
   <img src="{{hero.image.src|resize(2000, 850) }}"
     height="{{hero.image.height}}"
     width="{{hero.image.width}}"
