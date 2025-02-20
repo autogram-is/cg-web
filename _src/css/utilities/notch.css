@@ -20,3 +20,7 @@
 .notch-inner {
   background: var(--color-light);
 }
+
+.postbody-notch {
+  margin-block-start: calc( var(--region-space, var(--space-s-m) ) * 4 );
+}

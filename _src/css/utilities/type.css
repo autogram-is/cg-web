@@ -252,7 +252,7 @@
   .location,
   .author,
   .subhed {
-    color: var(--color-deep-steel);
+    color: var(--color-dark);
     font-size: var(--size-step-3);
     letter-spacing: var(--tracking-tight);
     font-weight: var(--weight-semibold);
@@ -262,6 +262,12 @@
     margin-block-start: 0;
   }
   .title {
+    color: var(--color-steel-shade);
+    margin-block-start: var(--space-3xs);
+    font-size: var(--size-step-0);
+    display: flex;
+  }
+  .scopes {
     color: var(--color-deep-steel);
     display: flex;
     span {
@@ -291,6 +297,11 @@
   }
   & + p {
     margin-block-start: var(--space-xs);
+  }
+
+  &.person-header {
+    margin-block: var(--space-s-m) var(--space-s-m);
+    line-height: var(--leading-normal);
   }
 }
 

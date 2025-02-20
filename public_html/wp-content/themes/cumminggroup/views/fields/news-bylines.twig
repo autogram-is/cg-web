@@ -1,18 +1,21 @@
 {% if post.external_byline %}
-<div class="lede-header lede-news region">
   <address class="hgroup person-header">
     <span class="author">{{ post.external_byline }}</span>
   </address>
-</div>
-{% elseif post.internal_authors %}
-{% for author in post.internal_authors %}
-  <address class="hgroup person-header">
-    <span class="author">{{ author.title }}</span>
-    {% if author.role %}
-    <span class="title">
+  {% elseif post.internal_authors %}
+  {% for author in post.internal_authors %}
+    <address class="hgroup person-header">
+      <span class="author">{{ author.title }}</span>
+      {% if author.role %}
       <span class="title type-detail">{{ author.role }}</span>
-    </span>
-    {% endif %}
-  </address>
-{% endfor %}
+      {% endif %}
+       {% if author.sectors %}
+        <div class="scopes">
+          {% for sector in author.sectors %}
+          <span class="scope type-detail"><a href="#">{{ sector | stylize }}</a></span>
+          {% endfor %}
+        </div>
+        {% endif %}
+    </address>
+  {% endfor %}
 {% endif %}

@@ -15,4 +15,8 @@
   {% include 'partial/share-this.twig' %}
 {% endblock %}
 
-{% block posthero %}{% endblock %}
+{% block posthero %}
+{% if post.people %}
+  {% include 'partial/person-footer.twig' with { heading: "See us there", people: post.people } %}
+{% endif %}
+{% endblock %}

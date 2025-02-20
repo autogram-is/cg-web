@@ -98,6 +98,5 @@
 }
 
 .person-header {
-  margin-block: var(--space-s-m);
+  margin-block: var(--space-nudge) var(--space-s-m);
 }
-

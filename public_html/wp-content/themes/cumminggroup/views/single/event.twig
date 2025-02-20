@@ -25,6 +25,6 @@
 
 {% block posthero %}
 {% if post.people %}
-{% include 'partial/person-list.twig' with { heading: "See us there", items: post.people } %}
+	{% include 'partial/person-footer.twig' with { heading: "See us there", people: post.people } %}
 {% endif %}
 {% endblock %}

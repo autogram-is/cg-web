@@ -110,8 +110,9 @@ PROSE UTILITY
     p:first-of-type {
       color: var(--color-deep-steel);
       font-family: var(--font-display);
-      font-size: var(--size-step-0);
+      font-size: var(--size-step-1);
       max-width: 100ch;
+      margin-block: var(--space-m-l) var(--space-l-xl);
     }
   }
 }

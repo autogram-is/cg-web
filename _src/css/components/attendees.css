@@ -1,6 +1,14 @@
 .attendees {
   position: relative;
 
+  &.notch-inner {
+    padding-block-end: 0;
+  }
+
+  .attendee-list {
+    padding-top: var(--region-space, var(--space-s-m));
+  }
+
   &.hatched::before {
     @mixin hatching;
     content: "";

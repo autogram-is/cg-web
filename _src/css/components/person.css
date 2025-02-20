@@ -116,8 +116,9 @@
       flex-wrap: wrap;
       font-size: var(--size-step-000);
       letter-spacing: var(--tracking-tight);
+      margin-block-start: var(--space-3xs);
       li {
-        --flow-space: var(--space-nudge);
+        --flow-space: var(--space-3xs);
       }
       li a {
         font-family: var(--font-body);
