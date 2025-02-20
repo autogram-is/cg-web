@@ -3,6 +3,7 @@
     <span class="author">{{ post.external_byline }}</span>
   </address>
   {% elseif post.internal_authors %}
+  <div class="grid">
   {% for author in post.internal_authors %}
     <address class="hgroup person-header">
       <span class="author">{{ author.title }}</span>
@@ -18,4 +19,5 @@
         {% endif %}
     </address>
   {% endfor %}
+  </div>
 {% endif %}

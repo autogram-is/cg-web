@@ -253,7 +253,7 @@
   .author,
   .subhed {
     color: var(--color-dark);
-    font-size: var(--size-step-3);
+    font-size: var(--size-step-2);
     letter-spacing: var(--tracking-tight);
     font-weight: var(--weight-semibold);
     line-height: var(--leading-normal);
@@ -312,6 +312,7 @@
   }    
 }
 
+.prose {
 .is-style-lede-header {
   --region-space: var(--region-space, var(--space-s-m));
   color: var(--color-deep-steel);
@@ -328,7 +329,7 @@
     margin-block-end: var(--space-xl);
   }
 }
-
+}
 p.is-style-lede-standout,
 .is-style-lede-standout {
   display: flex;
