@@ -1,7 +1,6 @@
 {#- post.hero is populated by the hero method on the CGPost class -#}
 <!-- {{ post.hero.type }} hero component -->
 {%- set hero = post.hero -%}
-
 <div class="hero-highlight topo-full">
   {% if hero.type == 'default' and hero.image %} {# the homepage featured image #}
   <img src="{{ hero.image.src }}"
@@ -43,7 +42,7 @@
   {# Consider choosing from different color/image treatments? #}
 
 {% else %} {# The fallback: display the post's featured image in the header #}
-  {% if post.thumbnail and not post.type == "person" %}
+  {% if post.thumbnail and post.type != 'person' %}
   <img src="{{post.thumbnail.src|resize(2000, 850) }}"
     srcset="{{ hero.image.srcset }}"
     sizes="100vw"
