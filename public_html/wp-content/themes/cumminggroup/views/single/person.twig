@@ -28,21 +28,14 @@
         {{ post.content }}
       </div>
     </div>
-    {% include 'fields/office-locations.twig' with { city: post } %}
   </div>
 {% endblock %}
 
 
 {% block posthero %}
-  {% if post.nearby_projects(6) | length %}
-  <div class="region wrapper">
-  {% include "partial/project-gallery.twig" with { heading: "Representative Experience", items: post.nearby_projects(6), sectors: true, services: true } %}
-  </div>
-  {% endif %}
-
-  {% if post.people | length %}
-  <div class="region">
-  {% include "partial/person-list.twig" with { heading: pagetitle ~ " Team", items: post.people } %}
+  {% if post.authored_news(6) | length %}
+  <div class="region region-primary wrapper">
+  {% include "partial/related-news-list.twig" with { heading: "Writing and Thought Leadership", items: post.authored_news(6) } %}
   </div>
   {% endif %}
 {% endblock %}

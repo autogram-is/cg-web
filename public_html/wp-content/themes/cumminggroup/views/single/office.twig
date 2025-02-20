@@ -21,9 +21,15 @@
   </div>
   {% endif %}
 
-  {% if post.people | length %}
+  {% if post.leadership | length %}
   <div class="region">
-  {% include "partial/person-list.twig" with { heading: pagetitle ~ " Team", items: post.people } %}
+  {% include "partial/person-list.twig" with { heading: pagetitle ~ " Leadership", items: post.leadership } %}
+  </div>
+  {% endif %}
+
+  {% if post.nearby_news(6) | length %}
+  <div class="region region-primary wrapper">
+  {% include "partial/related-news-list.twig" with { heading: "Related News", items: post.nearby_news(6) } %}
   </div>
   {% endif %}
 {% endblock %}
