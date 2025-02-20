@@ -14,7 +14,6 @@
 
 	{% set heroimg = post.hero.type == "project" ? post.hero.project.image : post.hero.image %}
 
-{{ heroimg }}
 	{% if heroimg %}
 		<link rel="preload" as="image" href="{{ heroimg.src }}" imageSrcSet="{{ heroimg.srcset }}" imageSizes="100vw">
 	{% endif %}
