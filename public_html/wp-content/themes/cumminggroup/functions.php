@@ -15,10 +15,11 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 require_once __DIR__ . '/src/CGSite.php';
 
-require_once __DIR__ . '/src/CGPost.php';
+require_once __DIR__ . '/src/CGContent.php';
+require_once __DIR__ . '/src/CGNews.php';
+require_once __DIR__ . '/src/CGPortfolio.php';
 require_once __DIR__ . '/src/CGOffice.php';
 require_once __DIR__ . '/src/CGPerson.php';
-require_once __DIR__ . '/src/CGProject.php';
 
 require_once __DIR__ . '/src/CGTwigFilters.php';
 require_once __DIR__ . '/src/block-hooks.php';
@@ -37,16 +38,18 @@ add_filter('timber/acf-gutenberg-blocks-templates', function () {
 
 add_filter('timber/post/classmap', function ($classmap) {
   $custom_classmap = [
-    'page' => CGPost::class,
-    'post' => CGPost::class,
-    'event' => CGPost::class,
-    'sector' => CGPost::class,
-    'service' => CGPost::class,
-    'report' => CGPost::class,
+    'page' => CGContent::class,
+  
+    'sector' => CGPortfolio::class,
+    'service' => CGPortfolio::class,
+    'project' => CGPortfolio::class,
 
     'person' => CGPerson::class,
     'office' => CGOffice::class,
-    'project' => CGProject::class,
+
+    'post' => CGNews::class,
+    'event' => CGNews::class,
+    'report' => CGNews::class,
   ];
 
   return array_merge($classmap, $custom_classmap);
