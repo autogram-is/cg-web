@@ -1,0 +1,100 @@
+=== CookieHub ===
+
+= 1.2.1 =
+*Release Date - 17 January 2025*
+
+Undefined variables fixed
+
+= 1.2.0 =
+*Release Date - 9 January 2025*
+
+WP Consent API support integrated
+
+= 1.1.5 =
+*Release Date - 27 November 2024*
+
+Tested up to 6.7.1
+
+= 1.1.4 =
+*Release Date - 26 August 2024*
+
+Tested up to 6.6.1
+
+= 1.1.3 =
+*Release Date - 12 April 2024*
+
+Tested up to 6.5.2
+
+= 1.1.2 =
+*Release Date - 5 April 2024*
+
+Tested up to 6.5
+
+= 1.1.1 =
+*Release Date - 29 February 2024*
+
+Added nonce checks and fixed a bug in 3rd party scripts
+
+= 1.1.0 =
+*Release Date - 16 February 2024*
+
+Consent mode v2 support added - Defaults for ad_personalization and ad_user_data added
+
+= 1.0.3 =
+*Release Date - 2 January 2024*
+
+PHP Notices fixed
+
+= 1.0.2 =
+*Release Date - 23 November 2023*
+
+Admin user interface improvements
+
+= 1.0.1 =
+*Release Date - 21 November 2023*
+
+PHP 8+ compatibility issues fixed
+
+= 1.0.0 =
+*Release Date - 21 November 2023*
+
+Updated admin user interface
+
+= 0.4.0 =
+*Release Date - 13 July 2023*
+
+Wordpress 6.2.x support verified, necessary category removed and minor text changes
+
+= 0.3.1 =
+*Release Date - 7 February 2022*
+
+Wordpress 5.9 support verified and minor text changes
+
+= 0.3.0 =
+*Release Date - 20 April 2021*
+
+Added support for Google Consent Mode and automatic cookie blocking
+
+
+= 0.2.2 =
+*Release Date - 15 February 2021*
+
+Added Polylang support to control the display language
+
+
+= 0.2.1 =
+*Release Date - 11 February 2021*
+
+Added WPML support to control the display language
+
+
+= 0.1.1 =
+*Release Date - 17 December 2020*
+
+Fixed notice showing when not in development mode
+
+
+= 0.1 =
+*Release Date - 28 September 2020*
+
+Initial release

@@ -1,0 +1,450 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap');
+
+.settings_page_my-setting-admin #wpcontent {
+    padding-left: 0;
+}
+
+.dcchub-logo {
+    width: 145px;
+}
+
+.dcchub-wrap {
+    padding: 23px;
+    margin: 30px 0px;
+}
+
+.dcchub-wrap.dcchub-box {
+    border-radius: 5px;
+    border: 1px solid #C3C4C7;
+    background: #FFF;
+    position: relative;
+    width: 600px;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 600px) {
+    .dcchub-wrap.dcchub-box {
+        border-radius: 5px;
+        border: 1px solid #C3C4C7;
+        background: #FFF;
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+.dcchub-wrap.dcchub-box.wide {
+    width: 80%;
+    max-width: 854px;
+}
+
+.dcchub-wrap.dcchub-box.side {
+    width: 100%;
+}
+
+.dcchub-register-domain {
+    margin-left: 26px;
+}
+
+.dcchub-wrap>*:last-child,
+.dcchub-wrap>*:last-child>*:last-child {
+    margin-bottom: 0;
+}
+
+.dcchub_script {
+    width: 100%;
+    height: 117px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    border: 1px solid #CECECE;
+    background: #FAFAFA;
+}
+
+.dcchub-tab-buttons {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.dcchub-tab-buttons>li {
+    border: 1px solid #C3C4C7;
+    cursor: pointer;
+    padding: 8px 12px;
+    margin: 0px 0px 0px 8px;
+    color: #000;
+    background: rgb(232, 233, 237);
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.dcchub-tab-buttons>li.active {
+    background: rgb(255, 255, 255);
+    color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #C3C4C7;
+    border-width: 1px 1px 0 1px;
+}
+
+.dcchub-tabs-content {
+    padding: 28px 44px 53px 40px;
+}
+
+.dcchub-tabs-content li {
+    display: none;
+}
+
+.dcchub-tabs-content li.active {
+    display: block;
+}
+
+.dcchub-toolbar {
+    background: #fff;
+    height: 50px;
+    padding: 0px 30px 0px 15px;
+    display: flex;
+    align-items: center;
+}
+
+.dcchub-toolbar-link {
+    color: rgba(0, 0, 0, 0.80);
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 15px 0px;
+    line-height: 20px;
+}
+
+.dcchub-horizontal {
+    display: flex;
+    align-items: center;
+}
+
+.dcchub-header {
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+}
+
+.dcchub-header.small {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.dcchub-header.page-header {
+    font-size: 24px;
+    margin: 40px 30px;
+}
+
+.dcchub-separator {
+    height: 1px;
+    background: #C3C4C780;
+    margin: 18px 0px 20px 0px;
+}
+
+.dcchub-p {
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    /* 20.8px */
+}
+
+.dcchub-hint {
+    color: #37373b80;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration-line: underline;
+    margin-top: 19px;
+    display: inline-block;
+}
+
+.dcchub-hint.center {
+    margin-top: 0px;
+}
+
+.dcchub-input-box {
+    height: 44px;
+}
+
+.dcchub-input-box.wide {
+    height: 44px;
+    width: 366px;
+}
+
+.dcchub-flex {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 26px;
+}
+
+.dcchub-content {
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+
+.dcchub-sidebar {
+    width: 550px;
+    margin-top: 23px;
+    margin-right: 40px;
+}
+
+.dcchub-bullet-links {
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    /* 20.8px */
+    text-decoration-line: underline;
+}
+
+.dcchub-promotion-banner {
+    display: flex;
+    width: 854px;
+    height: 323px;
+    border-radius: 10px;
+    border: 0px solid #E51E25;
+    background: linear-gradient(262deg, rgba(95, 0, 0, 0.20) 2.16%, rgba(0, 0, 0, 0.00) 81.02%), #E51E25;
+}
+
+.dcchub-promotion-banner-content {
+    padding: 34px 40px 40px 35px;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.dcchub-promotion-banner-header {
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 44px;
+    margin: 0px;
+}
+
+/* Hide the default checkbox */
+.dcchub-checkbox input {
+    display: none;
+}
+
+.dcchub-checkbox label {
+    position: relative;
+    padding-left: 45px;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 26px;
+}
+
+.dcchub-checkbox label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    border: 1px solid #CECECE;
+    background: #FAFAFA;
+}
+
+/* Style the checkmark when checked */
+.dcchub-checkbox input:checked+label:after {
+    content: "\2713";
+    /* Unicode character for checkmark */
+    font-size: 18px;
+    color: #000000;
+    position: absolute;
+    left: 6px;
+    top: 2px;
+}
+
+.dcchub-success-message {
+    border-radius: 5px;
+    border: 1px solid #058E6E;
+    background: rgba(98, 172, 97, 0.84);
+    min-height: 47px;
+    margin: 22px 64px 12px 26px;
+}
+
+.dcchub-error-message {
+    border-radius: 5px;
+    border: 1px solid #E51E25;
+    background: rgba(255, 0, 0, 0.64);
+    min-height: 47px;
+    margin: 22px 64px 12px 26px;
+}
+
+.dcchub-message-text {
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    /* 20.8px */
+    padding: 0 26px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Buttons */
+
+.dcchub-button {
+    overflow: hidden;
+    position: relative;
+    background-color: #E51E25;
+    border: 0px;
+    height: 44px;
+    line-height: 16px;
+    padding: 0px 30px;
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    border-radius: 5px;
+    border: 1px solid #E51E25;
+    cursor: pointer;
+    min-width: 135px;
+}
+
+.dcchub-button:hover {
+    background-color: #FFF;
+    color: #E51E25;
+    border: 1px solid #E51E25;
+}
+
+.dcchub-button.dcchub-spinner {
+    background-color: #FFF;
+    color: #E51E25;
+    border: 1px solid #E51E25;
+}
+
+.dcchub-button.dcchub-spinner::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -12px 0px 0px -12px;
+    display: block;
+    content: '';
+    border: 4px solid #565656;
+    border-top: 4px solid #E51E25;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 1s linear infinite;
+}
+
+.dcchub-button-gray {
+    overflow: hidden;
+    position: relative;
+    background-color: #565656;
+    border: 0px;
+    height: 44px;
+    min-width: 125px;
+    line-height: 16px;
+    padding: 0px 30px;
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    border-radius: 5px;
+    border: 1px solid #565656;
+    cursor: pointer;
+}
+
+.dcchub-button-gray:hover {
+    background-color: #FFF;
+    color: #565656;
+    border: 1px solid #565656;
+}
+
+.dcchub-button-gray.dcchub-spinner {
+    background-color: #FFF;
+    color: #565656;
+    border: 1px solid #565656;
+}
+
+.dcchub-button-gray.dcchub-spinner::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -12px 0px 0px -12px;
+    display: block;
+    content: '';
+    border: 4px solid #565656;
+    border-top: 4px solid #E51E25;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 1s linear infinite;
+}
+
+.dcchub-green-button {
+    text-align: center;
+    text-decoration: none;
+    background-color: #62AC61;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 10px 30px;
+    border: 1px solid #62AC61;
+}
+
+.dcchub-green-button:hover {
+    background-color: #fff;
+    color: #62AC61;
+}
+
+.dcchub-white-button {
+    text-align: center;
+    text-decoration: none;
+    background-color: #fff;
+    color: #333132;
+    border: none;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 10px 30px;
+    border: 1px solid #fff;
+}
+
+.dcchub-white-button:hover {
+    background-color: rgba(173, 21, 25, 0.40);
+    color: #FFF;
+    border: 1px solid #fff;
+}
