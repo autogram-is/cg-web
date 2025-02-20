@@ -147,6 +147,7 @@ function cg_export_bios($dry_run = false) {
       $offices = _get_rel_slugs('offices', $post->ID);
 
       $item = array(
+        'post_id' => $post->ID,
         'title' => $post->post_title,
         'slug' => $post->post_name,
     
@@ -166,7 +167,8 @@ function cg_export_bios($dry_run = false) {
         'service3' => $services[2] ?? '',
         'office' => $offices[0] ?? '',
 
-        'headshot' =>  attachment_url_to_postid(get_the_post_thumbnail_url($post->ID)),
+        'old_headshot' =>  attachment_url_to_postid(get_the_post_thumbnail_url($post->ID)),
+        'new_headshot' =>  '',
         'migration_status' => get_field('migration_status', $post->ID, false),
         'migration_note' => get_field('migration_note', $post->ID, false),
       );

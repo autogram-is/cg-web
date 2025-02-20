@@ -483,12 +483,12 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    * @alias export
    */
   public function export() {
-    cg_export_projects();
+    //cg_export_projects();
     // cg_export_offices();
     cg_export_bios();
-    cg_export_news();
-    cg_export_events();
-    cg_export_pages();
+    //cg_export_news();
+    //cg_export_events();
+    //cg_export_pages();
   }
 
   /**
