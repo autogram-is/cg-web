@@ -45,7 +45,7 @@
     "description": "The physical location of a Cumming Group facility",
     "public": true,
     "hierarchical": false,
-    "exclude_from_search": false,
+    "exclude_from_search": true,
     "publicly_queryable": true,
     "show_ui": true,
     "show_in_menu": true,
@@ -80,5 +80,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1739397634
+    "modified": 1740008412
 }
