@@ -12,7 +12,7 @@
 		</header>
 
 		<main role="main" id="content">
-			<div class="hero">
+			<div class="hero{% if post.post_type == "project" %} standout{% endif %}">
 				{% include 'partial/hero.twig' %}
 				<div{% if block("floatingsidebar") is defined %} class="project-sidebar sidebar" data-direction="rtl"{% endif %}>
 					{% block floatingsidebar %}{% endblock %}
