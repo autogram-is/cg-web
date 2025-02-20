@@ -17,6 +17,13 @@ class CGNews extends CGContent {
 	 */
 	public function internal_authors() { return $this->_cache_relationship('internal_authors'); }
 
+	/**
+	 * Individuals mentioned in a news article, or attending an event.
+	 *
+	 * @return \Timber\PostCollectionInterface
+	 */
+	public function people(?int $limit = -1) { return parent::_cache_relationship('people', $limit); }
+
   /**
 	 * For news, events, and market insight reports, `service` `sector` `project` and `office`
 	 * are collapsed to a single field.
