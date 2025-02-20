@@ -1,6 +1,6 @@
 {
     "key": "group_6750a811659b9",
-    "title": "Person Connections",
+    "title": "Leadership Roles",
     "fields": [
         {
             "key": "field_675a02468628e",
@@ -190,7 +190,7 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "",
+    "description": "Control the sectors, services, and offices that list a person as a \"Leader\"",
     "show_in_rest": 0,
-    "modified": 1739462890
+    "modified": 1740090178
 }
