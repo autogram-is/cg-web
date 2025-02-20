@@ -17,8 +17,8 @@
                 "id": ""
             },
             "admin_column_enabled": 1,
-            "admin_column_position": "",
-            "admin_column_width": "",
+            "admin_column_position": 3,
+            "admin_column_width": "10%",
             "choices": {
                 "all": "All Locales",
                 "na": "North America",
@@ -63,5 +63,5 @@
     "active": true,
     "description": "EU, USA, or Both",
     "show_in_rest": 0,
-    "modified": 1740027754
+    "modified": 1740065741
 }

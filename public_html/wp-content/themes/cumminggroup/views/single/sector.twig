@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block sidebar %}
+{#
 <div class="inline-form region flow bg-timeless-backdrop">
   <p>Learn more about our flexible approach to service delivery:</p>
   <form class="flow">
@@ -26,6 +27,7 @@
     </div>
   </form>
 </div>
+#}
 {% endblock %}
 
 
@@ -42,9 +44,15 @@
   </div>
   {% endif %}
 
-  {% if post.people | length %}
+  {% if post.leadership | length %}
   <div class="region wrapper">
   {% include "partial/person-list.twig" with { heading: pagetitle ~ " Leadership", items: post.people, utilities: "bg-timeless-backdrop"} %}
+  </div>
+  {% endif %}
+
+  {% if post.related_news(6) | length %}
+  <div class="region region-primary wrapper">
+  {% include "partial/related-news-list.twig" with { heading: "Related News", items: post.related_news(6) } %}
   </div>
   {% endif %}
 {% endblock %}

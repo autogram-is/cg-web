@@ -87,7 +87,7 @@ function cg_get_news_for_portfolio_items(array $post_ids, int $limit = 10, array
   foreach ($post_ids as $post_id) {
     // This respects the order projects appear in on the item itself,
     // rather than the recency of the projects.
-    $projects = get_field('related_news', $post_ids);
+    $projects = get_field('related_news', $post_id);
     if (is_array($projects) && count($projects) > 0) {
       $project_buckets[$post_id] = $projects;
     }

@@ -15,13 +15,19 @@
 {% block posthero %}
   {% if post.projects(6) | length %}
   <div class="region region-primary wrapper">
-  {% include "partial/project-gallery.twig" with { heading: "Representative Experience", items: post.projects, offices: true, sectors: true, utilities: "bg-timeless-backdrop" } %}
+  {% include "partial/project-gallery.twig" with { heading: "Representative Experience", items: post.projects, offices: true, services: true, utilities: "bg-timeless-backdrop" } %}
   </div>
   {% endif %}
 
-  {% if post.people | length %}
+  {% if post.leadership | length %}
   <div class="region wrapper">
-  {% include "partial/person-list.twig" with { heading: pagetitle ~ " Leadership", items: post.people, utilities: "bg-timeless-backdrop" } %}
+  {% include "partial/person-list.twig" with { heading: pagetitle ~ " Leadership", items: post.people, utilities: "bg-timeless-backdrop"} %}
+  </div>
+  {% endif %}
+
+  {% if post.related_news(6) | length %}
+  <div class="region region-primary wrapper">
+  {% include "partial/related-news-list.twig" with { heading: "Related News", items: post.related_news(6) } %}
   </div>
   {% endif %}
 {% endblock %}

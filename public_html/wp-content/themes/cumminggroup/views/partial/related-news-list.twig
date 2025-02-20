@@ -1,0 +1,11 @@
+{% if heading %}
+<div class="region">
+  <h2 class="type-hed hed-accent">{{ heading }}</h2>
+</div>
+{% endif %}
+
+<div class="resource-listings {{ classes }}">
+{% for post in items %}
+  {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] %}
+{% endfor %}
+</div>

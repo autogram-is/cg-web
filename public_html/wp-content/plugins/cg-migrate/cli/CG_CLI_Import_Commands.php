@@ -386,6 +386,26 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
   public function clean_meta($args, $assoc_args) {
     $dry_run = isset($assoc_args['dry-run']);
 
+    // Kill meta fields associated with nonexistant post IDs
+
+    // kill all termmeta fields
+    
+    $meta_key_patterns = array(
+      "_tribe_%" => "Tribe Events post meta",
+      "_Event%" => "Legacy event data",
+      "_Venue%" => "Legacy venue data",
+      "_tec_%" => "Tribe calendar post meta",
+      "pyre_%" => "Pyre post metadata",
+      "fusion_%" => "Fusion post metadata",
+      "_fusion_%" => "Fusion post metadata",
+      "caf_%" => "CAF post metadata",
+      "kd_featured-image%" => "Fusion multi-featured-image post metadata",
+      "avada_%" => "Avada slider post metadata",
+    );
+    
+    foreach($meta_key_patterns as $pattern => $note) {
+      WP_CLI::log("DRY RUN: Deleted $note ('$pattern')");
+    }
   }
 
 

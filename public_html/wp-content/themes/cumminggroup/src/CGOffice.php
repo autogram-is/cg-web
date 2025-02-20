@@ -4,14 +4,17 @@ use Timber\Timber;
 
 /**
  * Class CGOffice
+ * 
+ * Applies to 'office' content, fills in nearby projects, news, and leadership
  */
-class CGOffice extends CGPost {
+class CGOffice extends CGPortfolio {
 	public function __construct() {
 		parent::__construct();
 	}
 
 	/**
-	 * Gets projects connected to the current post.
+	 * Gets projects related to the current office; if not enough projects have been
+	 * added to the office, projects from offices in the same region are used as backfill.
 	 *
 	 * @return \Timber\PostCollectionInterface
 	 */
@@ -32,7 +35,8 @@ class CGOffice extends CGPost {
 	}
 
 	/**
-	 * Gets projects connected to the current post.
+	 * Gets news and events related to the current office; if not enough projects have been
+	 * added to the office, projects from offices in the same region are used as backfill.
 	 *
 	 * @return \Timber\PostCollectionInterface
 	 */
