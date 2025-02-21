@@ -97,5 +97,6 @@ address {
 }
 
 /* Prevent WP admin bar from inheriting any broad `display` styles. */
+#wpadminbar li[id*="wp-admin-bar"]::marker { content: "" !important; }
 #wp-admin-bar-root-default { display: inline-block !important; }
 #wp-admin-bar-top-secondary { display: inline-block !important; }
