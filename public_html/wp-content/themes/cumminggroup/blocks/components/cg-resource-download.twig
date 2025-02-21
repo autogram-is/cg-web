@@ -38,9 +38,7 @@
         <p>{{ fields.download_description }}</p>
         {% endif %}
         {% if fields.download_cta %}
-        <div class="region">
-          <a href="{{ file.src }}" class="button secondary">{{ fields.download_cta }}</a>
-        </div>
+        <a href="{{ file.src }}" class="button secondary file-cta">{{ fields.download_cta }}</a>
         {% endif %}
       </div>
     </div>

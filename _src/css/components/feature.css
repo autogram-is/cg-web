@@ -41,4 +41,8 @@
   &:not(:has(.thumb)) .body {
     padding-block-start: var(--space-l);
   }
+
+  .file-cta {
+    margin-block-start: var(--region-space, var(--space-s-m));
+  }
 }
