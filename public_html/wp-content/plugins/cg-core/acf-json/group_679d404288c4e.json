@@ -19,8 +19,74 @@
             "layout": "block",
             "sub_fields": [
                 {
+                    "key": "field_67b7afac3f4f1",
+                    "label": "Footer CTA Heading",
+                    "name": "heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "admin_column_enabled": 0,
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_67b7afee3f4f2",
+                    "label": "Footer CTA Text",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "admin_column_enabled": 0,
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_67b7b08d3f4f3",
+                    "label": "Footer CTA Button",
+                    "name": "button",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "admin_column_enabled": 0,
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
                     "key": "field_67a0e5a1bdee3",
-                    "label": "Footer CTA",
+                    "label": "Footer Contact Form",
                     "name": "form",
                     "aria-label": "",
                     "type": "forms",
@@ -39,12 +105,12 @@
                     "allow_in_bindings": 0
                 },
                 {
-                    "key": "field_67a253cc8462e",
-                    "label": "Fallback Content",
+                    "key": "field_67b7b0c43f4f4",
+                    "label": "Footer Fallback Content",
                     "name": "fallback",
                     "aria-label": "",
                     "type": "textarea",
-                    "instructions": "If no footer forms are accessible, include this footer markup.",
+                    "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -55,8 +121,8 @@
                     "admin_column_enabled": 0,
                     "default_value": "",
                     "maxlength": "",
-                    "allow_in_bindings": 1,
-                    "rows": 3,
+                    "allow_in_bindings": 0,
+                    "rows": 4,
                     "placeholder": "",
                     "new_lines": ""
                 }
@@ -241,5 +307,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739838036
+    "modified": 1740091660
 }

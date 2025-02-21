@@ -6,11 +6,17 @@
 		<div class="notch wrapper">
 			<div class="notch-inner inner-cta repel">
 				<div class="body flow bg-deep-steel">
-				{% if settings.cta.form %}
-					{{ settings.cta.form | gravityform }}
-				{% elseif settings.cta.fallback %}
-					{% apply shortcodes %}{{ settings.cta.default }}{% endapply %}
-				{%- endif %}
+					{% if settings.cta.heading %}<h3 class="type-hed">{{ settings.cta.heading }}</h3>{% endif %}
+					{% if settings.cta.text %}<p>{{ settings.cta.text }}</p>{% endif %}
+					{% if settings.cta.button %}<a href="#" class="button glass">{{ settings.cta.button }}</a>{% endif %}
+					</div>
+						{% if settings.cta.form %}
+							{{ settings.cta.form | gravityform(false, false) }}
+						{% elseif settings.cta.fallback %}
+							{% apply shortcodes %}{{ settings.cta.default }}{% endapply %}
+						{%- endif %}
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
