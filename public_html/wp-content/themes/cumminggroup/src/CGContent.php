@@ -17,6 +17,50 @@ class CGContent extends Post {
 		return parent::excerpt($options);
 	}
 
+	public function thumbnail_or_placeholder() {
+		$ph = $this->placeholder();
+		$thumb = $this->thumbnail();
+		
+		if ($ph) {
+			if ($ph['override'] ?? false) {
+				return $ph;
+			} elseif (!$thumb && $ph['image']) {
+				return $ph['image'];
+			}
+		}
+		return $thumb;
+	}
+
+	/**
+	 * If no thumbnail image is available for a post, construct a text placeholder.
+	 * Uses fallback logic with the `placeholder_text` and `placeholder_bg` fields
+	 * to allow post, news category, and post-type level placeholder overrides.
+	 */
+	public function placeholder() {
+		// Global defaults for the post type.
+		$placeholder = $this->_placeholder_defaults() ?? [];
+
+		// Override existing settings with post-specific placeholder text.
+		$text = $this->meta('placeholder_text');
+		$bg = $this->meta('placeholder_bg');
+		if ($text) {
+			$placeholder['text'] = $text;
+		}
+		if ($bg) {
+			$placeholder['bg'] = $bg;
+		}
+
+		// If an image is set, load it.
+		if ($placeholder['image'] ?? false) {
+			$placeholder['image'] = Timber::get_image($placeholder['image']);
+		}
+
+		// If either text or image is set, return a value.
+		if (($placeholder['text'] ?? false) || ($placeholder['image'] ?? false)) {
+			return $placeholder;
+		}
+	}
+
 	/**
 	 * Builds a convenience bundle of hero treatment information.
 	 *
@@ -53,6 +97,24 @@ class CGContent extends Post {
 		}
 
 		return $this->_hero;	
+	}
+
+	protected function _placeholder_defaults() {
+		$keyed = [];
+		$options = get_fields('cg_options');
+		if ($options && $options['placeholders']) {
+			foreach ($options['placeholders'] as $default) {
+				$keyed[$default['type']] = $default;
+			}	
+		}
+
+		if (key_exists($this->post_type, $keyed)) {
+			return $keyed[$this->post_type];
+		} elseif (key_exists('default', $keyed)) {
+			return $keyed['default'];
+		} else {
+			return false;
+		}
 	}
 
 	/**

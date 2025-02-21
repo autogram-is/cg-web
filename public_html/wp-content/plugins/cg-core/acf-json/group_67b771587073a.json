@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_67b771923079a",
-            "label": "Per-Post Type thumbnails",
-            "name": "fallback_thumbnails",
+            "label": "Post Type thumbnail placeholders",
+            "name": "placeholders",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -27,7 +27,7 @@
                 {
                     "key": "field_67b771ba3079b",
                     "label": "Post Type",
-                    "name": "post_type",
+                    "name": "type",
                     "aria-label": "",
                     "type": "select",
                     "instructions": "",
@@ -64,7 +64,7 @@
                 {
                     "key": "field_67b7735406e5e",
                     "label": "Placeholder Image",
-                    "name": "placeholder_image",
+                    "name": "image",
                     "aria-label": "",
                     "type": "image",
                     "instructions": "",
@@ -92,7 +92,7 @@
                 {
                     "key": "field_67b772a13079c",
                     "label": "Placeholder Text",
-                    "name": "placeholder_text",
+                    "name": "text",
                     "aria-label": "",
                     "type": "text",
                     "instructions": "",
@@ -115,7 +115,7 @@
                 {
                     "key": "field_67b772be3079d",
                     "label": "Placeholder Background",
-                    "name": "placeholder_bg",
+                    "name": "bg",
                     "aria-label": "",
                     "type": "select",
                     "instructions": "",
@@ -146,8 +146,8 @@
                 },
                 {
                     "key": "field_67b7745e6774c",
-                    "label": "Ignore Featured Image",
-                    "name": "ignore_featured",
+                    "label": "Override Post Thumbnail",
+                    "name": "override",
                     "aria-label": "",
                     "type": "true_false",
                     "instructions": "",
@@ -188,5 +188,5 @@
     "active": true,
     "description": "Control post-type specific fallback thumbnails",
     "show_in_rest": 0,
-    "modified": 1740091254
+    "modified": 1740106116
 }

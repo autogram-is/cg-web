@@ -10,6 +10,18 @@ class CGPerson extends CGContent {
 		parent::__construct();
 	}
 
+	function thumbnail() {
+		$thumb = parent::thumbnail();
+		if (!$thumb) {
+			$placeholder = $this->placeholder();
+			if ($placeholder && $placeholder['image']) {
+				$thumb = $placeholder['image'];
+			}
+		}
+
+		return $thumb;
+	}
+
 	/**
 	 * Sectors led by this person.
 	 *
