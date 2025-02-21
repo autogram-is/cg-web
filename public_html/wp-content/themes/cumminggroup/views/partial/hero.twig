@@ -6,25 +6,25 @@
   <img src="{{ hero.image.src }}"
     srcset="{{ hero.image.srcset }}"
     sizes="100vw"
-    height="{{hero.image.height}}"
-    width="{{hero.image.width}}"
-    alt="{{hero.image.alt}}" />
+    height="{{ hero.image.height }}"
+    width="{{ hero.image.width }}"
+    alt="{{ hero.image.alt }}" />
 
 {% elseif hero.type == 'gallery' and hero.image %} {# a random selection from multiple images #}
   <img src="{{ hero.image.src }}"
     srcset="{{ hero.image.srcset }}"
     sizes="100vw"
-    height="{{hero.image.height}}"
-    width="{{hero.image.width}}"
-    alt="{{hero.image.alt}}" />
+    height="{{ hero.image.height }}"
+    width="{{ hero.image.width }}"
+    alt="{{ hero.image.alt }}" />
 
 {% elseif hero.type == 'project' and hero.project.thumbnail %} {# a project's featured image #}
   <img src="{{ hero.project.image.src }}"
     srcset="{{ hero.project.image.srcset }}"
     sizes="100vw"
-    height="{{hero.project.image.height}}"
-    width="{{hero.project.image.width}}"
-    alt="{{hero.project.image.alt}}" />
+    height="{{ hero.project.image.height }}"
+    width="{{ hero.project.image.width }}"
+    alt="{{ hero.project.image.alt }}" />
 
 {% elseif hero.type == 'statistics' %} {# a set of high-impact statistics #}
   <figure class="statistic flow hero">
@@ -43,7 +43,7 @@
 
 {% else %} {# The fallback: display the post's featured image in the header #}
   {% if post.thumbnail and post.type != 'person' %}
-  <img src="{{post.thumbnail.src|resize(2000, 850) }}"
+  <img src="{{ post.image.src }}"
     srcset="{{ hero.image.srcset }}"
     sizes="100vw"
     height="{{post.thumbnail.height}}"
