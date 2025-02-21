@@ -5,3 +5,6 @@
   margin-right: auto;
   max-width: 840px;
 }
+.select2-results__options {
+  font-size: 12px;
+}
