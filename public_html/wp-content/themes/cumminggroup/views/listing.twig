@@ -17,9 +17,9 @@
 				width="975"
 				alt="{{post.thumbnail.alt}}" />
 		</a>
-		{% elseif post.placeholder_text %}
-		<span class="placeholder topo-full {{ post.placeholder_bg }}">
-			<span>{{ post.placeholder_text }}</span>
+		{% elseif post.placeholder %}
+		<span class="placeholder topo-full {{ post.placeholder.bg }}">
+			<span>{{ post.placeholder.text }}</span>
 		</span>
 		{% endif %}
 		<div class="body flow">

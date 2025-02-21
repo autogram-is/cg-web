@@ -19,7 +19,8 @@ class CGNews extends CGContent {
 	 */
 	public function placeholder() {
 		// Global defaults for the post type.
-		$placeholder = $this->_placeholder_defaults() ?? [];
+		$placeholder = $this->_placeholder_defaults();
+		if (!$placeholder) $placeholder = [];
 
 		// Override existing settings with post-specific placeholder text.
 		$text = $this->meta('placeholder_text');
