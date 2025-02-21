@@ -10,7 +10,7 @@
       padding-right: var(--space-m-l);
       color: var(--color-dark);
       .body {
-        width: 100%;
+
       }
 
       [id*="gform_wrapper"] {

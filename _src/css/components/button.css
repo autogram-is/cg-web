@@ -132,9 +132,9 @@
   }
   &.secondary {
     background: var(--color-timeless-gold);
-    color: var(--color-deep-steel);
+    color: var(--color-steel-shade);
     &:hover {
-      color: var(--color-steel-shade);
+      color: var(--color-dark);
     }
     svg {
       path[stroke] {
@@ -166,3 +166,5 @@
     text-transform: inherit;
   }
 }
+
+
