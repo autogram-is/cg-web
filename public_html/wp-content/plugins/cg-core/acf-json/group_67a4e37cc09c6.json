@@ -3,6 +3,55 @@
     "title": "Downloadable Resource Block",
     "fields": [
         {
+            "key": "field_67a4e436f9eec",
+            "label": "Downloadable File",
+            "name": "download_file",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "return_format": "id",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_67a4e41a04532",
+            "label": "Thumbnail",
+            "name": "download_thumbnail",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
             "key": "field_67a4e37c04530",
             "label": "Heading",
             "name": "download_heading",
@@ -47,11 +96,11 @@
             "append": ""
         },
         {
-            "key": "field_67a4e41a04532",
-            "label": "Thumbnail",
-            "name": "download_thumbnail",
+            "key": "field_67b8e6915db8e",
+            "label": "CTA Button",
+            "name": "download_cta",
             "aria-label": "",
-            "type": "image",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -60,40 +109,14 @@
                 "class": "",
                 "id": ""
             },
+            "relevanssi_exclude": 0,
             "admin_column_enabled": 0,
-            "return_format": "id",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
+            "default_value": "",
+            "maxlength": "",
             "allow_in_bindings": 0,
-            "preview_size": "medium"
-        },
-        {
-            "key": "field_67a4e436f9eec",
-            "label": "Downloadable File",
-            "name": "download_file",
-            "aria-label": "",
-            "type": "file",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_column_enabled": 0,
-            "return_format": "id",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": "",
-            "allow_in_bindings": 0
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -114,5 +137,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738959834
+    "modified": 1740170936
 }

@@ -14,15 +14,35 @@
   SupportsAlignContent: false
   SupportsAlignText: false
 #}
-{%- set file = get_attachment(fields.download_file) -%}
-
-<div>
-{% if fields.download_thumbnail -%}
-{% set thumb = get_image(fields.download_thumbnail) %}
-{# thumbnail image here #}
-{% endif %}
-<p>{{ fields.download_description }}</p>{% endif %}
-{% if fields.download_heading %}<h2>{{ fields.download_heading }}</h2>{% endif %}
-{% if fields.download_description %}<p>{{ fields.download_description }}</p>{% endif %}
-<a href="{{ file.src }}" title="{{ file.alt }}">Download</a>
+{% set file = get_attachment(fields.download_file) %}
+<div class="region">
+  <div class="feature">
+    <div class="sidebar item">
+      {% if fields.download_thumbnail %}
+      {% set thumb = get_image(fields.download_thumbnail) %}
+      <a href="{{ file.src }}" title="{{ file.alt }}" class="thumb">
+      <img
+        src="{{thumb.src|resize(800, 650) }}"
+        height="{{thumb.height}}"
+        width="{{thumb.width}}"
+        alt="{{thumb.alt}}" />
+      </a>
+      {% endif %}
+      <div class="body flow">
+        <div class="hgroup {% if fields.excerpt %}hed-accent {% endif %}flow">
+          {% if fields.download_heading %}
+          <h2 class="type-hed hed-accent">{{ fields.download_heading }}</h2>
+          {% endif %}
+        </div>
+        {% if fields.download_description %}
+        <p>{{ fields.download_description }}</p>
+        {% endif %}
+        {% if fields.download_cta %}
+        <div class="region">
+          <a href="{{ file.src }}" class="button secondary">{{ fields.download_cta }}</a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
 </div>
