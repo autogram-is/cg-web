@@ -74,7 +74,7 @@
     "has_archive_slug": "",
     "rewrite": {
         "permalink_rewrite": "custom_permalink",
-        "slug": "projects",
+        "slug": "portfolio",
         "with_front": "0",
         "feeds": "0",
         "pages": "1"
@@ -85,5 +85,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1739398835
+    "modified": 1740098679
 }
