@@ -73,39 +73,6 @@
             ]
         },
         {
-            "key": "field_6750c797a5f8f",
-            "label": "People",
-            "name": "people",
-            "aria-label": "",
-            "type": "relationship",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_column_enabled": 0,
-            "post_type": [
-                "person"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "filters": [
-                "search"
-            ],
-            "return_format": "id",
-            "min": "",
-            "max": "",
-            "allow_in_bindings": 0,
-            "elements": "",
-            "bidirectional": 1,
-            "bidirectional_target": [
-                "field_6750c888d2251"
-            ]
-        },
-        {
             "key": "field_6750d136af9b2",
             "label": "Offices",
             "name": "offices",
@@ -159,5 +126,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1736803123
+    "modified": 1740097882
 }
