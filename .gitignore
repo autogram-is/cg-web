@@ -24,7 +24,7 @@ _src/_includes/css
 # Generated 
 _src/scss/_tokens.scss
 _src/scss/_themes.scss
-public_html/wp-content/themes/cumminggroup/assets/css
+public_html/wp-content/themes/cumminggroup/assets/css/global.css
 public_html/wp-content/themes/cumminggroup/assets/js
 
 # public_html files OTHER than our plugins and theme.
