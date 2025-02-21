@@ -43,8 +43,8 @@
 
 {% else %} {# The fallback: display the post's featured image in the header #}
   {% if post.thumbnail and post.type != 'person' %}
-  <img src="{{ post.image.src }}"
-    srcset="{{ hero.image.srcset }}"
+  <img src="{{ post.thumbnail.src }}"
+    srcset="{{ post.thumbnail.srcset }}"
     sizes="100vw"
     height="{{post.thumbnail.height}}"
     width="{{post.thumbnail.width}}"
