@@ -86,8 +86,39 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
     );
     $posts = get_posts($args);
     foreach ($posts as $post) {
-      cg_postprocess_news($post);
+      $content = $post->post_content;
+      $message = $post->ID;
+
+      // Simple bylines
+      preg_match('/^(By ([^\n]+))/', $content, $matches);
+      if ($matches) {
+        $byline = $matches[2];
+        $message .= "\t" . $this->name_from_byline($byline);
+        $message .= "\t";
+        $message .= "\t" . $matches[1];
+        WP_CLI::log($message);
+        continue;
+      }
+
+      preg_match('/(([A-Za-z]+\s+\d+, \d\d\d\d) \| By ([^\n]+))/', $content, $matches);
+      if ($matches) {
+
+        $byline = $matches[3];
+        $date = $matches[2];
+        $message .= "\t" . $byline;
+        $message .= "\t" . $date;
+        $message .= "\t" . $matches[1];
+        WP_CLI::log($message);
+        continue;
+      }
     }
+  }
+
+  protected function name_from_byline(string $input) {
+    $input = str_replace('&nbsp;', ' ', $input);
+    $parts = explode('|', $input);
+    $input = trim($parts[0]);
+    return $input;
   }
 
   /**
