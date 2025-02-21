@@ -1,6 +1,6 @@
 
-ul:not([role="list"]),
-ol:not([role="list"]) {
+.page ul:not([role="list"]),
+.page ol:not([role="list"]) {
   display: flex;
   flex-direction: column;
   font-size: var(--size-step-0);
@@ -23,7 +23,7 @@ ol:not([role="list"]) {
   }
 }
 
-ul:not([role="list"]) {
+.page ul:not([role="list"]) {
   margin-inline-start: var(--space-s);
   li {
     &::-webkit-details-marker {
@@ -82,8 +82,8 @@ ol:not([role="list"]) {
   }
 }
 
-ul:not([role="list"]),
-ol:not([role="list"]) {
+.page ul:not([role="list"]),
+.page ol:not([role="list"]) {
   ul:not([role="list"]),
   ol:not([role="list"]) {
     margin-block: 0;
