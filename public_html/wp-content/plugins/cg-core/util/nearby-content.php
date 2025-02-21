@@ -1,33 +1,43 @@
 <?php
 
 function cg_projects_with_fallback(int $post_id, int $limit = 6) {
-  $projects = get_field('projects', $post_id) ?? [];
+  $items = get_field('projects', $post_id) ?? [];
+  if ($items && is_array($items)) {
+    $directCount = count($items);
+  } else {
+    $items = [];
+    $directCount = 0;
+  }
 
-  $directCount = count($projects);
   if ($limit > $directCount) {
     $offices = cg_get_related_offices($post_id);
-    $nearby = cg_get_projects_for_portfolio_items($offices, ($limit - $directCount), $projects) ?? [];
+    $nearby = cg_get_projects_for_portfolio_items($offices, ($limit - $directCount), $items) ?? [];
     if ($nearby) {
-      $projects = array_merge($projects, $nearby);
+      $items = array_merge($items, $nearby);
     }
   }
-  $projects = array_slice($projects, 0, $limit);
-  return $projects;
+  $items = array_slice($items, 0, $limit);
+  return $items;
 }
 
 function cg_news_with_fallback(int $post_id, int $limit = 6) {
-  $news = get_field('related_news', $post_id) ?? [];
+  $items = get_field('related_news', $post_id) ?? [];
+  if ($items && is_array($items)) {
+    $directCount = count($items);
+  } else {
+    $items = [];
+    $directCount = 0;
+  }
 
-  $directCount = count($news);
   if ($limit > $directCount) {
     $offices = cg_get_related_offices($post_id);
-    $nearby = cg_get_news_for_portfolio_items($offices, ($limit - $directCount), $news) ?? [];
+    $nearby = cg_get_news_for_portfolio_items($offices, ($limit - $directCount), $items) ?? [];
     if ($nearby) {
-      $news = array_merge($news, $nearby);
+      $items = array_merge($items, $nearby);
     }
   }
-  $news = array_slice($news, 0, $limit);
-  return $news;
+  $items = array_slice($items, 0, $limit);
+  return $items;
 }
 
 
