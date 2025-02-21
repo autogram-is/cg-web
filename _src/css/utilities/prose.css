@@ -107,7 +107,8 @@ PROSE UTILITY
   }
 
   &.lede {
-    p:first-of-type {
+    & > p:first-of-type:not([class*="is-style-"]),
+    & > p:first-of-type.is-style-default {
       color: var(--color-deep-steel);
       font-family: var(--font-display);
       font-size: var(--size-step-1);
