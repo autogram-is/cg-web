@@ -15,8 +15,17 @@ function cg_save_person(array $post_data = [], bool $use_slug = true, bool $crea
     update_field('hide_contact', boolval($post_data['hide_contact'] ?? NULL), $post->ID);
     update_field('ex_employee', boolval($post_data['ex_employee'] ?? NULL), $post->ID);
 
-    if ($post_data['headshot']) {
-      set_post_thumbnail($post, $post_data['headshot']);
+    if ($post_data['new_headshot']) {
+      $dir = wp_get_upload_dir();
+      $headshot_url = $dir['url'] . '/' . str_replace(' ', '-', $post_data['new_headshot']);
+      $headshot_id = attachment_url_to_postid( $headshot_url );
+      if ($headshot_id) {
+        WP_CLI::log("Found headshot '" . $headshot_url . "' in attachment #$headshot_id ");
+        set_post_thumbnail($post, $headshot_id);
+      } else {
+        WP_CLI::log("Could not find headshot '" . $headshot_url . "'");
+      }
+
     }
   } else {
     WP_CLI::log("Could not update person '". $post_data['title'] ."'");

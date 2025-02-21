@@ -60,7 +60,7 @@ function cg_import_bios($dry_run = false) {
   } else {
     foreach ($items as $item) {
       if ($item['migration_status'] === 'delete') {
-        WP_CLI::log("person '" . $item['title'] . "' deleted " . $item['migration_notes']);
+        WP_CLI::log("person '" . $item['title'] . "' deleted " . ($item['migration_notes'] ?? ''));
         $deleted++;
       } else {
         cg_save_person($item);
