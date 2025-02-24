@@ -6,7 +6,7 @@
   }
 
   .attendee-list {
-    padding-top: var(--region-space, var(--space-s-m));
+    padding-block: var(--region-space, var(--space-s-m));
   }
 
   &.hatched::before {
