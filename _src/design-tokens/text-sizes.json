@@ -55,9 +55,14 @@
       "max": 48
     },
     {
-      "name": "Standout",
+      "name": "Step 7",
       "min": 52,
       "max": 64
+    },
+    {
+      "name": "Standout",
+      "min": 64,
+      "max": 84
     },
     {
       "name": "Impact",

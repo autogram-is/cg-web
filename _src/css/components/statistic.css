@@ -7,7 +7,7 @@
     flex-direction: column;
     dt {
       display: flex;
-      font-size: var(--size-standout);
+      font-size: var(--size-step-7);
       font-weight: var(--weight-semibold);
       line-height: var(--leading-tight);
       flex-direction: row;
