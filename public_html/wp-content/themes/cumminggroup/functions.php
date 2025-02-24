@@ -146,6 +146,7 @@ function cg_post_templates($post, $directory = '') {
 }
 
 Routes::map(':type/:slug/portfolio', 'cg_project_portfolio_router');
+Routes::map(':type/:slug/portfolio/page/:pg', 'cg_project_portfolio_router');
 
 function cg_project_portfolio_router($params) {
   $types = array(
@@ -158,8 +159,17 @@ function cg_project_portfolio_router($params) {
   if ($type) {
     $query = "$type=$slug&post_type=$type&name=$slug&portfolio";
     $data = array('portfolio' => TRUE);
+    if ($params['pg'] ?? false) $data['portfolio_page'] = $params['pg'];
     Routes::load('single.php', $data, $query, 200);  
   } else {
     Routes::load('404.php', null, false, 404);  
   }
 }
+
+function cg_archive_count( $query ) {
+if ( $query->is_archive() && $query->is_main_query() && !is_admin() ) {
+        $query->set( 'posts_per_page', 15 );
+    }
+}
+add_action( 'pre_get_posts', 'cg_archive_count' );
+  

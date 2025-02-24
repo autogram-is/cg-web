@@ -50,6 +50,10 @@ class CGTwigFilters {
     );
 
     $twig->addFilter(
+      new \Twig\TwigFilter( 'map_link', [ $this, 'map_link' ] )
+    );
+
+    $twig->addFilter(
       new \Twig\TwigFilter( 'sort_locations', [ $this, 'sort_locations' ] )
     );
 
@@ -191,6 +195,19 @@ class CGTwigFilters {
     }
 
     if ($url) return $url;
+  }
+
+  function map_link($address) {
+    // Generates a URL-escaped comma-delimited link to https://www.google.com/maps/place/
+
+    if (is_array($address)) {
+      $address = join(",", $address);
+    } else {
+      $address = str_replace("<br />", "\n", $address);
+      $address = str_replace("\n", ",", $address);
+    }
+
+    return "https://www.google.com/maps/place/" . str_replace(' ', '+', $address);
   }
 
   /**

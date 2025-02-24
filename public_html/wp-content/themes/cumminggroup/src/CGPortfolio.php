@@ -31,6 +31,19 @@ class CGPortfolio extends CGContent {
 	 */
 	public function projects(?int $limit = -1) { return parent::_cache_relationship('projects', $limit); }
 
+		/**
+	 * Gets projects connected to the current post.
+	 *
+	 * @return \Timber\PostCollectionInterface
+	 */
+	public function project_count() { 
+		$projects = $this->meta('projects');
+		if (is_array($projects)) {
+			return count($projects);
+		}
+		return 0;
+	}
+
 	/**
 	 * Gets office pages connected to the current post.
 	 *

@@ -9,7 +9,7 @@
   {% endif %}
   {% if office.address %}
   <p class="icon-map">
-    <a href="#">{{ office.address }}</a>
+    <a href="{{ office.address | map_link }}">{{ office.address }}</a>
   </p>
   {% endif %}
   {% if office.phone and (office.phone | phone) %}<p class="icon-tel"><a href="{{ office.phone | phone_url }}">{{ office.phone | phone }}</a></p>{% endif %}
