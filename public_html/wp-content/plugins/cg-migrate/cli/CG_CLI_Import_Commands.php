@@ -80,6 +80,21 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
     // WP_CLI::log(var_export($data, true));
     // update_field('social', $social, 'cg_options');
 
+    $posts = get_posts(array( 
+      'posts_per_page' => -1,
+      'post_type'      => ['sector', 'service', 'office'],
+    ));
+    foreach ($posts as $post) {
+      $projects = get_field('projects', $post->ID);
+      if (!is_array($projects)) {
+        $projects = 0;
+      } else {
+        $projects = count($projects);
+      }
+      WP_CLI::log(join("\t", [$post->ID, $post->post_type, $post->post_title, $projects]));
+    }
+return;
+
     $args = array( 
       'posts_per_page' => -1,
       'post_type'      => 'post',
@@ -541,8 +556,8 @@ class CG_CLI_Import_Commands extends WP_CLI_Command {
    * @alias import
    */
   public function import() {
-    // cg_import_offices();
-    cg_import_bios();
+    cg_import_offices();
+    // cg_import_bios();
     // cg_import_projects();
     // cg_import_news();
     // cg_apply_fixed_pages();
