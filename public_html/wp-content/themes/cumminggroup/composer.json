@@ -18,7 +18,8 @@
     ],
     "require": {
         "timber/timber": "2.3.1",
-        "palmiak/timber-acf-wp-blocks": "^1.15"
+        "palmiak/timber-acf-wp-blocks": "^1.15",
+        "upstatement/routes": "^0.9.1"
     },
     "require-dev": {
         "symplify/vendor-patches": "*"
@@ -31,6 +32,9 @@
     },
     "extra": {
         "patches": {
+            "upstatement/routes": [
+                "patches/upstatement-routes-routes-php.patch"
+            ],
             "palmiak/timber-acf-wp-blocks": [
                 "patches/palmiak-timber-acf-wp-blocks-timber-acf-wp-blocks-php.patch"
             ]
