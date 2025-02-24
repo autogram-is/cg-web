@@ -34,7 +34,17 @@
 			{% else %}
 			<p>{{ event.eventhed }}</p>
 			{% endif %}
-			<img src="https://picsum.photos/1200/800?&blur=4.9">
+			{% if event.thumbnail -%}
+			{% set img = get_image(event.thumbnail) %}
+      <img 
+        src="{{ img.src }}"
+        srcset="{{ img.srcset }}"
+        sizes="auto"
+       	alt="{{ img.alt }}"
+        height="{{ img.height }}"
+        width="{{ img.width }}"
+        loading="lazy">
+      {% endif %}
 		</li>
 		{% endfor %}
 	</ol>
