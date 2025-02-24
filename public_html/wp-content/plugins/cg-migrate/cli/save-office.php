@@ -8,11 +8,13 @@ function cg_save_office(array $post_data = [], bool $use_slug = true, bool $crea
   if ($post) {
     if ($post_data['name'] || $post_data['email'] || $post_data['phone'] || $post_data['address']) {
       $post_data['office_details'] = [];
+      $address = $post_data['address'] ?? '';
+      $address = str_replace(";", "\n", ($address ?? ''));
       $post_data['office_details'][] = array(
         'name' => trim($post_data['name'] ?? ''),
         'email' => trim($post_data['email'] ?? ''),
         'phone' => trim($post_data['phone'] ?? ''),
-        'address' => trim($post_data['address'] ?? ''),
+        'address' => trim($address ?? ''),
       );
     }
 
@@ -34,11 +36,14 @@ function cg_save_office(array $post_data = [], bool $use_slug = true, bool $crea
 }
 
 function cg_add_loc_to_office(array $data = []) {
+  $address = $data['address'] ?? '';
+  $address = str_replace(";", "\n", ($address ?? ''));
+
   $new_location = array(
     'name' => trim($data['name'] ?? ''),
     'email' => trim($data['email'] ?? ''),
     'phone' => trim($data['phone'] ?? ''),
-    'address' => str_replace("; ", "\n", ($data['address'] ?? '')),
+    'address' => $address ?? '',
   );
 
   $post = get_post_by_name($data['slug'], 'office');

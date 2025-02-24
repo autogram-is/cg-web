@@ -1,0 +1,5 @@
+{% extends "index.twig" %}
+{% block content %}
+{% include "partial/project-grid.twig" with { items: posts, sectors: true, services: true, offices: true } %}
+{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+{% endblock %}

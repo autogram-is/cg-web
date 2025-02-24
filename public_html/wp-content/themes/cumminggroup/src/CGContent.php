@@ -102,7 +102,7 @@ class CGContent extends Post {
 	protected function _placeholder_defaults() {
 		$keyed = [];
 		$options = get_fields('cg_options');
-		if ($options && $options['placeholders']) {
+		if ($options && ($options['placeholders'] ?? false)) {
 			foreach ($options['placeholders'] as $default) {
 				$keyed[$default['type']] = $default;
 			}	

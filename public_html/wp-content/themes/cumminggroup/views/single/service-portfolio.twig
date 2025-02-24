@@ -1,0 +1,9 @@
+{% extends "single/service.twig" %}
+
+{% block posthero %}
+  {% if post.projects | length %}
+  <div class="region region-primary wrapper">
+  {% include "partial/project-grid.twig" with {  items: post.projects, offices: true, sectors: true } %}
+  </div>
+  {% endif %}
+{% endblock %}

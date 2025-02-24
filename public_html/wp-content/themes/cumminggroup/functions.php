@@ -94,7 +94,6 @@ function gutenberg_editor_assets() {
 
 add_filter('use_block_editor_for_post_type', 'cg_disable_gutenberg', 10, 2);
 function cg_disable_gutenberg($current_status, $post_type) {
-  // Use your post type key instead of 'product'
   if ($post_type === 'office') return false;
   if ($post_type === 'person') return false;
   if ($post_type === 'event') return false;
@@ -111,7 +110,6 @@ function is_news_category() {
 
 	return get_query_var('news-category') ?? false;
 }
-
 
 /**
  * Returns an array of potential templates for a post, optionally in a given subdirectory.
@@ -146,3 +144,32 @@ function cg_post_templates($post, $directory = '') {
 
   return $templates;
 }
+
+Routes::map(':type/:slug/portfolio', 'cg_project_portfolio_router');
+Routes::map(':type/:slug/portfolio/page/:pg', 'cg_project_portfolio_router');
+
+function cg_project_portfolio_router($params) {
+  $types = array(
+    'locations' => 'office',
+    'sectors'   => 'sector',
+    'services'  => 'service',
+  );
+  $type = $types[$params['type']] ?? false;
+  $slug = $params['slug'];
+  if ($type) {
+    $query = "$type=$slug&post_type=$type&name=$slug&portfolio";
+    $data = array('portfolio' => TRUE);
+    if ($params['pg'] ?? false) $data['portfolio_page'] = $params['pg'];
+    Routes::load('single.php', $data, $query, 200);  
+  } else {
+    Routes::load('404.php', null, false, 404);  
+  }
+}
+
+function cg_archive_count( $query ) {
+if ( $query->is_archive() && $query->is_main_query() && !is_admin() ) {
+        $query->set( 'posts_per_page', 15 );
+    }
+}
+add_action( 'pre_get_posts', 'cg_archive_count' );
+  
