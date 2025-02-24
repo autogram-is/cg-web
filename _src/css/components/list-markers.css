@@ -1,8 +1,11 @@
+.page ul:not([role="list"]):not(.grid),
+.page ol:not([role="list"]):not(.grid) {
+  display: flex;
+  flex-direction: column;
+}
 
 .page ul:not([role="list"]),
 .page ol:not([role="list"]) {
-  display: flex;
-  flex-direction: column;
   font-size: var(--size-step-0);
   font-weight: var(--weight-light);
   padding: var(--space-xs) 0;
