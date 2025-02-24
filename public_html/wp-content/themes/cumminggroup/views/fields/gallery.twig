@@ -6,6 +6,8 @@
         src="{{ get_image(image) }}"
         srcset="{{ get_image(image).srcset }}"
         sizes="auto"
+        height="{{ get_image(image).height }}"
+        width="{{ get_image(image).width }}"
         loading="lazy">
       {%- endfor %}
     </div>
