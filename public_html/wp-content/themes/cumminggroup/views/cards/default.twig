@@ -1,7 +1,16 @@
 <div class="region">
   <div class="feature">
     <div class="sidebar item">
-      {% if feature.thumbnail %}
+      {% if thumbnail %}
+      {% set thumbnail = get_image(thumbnail) %}
+      <a href="{{ feature.link }}" class="thumb">
+        <img
+          src="{{ thumbnail.src|resize(800, 650) }}"
+          height="{{thumbnail.height}}"
+          width="{{thumbnail.width}}"
+          alt="{{thumbnail.alt}}" />
+      </a>
+      {% elseif feature.thumbnail %}
       <a href="{{ feature.link }}" class="thumb">
         <img
           src="{{feature.thumbnail.src|resize(800, 650) }}"
