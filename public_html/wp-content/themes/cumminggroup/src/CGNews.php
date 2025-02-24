@@ -52,7 +52,7 @@ class CGNews extends CGContent {
 		}
 
 		// If either text or image is set, return a value.
-		if ($placeholder['text'] || $placeholder['image']) {
+		if (($placeholder['text'] ?? false) || ($placeholder['image'] ?? false)) {
 			return $placeholder;
 		}
 	}
