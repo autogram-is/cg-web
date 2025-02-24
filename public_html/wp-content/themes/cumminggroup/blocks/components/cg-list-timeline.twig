@@ -18,6 +18,7 @@
 <div class="timeline">
 	{% for yearspan in fields.timeline %}
 	<h3 class="hed type-outline">{{ yearspan.yearhed }}</h3>
+	{% if yearspan.events %}
 	<ol role="list">
 		{% for event in yearspan.events %}
 		<li class="timeline-item">
@@ -48,5 +49,6 @@
 		</li>
 		{% endfor %}
 	</ol>
+	{% endif %}
 	{% endfor %}
 </div>
