@@ -11,6 +11,8 @@
 
 use Timber\Timber;
 
+global $params;
+
 $context         = Timber::context();
 $timber_post     = Timber::get_post();
 $context['post'] = $timber_post;
@@ -36,17 +38,12 @@ if ($timber_post->post_type == 'person') {
 	}
 }
 
-// Allow different template for office, service, and sector pages if the ?projects=all
-// get parameter is set.
-//
-// Follows the pattern: `single/posttype-projects.twig`
-if (in_array($timber_post->post_type, ['sector', 'service', 'office'])) {
-	if (array_key_exists('projects', $_GET)) {
-		array_unshift($templates, 'single/' . $timber_post->post_type . '-projects.twig');
-		$context['show_all_projects'] = TRUE;
-	}
+// Allow different template for office, service, and sector pages when
+// the sub-page /portfolio is visited.
+if ($params['portfolio'] ?? false) {
+	array_unshift($templates, 'single/' . $timber_post->post_type . '-portfolio.twig');
+	$context['portfolio'] = TRUE;
 }
-
 
 if ( post_password_required($timber_post->ID) ) {
 	Timber::render( 'single/password.twig', $context );
