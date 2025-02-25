@@ -3,6 +3,13 @@
     "title": "Event Properties",
     "fields": [
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_6786e5a94468d",
             "label": "Event",
             "name": "",
@@ -21,6 +28,13 @@
             "selected": 0
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_6721900ec8868",
             "label": "Event URL",
             "name": "event_url",
@@ -40,6 +54,13 @@
             "placeholder": ""
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": 0,
+            "allow_quickedit": 0,
+            "show_column": 1,
+            "show_column_weight": 1000,
+            "show_column_sortable": 1,
             "key": "field_67218fbdc8866",
             "label": "Start Date",
             "name": "start_date",
@@ -53,15 +74,19 @@
                 "class": "",
                 "id": ""
             },
-            "admin_column_enabled": 1,
-            "admin_column_position": "",
-            "admin_column_width": "",
             "display_format": "Y-m-d H:i:s",
             "return_format": "Y-m-d H:i:s",
             "first_day": 1,
             "allow_in_bindings": 1
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_67218ff7c8867",
             "label": "End Date",
             "name": "end_date",
@@ -84,6 +109,13 @@
             "allow_in_bindings": 1
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_672d109698c21",
             "label": "All Day",
             "name": "all_day",
@@ -106,6 +138,13 @@
             "ui": 1
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_67219d2d9f42e",
             "label": "Meeting Email",
             "name": "event_email",
@@ -127,6 +166,13 @@
             "append": ""
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_6786e57a4468c",
             "label": "Venue",
             "name": "",
@@ -145,6 +191,13 @@
             "selected": 0
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_672191c99dd95",
             "label": "Venue Name",
             "name": "venue_name",
@@ -167,6 +220,13 @@
             "append": ""
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_672191b278011",
             "label": "Venue Link",
             "name": "venue_url",
@@ -186,6 +246,13 @@
             "placeholder": ""
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_6721907868c25",
             "label": "Phone",
             "name": "venue_phone",
@@ -208,6 +275,13 @@
             "append": ""
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_6721905768c21",
             "label": "Street Address",
             "name": "venue_address",
@@ -230,6 +304,13 @@
             "append": ""
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_6721906768c22",
             "label": "City",
             "name": "venue_city",
@@ -252,6 +333,13 @@
             "append": ""
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_6721907268c24",
             "label": "State \/ Province",
             "name": "venue_state",
@@ -274,6 +362,13 @@
             "append": ""
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_672d0df242b15",
             "label": "Postal Code",
             "name": "venue_postcode",
@@ -296,6 +391,13 @@
             "append": ""
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_6721906d68c23",
             "label": "Country",
             "name": "venue_country",
@@ -336,5 +438,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739238047
+    "qef_simple_location_rules": 0,
+    "modified": 1740440741
 }
