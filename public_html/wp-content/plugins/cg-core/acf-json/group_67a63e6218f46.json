@@ -3,6 +3,13 @@
     "title": "News Bylines",
     "fields": [
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": 0,
+            "allow_quickedit": 0,
+            "show_column": 1,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_67a65d3756777",
             "label": "Internal Authors",
             "name": "internal_authors",
@@ -23,7 +30,6 @@
                 "class": "",
                 "id": ""
             },
-            "admin_column_enabled": 0,
             "post_type": [
                 "person"
             ],
@@ -40,6 +46,13 @@
             "bidirectional_target": []
         },
         {
+            "allow_backendsearch": 0,
+            "show_column_filter": false,
+            "allow_bulkedit": 0,
+            "allow_quickedit": 0,
+            "show_column": 1,
+            "show_column_weight": 1000,
+            "show_column_sortable": 0,
             "key": "field_67a63e6262449",
             "label": "Custom Byline",
             "name": "external_byline",
@@ -60,7 +73,6 @@
                 "class": "",
                 "id": ""
             },
-            "admin_column_enabled": 0,
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
@@ -87,5 +99,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739474386
+    "qef_simple_location_rules": 0,
+    "modified": 1740464831
 }

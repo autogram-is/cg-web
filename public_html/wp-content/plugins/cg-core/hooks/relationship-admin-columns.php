@@ -32,7 +32,7 @@ add_filter( 'manage_service_posts_columns', function($columns) {
   return $columns;
 });
 
-add_filter( 'manage_news_posts_columns', function($columns) {
+add_filter( 'manage_post_posts_columns', function($columns) {
   $columns['related_portfolio_items'] = 'Related Items';
   return $columns;
 });
@@ -44,6 +44,7 @@ add_filter( 'manage_report_posts_columns', function($columns) {
 
 add_filter( 'manage_event_posts_columns', function($columns) {
   $columns['related_portfolio_items'] = 'Related Items';
+  $columns['attendees'] = 'Attendees';
   return $columns;
 });
 
@@ -57,5 +58,20 @@ add_action( 'manage_posts_custom_column' , function( $column, $post_id ) {
       $ids = get_field($column, $post_id);
       if (is_array($ids)) echo count($ids);
       break;
+    case 'attendees':
+      $ids = get_field('people', $post_id);
+      if (is_array($ids)) echo count($ids);
+      break;
     }
 }, 10, 2 );
+
+
+add_filter( 'gettext', function( $translated_text, $untranslated_text, $domain ) {
+	if ( 'acf-quickedit-fields' !== $domain ) {
+		return $translated_text;
+	}
+  if ('(No value)' === $untranslated_text) {
+    return "";
+  }
+  return $translated_text;
+}, 10, 3 );
