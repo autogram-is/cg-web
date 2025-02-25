@@ -77,9 +77,6 @@
     & {
       margin-bottom: calc( var(--space-2xl) + var(--space-s-m) );
     }
-    .thumb:hover {
-      transform: translateY( calc( 0px - var(--space-3xs) ) );
-    }
     &.project-grid {
       .switcher {
         --gutter: var(--space-xl)
