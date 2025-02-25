@@ -1,9 +1,0 @@
-{% extends "base.twig" %}
-{% block content %}
-	<h2 class="type-eyebrow hed-hatch">Upcoming Events</h2>
-	{% for post in posts %}
-		{% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': 'hero' } %}
-		<hr>
-	{% endfor %}
-	{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
-{% endblock %}

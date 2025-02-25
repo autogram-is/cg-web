@@ -3,6 +3,13 @@
     "title": "Project Connections",
     "fields": [
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": 1,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_6750c797a53cf",
             "label": "Sectors",
             "name": "sectors",
@@ -16,9 +23,6 @@
                 "class": "",
                 "id": ""
             },
-            "admin_column_enabled": 1,
-            "admin_column_position": "",
-            "admin_column_width": "",
             "post_type": [
                 "sector"
             ],
@@ -38,6 +42,13 @@
             ]
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": 1,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_6750c797a57c2",
             "label": "Services",
             "name": "services",
@@ -51,9 +62,6 @@
                 "class": "",
                 "id": ""
             },
-            "admin_column_enabled": 1,
-            "admin_column_position": "",
-            "admin_column_width": "",
             "post_type": [
                 "service"
             ],
@@ -73,6 +81,13 @@
             ]
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": 1,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_6750d136af9b2",
             "label": "Offices",
             "name": "offices",
@@ -86,9 +101,6 @@
                 "class": "",
                 "id": ""
             },
-            "admin_column_enabled": 1,
-            "admin_column_position": "",
-            "admin_column_width": "",
             "post_type": [
                 "office"
             ],
@@ -126,5 +138,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740097882
+    "qef_simple_location_rules": 0,
+    "modified": 1740443465
 }

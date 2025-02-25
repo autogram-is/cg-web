@@ -3,6 +3,13 @@
     "title": "Leadership Roles",
     "fields": [
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": 1,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_675a02468628e",
             "label": "Office Leadership",
             "name": "offices",
@@ -16,9 +23,6 @@
                 "class": "",
                 "id": ""
             },
-            "admin_column_enabled": 1,
-            "admin_column_position": "",
-            "admin_column_width": "",
             "post_type": [
                 "office"
             ],
@@ -38,6 +42,13 @@
             ]
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": 1,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_6750a860c43c0",
             "label": "Sector Leadership",
             "name": "sectors",
@@ -51,9 +62,6 @@
                 "class": "",
                 "id": ""
             },
-            "admin_column_enabled": 1,
-            "admin_column_position": "",
-            "admin_column_width": "",
             "post_type": [
                 "sector"
             ],
@@ -73,6 +81,13 @@
             ]
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": 1,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_6750a8b448f2a",
             "label": "Service Leadership",
             "name": "services",
@@ -86,9 +101,6 @@
                 "class": "",
                 "id": ""
             },
-            "admin_column_enabled": 1,
-            "admin_column_position": "",
-            "admin_column_width": "",
             "post_type": [
                 "service"
             ],
@@ -108,6 +120,13 @@
             ]
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_67a65de345073",
             "label": "Authored News",
             "name": "authored_news",
@@ -159,5 +178,6 @@
     "active": true,
     "description": "Control the sectors, services, and offices that list a person as a \"Leader\"",
     "show_in_rest": 0,
-    "modified": 1740097868
+    "qef_simple_location_rules": 0,
+    "modified": 1740443688
 }
