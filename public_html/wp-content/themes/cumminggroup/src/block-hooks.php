@@ -356,7 +356,9 @@ function cg_list_events_block_data($context) {
   );
 
   if ($fields['pagination'] ?? false) {
-    $query_options['paged'] = get_query_var('paged') ? get_query_var('paged') : 1;
+    $all_query['paged'] = get_query_var('paged') ? get_query_var('paged') : 1;
+    $upcoming_query['paged'] = get_query_var('paged') ? get_query_var('paged') : 1;
+    $past_query['paged'] = get_query_var('paged') ? get_query_var('paged') : 1;
   }
 
   if ($fields['window'] == 'all') {

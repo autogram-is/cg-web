@@ -41,8 +41,20 @@ if ($timber_post->post_type == 'person') {
 // Allow different template for office, service, and sector pages when
 // the sub-page /portfolio is visited.
 if ($params['portfolio'] ?? false) {
+	// Build a fresh wp-query with pagination support
+	$ids = $timber_post->meta('projects');
+	if (is_array($ids) && count($ids)) {
+		$query = [
+			'post__in' => $ids,
+			'post_type' => 'project',
+			'posts_per_page' => 18,
+			'paged' => get_query_var('page') ? get_query_var('page') : 1,
+    ];
+		$context['projects'] = Timber::get_posts($query);
+	}
 	array_unshift($templates, 'single/' . $timber_post->post_type . '-portfolio.twig');
-	$context['portfolio'] = TRUE;
+	array_unshift($templates, 'single/' . 'default-portfolio.twig');
+	$context['portfolio'] = TRUE;	
 }
 
 if ( post_password_required($timber_post->ID) ) {

@@ -31,15 +31,14 @@
     </a>
   </div>
   {% endif %}
-
 {% elseif fields.window == 'past' %}
   {% for post in posts %}
     {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': "hero" } %}
     <hr>
   {% endfor %}
-  {% if fields.pagination %}
+  {% if fields.pagination and posts.pagination %}
   <div class="region">
-  {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+  {% include 'partial/pagination.twig' with { posts: posts } %}
   </div>
   {% endif %}
 
@@ -48,9 +47,9 @@
     {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': "hero" } %}
     <hr>
   {% endfor %}
-  {% if fields.pagination %}
+  {% if fields.pagination and posts.pagination %}
   <div class="region">
-  {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+  {% include 'partial/pagination.twig' with { posts: posts } %}
   </div>
   {% endif %}
 {% endif %}

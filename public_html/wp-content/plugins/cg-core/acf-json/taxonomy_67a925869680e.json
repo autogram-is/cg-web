@@ -61,7 +61,7 @@
         "permalink_rewrite": "custom_permalink",
         "slug": "news-insights",
         "with_front": "0",
-        "rewrite_hierarchical": "0"
+        "rewrite_hierarchical": "1"
     },
     "query_var": "post_type_key",
     "query_var_name": "",
@@ -72,5 +72,5 @@
     "meta_box": "default",
     "meta_box_cb": "",
     "meta_box_sanitize_cb": "",
-    "modified": 1740439189
+    "modified": 1740516116
 }
