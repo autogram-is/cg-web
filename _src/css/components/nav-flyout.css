@@ -64,6 +64,7 @@
         a {
           color: var(--color-light);
           font-size: var(--size-step-00);
+          font-weight: var(--weight-normal);
           line-height: var(--leading-tight);
           margin-block: var(--space-nudge);
           text-decoration: none;
