@@ -2,15 +2,13 @@
 
 {% if heading %}
 <div class="region">
-  <div class="wrapper">
-    <h2 class="type-hed hed-accent" id="hed">{{ heading }}</h2>
-  </div>
+  <h2 class="type-hed hed-accent" id="hed">{{ heading }}</h2>
 </div>
 {% endif %}
 
 <div class="region">
   <div class="person-grid flow {{ utilities }}">
-    <ul class="wrapper people-inner" role="list">
+    <ul class="people-inner" role="list">
       {% for person in items %}
         {% include ['partial/person.twig'] with { person: person } %}
       {% endfor %}

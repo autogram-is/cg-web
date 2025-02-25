@@ -22,7 +22,7 @@
   {% endif %}
 
   {% if post.leadership | length %}
-  <div class="region">
+  <div class="region wrapper">
   {% include "partial/person-list.twig" with { heading: pagetitle ~ " Leadership", items: post.leadership } %}
   </div>
   {% endif %}
