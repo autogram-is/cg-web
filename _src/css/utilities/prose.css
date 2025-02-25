@@ -31,6 +31,10 @@ PROSE UTILITY
   & > p {
     line-height: var(--leading-loose);
     max-width: 95ch;
+
+    &:first-of-type:not(.is-style-lede-header) {
+      margin-block-start: var(--space-s-m);
+    }
   }
   & > p {
     --region-space: var(--space-2xs);
