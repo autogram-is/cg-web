@@ -19,12 +19,12 @@
     alt="{{ hero.image.alt }}" />
 
 {% elseif hero.type == 'project' and hero.project.thumbnail %} {# a project's featured image #}
-  <img src="{{ hero.project.image.src }}"
-    srcset="{{ hero.project.image.srcset }}"
+  <img src="{{ hero.project.thumbnail.src }}"
+    srcset="{{ hero.project.thumbnail.srcset }}"
     sizes="100vw"
-    height="{{ hero.project.image.height }}"
-    width="{{ hero.project.image.width }}"
-    alt="{{ hero.project.image.alt }}" />
+    height="{{ hero.project.thumbnail.height }}"
+    width="{{ hero.project.thumbnail.width }}"
+    alt="{{ hero.project.thumbnail.alt }}" />
 
 {% elseif hero.type == 'statistics' %} {# a set of high-impact statistics #}
   <figure class="statistic flow hero">
