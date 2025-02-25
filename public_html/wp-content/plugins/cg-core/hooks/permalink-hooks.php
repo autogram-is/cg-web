@@ -13,11 +13,12 @@ add_filter("available_permalink_structure_tags", function($available_tags) {
  * These are highly dependent on /news-insights and /events pages existing.
  */
 add_action('init', function() {
-  add_rewrite_rule('^news-insights/([^/]*)/page/([0-9]+)?/?','index.php?news-category=$matches[1]&paged=$matches[2]','top');
-  add_rewrite_rule('^news-insights/page/([0-9]+)?/?','index.php?pagename=news-insights&paged=$matches[1]','top');
-  add_rewrite_rule('^news-insights/((?!page)[^/]*)/((?!page)[^/]*)/?','index.php?news-category=$matches[1]&post_type=post&name=$matches[2]','top');
+  // Ensure top-level indexing works for post types with a hand-crafted index page
+  add_rewrite_rule('^(events|market-analysis|news-insights)/page/([0-9]+)?/?','index.php?pagename=$matches[1]&paged=$matches[2]','top');
 
-  add_rewrite_rule('^events/page/([0-9]+)?/?','index.php?pagename=events&paged=$matches[1]','top');
+  // News and Insights posts have taxonomy sub-pages that need to be accounted for 
+  add_rewrite_rule('^news-insights/([^/]*)/page/([0-9]+)?/?','index.php?news-category=$matches[1]&paged=$matches[2]','top');
+  add_rewrite_rule('^news-insights/((?!page)[^/]*)/((?!page)[^/]*)/?','index.php?news-category=$matches[1]&post_type=post&name=$matches[2]','top');
 });
 
 
