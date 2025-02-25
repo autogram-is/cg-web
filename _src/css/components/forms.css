@@ -154,7 +154,7 @@
   }
 }
 
-@supports (appearance: none) {
+@supports (appearance: none) or (-webkit-appearance: none) {
   form {
     .select {
       position: relative;
@@ -177,6 +177,7 @@
         background: var(--color-timeless-highlight);
       }
       select {
+        -webkit-appearance: none;
         appearance: none;
         padding-inline-end: var(--space-m);
       }
@@ -192,6 +193,7 @@
       }
       & > input[type='checkbox'],
       & > input[type='radio'] {
+        -webkit-appearance: none;
         appearance: none;
         background: var(--color-steel-highlight);
         border: var(--space-nudge) solid var(--input-active-inner);
@@ -244,6 +246,7 @@
       }
       input[type='checkbox'],
       input[type='radio'] {
+        -webkit-appearance: none;
         appearance: none;
         background: var(--input-background);
         border-radius: var(--space-2xs);
