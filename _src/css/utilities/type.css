@@ -3,7 +3,7 @@
   color: var(--color-steel-shade);
   font-family: var(--font-body);
   font-size: var(--size-step-6);
-  font-weight: var(--weight-semibold);
+  font-weight: var(--weight-normal);
   letter-spacing: var(--tracking-tight);
   line-height: var(--leading-tight);
   text-wrap: pretty; /* https://caniuse.com/mdn-css_properties_text-wrap_pretty */
