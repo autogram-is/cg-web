@@ -9,8 +9,13 @@ export default function() {
       const collisionObserver = new ResizeObserver( obs => {
         obs.forEach( ob => {
           const leftPos = ob.target.getBoundingClientRect().x;
+
           if( leftPos < 0 ){
             ob.target.classList.add( "left-collision" );
+          }
+          if( ob.target.getBoundingClientRect().x + ob.target.offsetWidth > window.innerWidth ){
+            console.log( "Overflow.");
+            ob.target.classList.add( "right-collision" );
           }
         });
       });
@@ -42,7 +47,6 @@ export default function() {
           if( !openToggles.includes( this ) && !nowCollapsed ) {
             this.localName === "a" && e.preventDefault();
           }
-
           swapState( this, nowCollapsed );
       });
     },

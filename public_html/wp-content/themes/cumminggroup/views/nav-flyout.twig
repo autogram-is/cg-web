@@ -4,6 +4,15 @@
   </button>
   <div class="subnav" aria-hidden="false">
     <div class="sidebar region swap" data-direction="rtl">
+      <div class="teaser">
+        <div class="body">
+          <p>
+            We are always looking for great people, and given our global
+            footprint and the vast services we offer on dozens of project types,
+            we may very well have a position that’s perfectly suited for you.
+          </p>
+        </div>
+      </div>
       <ul role="list" aria-labelledby="hed-{{ item.id }}">
         {% for subitem in subitems %}
         <li><a target="{{ subitem.target }}" href="{{ subitem.link }}" class="type-detail"{% if subitem.current %} aria-current="page"{% endif %}>{{ subitem.title | stylize }}</a></li>

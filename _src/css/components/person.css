@@ -20,7 +20,7 @@
     --flow-space: var(--space-2xs);
     color: var(--color-dark);
     font-size: var(--size-step-2);
-    font-weight: var(--weight-semibold);
+    font-weight: var(--weight-normal);
     a {
       color: var(--color-steel-shade);
       text-decoration: underline;
@@ -50,6 +50,8 @@
   .title {
     color: var(--color-steel-shade);
     font-size: var(--size-step-0);
+    margin-block-end: var(--space-nudge);
+    font-weight: var(--weight-normal);
     letter-spacing: var(--tracking-tight);
     line-height: var(--leading-seamless);
   }
@@ -60,15 +62,20 @@
   .locations {
     padding-block-start: var(--space-nudge);
     display: flex;
+    flex-wrap: wrap;
   }
   .location {
     line-height: var(--leading-seamless);
     color: var(--color-deep-steel);
+    font-weight: var(--weight-normal);
     font-size: var(--size-step-000);
 
-    & + &::before {
+    &::after {
       content: ",";
       margin-inline-end: var(--space-nudge);
+    }
+    &:last-of-type::after {
+      content: "";
     }
   }
   .person-meta {
@@ -115,14 +122,14 @@
     .contacts {
       flex-wrap: wrap;
       font-size: var(--size-step-000);
+       font-family: var(--font-body);
       letter-spacing: var(--tracking-tight);
-      margin-block-start: var(--space-3xs);
+      margin-block-start: calc( var(--space-2xs) - var(--space-nudge ));
       li {
         --flow-space: var(--space-3xs);
       }
       li a {
-        font-family: var(--font-body);
-        font-weight: var(--weight-semibold);
+        font-weight: var(--weight-normal);
       }
       li + li {
         &::before {
