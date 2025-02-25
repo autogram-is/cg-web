@@ -1,7 +1,8 @@
 {% extends "single/default.twig" %}
+{% set pagetitle = (title ? title : post.title) | stylize %}
 
 {% block hero %}
-  <h1 class="type-pagehed hed-accent">{{ title ? title : post.title }}</h1>
+  <h1 class="type-pagehed hed-accent">{{ pagetitle }}</h1>
 {% endblock %}
 
 {% block sidebar %}
@@ -41,6 +42,9 @@
   {% if post.projects(6) | length %}
   <div class="region region-primary wrapper">
   {% include "partial/project-gallery.twig" with { heading: "Representative Experience", items: post.projects, offices: true, services: true, utilities: "bg-timeless-backdrop" } %}
+  {% if post.project_count > 6 %}
+    {% include "partial/link-to-archive.twig" with { link: 'portfolio', title: 'Visit Full Portfolio' } %}
+  {% endif %}
   </div>
   {% endif %}
 
@@ -53,6 +57,7 @@
   {% if post.related_news(6) | length %}
   <div class="region region-primary wrapper">
   {% include "partial/related-news-list.twig" with { heading: "Related News", items: post.related_news(6) } %}
+  {% include "partial/link-to-archive.twig" with { link: '/news-insights', title: 'Visit News + Insights' | stylize } %}
   </div>
   {% endif %}
 {% endblock %}

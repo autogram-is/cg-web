@@ -1,9 +1,19 @@
 {% extends "single/sector.twig" %}
+{% set pagetitle = (title ? title : post.title) | stylize %}
+
+{% block hero %}
+  <h1 class="type-pagehed hed-accent">{{ pagetitle }} Portfolio</h1>
+{% endblock %}
 
 {% block posthero %}
-  {% if post.projects | length %}
+  {% if projects %}
   <div class="region region-primary wrapper">
-  {% include "partial/project-grid.twig" with { items: post.projects, offices: true, services: true } %}
+  {% include "partial/project-grid.twig" with { items: projects, offices: true, services: true } %}
+  {% if projects.pagination %}
+    <div class="region">
+    {% include 'partial/pagination.twig' with { posts: projects } %}
+    </div>
+  {% endif %}
   </div>
   {% endif %}
 {% endblock %}

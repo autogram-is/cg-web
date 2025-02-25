@@ -156,10 +156,10 @@ function cg_project_portfolio_router($params) {
   );
   $type = $types[$params['type']] ?? false;
   $slug = $params['slug'];
+  $pg = isset($params['pg']) ? $params['pg'] : 1;
   if ($type) {
-    $query = "$type=$slug&post_type=$type&name=$slug&portfolio";
+    $query = "&post_type=$type&name=$slug&page=$pg";
     $data = array('portfolio' => TRUE);
-    if ($params['pg'] ?? false) $data['portfolio_page'] = $params['pg'];
     Routes::load('single.php', $data, $query, 200);  
   } else {
     Routes::load('404.php', null, false, 404);  
