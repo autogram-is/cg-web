@@ -172,4 +172,3 @@ if ( $query->is_archive() && $query->is_main_query() && !is_admin() ) {
     }
 }
 add_action( 'pre_get_posts', 'cg_archive_count' );
-  
