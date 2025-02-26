@@ -320,7 +320,7 @@ function cg_list_events_block_data($context) {
 
   $all_query = array(
     'meta_query' => array(
-      array('key' => 'start_date')
+      array('key'     => 'start_date')
     ),
     'post_type'      => 'event',
     'posts_per_page' => $fields['limit'] ?? 10,
@@ -356,17 +356,28 @@ function cg_list_events_block_data($context) {
   );
 
   if ($fields['pagination'] ?? false) {
-    $all_query['paged'] = get_query_var('paged') ? get_query_var('paged') : 1;
-    $upcoming_query['paged'] = get_query_var('paged') ? get_query_var('paged') : 1;
     $past_query['paged'] = get_query_var('paged') ? get_query_var('paged') : 1;
+    $all_query['paged'] = get_query_var('paged') ? get_query_var('paged') : 1;
   }
 
-  if ($fields['window'] == 'all') {
-    $context['posts'] = Timber::get_posts($all_query);
+  if ($fields['window'] == 'past') {
+    $context['posts'] = Timber::get_posts($past_query);
+
   } else if ($fields['window'] == 'upcoming') {
     $context['posts'] = Timber::get_posts($upcoming_query);
-  } else if ($fields['window'] == 'past') {
-    $context['posts'] = Timber::get_posts($past_query);
+
+  } else  if ($fields['window'] == 'all') {
+    $context['posts'] = Timber::get_posts($all_query);
+
+  } else if ($fields['window'] == 'auto') {
+    $posts = Timber::get_posts($upcoming_query);
+    if (count($posts)) {
+      $context['posts'] = $posts;
+      $context['fields']['window'] = 'upcoming';
+    } else {
+      $context['posts'] = Timber::get_posts($past_query);
+      $context['fields']['window'] = 'past';  
+    }
   }
 
   return $context;
