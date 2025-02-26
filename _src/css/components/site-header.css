@@ -120,6 +120,10 @@
       font-family: var(--font-secondary);
       font-size: var(--size-step-00);
       font-weight: 500;
+
+      &[aria-hidden="true"] {
+        display: none;
+      }
       .nav-list {
         width: 100%;
         .nav-topitem {

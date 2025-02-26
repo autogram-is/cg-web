@@ -10,8 +10,14 @@
     </button>
   </div>
   <div class="sitenav toggle-hidden" aria-hidden="true">
-    <nav class="primary-nav">
+
+    <nav class="primary-nav us-only" aria-hidden="false">
       {% include "menu.twig" with {'items': menu.get_items} %}
+    </nav>
+
+    <nav class="primary-nav eu-uk-only" aria-hidden="true">
+      EU menu.
+      {# include "menu.twig" with {'items': menu.get_items} #}
     </nav>
 
     <div class="search-wrap">
