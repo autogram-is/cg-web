@@ -16,36 +16,50 @@
   SupportsAlignText: false
 #}
 <div class="flow region">
-{% if fields.window == 'upcoming' %}
+{%- if fields.window == 'upcoming' %}
+  {% if posts | length == 0 %}
+  {{ fields.empty_message }}
+  {% endif %}
   {% for post in posts %}
     {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': "hero" } %}
     <hr>
   {% endfor %}
-  {% if fields.archive_link %}
   <div class="pagination repel temporal">
-    <a href="{{ fields.archive_link }}" class="previous button mini align-only">
+    <a href="/events-archive" class="previous button mini align-only">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)" aria-hidden="true">
         <path id="chevron" d="m9 6 6 6-6 6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
       </svg>
       <span>Previous Events</span>
     </a>
   </div>
+
+{%- elseif fields.window == 'past' %}
+  {% if posts | length == 0 %}
+  {{ fields.empty_message }}
   {% endif %}
-{% elseif fields.window == 'past' %}
   {% for post in posts %}
     {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': "hero" } %}
-    <hr>
   {% endfor %}
   {% if fields.pagination and posts.pagination %}
   <div class="region">
-  {% include 'partial/pagination.twig' with { posts: posts } %}
+  {% include 'partial/pagination-events.twig' with { posts: posts } %}
   </div>
   {% endif %}
 
-{% elseif fields.window == 'all' %}
+{%- elseif fields.window == 'all' %}
+  {# timespan var is 0 before any posts are printed, 1 when printing upcoming events, 2 when printing past events #}
+  {% set timespan = 0 %}
   {% for post in posts %}
+    {% if (timespan == 0) and (date(post.end_date) >= date()) %}
+      {% set timespan = 1 %}
+      <h3 class="hed-hatch">Upcoming Events</h2>
+    {% elseif (timespan == 1) and (date(post.end_date)) < date() %}
+      {% set timespan = 2 %}
+      <h3 class="hed-hatch">Past Events</h2>
+    {% else %}
+      <hr>
+    {% endif %}
     {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': "hero" } %}
-    <hr>
   {% endfor %}
   {% if fields.pagination and posts.pagination %}
   <div class="region">
