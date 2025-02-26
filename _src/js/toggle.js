@@ -1,9 +1,9 @@
 export default function() {
   const toggleEls = document.querySelectorAll( '[data-toggle]' ),
     closeEls = document.querySelectorAll( '[data-toggle-close]' ),
-    getTarget = ( el ) => {
-      // If an explicit disclosure target is set, use that; else, use the toggle's next sibling element:
-      return el.dataset.toggle ? document.querySelector( el.dataset.toggle ) : el.nextElementSibling;
+    getTargets = ( el ) => {
+      // If explicit disclosure targets are set, use those; else, use the toggle's next sibling element:
+      return el.dataset.toggle ? document.querySelectorAll( el.dataset.toggle ) : [ el.nextElementSibling ];
     },
     detectCollision = ( el ) => {
       const collisionObserver = new ResizeObserver( obs => {
@@ -14,7 +14,6 @@ export default function() {
             ob.target.classList.add( "left-collision" );
           }
           if( ob.target.getBoundingClientRect().x + ob.target.offsetWidth > window.innerWidth ){
-            console.log( "Overflow.");
             ob.target.classList.add( "right-collision" );
           }
         });
@@ -23,25 +22,26 @@ export default function() {
     },
     init = function( el ) {
       // TODO: Too early to use Element interfaces like https://caniuse.com/mdn-api_element_ariahidden ?
-      const expandedSet = el.ariaExpanded,
+      const expandedSet = el.getAttribute("aria-expanded"),
         initialState = ( !expandedSet || expandedSet === "false" ) ? "true" : "false",
-        targetEl = getTarget( el );
+        targetEls = getTargets( el );
 
       // If `aria-expanded` isn't set on the toggle element, set a `false` default:
       if( expandedSet === null ) {
         el.ariaExpanded = "false";
       }
 
-      // Set (or override) an `aria-hidden` value to match the initial state of the toggle element:
-      targetEl.ariaHidden = initialState;
+      targetEls.forEach( targetEl => {
+        // Set (or override) an `aria-hidden` value to match the initial state of the toggle element:
+        targetEl.ariaHidden = initialState;
 
-      // Set or remove `toggle-hidden` helper class to match the initial state of the toggle element:
-      targetEl.classList[ initialState === "true" ? "add" : "remove" ]( "toggle-hidden" );
+        // Set or remove `toggle-hidden` helper class to match the initial state of the toggle element:
+        targetEl.classList[ initialState === "true" ? "add" : "remove" ]( "toggle-hidden" );
+      });
 
       // Bind interaction on each toggle:
       el.addEventListener( 'click', function( e ) {
-          const nowCollapsed = this.ariaExpanded === "true",
-            target = getTarget( this );
+          const nowCollapsed = this.ariaExpanded === "true";
 
           // If the clicked element is a closed pass-through toggle (using `a`) that hasn't yet been toggled open, prevent navigation:
           if( !openToggles.includes( this ) && !nowCollapsed ) {
@@ -59,28 +59,30 @@ export default function() {
       if( openToggles.length ) {
          // SUPPORT: _Still_ too early for https://caniuse.com/mdn-javascript_builtins_array_at
         const openToggle = openToggles.filter( toggle => toggle.ariaExpanded === "true" )[ openToggles.length - 1 ],
-          currentTarget = e.target.closest( "[data-toggle]" ) !== null && e.target.closest( "[data-toggle]" );
+          currentTarget = e.target.closest( "[data-toggle]" ) !== null && e.target.closest( "[data-toggle]" ),
+          openTargets = getTargets( openToggle );
+        let targetEls;
          /* SUPPORT: The above line would be better handled with either https://caniuse.com/mdn-javascript_operators_nullish_coalescing or  
             https://caniuse.com/mdn-javascript_operators_optional_chaining in the check, but both mean a steep support curve for "is it null:" */
 
-        if( !openToggle ) {
+        if( !openToggle || 'persist' in openToggle.dataset ) {
           return;
         }
 
-        if( e.type === "click" && 'noclickout' in openToggle.dataset ) {
-          return;
-        }
+        openTargets.forEach( openTarget => {
+          if( ( ( !currentTarget.ariaExpanded ) && !openTarget.contains( e.target ) ) || keyPress === "Escape" ) {
+            /* If the open toggle that would be closed next in the order contains an open toggle, close the inner disclosure element instead: */
+            targetEls = getTargets( openToggle ).forEach( targetEl => {
+              swapState( targetEl.querySelector( '[data-toggle][aria-expanded="true"]' ) || openToggle, true );
+            });
+          }
+        });
 
-        if( ( ( !currentTarget.ariaExpanded ) && !getTarget( openToggle ).contains( e.target ) ) || keyPress === "Escape" ) {
-          /* If the open toggle that would be closed next in the order contains an open toggle, close the inner disclosure element instead: */
-          targetEl = getTarget( openToggle ).querySelector( '[data-toggle][aria-expanded="true"]' ) || openToggle;
-
-          swapState( targetEl, true );
-        }
       }
     },
-    swapState = function( el, state ) {
-      const target = getTarget( el ),
+    swapState = function( el, state, related = false ) {
+      console.log( el );
+      const targets = getTargets( el ),
         // If this element is a grouped toggle, get all elements with the same group and filter out the current element: 
         others = el.dataset.toggleGroup && [ ...document.querySelectorAll( `[data-toggle-group="${ el.dataset.toggleGroup }"`) ].filter( grouped => grouped !== el ),
         toggleState = ( el, target, state ) => {
@@ -89,10 +91,21 @@ export default function() {
           target.classList.toggle( "toggle-hidden", state );
 
           // If the element has an `aria-hidden` attribute, toggle the state of that as well:
-          if( target.ariaHidden ) {
-            target.ariaHidden = state;
-          }
+          targets.forEach( target => {
+            if( target.ariaHidden ) {
+              target.ariaHidden = state;
+            }
+          });
         };
+
+      // If the clicked element is a grouped toggle, close all associated toggles:
+      if( state === false && others ) {
+        others.forEach( other => other.ariaExpanded === "true" && swapState( other, true, true ) );
+      }
+
+      if( state && 'persist' in el.dataset && !related ) {
+        return;
+      }
 
       if( !state ) {
         // If we're opening the disclosure element, add this toggle to the history stack:
@@ -107,17 +120,22 @@ export default function() {
         others.forEach( other => other.ariaExpanded === "true" && swapState( other, true ) );
       }
 
-      // Return focus to the toggle only if user focus is currently inside the revealed element:
-      if( target.contains( document.activeElement ) ) {
-        el.focus();
-      }
-      
-      toggleState( el, target, state );
+      targets.forEach( target => {
+        if( target === null ) {
+          return;
+        }
+        // Return focus to the toggle only if user focus is currently inside the revealed element:
+        if( target.contains( document.activeElement ) ) {
+          el.focus();
+        }
 
-      if( !state ) {
-      // If necessary prevent the disclosure element from colliding with the browser viewport:
-        detectCollision( target );
-      }
+        toggleState( el, target, state );
+
+        if( !state ) {
+          // If necessary prevent the disclosure element from colliding with the browser viewport:
+          detectCollision( target );
+        }
+      });
     };
 
   // Initialize the "history" array used by the `esc`/modal handler with any already-open toggles: 
