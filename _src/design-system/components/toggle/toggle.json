@@ -25,5 +25,16 @@
     "context": {
       "target" : ".disclosed"
     }
+  },{
+    "title": "Persistent",
+    "name" : "persist",
+    "note" : "`data-persist` prevents the toggle target from closing upon interaction, when `esc` is pressed, or the user clicks/taps outside the target element.",
+    "context": {
+      "target" : ".disclosed",
+      "type" : {
+        "attr" : "data-persist",
+        "value" : "true"
+      }
+    }
   }]
 }
