@@ -36,5 +36,16 @@
         "value" : "true"
       }
     }
+  },{
+    "title": "Persistent Across Pages",
+    "name" : "history",
+    "note" : "`data-t` will persist the toggle state across pages using localstorage.",
+    "context": {
+      "target" : ".disclosed",
+      "type" : {
+        "attr" : "data-memory",
+        "value" : "anyvalue"
+      }
+    }
   }]
 }

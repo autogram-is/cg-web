@@ -25,21 +25,32 @@ export default function() {
     },
     init = function( el ) {
       // TODO: Too early to use Element interfaces like https://caniuse.com/mdn-api_element_ariahidden ?
-      const expandedSet = el.getAttribute("aria-expanded"),
-        initialState = ( !expandedSet || expandedSet === "false" ) ? "true" : "false",
-        targetEls = getTargets( el );
+      const expandedSet = el.getAttribute( "aria-expanded" ),
+        memory          = el.getAttribute( "data-memory" ),
+        rememberedState = ( localStorage.getItem( memory ) && localStorage.getItem( memory ).toString() === "false" ) ? "true" : "false",
+        initialState    = ( !expandedSet || expandedSet === "false" ) ? "true" : "false",
+        targetEls       = getTargets( el );
+      let state         = localStorage.getItem( memory ) !== null ? rememberedState.toString() : initialState.toString();
 
-      // If `aria-expanded` isn't set on the toggle element, set a `false` default:
-      if( expandedSet === null ) {
-        el.ariaExpanded = "false";
+    // If `aria-expanded` isn't set on the toggle element and there's no remembered state, set a `false` default:
+      if( !expandedSet && localStorage.getItem( memory ) === null ) {
+        state = "false";
+        
+        el.setAttribute("aria-expanded", state );
+      }
+      el.setAttribute("aria-expanded", state );
+
+      if( memory !== null && localStorage.getItem( memory ) === null ) {
+        // If there's a memory attribute but no localStorage entry yet, create one based on the initial `aria-expanded` state.
+        localStorage.setItem( el.getAttribute( "data-memory" ), expandedSet );
       }
 
       targetEls.forEach( targetEl => {
         // Set (or override) an `aria-hidden` value to match the initial state of the toggle element:
-        targetEl.ariaHidden = initialState;
+        targetEl.ariaHidden = ( state === "true" ? "false" : "true" );
 
         // Set or remove `toggle-hidden` helper class to match the initial state of the toggle element:
-        targetEl.classList[ initialState === "true" ? "add" : "remove" ]( "toggle-hidden" );
+        targetEl.classList[ state === "true" ? "remove" : "add" ]( "toggle-hidden" );
       });
 
       // Bind interaction on each toggle:
@@ -86,11 +97,15 @@ export default function() {
     swapState = function( el, state, related = false ) {
       const targets = getTargets( el ),
         // If this element is a grouped toggle, get all elements with the same group and filter out the current element: 
-        others = el.dataset.toggleGroup && [ ...document.querySelectorAll( `[data-toggle-group="${ el.dataset.toggleGroup }"`) ].filter( grouped => grouped !== el ),
+        others = el.getAttribute( "data-toggle-group" ) && [ ...document.querySelectorAll( `[data-toggle-group="${ el.dataset.toggleGroup }"`) ].filter( grouped => grouped !== el ),
         toggleState = ( el, target, state ) => {
           // Swap the states of the toggle element and the target element on user interaction:
           el.setAttribute( 'aria-expanded', !state );
           target.classList.toggle( "toggle-hidden", state );
+
+          if( el.getAttribute( "data-memory" ) !== null ) {
+            localStorage.setItem( el.getAttribute( "data-memory"), state );
+          }
 
           // If the element has an `aria-hidden` attribute, toggle the state of that as well:
           targets.forEach( target => {
