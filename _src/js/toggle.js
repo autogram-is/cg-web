@@ -2,6 +2,9 @@ export default function() {
   const toggleEls = document.querySelectorAll( '[data-toggle]' ),
     closeEls = document.querySelectorAll( '[data-toggle-close]' ),
     getTargets = ( el ) => {
+      if( !el ) {
+        return;
+      }
       // If explicit disclosure targets are set, use those; else, use the toggle's next sibling element:
       return el.dataset.toggle ? document.querySelectorAll( el.dataset.toggle ) : [ el.nextElementSibling ];
     },
