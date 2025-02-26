@@ -83,6 +83,7 @@
   &.align-only {
     background: none;
     border-color: transparent;
+    color: inherit;
     &a:hover {
       color: var(--color-dark);
     }
