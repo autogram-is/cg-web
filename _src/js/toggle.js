@@ -81,7 +81,6 @@ export default function() {
       }
     },
     swapState = function( el, state, related = false ) {
-      console.log( el );
       const targets = getTargets( el ),
         // If this element is a grouped toggle, get all elements with the same group and filter out the current element: 
         others = el.dataset.toggleGroup && [ ...document.querySelectorAll( `[data-toggle-group="${ el.dataset.toggleGroup }"`) ].filter( grouped => grouped !== el ),
