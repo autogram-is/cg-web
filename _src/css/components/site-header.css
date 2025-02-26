@@ -244,6 +244,11 @@
             flex-grow: 2;
           }
         }
+        input {
+          border: none;
+          padding: var(--space-2xs) var(--space-2xs) var(--space-3xs) var(--space-2xs);
+          width: 100%;
+        }
         input:focus {
           outline: none;
         }
