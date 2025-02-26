@@ -71,13 +71,13 @@
           text-transform: uppercase;
           position: relative;
           &:hover {
-            padding-left: var(--space-3xs);
+            color: var(--color-timeless-highlight);
           }
           &[aria-current] {
-            color: var(--color-timeless-highlight);
+            color: var(--color-timeless-gold);
             padding-left: 0;
             .amp {
-              color: var(--color-timeless-gold);
+              color: var(--color-timeless-highlight);
             }
           }
         }
