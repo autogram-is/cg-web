@@ -56,22 +56,30 @@
 				{% endif %}
 			</div>
 			{% if footer_links %}
-			<div class="footer-nav cluster">
-				{% for item in footer_links.items %}
-				<div class="flow nav-group">
-					<h4 class="type-detail">{{ item.title }}</h4>
-					{% if item.children -%}
-					<ul role="list" class="flow">
-						{% for child in item.children %}
-							<li><a href="{{ child.link }}">{{ child.title }}</a></li>
-						{% endfor %}
-					</ul>
-					{%- endif %}
+			<div class="footer-nav">
+				<div class="cluster footer-link-groups">
+					{% for item in footer_links.items %}
+					<div class="flow nav-group">
+						<h4 class="type-detail">{{ item.title }}</h4>
+						{% if item.children -%}
+						<ul role="list" class="flow">
+							{% for child in item.children %}
+								<li><a href="{{ child.link }}">{{ child.title }}</a></li>
+							{% endfor %}
+						</ul>
+						{%- endif %}
+					</div>
+					{% endfor %}
 				</div>
-				{% endfor %}
+				<div class="lozenge">
+					<button role="button" aria-expanded="true" data-toggle=".us-only" data-persist data-toggle-group="nav">Americas</button>
+					<button role="button" aria-expanded="false" data-toggle=".eu-only" data-persist data-toggle-group="nav">Europe <span class="amp">+</span> UK</button>
+				</div>
 			</div>
+
 			{% endif %}
 		</div>
+
 	</div>
 
 	<div class="fine-print">

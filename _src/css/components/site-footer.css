@@ -35,10 +35,12 @@
       min-width: 25%;
     }
   }
-
-  .footer-nav {
+  .lozenge {
     display: flex;
+    margin-block-start: var(--space-m-l);
+    justify-content: flex-end;
   }
+
   .grid {
     justify-items: end;
   }
@@ -69,7 +71,7 @@
     .footer-nav {
       --cluster-horizontal-alignment: flex-end;
       --cluster-vertical-alignment: flex-start;
-      margin-block: var(--space-3xs) var(--space-s);
+      margin-block: var(--space-3xs) 0;
       & > * {
         padding-inline-end: var(--space-m);
       }

@@ -16,8 +16,8 @@
       font-family: unset;
     }
     &[aria-expanded="true"] {
-      background: var(--color-timeless-highlight);
-      border-color: var(--color-timeless-highlight);
+      background: var(--color-timeless-gold);
+      border-color: var(--color-timeless-gold);
       color: var(--color-dark);
       .amp {
         color: var(--color-deep-steel);
@@ -45,7 +45,7 @@
       border-color: var(--color-steel-midtone);
       color: var(--color-highlight);
       &[aria-expanded="true"] {
-        border-color: var(--color-timeless-highlight);
+        border-color: var(--color-timeless-gold);
         color: var(--color-dark);
         .amp {
           color: var(--color-deep-steel);
