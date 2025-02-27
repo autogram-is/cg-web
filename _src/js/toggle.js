@@ -26,26 +26,26 @@ export default function() {
     init = function( el ) {
       // TODO: Too early to use Element interfaces like https://caniuse.com/mdn-api_element_ariahidden ?
       const expandedSet = el.getAttribute( "aria-expanded" ),
-        session          = el.getAttribute( "data-session" ),
+        sessionAttr     = el.getAttribute( "data-session" ),
         initialState    = ( !expandedSet || expandedSet === "false" ) ? "false" : "true",
         targetEls       = getTargets( el );
-      let state         = session !== null && localStorage.getItem( session ) !== null ? localStorage.getItem( session ).toString() : initialState.toString();
+      let state         = sessionAttr !== null && localStorage.getItem( sessionAttr ) !== null ? localStorage.getItem( sessionAttr ).toString() : initialState.toString();
 
     // If `aria-expanded` isn't set on the toggle element and there's no remembered state, set a `false` default:
-      if( expandedSet === null && session === null ) {
+      if( expandedSet === null && sessionAttr === null ) {
         state = "false";
       }
 
       el.setAttribute("aria-expanded", state );
 
-      if( session === null && localStorage.getItem( session ) === null ) {
+      if( sessionAttr !== null && localStorage.getItem( sessionAttr ) === null ) {
         // If there's a `data-session` attribute but no localStorage entry yet, create one based on the initial `aria-expanded` state.
-        localStorage.setItem( session, expandedSet );
+        localStorage.setItem( sessionAttr, expandedSet );
       }
 
       targetEls.forEach( targetEl => {
         // Set (or override) an `aria-hidden` value to match the initial state of the toggle element:
-        targetEl.setAttribute( "aria-hidden", ( expandedSet === "true" ? "false" : "true" ) );
+        targetEl.setAttribute( "aria-hidden", ( state === "true" ? "false" : "true" ) );
 
         // Set or remove `toggle-hidden` helper class to match the initial state of the toggle element:
         targetEl.classList[ state === "true" ? "remove" : "add" ]( "toggle-hidden" );
@@ -70,22 +70,23 @@ export default function() {
 
       if( openToggles.length ) {
          // SUPPORT: _Still_ too early for https://caniuse.com/mdn-javascript_builtins_array_at
-        const openToggle = openToggles.filter( toggle => toggle.ariaExpanded === "true" )[ openToggles.length - 1 ],
+        const selectedToggles = openToggles.filter( toggle => toggle.getAttribute( "aria-expanded" ) === "true" ),
+          openToggle = selectedToggles[ selectedToggles.length - 1 ],
           currentTarget = e.target.closest( "[data-toggle]" ) !== null && e.target.closest( "[data-toggle]" ),
           openTargets = getTargets( openToggle );
         let targetEls;
          /* SUPPORT: The above line would be better handled with either https://caniuse.com/mdn-javascript_operators_nullish_coalescing or  
             https://caniuse.com/mdn-javascript_operators_optional_chaining in the check, but both mean a steep support curve for "is it null:" */
 
-        if( !openToggle || 'persist' in openToggle.dataset ) {
+        if( !openToggle ) {
           return;
         }
 
         openTargets.forEach( openTarget => {
-          if( ( ( !currentTarget.ariaExpanded ) && !openTarget.contains( e.target ) ) || keyPress === "Escape" ) {
+          if( ( ( !currentTarget.getAttribute( "aria-expanded" ) ) && !openTarget.contains( e.target ) ) || keyPress === "Escape" ) {
             /* If the open toggle that would be closed next in the order contains an open toggle, close the inner disclosure element instead: */
             targetEls = getTargets( openToggle ).forEach( targetEl => {
-              swapState( targetEl.querySelector( '[data-toggle][aria-expanded="true"]' ) || openToggle, true );
+              swapState( targetEl.querySelector( '[data-toggle][aria-expanded="true"]' ) || openToggle, "true" );
             });
           }
         });
@@ -95,14 +96,14 @@ export default function() {
     swapState = function( el, state, related = false ) {
       const targets = getTargets( el ),
         // If this element is a grouped toggle, get all elements with the same group and filter out the current element: 
-        others = el.getAttribute( "data-toggle-group" ) && [ ...document.querySelectorAll( `[data-toggle-group="${ el.dataset.toggleGroup }"`) ].filter( grouped => grouped !== el ),
+        others = el.getAttribute( "data-toggle-group" ) && [ ...document.querySelectorAll( `[data-toggle-group="${ el.getAttribute("data-toggle-group") }"`) ].filter( grouped => grouped !== el ),
         toggleState = ( el, target, state ) => {
           // Swap the states of the toggle element and the target element on user interaction:
           el.setAttribute( 'aria-expanded', !state );
           target.classList.toggle( "toggle-hidden", state );
 
           if( el.getAttribute( "data-session" ) !== null ) {
-            localStorage.setItem( el.getAttribute( "data-session"), state );
+            localStorage.setItem( el.getAttribute( "data-session"), !state );
           }
 
           // If the element has an `aria-hidden` attribute, toggle the state of that as well:
@@ -118,7 +119,7 @@ export default function() {
         others.forEach( other => other.ariaExpanded === "true" && swapState( other, true, true ) );
       }
 
-      if( state && 'persist' in el.dataset && !related ) {
+      if( state && el.getAttribute( 'data-persist' ) !== null && !related ) {
         return;
       }
 
@@ -163,7 +164,7 @@ export default function() {
 
   closeEls.forEach( el => {
     el.addEventListener( 'click', function( e ) {
-      const targets = document.querySelectorAll( `[data-toggle="${ this.dataset.toggleClose }"]` );
+      const targets = document.querySelectorAll( `[data-toggle="${ this.getAttribute('[data-toggle-close]') }"]` );
 
       [...targets ].filter( toggle => toggle.ariaExpanded === "true" ).forEach( open => open.click() );
     });
