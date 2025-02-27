@@ -79,21 +79,13 @@ class CGTwigFilters {
     }
   }
 
-  function render_gravity_form(?string $form_id = null, $display_title = true, $display_description = true) {
+  function render_gravity_form(?string $form_id = null, bool $display_title = true, bool $display_description = true) {
     if ($form_id && function_exists('gravity_form')) {
       $output = gravity_form(
         $form_id,
         $display_title,
-        $display_description,
-        // $display_inactive = false,
-        // $field_values = null,
-        // $ajax = false,
-        // $tabindex = 0,
-        // $echo = true,
-        // $form_theme = null,
-        // $style_settings = null
+        $display_description
       );
-
       return $output;
     }
   }
