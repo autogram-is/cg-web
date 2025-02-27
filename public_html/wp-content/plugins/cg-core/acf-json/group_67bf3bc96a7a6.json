@@ -10,52 +10,9 @@
             "show_column": 0,
             "show_column_weight": 1000,
             "show_column_sortable": false,
-            "key": "field_67bfa0bf6c50a",
-            "label": "North America Regions",
-            "name": "na_regions",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "These continents will be treated as \"Americas\" for the purpose of navigation and conditional content.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "Europe": "Europe",
-                "Africa": "Africa",
-                "America": "America",
-                "Antarctica": "Antarctica",
-                "Asia": "Asia",
-                "Atlantic": "Atlantic",
-                "Australia": "Australia",
-                "Indian": "Indian",
-                "Pacific": "Pacific"
-            },
-            "default_value": [
-                "America"
-            ],
-            "return_format": "value",
-            "multiple": 1,
-            "allow_null": 0,
-            "allow_in_bindings": 1,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "allow_backendsearch": false,
-            "show_column_filter": 0,
-            "allow_bulkedit": 0,
-            "allow_quickedit": 0,
-            "show_column": 0,
-            "show_column_weight": 1000,
-            "show_column_sortable": false,
             "key": "field_67bf3bc955921",
             "label": "European Regions",
-            "name": "eu_regions",
+            "name": "eu_uk_continents",
             "aria-label": "",
             "type": "select",
             "instructions": "These continents will be treated as \"Europe\" for the purpose of navigation and conditional content.",
@@ -136,5 +93,5 @@
     "description": "",
     "show_in_rest": 0,
     "qef_simple_location_rules": 0,
-    "modified": 1740611968
+    "modified": 1740678397
 }
