@@ -10,12 +10,13 @@
  * @return mixed
  */
 function cg_custom_add_custom_attributes($block_content, $block) {
-    // Check if there are custom attributes 'dataHideIn' e 'dataShowIn'
-    if ( isset($block['attrs']['dataHideIn']) && !empty($block['attrs']['dataHideIn']) ) {
-        $block_content = add_custom_attribute($block_content, 'data-hide-in', $block['attrs']['dataHideIn']);
-    }
-    if ( isset($block['attrs']['dataShowIn']) && !empty($block['attrs']['dataShowIn']) ) {
-        $block_content = add_custom_attribute($block_content, 'data-show-in', $block['attrs']['dataShowIn']);
+    // Check if there is a custom attributes 'dataLocaleVisibility'
+    if ( isset($block['attrs']['dataLocaleVisibility']) && !empty($block['attrs']['dataLocaleVisibility']) ) {
+      $locale = $block['attrs']['dataLocaleVisibility'];
+      if ($locale && $locale !== 'global') {
+        $block_content = add_custom_attribute($block_content, 'data-' . $locale);
+        $block_content = add_custom_attribute($block_content, 'aria-hidden', "true");
+      }
     }
 
     return $block_content;
@@ -31,13 +32,18 @@ function cg_custom_add_custom_attributes($block_content, $block) {
  * 
  * @since 1.5.5
  */
-function add_custom_attribute($block_content, $attribute_name, $attribute_value) {
+function add_custom_attribute($block_content, $attribute_name, $attribute_value = NULL) {
     // Search the first tag HTML in the block content
     $pos = strpos($block_content, '>');
 
     if ($pos !== false) {
+      if (is_null($attribute_value)) {
+        // Insert the custom attribute after the first HTML tag
+        $block_content = substr_replace($block_content, ' ' . $attribute_name, $pos, 0);
+      } else {
         // Insert the custom attribute after the first HTML tag
         $block_content = substr_replace($block_content, ' ' . $attribute_name . '="' . esc_attr($attribute_value) . '"', $pos, 0);
+      }
     }
 
     return $block_content;

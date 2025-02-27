@@ -9,19 +9,15 @@
   const { createHigherOrderComponent } = wp.compose;
   const { Fragment } = wp.element;
   const { InspectorControls } = wp.blockEditor;
-  const { PanelBody, TextControl } = wp.components;
+  const { PanelBody, RadioControl } = wp.components;
 
   // Add new attributes to blocks
   const addCustomAttributes = (settings, name) => {
       if (typeof settings.attributes !== 'undefined') {
           settings.attributes = Object.assign({}, settings.attributes, {
-              dataHideIn: {
+              dataLocaleVisibility: {
                   type: 'string',
-                  default: '0',
-              },
-              dataShowIn: {
-                  type: 'string',
-                  default: '0',
+                  default: 'global',
               },
           });
       }
@@ -41,21 +37,19 @@
                       null,
                       wp.element.createElement(
                           PanelBody,
-                          { title: 'Regional Visibility', initialOpen: true },
-                          wp.element.createElement(TextControl, {
-                              label: 'Hide In',
-                              value: props.attributes.dataHideIn,
-                              onChange: function(newVal) {
-                                  props.setAttributes({ dataHideIn: String(newVal) });
+                          { title: 'Regional Visibility', initialOpen: false },
+                          wp.element.createElement(RadioControl, {
+                              selected: props.attributes.dataLocaleVisibility,
+                              options: [
+                                { label: "All regions", value: "global" },
+                                { label: "EU + UK only", value: "eu-uk-only" },
+                                { label: "Americas only", value: "na-only" },
+                              ],
+                              default: 'global',
+                              onChange: (newVal) => {
+                                  props.setAttributes({ dataLocaleVisibility: String(newVal) });
                               },
                           }),
-                          wp.element.createElement(TextControl, {
-                              label: 'Show In',
-                              value: props.attributes.dataShowIn,
-                              onChange: function(newVal) {
-                                  props.setAttributes({ dataShowIn: String(newVal) });
-                              },
-                          })
                       )
                   )
               );
