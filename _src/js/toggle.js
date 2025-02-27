@@ -26,7 +26,7 @@ export default function() {
     init = function( el ) {
       // TODO: Too early to use Element interfaces like https://caniuse.com/mdn-api_element_ariahidden ?
       const expandedSet = el.getAttribute( "aria-expanded" ),
-        memory          = el.getAttribute( "data-memory" ),
+        memory          = el.getAttribute( "data-session" ),
         rememberedState = ( localStorage.getItem( memory ) && localStorage.getItem( memory ).toString() === "false" ) ? "true" : "false",
         initialState    = ( !expandedSet || expandedSet === "false" ) ? "true" : "false",
         targetEls       = getTargets( el );
@@ -42,7 +42,7 @@ export default function() {
 
       if( memory !== null && localStorage.getItem( memory ) === null ) {
         // If there's a memory attribute but no localStorage entry yet, create one based on the initial `aria-expanded` state.
-        localStorage.setItem( el.getAttribute( "data-memory" ), expandedSet );
+        localStorage.setItem( el.getAttribute( "data-session" ), expandedSet );
       }
 
       targetEls.forEach( targetEl => {
@@ -103,8 +103,8 @@ export default function() {
           el.setAttribute( 'aria-expanded', !state );
           target.classList.toggle( "toggle-hidden", state );
 
-          if( el.getAttribute( "data-memory" ) !== null ) {
-            localStorage.setItem( el.getAttribute( "data-memory"), state );
+          if( el.getAttribute( "data-session" ) !== null ) {
+            localStorage.setItem( el.getAttribute( "data-session"), state );
           }
 
           // If the element has an `aria-hidden` attribute, toggle the state of that as well:

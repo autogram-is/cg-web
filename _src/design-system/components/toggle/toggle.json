@@ -39,11 +39,11 @@
   },{
     "title": "Persistent Across Pages",
     "name" : "history",
-    "note" : "`data-t` will persist the toggle state across pages using localstorage.",
+    "note" : "`data-session` will persist the toggle state across pages using `localStorage`, with the specified value used as the `localStorage` key .",
     "context": {
       "target" : ".disclosed",
       "type" : {
-        "attr" : "data-memory",
+        "attr" : "data-session",
         "value" : "anyvalue"
       }
     }
