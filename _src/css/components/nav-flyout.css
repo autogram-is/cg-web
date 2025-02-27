@@ -143,15 +143,29 @@
     .subnav {
       position: absolute;
       left: auto;
+      top: 115%;
+      padding-right: var(--space-s-m);
+    }
+    &:has(.teaser) .subnav {
       min-width: 50em;
       right: var(--space-s-m);
       left: var(--space-s-m);
-      top: 115%;
     }
     &:not(:has(.teaser)) {
+      &.nav-topitem {
+        position: relative !important;
+      }
       .subnav {
-        min-width: 20rem;
-        width: auto;
+        min-width: 25rem;
+        position: absolute;
+        left: auto;
+        right: 0;
+        top: 115%;
+
+        &.left-collision {
+          left: 0;
+          right: auto;
+        }
       }
     }
   }
@@ -162,13 +176,14 @@
     &.nav-topitem {
       position: relative !important;
     }
+    &:has(.teaser) .subnav {
+      width: 40vw;
+    }
     .subnav {
       position: absolute;
       left: auto;
-      min-width: 50em;
       right: 0;
       top: 115%;
-      width: 40vw;
       &.left-collision {
         left: var(--space-nudge);
         right: auto;
