@@ -44,6 +44,16 @@ class CGPortfolio extends CGContent {
 		return 0;
 	}
 
+	public function has_facts() {
+		$facts = $this->meta('facts');
+		if (is_array($facts)) {
+			foreach ($facts as $key => $value) {
+				if ($value) return true;
+			}	
+		}
+		return false;
+	}
+
 	/**
 	 * Gets office pages connected to the current post.
 	 *
