@@ -38,6 +38,7 @@
       {%- endif %}
     </dl>
   </div>
+  {% if post.has_facts %}
   <div class="key-value region flow mini fact-sheet">
     <dl class="flow">
       {% if facts.facility -%}
@@ -100,6 +101,7 @@
       </div>
     </dl>
   </div>
+  {% endif %}
 
   {% if post.case_study_pdf %}
   <a href="#" class="button repel factsheet-cta">
