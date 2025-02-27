@@ -1,4 +1,14 @@
-  <button role="button" data-toggle="{{ target }}" {% if type %}{{ type.attr }}="{{ type.value }}"{% endif %} aria-expanded="{{ open or false }}">Toggle 1</button>
-  <div aria-hidden="{{ open == "true" ? "false" : "true" }}" class="disclosed">
-    <p>Revealed content</p>
+<button role="button" data-toggle="{{ target }}" {% if type and type != "close" %}{{ type.attr }}="{{ type.value }}"{% endif %} aria-expanded="{{ open or false }}">Toggle 1</button>
+<div aria-hidden="{{ open == "true" ? "false" : "true" }}" class="disclosed">
+  <p>Revealed content</p>
+
+  {% if type == "nested" %}
+  <button role="button" data-toggle="{{ target }}-2" aria-expanded="false">Toggle 2</button>
+  <div class="disclosed-2">
+    Nested disclosure
   </div>
+  {% endif %}
+  {% if type == "close" %}
+  <button class="close" data-toggle-close="{{ target }}">Close</button>
+  {% endif %}
+</div>

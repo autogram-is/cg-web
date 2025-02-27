@@ -70,10 +70,11 @@ export default function() {
 
       if( openToggles.length ) {
          // SUPPORT: _Still_ too early for https://caniuse.com/mdn-javascript_builtins_array_at
-        const selectedToggles = openToggles.filter( toggle => toggle.getAttribute( "aria-expanded" ) === "true" ),
+        const selectedToggles = openToggles.filter( toggle => toggle.getAttribute( "aria-expanded" ) === "true" && toggle.getAttribute( "data-persist" ) === null ),
           openToggle = selectedToggles[ selectedToggles.length - 1 ],
           currentTarget = e.target.closest( "[data-toggle]" ) !== null && e.target.closest( "[data-toggle]" ),
           openTargets = getTargets( openToggle );
+
         let targetEls;
          /* SUPPORT: The above line would be better handled with either https://caniuse.com/mdn-javascript_operators_nullish_coalescing or  
             https://caniuse.com/mdn-javascript_operators_optional_chaining in the check, but both mean a steep support curve for "is it null:" */
@@ -83,10 +84,10 @@ export default function() {
         }
 
         openTargets.forEach( openTarget => {
-          if( ( ( !currentTarget.getAttribute( "aria-expanded" ) ) && !openTarget.contains( e.target ) ) || keyPress === "Escape" ) {
+          if( e.target.closest( "[data-toggle-close]" ) !== null || !openTarget.contains( e.target ) && !openToggle.contains( e.target ) || keyPress === "Escape"  ) {
             /* If the open toggle that would be closed next in the order contains an open toggle, close the inner disclosure element instead: */
             targetEls = getTargets( openToggle ).forEach( targetEl => {
-              swapState( targetEl.querySelector( '[data-toggle][aria-expanded="true"]' ) || openToggle, "true" );
+              swapState( openToggle, "true" );
             });
           }
         });
@@ -166,7 +167,7 @@ export default function() {
     el.addEventListener( 'click', function( e ) {
       const targets = document.querySelectorAll( `[data-toggle="${ this.getAttribute('[data-toggle-close]') }"]` );
 
-      [...targets ].filter( toggle => toggle.ariaExpanded === "true" ).forEach( open => open.click() );
+      [...targets ].filter( toggle => toggle.getAttribute( "aria-expanded" ) === "true" ).forEach( open => open.click() );
     });
   });
 

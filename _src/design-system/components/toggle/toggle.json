@@ -37,7 +37,7 @@
       }
     }
   },{
-    "title": "Persistent Across Pages",
+    "title": "Session",
     "name" : "history",
     "note" : "`data-session` will persist the toggle state across pages using `localStorage`, with the specified value used as the `localStorage` key .",
     "context": {
@@ -46,6 +46,20 @@
         "attr" : "data-session",
         "value" : "anyvalue"
       }
+    }
+  },{
+    "title": "Close Button",
+    "name" : "close",
+    "context": {
+      "target" : ".disclosed",
+      "type" : "close"
+    }
+  },{
+    "title": "Nested",
+    "name" : "nested",
+    "context": {
+      "target" : ".disclosed",
+      "type" : "nested"
     }
   }]
 }
