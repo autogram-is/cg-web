@@ -1,5 +1,10 @@
 /* Gravity Form overrides */
 
+.inline-form [id*="gform_wrapper"] {
+  .gform_heading {
+    margin-block: var(--space-2xs);
+  }
+}
 [id*="gform_wrapper"] {
   all: unset;
   display: flex;

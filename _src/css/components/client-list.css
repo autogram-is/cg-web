@@ -11,7 +11,7 @@
   }
 }
 
-.page .is-style-client-list:not([role="list"]) {
+.cg .is-style-client-list:not([role="list"]) {
   max-width: 100%;
   margin-block: var(--region-space);
   --gutter: var(--space-2xs);

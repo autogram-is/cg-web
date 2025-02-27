@@ -1,11 +1,11 @@
-.page ul:not([role="list"]):not(.grid),
-.page ol:not([role="list"]):not(.grid) {
+.cg ul:not([role="list"]):not(.grid),
+.cg ol:not([role="list"]):not(.grid) {
   display: flex;
   flex-direction: column;
 }
 
-.page ul:not([role="list"]),
-.page ol:not([role="list"]) {
+.cg ul:not([role="list"]),
+.cg ol:not([role="list"]) {
   font-size: var(--size-step-0);
   font-weight: var(--weight-light);
   padding: var(--space-xs) 0;
@@ -26,7 +26,7 @@
   }
 }
 
-.page ul:not([role="list"]) {
+.cg ul:not([role="list"]) {
   margin-inline-start: var(--space-s);
   li {
     &::-webkit-details-marker {
@@ -85,8 +85,8 @@ ol:not([role="list"]) {
   }
 }
 
-.page ul:not([role="list"]),
-.page ol:not([role="list"]) {
+.cg ul:not([role="list"]),
+.cg ol:not([role="list"]) {
   ul:not([role="list"]),
   ol:not([role="list"]) {
     margin-block: 0;
