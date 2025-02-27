@@ -26,28 +26,26 @@ export default function() {
     init = function( el ) {
       // TODO: Too early to use Element interfaces like https://caniuse.com/mdn-api_element_ariahidden ?
       const expandedSet = el.getAttribute( "aria-expanded" ),
-        memory          = el.getAttribute( "data-session" ),
-        rememberedState = ( localStorage.getItem( memory ) && localStorage.getItem( memory ).toString() === "false" ) ? "true" : "false",
-        initialState    = ( !expandedSet || expandedSet === "false" ) ? "true" : "false",
+        session          = el.getAttribute( "data-session" ),
+        initialState    = ( !expandedSet || expandedSet === "false" ) ? "false" : "true",
         targetEls       = getTargets( el );
-      let state         = localStorage.getItem( memory ) !== null ? rememberedState.toString() : initialState.toString();
+      let state         = session !== null && localStorage.getItem( session ) !== null ? localStorage.getItem( session ).toString() : initialState.toString();
 
     // If `aria-expanded` isn't set on the toggle element and there's no remembered state, set a `false` default:
-      if( !expandedSet && localStorage.getItem( memory ) === null ) {
+      if( expandedSet === null && session === null ) {
         state = "false";
-        
-        el.setAttribute("aria-expanded", state );
       }
+
       el.setAttribute("aria-expanded", state );
 
-      if( memory !== null && localStorage.getItem( memory ) === null ) {
-        // If there's a memory attribute but no localStorage entry yet, create one based on the initial `aria-expanded` state.
-        localStorage.setItem( el.getAttribute( "data-session" ), expandedSet );
+      if( session === null && localStorage.getItem( session ) === null ) {
+        // If there's a `data-session` attribute but no localStorage entry yet, create one based on the initial `aria-expanded` state.
+        localStorage.setItem( session, expandedSet );
       }
 
       targetEls.forEach( targetEl => {
         // Set (or override) an `aria-hidden` value to match the initial state of the toggle element:
-        targetEl.ariaHidden = ( state === "true" ? "false" : "true" );
+        targetEl.setAttribute( "aria-hidden", ( expandedSet === "true" ? "false" : "true" ) );
 
         // Set or remove `toggle-hidden` helper class to match the initial state of the toggle element:
         targetEl.classList[ state === "true" ? "remove" : "add" ]( "toggle-hidden" );
