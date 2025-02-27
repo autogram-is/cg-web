@@ -3,9 +3,16 @@
     "title": "Sitewide Contact Forms",
     "fields": [
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_67a6853adf143",
             "label": "Sector contact form",
-            "name": "default_sector_form",
+            "name": "sector_contact_form",
             "aria-label": "",
             "type": "forms",
             "instructions": "",
@@ -16,16 +23,22 @@
                 "class": "",
                 "id": ""
             },
-            "admin_column_enabled": 0,
             "return_format": "id",
             "allow_null": 1,
             "multiple": 0,
             "allow_in_bindings": 0
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_67a685d12666e",
             "label": "Service contact form",
-            "name": "default_service_form",
+            "name": "service_contact_form",
             "aria-label": "",
             "type": "forms",
             "instructions": "",
@@ -36,16 +49,22 @@
                 "class": "",
                 "id": ""
             },
-            "admin_column_enabled": 0,
             "return_format": "id",
             "allow_null": 1,
             "multiple": 0,
             "allow_in_bindings": 0
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_67a685de2666f",
             "label": "Office contact form",
-            "name": "default_office_form",
+            "name": "office_contact_form",
             "aria-label": "",
             "type": "forms",
             "instructions": "",
@@ -56,16 +75,22 @@
                 "class": "",
                 "id": ""
             },
-            "admin_column_enabled": 0,
             "return_format": "id",
             "allow_null": 1,
             "multiple": 0,
             "allow_in_bindings": 0
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_67b3d13dc542c",
             "label": "Market Analysis contact form",
-            "name": "default_analysis_form",
+            "name": "market_analysis_signup_form",
             "aria-label": "",
             "type": "forms",
             "instructions": "",
@@ -76,7 +101,6 @@
                 "class": "",
                 "id": ""
             },
-            "admin_column_enabled": 0,
             "return_format": "id",
             "allow_null": 1,
             "multiple": 0,
@@ -101,5 +125,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739837814
+    "qef_simple_location_rules": 0,
+    "modified": 1740680810
 }

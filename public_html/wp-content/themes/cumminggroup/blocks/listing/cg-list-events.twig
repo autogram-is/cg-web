@@ -17,6 +17,7 @@
 #}
 <div class="flow region">
 {%- if fields.window == 'upcoming' %}
+  <h3 class="hed-hatch">Upcoming Events</h2>
   {% if posts | length == 0 %}
   {{ fields.empty_message }}
   {% endif %}
@@ -24,14 +25,17 @@
     {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': "hero" } %}
     <hr>
   {% endfor %}
+  {% if fields.archive_link %}
+  {% set archive = get_post(fields.archive_link) %}
   <div class="pagination repel temporal">
-    <a href="/events-archive" class="previous button mini align-only">
+    <a href="{{ archive.link }}" class="previous button mini align-only">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)" aria-hidden="true">
         <path id="chevron" d="m9 6 6 6-6 6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
       </svg>
       <span>Previous Events</span>
     </a>
   </div>
+  {% endif %}
 
 {%- elseif fields.window == 'past' %}
   {% if posts | length == 0 %}

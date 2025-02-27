@@ -11,6 +11,13 @@
 {%- include 'partial/hero-notch-details.twig' -%}
 {% endblock %}
 
+{% block sidebar %}
+{% if settings.service_contact_form %}
+<div class="inline-form region flow bg-timeless-backdrop">
+{{ settings.service_contact_form | gravityform(false, true) }}
+</div>
+{% endif %}
+{% endblock %}
 
 {% block posthero %}
   {% if post.projects(6) | length %}
