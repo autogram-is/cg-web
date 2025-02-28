@@ -18,16 +18,13 @@
 
   .hed {
     --flow-space: var(--space-2xs);
-    color: var(--color-dark);
+    color: var(--color-steel-shade);
     font-size: var(--size-step-2);
     font-weight: var(--weight-normal);
     a {
-      color: var(--color-steel-shade);
-      text-decoration: underline;
-      text-decoration-color: var(--color-legacy-red);
-      transition: text-decoration-color .125s ease-in-out;
+      text-decoration: none;
       &:hover {
-        text-decoration-color: transparent;
+        color: var(--color-dark);
       }
     }
   }
@@ -49,7 +46,7 @@
   }
   .title {
     color: var(--color-steel-shade);
-    font-size: var(--size-step-0);
+    font-size: var(--size-step-00);
     margin-block-end: var(--space-nudge);
     font-weight: var(--weight-normal);
     letter-spacing: var(--tracking-tight);
@@ -83,7 +80,7 @@
     --flow-space: var(--space-2xs);
 
     .title {
-      font-size: var(--size-step-0);
+      font-size: var(--size-step-00);
       line-height: var(--leading-seamless);
     }
     .title-scope li {
