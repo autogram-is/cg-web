@@ -54,7 +54,7 @@ class CGTwigFilters {
     );
 
     $twig->addFilter(
-      new \Twig\TwigFilter( 'sort_locations', [ $this, 'sort_locations' ] )
+      new \Twig\TwigFilter( 'group_locations', [ $this, 'group_locations' ] )
     );
 
     $twig->addFunction(
@@ -98,18 +98,22 @@ class CGTwigFilters {
    * @param string $text The headline to stylize
    */
 
-  function sort_locations(?Traversable $locations): array {
+  function group_locations(?Traversable $locations): array {
     if( is_null($locations)) return [];
     $loc_array = iterator_to_array($locations);
     if (count($loc_array) === 0) return [];
+    $ret = array();
     
     foreach ($loc_array as $key => $row) {
-      $title[$key]    = $row -> title;
-      $location[$key] = $row -> location;
+      $ret[$row -> location] = array();
     }
-    
-    array_multisort($location, SORT_ASC, $title, SORT_ASC, $loc_array);
-    return $loc_array;
+
+    foreach ($loc_array as $key => $row) {
+      array_push( $ret[$row -> location], $row -> title );
+    }
+
+    ksort( $ret );
+    return $ret;
   }
 
   /**

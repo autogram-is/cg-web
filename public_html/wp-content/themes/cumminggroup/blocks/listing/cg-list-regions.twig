@@ -18,16 +18,19 @@
   <div class="switcher">
     {% for region in regions %}
     <div class="flow">
-      <div class="location flow">
+      <div class="location switcher flow">
+        <div>
         {% if region.heading %}<h2 class="type-eyebrow hed-accent">{{ region.heading }}</h2>{% endif %}
-        <div class="multicol">
+        <div class="location-columns">
+          {% for location, titles in region.posts|group_locations %}
           <ul class="flow markers" role="list">
-            {% for post in region.posts|sort_locations %}
-            {% set nextloc = region.posts|sort_locations[loop.index].location %}
-            <li class="hed type-hed{% if nextloc != post.location %} location-group{% endif %}"><a href="{{ post.link }}">{{ post.title }}, {{ post.location }}</a></li>
+            {% for title in titles|sort%}
+            <li class="hed type-hed">{{title}}, {{ location }}</li>
             {% endfor %}
           </ul>
+          {% endfor %}
         </div>
+      </div>
       </div>
     </div>
     {%- endfor %}

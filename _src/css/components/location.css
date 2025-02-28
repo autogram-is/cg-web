@@ -2,7 +2,7 @@
   --flow-space: var(--space-xs);
   font-size: var(--size-step-00);
 
-  max-width: 34rem;
+  max-width: 65rem;
 
   a {
     text-decoration: underline;
@@ -17,18 +17,37 @@
     font-size: var(--size-step-0);
     font-weight: var(--weight-semibold);
     margin-block-end: var(--space-2xs);
+    line-height: var(--leading-normal);
     a {
       text-decoration-color: transparent;
       text-underline-offset: 3px;
     }
   }
-  .location-group:not(:last-of-type) {
-    padding-bottom: var(--space-xs);
+  .location-group {
+    &:not(:last-of-type){
+      padding-bottom: var(--space-2xs);
+      border-bottom: 1px solid var(--color-steel-highlight);
+    }
   }
 
-  .multicol ul {
+  .location-columns {
+    columns: 1 auto;
     column-gap: var(--space-m-l);
+    ul {
+      border: 1px solid transparent;
+      break-inside: avoid;
+      margin: unset;
+      border-bottom: 1px solid var(--color-steel-highlight);
+      &:last-of-type {
+        border-bottom: none;
+      }
+
+      li {
+        margin-block: var(--space-2xs);
+      }
+    }
   }
+
   p {
     --flow-space: var(--space-3xs);
     font-size: var(--size-step-00);
@@ -64,6 +83,26 @@
       color: var(--color-dark);
       font-weight: var(--weight-semibold);
       text-decoration: none;
+    }
+  }
+}
+
+.location {
+  container: columns / inline-size;
+}
+
+@container columns ( width > 40rem ) {
+  .location {
+    .location-columns {
+      columns: 2 auto;
+    }
+  }
+}
+
+@container columns ( width > 50rem ) {
+  .location {
+    .location-columns {
+      columns: 3 auto;
     }
   }
 }

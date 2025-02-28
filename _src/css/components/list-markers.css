@@ -154,7 +154,7 @@ ol:not([role="list"]) {
 }
 
 .multicol {
-  container: test / inline-size;
+  container: multicol / inline-size;
   ul,
   ol {
     columns: 1 auto;
@@ -179,7 +179,7 @@ ol:not([role="list"]) {
   }
 }
 
-@container test ( width > 32rem ) {
+@container multicol ( width > 40rem ) {
   .multicol {
     ul,
     ol {
@@ -187,6 +187,17 @@ ol:not([role="list"]) {
     }
   }
 }
+
+
+@container multicol ( width > 50rem ) {
+  .multicol {
+    ul,
+    ol {
+      columns: 3 auto;
+    }
+  }
+}
+
 
 ul.markers,
 ol.markers {
