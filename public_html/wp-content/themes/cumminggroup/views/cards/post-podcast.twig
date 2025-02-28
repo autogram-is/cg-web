@@ -8,10 +8,14 @@
         {% set thumbnail = get_post( thumbnail ) %}
         {% if youtube %}
           <a href="{{ youtube }}" data-media="{{ youtube | youtube_embed }}">
-          {% if feature.media.poster %}
-            <img decoding="async" src="{{ thumbnail ? thumbnail.src : feature.poster.src }}">
+          {% if thumbnail.src %}
+            <img decoding="async" src="{{ thumbnail.src }}">
           {% else %}
-            <img decoding="async" src="{{ thumbnail ? thumbnail.src : youtube | youtube_poster }}">
+            {% if feature.media.poster is not empty %}
+            <img decoding="async" src="{{ feature.media.poster.src }}">
+            {% else %}
+            <img decoding="async" src="{{ youtube | youtube_poster }}">
+            {% endif %}
           {% endif %}
           </a>
         {% elseif mp3 %}
