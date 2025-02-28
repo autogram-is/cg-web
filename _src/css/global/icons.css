@@ -59,12 +59,23 @@
 
 .icon-next,
 .icon-previous {
-  path {
-    stroke: var(--color-timeless-gold);
+  svg {
+    align-self: center;
+    height: var(--space-xs);
+    width: var(--space-xs);
+    path {
+      stroke: var(--color-timeless-gold);
+    }
+  }
+}
+.icon-next {
+  svg {
+    margin-inline-start: var(--space-3xs);
   }
 }
 .icon-previous {
   svg {
+    margin-inline-end: var(--space-3xs);
     transform: rotate(180deg);
   }
 }

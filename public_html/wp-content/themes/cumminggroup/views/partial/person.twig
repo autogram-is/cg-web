@@ -9,15 +9,19 @@
         {% endif %}
          <div class="body">
           <div class="person-header flow">
-            <h2 class="hed type-body">{% if person.excerpt | length > 0 %}<a href="{{ person.link }}">{% endif %}{{ person.name }}{% if person.excerpt %}</a>{% endif %}</h2>
+            <h2 class="hed type-body">
+              {% if person.excerpt | length > 0 %}<a href="{{ person.link }}" class="icon-next">{% endif %}
+                {{ person.name }}
+              {% if person.excerpt | length > 0 %}
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path id="chevron" d="m9 6 6 6-6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              {% endif %}
+            </h2>
             <div class="person-meta flow">
               <div>
                 {% if person.role %}<span class="title type-detail">{{ person.role }}</span>{% endif %}
-                <div class="locations">
-                {% for office in person.offices %}
-                <a href="#" class="location type-detail">{{ office }}</a>
-                {% endfor %}
-                </div>
               </div>
               {% if person.sectors %}
               <ul role="list" class="title-scope flow">
