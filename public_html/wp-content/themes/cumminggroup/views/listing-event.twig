@@ -13,8 +13,8 @@
         {% endfor %}
       </ul>
       {% endif %}
-      {% if type == "hero" %}
-      <p>{{ post.excerpt }}</p>
+      {% if type == "hero" or type == "event" %}
+      <p>{{ post.excerpt.read_more(false) }}</p>
       {% endif %}
     </div>
     <div class="flow throw-center">
