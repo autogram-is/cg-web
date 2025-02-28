@@ -12,7 +12,6 @@
 {% if bio_is_hidden %}{% include 'partial/hidden-bio-warning.twig' %}{% endif %}
 {% endblock %}
 
-
 {% block content %}
   <div class="region region-primary">
     <div class="sidebar region person">
@@ -24,13 +23,32 @@
         alt="{{post.thumbnail.alt}}" />
       {% endif %}
       </div>
-      <div class="person-body">
-        {{ post.content }}
+      <div class="person-meta">
+        <div class="person-body{% if ( post.email or post.phone or post.linkedin ) and not post.hide_contact %} lede-header hed-accent{% endif %}">
+          {{ post.content }}
+        </div>
+        {% if ( post.email or post.phone or post.linkedin ) and not post.hide_contact %}
+        <div class="contact-footer">
+          <div class="region"> 
+            <ul role="list" class="contacts title-scope flow">
+              {% if post.email %}
+              <li><a href="mailto:{{ post.email }}">{{ post.email}}</a></li>
+              {% endif %}
+              {% if post.phone %}
+              <li>{{ post.phone }}</li> {# `href="tel:"` links will be generated in browsing contexts that support them. #}
+              {% endif %}
+              {% if post.linkedin %}
+              <li><a href="{{ post.linkedin }}">LinkedIn</a></li>
+            {% endif %}
+            </ul>
+
+          </div>
+        </div>
+        {% endif %}
       </div>
     </div>
   </div>
 {% endblock %}
-
 
 {% block posthero %}
   {% if post.authored_news(6) | length %}
