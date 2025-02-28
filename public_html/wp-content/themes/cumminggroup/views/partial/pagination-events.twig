@@ -1,36 +1,36 @@
 {% if posts.pagination.pages is not empty %}
-    <nav aria-label="pagination" class="pagination topnav temporal repel">
-        <div class="cluster">
-            {% if posts.pagination.next %}
-            <a href="{{ posts.pagination.next.link }}" class="next button mini icon rounded hollow">
-              <span>Next page</span>
-              <svg width="800" height="800" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path id="chevron" d="m9 6 6 6-6 6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-            {% else %}
-            <span class="previous button icon mini align-only disabled">
-              <span>Previous page</span>
-              <svg width="800" height="800" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path id="chevron" d="m9 6 6 6-6 6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            {% endif %}
-          <p class="current">{{ posts[0].start_date|date('F j') }} - {{ posts|last.end_date|date('F j') }}</p>
-          {% if posts.pagination.prev %}
-          <a href="{{ posts.pagination.prev.link }}" class="previous button mini icon rounded hollow">
-            <span>Previous page</span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path id="chevron" d="m9 6 6 6-6 6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          </a>
-          {% endif %}
-        </div>
-        <a href="/events/" class="next button mini align-only">
-          <span>Upcoming Events</span>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path id="chevron" d="m9 6 6 6-6 6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </a>
-      </nav>
+<nav aria-label="pagination" class="pagination topnav temporal repel">
+  <div class="cluster">
+      {% if posts.pagination.next %}
+      <a href="{{ posts.pagination.next.link }}" class="previous button mini icon rounded hollow">
+        <span>Older Events</span>
+        <svg width="800" height="800" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path id="chevron" d="m9 6 6 6-6 6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      {% else %}
+      <span class="previous button icon mini align-only disabled">
+        <span>No older Events</span>
+        <svg width="800" height="800" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path id="chevron" d="m9 6 6 6-6 6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      {% endif %}
+    <p class="current">{{ posts[0].start_date|date('F j') }} - {{ posts|last.end_date|date('F j') }}</p>
+    {% if posts.pagination.prev %}
+    <a href="{{ posts.pagination.prev.link }}" class="next button mini icon rounded hollow">
+      <span>Newer Events</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path id="chevron" d="m9 6 6 6-6 6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </a>
+    {% endif %}
+  </div>
+  <a href="/events/" class="next button mini align-only">
+    <span>Upcoming Events</span>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path id="chevron" d="m9 6 6 6-6 6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </a>
+</nav>
 {% endif %}

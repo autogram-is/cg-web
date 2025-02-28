@@ -15,29 +15,35 @@
   SupportsAlignContent: false
   SupportsAlignText: false
 #}
-<div class="flow region">
+<div class="region region-double">
 {%- if fields.window == 'upcoming' %}
   <h3 class="hed-hatch">Upcoming Events</h2>
   {% if posts | length == 0 %}
-  {{ fields.empty_message }}
+  <div class="region">
+    {{ fields.empty_message }}
+  </div>
   {% endif %}
   {% for post in posts %}
     {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': "hero" } %}
-    <hr>
   {% endfor %}
   {% if fields.archive_link %}
   {% set archive = get_post(fields.archive_link) %}
-  <div class="pagination repel temporal">
-    <a href="{{ archive.link }}" class="previous button mini align-only">
+  <hr>
+  <div class="region">
+    <a href="{{ archive.link }}" class="icon-previous type-detail">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"  aria-hidden="true">
         <path id="chevron" d="m9 6 6 6-6 6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
       </svg>
-      <span>Previous Events</span>
+      <span>Past Events</span>
     </a>
   </div>
   {% endif %}
 
 {%- elseif fields.window == 'past' %}
+  {% if fields.pagination and posts.pagination %}
+    {% include 'partial/pagination-events.twig' with { posts: posts } %}
+    <hr>
+  {% endif %}
   {% if posts | length == 0 %}
   {{ fields.empty_message }}
   {% endif %}
@@ -46,7 +52,7 @@
   {% endfor %}
   {% if fields.pagination and posts.pagination %}
   <div class="region">
-  {% include 'partial/pagination-events.twig' with { posts: posts } %}
+    {% include 'partial/pagination-events-nextprev.twig' with { posts: posts } %}
   </div>
   {% endif %}
 
@@ -61,7 +67,6 @@
       {% set timespan = 2 %}
       <h3 class="hed-hatch">Past Events</h2>
     {% else %}
-      <hr>
     {% endif %}
     {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': "hero" } %}
   {% endfor %}
