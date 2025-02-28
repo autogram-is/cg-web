@@ -8,6 +8,7 @@
   margin-block: var(--space-m) var(--space-xs);
   justify-self: flex-end;
   align-self: flex-end;
+  width: 100%;
   .hed  {
     color: var(--color-deep-steel);
     padding-right: var(--space-2xl);
