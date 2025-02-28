@@ -34,10 +34,10 @@
                 <div class="repel">
                   <ul role="list" class="contacts flow">
                     {% if person.email %}
-                    <li><a href="mailto:{{ person.email}}">{{ person.email}}</a></li>
+                    <li><a href="mailto:{{ person.email }}">{{ person.email }}</a></li>
                     {% endif %}
                     {% if person.phone %}
-                    <li>{{ person.phone}}</li> {# `href="tel:"` links will be generated in browsing contexts that support them. #}
+                    <li>{{ person.phone | phone }}</li> {# `href="tel:"` links will be generated in browsing contexts that support them. #}
                     {% endif %}
                   </ul>
                   {% if person.linkedin %}
