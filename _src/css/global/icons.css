@@ -56,3 +56,15 @@
     transform: rotate(180deg);
   }
 }
+
+.icon-next,
+.icon-previous {
+  path {
+    stroke: var(--color-timeless-gold);
+  }
+}
+.icon-previous {
+  svg {
+    transform: rotate(180deg);
+  }
+}
