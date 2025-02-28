@@ -3,6 +3,13 @@
     "title": "Footer Settings",
     "fields": [
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_67a10201f201a",
             "label": "CTA",
             "name": "cta",
@@ -19,6 +26,13 @@
             "layout": "block",
             "sub_fields": [
                 {
+                    "allow_backendsearch": false,
+                    "show_column_filter": false,
+                    "allow_bulkedit": false,
+                    "allow_quickedit": false,
+                    "show_column": false,
+                    "show_column_weight": 1000,
+                    "show_column_sortable": false,
                     "key": "field_67b7afac3f4f1",
                     "label": "Footer CTA Heading",
                     "name": "heading",
@@ -41,6 +55,13 @@
                     "append": ""
                 },
                 {
+                    "allow_backendsearch": false,
+                    "show_column_filter": false,
+                    "allow_bulkedit": false,
+                    "allow_quickedit": false,
+                    "show_column": false,
+                    "show_column_weight": 1000,
+                    "show_column_sortable": false,
                     "key": "field_67b7afee3f4f2",
                     "label": "Footer CTA Text",
                     "name": "text",
@@ -63,6 +84,13 @@
                     "new_lines": ""
                 },
                 {
+                    "allow_backendsearch": false,
+                    "show_column_filter": false,
+                    "allow_bulkedit": false,
+                    "allow_quickedit": false,
+                    "show_column": false,
+                    "show_column_weight": 1000,
+                    "show_column_sortable": false,
                     "key": "field_67b7b08d3f4f3",
                     "label": "Footer CTA Button",
                     "name": "button",
@@ -85,6 +113,13 @@
                     "append": ""
                 },
                 {
+                    "allow_backendsearch": false,
+                    "show_column_filter": false,
+                    "allow_bulkedit": false,
+                    "allow_quickedit": false,
+                    "show_column": false,
+                    "show_column_weight": 1000,
+                    "show_column_sortable": false,
                     "key": "field_67a0e5a1bdee3",
                     "label": "Footer Contact Form",
                     "name": "form",
@@ -105,6 +140,13 @@
                     "allow_in_bindings": 0
                 },
                 {
+                    "allow_backendsearch": false,
+                    "show_column_filter": false,
+                    "allow_bulkedit": false,
+                    "allow_quickedit": false,
+                    "show_column": false,
+                    "show_column_weight": 1000,
+                    "show_column_sortable": false,
                     "key": "field_67b7b0c43f4f4",
                     "label": "Footer Fallback Content",
                     "name": "fallback",
@@ -129,6 +171,13 @@
             ]
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_679d45fe2a4f4",
             "label": "Footer heading",
             "name": "heading",
@@ -151,6 +200,13 @@
             "append": ""
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_679d4042ac631",
             "label": "Social Media Links",
             "name": "social",
@@ -173,6 +229,13 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
+                    "allow_backendsearch": false,
+                    "show_column_filter": false,
+                    "allow_bulkedit": false,
+                    "allow_quickedit": false,
+                    "show_column": false,
+                    "show_column_weight": 1000,
+                    "show_column_sortable": false,
                     "key": "field_679d40947d243",
                     "label": "Icon",
                     "name": "icon",
@@ -200,6 +263,13 @@
                     "parent_repeater": "field_679d4042ac631"
                 },
                 {
+                    "allow_backendsearch": false,
+                    "show_column_filter": false,
+                    "allow_bulkedit": false,
+                    "allow_quickedit": false,
+                    "show_column": false,
+                    "show_column_weight": 1000,
+                    "show_column_sortable": false,
                     "key": "field_679d40fa7d246",
                     "label": "Label",
                     "name": "label",
@@ -223,6 +293,13 @@
                     "parent_repeater": "field_679d4042ac631"
                 },
                 {
+                    "allow_backendsearch": false,
+                    "show_column_filter": false,
+                    "allow_bulkedit": false,
+                    "allow_quickedit": false,
+                    "show_column": false,
+                    "show_column_weight": 1000,
+                    "show_column_sortable": false,
                     "key": "field_679d40bb7d244",
                     "label": "URL",
                     "name": "url",
@@ -245,6 +322,13 @@
             ]
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_679d41252f730",
             "label": "Footer notice",
             "name": "notice",
@@ -267,6 +351,13 @@
             "new_lines": "wpautop"
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_679d4333a8aef",
             "label": "Copyright",
             "name": "copyright",
@@ -298,7 +389,7 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 10,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -307,5 +398,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740091660
+    "qef_simple_location_rules": 0,
+    "modified": 1740769864
 }

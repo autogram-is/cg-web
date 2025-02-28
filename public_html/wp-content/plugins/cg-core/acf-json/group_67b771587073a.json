@@ -3,6 +3,13 @@
     "title": "Post Thumbnails",
     "fields": [
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_67b771923079a",
             "label": "Post Type thumbnail placeholders",
             "name": "placeholders",
@@ -25,6 +32,13 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
+                    "allow_backendsearch": false,
+                    "show_column_filter": false,
+                    "allow_bulkedit": false,
+                    "allow_quickedit": false,
+                    "show_column": false,
+                    "show_column_weight": 1000,
+                    "show_column_sortable": false,
                     "key": "field_67b771ba3079b",
                     "label": "Post Type",
                     "name": "type",
@@ -62,6 +76,13 @@
                     "parent_repeater": "field_67b771923079a"
                 },
                 {
+                    "allow_backendsearch": false,
+                    "show_column_filter": false,
+                    "allow_bulkedit": false,
+                    "allow_quickedit": false,
+                    "show_column": false,
+                    "show_column_weight": 1000,
+                    "show_column_sortable": false,
                     "key": "field_67b7735406e5e",
                     "label": "Placeholder Image",
                     "name": "image",
@@ -90,6 +111,13 @@
                     "parent_repeater": "field_67b771923079a"
                 },
                 {
+                    "allow_backendsearch": false,
+                    "show_column_filter": false,
+                    "allow_bulkedit": false,
+                    "allow_quickedit": false,
+                    "show_column": false,
+                    "show_column_weight": 1000,
+                    "show_column_sortable": false,
                     "key": "field_67b772a13079c",
                     "label": "Placeholder Text",
                     "name": "text",
@@ -113,6 +141,13 @@
                     "parent_repeater": "field_67b771923079a"
                 },
                 {
+                    "allow_backendsearch": false,
+                    "show_column_filter": false,
+                    "allow_bulkedit": false,
+                    "allow_quickedit": false,
+                    "show_column": false,
+                    "show_column_weight": 1000,
+                    "show_column_sortable": false,
                     "key": "field_67b772be3079d",
                     "label": "Placeholder Background",
                     "name": "bg",
@@ -145,6 +180,13 @@
                     "parent_repeater": "field_67b771923079a"
                 },
                 {
+                    "allow_backendsearch": false,
+                    "show_column_filter": false,
+                    "allow_bulkedit": false,
+                    "allow_quickedit": false,
+                    "show_column": false,
+                    "show_column_weight": 1000,
+                    "show_column_sortable": false,
                     "key": "field_67b7745e6774c",
                     "label": "Override Post Thumbnail",
                     "name": "override",
@@ -179,7 +221,7 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 1,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -188,5 +230,6 @@
     "active": true,
     "description": "Control post-type specific fallback thumbnails",
     "show_in_rest": 0,
-    "modified": 1740106116
+    "qef_simple_location_rules": 0,
+    "modified": 1740769892
 }
