@@ -2,17 +2,17 @@
         <div class="sidebar">
         {% if person.thumbnail %}
           <div class="crop">
-            {% if person.excerpt | length > 0 %}<a href="{{ person.link }}">{% endif %}
+            {% if person.generate_bio and bio_link %}<a href="{{ person.link }}">{% endif %}
             <img src="{{ person.thumbnail.src }}" height="{{ person.thumbnail.height }}" width="{{ person.thumbnail.width }}" alt="{{ person.thumbnail.alt }}">
-            {% if person.excerpt %}</a>{% endif %}
+            {% if person.generate_bio and bio_link %}</a>{% endif %}
           </div>
         {% endif %}
          <div class="body">
           <div class="person-header flow">
             <h2 class="hed type-body">
-              {% if person.excerpt | length > 0 %}<a href="{{ person.link }}" class="icon-next">{% endif %}
+              {% if person.generate_bio and bio_link %}<a href="{{ person.link }}" class="icon-next">{% endif %}
                 {{ person.name }}
-              {% if person.excerpt | length > 0 %}
+              {% if person.generate_bio and bio_link %}
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path id="chevron" d="m9 6 6 6-6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -22,15 +22,16 @@
             <div class="person-meta flow">
               <div>
                 {% if person.role %}<span class="title type-detail">{{ person.role }}</span>{% endif %}
+                </div>
               </div>
-              {% if person.sectors %}
+              {% if person.sectors and sectors %}
               <ul role="list" class="title-scope flow">
                 {% for sector in person.sectors %}
                 <li><a href="{{ sector.href }}">{{ sector.title | stylize }}</a></li>
                 {% endfor %}
               </ul>
               {% endif %}
-              {% if ( person.email or person.phone or person.linkedin ) and not person.hide_contact %}
+              {% if contact and ( person.email or person.phone or person.linkedin ) and person.show_contact %}
                 <div class="repel">
                   <ul role="list" class="contacts flow">
                     {% if person.email %}

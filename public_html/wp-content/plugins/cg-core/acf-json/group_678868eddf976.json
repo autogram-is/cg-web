@@ -50,9 +50,9 @@
             "show_column": 0,
             "show_column_weight": 1000,
             "show_column_sortable": false,
-            "key": "field_679c3f9d51613",
-            "label": "Display",
-            "name": "display_options",
+            "key": "field_67c2a75b76845",
+            "label": "Display details",
+            "name": "display",
             "aria-label": "",
             "type": "checkbox",
             "instructions": "",
@@ -64,22 +64,20 @@
                 "id": ""
             },
             "choices": {
-                "headshot": "Headshots",
+                "headshot": "Headshot",
                 "sectors": "Sectors",
-                "services": "Services",
-                "offices": "Offices",
-                "contact": "Contact details"
+                "contact": "Contact details",
+                "bio_link": "Link to bio"
             },
             "default_value": [
-                "headshots",
+                "headshot",
                 "sectors",
-                "services",
-                "offices",
-                "contact"
+                "contact",
+                "bio_link"
             ],
             "return_format": "value",
             "allow_custom": 0,
-            "allow_in_bindings": 1,
+            "allow_in_bindings": 0,
             "layout": "vertical",
             "toggle": 0,
             "save_custom": 0,
@@ -105,5 +103,5 @@
     "description": "",
     "show_in_rest": 0,
     "qef_simple_location_rules": 0,
-    "modified": 1740772781
+    "modified": 1740811099
 }
