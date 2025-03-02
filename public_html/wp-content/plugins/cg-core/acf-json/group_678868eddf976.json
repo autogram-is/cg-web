@@ -64,13 +64,11 @@
                 "id": ""
             },
             "choices": {
-                "headshot": "Headshot",
                 "sectors": "Sectors",
                 "contact": "Contact details",
                 "bio_link": "Link to bio"
             },
             "default_value": [
-                "headshot",
                 "sectors",
                 "contact",
                 "bio_link"
@@ -103,5 +101,5 @@
     "description": "",
     "show_in_rest": 0,
     "qef_simple_location_rules": 0,
-    "modified": 1740811099
+    "modified": 1740945747
 }
