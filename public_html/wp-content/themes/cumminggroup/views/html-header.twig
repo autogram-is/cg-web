@@ -29,7 +29,7 @@
 				"{{ eu|lower }}"{%  if not loop.last %},{% endif %}
 				{% endfor %}
 			];
-			const locationPreference = localStorage.getItem( "uk-eu" );
+			const locationPreference = localStorage.getItem( "uk-eu" ) || localStorage.getItem( "us" );
 
 			eu.forEach( continent => {
 				if( location.toLowerCase().match( continent ) && locationPreference === null ) { 
