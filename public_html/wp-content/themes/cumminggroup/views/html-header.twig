@@ -18,17 +18,11 @@
 		<link rel="preload" as="image" href="{{ heroimg.src }}" imageSrcSet="{{ heroimg.srcset }}" imageSizes="100vw">
 	{% endif %}
 	{{function('wp_head')}}
-
-	<link rel="stylesheet" href="{{ site.theme.link }}/assets/css/global.css?{{ assetHash }}" type="text/css" />
-
+	
 	<script>
 		(function() {
 			const location = Intl.DateTimeFormat().resolvedOptions().timeZone;
-			const eu = [
-				{%  for eu in settings.eu_uk_continents %}
-				"{{ eu|lower }}"{%  if not loop.last %},{% endif %}
-				{% endfor %}
-			];
+			const eu = [{%  for eu in settings.eu_uk_continents %}"{{ eu|lower }}"{%  if not loop.last %},{% endif %}{% endfor %}];
 			const locationPreference = localStorage.getItem( "uk-eu" ) || localStorage.getItem( "us" );
 
 			eu.forEach( continent => {
@@ -39,3 +33,5 @@
 			});
 		}());
 	</script>
+
+	<link rel="stylesheet" href="{{ site.theme.link }}/assets/css/global.css?{{ assetHash }}" type="text/css" />
