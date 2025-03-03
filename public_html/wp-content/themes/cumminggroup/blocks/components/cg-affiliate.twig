@@ -14,6 +14,8 @@
   SupportsAlignContent: false
   SupportsAlignText: false
 #}
+{% set name = fields.name %}
+{% set linked_name = '<a href="' ~fields.link~ '" class="weight-semibold text-legacy-red">' ~fields.name~ '</a>' %}
 <div class="affiliate region region-double">
   <div class="wrapper">
     <div class="sidebar">
@@ -24,7 +26,7 @@
       </span>
       {% endif %}
       <div class="flow">
-        <p>{{ fields.description }}</p>
+        <p>{{ fields.description | replace_first(name, linked_name) }}</p>
       </div>
     </div>
   </div>

@@ -57,6 +57,10 @@ class CGTwigFilters {
       new \Twig\TwigFilter( 'group_locations', [ $this, 'group_locations' ] )
     );
 
+    $twig->addFilter(
+      new \Twig\TwigFilter( 'replace_first', [ $this, 'replace_first' ] )
+    );
+
     $twig->addFunction(
       new \Twig\TwigFunction( 'template_list', 'cg_post_templates' )
     );
@@ -215,5 +219,16 @@ class CGTwigFilters {
     $year = date("Y", $date);
     $quarter = ceil($month / 3);
     return "Q$quarter, $year";
+  }
+
+  /**
+   * Takes a date string and returns a 'Q1, 2025' style date string.
+   */
+  function replace_first(string $haystack = '', string $needle= '', string $replacement = '') {
+    $pos = strpos($haystack, $needle);
+    if ($pos !== false) {
+      return substr_replace($haystack, $replacement, $pos, strlen($needle));
+    }
+    return $haystack;
   }
 }
