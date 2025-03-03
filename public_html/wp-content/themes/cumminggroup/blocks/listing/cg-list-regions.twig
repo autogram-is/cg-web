@@ -24,8 +24,8 @@
         <div class="location-columns">
           {% for location, titles in region.posts|group_locations %}
           <ul class="flow markers" role="list">
-            {% for title in titles|sort%}
-            <li class="hed type-hed">{{title}}, {{ location }}</li>
+            {% for office in titles|sort%}
+            <li class="hed type-hed"><a href="{{ office.link }}">{{ office.title }}, {{ location }}</a></li>
             {% endfor %}
           </ul>
           {% endfor %}

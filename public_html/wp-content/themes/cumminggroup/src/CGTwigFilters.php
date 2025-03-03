@@ -109,7 +109,7 @@ class CGTwigFilters {
     }
 
     foreach ($loc_array as $key => $row) {
-      array_push( $ret[$row -> location], $row -> title );
+      array_push( $ret[$row -> location], [ "title" => $row -> title, "link" => $row -> link ] );
     }
 
     ksort( $ret );
