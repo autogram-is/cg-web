@@ -20,3 +20,22 @@
 	{{function('wp_head')}}
 
 	<link rel="stylesheet" href="{{ site.theme.link }}/assets/css/global.css?{{ assetHash }}" type="text/css" />
+
+	<script>
+		(function() {
+			const location = Intl.DateTimeFormat().resolvedOptions().timeZone;
+			const eu = [
+				{%  for eu in settings.eu_uk_continents %}
+				"{{ eu|lower }}"{%  if not loop.last %},{% endif %}
+				{% endfor %}
+			];
+			const locationPreference = localStorage.getItem( "uk-eu" );
+
+			eu.forEach( continent => {
+				if( location.toLowerCase().match( continent ) && locationPreference === null ) { 
+					localStorage.setItem( "uk-eu", "true" );
+					localStorage.setItem( "us", "false" );
+				}
+			});
+		}());
+	</script>
