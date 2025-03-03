@@ -31,7 +31,7 @@ class CGPortfolio extends CGContent {
 	 */
 	public function projects(?int $limit = -1) { return parent::_cache_relationship('projects', $limit); }
 
-		/**
+	/**
 	 * Gets projects connected to the current post.
 	 *
 	 * @return \Timber\PostCollectionInterface
@@ -42,16 +42,6 @@ class CGPortfolio extends CGContent {
 			return count($projects);
 		}
 		return 0;
-	}
-
-	public function has_facts() {
-		$facts = $this->meta('facts');
-		if (is_array($facts)) {
-			foreach ($facts as $key => $value) {
-				if ($value) return true;
-			}	
-		}
-		return false;
 	}
 
 	/**

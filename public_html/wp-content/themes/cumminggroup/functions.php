@@ -18,6 +18,7 @@ require_once __DIR__ . '/src/CGSite.php';
 require_once __DIR__ . '/src/CGContent.php';
 require_once __DIR__ . '/src/CGNews.php';
 require_once __DIR__ . '/src/CGPortfolio.php';
+require_once __DIR__ . '/src/CGProject.php';
 require_once __DIR__ . '/src/CGOffice.php';
 require_once __DIR__ . '/src/CGPerson.php';
 
@@ -42,7 +43,7 @@ add_filter('timber/post/classmap', function ($classmap) {
   
     'sector' => CGPortfolio::class,
     'service' => CGPortfolio::class,
-    'project' => CGPortfolio::class,
+    'project' => CGProject::class,
 
     'person' => CGPerson::class,
     'office' => CGOffice::class,
