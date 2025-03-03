@@ -1,0 +1,32 @@
+{#
+  Title: Logo Cluster
+  Description: Centered grid of logos
+  Category: cg-component
+  Icon: format-gallery
+  Mode: edit
+  SupportsMode: true
+  Align: false
+  PostTypes: 
+  EnqueueStyle: 
+  SupportsAlign: none
+  SupportsMultiple: true
+  SupportsInnerBlocks: false
+  SupportsAlignContent: false
+  SupportsAlignText: false
+#}
+<div class="logo-cluster region cluster all-center">
+  {% for image in fields.logos %}
+    <img 
+      src="{{ image.url }}"
+      srcset="
+        {{ image.sizes.medium }} {{ image.sizes["medium_width-width"] }}w, 
+        {{ image.sizes.medium_large }} {{ image.sizes["medium_large-width"] }}w, 
+        {{ image.sizes.large }} {{ image.sizes["large-width"] }}w,
+        {{ image.url }} {{ image.width }}w"
+      height="{{image.height}}"
+      width="{{image.width}}"
+      alt="{{image.alt}}"
+      loading="lazy"
+      sizes="auto">
+  {% endfor %}
+</div>
