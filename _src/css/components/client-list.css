@@ -1,4 +1,5 @@
 .client-list {
+
   &.grid {
     display: grid;
     --gutter: var(--space-2xs);
@@ -11,22 +12,15 @@
   }
 }
 
-.cg .is-style-client-list:not([role="list"]) {
-  max-width: 100%;
-  margin-block: var(--region-space);
-  --gutter: var(--space-2xs);
-  --grid-min-item-size: 25rem;
-  --grid-placement: auto-fill;
-  display: grid;
-  grid-template-columns: repeat(
-    var(--grid-placement, auto-fill),
-    minmax(var(--grid-min-item-size, 16rem), 1fr)
-  );
-  gap: var(--gutter, var(--space-s-m));
-  grid-auto-flow: dense;
-  li {
+.cg ul.is-style-client-list:not([role="list"]),
+.cg ul.is-style-client-list-multicol:not([role="list"]),
+.cg ol.is-style-client-list:not([role="list"]),
+.cg ol.is-style-client-list-multicol:not([role="list"]) {
+   li {
     display: list-item;
     flex-direction: row;
+    width: auto;
+    margin-block: var(--space-2xs);
     align-items: flex-start;
     line-height: var(--leading-tight);
     &::marker {
@@ -43,4 +37,18 @@
       margin-inline: 0 var(--space-2xs);
     }
   }
+}
+
+.cg ul.is-style-client-list-multicol:not([role="list"]) {
+  max-width: 100%;
+  --gutter: var(--space-2xs);
+  --grid-min-item-size: 25rem;
+  --grid-placement: auto-fill;
+  display: grid;
+  grid-template-columns: repeat(
+    var(--grid-placement, auto-fill),
+    minmax(var(--grid-min-item-size, 16rem), 1fr)
+  );
+  gap: 0 var(--gutter, var(--space-s-m));
+  grid-auto-flow: dense;
 }

@@ -178,13 +178,19 @@ function cg_register_block_styles() {
   /**
    * List treatments
    */
-  register_block_style('core/list',
-    array('name' => 'client-list','label' => __( 'Plus', 'textdomain' ), 'is_default' => false)
-  );
-  register_block_style('core/list',
-    array('name' => 'cta-list','label' => __( 'CTAs', 'textdomain' ), 'is_default' => false)
-  );
 
+  register_block_style('core/list',
+    array('name' => 'default','label' => __( 'Default', 'textdomain' ), 'is_default' => true)
+  );
+  register_block_style('core/list',
+    array('name' => 'multicol','label' => __( 'Default (Multicol)', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('core/list',
+    array('name' => 'client-list','label' => __( 'Plus Markers', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('core/list',
+    array('name' => 'client-list-multicol','label' => __( 'Plus (Multicol)', 'textdomain' ), 'is_default' => false)
+  );
   /**
    * Paragraphs
    */

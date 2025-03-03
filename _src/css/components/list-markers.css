@@ -1,7 +1,21 @@
-.cg ul:not([role="list"]):not(.grid),
-.cg ol:not([role="list"]):not(.grid) {
+.cg ul:not([role="list"]):not(.grid):not([class*="multicol"]),
+.cg ol:not([role="list"]):not(.grid):not([class*="multicol"]) {
   display: flex;
   flex-direction: column;
+}
+
+.cg ul[class*="multicol"],
+.cg ol[class*="multicol"] {
+  max-width: 100%;
+  margin-block: var(--region-space);
+  --gutter: var(--space-2xs);
+  --grid-min-item-size: 25rem;
+  --grid-placement: auto-fill;
+  display: grid;
+  grid-template-columns: repeat(
+    var(--grid-placement, auto-fill),
+    minmax(var(--grid-min-item-size, 16rem), 1fr)
+  );
 }
 
 .cg ul:not([role="list"]),
