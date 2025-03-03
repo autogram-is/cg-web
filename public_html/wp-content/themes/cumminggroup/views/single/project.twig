@@ -26,4 +26,20 @@
 <div class="region region-primary">
 {% if gallery %}{% include "fields/gallery.twig" with { images: gallery, utilities: "bg-timeless-backdrop" } %}{% endif %}
 </div>
+
+{% if post.related_news(6) | length %}
+<div class="region region-primary wrapper">
+{% include "partial/related-news-list.twig" with { heading: "Related News", items: post.related_news(6) } %}
+{% include "partial/link-to-archive.twig" with { link: '/news-insights', title: 'Visit News + Insights' | stylize } %}
+</div>
+{% endif %}
+
+{% if post.projects(6) | length %}
+<div class="region region-primary wrapper">
+{% include "partial/project-grid.twig" with { heading: "Related Projects", items: post.projects, sectors: true, services: true, offices: true, utilities: "bg-timeless-backdrop" } %}
+{% if post.project_count > 6 %}
+  {% include "partial/link-to-archive.twig" with { link: 'portfolio', title: 'Visit Full Portfolio' } %}
+{% endif %}
+</div>
+{% endif %}
 {% endblock %}
