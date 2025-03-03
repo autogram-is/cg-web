@@ -3,6 +3,13 @@
     "title": "Bios Block",
     "fields": [
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_678868eeb1c4b",
             "label": "Selected team members",
             "name": "posts",
@@ -36,11 +43,18 @@
             "bidirectional_target": []
         },
         {
-            "key": "field_679c3f9d51613",
-            "label": "Display Headshots",
-            "name": "headshots",
+            "allow_backendsearch": false,
+            "show_column_filter": 0,
+            "allow_bulkedit": 0,
+            "allow_quickedit": 0,
+            "show_column": 0,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
+            "key": "field_67c2a75b76845",
+            "label": "Display details",
+            "name": "display",
             "aria-label": "",
-            "type": "true_false",
+            "type": "checkbox",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -49,13 +63,23 @@
                 "class": "",
                 "id": ""
             },
-            "admin_column_enabled": 0,
-            "message": "",
-            "default_value": 1,
+            "choices": {
+                "sectors": "Sectors",
+                "contact": "Contact details",
+                "bio_link": "Link to bio"
+            },
+            "default_value": [
+                "sectors",
+                "contact",
+                "bio_link"
+            ],
+            "return_format": "value",
+            "allow_custom": 0,
             "allow_in_bindings": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "ui": 1
+            "layout": "vertical",
+            "toggle": 0,
+            "save_custom": 0,
+            "custom_choice_button_text": "Add new choice"
         }
     ],
     "location": [
@@ -76,5 +100,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738293427
+    "qef_simple_location_rules": 0,
+    "modified": 1740945747
 }

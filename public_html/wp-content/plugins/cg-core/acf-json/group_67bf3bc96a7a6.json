@@ -44,34 +44,6 @@
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
-        },
-        {
-            "allow_backendsearch": false,
-            "show_column_filter": 0,
-            "allow_bulkedit": 0,
-            "allow_quickedit": 0,
-            "show_column": 0,
-            "show_column_weight": 1000,
-            "show_column_sortable": false,
-            "key": "field_67bf9e99bd40a",
-            "label": "Allow regional blocks",
-            "name": "allow_regional_blocks",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "allow_in_bindings": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "ui": 1
         }
     ],
     "location": [
@@ -93,5 +65,5 @@
     "description": "",
     "show_in_rest": 0,
     "qef_simple_location_rules": 0,
-    "modified": 1740678397
+    "modified": 1740946145
 }
