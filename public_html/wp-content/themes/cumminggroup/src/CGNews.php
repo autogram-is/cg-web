@@ -13,6 +13,17 @@ class CGNews extends CGContent {
 	}
 
 	/**
+	 * Builds a convenience bundle of hero treatment information.
+	 *
+	 * @return \Timber\PostCollectionInterface
+	 */
+	public function hero() {
+		if ($this->post_type === 'event') {
+			return array("type" => "hide");
+		}
+	}
+
+	/**
 	 * If no thumbnail image is available for a post, construct a text placeholder.
 	 * Uses fallback logic with the `placeholder_text` and `placeholder_bg` fields
 	 * to allow post, news category, and post-type level placeholder overrides.
