@@ -1,7 +1,30 @@
 .affiliate {
   --sidebar-gutter: var(--space-2xl-3xl);
 
+  &:first-of-type {
+    border-top: 1px solid var(--color-steel-highlight);
+  }
+  .sidebar {
+    align-items: center;
+  }
   .thumb {
     margin-block: var(--space-2xs);
+    max-width: 18rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      max-width: 15rem;
+      max-height: 7.5rem;
+    }
+  }
+  .thumb,
+  .body {
+    padding-block: calc( var(--region-space) * 2 ) var(--region-space);
+  }
+  & + .affiliate {
+    .body {
+      border-top: 1px solid var(--color-steel-highlight);
+    }
   }
 }
