@@ -14,16 +14,18 @@
   SupportsAlignContent: false
   SupportsAlignText: false
 #}
+{% set name = fields.name %}
+{% set linked_name = '<a href="' ~fields.link~ '" class="weight-semibold text-legacy-red">' ~fields.name~ '</a>' %}
 <div class="affiliate">
-  <div class="sidebar">
-    {% if fields.logo %}
-    {% set logo = get_image(fields.logo) %}
-    <span class="thumb">
-      <a href="{{ fields.link }}"><img src="{{ logo.src }}" height="auto" alt="{{ fields.name ?? logo.alt }}"></a>
-    </span>
-    {% endif %}
-    <div class="flow body">
-      <p>{{ fields.description }}</p>
-    </div>
+    <div class="sidebar">
+      {% if fields.logo %}
+      {% set logo = get_image(fields.logo) %}
+      <span class="thumb">
+        <a href="{{ fields.link }}"><img src="{{ logo.src }}" height="auto" alt="{{ fields.name ?? logo.alt }}"></a>
+      </span>
+      {% endif %}
+      <div class="flow">
+        <p>{{ fields.description | replace_first(name, linked_name) }}</p>
+      </div>
   </div>
 </div>

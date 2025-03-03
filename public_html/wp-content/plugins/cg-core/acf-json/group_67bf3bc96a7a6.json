@@ -15,7 +15,7 @@
             "name": "eu_uk_continents",
             "aria-label": "",
             "type": "select",
-            "instructions": "These continents will be treated as \"Europe\" for the purpose of navigation and conditional content.",
+            "instructions": "These continents will be treated as \"Europe\" for navigation purposes.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -65,5 +65,5 @@
     "description": "",
     "show_in_rest": 0,
     "qef_simple_location_rules": 0,
-    "modified": 1740946145
+    "modified": 1741028880
 }
