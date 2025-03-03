@@ -34,12 +34,15 @@
 </div>
 {% endif %}
 
-{% if post.projects(6) | length %}
+{% set sector = post.sectors[0] %}
+{% if sector.projects(6) | length %}
 <div class="region region-primary wrapper">
-{% include "partial/project-grid.twig" with { heading: "Related Projects", items: post.projects, sectors: true, services: true, offices: true, utilities: "bg-timeless-backdrop" } %}
-{% if post.project_count > 6 %}
-  {% include "partial/link-to-archive.twig" with { link: 'portfolio', title: 'Visit Full Portfolio' } %}
+<h2 class="type-eyebrow hed-accent">More {{ sector.title | stylize }} Projects</h2>
+{% include "partial/project-grid.twig" with { items: sector.projects, services: true, offices: true, utilities: "bg-timeless-backdrop" } %}
+{% if sector.project_count > 6 %}
+  {% include "partial/link-to-archive.twig" with { link: sector.link ~ 'portfolio', title: 'Visit Full Portfolio' } %}
 {% endif %}
 </div>
 {% endif %}
+
 {% endblock %}
