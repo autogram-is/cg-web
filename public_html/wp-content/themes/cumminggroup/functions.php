@@ -56,32 +56,6 @@ add_filter('timber/post/classmap', function ($classmap) {
   return array_merge($classmap, $custom_classmap);
 });
 
-function pluralize(int | array | PostQuery $items, string $singular, string $plural=null) {
-  if (is_int($items) && $items < 2) return $singular;
-  if(count($items)==1 || !strlen($singular)) return $singular;
-  if($plural!==null) return $plural;
-
-  $last_letter = strtolower($singular[strlen($singular)-1]);
-  switch($last_letter) {
-      case 'y':
-          return substr($singular,0,-1).'ies';
-      case 's':
-          return $singular.'es';
-      default:
-          return $singular.'s';
-  }
-}
-
-function get_post_a_tag($post) {
-  $href = get_permalink($post);
-  $title = get_the_title($post);
-  return '<a href="'.$href.'">'.$title.'</a>';
-}
-
-function snake_to_title_case(string $input) {
-  return mb_convert_case(str_replace('_', " ", $input), MB_CASE_TITLE_SIMPLE);
-}
-
 add_filter('timber/acf-gutenberg-blocks-templates', function () {
   return ['blocks']; // default: ['views/blocks']
 });
