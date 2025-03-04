@@ -19,6 +19,8 @@ function cg_format_phone(?string $input, string $format = 'display') {
         } else {
           return $number->format(PhoneNumberFormat::INTERNATIONAL) . " <!-- " . $number->getRegionCode() . " -->";
         }
+      } else {
+        return $input;
       }
     }
     catch (PhoneNumberParseException $e) {
