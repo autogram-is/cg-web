@@ -55,4 +55,26 @@ class CGOffice extends CGPortfolio {
 			return $this->$field_prop;	
 		}
 	}
+
+	/**
+	 * Gets news and events related to the current office; if not enough projects have been
+	 * added to the office, projects from offices in the same region are used as backfill.
+	 *
+	 * @return \Timber\PostCollectionInterface
+	 */
+	public function nearby_offices() {
+		$field_prop = '_nearby_offices';
+		if (isset($this->$field_prop)) {
+		 	return $this->$field_prop;
+		}
+
+		$items = cg_get_related_offices($this->ID);
+
+		if (!$items) {
+		 	$this->$field_prop = null;
+		} else {
+	   	$this->$field_prop = Timber::get_posts($items);
+			return $this->$field_prop;	
+		}
+	}
 }
