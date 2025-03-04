@@ -305,7 +305,6 @@
     }
   }
 }
-
 .inverted,
 [class*="bg-deep-steel"],
 [class*="bg-steel-shade"],
@@ -363,5 +362,11 @@
     & > input[type='radio'] {
       background: var(--color-steel-shade);
     }
+  }
+}
+
+[class*="bg-timeless-backdrop"] {
+  &, form {
+    --input-background: var(--color-light);
   }
 }

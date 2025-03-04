@@ -6,21 +6,18 @@
 {% endblock %}
 
 {% block sidebar %}
-{% if settings.sector_contact_form %}
-<div class="inline-form flow bg-timeless-backdrop">
-{{ settings.sector_contact_form | gravityform(false, true) }}
-</div>
-{% endif %}
 {% endblock %}
-
-
 
 {% block floatingsidebar %}
 {%- include 'partial/hero-notch-details.twig' -%}
 {% endblock %}
 
-
 {% block posthero %}
+  {% if settings.sector_contact_form %}
+  <div class="inline-form flow bg-timeless-backdrop">
+  {{ settings.sector_contact_form | gravityform(false, true) }}
+  </div>
+  {% endif %}
   {% if post.projects(6) | length %}
   <div class="region region-primary wrapper">
   {% include "partial/project-gallery.twig" with { heading: "Representative Experience", items: post.projects, offices: true, services: true, utilities: "bg-timeless-backdrop" } %}

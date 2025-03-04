@@ -1,10 +1,4 @@
 /* Gravity Form overrides */
-
-.inline-form [id*="gform_wrapper"] {
-  .gform_heading {
-    margin-block: var(--space-2xs);
-  }
-}
 [id*="gform_wrapper"] {
   all: unset;
   display: flex;
@@ -30,7 +24,6 @@
     display: inline;
   }
   .gform_fields {
-    all: unset;
     display: flex;
     gap: var(--space-s-m);
     flex-wrap: wrap;
@@ -46,7 +39,6 @@
 
       .ginput_container,
       input {
-        flex-basis: 100% !important;
         width: 100% !important;
       }
     }
@@ -173,6 +165,43 @@
           background: var(--color-dark) url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' transform='rotate(90)'%3E%3Cpath id='chevron' d='m9 6 6 6-6 6' stroke='%23acb4bb ' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center center no-repeat;
         }
       }
+    }
+  }
+}
+
+.inline-form {
+  .wrapper {
+    width: 100%;
+  }
+  [id*="gform_wrapper"] {
+    width: 100%;
+    .gform_fields {
+      width: 100%;
+      gap: var(--gutter, var(--space-s-m));
+    }
+    form[id*="gform_"] {
+      width: 100%;
+    }
+    .gform-footer {
+      margin-block-start: var(--space-3xs);
+    }
+    .gform_wrapper {
+      margin-block: var(--space-s-m);
+      display: block;
+      min-width: 100%;
+    }
+    .gform_heading {
+      margin-block: 0 var(--space-s);
+    }
+  }
+}
+@media screen(sm) {
+  .inline-form {
+    .gform_fields {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 65rem;
+      width: 100%;
     }
   }
 }
