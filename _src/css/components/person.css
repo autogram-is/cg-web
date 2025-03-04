@@ -119,25 +119,7 @@
     .repel {
       border-top: 1px solid var(--color-steel-highlight);
     }
-    .contacts {
-      flex-wrap: wrap;
-      font-size: var(--size-step-000);
-      font-family: var(--font-body);
-      letter-spacing: var(--tracking-tight);
-      margin-block-start: calc( var(--space-2xs) - var(--space-nudge ));
-      li {
-        --flow-space: var(--space-3xs);
-        line-height: var(--leading-seamless);
-      }
-      li a {
-        font-weight: var(--weight-normal);
-      }
-      li + li {
-        &::before {
-          display: none;
-        }
-      }
-    }
+
     .contact-footer {
       .contacts li,
       .contacts li a {
@@ -152,4 +134,25 @@
       }
     }
   }
+  .contacts {
+      flex-wrap: wrap;
+      font-size: var(--size-step-000);
+      font-family: var(--font-body);
+      letter-spacing: var(--tracking-tight);
+      margin-block-start: calc( var(--space-2xs) - var(--space-nudge ));
+      li {
+        --flow-space: var(--space-3xs);
+        line-height: var(--leading-seamless);
+        line-height:1;
+        border: 1px;
+      }
+      li a {
+        font-weight: var(--weight-normal);
+      }
+      li + li {
+        &::before {
+          display: none;
+        }
+      }
+    }
 }
