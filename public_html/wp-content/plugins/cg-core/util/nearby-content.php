@@ -74,7 +74,7 @@ function cg_get_related_offices(int $post_id) {
  * Given an array of portfolio items (sectors, services, projects, or offices),
  * find associated projects.
  */
-function cg_get_projects_for_portfolio_items(array $post_ids, int $limit = 10, array $ignore = [], string $mode = 'breadth') {
+function cg_get_projects_for_portfolio_items(array $post_ids, int $limit = 6, array $ignore = [], string $mode = 'breadth') {
   $project_buckets = [];
   foreach ($post_ids as $post_id) {
     // This respects the order projects appear in on the item itself,
@@ -92,7 +92,7 @@ function cg_get_projects_for_portfolio_items(array $post_ids, int $limit = 10, a
  * Given an array of portfolio items (sectors, services, projects, or offices),
  * find associated news posts, events, and market intelligence reports.
  */
-function cg_get_news_for_portfolio_items(array $post_ids, int $limit = 10, array $ignore = [], string $mode = 'breadth') {
+function cg_get_news_for_portfolio_items(array $post_ids, int $limit = 6, array $ignore = [], string $mode = 'breadth') {
   $project_buckets = [];
   foreach ($post_ids as $post_id) {
     // This respects the order projects appear in on the item itself,
@@ -110,7 +110,7 @@ function cg_get_news_for_portfolio_items(array $post_ids, int $limit = 10, array
  * Given a keyed array of arrays, output a flattened list of values
  * containing a mostly-equal number of values from each array.
  */
-function cg_balance_buckets(array $lists = [], int $limit = 10, array $ignore = []) {
+function cg_balance_buckets(array $lists = [], int $limit = 6, array $ignore = []) {
   $result = [];
   if (count($lists) > 0) {
     $maxLength = max(array_map('count', $lists));

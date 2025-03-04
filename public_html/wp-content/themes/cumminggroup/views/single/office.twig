@@ -30,6 +30,21 @@
   </div>
   {% endif %}
 
+{# Pending resolution of 'nearby offices' discussion
+  {% if post.nearby_offices %}
+  <div class="region region-primary wrapper">
+  <h2 class="type-hed hed-accent">Other Regional Locations</h2>
+    <div class="location-columns">
+      <ul class="flow" role="list">
+      {% for office in post.nearby_offices | sort %}
+      <li><a href="{{ office.link }}">{{ office.title }}, {{ office.location }}</a></li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% endif %}
+#}
+
   {% if post.nearby_news(6) | length %}
   <div class="region region-primary wrapper">
   {% include "partial/related-news-list.twig" with { heading: "Related News", items: post.nearby_news(6) } %}
