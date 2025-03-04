@@ -24,12 +24,8 @@ class CGProject extends CGPortfolio {
 			return $this->$field_prop;
 		}
 
-		$services = $this->meta('services');
 		$sectors = $this->meta('sectors');
-		$offices = $this->meta('offices');
-
-		$items = array_merge($services, $sectors, $offices);
-		$ids = cg_get_projects_for_portfolio_items($items, $limit, [$this->ID]);
+		$ids = cg_get_projects_for_portfolio_items($sectors, $limit, [$this->ID]);
 
 		if (!is_array($ids) || count($ids) === 0) {
 			$this->$field_prop = null;

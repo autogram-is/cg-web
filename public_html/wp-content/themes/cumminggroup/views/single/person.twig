@@ -17,12 +17,12 @@
     <div class="sidebar region person">
       {% if post.thumbnail %}
       <div>
-      <img src="{{post.thumbnail.src }}"
-        height="{{post.thumbnail.height}}"
-        width="{{post.thumbnail.width}}"
-        alt="{{post.thumbnail.alt}}" />
-      {% endif %}
+        <img src="{{post.thumbnail.src }}"
+          height="{{post.thumbnail.height}}"
+          width="{{post.thumbnail.width}}"
+          alt="{{post.thumbnail.alt}}" />
       </div>
+      {% endif %}
       <div class="person-meta">
         <div class="person-body{% if ( post.email or post.phone or post.linkedin ) and not post.hide_contact %} lede-header hed-accent{% endif %}">
           {{ post.content }}
