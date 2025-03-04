@@ -1,6 +1,6 @@
 {
     "key": "group_67c0e579abd9a",
-    "title": "Contact Form Email",
+    "title": "Contact Form Data",
     "fields": [
         {
             "allow_backendsearch": 0,
@@ -11,7 +11,7 @@
             "show_column_weight": 1000,
             "show_column_sortable": false,
             "key": "field_67c0e579238b4",
-            "label": "Contact email",
+            "label": "Contact Email",
             "name": "contact_email",
             "aria-label": "",
             "type": "text",
@@ -64,5 +64,5 @@
     "description": "",
     "show_in_rest": 0,
     "qef_simple_location_rules": 0,
-    "modified": 1740695157
+    "modified": 1741122696
 }
