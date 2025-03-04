@@ -36,12 +36,18 @@
 
 {% set sector = post.sectors[0] %}
 {% if sector.projects(6) | length %}
-<div class="region region-primary wrapper">
-<h2 class="type-eyebrow hed-accent">More {{ sector.title | stylize }} Projects</h2>
-{% include "partial/project-grid.twig" with { items: sector.projects, services: true, offices: true, utilities: "bg-timeless-backdrop" } %}
-{% if sector.project_count > 6 %}
-  {% include "partial/link-to-archive.twig" with { link: sector.link ~ 'portfolio', title: 'Visit Full Portfolio' } %}
-{% endif %}
+<div class="region wrapper">
+<h2 class="type-hed hed-accent">More {{ sector.title | stylize }} Projects</h2>
+</div>
+<div class="bg-timeless-backdrop">
+
+  <div class="region region-primary wrapper">
+  {% include "partial/project-grid.twig" with { items: sector.projects, services: true, offices: true} %}
+
+  {% if sector.project_count > 6 %}
+    {% include "partial/link-to-archive.twig" with { link: sector.link ~ 'portfolio', title: 'Visit Full Portfolio' } %}
+  {% endif %}
+  </div>
 </div>
 {% endif %}
 
