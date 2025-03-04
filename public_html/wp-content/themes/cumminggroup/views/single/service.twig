@@ -17,7 +17,9 @@
 {% block posthero %}
   {% if settings.sector_contact_form %}
   <div class="inline-form flow bg-timeless-backdrop">
-  {{ settings.sector_contact_form | gravityform(false, true) }}
+    <div class="wrapper">
+    {{ settings.sector_contact_form | gravityform(false, true) }}
+    </div>
   </div>
   {% endif %}
   {% if post.projects(6) | length %}
