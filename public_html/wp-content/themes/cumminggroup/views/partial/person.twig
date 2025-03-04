@@ -3,7 +3,11 @@
         {% if person.thumbnail %}
           <div class="crop">
             {% if person.generate_bio and bio_link %}<a href="{{ person.link }}">{% endif %}
-            <img src="{{ person.thumbnail.src }}" height="{{ person.thumbnail.height }}" width="{{ person.thumbnail.width }}" alt="{{ person.thumbnail.alt }}">
+            <img 
+              src="{{ person.thumbnail.src|resize(400, 222) }}" 
+              height="222" 
+              width="400" 
+              alt="{{ person.thumbnail.alt }}">
             {% if person.generate_bio and bio_link %}</a>{% endif %}
           </div>
         {% endif %}

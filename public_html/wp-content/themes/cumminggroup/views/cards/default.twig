@@ -5,7 +5,10 @@
       {% set thumbnail = get_image(thumbnail) %}
       <a href="{{ feature.link }}" class="thumb">
         <img
-          src="{{ thumbnail.src|resize(800, 650) }}"
+          src="{{ thumbnail.src|resize(1200, 800) }}"
+          srcset="{{ thumbnail.thumbnail.src|resize(1200, 800) }} 1200w, {{ thumbnail.thumbnail.src|resize(800, 533) }} 800w, {{ thumbnail.thumbnail.src|resize(600, 400) }} 600w, {{ thumbnail.thumbnail.src|resize(400, 266) }} 400w"
+          sizes="auto"
+          loading="lazy"
           height="{{thumbnail.height}}"
           width="{{thumbnail.width}}"
           alt="{{thumbnail.alt}}" />
@@ -13,7 +16,10 @@
       {% elseif feature.thumbnail %}
       <a href="{{ feature.link }}" class="thumb">
         <img
-          src="{{feature.thumbnail.src|resize(800, 650) }}"
+          src="{{feature.thumbnail.src|resize(1200, 800) }}"
+          srcset="{{ feature.thumbnail.src|resize(1200, 800) }} 1200w, {{ feature.thumbnail.src|resize(800, 533) }} 800w, {{ feature.thumbnail.src|resize(600, 400) }} 600w, {{ feature.thumbnail.src|resize(400, 266) }} 400w"
+          sizes="auto"
+          loading="lazy"
           height="{{feature.thumbnail.height}}"
           width="{{feature.thumbnail.width}}"
           alt="{{feature.thumbnail.alt}}" />

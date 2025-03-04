@@ -14,10 +14,10 @@
         {% if project.thumbnail %}
         <a href="{{ project.link }}" class="thumb">
           <img 
-          src="{{ project.thumbnail.src }}" 
-          height="{{ project.thumbnail.height }}" 
-          width="{{ project.thumbnail.width }}" 
-          srcset="{{ project.thumbnail.srcset }}"
+          src="{{project.thumbnail.src|resize(1200, 666) }}"
+          srcset="{{ project.thumbnail.src|resize(1200, 666) }} 1200w, {{ project.thumbnail.src|resize(800, 444) }} 800w, {{ project.thumbnail.src|resize(600, 333) }} 600w, {{ project.thumbnail.src|resize(400, 222) }} 400w"
+          height="666" 
+          width="1200" 
           sizes="auto"
           loading="lazy"
           alt="{{ project.thumbnail.alt }}">
