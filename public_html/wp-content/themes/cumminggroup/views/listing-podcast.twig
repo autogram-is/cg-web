@@ -1,0 +1,47 @@
+{% set mp3 = post.meta('podcast_mp3_url') %}
+{% set youtube = post.meta('podcast_youtube_url') %}
+{%  if mp3 or youtube %}
+<div class="region">
+  <figure class="media">
+    <div class="switcher">
+      <div class="thumb">
+        <div>
+        {% if youtube %}
+          <a href="{{ youtube }}" data-media="{{ youtube | youtube_embed }}">
+            {% if post.media.poster is not empty %}
+            <img decoding="async" src="{{ post.media.poster.src }}">
+            {% else %}
+            <img decoding="async" src="{{ youtube | youtube_poster }}">
+            {% endif %}
+          </a>
+        {% elseif mp3 %}
+          <a href="{{ mp3 }}" data-media="{{ mp3 }}">
+            <img decoding="async" src="{{ post.thumbnail }}">
+          </a>
+        {% endif %}
+        </div>
+      </div>
+      <figcaption class="flow">
+        <div class="body">
+          <div class="hgroup {% if fields.excerpt %}hed-accent {% endif %}flow">
+            {% if post.eyebrow|date('y-m-d') %}
+            <time datetime="{{eyebrow|date('y-m-d')}}" class="type-detail weight-regular">{{ post.eyebrow }}</time>
+            {% else %}
+            <span class="type-detail weight-regular">{{ post.eyebrow }}</span>
+            {% endif %}
+            <h3 class="type-hed">
+              <a href="{{ post.link }}">{{ post.title }}</a>
+            </h3>
+            <p class="subhed">{{ subhed ? subhed : post.subhed }}</p>
+          </div>
+
+          <p>{{ excerpt ? excerpt : post.excerpt.read_more(false) }}</p>
+        </div>
+      </figcaption>
+    </div>
+  </figure>
+</div>
+{% else %}
+  {% include ['listing.twig'] %}
+{% endif %}
+<hr>
