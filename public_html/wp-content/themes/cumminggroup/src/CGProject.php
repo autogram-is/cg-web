@@ -19,13 +19,15 @@ class CGProject extends CGPortfolio {
 	 * @return \Timber\PostCollectionInterface
 	 */
 	public function projects(?int $limit = -1) {
-		$field_prop = '_similar_projects';
+		$field_prop = '+';
 		if (isset($this->$field_prop)) {
 			return $this->$field_prop;
 		}
 
 		$sectors = $this->meta('sectors');
-		$ids = cg_get_projects_for_portfolio_items($sectors, $limit, [$this->ID]);
+		if (is_array($sectors)) {
+			$ids = cg_get_projects_for_portfolio_items([$sectors[0]], $limit, [$this->ID]);
+		}
 
 		if (!is_array($ids) || count($ids) === 0) {
 			$this->$field_prop = null;
