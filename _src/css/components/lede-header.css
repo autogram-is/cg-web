@@ -19,13 +19,17 @@
       font-size: var(--size-step-0);
     }
     .office-name {
-      margin-block-end: var(--space-2xs);
+      display: flex;
+      align-items: flex-end;
+      margin-inline-start: calc( var(--space-3xs) + 1.5ch );
       .name {
-        font-size: var(--size-step-2);
+        display: inline-block;
+        font-size: var(--size-step-0);
         font-weight: var(--weight-semibold);
         margin-block: 0;
       }
       .note {
+
         display: inline-block;
         font-size: var(--size-step-0);
       }

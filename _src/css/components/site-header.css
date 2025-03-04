@@ -384,6 +384,17 @@
       .header-inner {
         gap: var(--gutter,var(--space-s-m))
       }
+      .primary-nav {
+        flex-grow: 0;
+        .nav-list {
+          flex-wrap: nowrap;
+          gap: var(--space-s-m);
+        }
+        button,
+        a {
+          white-space:nowrap;
+        }
+      }
       nav {  
         max-width: 60em;
       }
