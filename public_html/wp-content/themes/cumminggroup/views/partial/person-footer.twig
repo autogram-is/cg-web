@@ -1,9 +1,10 @@
 <div class="wrapper">
+
   <div class="notch postbody-notch">
-    <div class="attendees flow notch-inner bg-timeless-backdrop">
-      {% if heading %}
-      <h3 class="hed type-eyebrow hed-hatch">{{ heading }}</h3>
+            {% if heading %}
+      <h3 class="hed type-hed hed-accent">{{ heading }}</h3>
       {% endif %}
+    <div class="attendees flow notch-inner bg-timeless-backdrop">
       <ul role="list" class="grid attendee-list">
         {% for person in post.people %}
           {% include ['partial/person.twig'] with { person: person } %}
