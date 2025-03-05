@@ -5,22 +5,22 @@
       {% set thumbnail = get_image(thumbnail) %}
       <a href="{{ feature.link }}" class="thumb">
         <img
-          src="{{ thumbnail.src|resize(1200, 800) }}"
-          srcset="{{ thumbnail.src|resize(1200, 800) }} 1200w, {{ thumbnail.src|resize(800, 533) }} 800w, {{ thumbnail.src|resize(600, 400) }} 600w, {{ thumbnail.src|resize(400, 266) }} 400w"
+          src="{{ thumbnail.src|resize(1200, 666) }}"
+          srcset="{{ thumbnail.src|resize(1200, 666) }} 1200w, {{ thumbnail.src|resize(800, 444) }} 800w, {{ thumbnail.src|resize(600, 333) }} 600w, {{ thumbnail.src|resize(400, 222) }} 400w"
           sizes="auto"
           loading="lazy"
-          height="800"
+          height="666"
           width="1200"
           alt="{{thumbnail.alt}}" />
       </a>
       {% elseif feature.thumbnail %}
       <a href="{{ feature.link }}" class="thumb">
         <img
-          src="{{feature.thumbnail.src|resize(1200, 800) }}"
-          srcset="{{ feature.thumbnail.src|resize(1200, 800) }} 1200w, {{ feature.thumbnail.src|resize(800, 533) }} 800w, {{ feature.thumbnail.src|resize(600, 400) }} 600w, {{ feature.thumbnail.src|resize(400, 266) }} 400w"
+          src="{{feature.thumbnail.src|resize(1200, 666) }}"
+          srcset="{{ feature.thumbnail.src|resize(1200, 666) }} 1200w, {{ feature.thumbnail.src|resize(800, 444) }} 800w, {{ feature.thumbnail.src|resize(600, 333) }} 600w, {{ feature.thumbnail.src|resize(400, 222) }} 400w"
           sizes="auto"
           loading="lazy"
-          height="800"
+          height="666"
           width="1200"
           alt="{{feature.thumbnail.alt}}" />
       </a>
