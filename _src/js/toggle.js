@@ -53,7 +53,7 @@ export default function() {
 
       // Bind interaction on each toggle:
       el.addEventListener( 'click', function( e ) {
-          const nowCollapsed = this.ariaExpanded === "true";
+          const nowCollapsed = this.getAttribute( "aria-expanded" ) === "true";
 
           // If the clicked element is a closed pass-through toggle (using `a`) that hasn't yet been toggled open, prevent navigation:
           if( !openToggles.includes( this ) && !nowCollapsed ) {
@@ -109,15 +109,15 @@ export default function() {
 
           // If the element has an `aria-hidden` attribute, toggle the state of that as well:
           targets.forEach( target => {
-            if( target.ariaHidden ) {
-              target.ariaHidden = state;
+            if( target.getAttribute( "aria-hidden" ) ) {
+              target.setAttribute( "aria-hidden", state );
             }
           });
         };
 
       // If the clicked element is a grouped toggle, close all associated toggles:
       if( state === false && others ) {
-        others.forEach( other => other.ariaExpanded === "true" && swapState( other, true, true ) );
+        others.forEach( other => other.getAttribute( "aria-expanded" ) === "true" && swapState( other, true, true ) );
       }
 
       if( state && el.getAttribute( 'data-persist' ) !== null && !related ) {
@@ -134,7 +134,7 @@ export default function() {
 
       // If the clicked element is a grouped toggle, close all associated toggles:
       if( state === false && others ) {
-        others.forEach( other => other.ariaExpanded === "true" && swapState( other, true ) );
+        others.forEach( other => other.getAttribute( "aria-expanded" ) === "true" && swapState( other, true ) );
       }
 
       targets.forEach( target => {
