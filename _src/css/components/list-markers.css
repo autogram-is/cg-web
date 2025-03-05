@@ -4,18 +4,21 @@
   flex-direction: column;
 }
 
-.cg ul[class*="multicol"]:not([role="list"]),
-.cg ol[class*="multicol"]:not([role="list"]) {
+.cg ul[class*="multicol"],
+.cg ol[class*="multicol"] {
   display: grid;
   max-width: 100%;
   margin-block: var(--region-space);
   margin-inline: var(--space-3xs);
-  gap: var(--space-xs) var(--gutter, var(--space-s-m));
   grid-template-columns: 1fr;
+  &.is-style-client-list-multicol,
+  &.is-style-multicol {
+    gap: var(--space-xs) var(--gutter, var(--space-s-m));
+  }
 }
 @media screen(sm) {
-  .cg ul[class*="multicol"]:not([role="list"]),
-  .cg ol[class*="multicol"]:not([role="list"]) {
+  .cg ul[class*="multicol"],
+  .cg ol[class*="multicol"] {
     --grid-min-item-size: clamp(16rem, 25vw, calc( 33.3% - var(--gutter, var(--space-s-m) ) ) );
     --grid-placement: auto-fill;
     
