@@ -379,16 +379,22 @@
   }
 
   @media screen(lg) {
+    .header-topmost {
+      flex-grow: 0;
+    }
     .sitenav {
       display: flex;
+      flex-grow: 2;
       .header-inner {
         gap: var(--gutter,var(--space-s-m))
       }
       .primary-nav {
         flex-grow: 0;
+        max-width: 100%;
         .nav-list {
+          flex-grow: 2;
           justify-content: flex-end;
-          flex-wrap: nowrap;
+          flex-wrap: wrap;
           gap: var(--space-s-m);
         }
         button,
