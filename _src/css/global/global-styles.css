@@ -119,13 +119,15 @@ hr.is-style-wide {
   margin-block: var(--space-3xl) 0;
   background: var(--color-timeless-gold);
   border: none;
-  transform: translateX(-50vw);
   height: var(--space-m-l);
-  width: calc( 100% + 50vw + var(--space-s-m ) );
-
   & + .region {
     padding-block-start: var(--space-2xs);
   }
+}
+
+.cg hr.is-style-wide {
+  transform: translateX(-50vw);
+  width: calc( 100% + 50vw + var(--space-s-m ) );
 }
 hr.is-style-dots {
   color: var(--color-timeless-gold);
