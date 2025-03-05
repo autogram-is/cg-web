@@ -67,6 +67,10 @@
     .gfield--type-honeypot {
       @mixin visuallyhidden;
     }
+    .label-hidden label {
+      display: block;
+      @mixin visuallyhidden;
+    }
     [id*="field_"]:not(.gfield--type-honeypot),
     li:not(.gfield--type-honeypot) {
       all: unset;
