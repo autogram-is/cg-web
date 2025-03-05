@@ -6,16 +6,23 @@
 
 .cg ul[class*="multicol"],
 .cg ol[class*="multicol"] {
+  display: grid;
   max-width: 100%;
   margin-block: var(--region-space);
-  --gutter: var(--space-2xs);
-  --grid-min-item-size: 25rem;
-  --grid-placement: auto-fill;
-  display: grid;
-  grid-template-columns: repeat(
-    var(--grid-placement, auto-fill),
-    minmax(var(--grid-min-item-size, 16rem), 1fr)
-  );
+  gap: var(--gutter, var(--space-s-m));
+  grid-template-columns: 1fr;
+}
+@media screen(sm) {
+  .cg ul[class*="multicol"],
+  .cg ol[class*="multicol"] {
+    --grid-min-item-size: clamp(16rem, 25vw, calc( 33.3% - var(--gutter, var(--space-s-m) ) ) );
+    --grid-placement: auto-fill;
+    
+    grid-template-columns: repeat(
+      var(--grid-placement, auto-fit),
+      minmax(var(--grid-min-item-size, 16rem), 1fr)
+    );
+  }
 }
 
 .cg ul:not([role="list"]),
