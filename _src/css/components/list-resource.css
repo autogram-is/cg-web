@@ -158,7 +158,7 @@
   flex-basis: calc((var(--switcher-target-container-width, 40rem) - 100%) * 999);
   
   & > .resource-listing {
-    align-self: center;
+    align-self: flex-start;
     flex-grow: 1;
     flex-basis: calc((var(--switcher-target-container-width, 40rem) - 100%) * 999);
   }
