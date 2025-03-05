@@ -24,7 +24,6 @@ export default function() {
       collisionObserver.observe( el );
     },
     init = function( el ) {
-      // TODO: Too early to use Element interfaces like https://caniuse.com/mdn-api_element_ariahidden ?
       const expandedSet = el.getAttribute( "aria-expanded" ),
         sessionAttr     = el.getAttribute( "data-session" ),
         initialState    = ( !expandedSet || expandedSet === "false" ) ? "false" : "true",
