@@ -1,6 +1,6 @@
 <div class="region">
   <div class="feature">
-    <div class="sidebar item">
+    <div class="{% if override.layout == "5050" %}switcher{% else %}sidebar{% endif %} item">
       {% if thumbnail %}
       {% set thumbnail = get_image(thumbnail) %}
       <a href="{{ feature.link }}" class="thumb">

@@ -159,7 +159,7 @@ function cg_register_block_styles() {
     array('name' => 'bg-timeless-gold','label' => __( 'Timeless Gold', 'textdomain' ), 'is_default' => false)
   );
 
-    /**
+  /**
    * Backdrop styles for CG project gallery blocks
    */
   register_block_style('acf/cg-list-projects',
@@ -174,6 +174,35 @@ function cg_register_block_styles() {
   register_block_style('acf/cg-list-projects',
     array('name' => 'bg-timeless-gold','label' => __( 'Timeless Gold', 'textdomain' ), 'is_default' => false)
   );
+
+  /**
+   * Backdrop styles for featured Cards
+   */
+  register_block_style('acf/cg-featured-post',
+    array('name' => 'bg-none','label' => __( 'No Backdrop', 'textdomain' ), 'is_default' => true)
+  );
+  register_block_style('acf/cg-featured-post',
+    array('name' => 'bg-timeless-backdrop','label' => __( 'Timeless Backdrop', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-featured-post',
+    array('name' => 'bg-timeless-highlight','label' => __( 'Timeless Highlight', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-featured-post',
+    array('name' => 'bg-timeless-gold','label' => __( 'Timeless Gold', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-featured-post',
+    array('name' => 'bg-steel-shade','label' => __( 'Steel Shade', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-featured-post',
+    array('name' => 'bg-deep-steel','label' => __( 'Deep Steel', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-featured-post',
+    array('name' => 'bg-regal-purple','label' => __( 'Regal Purple', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-featured-post',
+    array('name' => 'bg-legacy-red','label' => __( 'Legacy Red', 'textdomain' ), 'is_default' => false)
+  );
+
 
   /**
    * List treatments

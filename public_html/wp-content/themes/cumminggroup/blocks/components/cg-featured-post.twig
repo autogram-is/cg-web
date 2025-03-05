@@ -16,10 +16,13 @@
 #}
 {% set feature = get_post( block.data.featured_post ) %}
 {% set override = block.data %}
-{% include template_list( feature, 'cards') with { 
-    thumbnail: override.thumbnail,
-    eyebrow  : override.eyebrow,
-    title    : override.title, 
-    subhed   : override.subhed,
-    excerpt  : override.excerpt
-} %}
+<div class="{{ classes }}">
+  {% include template_list( feature, 'cards') with { 
+      thumbnail : override.thumbnail,
+      eyebrow   : override.eyebrow,
+      title     : override.title, 
+      subhed    : override.subhed,
+      excerpt   : override.excerpt,
+      layout    : override.layout
+  } %}
+</div>

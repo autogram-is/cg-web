@@ -6,6 +6,9 @@
     --sidebar-content-min-width: 40%;
     align-items: center;
   }
+  .switcher {
+    --switcher-vertical-alignment: center;
+  }
   .body {
     --flow-space: var(--space-xs);
     padding-block: var(--space-s);
