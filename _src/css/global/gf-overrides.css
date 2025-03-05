@@ -67,7 +67,7 @@
     .gfield--type-honeypot {
       @mixin visuallyhidden;
     }
-    .label-hidden label {
+    .hidden_label label {
       display: block;
       @mixin visuallyhidden;
     }
