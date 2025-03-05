@@ -68,12 +68,17 @@
     line-height: var(--leading-tight);
     li {
       display: inline;
+      &::after {
+        content: ", ";
+        white-space: nowrap;
+        margin-right: var(--space-nudge);
+      }
+      &:last-of-type::after {
+        display: none;
+      }
     }
     li+li {
       margin-left: -.25ch; /* HACK: Account for age-old inline whitespace rendering issue. */
-    }
-    li+li::before {
-      content: ", ";
     }
     a {
       text-decoration-color: transparent;
