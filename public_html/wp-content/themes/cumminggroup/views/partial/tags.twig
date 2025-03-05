@@ -1,0 +1,10 @@
+{# These are not necessarily classic Wordpress tags; rather, they're all of the tag-like things we use to organize and relate posts to each other. #}
+{% if post.news_category or post.services or post.sectors or post.offices or post.portfolio_items %}
+<ul class="cluster listing-meta type-detail" role="list">
+  {% if post.news_category %}<li><a href="{{ post.news_category.link }}">{{ post.news_category }}</a></li>{% endif %}
+  {% for item in post.services %}<li><a href="{{ item.link }}">{{ item.title | stylize }}</a></li>{% endfor %}
+  {% for item in post.sectors %}<li><a href="{{ item.link }}">{{ item.title | stylize }}</a></li>{% endfor %}
+  {% for item in post.offices %}<li><a href="{{ item.link }}">{{ item.title }}</a></li>{% endfor %}
+  {% for item in post.related_portfolio_items %}<li><a href="{{ item.link }}">{{ item.title }}</a></li>{% endfor %}
+</ul>
+{% endif %}
