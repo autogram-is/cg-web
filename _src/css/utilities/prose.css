@@ -11,7 +11,7 @@ PROSE UTILITY
     font-weight: var(--weight-normal);
   }
 
-  & > *:first-of-type {
+  & > *:first-of-type:not(hr) {
     margin-block-start: var(--space-s-m);
   }
 
