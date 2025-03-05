@@ -120,6 +120,7 @@ function cg_balance_buckets(array $lists = [], int $limit = 6, array $ignore = [
       foreach ($lists as $list) {
         if (isset($list[$i]) && !in_array($list[$i], $ignore, true)) {
           $result[] = $list[$i];
+          $ignore[] = $list[$i]; // Once it's in the list, never put it in again.
           $count++;
           if ($limit !== null && $count >= $limit) {
             return $result;
