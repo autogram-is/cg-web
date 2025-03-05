@@ -4,17 +4,18 @@
   flex-direction: column;
 }
 
-.cg ul[class*="multicol"],
-.cg ol[class*="multicol"] {
+.cg ul[class*="multicol"]:not([role="list"]),
+.cg ol[class*="multicol"]:not([role="list"]) {
   display: grid;
   max-width: 100%;
   margin-block: var(--region-space);
-  gap: var(--gutter, var(--space-s-m));
+  margin-inline: var(--space-3xs);
+  gap: var(--space-xs) var(--gutter, var(--space-s-m));
   grid-template-columns: 1fr;
 }
 @media screen(sm) {
-  .cg ul[class*="multicol"],
-  .cg ol[class*="multicol"] {
+  .cg ul[class*="multicol"]:not([role="list"]),
+  .cg ol[class*="multicol"]:not([role="list"]) {
     --grid-min-item-size: clamp(16rem, 25vw, calc( 33.3% - var(--gutter, var(--space-s-m) ) ) );
     --grid-placement: auto-fill;
     
