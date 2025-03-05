@@ -6,11 +6,11 @@
       <a href="{{ feature.link }}" class="thumb">
         <img
           src="{{ thumbnail.src|resize(1200, 800) }}"
-          srcset="{{ thumbnail.thumbnail.src|resize(1200, 800) }} 1200w, {{ thumbnail.thumbnail.src|resize(800, 533) }} 800w, {{ thumbnail.thumbnail.src|resize(600, 400) }} 600w, {{ thumbnail.thumbnail.src|resize(400, 266) }} 400w"
+          srcset="{{ thumbnail.src|resize(1200, 800) }} 1200w, {{ thumbnail.src|resize(800, 533) }} 800w, {{ thumbnail.src|resize(600, 400) }} 600w, {{ thumbnail.src|resize(400, 266) }} 400w"
           sizes="auto"
           loading="lazy"
-          height="{{thumbnail.height}}"
-          width="{{thumbnail.width}}"
+          height="800"
+          width="1200"
           alt="{{thumbnail.alt}}" />
       </a>
       {% elseif feature.thumbnail %}
@@ -20,8 +20,8 @@
           srcset="{{ feature.thumbnail.src|resize(1200, 800) }} 1200w, {{ feature.thumbnail.src|resize(800, 533) }} 800w, {{ feature.thumbnail.src|resize(600, 400) }} 600w, {{ feature.thumbnail.src|resize(400, 266) }} 400w"
           sizes="auto"
           loading="lazy"
-          height="{{feature.thumbnail.height}}"
-          width="{{feature.thumbnail.width}}"
+          height="800"
+          width="1200"
           alt="{{feature.thumbnail.alt}}" />
       </a>
       {% elseif feature.placeholder_text %}
