@@ -410,6 +410,55 @@ return;
     cg_remove_archived($force_delete, $dry_run);
   }
 
+    /**
+   * Deletes old headshots.
+   *
+   * ## OPTIONS
+   * 
+   * [--dry-run]
+   * : If set, the command will only simulate the updates without saving them.
+   *
+   * ## EXAMPLES
+   *
+   *     wp cg clean-headshots
+   *
+   * @param array $args
+   * @param array $assoc_args
+   * 
+   * @subcommand clean-headshots
+   * @alias clean_headshots
+   * @alias headshots
+   */
+  public function clean_headshots($args, $assoc_args) {
+    $dry_run = isset($assoc_args['dry-run']);
+
+    // Remove the featured_image association for a specific list of old People bios that have
+    // old headshots. For the moment we are not *deleting* the headshots, just un-associating
+    // them.
+    
+    $people_with_old_headshots = [
+      69132, 69200, 69170, 69167, 68660, 69192, 69161, 68578, 68694, 69125,
+      68661, 69124, 69179, 69169, 69162, 68621, 68580, 69134, 69135, 69168,
+      68576, 68633, 68602, 69191, 69173, 69138, 68585, 68588, 69183, 68587,
+      68629, 69122, 68634, 69129, 69202, 68635, 68586, 69151, 69120, 69171,
+      69165, 69153, 69176, 68611, 69186, 69195, 69188, 69160, 69189, 69166,
+      68589, 68622, 68590, 69121, 69198, 69180, 68612, 69130, 69154, 69193,
+      69136, 69126, 69185, 69156, 69178, 68579, 69146, 69155, 69141, 69139,
+      69150, 69174, 68696, 69199, 68628, 69131, 69142, 69127, 69184, 68700,
+      69140, 69123, 68566
+    ];
+
+    foreach($people_with_old_headshots as $id) {
+      $post = get_post($id);
+      if ($post) {
+        if (!$dry_run) {
+          delete_post_thumbnail($id);
+        }
+        WP_CLI::log(($dry_run ? "DRY RUN: " : "") . "Deleted old headshot for $post->post_title");
+      }
+    }
+  }
+
   /**
    * Deletes old meta properties for migrated posts.
    *
@@ -431,26 +480,109 @@ return;
    */
   public function clean_meta($args, $assoc_args) {
     $dry_run = isset($assoc_args['dry-run']);
+    global $wpdb;
 
-    // Kill meta fields associated with nonexistant post IDs
-
-    // kill all termmeta fields
-    
-    $meta_key_patterns = array(
+    $post_meta_patterns = array(
       "_tribe_%" => "Tribe Events post meta",
       "_Event%" => "Legacy event data",
-      "_Venue%" => "Legacy venue data",
+      "_Venue%" => "Legacy event venue data",
+      "_Organizer%" => "Legacy event organizer data",
       "_tec_%" => "Tribe calendar post meta",
       "pyre_%" => "Pyre post metadata",
       "fusion_%" => "Fusion post metadata",
       "_fusion_%" => "Fusion post metadata",
       "caf_%" => "CAF post metadata",
+      "ifso_%" => "IfSo rules",
       "kd_featured-image%" => "Fusion multi-featured-image post metadata",
       "avada_%" => "Avada slider post metadata",
     );
     
-    foreach($meta_key_patterns as $pattern => $note) {
-      WP_CLI::log("DRY RUN: Deleted $note ('$pattern')");
+    foreach($post_meta_patterns as $pattern => $note) {
+      if (!$dry_run) {
+        $wpdb->get_results("DELETE FROM $wpdb->postmeta WHERE meta_key LIKE '" . $pattern . "'");
+      }
+      WP_CLI::log(($dry_run ? "DRY RUN: " : "") . "Deleted $note ('$pattern')");
+    }
+
+    $term_meta_options = array(
+      "_fusion" => "Fusion taxonomy data",
+      "fusion_slider_options" => "Fusion sliders",
+      "fusion_taxonomy_options" => "Fusion options",
+    );
+
+    foreach($term_meta_options as $pattern => $note) {
+      if (!$dry_run) {
+        $wpdb->get_results("DELETE FROM $wpdb->termmeta WHERE meta_key LIKE '" . $pattern . "'");
+      }
+      WP_CLI::log(($dry_run ? "DRY RUN: " : "") . "Deleted $note ('$pattern')");
+    }
+  }
+
+  /**
+   * Deletes old site option settings.
+   *
+   * ## OPTIONS
+   * 
+   * [--dry-run]
+   * : If set, the command will only simulate the updates without saving them.
+   *
+   * ## EXAMPLES
+   *
+   *     wp cg clean-options
+   *
+   * @param array $args
+   * @param array $assoc_args
+   * 
+   * @subcommand clean-options
+   * @alias clean_options
+   * @alias options
+   */
+
+  public function clean_options($args, $assoc_args) {
+    $dry_run = isset($assoc_args['dry-run']);
+
+    $option_key_patterns = array(
+      "mwp_%" => "ManageWP",
+      "akismet_%" => "Akismet",
+      "avada_%" => "Avada Theme",
+      "buzzsprout-podcasting" => "BuzzSprout",
+      "CategoryAjaxFilter%" => "CategoryAjaxFilter",
+      "cfTwitterToken_%" => "Twitter Block",
+      "cookiebot_%" => "CookieBot",
+      "cptui_%" => "Custom Post Types UI",
+      "duplicate_post_%" => "Duplicate Post",
+      "edd_ifso_%" => "IfSo",
+      "ifso_%" => "IfSo",
+      "fusion_%" => "Fusion Builder",
+      "geot_%" => "GeoTargeting",
+      "gf_stla_form_id_%" => "Gravity Forms legacy forms",
+      "otgs_%" => "OTGS",
+      "seedprod_%" => "SeedProd Builder",
+      "stellarwp_%" => "StellarWP",
+      "taxonomy_%" => "Taxonomy Sliders",
+      "tec_%" => "Event Calendar",
+      "%_Avada" => "Avada",
+      "tribe_%" => "Tribal Events",
+      "widget_%" => "Legacy Widgets",
+      "woocommerce_%" => "WooCommerce",
+      "WPML%" => "WP MultiLingual",
+      "wmpl%" => "WP MultiLingual",
+      "portfolio_%" => "Portfolio Manager",
+      "polylang_%" => "PolyLang",
+      "p3_%" => "P3"
+    );
+
+    global $wpdb;
+
+    foreach($option_key_patterns as $pattern => $note) {
+      $options = $wpdb->get_results( "SELECT option_name FROM $wpdb->options WHERE option_name LIKE '" . $pattern . "'" );
+
+      if (!$dry_run) {
+        foreach($options as $option) {
+          delete_option($option->option_name);
+        }
+      }
+      WP_CLI::log(($dry_run ? "DRY RUN: " : "") . "Deleted " . count($options) . " $note options ('$pattern')");    
     }
   }
 
