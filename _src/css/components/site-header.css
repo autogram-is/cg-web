@@ -387,6 +387,7 @@
       .primary-nav {
         flex-grow: 0;
         .nav-list {
+          justify-content: flex-end;
           flex-wrap: nowrap;
           gap: var(--space-s-m);
         }
