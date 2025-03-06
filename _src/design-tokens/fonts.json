@@ -5,12 +5,12 @@
     {
       "name": "Display",
       "description": "The primary font for display text (eg. primary headings, pullquotes).",
-      "value": [ "Utopia", "sans-serif" ]
+      "value": [ "Utopia", "serif" ]
     },
     {
       "name": "Body",
       "description": "The global font for body copy.",
-      "value": [ "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Verdana", "sans-serif" ]
+      "value": [ "Source Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Verdana", "sans-serif" ]
     },
     {
       "name": "Secondary",
