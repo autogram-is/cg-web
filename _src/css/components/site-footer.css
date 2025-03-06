@@ -37,8 +37,7 @@
   }
   .lozenge {
     display: flex;
-    margin-block-start: var(--space-m-l);
-    justify-content: flex-end;
+    margin-block-start: var(--space-xs);
   }
 
   .grid {
@@ -47,7 +46,7 @@
 
   .footer-primary {
     --repel-vertical-alignment: flex-start;
-    margin-block: var(--space-s-m);
+    margin-block: var(--space-s-m) 0;
     .type-hed {
       font-size: var(--size-step-2);
 

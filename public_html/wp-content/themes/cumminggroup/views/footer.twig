@@ -30,27 +30,33 @@
 
 	<div class="wrapper">
 		<div class="footer-primary region repel">
-			<div class="body">
-				{% if settings.heading or settings.notice %}
-					{% if settings.heading %}
-					<h3 class="type-hed hed-accent">{{ settings.heading }}</h3>
+			<div>
+				<div class="body">
+					{% if settings.heading or settings.notice %}
+						{% if settings.heading %}
+						<h3 class="type-hed hed-accent">{{ settings.heading }}</h3>
+						{% endif %}
+						{% if settings.notice %}
+						{{ settings.notice }}
+						{% endif %}
 					{% endif %}
-					{% if settings.notice %}
-					{{ settings.notice }}
+					{% if settings.social %} 
+					<div class="region cluster socials">
+						{% for item in settings.social %}
+						<a href="{{ item.url }}" class="button inverted icon">
+						{%- if item.icon -%}<span class="dashicons {{ item.icon }}"></span><span class="visually-hidden">{{ item.label }}</span>
+						{%- else -%}
+						<span>{{ item.label }}</span>
+						{%- endif -%}
+						</a>
+						{% endfor %}
+					</div>
 					{% endif %}
-				{% endif %}
-				{% if settings.social %} 
-				<div class="region cluster socials">
-					{% for item in settings.social %}
-					<a href="{{ item.url }}" class="button inverted icon">
-					{%- if item.icon -%}<span class="dashicons {{ item.icon }}"></span><span class="visually-hidden">{{ item.label }}</span>
-					{%- else -%}
-					<span>{{ item.label }}</span>
-					{%- endif -%}
-					</a>
-					{% endfor %}
 				</div>
-				{% endif %}
+				<div class="lozenge">
+					<button role="button" aria-expanded="true" data-toggle="[data-na-only]" data-persist data-session="us" data-toggle-group="locale">Americas</button>
+					<button role="button" aria-expanded="false" data-toggle="[data-eu-uk-only]" data-persist data-session="uk-eu" data-toggle-group="locale">Europe <span class="amp">+</span> UK</button>
+				</div>
 			</div>
 			{% if footer_links %}
 			<div class="footer-nav">
@@ -68,15 +74,9 @@
 					</div>
 					{% endfor %}
 				</div>
-				<div class="lozenge">
-					<button role="button" aria-expanded="true" data-toggle="[data-na-only]" data-persist data-session="us" data-toggle-group="locale">Americas</button>
-					<button role="button" aria-expanded="false" data-toggle="[data-eu-uk-only]" data-persist data-session="uk-eu" data-toggle-group="locale">Europe <span class="amp">+</span> UK</button>
-				</div>
 			</div>
-
 			{% endif %}
 		</div>
-
 	</div>
 
 	<div class="fine-print">
