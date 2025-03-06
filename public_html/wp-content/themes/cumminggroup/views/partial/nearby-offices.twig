@@ -1,0 +1,17 @@
+  <div class="wrapper">
+    <div class="notch postbody-notch">
+      <div class="flow notch-inner bg-timeless-backdrop">
+        <div class="region">
+          <h2 class="type-detail hed-accent">{{ heading }}</h2>
+            <div class="location switcher flow">      
+              <ul role="list" class="multicol markers">
+                {% for office in post.nearby_offices | sort %}
+                <li class="hed type-hed"><a href="{{ office.link }}">{{ office.title }}, {{ office.location }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
