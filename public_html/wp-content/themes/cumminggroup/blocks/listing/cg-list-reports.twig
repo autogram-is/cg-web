@@ -15,7 +15,7 @@
   SupportsAlignContent: false
   SupportsAlignText: false
 #}
-<div class="resource-listings listings-{{ fields.layout }} {{ classes }}">
+<div class="resource-listings region region-primary listings-{{ fields.layout }} {{ classes }}">
 {% set wrapper = 0 %}
 {% for post in posts %}
   {% if wrapper == 0 %}
@@ -31,7 +31,7 @@
 {% endfor %}
 {% if fields.pagination %}
 <div class="region">
-{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2 }) } %}
 </div>
 {% endif %}
 </div>

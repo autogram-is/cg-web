@@ -143,14 +143,31 @@ function cg_register_block_styles() {
     array('name' => 'bg-legacy-red','label' => __( 'Legacy Red', 'textdomain' ), 'is_default' => false)
   );
 
+    /**
+   * Backdrop styles for CG team gallery blocks
+   */
+  register_block_style('acf/cg-list-team',
+    array('name' => 'bg-none','label' => __( 'No Backdrop', 'textdomain' ), 'is_default' => true)
+  );
+  register_block_style('acf/cg-list-team',
+    array('name' => 'bg-timeless-backdrop','label' => __( 'Timeless Backdrop', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-list-team',
+    array('name' => 'bg-timeless-highlight','label' => __( 'Timeless Highlight', 'textdomain' ), 'is_default' => false)
+  );
+  register_block_style('acf/cg-list-team',
+    array('name' => 'bg-timeless-gold','label' => __( 'Timeless Gold', 'textdomain' ), 'is_default' => false)
+  );
+
+
   /**
    * Backdrop styles for CG gallery blocks
    */
   register_block_style('acf/cg-gallery',
-    array('name' => 'bg-none','label' => __( 'No Backdrop', 'textdomain' ), 'is_default' => false)
+    array('name' => 'bg-none','label' => __( 'No Backdrop', 'textdomain' ), 'is_default' => true)
   );
   register_block_style('acf/cg-gallery',
-    array('name' => 'bg-timeless-backdrop','label' => __( 'Timeless Backdrop', 'textdomain' ), 'is_default' => true)
+    array('name' => 'bg-timeless-backdrop','label' => __( 'Timeless Backdrop', 'textdomain' ), 'is_default' => false)
   );
   register_block_style('acf/cg-gallery',
     array('name' => 'bg-timeless-highlight','label' => __( 'Timeless Highlight', 'textdomain' ), 'is_default' => false)
@@ -163,10 +180,10 @@ function cg_register_block_styles() {
    * Backdrop styles for CG project gallery blocks
    */
   register_block_style('acf/cg-list-projects',
-    array('name' => 'bg-none','label' => __( 'No Backdrop', 'textdomain' ), 'is_default' => false)
+    array('name' => 'bg-none','label' => __( 'No Backdrop', 'textdomain' ), 'is_default' => true)
   );
   register_block_style('acf/cg-list-projects',
-    array('name' => 'bg-timeless-backdrop','label' => __( 'Timeless Backdrop', 'textdomain' ), 'is_default' => true)
+    array('name' => 'bg-timeless-backdrop','label' => __( 'Timeless Backdrop', 'textdomain' ), 'is_default' => false)
   );
   register_block_style('acf/cg-list-projects',
     array('name' => 'bg-timeless-highlight','label' => __( 'Timeless Highlight', 'textdomain' ), 'is_default' => false)

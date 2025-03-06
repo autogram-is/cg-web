@@ -19,6 +19,8 @@
   items: get_posts(fields.posts),
   sectors: 'sectors' in fields.display,
   contact: 'contact' in fields.display,
-  bio_link: 'bio_link' in fields.display
+  bio_link: 'bio_link' in fields.display,
+  utilities: classes
 } %}
+
 {% include "partial/person-list.twig" with data %}
