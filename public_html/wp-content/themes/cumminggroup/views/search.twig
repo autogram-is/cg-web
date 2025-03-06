@@ -3,11 +3,14 @@
 
 {% block content %}
   {# see `base.twig:27` for where this block's content will be inserted #}
-  <div class="content-wrapper">
+  <div class="region region-primary">
     {% for post in posts %}
-      {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] %}
+      {% set type = post.post_type == "post" ? post.news_category|lower : post.post_type %}
+      {% include ['listing-'~type~'.twig', 'listing.twig'] with { type : type } %}
+      <hr>
     {% endfor %}
-
-    {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+    <div class="region">
+      {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+    </div>
   </div>
 {% endblock %}

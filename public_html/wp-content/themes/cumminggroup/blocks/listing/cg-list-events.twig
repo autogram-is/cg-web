@@ -25,6 +25,7 @@
   {% endif %}
   {% for post in posts %}
     {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': "hero" } %}
+    <hr>
   {% endfor %}
   {% if fields.archive_link %}
   {% set archive = get_post(fields.archive_link) %}
@@ -49,6 +50,8 @@
   {% endif %}
   {% for post in posts %}
     {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': "hero" } %}
+        <hr>
+
   {% endfor %}
   {% if fields.pagination and posts.pagination %}
   <div class="region">
@@ -69,6 +72,8 @@
     {% else %}
     {% endif %}
     {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': "hero" } %}
+    <hr>
+
   {% endfor %}
   {% if fields.pagination and posts.pagination %}
   <div class="region">
