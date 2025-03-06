@@ -61,6 +61,10 @@ class CGTwigFilters {
       new \Twig\TwigFilter( 'replace_first', [ $this, 'replace_first' ] )
     );
 
+    $twig->addFilter(
+      new \Twig\TwigFilter( 'sort_news', [ $this, 'sort_news' ] )
+    );
+
     $twig->addFunction(
       new \Twig\TwigFunction( 'template_list', 'cg_post_templates' )
     );
@@ -118,6 +122,22 @@ class CGTwigFilters {
 
     ksort( $ret );
     return $ret;
+  }
+
+  /**
+   * Sort by publication date; if we need to 
+   *
+   * @param string $text The headline to stylize
+   */
+  function sort_news(?Traversable $items): array {
+    if(is_null($items)) return [];
+    $arr = iterator_to_array($items);
+
+    usort($arr, function($a, $b) {
+      return strcmp($b->post_date, $a->post_date);
+    });
+  
+    return $arr;
   }
 
   /**

@@ -24,6 +24,7 @@ require_once __DIR__ . '/src/CGPerson.php';
 
 require_once __DIR__ . '/src/CGTwigFilters.php';
 require_once __DIR__ . '/src/block-hooks.php';
+require_once __DIR__ . '/src/embed-hooks.php';
 
 Timber::init();
 

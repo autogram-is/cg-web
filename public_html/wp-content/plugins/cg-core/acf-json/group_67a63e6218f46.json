@@ -1,6 +1,6 @@
 {
     "key": "group_67a63e6218f46",
-    "title": "News Bylines",
+    "title": "Byline + Attribution",
     "fields": [
         {
             "allow_backendsearch": false,
@@ -79,6 +79,59 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "allow_backendsearch": 0,
+            "show_column_filter": false,
+            "allow_bulkedit": 0,
+            "allow_quickedit": 0,
+            "show_column": 0,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
+            "key": "field_6786ec60791c7",
+            "label": "Original Publication",
+            "name": "reprint_publication",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "allow_backendsearch": 0,
+            "show_column_filter": false,
+            "allow_bulkedit": 0,
+            "allow_quickedit": 0,
+            "show_column": 0,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
+            "key": "field_6786ec91791c8",
+            "label": "Orignial Publication URL",
+            "name": "reprint_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "placeholder": ""
         }
     ],
     "location": [
@@ -91,7 +144,7 @@
         ]
     ],
     "menu_order": 0,
-    "position": "side",
+    "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
@@ -100,5 +153,5 @@
     "description": "",
     "show_in_rest": 0,
     "qef_simple_location_rules": 0,
-    "modified": 1740464831
+    "modified": 1741212156
 }
