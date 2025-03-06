@@ -166,6 +166,9 @@
     padding: unset;
     text-transform: inherit;
   }
+  &.market-report {
+    margin-block-end: var(--space-s-m);
+  }
 }
 
 
