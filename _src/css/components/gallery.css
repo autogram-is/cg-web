@@ -52,7 +52,7 @@
     figure {
       position: relative;
       .credit {
-        background: var(--color-backdrop);
+        background: rgba(0,0,0,.95);
         border-radius: 0 2px 0 0;
         bottom: 0;
         color: var(--color-steel-highlight);

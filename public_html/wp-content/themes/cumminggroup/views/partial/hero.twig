@@ -3,29 +3,41 @@
 {%- set hero = post.hero -%}
 <div class="hero-highlight topo-full">
   {% if hero.type == 'default' and hero.image %} {# the homepage featured image #}
-  <img src="{{ hero.image.src }}"
-    srcset="{{ hero.image.srcset }}"
-    sizes="100vw"
-    height="{{ hero.image.height }}"
-    width="{{ hero.image.width }}"
-    alt="{{ hero.image.alt }}" />
-
+  <figure class="hero-photo">
+    <img src="{{ hero.image.src }}"
+      srcset="{{ hero.image.srcset }}"
+      sizes="100vw"
+      height="{{ hero.image.height }}"
+      width="{{ hero.image.width }}"
+      alt="{{ hero.image.alt }}" />
+      {% if hero.image.photocredit %}
+    <figcaption class="credit">{{ hero.image.photocredit }}</figcaption>
+    {% endif %}
+</figure>
 {% elseif hero.type == 'gallery' and hero.image %} {# a random selection from multiple images #}
-  <img src="{{ hero.image.src }}"
-    srcset="{{ hero.image.srcset }}"
-    sizes="100vw"
-    height="{{ hero.image.height }}"
-    width="{{ hero.image.width }}"
-    alt="{{ hero.image.alt }}" />
-
+  <figure class="hero-photo">
+    <img src="{{ hero.image.src }}"
+      srcset="{{ hero.image.srcset }}"
+      sizes="100vw"
+      height="{{ hero.image.height }}"
+      width="{{ hero.image.width }}"
+      alt="{{ hero.image.alt }}" />
+    {% if hero.image.photocredit %}
+    <figcaption class="credit">{{ hero.image.photocredit }}</figcaption>
+    {% endif %}
+  </figure>
 {% elseif hero.type == 'project' and hero.project.thumbnail %} {# a project's featured image #}
+<figure class="hero-photo">
   <img src="{{ hero.project.thumbnail.src }}"
     srcset="{{ hero.project.thumbnail.srcset }}"
     sizes="100vw"
     height="{{ hero.project.thumbnail.height }}"
     width="{{ hero.project.thumbnail.width }}"
     alt="{{ hero.project.thumbnail.alt }}" />
-
+  {% if hero.project.thumbnail.photocredit %}
+  <figcaption class="credit">{{ hero.project.thumbnail.photocredit }}</figcaption>
+  {% endif %}
+</figure>
 {% elseif hero.type == 'statistics' %} {# a set of high-impact statistics #}
   <figure class="statistic flow hero">
     <dl class="wrapper">

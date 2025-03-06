@@ -9,12 +9,12 @@
     position: relative;
     color: var(--color-steel-highlight);
     .credit {
-      background: var(--color-backdrop);
+      background: rgba(0,0,0,.8);
       border-radius: 0 2.5px 0 0;
       bottom: var(--space-m);
       font-size: var(--size-microcopy);
       left: 0;
-      padding-inline: var(--space-3xs);
+      padding-inline: var(--space-2xs);
       pointer-events: none;
       position: absolute;
       z-index: 3;

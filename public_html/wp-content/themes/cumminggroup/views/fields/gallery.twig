@@ -2,6 +2,7 @@
   <div class="gallery {{ utilities }}">
     <div class="wrapper gallery-inner">
       {% for image in images -%}
+      <figure>
       <img 
         src="{{ get_image(image) }}"
         srcset="{{ get_image(image).srcset }}"
@@ -9,6 +10,11 @@
         height="{{ get_image(image).height }}"
         width="{{ get_image(image).width }}"
         loading="lazy">
+        {% set credit = get_image(image).photocredit %}
+        {% if credit %}
+          <figcaption class="credit">{{ credit }}</figcaption>
+        {%  endif %}
+      </figure>
       {%- endfor %}
     </div>
   </div>
