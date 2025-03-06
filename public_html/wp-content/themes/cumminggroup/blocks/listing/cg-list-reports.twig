@@ -15,18 +15,19 @@
   SupportsAlignContent: false
   SupportsAlignText: false
 #}
-<div class="resource-listings {{ classes }} listings-{{ fields.layout }}">
+<div class="resource-listings listings-{{ fields.layout }} {{ classes }}">
+{% set wrapper = 0 %}
 {% for post in posts %}
-{% if ( fields.layout == "hero" and loop.index == 1 ) %}
-  {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': 'hero' } %}
-{%  elseif ( fields.layout == "hero" and ( loop.index == 2 or loop.index == 3 ) ) or ( fields.layout == "secondary" and ( loop.index == 1 or loop.index == 2 )) %}
-  {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': 'secondary' } %}
-{%  else  %}
+  {% if wrapper == 0 %}
+    <div class="switcher">
+  {% endif %}
+  {% set wrapper = wrapper + 1 %}
   {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': style } %}
-{% endif %}
-{% if ( fields.layout == "secondary" and loop.index == 2 ) or ( fields.layout == "hero" and loop.index == 3 ) %}
-  <hr>
-{% endif %}
+
+  {% if wrapper == 2 or loop.last %}
+    {% set wrapper = 0 %}
+    </div>
+  {% endif %}
 {% endfor %}
 {% if fields.pagination %}
 <div class="region">
