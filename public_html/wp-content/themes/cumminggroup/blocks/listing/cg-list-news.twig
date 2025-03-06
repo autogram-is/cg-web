@@ -25,7 +25,6 @@
   {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': style } %}
 {% endif %}
 {% if ( fields.layout == "secondary" and loop.index == 2 ) or ( fields.layout == "hero" and loop.index == 3 ) %}
-  <hr>
 {% endif %}
 {% endfor %}
 {% if fields.pagination %}
