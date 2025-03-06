@@ -56,7 +56,7 @@
     --flow-space: var(--space-nudge);
     width: 100%;
     .title-scope {
-      font-size: var(--size-step-00);
+      font-size: var(--size-step-000);
       a {
         text-decoration: none;
         &::hover {
