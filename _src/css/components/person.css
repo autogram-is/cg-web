@@ -55,6 +55,15 @@
   .person-header {
     --flow-space: var(--space-nudge);
     width: 100%;
+    .title-scope {
+      font-size: var(--size-step-00);
+      a {
+        text-decoration: none;
+        &::hover {
+          text-decoration: underline;
+        }
+      }
+    }
   }
   .locations {
     padding-block-start: var(--space-nudge);
