@@ -1,5 +1,8 @@
 
+
 {% if posts.pagination.pages is not empty %}
+<hr>
+<div class="region">
     <nav aria-label="pagination" class="pagination cluster">
         {# Previous #}
         {% if posts.pagination.prev %}
@@ -50,4 +53,5 @@
             {% endif %}
         </ul>
     </nav>
+</div>
 {% endif %}
