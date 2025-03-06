@@ -144,7 +144,11 @@
 }
 
 /* Layout styles to suit WordPress' block indexes. */
-.resource-listings {}
+.resource-listings {
+  & > .switcher {
+    width: 100%;
+  }
+}
 .resource-listings.listings-index {
   .sidebar {
     --sidebar-target-width: 16rem;
