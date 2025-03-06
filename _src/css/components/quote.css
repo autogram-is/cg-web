@@ -133,16 +133,15 @@
     &.topo::after {
       background-size: auto 95%;
     }
-
-    &.all-center {
-      padding-block-start: 0;
-      blockquote::before {
-        position: static;
-        transform: translateX(-25%);
-      }
-    }
   }
 
+  &.all-center {
+    padding-block-start: 0;
+    blockquote::before {
+      position: static;
+      transform: translateX(-25%);
+    }
+  }
 
   &.hero-quote {
     blockquote p {
