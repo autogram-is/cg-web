@@ -1,3 +1,3 @@
 As the name implies, a `.central` wrapper and an inner `.central-inner` element provide the central column for every page of the website. These are essential for any layouts governed by modular WordPress "blocks," particularly in the case of "full bleed" treatments like backdrops.
 
-This component represents a "test page" for common treatments and layouts both inside and outside the scope of `.central`.
+This component represents a test page for common treatments and layouts both inside and outside the scope of `.central`.
