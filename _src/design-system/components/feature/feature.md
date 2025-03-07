@@ -1,1 +1,1 @@
-Used to feature arbitrary content on any page.
+Used to feature arbitrary content on any page. Note that horizontal centering and inline padding are provided by parent `.wrapper` element.

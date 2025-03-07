@@ -46,7 +46,13 @@
         "eyebrow": "Q1, 2025",
         "hed" : "Market Analysis",
         "subhed" : "US Construction Market Overview",
-        "body": "Services focused specifically on energy at the building or campus scale, tailored towards programs, incentives, and cost savings."
+        "body": "Services focused specifically on energy at the building or campus scale, tailored towards programs, incentives, and cost savings.",
+        "img" : {
+          "src" : "https://picsum.photos/1200/666?&blur=5",
+          "height" : 666,
+          "width" : 1200,
+          "alt" : ""
+        }
       }
     },
     {
