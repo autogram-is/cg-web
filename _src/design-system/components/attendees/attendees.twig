@@ -1,52 +1,54 @@
 <main style="flex-grow: 0;">
-  <div class="notch hatching wrapper">
-    <div class="attendees flow notch-inner bg-timeless-backdrop">
-      <h2 class="hed type-hed">We’ll be there!</h2>
-      <ul role="list" class="cluster">
-        {% for attendee in attendees %}
-        <li class="person">
-          <div class="sidear">
-          {% if attendee.img %}
-            <div class="crop">
-              <img src="{{ attendee.img.src }}" height="{{ attendee.img.height }}" width="{{ attendee.img.width }}" alt="{{ attendee.img.alt }}">
-            </div>
-          {% endif %}
-            <div class="body">
-              <div class="person-header flow">
-                <h2 class="hed type-body">{% if attendee.contact %}<a href="mailto:{{ contact }}">{% endif %}{{ attendee.name }}{% if attendee.contact %}</a>{% endif %}</h2>
-                <div class="person-meta flow">
-                  <span class="title type-detail">{{ attendee.title }}</span>
-                  {% if attendee.sectors %}
-                  <ul role="list" class="title-scope flow">
-                    {% for sector in attendee.sectors %}
-                    <li><a href="{{ sector.href }}">{{ sector.text }}</a></li>
-                    {% endfor %}
-                  </ul>
-                  {% endif %}
-                  {% if attendee.region %}
-                  <a href="#" class="location type-detail">{{ attendee.region }}</a>
-                  {% endif %}
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
+
+
+	<div class="notch hatching wrapper">
+		<div class="attendees flow notch-inner bg-timeless-backdrop">
+			<ul role="list" class="grid attendee-list">
+				{% for attendee in attendees %}
+				<li class="person">
+					<div class="sidear">
+					{% if attendee.img %}
+						<div class="crop">
+							<img src="{{ attendee.img.src }}" height="{{ attendee.img.height }}" width="{{ attendee.img.width }}" alt="{{ attendee.img.alt }}">
+						</div>
+					{% endif %}
+						<div class="body">
+							<div class="person-header flow">
+								<h2 class="hed type-body">{% if attendee.contact %}<a href="mailto:{{ contact }}">{% endif %}{{ attendee.name }}{% if attendee.contact %}</a>{% endif %}</h2>
+								<div class="person-meta flow">
+									<span class="title type-detail">{{ attendee.title }}</span>
+									{% if attendee.sectors %}
+									<ul role="list" class="title-scope flow">
+										{% for sector in attendee.sectors %}
+										<li><a href="{{ sector.href }}">{{ sector.text }}</a></li>
+										{% endfor %}
+									</ul>
+									{% endif %}
+									{% if attendee.contact %}
+									<div class="repel">
+										<ul role="list" class="contacts flow">
+											<li><a href="mailto:gbrett@cumming-group.com">gbrett@cumming-group.com</a></li>
+											<li>+1 213-241-9902 <!-- US --></li>
+										</ul>
+									</div>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+
+	
 </main>
-  <footer class="site-footer">
-    <div class="footer-cta">
-      <div class="notch wrapper">
-        <div class="notch-inner inner-cta repel">
-          <div class="body flow">
-            <p>Lorem ipsum dolor sit amet, and we'll see you there!</p>
-          </div>
-          <a href="#" class="button">
-            <span>Placeholder</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
+	<footer class="site-footer">
+		<div class="footer-cta">
+			<div class="notch wrapper">
+				<div class="notch-inner inner-cta repel">
+				</div>
+			</div>
+		</div>
+	</footer>

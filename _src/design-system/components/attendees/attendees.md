@@ -1,1 +1,1 @@
-## Markup Notes
+Presence of `main` and `footer` elements are intended to illustrate layout and placement only.

@@ -15,7 +15,10 @@
       {
         "name": "Erwin Watt",
         "title": "Senior Vice President",
-        "region" : "Northeast Region",
+        "contact" : {
+          "email" : "email@cumming-group.com",
+          "tel" : "(555) 867-5309"
+        },
         "sectors" : [
           {
             "text" : "Planning & Scheduling",
@@ -28,7 +31,7 @@
         ],
         "img" : {
           "src" : "https://picsum.photos/1200/800?&blur=5.1",
-          "height" : 800,
+          "height" : 666,
           "width" : 1200,
           "alt" : ""
         }
@@ -38,14 +41,17 @@
         "title": "Managing Director",
         "img" : {
         "src" : "https://picsum.photos/1200/800?&blur=4",
-          "height" : 800,
+          "height" : 666,
           "width" : 1200,
           "alt" : ""
         }
       }, {
         "name": "Erwin Watt",
         "title": "Senior Vice President",
-        "region" : "Northeast Region",
+        "contact" : {
+          "email" : "email@cumming-group.com",
+          "tel" : "(555) 867-5309"
+        },
         "sectors" : [
           {
             "text" : "Planning & Scheduling",
@@ -58,27 +64,7 @@
         ],
         "img" : {
           "src" : "https://picsum.photos/1200/800?&blur=5.1",
-          "height" : 800,
-          "width" : 1200,
-          "alt" : ""
-        }
-      }, {
-        "name": "Erwin Watt",
-        "title": "Senior Vice President",
-        "region" : "Northeast Region",
-        "sectors" : [
-          {
-            "text" : "Planning & Scheduling",
-            "href" : "#"
-          },
-          {
-            "text" : "Dispute Resolution & Avoidance",
-            "href" : "#"
-          }
-        ],
-        "img" : {
-          "src" : "https://picsum.photos/1200/800?&blur=5.1",
-          "height" : 800,
+          "height" : 666,
           "width" : 1200,
           "alt" : ""
         }
