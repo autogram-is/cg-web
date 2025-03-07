@@ -1,0 +1,1 @@
+Spacing is provided by a `.flow` parent container and internal padding is dictated by the inherited `--region-space` value (falling back to a `--space-s-m` default). `.body` will only recieve a top border if the parent `.affiliate` immediately follows another `.affiliate`.

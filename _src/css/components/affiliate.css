@@ -20,7 +20,7 @@
   }
   .thumb,
   .body {
-    padding-block: calc( var(--region-space) * 2 ) var(--region-space);
+    padding-block: calc( var(--region-space, var(--space-s-m) ) * 2 ) var(--region-space, var(--space-s-m) );
   }
   & + .affiliate {
     .body {
