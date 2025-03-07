@@ -1,1 +1,0 @@
-Used to display information about an individual item in a resource list.
