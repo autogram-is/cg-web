@@ -7,7 +7,7 @@
     </a>
     {% endif %}
     <div class="body flow">
-      <h3 class="type-hed hed-accent" id="hed-{{ rand }}"><a href="{{ href }}">{{ title }}</a></h3>
+      <h3 class="type-hed {% if body %}hed-accent{% endif %}" id="hed-{{ rand }}"><a href="{{ href }}">{{ title }}</a></h3>
       {{ body|markdown }}
     </div>
   </div>

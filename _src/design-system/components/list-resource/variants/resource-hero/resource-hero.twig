@@ -8,11 +8,8 @@
     {% endif %}
     <div class="body flow">
       <time datetime="2024-10-31T00:00:00" class="type-detail">{{ date }}</time>
-      <h3 class="type-hed hed-accent" id="hed-{{ rand }}"><a href="{{ href }}">{{ title }}</a></h3>
+      <h3 class="type-hed {% if body %}hed-accent{% endif %}" id="hed-{{ rand }}"><a href="{{ href }}">{{ title }}</a></h3>
       {{ body|markdown }}
-      <ul class="cluster listing-meta type-detail" role="list">
-        <li><a href="https://cumming-group.com/category/news/">News and Insights</a></li>
-      </ul>
     </div>
   </div>
 </article>

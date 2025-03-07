@@ -113,6 +113,10 @@
   }
 
   .sidebar[data-direction="rtl"] {
+    .hed-accent::after {
+      left: auto;
+      right: 0;
+    }
     .body {
       align-items: flex-end;
       text-align: right;
