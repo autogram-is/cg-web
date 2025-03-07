@@ -27,9 +27,15 @@
 {% if ( fields.layout == "secondary" and loop.index == 2 ) or ( fields.layout == "hero" and loop.index == 3 ) %}
 {% endif %}
 {% endfor %}
-{% if fields.pagination %}
+{% if fields.teaser %}
+{% set teaser = get_posts(fields.teaserlink) %}
 <div class="region">
-{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+  <a href="{{ teaser.link }}" class="icon-previous type-detail ">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path id="chevron" d="m9 6 6 6-6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span>Visit {{ teaser.post_title|stylize }}</span>
+  </a>
 </div>
 {% endif %}
 </div>
