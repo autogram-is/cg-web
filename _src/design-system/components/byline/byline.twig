@@ -1,0 +1,8 @@
+<div class="grid">
+{% for byline in bylines %}
+<address class="hgroup person-header">
+	<span class="author">{{ byline.name }}</span>
+	<span class="title type-detail">{{ byline.role }}</span>
+</address>
+{% endfor %}
+</div>

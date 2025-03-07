@@ -1,0 +1,17 @@
+
+{ 
+  "title": "Team Byline",
+  "name" : "byline",
+  "keyLinks": [ {
+        "label": "CSS",
+        "url": "/_src/css/components/byline.css"
+      } ],
+  "context": {
+    "bylines" : [
+      {
+        "name" : "Lorem J. Ipsum",
+        "role" : "Chief Pseudolinguistics Officer"
+      }
+    ]
+  }
+}
