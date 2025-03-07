@@ -10,7 +10,8 @@
   --input-disabled: var(--color-highlight);
   --input-disabled-border: var(--color-steel-highlight);
   --input-focus: var(--color-steel-highlight);
-  label {
+  label,
+  legend {
     color: var(--color-steel-shade);
     display: block;
     font-family: var(--font-body);

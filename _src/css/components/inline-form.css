@@ -2,10 +2,20 @@
   display: flex;
   width: 100%;
   align-self: flex-start;
+  justify-content: flex-start;
   a {
     font-size: var(--size-step-00);
   }
   .submit {
     --flow-space: var(--space-s);
+  }
+  .gform_fields {
+    .gfield:not([data-conditional-logic="hidden"]) {
+      display: block !important;
+      .ginput_container,
+      input {
+        width: 100% !important;
+      }
+    }
   }
 }

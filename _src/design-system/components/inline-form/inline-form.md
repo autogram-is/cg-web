@@ -1,0 +1,1 @@
+Note that form element styles are scoped to a `.cg` class (applied to `body` in the WP templates) to prevent open-ended styles from bleeding into the WP admin.
