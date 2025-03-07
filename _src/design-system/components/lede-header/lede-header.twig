@@ -1,26 +1,22 @@
-<div>
-  <div class="region">
-    {% if dates.start %}
-    <time datetime="">{{ dates.start }}</time>
-    {% endif %}
-    {% if dates.end %}
-    - <time datetime="">{{ dates.end }}</time>
-    {% endif %}
-    <h1 class="type-pagehed hed-accent">{{ hed }}</h1>
-  </div>
-
+<div class="region">
+  {% if dates.start %}
+  <time datetime="">{{ dates.start }}</time>
+  {% endif %}
+  {% if dates.end %}
+  - <time datetime="">{{ dates.end }}</time>
+  {% endif %}
+  <h1 class="type-pagehed hed-accent">{{ hed }}</h1>
 
   <div class="lede-header {{ type }} {{ utilities }}">
-    {% if byline.name %}
+    {% if bylines %}
+      <div class="grid">
+      {% for byline in bylines %}
       <address class="hgroup person-header">
         <span class="author">{{ byline.name }}</span>
-        {% if byline %}
-        <span class="title">
-          <span class="title type-detail">{{ byline.title }}</span>
-          <span class="scope type-detail">{% if byline.scope.href %}<a href="{{ byline.scope.href }}">{{ byline.scope.name }}</a>{% endif %}</span>
-        </span>
-        {% endif %}
+        <span class="title type-detail">{{ byline.role }}</span>
       </address>
+      {% endfor %}
+      </div>
     {% endif %}
     {% if location %}
     <span class="location"><a href="{{ location.url }}">{{ location.text }}</a></span>
