@@ -12,6 +12,7 @@
       left: -50vw;
       right: -50vw;
       bottom: 25%;
+      min-height: calc( var(--space-3xl) * 2 );
       top: 0;
       z-index: -1;
     }
