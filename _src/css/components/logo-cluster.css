@@ -4,11 +4,16 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: var(--space-xs) var(--space-m-l);
+  margin-inline: auto;
+  gap: var(--space-m-l);
   width: 100%;
-  max-width: 70rem;
-  img {
+  max-width: 80rem;
+  span {
     max-width: 18rem;
-    height: auto;
+    img {
+      max-width: 100%;
+      max-height: 7rem;
+      width: auto;
+    }
   }
 }

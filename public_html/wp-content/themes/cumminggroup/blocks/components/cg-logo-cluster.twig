@@ -14,19 +14,17 @@
   SupportsAlignContent: false
   SupportsAlignText: false
 #}
-<div class="logo-cluster cluster all-center">
+<div class="region">
+<div class="logo-cluster">
   {% for image in fields.logos %}
+  <span>
     <img 
       src="{{ image.url }}"
-      srcset="
-        {{ image.sizes.medium }} {{ image.sizes["medium_width-width"] }}w, 
-        {{ image.sizes.medium_large }} {{ image.sizes["medium_large-width"] }}w, 
-        {{ image.sizes.large }} {{ image.sizes["large-width"] }}w,
-        {{ image.url }} {{ image.width }}w"
       height="{{image.height}}"
       width="{{image.width}}"
       alt="{{image.alt}}"
-      loading="lazy"
-      sizes="auto">
+      loading="lazy">
+  </span>
   {% endfor %}
+</div>
 </div>
