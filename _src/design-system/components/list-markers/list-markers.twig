@@ -1,9 +1,9 @@
-{% if type == "twocol" %}<div class="multicol">{% endif %}
-<ul class="{{ type }}">
-  {% for item in listitems %}
-    <li>
-      {{ item }}
-    </li>
-  {% endfor %}
-</ul>
-{% if type == "twocol" %}</div>{% endif %}
+<div class="cg">
+  <ul class="{{ type }}">
+    {% for item in listitems %}
+      <li>
+        {{ item }}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

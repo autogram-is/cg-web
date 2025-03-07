@@ -15,7 +15,7 @@
   "variants" : [
     {
       "title": "Nested unordered list",
-      "name": "list-nested-ul",
+      "name": "nested-ul",
       "context": {
         "listitems" : [
           "First item",
@@ -27,21 +27,10 @@
           "<ol><li>Nested ol</li></ol>"
         ]
       }
-    },{
-      "title": "CTA list",
-      "name": "list-cta",
-      "context": {
-        "type" : "cta-list",
-        "listitems" : [
-          "Accurate and actionable cost solutions",
-          "Vast sector knowledge",
-          "Early and continuous involvement"
-        ]
-      }
     },
     {
-      "title": "Client list",
-      "name": "list-client",
+      "title": "Alternate markers",
+      "name": "client-plus-markers",
       "context": {
         "type" : "client-list",
         "listitems" : [
@@ -56,38 +45,6 @@
           "Diamond Head Theatre, Honolulu, HI",
           "The Music Center, Los Angeles, CA",
           "Whitney Museum of American Art, New York, NY"
-        ]
-      }
-    },
-    {
-      "title": "Two column",
-      "name": "twocol",
-      "context": {
-        "type" : "twocol",
-        "listitems" : [
-            "Market research",
-            "Program goals and scope definition",
-            "Feasibility studies",
-            "Master scheduling/budgeting",
-            "Project delivery consulting",
-            "Entitlements",
-            "Consultant procurement"
-        ]
-      }
-    },{
-      "title": "Marker Override",
-      "note" : "Adds `::before`-based markers to all `li`, regardless of usage or presence of `[role='list']`.",
-      "name": "markers",
-      "context": {
-        "type" : "markers",
-        "listitems" : [
-            "Market research",
-            "Program goals and scope definition",
-            "Feasibility studies",
-            "Master scheduling/budgeting",
-            "Project delivery consulting",
-            "Entitlements",
-            "Consultant procurement"
         ]
       }
     }
