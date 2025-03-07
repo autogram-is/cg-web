@@ -78,6 +78,10 @@
   }
   &.reversed {
     flex-direction: row-reverse;
+
+    svg {
+      margin-inline: 0 var(--space-2xs);
+    }
   }
 
   &.align-only {
@@ -113,10 +117,10 @@
     svg {
       width: var(--space-m);
       path[stroke] {
-        stroke: var(--color-deep-steel);
+        stroke: var(--color-steel-highlight);
       }
       path[fill] {
-        fill: var(--color-deep-steel);
+        fill: var(--color-steel-highlight);
       }
       min-width: var(--space-2xs)
     }
@@ -128,6 +132,12 @@
     border-radius: 50%;
     aspect-ratio: 1 / 1;
     line-height: 1;
+    &:has( svg ) {
+      display: flex;
+      justify-content: center;
+      padding: var(--space-3xs);
+      max-width: var(--space-l-xl);
+    }
   }
   &.round.icon {
   }
