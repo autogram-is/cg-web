@@ -1,6 +1,14 @@
 .logo-cluster {
-  --gutter: var(--space-m-l);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-xs) var(--space-m-l);
+  width: 100%;
+  max-width: 70rem;
   img {
-    max-width: calc( 2 * var(--space-2xl) );
+    max-width: 18rem;
+    height: auto;
   }
 }
