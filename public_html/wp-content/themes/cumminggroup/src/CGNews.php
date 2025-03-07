@@ -18,7 +18,7 @@ class CGNews extends CGContent {
 	 * @return \Timber\PostCollectionInterface
 	 */
 	public function hero() {
-		if ($this->post_type === 'event') {
+		if (($this->post_type === 'event') || ($this->post_type === 'post')) {
 			return array("type" => "hide");
 		}
 	}
