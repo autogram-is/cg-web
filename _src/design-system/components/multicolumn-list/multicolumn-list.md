@@ -1,0 +1,1 @@
+Note that list item `::marker` (or `::before`, if `::marker` is unsupported or [too restrictive](https://developer.mozilla.org/en-US/docs/Web/CSS/::marker#allowable_properties)) is scoped to an overarching `.cg` class (applied to `body` in the WP templates) to prevent open-ended styles from bleeding into the WP admin.

@@ -1,6 +1,6 @@
 
 { 
-  "title": "Client List",
+  "title": "Multicolumn List",
   "name" : "client-list",
   "keyLinks": [ {
         "label": "CSS",
