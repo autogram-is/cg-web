@@ -1,7 +1,11 @@
 <div class="central">
   <div class="wrapper">
     <div class="feature {{ type }} {{ utilities }}">
+      {%  if layout == "5050" %}
+      <div class="switcher item"{% if type == "reverse" %} data-direction="rtl"{% endif %}>
+      {% else %}
       <div class="sidebar item"{% if type == "reverse" %} data-direction="rtl"{% endif %}>
+      {% endif %}
         {% if img %}
         <a href="{{ href }}" class="thumb">
           <img src="{{ img.src }}" height="{{img.height}}" width="{{img.width}}" alt="">
