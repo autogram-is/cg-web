@@ -1,10 +1,10 @@
 
 { 
   "title": "Multicolumn List",
-  "name" : "client-list",
+  "name" : "multicol-list",
   "keyLinks": [ {
         "label": "CSS",
-        "url": "/_src/css/components/client-list.css"
+        "url": "/_src/css/components/markers.css"
       } ],
   "context": {
     "utilities" : "grid flow",
