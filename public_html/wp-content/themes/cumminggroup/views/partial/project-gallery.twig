@@ -11,17 +11,22 @@
   {% for project in items %}
     <article aria-labelledby="hed-{{ project.ID }}" class="project-listing flow">
       <div class="sidebar swap flow">
-        {% if project.thumbnail %}
+        {% set thorph = project.thumbnail_or_placeholder %}
+        {% if thorph.image %}
         <a href="{{ project.link }}" class="thumb">
           <img 
-          src="{{project.thumbnail.src|resize(1200, 666) }}"
-          srcset="{{ project.thumbnail.src|resize(1200, 666) }} 1200w, {{ project.thumbnail.src|resize(800, 444) }} 800w, {{ project.thumbnail.src|resize(600, 333) }} 600w, {{ project.thumbnail.src|resize(400, 222) }} 400w"
+          src="{{thorph.image.src|resize(1200, 666) }}"
+          srcset="{{ thorph.image.src|resize(1200, 666) }} 1200w, {{ thorph.image.src|resize(800, 444) }} 800w, {{ thorph.image.src|resize(600, 333) }} 600w, {{ thorph.image.src|resize(400, 222) }} 400w"
           height="666" 
           width="1200" 
           sizes="auto"
           loading="lazy"
-          alt="{{ project.thumbnail.alt }}">
+          alt="{{ thorph.image.alt }}">
         </a>
+        {% elseif thorph.text %}
+        <span class="placeholder topo-full {{ post.bg }}">
+          <span>{{ thorph.text }}</span>
+        </span>
         {% endif %}
         <div class="body">
           <h3 class="type-hed" id="hed-{{ project.ID }}">
