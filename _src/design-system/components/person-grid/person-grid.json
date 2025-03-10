@@ -5,6 +5,9 @@
   "keyLinks": [ {
         "label": "CSS",
         "url": "/_src/css/components/person-grid.css"
+      },{
+        "label": "CSS",
+        "url": "/_src/css/components/person.css"
       } ],
   "context": {
     "people" : [
@@ -190,5 +193,176 @@
         }
       }
     ]
-  }
+  },
+  "variants" : [{
+    "title" : "With Backdrop",
+    "name" : "backdrop",
+    "context": {
+      "utilities" : "bg-timeless-backdrop",
+      "people" : [{
+          "name": "Erwin Watt",
+          "title": "Senior Vice President",
+          "sectors" : [
+            {
+              "text" : "Planning & Scheduling",
+              "href" : "#"
+            },{
+              "text" : "Dispute Resolution & Avoidance",
+              "href" : "#"
+            }
+          ],
+          "img" : {
+            "src" : "https://picsum.photos/1200/800?&blur=5.1",
+            "height" : 800,
+            "width" : 1200,
+            "alt" : ""
+          }
+        },{
+          "name": "Erwin Watt",
+          "title": "Senior Vice President",
+          "sectors" : [
+            {
+              "text" : "Planning & Scheduling",
+              "href" : "#"
+            },{
+              "text" : "Dispute Resolution & Avoidance",
+              "href" : "#"
+            }
+          ],
+          "img" : {
+            "src" : "https://picsum.photos/1200/800?&blur=5.1",
+            "height" : 800,
+            "width" : 1200,
+            "alt" : ""
+          }
+        },{
+          "name": "Erwin Watt",
+          "title": "Senior Vice President",
+          "sectors" : [
+            {
+              "text" : "Planning & Scheduling",
+              "href" : "#"
+            },{
+              "text" : "Dispute Resolution & Avoidance",
+              "href" : "#"
+            }
+          ],
+          "img" : {
+            "src" : "https://picsum.photos/1200/800?&blur=5.1",
+            "height" : 800,
+            "width" : 1200,
+            "alt" : ""
+          }
+        },{
+          "name": "Erwin Watt",
+          "title": "Senior Vice President",
+          "sectors" : [
+            {
+              "text" : "Planning & Scheduling",
+              "href" : "#"
+            },{
+              "text" : "Dispute Resolution & Avoidance",
+              "href" : "#"
+            }
+          ],
+          "img" : {
+            "src" : "https://picsum.photos/1200/800?&blur=5.1",
+            "height" : 800,
+            "width" : 1200,
+            "alt" : ""
+          }
+        },{
+          "name": "Erwin Watt",
+          "title": "Senior Vice President",
+          "sectors" : [
+            {
+              "text" : "Planning & Scheduling",
+              "href" : "#"
+            },{
+              "text" : "Dispute Resolution & Avoidance",
+              "href" : "#"
+            }
+          ],
+          "img" : {
+            "src" : "https://picsum.photos/1200/800?&blur=5.1",
+            "height" : 800,
+            "width" : 1200,
+            "alt" : ""
+          }
+        },{
+          "name": "Erwin Watt",
+          "title": "Senior Vice President",
+          "sectors" : [
+            {
+              "text" : "Planning & Scheduling",
+              "href" : "#"
+            },{
+              "text" : "Dispute Resolution & Avoidance",
+              "href" : "#"
+            }
+          ],
+          "img" : {
+            "src" : "https://picsum.photos/1200/800?&blur=5.1",
+            "height" : 800,
+            "width" : 1200,
+            "alt" : ""
+          }
+        },{
+          "name": "Erwin Watt",
+          "title": "Senior Vice President",
+          "sectors" : [
+            {
+              "text" : "Planning & Scheduling",
+              "href" : "#"
+            },{
+              "text" : "Dispute Resolution & Avoidance",
+              "href" : "#"
+            }
+          ],
+          "img" : {
+            "src" : "https://picsum.photos/1200/800?&blur=5.1",
+            "height" : 800,
+            "width" : 1200,
+            "alt" : ""
+          }
+        },{
+          "name": "Erwin Watt",
+          "title": "Senior Vice President",
+          "sectors" : [
+            {
+              "text" : "Planning & Scheduling",
+              "href" : "#"
+            },{
+              "text" : "Dispute Resolution & Avoidance",
+              "href" : "#"
+            }
+          ],
+          "img" : {
+            "src" : "https://picsum.photos/1200/800?&blur=5.1",
+            "height" : 800,
+            "width" : 1200,
+            "alt" : ""
+          }
+        },{
+          "name": "Erwin Watt",
+          "title": "Senior Vice President",
+          "sectors" : [
+            {
+              "text" : "Planning & Scheduling",
+              "href" : "#"
+            },{
+              "text" : "Dispute Resolution & Avoidance",
+              "href" : "#"
+            }
+          ],
+          "img" : {
+            "src" : "https://picsum.photos/1200/800?&blur=5.1",
+            "height" : 800,
+            "width" : 1200,
+            "alt" : ""
+          }
+        }
+      ]
+    }
+  }]
 }
