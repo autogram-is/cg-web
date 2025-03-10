@@ -2,7 +2,7 @@
   position: relative;
 
   &[class*="bg-"],
-  [class*="bg-"] {
+  & > [class*="bg-"] {
     background: none;
     &::before {
       content: "";
