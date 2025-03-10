@@ -18,17 +18,15 @@ class CGContent extends Post {
 	}
 
 	public function thumbnail_or_placeholder() {
-		$ph = $this->placeholder();
+		$output = [];
+
 		$thumb = $this->thumbnail();
-		
-		if ($ph) {
-			if ($ph['override'] ?? false) {
-				return $ph;
-			} elseif (!$thumb && $ph['image']) {
-				return $ph['image'];
-			}
+		if ($thumb) {
+			$output['image'] = $thumb;
+			return $output;
 		}
-		return $thumb;
+
+		return $this->placeholder();
 	}
 
 	/**

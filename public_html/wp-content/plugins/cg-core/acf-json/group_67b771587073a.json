@@ -178,36 +178,6 @@
                     "ajax": 0,
                     "placeholder": "",
                     "parent_repeater": "field_67b771923079a"
-                },
-                {
-                    "allow_backendsearch": false,
-                    "show_column_filter": false,
-                    "allow_bulkedit": false,
-                    "allow_quickedit": false,
-                    "show_column": false,
-                    "show_column_weight": 1000,
-                    "show_column_sortable": false,
-                    "key": "field_67b7745e6774c",
-                    "label": "Override Post Thumbnail",
-                    "name": "override",
-                    "aria-label": "",
-                    "type": "true_false",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "admin_column_enabled": 0,
-                    "message": "",
-                    "default_value": 0,
-                    "allow_in_bindings": 0,
-                    "ui_on_text": "",
-                    "ui_off_text": "",
-                    "ui": 1,
-                    "parent_repeater": "field_67b771923079a"
                 }
             ]
         }
@@ -231,5 +201,5 @@
     "description": "Control post-type specific fallback thumbnails",
     "show_in_rest": 0,
     "qef_simple_location_rules": 0,
-    "modified": 1740769892
+    "modified": 1741622946
 }
