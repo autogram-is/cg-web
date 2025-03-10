@@ -4,7 +4,7 @@
   <nav aria-labelledby="hed-{{ rand }}">
     <ul class="cluster" role="list">
       {% for link in links %}
-      <li><a href="{{ link.url }}" class="button round secondary icon" title="{{ link.title }}"><span>{{ link.title }}</span>→</a></li>
+      <li><a href="{{ link.url }}" class="button round secondary icon" title="{{ link.title }}"><span>{{ link.title }}</span>{{ link.icon }}</a></li>
       {% endfor %}
     </ul>
   </nav>
