@@ -1,0 +1,17 @@
+
+{ 
+  "title": "Event Listing",
+  "name" : "list-event",
+  "keyLinks": [ {
+        "label": "CSS",
+        "url": "/_src/css/components/list-resource.css"
+      } ],
+  "context": {
+    "heading" : "Healthcare Project Delivery Conference 2025",
+    "href"  : "#",
+    "datespan" : "February 9 – February 12",
+    "venue" : "Omni San Diego",
+    "addr" : "675 L St,<br>San Diego,  92101 United States",
+    "body" : "Cumming Group’s national healthcare team is pleased to be attending the Healthcare Project Delivery Conference, a valuable event for facility administrators and developers involved in healthcare capital projects. The program highlights innovative strategies in procurement, financing, planning, design, construction, and operations. Participants will learn about upcoming projects and RFPs, explore effective approaches to traditional and alternative project delivery, and connect with industry leaders, developers, owners, and healthcare professionals."
+  }
+}
