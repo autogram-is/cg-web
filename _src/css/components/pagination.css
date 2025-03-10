@@ -10,7 +10,9 @@
     }
   }
   .button.icon:not(.disabled){
+    border-color: var(--color-steel-midtone);
     svg path {
+      stroke: var(--color-deep-steel);
       transition: stroke .25s linear;
     }
     &:hover svg path {
