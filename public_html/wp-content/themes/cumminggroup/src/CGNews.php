@@ -68,8 +68,14 @@ class CGNews extends CGContent {
 		}
 	}
 
+	public function news_category() {
+    $categories = get_the_terms($this->ID, 'news-category');
+    if (is_array($categories) && $categories[0]) return Timber::get_term($categories[0]);
+    return NULL;
+  }
+
   /**
-	 * Loads the people related to this item.
+	 * Cumming Group team members who authored this post, if applicable.
 	 *
 	 * @return \Timber\PostCollectionInterface
 	 */
@@ -84,15 +90,38 @@ class CGNews extends CGContent {
 
   /**
 	 * For news, events, and market insight reports, `service` `sector` `project` and `office`
-	 * are collapsed to a single field.
+	 * are collapsed to a single field. We retrieve and instantiate them here, but also have type-
+	 * specific convenience functions that simply filter this list before returning.
 	 *
 	 * @return \Timber\PostCollectionInterface
 	 */
 	public function related_portfolio_items() { return $this->_cache_relationship('related_portfolio_items'); }
 
-  public function news_category() {
-    $categories = get_the_terms($this->ID, 'news-category');
-    if (is_array($categories) && $categories[0]) return Timber::get_term($categories[0]);
-    return NULL;
-  }
+	public function sectors() {
+		$posts = $this->related_portfolio_items();
+		if ($posts) {
+			return array_filter(iterator_to_array($posts), function($item) { return $item->post_type === 'sectors'; });
+		}
+	}
+
+	public function services() {
+		$posts = $this->related_portfolio_items();
+		if ($posts) {
+			return array_filter(iterator_to_array($posts), function($item) { return $item->post_type === 'services'; });
+		}
+	}
+
+	public function offices() {
+		$posts = $this->related_portfolio_items();
+		if ($posts) {
+			return array_filter(iterator_to_array($posts), function($item) { return $item->post_type === 'offices'; });
+		}
+	}
+
+	public function projects() {
+		$posts = $this->related_portfolio_items();
+		if ($posts) {
+			return array_filter(iterator_to_array($posts), function($item) { return $item->post_type === 'projects'; });
+		}
+	}
 }
