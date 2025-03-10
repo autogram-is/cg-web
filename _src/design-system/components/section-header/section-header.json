@@ -7,5 +7,26 @@
         "url": "/_src/css/components/section-header.css"
       } ],
   "context": {
-  }
+    "heading" : "Related Projects"
+  },
+  "variants": [{
+    "title" : "With Note",
+    "name" : "note",
+    "context" : {
+      "heading": "Related Projects",
+      "body" : "Lorem ipsum dolor sit amet."
+    }
+  },
+  {
+    "title" : "With CTA",
+    "name" : "cta",
+    "context" : {
+      "heading": "Related Projects",
+      "body" : "Lorem ipsum dolor sit amet.",
+      "cta" : {
+        "text" : "All projects",
+        "href" : "#"
+      }
+    }
+  }]
 }

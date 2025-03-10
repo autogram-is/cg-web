@@ -1,7 +1,11 @@
 <div class="section-header region">
-  <h2 class="type-eyebrow hed-hatch" id="hed">Key Insights</h2>
+  <h2 class="type-eyebrow hed-hatch" id="hed">{{ heading }}</h2>
   <div class="repel">
-    <p>Select from the most pressing topics this quarter.</p>
-    <a href="#" class="type-detail icon-post-chevron">Contact Us</a>
+    <div>
+    {{ body|markdown}}
+    </div>
+    {% if cta %}
+    <a href="{{ cta.href }}" class="type-detail icon-post-chevron">{{ cta.text }}</a>
+    {% endif %}
   </div>
 </div>
