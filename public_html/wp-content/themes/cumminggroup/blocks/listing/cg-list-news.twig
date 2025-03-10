@@ -27,8 +27,10 @@
 {% if ( fields.layout == "secondary" and loop.index == 2 ) or ( fields.layout == "hero" and loop.index == 3 ) %}
 {% endif %}
 {% endfor %}
-{% if fields.teaser %}
-{% set teaser = get_posts(fields.teaserlink) %}
+{% if fields.pagination %}
+{% include 'partial/pagination.twig' %}
+{% elseif fields.teaser %}
+{% set teaser = get_post(fields.teaserlink) %}
 <div class="region">
   <a href="{{ teaser.link }}" class="icon-previous type-detail ">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
