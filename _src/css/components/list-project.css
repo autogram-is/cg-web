@@ -100,7 +100,7 @@
       font-size: var(--size-step-00);
     }
   }
-  .swap .secondary {
+  [data-direction="rtl"] .secondary {
     justify-content: flex-end;
   }
 }
