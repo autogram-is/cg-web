@@ -175,6 +175,7 @@
     letter-spacing: unset;
     padding: unset;
     text-transform: inherit;
+    text-align: unset;
   }
   &.market-report {
     margin-block-end: var(--space-s-m);
