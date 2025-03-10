@@ -445,7 +445,7 @@ function cg_list_news_block_data($context) {
     'posts_per_page' => isset( $fields['limit'] ) && $fields['limit'] > 0 ? $fields['limit'] : 10,
     'cat' => $fields['categories'] ?? NULL
   );
-  if ($fields['pagination']) {
+  if ($fields['pagination'] ?? false) {
     $query_options['paged'] = get_query_var('paged') ? get_query_var('paged') : 1;
   }
   $context['posts'] = Timber::get_posts($query_options);

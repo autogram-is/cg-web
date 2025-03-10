@@ -100,28 +100,28 @@ class CGNews extends CGContent {
 	public function sectors() {
 		$posts = $this->related_portfolio_items();
 		if ($posts) {
-			return array_filter(iterator_to_array($posts), function($item) { return $item->post_type === 'sectors'; });
+			return array_filter(iterator_to_array($posts), function($item) { return $item->post_type === 'sector'; });
 		}
 	}
 
 	public function services() {
 		$posts = $this->related_portfolio_items();
 		if ($posts) {
-			return array_filter(iterator_to_array($posts), function($item) { return $item->post_type === 'services'; });
+			return array_filter(iterator_to_array($posts), function($item) { return $item->post_type === 'service'; });
 		}
 	}
 
 	public function offices() {
 		$posts = $this->related_portfolio_items();
 		if ($posts) {
-			return array_filter(iterator_to_array($posts), function($item) { return $item->post_type === 'offices'; });
+			return array_filter(iterator_to_array($posts), function($item) { return $item->post_type === 'office'; });
 		}
 	}
 
 	public function projects() {
 		$posts = $this->related_portfolio_items();
 		if ($posts) {
-			return array_filter(iterator_to_array($posts), function($item) { return $item->post_type === 'projects'; });
+			return array_filter(iterator_to_array($posts), function($item) { return $item->post_type === 'project'; });
 		}
 	}
 }
