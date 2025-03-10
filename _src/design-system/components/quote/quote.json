@@ -58,7 +58,7 @@
         }
       }
     },{
-      "title" : "Centered with Headshot",
+      "title" : "Centered",
       "name" : "pullquote-centered",
       "context": {
         "type" : "pullquote",
@@ -68,12 +68,6 @@
           "name" : "Alex Herr",
           "title" : "Chief Real Estate Officer",
           "affiliation" : "Providence Cedars-Sinai Tarzana Medical Center"
-        },
-        "img" : {
-          "src" : "https://picsum.photos/1200/800?&blur=9",
-          "height" : 800,
-          "width" : 1200,
-          "alt" : ""
         }
       }
     },{
