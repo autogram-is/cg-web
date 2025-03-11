@@ -13,14 +13,11 @@ class CGNews extends CGContent {
 	}
 
 	/**
-	 * Builds a convenience bundle of hero treatment information.
-	 *
-	 * @return \Timber\PostCollectionInterface
+	 * Overrides the default hero treatment to ensure news content types
+	 * ('post', 'event', and 'report') don't use top-of-page hero images.
 	 */
 	public function hero() {
-		if (($this->post_type === 'event') || ($this->post_type === 'post')) {
-			return array("type" => "hide");
-		}
+		return array("type" => "hide");
 	}
 
 	/**
