@@ -8,7 +8,7 @@
 {% block posthero %}
   {% if projects %}
   <div class="region region-primary wrapper">
-  {% include "partial/project-grid.twig" with { items: projects, sectors: true, services: true } %}
+  {% include "partial/project-grid.twig" with { items: projects, sectors: true, services: true, offices: true } %}
   {% if projects.pagination %}
     <div class="region">
     {% include 'partial/pagination.twig' with { posts: projects } %}

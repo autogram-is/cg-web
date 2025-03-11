@@ -71,7 +71,7 @@
       &::after {
         content: ", ";
         white-space: nowrap;
-        margin-right: var(--space-nudge);
+        margin-right: var(--space-3xs);
       }
       &:last-of-type::after {
         display: none;
