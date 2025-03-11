@@ -3,7 +3,7 @@
 .resource-listing {
   .sidebar {
     --sidebar-target-width: 16rem;
-    --sidebar-content-min-width: 50%;
+    --sidebar-content-min-width: 45%;
   }
   .item {
     height: 100%;
