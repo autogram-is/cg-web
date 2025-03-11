@@ -23,7 +23,7 @@
 		</span>
 		{% endif %}
 		<div class="body flow">
-			<time datetime="{{post.date('y-m-d')}}" class="type-detail">{{ post.date }}</time>
+	    <div class="type-detail">{% include 'fields/event-dateline.twig' %}</div>
 			<h2 class="type-hed {% if type == "hero" %}hed-accent{% endif %}" id="hed-{{ post.id }}">
 				<a href="{{ post.link }}">{{ post.title }}</a>
 			</h2>

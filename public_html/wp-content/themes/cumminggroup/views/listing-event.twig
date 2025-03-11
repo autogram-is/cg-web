@@ -2,7 +2,7 @@
   {% block content %}
   <div class="sidebar swap">
     <div class="body flow">
-      <time class="type-detail">{{ post.start_date|date('F j') }}{%  if post.end_date and post.start_date|date('F j') != post.end_date|date('F j') %} - {{ post.end_date|date('F j') }}{% endif %}</time>
+	    <div class="type-detail">{% include 'fields/event-dateline.twig' %}</div>
       <h2 class="type-hed" id="hed-{{ post.id }}">
         <a href="{{ post.link }}">{{ post.title }}</a>
       </h2>

@@ -1,12 +1,7 @@
 {% extends "single/default.twig" %}
 
 {% block hero %}
-	{% if post.start_date %}
-		<time datetime="{{post.start_date | date('Y-m-d')}}">{% if post.end_date %}{{post.start_date | date('F j') }}{% else %}{{post.start_date | date }}{% endif %}</time>
-		{% if post.end_date %} – <time datetime="{{ post.end_date | date('Y-m-d') }}">{{post.end_date | date }}</time>{% endif %}
-	{% else %}
-  	<time datetime="{{post.date('Y-m-d')}}">{{post.date}}</time>
-	{% endif %}
+	<div class="type-detail">{% include 'fields/event-dateline.twig' %}</div>
   <h1 class="type-pagehed hed-accent">{{ post.title }}</h1>
 {% endblock %}
 
