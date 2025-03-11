@@ -13,6 +13,9 @@
       text-decoration-color: var(--color-steel-midtone);
     }
   }
+  .type-eyebrow {
+    margin-block: var(--space-s-m);
+  }
   .hed {
     font-size: var(--size-step-0);
     font-weight: var(--weight-semibold);
@@ -113,4 +116,13 @@
   }
   --grid-min-item-size: 20rem;
   --gutter: var(--space-s-m);
+}
+
+.wp-block-column {
+  .switcher {
+    display: block;
+  }
+  .location-columns {
+    columns: 1 auto;
+  }
 }
