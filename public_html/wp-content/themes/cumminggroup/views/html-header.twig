@@ -22,7 +22,7 @@
 	<script>
 		(function() {
 			const location = Intl.DateTimeFormat().resolvedOptions().timeZone;
-			const eu = [{%  for eu in settings.eu_uk_continents %}"{{ eu|lower }}"{%  if not loop.last %},{% endif %}{% endfor %}];
+			const eu = [{%  for eu in settings.eu_uk_continents %}"{{ eu|lower }}"{% if not loop.last %},{% endif %}{% endfor %}];
 			const locationPreference = localStorage.getItem( "uk-eu" ) || localStorage.getItem( "us" );
 
 			eu.forEach( continent => {
@@ -34,4 +34,5 @@
 		}());
 	</script>
 
-	<link rel="stylesheet" href="{{ site.theme.link }}/assets/css/global.css?{{ assetHash }}" type="text/css" />
+	{% set globalCSS = site.theme.link~'/assets/css/global.css' %}
+	<link rel="stylesheet" href="{{ site.theme.link }}/assets/css/global.css?{{ globalCSS|cachebust }}" type="text/css" />

@@ -49,5 +49,6 @@
 			{{ function('wp_footer') }}
 		{% endblock %}
 		</body>
-		<script type="module" src="{{ site.theme.link }}/assets/js/ui.js{{ assetHash }}" defer></script>
+		{% set ui = site.theme.link~'/assets/js/ui.js' %}
+		<script type="module" src="{{ ui }}?{{ ui|cachebust }}" defer></script>
 </html>

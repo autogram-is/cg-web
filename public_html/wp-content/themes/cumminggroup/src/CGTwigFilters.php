@@ -19,6 +19,9 @@ class CGTwigFilters {
       new \Twig\TwigFilter( 'stylize', [ $this, 'stylize_title' ] )
     );
     $twig->addFilter(
+      new \Twig\TwigFilter( 'cachebust', [ $this, 'cache_busting' ] )
+    );
+    $twig->addFilter(
       new \Twig\TwigFilter( 'statistic', [ $this, 'stylize_statistic' ] )
     );
     $twig->addFilter(
@@ -151,6 +154,19 @@ class CGTwigFilters {
     if (is_null($text)) return '';
       $symbol = ' + ';
       return str_replace($symbol, " <span class=\"amp\">" . trim($symbol) . "</span> ", $text);
+  }
+
+  /**
+   * Generate a cachebusting hash from a file's last modified date.
+   *
+   * @param string $text The path to the file being cachebusted
+   */
+  function cache_busting(?string $path) {
+    if (is_null($path)) return '';
+    $path = $_SERVER['DOCUMENT_ROOT'] . parse_url($path, PHP_URL_PATH);
+    if ( file_exists( $path ) ) {
+      return date( filemtime($path) );
+    }
   }
 
   /**
