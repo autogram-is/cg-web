@@ -1,0 +1,19 @@
+{% set start = post.start_date %}
+{% set end = post.end_date %}
+{% set same_day = ((start | date('Ymd')) == (end | date('Ymd'))) %}
+{% set same_month = ((start | date('Ym')) == (end | date('Ym'))) %}
+{% set published = post.date %}
+
+{%- if start -%}
+  {%- if same_day or not end -%}
+    <time datetime="{{ start | date('Y-m-d')}}">{{ start | date('F j, Y') }}</time>
+  {%- else -%}
+    {%- if same_month -%}
+    <time datetime="{{ start | date('Y-m-d')}}">{{ start | date('F j') }}</time> – <time datetime="{{ end | date('Y-m-d')}}">{{ end | date('j, Y') }}</time>
+    {%- else -%}
+    <time datetime="{{ start | date('Y-m-d')}}">{{ start | date('F j') }}</time> – <time datetime="{{ end | date('Y-m-d')}}">{{ end | date('F j, Y') }}</time>
+    {%- endif -%}
+  {%- endif -%}
+{%- else -%}
+  <time datetime="{{ published | date('Y-m-d') }}">{{ published | date('F j, Y') }}</time>
+{%- endif -%}
