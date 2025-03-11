@@ -86,3 +86,7 @@
     }
   }
 }
+.wp-block-video {
+  margin-block: var(--region-space, var(--space-s-m));
+  max-width: 70rem;
+}
