@@ -64,6 +64,16 @@
         }
       }
     }
+    .repel {
+      flex-direction: row;
+      gap: var(--space-3xs);
+    }
+    .contacts {
+      max-width: 11rem;
+    }
+    .button {
+      padding: 0;
+    }
   }
   .locations {
     padding-block-start: var(--space-nudge);

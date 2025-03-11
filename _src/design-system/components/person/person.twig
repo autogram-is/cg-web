@@ -21,11 +21,13 @@
           {% endif %}
           {% if contacts %}
           <div class="repel">
+            {% if contacts %}
             <ul role="list" class="contacts flow">
             {% for contact in contacts %}
               <li><a href="#">{{contact}}</a></li>
             {% endfor %}
             </ul>
+            {% endif %}
             <a href="https://hire.wil.to" class="button mini align-only icon">
               <span>LinkedIn</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">

@@ -117,10 +117,10 @@
     svg {
       width: var(--space-m);
       path[stroke] {
-        stroke: var(--color-steel-highlight);
+        stroke: var(--color-deep-steel);
       }
       path[fill] {
-        fill: var(--color-steel-highlight);
+        fill: var(--color-deep-steel);
       }
       min-width: var(--space-2xs)
     }
