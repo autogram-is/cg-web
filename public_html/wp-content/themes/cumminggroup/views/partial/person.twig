@@ -37,6 +37,7 @@
               {% endif %}
               {% if contact and ( person.email or person.phone or person.linkedin ) and person.show_contact %}
                 <div class="repel">
+                  {% if person.email or person.phone %}
                   <ul role="list" class="contacts flow">
                     {% if person.email %}
                     <li><a href="mailto:{{ person.email }}">{{ person.email }}</a></li>
@@ -45,6 +46,7 @@
                     <li>{{ person.phone | phone }}</li> {# `href="tel:"` links will be generated in browsing contexts that support them. #}
                     {% endif %}
                   </ul>
+                  {% endif %}
                   {% if person.linkedin %}
                   <a href="{{ person.linkedin }}" class="button mini align-only icon">
                     <span>LinkedIn</span>
