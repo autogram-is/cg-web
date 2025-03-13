@@ -64,7 +64,7 @@
         }
       }
     }
-    .repel {
+  .repel {
       flex-direction: row;
       gap: var(--space-3xs);
     }
@@ -73,6 +73,13 @@
     }
     .button {
       padding: 0;
+      svg path[fill] {
+        fill: var(--color-steel-midtone);
+        transition: fill .2s ease-in-out;
+      }
+      &:hover svg path[fill] {
+        fill: var(--color-deep-steel);
+      }
     }
   }
   .locations {
@@ -151,6 +158,7 @@
         text-decoration: underline;
         text-decoration-color: var(--color-steel-midtone);
       }
+
     }
   }
   .contacts {
