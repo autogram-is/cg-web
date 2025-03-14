@@ -44,6 +44,32 @@
             "show_column": false,
             "show_column_weight": 1000,
             "show_column_sortable": false,
+            "key": "field_67d4b539b90d0",
+            "label": "Show signup form",
+            "name": "signup_form",
+            "aria-label": "",
+            "type": "forms",
+            "instructions": "If selected, the form will appear between the first result, and the grid of remaining results.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "allow_null": 1,
+            "multiple": 0,
+            "allow_in_bindings": 0
+        },
+        {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_67b3f13e4b962",
             "label": "Limit",
             "name": "limit",
@@ -116,5 +142,5 @@
     "description": "",
     "show_in_rest": 0,
     "qef_simple_location_rules": 0,
-    "modified": 1741279429
+    "modified": 1741993590
 }
