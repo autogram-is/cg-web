@@ -24,9 +24,9 @@
           alt="{{ thorph.image.alt }}">
         </a>
         {% elseif thorph.text %}
-        <span class="placeholder topo-full {{ thorph.bg }}">
+        <a href="{{ project.link }}" class="placeholder topo-full {{ thorph.bg }}">
           <span>{{ thorph.text }}</span>
-        </span>
+        </a>
         {% endif %}
         <div class="body">
           <h3 class="type-hed" id="hed-{{ project.ID }}">

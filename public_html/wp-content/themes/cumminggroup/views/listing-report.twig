@@ -18,9 +18,9 @@
 				alt="{{post.thumbnail.alt}}" />
 		</a>
 		{% elseif post.placeholder %}
-		<span class="placeholder topo-full {{ post.placeholder.bg }}">
+		<a href="{{ post.link }}" class="placeholder topo-full {{ post.placeholder.bg }}">
 			<span>{{ post.placeholder.text }}</span>
-		</span>
+		</a>
 		{% endif %}
 		<div class="body flow">
 	    <div class="type-detail">{% include 'fields/event-dateline.twig' %}</div>

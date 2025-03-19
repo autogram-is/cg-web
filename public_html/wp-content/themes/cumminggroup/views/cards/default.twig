@@ -25,9 +25,9 @@
           alt="{{feature.thumbnail.alt}}" />
       </a>
       {% elseif feature.placeholder_text %}
-      <span class="placeholder topo-full {{ feature.placeholder_bg }}">
+      <a href="{{ feature.link }}" class="placeholder topo-full {{ feature.placeholder_bg }}">
         <span>{{ feature.placeholder_text }}</span>
-      </span>
+      </a>
       {% endif %}
       <div class="body flow">
         <div class="hgroup {% if fields.excerpt %}hed-accent {% endif %}flow">
