@@ -6,6 +6,7 @@
   display: block;
   background-color: var(--color-timeless-gold);
   background-size: 100%;
+  align-self: center;
   background-position: center center;
   color: var(--color-light);
   display: flex;
@@ -17,6 +18,7 @@
   justify-content: center;
   text-transform: uppercase;
   text-wrap: balance;
+  text-decoration: none;
   &.topo-full {
     background-size: 250%;
   }
