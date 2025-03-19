@@ -15,5 +15,9 @@
     {%- endif -%}
   {%- endif -%}
 {%- else -%}
+  {%- if post.post_type == 'report' -%}
+  <time datetime="{{ published | date('Y-m-d') }}">{{ published | date_quarter }}</time>
+  {%- else -%}
   <time datetime="{{ published | date('Y-m-d') }}">{{ published | date('F j, Y') }}</time>
+  {%- endif -%}
 {%- endif -%}

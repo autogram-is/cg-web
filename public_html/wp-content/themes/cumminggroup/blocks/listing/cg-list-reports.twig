@@ -15,18 +15,29 @@
   SupportsAlignContent: false
   SupportsAlignText: false
 #}
-<div class="resource-listings region region-primary listings-{{ fields.layout }} {{ classes }}">
+<div class="resource-listings region region-primary listings-hero {{ classes }}">
 {% set wrapper = 0 %}
 {% for post in posts %}
-  {% if wrapper == 0 %}
-    <div class="switcher">
-  {% endif %}
-  {% set wrapper = wrapper + 1 %}
-  {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': style } %}
-
-  {% if wrapper == 2 or loop.last %}
-    {% set wrapper = 0 %}
+  {% if ( fields.layout == "index" and loop.index == 1 ) %}
+    {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': 'hero' } %}
+    {% if fields.signup_form %}
+    <div class="inline-form flow bg-timeless-backdrop">
+      <div class="wrapper">
+      {{ fields.signup_form | gravityform(false, true) }}
+      </div>
     </div>
+    {% endif %}
+  {% else %}
+    {% if wrapper == 0 %}
+      <div class="switcher">
+    {% endif %}
+    {% set wrapper = wrapper + 1 %}
+    {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': style } %}
+
+    {% if wrapper == 2 or loop.last %}
+      {% set wrapper = 0 %}
+      </div>
+    {% endif %}
   {% endif %}
 {% endfor %}
 {% if fields.pagination %}
