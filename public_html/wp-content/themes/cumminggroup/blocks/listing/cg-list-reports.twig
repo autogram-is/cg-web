@@ -15,7 +15,7 @@
   SupportsAlignContent: false
   SupportsAlignText: false
 #}
-<div class="resource-listings region region-primary listings-hero {{ classes }}">
+<div class="region region-primary listings-hero {{ classes }}">
 {% set wrapper = 0 %}
 {% for post in posts %}
   {% if ( fields.layout == "index" and loop.index == 1 ) %}
@@ -32,7 +32,7 @@
       <div class="switcher">
     {% endif %}
     {% set wrapper = wrapper + 1 %}
-    {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': style } %}
+    {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': 'secondary' } %}
 
     {% if wrapper == 2 or loop.last %}
       {% set wrapper = 0 %}
