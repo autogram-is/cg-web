@@ -4,6 +4,6 @@
 
 <div class="{{ classes }}">
 {% for post in items | sort_news %}
-  {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { "type" :  post.post_type } %}
+  {% include template_list(post, 'list-item') with { "type" :  post.post_type } %}
 {% endfor %}
 </div>

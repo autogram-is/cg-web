@@ -18,11 +18,11 @@
 <div class="resource-listings {{ classes }} listings-{{ fields.layout }}">
 {% for post in posts %}
 {% if ( fields.layout == "hero" and loop.index == 1 ) %}
-  {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': 'hero' } %}
+  {% include template_list(post, 'list-item') with { 'type': 'hero' } %}
 {%  elseif ( fields.layout == "hero" and ( loop.index == 2 or loop.index == 3 ) ) or ( fields.layout == "secondary" and ( loop.index == 1 or loop.index == 2 )) %}
-  {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': 'secondary' } %}
+  {% include template_list(post, 'list-item') with { 'type': 'secondary' } %}
 {%  else  %}
-  {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': style } %}
+  {% include template_list(post, 'list-item') with { 'type': style } %}
 {% endif %}
 {% if ( fields.layout == "secondary" and loop.index == 2 ) or ( fields.layout == "hero" and loop.index == 3 ) %}
 {% endif %}
