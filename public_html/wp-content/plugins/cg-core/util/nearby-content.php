@@ -20,9 +20,12 @@ function cg_projects_with_fallback(int $post_id, int $limit = 6) {
   return $items;
 }
 
-function cg_news_with_fallback(int $post_id, int $limit = 6) {
+function cg_news_with_fallback(int $post_id, int $limit = 6, $exclude_past_events = FALSE) {
   $items = get_field('related_news', $post_id) ?? [];
+  $excluded = $exclude_past_events ? cg_past_event_ids() : [];
+
   if ($items && is_array($items)) {
+    $items = _remove_items($items, $excluded);
     $directCount = count($items);
   } else {
     $items = [];
@@ -31,7 +34,7 @@ function cg_news_with_fallback(int $post_id, int $limit = 6) {
 
   if ($limit > $directCount) {
     $offices = cg_get_related_offices($post_id);
-    $nearby = cg_get_news_for_portfolio_items($offices, ($limit - $directCount), $items) ?? [];
+    $nearby = cg_get_news_for_portfolio_items($offices, ($limit - $directCount), array_merge($items, $excluded)) ?? [];
     if ($nearby) {
       $items = array_merge($items, $nearby);
     }
@@ -40,7 +43,15 @@ function cg_news_with_fallback(int $post_id, int $limit = 6) {
   return $items;
 }
 
-
+function _remove_items($list, $items_to_remove) {
+  $output = [];
+  foreach ($list as $item) {
+    if (!in_array($item, $items_to_remove)) {
+      $output[] = $item;
+    }
+  }
+  return $output;
+}
 
 /**
  * Given an item that is either tagged with a region, or has an `offices`
@@ -133,3 +144,63 @@ function cg_balance_buckets(array $lists = [], int $limit = 6, array $ignore = [
   return $result;
 }
 
+/**
+ * Uses Wordpress's Transient system to return a cached list of event IDs
+ * that have already passed; thise can be used to exclude past events from
+ * related content listings.
+ */
+function cg_past_event_ids($flush = FALSE) {
+  if ($flush) delete_transient('cg_past_events');
+  $ids = get_transient('cg_past_events');
+  if ($ids === FALSE) {
+    $args = array(
+      'meta_query' => array(
+        array(
+          'key'     => 'end_date',
+          'value'   => current_time('mysql'),
+          'compare' => '<',
+          'type'    => 'DATE'
+        )
+      ),
+      'post_type'      => 'event',
+      'posts_per_page' => -1,
+      'orderby'        => 'end_date',
+      'fields'         => 'ids'
+    );
+  
+    $query = $query = new WP_Query($args);
+    $ids = $query->posts;
+    set_transient('cg_past_events', $ids, 60);  
+  }
+  return $ids;
+}
+
+/**
+ * Uses Wordpress's Transient system to return a cached list of event IDs
+ * that are not yet over; this includes events that .
+ */
+function cg_upcoming_event_ids($flush = FALSE) {
+  if ($flush) delete_transient('cg_upcoming_events');
+  $ids = get_transient('cg_upcoming_events');
+  if ($ids === FALSE) {
+    $args = array(
+      'meta_query' => array(
+        array(
+          'key'     => 'start_date',
+          'value'   => current_time('mysql'),
+          'compare' => '>=',
+          'type'    => 'DATE'
+        )
+      ),
+      'post_type'      => 'event',
+      'posts_per_page' => -1,
+      'orderby'        => 'start_date',
+      'fields'        => 'ids'
+    );
+  
+    $query = $query = new WP_Query($args);
+    $ids = $query->posts;
+    set_transient('cg_upcoming_events', $ids, 60);
+  }
+  return $ids;
+}
