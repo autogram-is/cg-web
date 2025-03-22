@@ -68,6 +68,26 @@ class CGPortfolio extends CGContent {
 	 *
 	 * @return \Timber\PostCollectionInterface
 	 */
-	public function related_news(?int $limit = -1) { return parent::_cache_relationship('related_news', $limit); }
+	public function related_news(?int $limit = -1, $exclude_past_events = TRUE) {
+		$field_prop = '_related_news';
+		if (isset($this->$field_prop)) {
+			return $this->$field_prop;
+		}
 
+		$meta = $this->meta('related_news');
+		if (is_array($meta) && $exclude_past_events) {
+			$meta = _remove_items($meta, cg_past_event_ids());
+		}
+
+		if (is_array($meta) && ($limit > 0)) {
+			$meta = array_slice($meta, 0, $limit);
+		}
+
+		if (!$meta) {
+			$this->$field_prop = null;
+		} else {
+			$this->$field_prop = Timber::get_posts($meta);
+			return $this->$field_prop;	
+		}
+	}
 }
