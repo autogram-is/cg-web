@@ -46,7 +46,7 @@ class CGOffice extends CGPortfolio {
 		 	return $this->$field_prop;
 		}
 
-		$items = cg_news_with_fallback($this->ID, $limit, TRUE);
+		$items = cg_news_with_fallback($this->ID, $limit);
 
 		if (!$items) {
 		 	$this->$field_prop = null;
