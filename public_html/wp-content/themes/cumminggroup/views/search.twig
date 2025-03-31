@@ -5,8 +5,7 @@
   {# see `base.twig:27` for where this block's content will be inserted #}
   <div class="region region-primary">
     {% for post in posts %}
-      {% set type = post.post_type == "post" ? post.news_category|lower : post.post_type %}
-      {% include ['listing-'~type~'.twig', 'listing.twig'] with { type : type } %}
+      {% include template_list(post, 'list-item') with { type : type } %}
       <hr>
     {% endfor %}
     <div class="region">

@@ -2,6 +2,6 @@
 
 {% block content %}
 	{% for post in posts %}
-		{% include ["listing-"~post.post_type~".twig", "listing.twig"] %}
+		{% include template_list(post, 'list-item') %}
 	{% endfor %}
 {% endblock %}

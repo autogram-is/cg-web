@@ -24,7 +24,7 @@
   </div>
   {% endif %}
   {% for post in posts %}
-    {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': "hero" } %}
+    {% include template_list(post, 'list-item') with { 'type': "hero" } %}
     <hr>
   {% endfor %}
   {% if fields.archive_link %}
@@ -49,7 +49,7 @@
   {{ fields.empty_message }}
   {% endif %}
   {% for post in posts %}
-    {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': "hero" } %}
+    {% include template_list(post, 'list-item') with { 'type': "hero" } %}
         <hr>
 
   {% endfor %}
@@ -71,7 +71,7 @@
       <h3 class="hed-hatch">Past Events</h2>
     {% else %}
     {% endif %}
-    {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': "hero" } %}
+    {% include template_list(post, 'list-item') with { 'type': "hero" } %}
     <hr>
 
   {% endfor %}

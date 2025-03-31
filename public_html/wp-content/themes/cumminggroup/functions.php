@@ -101,8 +101,15 @@ function is_news_category() {
  * @return array
  */
 function cg_post_templates($post, $directory = '') {
+  if (is_int($post)) {
+    $psot = get_post($post);
+  }
   $templates = [];
   if ($directory && !str_ends_with($directory, '/')) $directory .= '/';
+  if (is_null($post)) {
+    // Something has gone wrong here; we should never try to get the template hierarchy for NULL.
+    return [$directory . 'default.twig'];
+  }
   
   $templates[] = $directory . $post->post_type . '-' . $post->ID . '.twig';
 

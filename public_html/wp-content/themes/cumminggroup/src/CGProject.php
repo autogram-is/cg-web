@@ -19,7 +19,7 @@ class CGProject extends CGPortfolio {
 	 * @return \Timber\PostCollectionInterface
 	 */
 	public function projects(?int $limit = -1) {
-		$field_prop = '+';
+		$field_prop = '_similar_projects';
 		if (isset($this->$field_prop)) {
 			return $this->$field_prop;
 		}

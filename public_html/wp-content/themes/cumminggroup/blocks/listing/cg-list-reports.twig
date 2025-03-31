@@ -19,7 +19,7 @@
 {% set wrapper = 0 %}
 {% for post in posts %}
   {% if ( fields.layout == "index" and loop.index == 1 ) %}
-    {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': 'hero' } %}
+    {% include template_list(post, 'list-item') with { 'type': 'hero' } %}
     {% if fields.signup_form %}
     <div class="inline-form flow is-style-bg-timeless-backdrop">
       {{ fields.signup_form | gravityform(false, true) }}
@@ -30,7 +30,7 @@
       <div class="switcher">
     {% endif %}
     {% set wrapper = wrapper + 1 %}
-    {% include ['listing-'~post.post_type~'.twig', 'listing.twig'] with { 'type': 'secondary' } %}
+    {% include template_list(post, 'list-item') with { 'type': 'secondary' } %}
 
     {% if wrapper == 2 or loop.last %}
       {% set wrapper = 0 %}

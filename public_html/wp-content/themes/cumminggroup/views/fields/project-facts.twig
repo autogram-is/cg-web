@@ -11,7 +11,7 @@
         <dt class="type-detail">{{ sectors | pluralize('Sectors', 'Sector') }}</dt>
         <dd>
         {% for sector in sectors %}
-          <a href="{{ sector.link }}">{{ sector.title }}</a>
+          <a href="{{ sector.link }}">{{ sector.title | stylize }}</a>
         {% endfor %}
         </dd>
       </div>
@@ -21,7 +21,7 @@
         <dt class="type-detail">{{ services | pluralize('Services', 'Service') }}</dt>
         <dd>
         {% for service in services %}
-          <a href="{{ service.link }}">{{ service.title }}</a>
+          <a href="{{ service.link }}">{{ service.title | stylize }}</a>
         {% endfor %}
         </dd>
       </div>

@@ -137,7 +137,7 @@ class CGTwigFilters {
     $arr = iterator_to_array($items);
 
     usort($arr, function($a, $b) {
-      return strcmp($b->post_date, $a->post_date);
+      return strcmp($b->post_date ?? 0, $a->post_date ?? 0);
     });
   
     return $arr;

@@ -3,7 +3,7 @@
     <div class="thumb">
       <div class="">
       {% if youtube %}
-        <a href="" data-media="{{ post.podcast_youtube_url | youtube_embed }}">
+        <a href="{{ post.podcast_youtube_url | youtube_url }}" data-media="{{ post.podcast_youtube_url | youtube_embed }}">
         {% if poster %}
           <img decoding="async" src="{{ poster.src }}">
         {% else %}
