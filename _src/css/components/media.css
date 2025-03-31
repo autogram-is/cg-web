@@ -90,3 +90,10 @@
   margin-block: var(--region-space, var(--space-s-m));
   max-width: 70rem;
 }
+.wp-embed-aspect-16-9 {
+  iframe {
+    aspect-ratio: 16/9;
+    width: 100%;
+    height: auto;
+  }
+}
