@@ -3,6 +3,13 @@
     "title": "Podcast Episode Properties",
     "fields": [
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_678ffd332b8a3",
             "label": "Podcast Name",
             "name": "podcast_name",
@@ -25,6 +32,13 @@
             "append": ""
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_678ffed8cd9da",
             "label": "Season Number",
             "name": "podcast_season",
@@ -47,6 +61,13 @@
             "append": ""
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_678ffd782b8a4",
             "label": "Episode Number",
             "name": "podcast_episode",
@@ -69,6 +90,13 @@
             "append": ""
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_675100b6c6b7a",
             "label": "Youtube URL",
             "name": "podcast_youtube_url",
@@ -88,6 +116,13 @@
             "placeholder": ""
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_67900e594814f",
             "label": "MP3 URL",
             "name": "podcast_mp3_url",
@@ -107,6 +142,13 @@
             "placeholder": ""
         },
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_67ae74b9d6ed7",
             "label": "Episode Thumbnail",
             "name": "podcast_poster_image",
@@ -139,7 +181,7 @@
             {
                 "param": "post_taxonomy",
                 "operator": "==",
-                "value": "news-category:podcast"
+                "value": "news-category:podcasts"
             }
         ]
     ],
@@ -152,5 +194,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739486446
+    "qef_simple_location_rules": 0,
+    "modified": 1743800523
 }
