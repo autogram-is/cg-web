@@ -10,21 +10,21 @@ use Yoast\WP\SEO\Dashboard\Infrastructure\Analytics_4\Site_Kit_Analytics_4_Adapt
 use Yoast\WP\SEO\Dashboard\Infrastructure\Integrations\Site_Kit;
 
 /**
- * The data provider for organic sessions data.
+ * The data provider for daily organic sessions data.
  */
-class Organic_Sessions_Repository implements Dashboard_Repository_Interface {
+class Organic_Sessions_Daily_Repository implements Dashboard_Repository_Interface {
 
 	/**
 	 * The adapter.
 	 *
-	 * @var Site_Kit_Analytics_4_Adapter $site_kit_analytics_4_adapter
+	 * @var Site_Kit_Analytics_4_Adapter
 	 */
 	private $site_kit_analytics_4_adapter;
 
 	/**
 	 * The site kit configuration object.
 	 *
-	 * @var Site_Kit $site_kit_configuration
+	 * @var Site_Kit
 	 */
 	private $site_kit_configuration;
 
@@ -43,9 +43,9 @@ class Organic_Sessions_Repository implements Dashboard_Repository_Interface {
 	}
 
 	/**
-	 * Gets the organic sessions' data.
+	 * Gets daily organic sessions' data.
 	 *
-	 * @param Parameters $parameters The parameter to use for getting the organic sessions' data.
+	 * @param Parameters $parameters The parameter to use for getting the daily organic sessions' data.
 	 *
 	 * @return Data_Container
 	 *
@@ -53,10 +53,9 @@ class Organic_Sessions_Repository implements Dashboard_Repository_Interface {
 	 */
 	public function get_data( Parameters $parameters ): Data_Container {
 		if ( ! $this->site_kit_configuration->is_onboarded() || ! $this->site_kit_configuration->is_ga_connected() ) {
-			throw new Data_Source_Not_Available_Exception( 'Organic Sessions Repository' );
+			throw new Data_Source_Not_Available_Exception( 'Daily organic sessions repository' );
 		}
-		$organic_sessions_data = $this->site_kit_analytics_4_adapter->get_data( $parameters );
 
-		return $organic_sessions_data;
+		return $this->site_kit_analytics_4_adapter->get_daily_data( $parameters );
 	}
 }
