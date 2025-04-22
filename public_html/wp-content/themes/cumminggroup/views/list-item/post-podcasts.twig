@@ -1,47 +1,62 @@
-{% set mp3 = post.meta('podcast_mp3_url') %}
-{% set youtube = post.meta('podcast_youtube_url') %}
-{%  if mp3 or youtube %}
-<div class="region">
-  <figure class="media">
-    <div class="switcher">
-      <div class="thumb">
-        <div>
-        {% if youtube %}
-          <a href="{{ youtube }}" data-media="{{ youtube | youtube_embed }}">
-            {% if post.media.poster is not empty %}
-            <img decoding="async" src="{{ post.media.poster.src }}">
-            {% else %}
-            <img decoding="async" src="{{ youtube | youtube_poster }}">
-            {% endif %}
-          </a>
-        {% elseif mp3 %}
-          <a href="{{ mp3 }}" data-media="{{ mp3 }}">
-            <img decoding="async" src="{{ post.thumbnail }}">
-          </a>
-        {% endif %}
-        </div>
-      </div>
-      <figcaption class="flow">
-        <div class="body">
-          <div class="hgroup {% if fields.excerpt %}hed-accent {% endif %}flow">
-            {% if post.eyebrow|date('y-m-d') %}
-            <time datetime="{{eyebrow|date('y-m-d')}}" class="type-detail weight-regular">{{ post.eyebrow }}</time>
-            {% else %}
-            <span class="type-detail weight-regular">{{ post.eyebrow }}</span>
-            {% endif %}
-            <h3 class="type-hed">
-              <a href="{{ post.link }}">{{ post.title }}</a>
-            </h3>
-            <p class="subhed">{{ subhed ? subhed : post.subhed }}</p>
-          </div>
+<article class="resource-listing {{ type }} region" aria-labelledby="hed-{{ post.id }}">
+	{% block content %}
+	{% set youtube = post.meta('podcast_youtube_url') %}
 
-          <p>{{ excerpt ? excerpt : post.excerpt.read_more(false) }}</p>
-        </div>
-      </figcaption>
-    </div>
-  </figure>
-</div>
-{% else %}
-  {% include 'list-item/default.twig' %}
-{% endif %}
-<hr>
+	<div class="sidebar item">
+		{% if post.thumbnail %}
+		<a href="{{ post.link }}" class="thumb">
+			<img
+				src="{{post.thumbnail.src|resize(1200, 666) }}"
+				srcset="{{ post.thumbnail.src|resize(1200, 666) }} 1200w, {{ post.thumbnail.src|resize(800, 444) }} 800w, {{ post.thumbnail.src|resize(600, 333) }} 600w, {{ post.thumbnail.src|resize(400, 222) }} 400w"
+				{% if type == "hero" %}
+				sizes="(min-width: 1240px) 401px, calc(96.74vw - 38px)"
+				loading="eager"
+				{% else %}
+				sizes="auto"
+				loading="lazy"
+				{% endif %}
+				height="666"
+				width="1200"
+				alt="{{post.thumbnail.alt}}" />
+		</a>
+		{% elseif youtube %}
+		{% set poster = youtube | youtube_poster %}
+		<a href="{{ post.link }}" class="thumb">
+			<img
+				src="{{ poster | resize(1200, 666) }}"
+				srcset="{{ poster | resize(1200, 666, 'center') }} 1200w, {{ poster | resize(800, 444, 'center') }} 800w, {{ poster | resize(600, 333, 'center') }} 600w, {{ poster | resize(400, 222, 'center') }} 400w"
+				{% if type == "hero" %}
+				sizes="(min-width: 1240px) 401px, calc(96.74vw - 38px)"
+				loading="eager"
+				{% else %}
+				sizes="auto"
+				loading="lazy"
+				{% endif %}
+				height="666"
+				width="1200"
+				alt="{{ post.thumbnail.alt }}" />
+		</a>
+		{% elseif post.placeholder %}
+		<a href="{{ post.link }}" class="placeholder topo-full {{ post.placeholder.bg }}">
+			<span>{{ post.placeholder.text }}</span>
+		</a>
+		{% endif %}
+		<div class="body flow">
+	    <div class="type-detail">{% include 'fields/event-dateline.twig' %}</div>
+			<h2 class="type-hed {% if type == "hero" %}hed-accent{% endif %}" id="hed-{{ post.id }}">
+				<a href="{{ post.link }}">{{ post.title }}</a>
+			</h2>
+			{% if type == "hero" %}
+			<p>{{ post.excerpt.read_more(false) }}</p>
+			{% endif %}
+			{% if post.tags %}
+			<ul class="cluster listing-meta type-detail" role="list">
+				{% for tag in post.tags %}
+				<li><a href="{{ tag.link }}">{{ tag.name }}</a></li>
+				{% endfor %}
+				{% endif %}
+			</ul>
+		</div>
+	</div>
+	{% endblock %}
+</article>
