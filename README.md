@@ -29,13 +29,13 @@ Similarly, backup snapshots of the site database can be placed in `public_html/w
 
 While the final version of the Cumming Group site may include additional third-party plugins added and configured by the Cumming Group team, the following plugins have been configured and tested with the new theme and content.
 
-  - CG Core: Custom plugin containing saved definitions of all Cumming Group custom post types, custom taxonomies, and custom fields. This prevents custom post type and field data from being lost if the Cumming Group theme is changed or disabled.
-  - [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/) - Defines custom post types, taxonomies, and fields.
-  - [ACF Gravity Forms](https://wordpress.org/plugins/acf-gravityforms-add-on/) - 
-  - [ACF Quickedit Fields](https://wordpress.org/plugins/acf-quickedit-fields/) - Adds Gravity Form fields to WP admin pages.
+  - CG Core: Custom plugin containing saved definitions of all Cumming Group custom post types, custom taxonomies, and custom fields. This prevents custom post type and field data from being lost if the Cumming Group theme is changed or disabled. This plugin *must* be enabled for the Cumming Group theme to function properly.
+  - [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/) - Defines custom post types, taxonomies, and fields. This plugin *must* be enabled for the Cumming Group theme to function properly.
   - [Gravity Forms](https://www.gravityforms.com) - user submittable contact and feedback forms.
+  - [ACF Gravity Forms](https://wordpress.org/plugins/acf-gravityforms-add-on/) - Adds a 'Gravity Form' field type to the ACF plugin.
+  - [ACF Quickedit Fields](https://wordpress.org/plugins/acf-quickedit-fields/) - Adds ACF fields to WP post administration pages.
   - [Gravity Forms CLI](https://www.gravityforms.com) - allows bulk backup and management of forms from the WP CLI.
-  - [Yoast SEO](https://developer.yoast.com) - API-accessible SEO tag and social sharing metadata generation.
+  - [Yoast SEO](https://developer.yoast.com) - SEO tag and social sharing metadata generation.
   - [Object Cache Pro](https://objectcache.pro) - Redis cache integration, license included with Cloudways hosting.
   - [Query Monitor](https://wordpress.org/plugins/query-monitor/) - Administrator-only tool for troubleshooting and testing.
 
