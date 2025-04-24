@@ -37,6 +37,7 @@ While the final version of the Cumming Group site may include additional third-p
   - [Gravity Forms CLI](https://www.gravityforms.com) - allows bulk backup and management of forms from the WP CLI.
   - [Yoast SEO](https://developer.yoast.com) - API-accessible SEO tag and social sharing metadata generation.
   - [Object Cache Pro](https://objectcache.pro) - Redis cache integration, license included with Cloudways hosting.
+  - [Query Monitor](https://wordpress.org/plugins/query-monitor/) - Administrator-only tool for troubleshooting and testing.
 
 ## Deploying local changes to staging
 
