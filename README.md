@@ -1,16 +1,25 @@
 # Cumming Group Web Repository
 
-This git repo holds the custom code and theme assets for the [Cumming Group](https://cumming-group.com) web site. It's designed to support easy testing and development of new features on a developer's local machine using Docker Compose and the official [Wordpress](https://hub.docker.com/_/wordpress)/[MySQL](https://hub.docker.com/_/mysql/) images, with git handling the deployment of new code to a staging or production server.
+This git repo holds the custom code and theme assets for the [Cumming Group](https://cumming-group.com) web site. It's designed to support reliable testing and development of new features on a developer's local machine using Docker Compose and the official [Wordpress](https://hub.docker.com/_/wordpress)/[MySQL](https://hub.docker.com/_/mysql/) images.
 
 ## Setting up local development
 
-- Install docker
-- Optionally import a custom database snapshot
-- To start things up, run `docker compose up -d`
+This process is built on docker and node.js; installers can be downloaded from the [NodeJS](https://nodejs.org/en/download) and [Docker](https://docs.docker.com/engine/install/) home pages.
+
+### Running the Cumming Group component library locally
+
+- To start a local copy of the component library, run `npm start`
+- Visit `http://localhost:8080`
+
+Running the `start` command compiles the design's CSS, JS, Fonts, and other static assets for use in Wordpress, then copies those files to the `public_html/wp-content/themes/cumminggroup/assets/` directory.
+
+### Running Wordpress locally
+
+- To start the local wordpress server, run `npm wordpress:start`
 - Visit `http://localhost`
-- To log into the docker container and noodle around on the command line, use `docker compose exec wordpress bash`
-- To *out* of the docker container's command line, use `exit`
-- To shut things down, run `docker compose down`
+- To log into wordpress docker container (to run WP CLI commands, for example), use `docker compose exec wordpress bash`
+- To exit the docker container's command line, use `exit`
+- To shut down the local wordpress server, run `npm wordpress:stop`
 
 The `upload` directory's contents from the live or staging site should be copied to `public_html/wp-content/uploads` to ensure local image attachments etc work. The `.gitignore` file for this project will ensure it's not committed to the repository.
 
@@ -18,33 +27,23 @@ Similarly, backup snapshots of the site database can be placed in `public_html/w
 
 ## Deploying to staging
 
-Deployment to Cloudways is conducted via SFTP to the staging server; in particular the `public_html/wp-content/themes/cumminggroup` and `public_html/wp-content/plugins/cg-core` are critical. During development, the `public_html/wp-content/plugins/cg-migrate` plugin is also used to perform automated migration and bulk content fixes but can be disabled and/or removed before final deployment. 
+Deployment to Cloudways is conducted via SFTP to the staging server; copying the complete `public_html/wp-content/themes/cumminggroup` and `public_html/wp-content/plugins/cg-core` directories to their respective locations on the staging server will . During development, the `public_html/wp-content/plugins/cg-migrate` plugin is also used to perform automated migration and bulk content fixes but can be disabled and/or removed before final deployment.
 
-## Theme / Plugin / Code inventory
+## Wordpress Theme & Plugins
 
-This list is in progress -- it's subject to change as the initial configuration plan is tested and validated against the site requirements.
+While the final version of the Cumming Group site may include additional third-party plugins added and configured by the Cumming Group team, the following plugins have been configured and tested by the 
 
-- Existing site plugins
+### Cumming Group custom code
+
+  - CG Core: 
+  - CG Migrate: 
+
+### Third-party plugins
+
+  - [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/) 
+  - [ACF Gravity Forms](https://wordpress.org/plugins/acf-gravityforms-add-on/)
+  - [ACF Quickedit Fields](https://wordpress.org/plugins/acf-quickedit-fields/)
   - [Gravity Forms](https://www.gravityforms.com)
-  - [PostSMTP](https://postmansmtp.com)
-  - [HSTS-Ready](https://wordpress.org/plugins/hsts-ready/)
-  - [Relevanssi](https://wordpress.org/plugins/relevanssi/)
-  - [Redirection](https://wordpress.org/plugins/redirection/)
-  - [WP Force HTTPS](https://wordpress.org/plugins/wp-force-https/)
+  - [Gravity Forms CLI](https://www.gravityforms.com)
   - [Yoast SEO](https://developer.yoast.com) - API-accessible SEO tag and social sharing metadata generation.
   - [Object Cache Pro](https://objectcache.pro) - Redis cache integration, license included with Cloudways hosting
-- Removed/Disabled
-  - [If-So](https://wordpress.org/plugins/if-so/) - Useful geolocation plugins and related tools, but we want to keep as much of this as possible out regular page-loading.
-  - [WP Rocket](https://wp-rocket.me)
-  - [BuzzSprout Podcasting](https://wordpress.org/plugins/buzzsprout-podcasting/)
-  - [Regenerate Thumbnails](https://wordpress.org/plugins/regenerate-thumbnails/) - duplicated by WP-CLI
-  - [Avada Core/Builder](https://avada.com) - looking to avoid in-CMS page building; alternative being researched
-  - [Category AJAX Filter](https://trustyplugins.com) - FacetWP may offer better performance with less front end code
-  - [WPCode](https://wordpress.org/plugins/insert-headers-and-footers/) - should be handled by the custom theme
-  - [The Events Calendar](https://theeventscalendar.com/products/wordpress-events-calendar) - Replaced by a custom post type and a listing page
-  - [HREFLang Tags](https://wordpress.org/plugins/hreflang-tags-by-dcgws/) - deprecated and unsupported
-- New plugins
-  - [Advanced Custom Fields](https://www.advancedcustomfields.com/)
-  - [ACF Gravity Forms](acf-gravityforms-add-on)
-- Potential future plugins
-  - [hCaptcha for WP](https://wordpress.org/plugins/hcaptcha-for-forms-and-more/)
