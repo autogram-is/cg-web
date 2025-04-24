@@ -102,7 +102,6 @@ classDiagram
     class Post {
         person[] people
         portfolio_post[] related
-        region[] regions
         json podcast_info
         json reprint_info
     }
@@ -116,20 +115,16 @@ classDiagram
 
 The core cluster of business domain post types are used to build the Cumming Group portfolio.
 
-A bidirectional `related` relationship is also used to connect these business domain post types to related news articles, and vice-versa. The core business domain post types may only point to `post`, `event`, and `episode` content in that field, and the news/thought leadership posts may only relate to `project`, `sector`, `service`, `region`, `office`, or `person` posts.
+A bidirectional `related` relationship is also used to connect these business domain post types to related news articles, and vice-versa. The core business domain post types may only point to `post`, `event`, and `episode` content in that field, and the news/thought leadership posts may only relate to `project`, `sector`, `service`, `office`, or `person` posts.
 
 ```mermaid
 erDiagram
     PROJECT }o--o{ SECTOR : served
-    PROJECT }o--o{ REGION : is-in
     PROJECT }o--o{ SERVICE : utilized
 
     PROJECT }o--|| OFFICE : was-staffed-by
-    REGION }o--|| OFFICE : is-served-by
-    REGION }o--o| REGION : is-in
 
     SERVICE }o--o{ PERSON : has-leader
     OFFICE |o--o{ PERSON : has-contact
-    REGION }o--o{ PERSON : features
     SECTOR }o--o{ PERSON : has-leader
 ```

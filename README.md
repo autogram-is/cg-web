@@ -4,7 +4,7 @@ This git repo holds the custom code and theme assets for the [Cumming Group](htt
 
 ## Setting up local development
 
-This process is built on docker and node.js; installers can be downloaded from the [NodeJS](https://nodejs.org/en/download) and [Docker](https://docs.docker.com/engine/install/) home pages.
+The local development process is built on docker and node.js; installers can be downloaded from the [NodeJS](https://nodejs.org/en/download) and [Docker](https://docs.docker.com/engine/install/) home pages.
 
 ### Running the Cumming Group component library locally
 
@@ -25,25 +25,29 @@ The `upload` directory's contents from the live or staging site should be copied
 
 Similarly, backup snapshots of the site database can be placed in `public_html/wp-content/backups` and loaded using the `wp import` command. A top-level shortcut `npm wordpress:loadsql` can be run without entering the Docker command line, and will immediately import the `db.sql` backup file if it exists.
 
-## Deploying to staging
+## Custom and third-party plugins
+
+While the final version of the Cumming Group site may include additional third-party plugins added and configured by the Cumming Group team, the following plugins have been configured and tested with the new theme and content.
+
+  - CG Core: Custom plugin containing saved definitions of all Cumming Group custom post types, custom taxonomies, and custom fields. This prevents custom post type and field data from being lost if the Cumming Group theme is changed or disabled.
+  - [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/) - Defines custom post types, taxonomies, and fields.
+  - [ACF Gravity Forms](https://wordpress.org/plugins/acf-gravityforms-add-on/) - 
+  - [ACF Quickedit Fields](https://wordpress.org/plugins/acf-quickedit-fields/) - Adds Gravity Form fields to WP admin pages.
+  - [Gravity Forms](https://www.gravityforms.com) - user submittable contact and feedback forms.
+  - [Gravity Forms CLI](https://www.gravityforms.com) - allows bulk backup and management of forms from the WP CLI.
+  - [Yoast SEO](https://developer.yoast.com) - API-accessible SEO tag and social sharing metadata generation.
+  - [Object Cache Pro](https://objectcache.pro) - Redis cache integration, license included with Cloudways hosting.
+
+## Deploying local changes to staging
 
 Deployment to Cloudways is conducted via SFTP to the staging server; copying the complete `public_html/wp-content/themes/cumminggroup` and `public_html/wp-content/plugins/cg-core` directories to their respective locations on the staging server will . During development, the `public_html/wp-content/plugins/cg-migrate` plugin is also used to perform automated migration and bulk content fixes but can be disabled and/or removed before final deployment.
 
-## Wordpress Theme & Plugins
+## Deploying a CloudWays staging server to Production
 
-While the final version of the Cumming Group site may include additional third-party plugins added and configured by the Cumming Group team, the following plugins have been configured and tested by the 
+The [CloudWays support web knowledgebase](https://support.cloudways.com/en/collections/3185991-deployment-and-staging-management) documents the process of setting up a staging server, managing content and code on that staging server, and moving its code and content to the live server.
 
-### Cumming Group custom code
+- We *strongly* recommend performing a backup of the CloudWays production server before moving the staging server to production; this ensures that if anything breaks, the previous version can be restored.
+- Activate Object Cache Pro to improve Wordpress' performance. Instructions for enabling this plugin are specific to Cloudways, and can be found on [the Cloudways Support Knowledgebase](https://support.cloudways.com/en/articles/5723061-speed-up-your-wordpress-application-using-object-cache-pro)
+- Ensure the Yoast SEO plugin is activated
+- Using the CloudWays control panel, initiate the migration from staging to production.
 
-  - CG Core: 
-  - CG Migrate: 
-
-### Third-party plugins
-
-  - [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/) 
-  - [ACF Gravity Forms](https://wordpress.org/plugins/acf-gravityforms-add-on/)
-  - [ACF Quickedit Fields](https://wordpress.org/plugins/acf-quickedit-fields/)
-  - [Gravity Forms](https://www.gravityforms.com)
-  - [Gravity Forms CLI](https://www.gravityforms.com)
-  - [Yoast SEO](https://developer.yoast.com) - API-accessible SEO tag and social sharing metadata generation.
-  - [Object Cache Pro](https://objectcache.pro) - Redis cache integration, license included with Cloudways hosting
