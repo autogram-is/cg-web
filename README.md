@@ -41,7 +41,12 @@ While the final version of the Cumming Group site may include additional third-p
 
 ## Deploying local changes to staging
 
-Deployment to Cloudways is conducted via SFTP to the staging server; copying the complete `public_html/wp-content/themes/cumminggroup` and `public_html/wp-content/plugins/cg-core` directories to their respective locations on the staging server will . During development, the `public_html/wp-content/plugins/cg-migrate` plugin is also used to perform automated migration and bulk content fixes but can be disabled and/or removed before final deployment.
+Deployment to Cloudways is conducted via SFTP to the staging server; the Cumming Group custom theme and support code is located in:
+
+- `public_html/wp-content/plugins/cg-core`
+- `public_html/wp-content/themes/cumminggroup`
+
+Deployment consists of copying those two directories to their respective locations on the staging server.
 
 ## Deploying a CloudWays staging server to Production
 
