@@ -57,3 +57,6 @@ The [CloudWays support web knowledgebase](https://support.cloudways.com/en/colle
 - Ensure the Yoast SEO plugin is activated
 - Using the CloudWays control panel, initiate the migration from staging to production.
 
+## Registering ACF Pro
+
+Advanced Custom Fields Pro is a paid plugin with a yearly subscription cost. The site will continue to work properly even without registration, but site administrators will not be able to customize the site's fields and post types. Registration forms, and documentation its administration features, can be found on the [ACF plugin's home page](https://www.advancedcustomfields.com).
